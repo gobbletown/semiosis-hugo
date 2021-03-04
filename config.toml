@@ -4,6 +4,10 @@ title = "semiosis"
 theme = "hello-friend-ng"
 paginate     = 10
 
+# https://grep.app/search?q=dark&regexp=true&case=true&filter%5Bpath.pattern%5D%5B0%5D=config.toml
+# ga dark config.toml
+mode = "dark" # "dark", "auto", "light"  
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
