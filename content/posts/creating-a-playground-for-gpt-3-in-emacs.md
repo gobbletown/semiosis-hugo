@@ -32,18 +32,18 @@ Slides
 
 ### Summary of talk {#summary-of-talk}
 
-I got a key for the `OpenAI` API just a couple
+I received a key for the `OpenAI` API 2 weeks ago, just a couple
 of days before my birthday.
 
-After applying about 10 times in the last year
-I finally got my key.
+I had applied around 5 to 10 times in the last
+year and I had finally been given a key.
 
 I decided since the hour is late I would work
 on productivity tools that anyone can use, to
 facilitate programming in the new paradigm.
 
 
-### `pen.el` : <span class="underline">Prompt engineering</span> in emacs {#pen-dot-el-in-emacs}
+### `pen.el` : Prompt engineering in emacs {#pen-dot-el-prompt-engineering-in-emacs}
 
 
 #### `prompt-engineer-mode` {#prompt-engineer-mode}
