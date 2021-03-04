@@ -6,6 +6,18 @@
     <description>Recent content on semiosis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a playground for GPT-3 in emacs</title>
+      <link>http://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/</guid>
+      <description>Code https://github.com/mullikine/pen.el Prompts https://github.com/mullikine/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf  Demonstration Prompt-Engineering Part 1: Building an environment Summary of talk I got a key for the OpenAI API just a couple of days before my birthday.
+After applying about 10 times in the last year I finally got my key.
+I decided since the hour is late I would work on productivity tools that anyone can use, to facilitate programming in the new paradigm.</description>
+    </item>
+    
   </channel>
 </rss>
