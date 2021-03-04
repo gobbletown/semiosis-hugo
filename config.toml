@@ -8,6 +8,9 @@ paginate     = 10
 # ga dark config.toml
 mode = "dark" # "dark", "auto", "light"  
 
+[markup.goldmark.renderer]
+unsafe= true
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
