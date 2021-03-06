@@ -140,7 +140,7 @@ Example output from GPT-3:
 
 ** Moral of the story
 The moral of the story is that if a person
-builds a website like crontab.guru, its
+builds a website like =crontab.guru=, its
 functionality actually becomes learned by the
 next iteration of GPT and then its
 functionality is able to be reproduced.
