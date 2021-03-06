@@ -6,8 +6,228 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sat, 06 Mar 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>crontab.guru in emacs and making a prompt with GPT-3 to copy it</title>
+            <link>http://semiosis.github.io/posts/crontab-guru-in-emacs/</link>
+            <pubDate>Sat, 06 Mar 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/crontab-guru-in-emacs/</guid>
+            <description>Related https://crontab.guru/  Summary I build some functionality into emacs to use crontab.guru behind the scenes to interpret tab lines displaying inside of emacs, without using the web browser.
+I then build a GPT-3 prompt which does exactly the same thing without crontab.guru and provide the initial script I made to examplary (my GPT-3 DSL) as an example generator, to enhance the prompt if that is needed later.
+Initial steps When lines in cron format appear in an emacs buffer, the crontab-guru function is suggested, allowing you to easily understand crontabs.</description>
+            <content type="html"><![CDATA[<dl>
+<dt>Related</dt>
+<dd><a href="https://crontab.guru/">https://crontab.guru/</a></dd>
+</dl>
+<h2 id="summary">Summary</h2>
+<p>I build some functionality into emacs to use
+<code>crontab.guru</code> behind the scenes to interpret
+tab lines displaying inside of emacs, without
+using the web browser.</p>
+<p>I then build a GPT-3 prompt which does exactly
+the same thing without <code>crontab.guru</code> and
+provide the initial script I made to
+<code>examplary</code> (my GPT-3 DSL) as an example
+generator, to enhance the prompt if that is
+needed later.</p>
+<h2 id="initial-steps">Initial steps</h2>
+<p>When lines in cron format appear in an emacs
+buffer, the <code>crontab-guru</code> function is
+suggested, allowing you to easily understand
+crontabs.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun buffer-cron-lines ()
+  (sor (snc <span style="color:#e6db74">&#34;scrape \&#34;((?:[0-9-/]+|\\\\*)\\\\s+){4}(?:[0-9]+|\\\\*)\&#34;&#34;</span> (<span style="color:#a6e22e">buffer-string</span>))))
+
+(defun chrontab-guru (tab)
+  (interactive (<span style="color:#a6e22e">list</span> (fz (buffer-cron-lines))))
+  (let ((tab (sed <span style="color:#e6db74">&#34;s/\\s\\+/_/g&#34;</span> tab)))
+    (chrome (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;https://crontab.guru/#&#34;</span> tab))))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demonstration">Demonstration</h2>
+<p><a title="asciinema recording" href="https://asciinema.org/a/dKU8QGolIthb93F8P29NESdn6" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/dKU8QGolIthb93F8P29NESdn6.svg" /></a></p>
+<figure>
+    <img src="/ox-hugo/crontabguru.png"/> 
+</figure>
+
+<h2 id="modify-to-display-the-explanation-inside-emacs">Modify to display the explanation inside emacs</h2>
+<ul>
+<li>Dump the Google Chrome DOM for the website (since it requires javascript)</li>
+<li>Scrape the explanation from the website</li>
+<li>Create a new buffer in emacs with the explanation</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun crontab-guru (tab)
+  (interactive (<span style="color:#a6e22e">list</span> (fz (buffer-cron-lines) (if (selectionp) (my/thing-at-point)))))
+  (let ((tab (sed <span style="color:#e6db74">&#34;s/\\s\\+/_/g&#34;</span> tab)))
+    <span style="color:#75715e">;; (chrome (concat &#34;https://crontab.guru/#&#34; tab))</span>
+    (etv (scrape <span style="color:#e6db74">&#34;\&#34;[^\&#34;]*\&#34;&#34;</span> (snc (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;elinks-dump-chrome &#34;</span> (q (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;https://crontab.guru/#&#34;</span> tab))))))))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompt-gpt-3">Prompt GPT-3</h2>
+<p>This script is a <code>string-&gt;string</code> filter
+script that scrapes the chrome dom of
+<code>crontab.guru</code> to get its result, given the tab as standard input.</p>
+<p><span class="underline"><strong>interpret-crontab</strong></span></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#f92672">(</span> hs <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;&lt;==&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -o comm<span style="color:#f92672">=</span> $PPID<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> 0&lt;/dev/null <span style="color:#f92672">)</span> &amp;&gt;/dev/null
+
+scrape-crontab | awk1 | <span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span><span style="color:#e6db74">$&#39;\n&#39;</span> read -r tab; <span style="color:#66d9ef">do</span>
+    <span style="color:#f92672">(</span>
+        exec 0&lt;/dev/null
+        <span style="color:#66d9ef">if</span> test -n <span style="color:#e6db74">&#34;</span>$tab<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+            taburlbit<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>p <span style="color:#e6db74">&#34;</span>$tab<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#34;s/\\s\\+/_/g&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+            elinks-dump-chrome <span style="color:#e6db74">&#34;https://crontab.guru/#</span>$taburlbit<span style="color:#e6db74">&#34;</span> | scrape <span style="color:#e6db74">&#34;\&#34;[^\&#34;]*\&#34;&#34;</span>
+        <span style="color:#66d9ef">fi</span>
+    <span style="color:#f92672">)</span>
+<span style="color:#66d9ef">done</span> | sed -e <span style="color:#e6db74">&#39;s/^&#34;//&#39;</span> -e <span style="color:#e6db74">&#39;s/&#34;$//&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The following file is a GPT-3 prompt which
+accepts the above <code>interpret-crontab</code> script
+as an external function to generate and train
+and ultimately replace the prompt.</p>
+<p><span class="underline"><strong>crontab-translator.prompt</strong></span></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;crontab translator&#34;</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  crontab
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  17 *	* * *
+</span><span style="color:#e6db74">  At minute 17.
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  25 6	* * *
+</span><span style="color:#e6db74">  At 06:25.
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  47 6	* * 7
+</span><span style="color:#e6db74">  At 06:47 on Sunday.
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  52 6	1 * *
+</span><span style="color:#e6db74">  At 06:52 on day-of-month 1.
+</span><span style="color:#e6db74">  &lt;1&gt;</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;davinci&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">60</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">frequency-penalty</span>: <span style="color:#ae81ff">0.5</span>
+<span style="color:#75715e"># If I make presence-penalty 0 then it will get very terse</span>
+<span style="color:#f92672">presence-penalty</span>: <span style="color:#ae81ff">0.0</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;###&#34;</span>
+<span style="color:#f92672">inject-start-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">inject-restart-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">show-probabilities</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;tab&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;30 7    * * *&#34;</span>
+<span style="color:#f92672">external</span>: <span style="color:#e6db74">&#34;interpret-crontab&#34;</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#75715e"># Keep stitching together until reaching this limit</span>
+<span style="color:#75715e"># This allows a full response for answers which may need n*max-tokens to reach the stop-sequence.</span>
+<span style="color:#f92672">stitch-max</span>: <span style="color:#ae81ff">0</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Example output from GPT-3:</p>
+<dl>
+<dt>Input tab</dt>
+<dd><code>15 7    * * *</code></dd>
+<dt>GPT-3 output</dt>
+<dd><code>On day-of-week 7, at 15:00.</code></dd>
+</dl>
+<h2 id="moral-of-the-story">Moral of the story</h2>
+<p>The moral of the story is that if a person
+builds a website like crontab.guru, its
+functionality actually becomes learned by the
+next iteration of GPT and then its
+functionality is able to be reproduced.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Creating a playground for GPT-3 in emacs</title>
