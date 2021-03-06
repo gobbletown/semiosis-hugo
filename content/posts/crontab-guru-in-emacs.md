@@ -10,6 +10,10 @@ Related
 : <https://crontab.guru/>
 
 
+Author
+: <http://github.com/mullikine>
+
+
 ## Summary {#summary}
 
 I build some functionality into emacs to use

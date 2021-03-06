@@ -15,12 +15,13 @@
             <pubDate>Sat, 06 Mar 2021 00:00:00 +1300</pubDate>
             
             <guid>http://semiosis.github.io/posts/crontab-guru-in-emacs/</guid>
-            <description>Related https://crontab.guru/  Summary I build some functionality into emacs to use crontab.guru behind the scenes to interpret tab lines displaying inside of emacs, without using the web browser.
-I then build a GPT-3 prompt which does exactly the same thing without crontab.guru and provide the initial script I made to examplary (my GPT-3 DSL) as an example generator, to enhance the prompt if that is needed later.
-Initial steps When lines in cron format appear in an emacs buffer, the crontab-guru function is suggested, allowing you to easily understand crontabs.</description>
+            <description>Related https://crontab.guru/ Author http://github.com/mullikine  Summary I build some functionality into emacs to use crontab.guru behind the scenes to interpret tab lines displaying inside of emacs, without using the web browser.
+I then build a GPT-3 prompt which does exactly the same thing without crontab.guru and provide the initial script I made to examplary (my GPT-3 DSL) as an example generator, to enhance the prompt if that is needed later.</description>
             <content type="html"><![CDATA[<dl>
 <dt>Related</dt>
 <dd><a href="https://crontab.guru/">https://crontab.guru/</a></dd>
+<dt>Author</dt>
+<dd><a href="http://github.com/mullikine">http://github.com/mullikine</a></dd>
 </dl>
 <h2 id="summary">Summary</h2>
 <p>I build some functionality into emacs to use
