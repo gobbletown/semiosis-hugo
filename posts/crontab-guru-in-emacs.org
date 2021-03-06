@@ -11,6 +11,8 @@
 
 + Related :: https://crontab.guru/
 
++ Author :: http://github.com/mullikine
+
 ** Summary
 I build some functionality into emacs to use
 =crontab.guru= behind the scenes to interpret
