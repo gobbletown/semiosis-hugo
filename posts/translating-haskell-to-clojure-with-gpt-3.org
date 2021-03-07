@@ -76,30 +76,36 @@ I translate Haskell into Clojure using the following prompt.
 #+END_EXPORT
 
 ** Translate Haskell into Clojure
+_*Haskell*_
 #+BEGIN_SRC haskell -n :i "babel-ghci -norc" :async :results verbatim code
 div 7 3
 #+END_SRC
 
+_*Clojure*_
 #+BEGIN_SRC clojure -n :i clj :async :results verbatim code
   (/ 7 3)
 #+END_SRC
 
 ** It's not perfect
+_*Haskell*_
 #+BEGIN_SRC haskell -n :i "babel-ghci -norc" :async :results verbatim code
 z = x * y
   where x = 3.0
         y = 2.0 * x
 #+END_SRC
 
+_*Clojure*_
 #+BEGIN_SRC clojure -n :i clj :async :results verbatim code
   (defn z [x y] (* y x))
 #+END_SRC
 
+** But it's *pretty good*
+_*Haskell*_
 #+BEGIN_SRC haskell -n :i "babel-ghci -norc" :async :results verbatim code
   let absn = if n < 0 then -n else n
 #+END_SRC
 
-** But it's *pretty good*
+_*Clojure*_
 #+BEGIN_SRC clojure -n :i clj :async :results verbatim code
   (defn absn [n] (if (negative? n) (- n) n))
 #+END_SRC
