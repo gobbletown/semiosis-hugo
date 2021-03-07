@@ -52,6 +52,11 @@ summarize) {
 {{< /highlight >}}
 
 
+## A demonstration of the entire workflow {#a-demonstration-of-the-entire-workflow}
+
+<a title="asciinema recording" href="https://asciinema.org/a/Fb17RAzSfSJAIksddxwqbsMhZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Fb17RAzSfSJAIksddxwqbsMhZ.svg" /></a>
+
+
 ## A Zettelkasten of Natural Language Processing tasks {#a-zettelkasten-of-natural-language-processing-tasks}
 
 {{< figure src="/ox-hugo/org-brain.png" >}}
