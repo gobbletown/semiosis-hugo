@@ -7,7 +7,7 @@
 #+TITLE: A natural language database using a single GPT prompt
 #+DATE: <2021-03-07>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3
+#+KEYWORDS: GPT-3 NLP
 
 + Original article :: https://www.gwern.net/GPT-3#the-database-prompt
 
