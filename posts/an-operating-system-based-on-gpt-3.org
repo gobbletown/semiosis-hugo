@@ -58,3 +58,6 @@ _*=org-brain= demo*_
 #+BEGIN_EXPORT html
 <a title="asciinema recording" href="https://asciinema.org/a/nrqqHWCfc5eG0lj3LPyzO2T2h" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nrqqHWCfc5eG0lj3LPyzO2T2h.svg" /></a>
 #+END_EXPORT
+
+** =GPT-3= May be easily toggled via point and click
+[[./gpt-toggle.png]]
