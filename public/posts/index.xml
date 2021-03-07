@@ -10,6 +10,160 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>A natural language database using a single GPT prompt</title>
+            <link>http://semiosis.github.io/posts/a-natural-language-database-using-a-single-gpt-prompt/</link>
+            <pubDate>Sun, 07 Mar 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/a-natural-language-database-using-a-single-gpt-prompt/</guid>
+            <description>Original article https://www.gwern.net/GPT-3#the-database-prompt  Summary A single prompt describes transactions to and from a database.
+GPT-3 is able to answer questions about the transactions that have taken place.
+GPT-3 isn&amp;rsquo;t actually a database.
+The LM simply understands language so well that describing the transactions that have taken place would naturally lead to the GPT-3 response.
+The prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55  title: &amp;#34;database example&amp;#34; doc: &amp;#34;GPT-3 as a NL interface for semantically querying logic in prose&amp;#34; prompt: |+The database begins knowing nothing.</description>
+            <content type="html"><![CDATA[<dl>
+<dt>Original article</dt>
+<dd><a href="https://www.gwern.net/GPT-3#the-database-prompt">https://www.gwern.net/GPT-3#the-database-prompt</a></dd>
+</dl>
+<h2 id="summary">Summary</h2>
+<p>A single prompt describes transactions to and from a database.</p>
+<p>GPT-3 is able to answer questions about the
+transactions that have taken place.</p>
+<p>GPT-3 isn&rsquo;t actually a database.</p>
+<p>The LM simply understands language so well
+that describing the transactions that have
+taken place would naturally lead to the GPT-3
+response.</p>
+<h2 id="the-prompt">The prompt</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;database example&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;GPT-3 as a NL interface for semantically querying logic in prose&#34;</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    The database begins knowing nothing.
+</span><span style="color:#e6db74">    The database knows everything that is added to it.
+</span><span style="color:#e6db74">    The database does not know anything else.
+</span><span style="color:#e6db74">    When asked a question, if the answer has been added to the database the database says the answer.
+</span><span style="color:#e6db74">    When asked a question, if the answer has not been added the database says it does not know.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Q: Does the database know “What is 2+2?”
+</span><span style="color:#e6db74">    A: The database does not know.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Q: Does the database know “What is the capital of France?”
+</span><span style="color:#e6db74">    A: The database does not know.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &#34;&#34;Tom is 20 years old&#34;&#34; is added to the database.
+</span><span style="color:#e6db74">    Nothing else about Tom is added to the database.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Q: Does the database know where Tom lives?
+</span><span style="color:#e6db74">    A: The database does not know.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Q: How does the database respond when Tom’s age?
+</span><span style="color:#e6db74">    A: The database says “Tom is 20 years old.”
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Q: How does the database response when asked “What’s my age?”
+</span><span style="color:#e6db74">    A: The database says “You are not in the database.”
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &#34;&#34;Shane is a cool guy&#34;&#34; is added to the database.
+</span><span style="color:#e6db74">    &#34;&#34;Shane is 33 years old&#34;&#34; is added to the database.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Q: &lt;1&gt;
+</span><span style="color:#e6db74">    A:</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;davinci&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">60</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">frequency-penalty</span>: <span style="color:#ae81ff">0.5</span>
+<span style="color:#75715e"># If I make presence-penalty 0 then it will get very terse</span>
+<span style="color:#f92672">presence-penalty</span>: <span style="color:#ae81ff">0.0</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+<span style="color:#f92672">inject-start-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">inject-restart-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">show-probabilities</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;query or input&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;How old is Shane?&#34;</span>
+<span style="color:#f92672">external</span>: <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">conversation-mode</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#75715e"># Keep stitching together until reaching this limit</span>
+<span style="color:#75715e"># This allows a full response for answers which may need n*max-tokens to reach the stop-sequence.</span>
+<span style="color:#f92672">stitch-max</span>: <span style="color:#ae81ff">0</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demonstration">Demonstration</h2>
+<p>As you can see, the prompt only functions
+approximately as a database.</p>
+<p>It could certainly be made more reliable
+either through adjusting parameters or by
+proving better counter-examples.</p>
+<p><a title="asciinema recording" href="https://asciinema.org/a/VDkB11XyAMv8kvieuDuONwMUp" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/VDkB11XyAMv8kvieuDuONwMUp.svg" /></a></p>
+<h2 id="utility">Utility</h2>
+<p>This ability of GPT-3 could be used for the
+NLP task of information extraction.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Translating Haskell to Clojure with GPT-3</title>
             <link>http://semiosis.github.io/posts/translating-haskell-to-clojure-with-gpt-3/</link>
             <pubDate>Sun, 07 Mar 2021 00:00:00 +1300</pubDate>
