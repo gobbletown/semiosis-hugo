@@ -80,9 +80,13 @@ stitch-max: 0
 
 ## Translate Haskell into Clojure {#translate-haskell-into-clojure}
 
+<span class="underline">**Haskell**</span>
+
 {{< highlight haskell "linenos=table, linenostart=1" >}}
 div 7 3
 {{< /highlight >}}
+
+<span class="underline">**Clojure**</span>
 
 {{< highlight clojure "linenos=table, linenostart=1" >}}
 (/ 7 3)
@@ -91,22 +95,30 @@ div 7 3
 
 ## It's not perfect {#it-s-not-perfect}
 
+<span class="underline">**Haskell**</span>
+
 {{< highlight haskell "linenos=table, linenostart=1" >}}
 z = x * y
   where x = 3.0
         y = 2.0 * x
 {{< /highlight >}}
 
+<span class="underline">**Clojure**</span>
+
 {{< highlight clojure "linenos=table, linenostart=1" >}}
 (defn z [x y] (* y x))
 {{< /highlight >}}
+
+
+## But it's **pretty good** {#but-it-s-pretty-good}
+
+<span class="underline">**Haskell**</span>
 
 {{< highlight haskell "linenos=table, linenostart=1" >}}
 let absn = if n < 0 then -n else n
 {{< /highlight >}}
 
-
-## But it's **pretty good** {#but-it-s-pretty-good}
+<span class="underline">**Clojure**</span>
 
 {{< highlight clojure "linenos=table, linenostart=1" >}}
 (defn absn [n] (if (negative? n) (- n) n))
