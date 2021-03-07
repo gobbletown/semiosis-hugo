@@ -47,6 +47,11 @@ Otherwise, use =sumy=.
   ;;
 #+END_SRC
 
+** A demonstration of the entire workflow
+#+BEGIN_EXPORT html
+<a title="asciinema recording" href="https://asciinema.org/a/Fb17RAzSfSJAIksddxwqbsMhZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Fb17RAzSfSJAIksddxwqbsMhZ.svg" /></a>
+#+END_EXPORT
+
 ** A Zettelkasten of Natural Language Processing tasks
 [[./org-brain.png]]
 
