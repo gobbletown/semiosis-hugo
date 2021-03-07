@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://semiosis.github.io/posts/crontab-guru-in-emacs/</loc>
-    <lastmod>2021-03-06T00:00:00+13:00</lastmod>
-  </url><url>
     <loc>http://semiosis.github.io/posts/</loc>
-    <lastmod>2021-03-06T00:00:00+13:00</lastmod>
+    <lastmod>2021-03-07T00:00:00+13:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-03-07T00:00:00+13:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/translating-haskell-to-clojure-with-gpt-3/</loc>
+    <lastmod>2021-03-07T00:00:00+13:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/crontab-guru-in-emacs/</loc>
     <lastmod>2021-03-06T00:00:00+13:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/</loc>
