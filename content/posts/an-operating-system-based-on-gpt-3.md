@@ -29,7 +29,7 @@ alternative means of performing tasks.
 vim +/"use_gpt3: on" "$NOTES/myrc.yaml"
 {{< /highlight >}}
 
-{{< figure src="./gpt3-config.png" >}}
+{{< figure src="/ox-hugo/gpt3-config.png" >}}
 
 {{< highlight sh "linenos=table, linenostart=1" >}}
 vim +/"summarize) {" "$SCRIPTS/s"
@@ -54,7 +54,7 @@ summarize) {
 
 ## A Zettelkasten of Natural Language Processing tasks {#a-zettelkasten-of-natural-language-processing-tasks}
 
-{{< figure src="./org-brain.png" >}}
+{{< figure src="/ox-hugo/org-brain.png" >}}
 
 I use `org-brain` because it enables me to
 recall exactly where I am substituting `GPT-3`
