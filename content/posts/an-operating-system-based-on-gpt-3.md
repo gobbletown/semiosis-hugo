@@ -63,3 +63,8 @@ within my scripts.
 <span class="underline">**`org-brain` demo**</span>
 
 <a title="asciinema recording" href="https://asciinema.org/a/nrqqHWCfc5eG0lj3LPyzO2T2h" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nrqqHWCfc5eG0lj3LPyzO2T2h.svg" /></a>
+
+
+## `GPT-3` May be easily toggled via point and click {#gpt-3-may-be-easily-toggled-via-point-and-click}
+
+{{< figure src="/ox-hugo/gpt-toggle.png" >}}
