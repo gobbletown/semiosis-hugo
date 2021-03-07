@@ -62,7 +62,7 @@ inject-start-text: yes
 inject-restart-text: yes
 show-probabilities: off
 vars:
-- "python code"
+- "haskell code"
 examples:
 - "min 1 2"
 external: ""
