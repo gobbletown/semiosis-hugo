@@ -70,7 +70,11 @@ I translate Haskell into Clojure using the following prompt.
   stitch-max: 0
 #+END_SRC
 
-** Demonstration
+** Demonstrations
+#+BEGIN_EXPORT html
+<a title="asciinema recording" href="https://asciinema.org/a/64hjDdeeqkhTEzZA9RvYjKyy9" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/64hjDdeeqkhTEzZA9RvYjKyy9.svg" /></a>
+#+END_EXPORT
+
 #+BEGIN_EXPORT html
 <a title="asciinema recording" href="https://asciinema.org/a/UknQeVwRejokdRKJEYa7KdNKk" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/UknQeVwRejokdRKJEYa7KdNKk.svg" /></a>
 #+END_EXPORT
