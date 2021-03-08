@@ -6,8 +6,233 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 08 Mar 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Context menus based on GPT-3</title>
+            <link>http://semiosis.github.io/posts/context-menus-based-on-gpt-3/</link>
+            <pubDate>Tue, 09 Mar 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/context-menus-based-on-gpt-3/</guid>
+            <description>Summary I create a GPT-3 prompt for testing to see if code is Haskell and use it as a test inside emacs to suggest further functions.
+ Prompt file http://github.com/semiosis/prompts/blob/master/prompts/text-is-haskell.prompt  Create a prompt to check if selected code is Haskell 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67  title: &amp;#34;test if text is haskell&amp;#34; doc: &amp;#34;tests if text is haskell code&amp;#34; prompt: |+If the code is haskell, respond with &amp;#34;Haskell&amp;#34;.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I create a GPT-3 prompt for testing to see if
+code is Haskell and use it as a test inside
+emacs to suggest further functions.</p>
+<dl>
+<dt>Prompt file</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/text-is-haskell.prompt">http://github.com/semiosis/prompts/blob/master/prompts/text-is-haskell.prompt</a></dd>
+</dl>
+<h2 id="create-a-prompt-to-check-if-selected-code-is-haskell">Create a prompt to check if selected code is Haskell</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;test if text is haskell&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;tests if text is haskell code&#34;</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    If the code is haskell, respond with &#34;Haskell&#34;. If the query is not haskell, respond with &#34;?&#34;.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:putStrLn &#34;What is your name?&#34;
+</span><span style="color:#e6db74">    Language:Haskell
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:[1,2,3,4] ++ [9,10,11,12]
+</span><span style="color:#e6db74">    Language:Haskell
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:In reality, it would require too much code to hide _Prelude_ clashes like this, so you
+</span><span style="color:#e6db74">    Language:?
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:data Shape = Circle Float Float Float | Rectangle Float Float Float Float deriving (Show)
+</span><span style="color:#e6db74">    Language:Haskell
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:In reality, it would require too much code to hide _Prelude_ clashes like this, so you
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:(ns example.pprinter (:use clojure.pprint))
+</span><span style="color:#e6db74">    Language:?
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:surface (Rectangle (Point x1 y1) (Point x2 y2)) = (abs $ x2 - x1) * (abs $ y2 - y1)
+</span><span style="color:#e6db74">    Language:Haskell
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:&#34;Steve Buscemi&#34; !! 6
+</span><span style="color:#e6db74">    Language:Haskell
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:regex = re.compile(r&#39;^(?P&lt;indent&gt;(?: {4})*)(?P&lt;name&gt;\S.*)&#39;)
+</span><span style="color:#e6db74">    Language:?
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:doubleSmallNumber x = if x &gt; 100 then x else x*2
+</span><span style="color:#e6db74">    Language:Haskell
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:[ x | x &lt;- [50..100], x `mod` 7 == 3]
+</span><span style="color:#e6db74">    Language:Haskell
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Code:* TODO Look into =ctrl=
+</span><span style="color:#e6db74">    Language:?
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    &lt;1&gt;
+</span><span style="color:#e6db74">    Language:</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;davinci&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.5</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">40</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">frequency-penalty</span>: <span style="color:#ae81ff">0.5</span>
+<span style="color:#75715e"># If I make presence-penalty 0 then it will get very terse</span>
+<span style="color:#f92672">presence-penalty</span>: <span style="color:#ae81ff">0.0</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;###&#34;</span>
+<span style="color:#f92672">inject-start-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">inject-restart-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">show-probabilities</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;text&#34;</span>
+<span style="color:#f92672">examples</span>:
+- |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    </span>    <span style="color:#ae81ff">putStrLn $ &#34;Hey, I Love &#34; ++ city ++ &#34;!&#34;</span>
+<span style="color:#f92672">external</span>: <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">conversation-mode</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#75715e"># Keep stitching together until reaching this limit</span>
+<span style="color:#75715e"># This allows a full response for answers which may need n*max-tokens to reach the stop-sequence.</span>
+<span style="color:#f92672">stitch-max</span>: <span style="color:#ae81ff">0</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="add-code-to-use-gpt-3-to-test-the-selected-text">Add code to use <code>GPT-3</code> to test the selected text</h2>
+<p><code>GPT-3</code> will test if the selected text is in the Haskell language.</p>
+<p>It will then provide a context menu option to translate it into Clojure.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun gpt-test-haskell ()
+  (let ((lang (pen-pf-test-if-text-is-haskell (selection))))
+    (<span style="color:#a6e22e">message</span> lang)
+    (<span style="color:#a6e22e">string-equal</span> (<span style="color:#a6e22e">message</span> lang) <span style="color:#e6db74">&#34;Haskell&#34;</span>)))
+
+<span style="color:#75715e">;; This is so I can jump here</span>
+(defvar right-click-context-global-menu-tree-placeholder <span style="color:#66d9ef">nil</span>)
+(setq right-click-context-global-menu-tree
+      <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;Cancel&#34;</span> :call <span style="color:#a6e22e">identity</span>)
+        (<span style="color:#e6db74">&#34;Edit menu&#34;</span> :call (j <span style="color:#e6db74">&#39;right-click-context-global-menu-tree-placeholder</span>))
+        (<span style="color:#e6db74">&#34;Button cloud&#34;</span> :call toggle-buttoncloud)
+        (<span style="color:#e6db74">&#34;GPT-3&#34;</span>
+         (<span style="color:#e6db74">&#34;Convert Haskell to Clojure&#34;</span> :call pen-pf-translate-haskell-to-clojure :if (gpt-test-haskell)))
+        (<span style="color:#e6db74">&#34;NLP&#34;</span>
+         (<span style="color:#e6db74">&#34;Summarize&#34;</span> :call (progn
+                              (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;pen-pf-eli5-explain-like-i-m-five</span>)
+                              (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;fi-text-to-paras</span>)) :if (selected-p))
+         (<span style="color:#e6db74">&#34;Vexate&#34;</span> :call (progn
+                           (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;pen-pf-complicated-explanation-of-how-to-x</span>)
+                           (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;fi-text-to-paras</span>)) :if (selected-p))
+         (<span style="color:#e6db74">&#34;Fast Paras&#34;</span> :call (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;fi-text-to-paras-nosegregate</span>) :if (selected-p))
+         (<span style="color:#e6db74">&#34;Paras&#34;</span> :call (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;fi-text-to-paras</span>) :if (selected-p))
+         (<span style="color:#e6db74">&#34;spaCy&#34;</span> :call (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;sps-play-spacy</span>) :if (selected-p)))
+))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demonstration">Demonstration</h2>
+<p>As you can see, GPT-3 is able to detect the
+language and I can use that as a test in my
+emacs to provide further functions. The
+suggested function was yet another GPT-3
+prompt function for translating Haskell into
+Clojure.</p>
+<p><a title="asciinema recording" href="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP.svg" /></a></p>
+]]></content>
+        </item>
         
         <item>
             <title>An operating system based on GPT-3</title>
