@@ -27,6 +27,11 @@ Clojure.
 
 <a title="asciinema recording" href="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP.svg" /></a>
 
+<span class="underline">**The faster and more impressive version**</span>
+This uses emacs' `language-detection` package.
+
+<a title="asciinema recording" href="https://asciinema.org/a/64hjDdeeqkhTEzZA9RvYjKyy9" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/64hjDdeeqkhTEzZA9RvYjKyy9.svg" /></a>
+
 
 ## Create a prompt to check if selected code is Haskell {#create-a-prompt-to-check-if-selected-code-is-haskell}
 

@@ -73,7 +73,9 @@ stitch-max: 0
 {{< /highlight >}}
 
 
-## Demonstration {#demonstration}
+## Demonstrations {#demonstrations}
+
+<a title="asciinema recording" href="https://asciinema.org/a/64hjDdeeqkhTEzZA9RvYjKyy9" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/64hjDdeeqkhTEzZA9RvYjKyy9.svg" /></a>
 
 <a title="asciinema recording" href="https://asciinema.org/a/UknQeVwRejokdRKJEYa7KdNKk" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/UknQeVwRejokdRKJEYa7KdNKk.svg" /></a>
 
