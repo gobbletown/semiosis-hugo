@@ -16,6 +16,18 @@ Prompt file
 : <http://github.com/semiosis/prompts/blob/master/prompts/text-is-haskell.prompt>
 
 
+## Demonstration {#demonstration}
+
+As you can see, GPT-3 is able to detect the
+language and I can use that as a test in my
+emacs to provide further functions. The
+suggested function was yet another GPT-3
+prompt function for translating Haskell into
+Clojure.
+
+<a title="asciinema recording" href="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP.svg" /></a>
+
+
 ## Create a prompt to check if selected code is Haskell {#create-a-prompt-to-check-if-selected-code-is-haskell}
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
@@ -121,15 +133,3 @@ It will then provide a context menu option to translate it into Clojure.
          ("spaCy" :call (call-interactively 'sps-play-spacy) :if (selected-p)))
 ))
 {{< /highlight >}}
-
-
-## Demonstration {#demonstration}
-
-As you can see, GPT-3 is able to detect the
-language and I can use that as a test in my
-emacs to provide further functions. The
-suggested function was yet another GPT-3
-prompt function for translating Haskell into
-Clojure.
-
-<a title="asciinema recording" href="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/IUrbnMxTqP3cFtQB5CPWelCuP.svg" /></a>
