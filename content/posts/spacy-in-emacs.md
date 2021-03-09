@@ -17,6 +17,14 @@ I begin construction of an environment for developing with `spaCy`.
     -   configuration of `spaCy` using emacs `custom.el`
 
 
+## `deplacy` demo {#deplacy-demo}
+
+`deplacy` code
+: <https://github.com/KoichiYasuoka/deplacy>
+
+<a title="asciinema recording" href="https://asciinema.org/a/OJcQVwHftFkLEypmaN8Qv8vLz" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/OJcQVwHftFkLEypmaN8Qv8vLz.svg" /></a>
+
+
 ## Code generation and bindings {#code-generation-and-bindings}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
