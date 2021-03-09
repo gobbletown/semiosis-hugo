@@ -1,0 +1,141 @@
++++
+title = "Google ngrams in emacs"
+author = ["Shane Mulligan"]
+date = 2021-03-09T00:00:00+13:00
+keywords = ["google", "nlp"]
+draft = false
++++
+
+## Summary {#summary}
+
+I integrate the Google ngram viewer
+functionality into emacs for suggesting words in context.
+
+
+## Demonstration {#demonstration}
+
+I demonstrate selecting alternative middle
+word for the given context words.
+
+<a title="asciinema recording" href="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH.svg" /></a>
+
+
+## Code {#code}
+
+<span class="underline">**custom.el configuration**</span>
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defcustom google-ngrams-corpus ""
+  "Google ngrams corpus"
+  :type 'string
+  :group 'system-custom
+  :initialize #'custom-initialize-default
+  :options (list "15 # english 2012"
+                 "16 # english fiction"
+                 "26 # english 2019")
+  :set (lambda (_sym value)
+         (myrc-set (tr "-" "_" (sym2str _sym)) value)
+         (set _sym (sor value)))
+  ;; The default :initialize is custom-initialize-reset
+  ;; And uses the :set function
+  ;; :initialize (lambda
+  :get (lambda (_sym)
+         (let* ((yaml (yamlmod-read-file "/home/shane/notes/myrc.yaml"))
+                (cfgval (sor (ht-get yaml (tr "-" "_" (sym2str _sym))))))
+
+           (if cfgval
+               (set _sym cfgval)
+             "26 # english 2019"))))
+{{< /highlight >}}
+
+{{< figure src="/ox-hugo/ngram-custom.png" >}}
+
+<span class="underline">**elisp**</span>
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun ngram-suggest (query)
+  (str2lines (snc "ngram-complete" query)))
+
+(defun ngram-query-replace ()
+  (interactive)
+  (if (selectionp)
+      (let* ((query (selection))
+             (reformulated-query (if (string-match-p "\\*" query)
+                                     query
+                                   (let ((wildcard-word (fz (split-string query " " t))))
+                                     (if wildcard-word
+                                         (s-replace-regexp (eatify wildcard-word) "*" query)
+                                       query))))
+             (suggestions (ngram-suggest reformulated-query)))
+        (if suggestions
+            (let ((replacement (fz suggestions)))
+              (if replacement
+                  (progn
+                    (cua-delete-region)
+                    (insert replacement))))))))
+{{< /highlight >}}
+
+<span class="underline">**ngram-complete**</span>
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+
+postprocess() {
+    sed "s/I 'm/I'm/g"
+}
+
+# corpus=15 # english 2012
+# corpus=16 # english fiction
+# corpus=26 # english 2019
+
+: "${corpus:="$(myrc .google_ngrams_corpus | cut -d ' ' -f 1)"}"
+: "${corpus:="26"}"
+
+start=1800
+end=2020
+# end=1899
+
+while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
+    "") { shift; }; ;;
+    -c) {
+        corpus="$2"
+        shift
+        shift
+    }
+    ;;
+
+    -y) {
+        start="$2"
+        end="$2"
+        shift
+        shift
+    }
+    ;;
+
+    -s) {
+        start="$2"
+        shift
+        shift
+    }
+    ;;
+
+    -e) {
+        end="$2"
+        shift
+        shift
+    }
+    ;;
+
+    *) break;
+esac; done
+
+awk1 | while IFS=$'\n' read -r line; do
+    {
+        phrase="$line"
+        oci curl -s "https://books.google.com/ngrams/json?content=$(echo "$phrase" | urlencode | sed 's/%2A/*/g')&year_start=$start&year_end=$end&corpus=$corpus&smoothing=3" | jq -r .[].ngram | htmldecode.sh | postprocess
+    } 0</dev/null
+done | sed -u 1d | pavs
+{{< /highlight >}}
