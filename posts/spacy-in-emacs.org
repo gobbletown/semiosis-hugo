@@ -18,6 +18,14 @@ I begin construction of an environment for developing with =spaCy=.
   - =spaCy= python playground text selection
   - configuration of =spaCy= using emacs =custom.el=
 
+** =deplacy= demo
+
++ =deplacy= code :: https://github.com/KoichiYasuoka/deplacy
+
+#+BEGIN_EXPORT html
+<a title="asciinema recording" href="https://asciinema.org/a/OJcQVwHftFkLEypmaN8Qv8vLz" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/OJcQVwHftFkLEypmaN8Qv8vLz.svg" /></a>
+#+END_EXPORT
+
 ** Code generation and bindings
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defmacro etv-filter (cmd)
