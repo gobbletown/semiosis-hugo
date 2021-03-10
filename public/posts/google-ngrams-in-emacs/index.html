@@ -43,7 +43,7 @@ Demonstration I demonstrate selecting alternative middle word for the given cont
 Code custom.el configuration
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  (defcustom google-ngrams-corpus &#34;&#34; &#34;Google ngrams corpus&#34; :type &#39;string :group &#39;system-custom :initialize #&#39;custom-initialize-default :options (list &#34;15 # english 2012&#34; &#34;16 # english fiction&#34; &#34;26 # english 2019&#34;) :set (lambda (_sym value) (myrc-set (tr &#34;-&#34; &#34;_&#34; (sym2str _sym)) value) (set _sym (sor value))) ;; The default :initialize is custom-initialize-reset ;; And uses the :set function ;; :initialize (lambda :get (lambda (_sym) (let* ((yaml (yamlmod-read-file &#34;/home/shane/notes/myrc."><meta itemprop="datePublished" content="2021-03-09T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-03-09T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="619"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="713"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -137,7 +137,7 @@ Code custom.el configuration
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        4 minutes
 
         
       </p>
@@ -159,7 +159,7 @@ functionality into emacs for suggesting words in context.</p>
 <h2 id="demonstration">Demonstration</h2>
 <p>I demonstrate selecting alternative middle
 word for the given context words.</p>
-<p><a title="asciinema recording" href="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH.svg" /></a></p>
+<p><a title="asciinema recording" href="https://asciinema.org/a/w6DuW7w4gcbxVX8d8xEeIkljt" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/w6DuW7w4gcbxVX8d8xEeIkljt.svg" /></a></p>
 <h2 id="code">Code</h2>
 <p><span class="underline"><strong>custom.el configuration</strong></span></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -237,15 +237,65 @@ word for the given context words.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun ngram-suggest (query)
   (str2lines (snc <span style="color:#e6db74">&#34;ngram-complete&#34;</span> query)))
 
+(defun gen-google-ngram-queries (s i)
+  (-filter-not-empty-string
+   (str2list
+    (snc
+     (<span style="color:#a6e22e">concat</span>
+      <span style="color:#e6db74">&#34;echo &#34;</span>
+      (q s)
+      <span style="color:#e6db74">&#34; | google-ngram-query-combinations &#34;</span>
+      (str i)
+      <span style="color:#e6db74">&#34; | perl -e &#39;print sort { length($b) &lt;=&gt; length($a) } &lt;&gt;&#39;&#34;</span>)))))
+
+(defun ngram-query-replace-this ()
+  (interactive)
+  (if (not (selectionp))
+      (let* ((line-str (chomp (current-line-string)))
+             (col (<span style="color:#a6e22e">current-column</span>))
+             (suggestions (ngram-suggest (fz (gen-google-ngram-queries line-str col)))))
+        (if (-filter-not-empty-string suggestions)
+            (let ((replacement (fz suggestions)))
+              (if (sor replacement)
+                  (nbfs replacement)))))))
+
+(<span style="color:#a6e22e">define-key</span> my-mode-map (kbd <span style="color:#e6db74">&#34;H-Q&#34;</span>) <span style="color:#e6db74">&#39;ngram-query-replace-this</span>)
+
 (defun ngram-query-replace ()
   (interactive)
   (if (selectionp)
-      (let* ((query (selection))
+      (let* ((query (if (selection-p)
+                        (selection)))
              (reformulated-query (if (string-match-p <span style="color:#e6db74">&#34;\\*&#34;</span> query)
                                      query
                                    (let ((wildcard-word (fz (split-string query <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#66d9ef">t</span>))))
@@ -253,7 +303,7 @@ word for the given context words.</p>
                                          (s-replace-regexp (eatify wildcard-word) <span style="color:#e6db74">&#34;*&#34;</span> query)
                                        query))))
              (suggestions (ngram-suggest reformulated-query)))
-        (if suggestions
+        (if (-filter-not-empty-string suggestions)
             (let ((replacement (fz suggestions)))
               (if replacement
                   (progn
@@ -487,7 +537,8 @@ For the moment, * it
 the moment, * it accept
 moment, * it accept <span style="color:#ae81ff">2</span>
 * it accept <span style="color:#ae81ff">2</span> words
-</code></pre></div>
+</code></pre></div><p><a title="asciinema recording" href="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH.svg" /></a></p>
+
       </div>
     </article>
 
@@ -505,7 +556,7 @@ moment, * it accept <span style="color:#ae81ff">2</span>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        619 Words
+        713 Words
       </p>
 
       <p>

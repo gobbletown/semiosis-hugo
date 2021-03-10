@@ -17,7 +17,7 @@ functionality into emacs for suggesting words in context.
 I demonstrate selecting alternative middle
 word for the given context words.
 
-<a title="asciinema recording" href="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH.svg" /></a>
+<a title="asciinema recording" href="https://asciinema.org/a/w6DuW7w4gcbxVX8d8xEeIkljt" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/w6DuW7w4gcbxVX8d8xEeIkljt.svg" /></a>
 
 
 ## Code {#code}
@@ -56,10 +56,35 @@ word for the given context words.
 (defun ngram-suggest (query)
   (str2lines (snc "ngram-complete" query)))
 
+(defun gen-google-ngram-queries (s i)
+  (-filter-not-empty-string
+   (str2list
+    (snc
+     (concat
+      "echo "
+      (q s)
+      " | google-ngram-query-combinations "
+      (str i)
+      " | perl -e 'print sort { length($b) <=> length($a) } <>'")))))
+
+(defun ngram-query-replace-this ()
+  (interactive)
+  (if (not (selectionp))
+      (let* ((line-str (chomp (current-line-string)))
+             (col (current-column))
+             (suggestions (ngram-suggest (fz (gen-google-ngram-queries line-str col)))))
+        (if (-filter-not-empty-string suggestions)
+            (let ((replacement (fz suggestions)))
+              (if (sor replacement)
+                  (nbfs replacement)))))))
+
+(define-key my-mode-map (kbd "H-Q") 'ngram-query-replace-this)
+
 (defun ngram-query-replace ()
   (interactive)
   (if (selectionp)
-      (let* ((query (selection))
+      (let* ((query (if (selection-p)
+                        (selection)))
              (reformulated-query (if (string-match-p "\\*" query)
                                      query
                                    (let ((wildcard-word (fz (split-string query " " t))))
@@ -67,7 +92,7 @@ word for the given context words.
                                          (s-replace-regexp (eatify wildcard-word) "*" query)
                                        query))))
              (suggestions (ngram-suggest reformulated-query)))
-        (if suggestions
+        (if (-filter-not-empty-string suggestions)
             (let ((replacement (fz suggestions)))
               (if replacement
                   (progn
@@ -201,3 +226,5 @@ the moment, * it accept
 moment, * it accept 2
 * it accept 2 words
 ```
+
+<a title="asciinema recording" href="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nKcNFBl9VjLfU1kFeBkx9TIBH.svg" /></a>
