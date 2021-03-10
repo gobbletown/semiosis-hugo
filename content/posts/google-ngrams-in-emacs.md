@@ -139,3 +139,65 @@ awk1 | while IFS=$'\n' read -r line; do
     } 0</dev/null
 done | sed -u 1d | pavs
 {{< /highlight >}}
+
+The following python script generates ngram
+queries for replacing the current word based
+on the cursor index position.
+
+<span class="underline">**google-ngram-query-combinations**</span>
+
+{{< highlight python "linenos=table, linenostart=1" >}}
+#!/usr/bin/env python3.6
+# -*- coding: utf-8 -*-
+
+import sys
+s = sys.stdin.read()
+
+len(sys.argv) > 1 or exit(1)
+
+i = int(sys.argv[1])
+
+r = s[i:]
+l = s[:i]
+l = " ".join(l.split())
+
+try:
+    if s[i - 1] == ' ':
+        s = l + " " + r
+    else:
+        s = l + r
+
+    i=len(l)
+
+    tks = s.split()
+    s = " ".join(tks)
+    pos = s[:i].count(" ")
+
+    tks[pos] = "*"
+
+    for n in range(3, 6):
+        subtks = tks[max(pos - (n-1), 0):min(pos + n,len(tks))]
+
+        for l in list(zip(*(subtks[i:] for i in range(n)))):
+            print(" ".join(l))
+except:
+    pass
+{{< /highlight >}}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+echo "For the moment, let it accept 2 words to the left and 2 to the right" | google-ngram-query-combinations 20
+{{< /highlight >}}
+
+```bash
+the moment, *
+moment, * it
+* it accept
+For the moment, *
+the moment, * it
+moment, * it accept
+* it accept 2
+For the moment, * it
+the moment, * it accept
+moment, * it accept 2
+* it accept 2 words
+```
