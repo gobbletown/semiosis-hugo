@@ -10,6 +10,61 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Look for my friend&#39;s wagon using OpenAI CLIP</title>
+            <link>http://semiosis.github.io/posts/look-for-my-friend-s-wagon-using-openai-clip/</link>
+            <pubDate>Fri, 12 Mar 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/look-for-my-friend-s-wagon-using-openai-clip/</guid>
+            <description>Full demonstration 
+Summary I am looking for my friend&amp;rsquo;s wagon in a youtube video.
+ This is the video Here&amp;rsquo;s What We REALLY Think Of Your Cars 5 - YouTube  The images of various wagons should appear after I run the command which I have bound in emacs.
+   kb f      M-l / V find-in-youtube global-map    It&amp;rsquo;s based on code from this github repository.</description>
+            <content type="html"><![CDATA[<h2 id="full-demonstration">Full demonstration</h2>
+<p><a title="asciinema recording" href="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48XaG" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48XaG.svg" /></a></p>
+<h2 id="summary">Summary</h2>
+<p>I am looking for my friend&rsquo;s wagon in a
+youtube video.</p>
+<dl>
+<dt>This is the video</dt>
+<dd><a href="https://www.youtube.com/watch?v=K-jYThQKZsQ">Here&rsquo;s What We REALLY Think Of Your Cars 5 - YouTube</a></dd>
+</dl>
+<p>The images of various wagons should appear after I run the command which I have bound in emacs.</p>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M-l / V</code></td>
+<td><code>find-in-youtube</code></td>
+<td><code>global-map</code></td>
+</tr>
+</tbody>
+</table>
+<p>It&rsquo;s based on code from this github repository.</p>
+<p><a href="https://github.com/haltakov/natural-language-youtube-search">https://github.com/haltakov/natural-language-youtube-search</a></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find-in-video <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=K-jYThQKZsQ&#34;</span> wagon</code></pre></td></tr></table>
+</div>
+</div>
+<p>This is looking for wagons.</p>
+<h2 id="results">Results</h2>
+<figure>
+    <img src="/ox-hugo/wagon.png"/> 
+</figure>
+
+]]></content>
+        </item>
+        
+        <item>
             <title>Reading about DALL-E</title>
             <link>http://semiosis.github.io/posts/reading-about-dall-e/</link>
             <pubDate>Fri, 12 Mar 2021 00:00:00 +1300</pubDate>
