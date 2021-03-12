@@ -8,7 +8,7 @@ draft = false
 
 ## Full demonstration {#full-demonstration}
 
-<a title="asciinema recording" href="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48XaG" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48XaG.svg" /></a>
+<a title="asciinema recording" href="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48Xa" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48Xa.svg" /></a>
 
 
 ## Summary {#summary}

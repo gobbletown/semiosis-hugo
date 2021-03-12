@@ -20,7 +20,7 @@ Summary I am looking for my friend&amp;rsquo;s wagon in a youtube video.
  This is the video Here&amp;rsquo;s What We REALLY Think Of Your Cars 5 - YouTube  The images of various wagons should appear after I run the command which I have bound in emacs.
    kb f      M-l / V find-in-youtube global-map    It&amp;rsquo;s based on code from this github repository.</description>
             <content type="html"><![CDATA[<h2 id="full-demonstration">Full demonstration</h2>
-<p><a title="asciinema recording" href="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48XaG" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48XaG.svg" /></a></p>
+<p><a title="asciinema recording" href="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48Xa" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48Xa.svg" /></a></p>
 <h2 id="summary">Summary</h2>
 <p>I am looking for my friend&rsquo;s wagon in a
 youtube video.</p>
