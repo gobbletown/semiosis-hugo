@@ -8,6 +8,15 @@ draft = false
 
 ## Full demonstration {#full-demonstration}
 
+I show you how easy it is to search for an
+arbitrary thing inside of an arbitrary youtube
+video.
+
+I am blogging and recording as I am
+demonstrating the technology.
+
+Skip to 3 minutes to see the magic.
+
 <a title="asciinema recording" href="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48Xa" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rbMQDnUccPQEEigQYXXeE48Xa.svg" /></a>
 
 
