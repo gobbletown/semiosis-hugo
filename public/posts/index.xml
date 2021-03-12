@@ -6,8 +6,95 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Reading about DALL-E</title>
+            <link>http://semiosis.github.io/posts/reading-about-dall-e/</link>
+            <pubDate>Fri, 12 Mar 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/reading-about-dall-e/</guid>
+            <description>Original paper https://arxiv.org/abs/2102.12092.pdf  Authors of Paper - Aditya Ramesh - Mikhail Pavlov - Gabriel Goh - Scott Gray - Chelsea Voss - Alec Radford - Mark Chen - Ilya Sutskever
+Summary of DALL-E from Arxiv 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  Text-to-image generation has traditionally focused on finding better modeling assumptions for training on a fixed dataset.</description>
+            <content type="html"><![CDATA[<dl>
+<dt>Original paper</dt>
+<dd><a href="https://arxiv.org/abs/2102.12092.pdf">https://arxiv.org/abs/2102.12092.pdf</a></dd>
+</dl>
+<p>Authors of Paper
+-   Aditya Ramesh
+-   Mikhail Pavlov
+-   Gabriel Goh
+-   Scott Gray
+-   Chelsea Voss
+-   Alec Radford
+-   Mark Chen
+-   Ilya Sutskever</p>
+<h2 id="summary-of-dall-e-from-arxiv">Summary of DALL-E from Arxiv</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Text-to-image generation has traditionally
+focused on finding better modeling assumptions
+for training on a fixed dataset.
+
+These assumptions might involve complex
+architectures, auxiliary losses, or side
+information such as object part labels or
+segmentation masks supplied during training.
+
+We describe a simple approach for this task
+based on a transformer that autoregressively
+models the text and image tokens as a single
+stream of data.
+
+With sufficient data and scale, our approach
+is competitive with previous domain-specific
+models when evaluated in a zero-shot fashion.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="gpt-3-summarization"><code>GPT-3</code> Summarization</h3>
+<p>Both of the following summarizations were made
+my <code>GPT-3</code> using the following prompt:</p>
+<p><a href="http://github.com/semiosis/prompts/blob/master/prompts/summarize-for-2nd-grader.prompt">http://github.com/semiosis/prompts/blob/master/prompts/summarize-for-2nd-grader.prompt</a></p>
+<ul>
+<li>Abstractive summarizations of the abstract
+<ul>
+<li>
+<p>This is how we can make a computer that can make a picture of words.</p>
+</li>
+<li>
+<p>This is about computers learning to understand pictures and words together,
+not just pictures or just words.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="automating-the-process-of-reading-papers">Automating the process of reading papers</h2>
+<ul>
+<li>I use <code>GPT-3</code> and <code>spaCy</code> to summarize.</li>
+</ul>
+<p><a title="asciinema recording" href="https://asciinema.org/a/mp12WYy9bWwkeRizb4Y4o4jJb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mp12WYy9bWwkeRizb4Y4o4jJb.svg" /></a></p>
+]]></content>
+        </item>
         
         <item>
             <title>Context menus based on GPT-3</title>
