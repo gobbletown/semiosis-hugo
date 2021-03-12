@@ -6,6 +6,10 @@ keywords = ["openai", "emacs"]
 draft = false
 +++
 
+Article
+: <https://openai.com/blog/dall-e/>
+
+
 Original paper
 : <https://arxiv.org/abs/2102.12092.pdf>
 
