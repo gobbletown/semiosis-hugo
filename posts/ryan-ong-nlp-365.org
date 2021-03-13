@@ -114,7 +114,9 @@ I had to recall what a residual connection was.
 
 + New terms :: _self-attention_ \\
     _Multi-Head Attention_ \\
-    _multi-head self-attention_ \\
+    _multi-head self-attention_
+
+[[./ryanong-day-10.png]]
 
 ---
 
