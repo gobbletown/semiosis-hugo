@@ -115,8 +115,6 @@ skip connection
 
 ## Left to read {#left-to-read}
 
--   [Day 10: Transformers - MultiHead Attention Mechanism - Ryan Ong](https://ryanong.co.uk/2020/01/10/day-10-transformers-multihead-attention-mechanism/)
--   [Day 11 - Transformers: Positioning Encoding and Decoder - Ryan Ong](https://ryanong.co.uk/2020/01/11/day-11-transformers-positioning-encoding-and-decoder/)
 -   [Day 12: Recurrent Neural Network - Ryan Ong](https://ryanong.co.uk/2020/01/12/day-12-recurrent-neural-network/)
 -   [Day 13: Seq2Seq - Ryan Ong](https://ryanong.co.uk/2020/01/13/day-13-seq2seq/)
 -   [Day 14: Convolutional Neural Network in NLP - Ryan Ong](https://ryanong.co.uk/2020/01/14/day-14-convolutional-neural-network/)
