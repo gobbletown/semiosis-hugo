@@ -6,8 +6,12 @@ keywords = ["nlp", "openai", "gpt3"]
 draft = false
 +++
 
-Glossary
+Glossaries
 : <http://github.com/mullikine/glossaries-gh/blob/master/nlp-natural-language-processing.txt>
+    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/information-retrieval/glossary.txt>
+    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/fasttext/glossary.txt>
+    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/transformer/glossary.txt>
+    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/nmt-neural-machine-translation/glossary.txt>
 
 
 ## Summary {#summary}
@@ -74,7 +78,7 @@ graph-based ranking
 
 Once again, blue words here are suggested by `TextRank` using the transformer model `en_core_web_trf`.
 
-<a title="asciinema recording" href="https://asciinema.org/a/FgAyKuJZOva4gn0ocRjSyxyM7Mmi1niX76Llg6JigBGFg518LV" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.svg" /></a>
+<a title="asciinema recording" href="https://asciinema.org/a/398748" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/398748.svg" /></a>
 
 -   [Day 9: Transformers - Introduction - Ryan Ong](https://ryanong.co.uk/2020/01/09/day-9/)
 

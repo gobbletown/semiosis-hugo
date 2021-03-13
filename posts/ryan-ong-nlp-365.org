@@ -9,7 +9,11 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: nlp openai gpt3
 
-+ Glossary :: http://github.com/mullikine/glossaries-gh/blob/master/nlp-natural-language-processing.txt
++ Glossaries :: http://github.com/mullikine/glossaries-gh/blob/master/nlp-natural-language-processing.txt
+  http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/information-retrieval/glossary.txt
+  http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/fasttext/glossary.txt
+  http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/transformer/glossary.txt
+  http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/nmt-neural-machine-translation/glossary.txt
 
 ** Summary
 I go over Ryan Ong's series on =NLP=, adding
@@ -74,7 +78,7 @@ I use =GPT-3= to correct this sentence, as I am adding it to the glossary.
 Once again, blue words here are suggested by =TextRank= using the transformer model =en_core_web_trf=.
 
 #+BEGIN_EXPORT html
-<a title="asciinema recording" href="https://asciinema.org/a/FgAyKuJZOva4gn0ocRjSyxyM7Mmi1niX76Llg6JigBGFg518LV" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.svg" /></a>
+<a title="asciinema recording" href="https://asciinema.org/a/398748" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/398748.svg" /></a>
 #+END_EXPORT
 
 - [[https://ryanong.co.uk/2020/01/09/day-9/][Day 9: Transformers - Introduction - Ryan Ong]]
