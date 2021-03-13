@@ -83,6 +83,33 @@ Once again, blue words here are suggested by `TextRank` using the transformer mo
 
 -   [Day 9: Transformers - Introduction - Ryan Ong](https://ryanong.co.uk/2020/01/09/day-9/)
 
+I had to recall what a residual connection was.
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+residual connection
+skip connection
+    [#deep learning]
+    [#RNN]
+
+    Used to allow gradients to flow through a
+    network directly, without passing through
+    the non-linear activation functions.
+
+    Form conceptually a 'bus' which flows
+    right the way through the network, and in
+    reverse, the gradients can flow backwards
+    along it too.
+
+    high-level intuition:
+    - residual connections help deep models
+      train more successfully.
+{{< /highlight >}}
+
+[The Illustrated Transformer // Bodacious Blog](https://mullikine.github.io/posts/review-of-the-illustrated-transformer/)
+
+-   [Day 10: Transformers - MultiHead Attention Mechanism - Ryan Ong](https://ryanong.co.uk/2020/01/10/day-10-transformers-multihead-attention-mechanism/)
+-   [Day 11 - Transformers: Positioning Encoding and Decoder - Ryan Ong](https://ryanong.co.uk/2020/01/11/day-11-transformers-positioning-encoding-and-decoder/)
+
 ---
 
 
