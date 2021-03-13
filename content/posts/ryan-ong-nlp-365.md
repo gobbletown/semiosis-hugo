@@ -8,10 +8,11 @@ draft = false
 
 Glossaries
 : <http://github.com/mullikine/glossaries-gh/blob/master/nlp-natural-language-processing.txt>
-    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/information-retrieval/glossary.txt>
-    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/fasttext/glossary.txt>
-    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/transformer/glossary.txt>
-    <http://github.com/mullikine/glossaries/blob/master/home/shane/notes/ws/nmt-neural-machine-translation/glossary.txt>
+    <http://github.com/mullikine/glossaries-gh/blob/master/information-retrieval.txt>
+    <http://github.com/mullikine/glossaries-gh/blob/master/fasttext.txt>
+    <http://github.com/mullikine/glossaries-gh/blob/master/transformer.txt>
+    <http://github.com/mullikine/glossaries-gh/blob/master/nmt-neural-machine-translation.txt>
+    <http://github.com/mullikine/glossaries-gh/blob/master/information-theory.txt>
 
 
 ## Summary {#summary}
