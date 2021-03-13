@@ -108,6 +108,18 @@ skip connection
 [The Illustrated Transformer // Bodacious Blog](https://mullikine.github.io/posts/review-of-the-illustrated-transformer/)
 
 -   [Day 10: Transformers - MultiHead Attention Mechanism - Ryan Ong](https://ryanong.co.uk/2020/01/10/day-10-transformers-multihead-attention-mechanism/)
+
+---
+
+{{< figure src="/ox-hugo/ryanong-day-10.png" >}}
+
+New terms
+: <span class="underline">self-attention</span> <br />
+    <span class="underline">Multi-Head Attention</span> <br />
+    <span class="underline">multi-head self-attention</span>
+
+---
+
 -   [Day 11 - Transformers: Positioning Encoding and Decoder - Ryan Ong](https://ryanong.co.uk/2020/01/11/day-11-transformers-positioning-encoding-and-decoder/)
 
 ---
