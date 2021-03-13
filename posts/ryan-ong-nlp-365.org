@@ -109,6 +109,15 @@ I had to recall what a residual connection was.
 [[https://mullikine.github.io/posts/review-of-the-illustrated-transformer/][The Illustrated Transformer // Bodacious Blog]]
 
 - [[https://ryanong.co.uk/2020/01/10/day-10-transformers-multihead-attention-mechanism/][Day 10: Transformers - MultiHead Attention Mechanism - Ryan Ong]]
+
+---
+
++ New terms :: _self-attention_ \\
+    _Multi-Head Attention_ \\
+    _multi-head self-attention_ \\
+
+---
+
 - [[https://ryanong.co.uk/2020/01/11/day-11-transformers-positioning-encoding-and-decoder/][Day 11 - Transformers: Positioning Encoding and Decoder - Ryan Ong]]
 
 ---
