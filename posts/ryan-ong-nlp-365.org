@@ -112,11 +112,11 @@ I had to recall what a residual connection was.
 
 ---
 
+[[./ryanong-day-10.png]]
+
 + New terms :: _self-attention_ \\
     _Multi-Head Attention_ \\
     _multi-head self-attention_
-
-[[./ryanong-day-10.png]]
 
 ---
 
