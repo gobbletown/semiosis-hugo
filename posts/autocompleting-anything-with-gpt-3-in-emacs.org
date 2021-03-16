@@ -30,7 +30,22 @@ This is GPT-3 completing some text for me.
 I can type a few characters and then GPT-3
 will complete the rest of the text.
 
-*** Generating python code with GPT-3
+These generations use the exact same prompt,
+found with the code at the end of this
+article.
+
+*** Generating =C++=
+I generate a class with particular methods by
+writing the docstring first.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/iqVs8kv3PxiQkZyXASQURNSqX" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/iqVs8kv3PxiQkZyXASQURNSqX.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/iqVs8kv3PxiQkZyXASQURNSqX.js" id="asciicast-iqVs8kv3PxiQkZyXASQURNSqX" async></script>
+#+END_EXPORT
+
+*** Generating =python= code with GPT-3
 I generate a class with particular methods by
 writing the docstring first.
 
