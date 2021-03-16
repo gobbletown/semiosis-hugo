@@ -96,7 +96,7 @@ functions.
 ## Code {#code}
 
 
-### `OpenAI` API prompt {#openai-api-prompt}
+### `OpenAI` API prompt - `generic-file-type-completion.prompt` {#openai-api-prompt-generic-file-type-completion-dot-prompt}
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 title: "Generic file type completion"
@@ -136,7 +136,7 @@ needs-work: no
 {{< /highlight >}}
 
 
-### elisp {#elisp}
+### elisp - `pen.el` {#elisp-pen-dot-el}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defun company-pen-filetype--candidates (prefix)
@@ -181,7 +181,7 @@ needs-work: no
 {{< /highlight >}}
 
 
-### python {#python}
+### python - `monotonically-increasing-tuple-permutations.py` {#python-monotonically-increasing-tuple-permutations-dot-py}
 
 {{< highlight python "linenos=table, linenostart=1" >}}
 #!/usr/bin/env python3.6
@@ -205,4 +205,104 @@ for line in sys.stdin:
         if start == 1:
             break
         print(' '.join(lst[start:end+1]))
+{{< /highlight >}}
+
+
+### shell - `openai-complete` {#shell-openai-complete}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+set -xv
+
+first_arg="$1"
+
+stdin_exists() {
+    ! [ -t 0 ] && ! test "$(readlink /proc/$$/fd/0)" = /dev/null
+}
+
+if stdin_exists; then
+    # The stdin can be the first argument
+    set -- "$@" "$(cat | chomp)"
+fi
+
+test -f "$first_arg" || exit
+shift
+
+prompt="$(cat "$first_arg" | yq -r ".prompt // empty")"
+stop_sequence="$(cat "$first_arg" | yq ".\"stop-sequences\"[0] // empty" | uq | qne)"
+temperature="$(cat "$first_arg" | yq -r ".\"temperature\" // empty")"
+engine="$(cat "$first_arg" | yq -r ".\"engine\" // empty")"
+max_tokens="$(cat "$first_arg" | yq -r ".\"max-tokens\" // empty")"
+top_p="$(cat "$first_arg" | yq -r ".\"top-p\" // empty")"
+
+test -n "$prompt" || exit 0
+
+while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
+    "") { shift; }; ;;
+    -e) {
+        engine="$2"
+        shift
+        shift
+    }
+    ;;
+
+    *) break;
+esac; done
+
+: "${engine:="ada"}"
+: "${temperature:="0.6"}"
+: "${max_tokens:="64"}"
+
+: "${sub_completions:="1"}"
+
+i=1
+for var in "$@"
+do
+    var="$(printf -- "%s" "$var" | uq | chomp)"
+    prompt="$(p "$prompt" | template -$i "$var")"
+    ((i++))
+done
+
+prompt_fp="$(printf -- "%s" "$prompt" | chomp | tf)"
+
+# printf -- "%s\n" "$prompt" | tv
+
+# prompt="$(p "$prompt" | bs '$' | qne)"
+
+# qne will break emojis
+# emojis work again
+prompt="$(p "$prompt" | bs '$`"' | sed -z 's/\n/\\n/g')"
+# exit 1
+
+IFS= read -r -d '' SHCODE <<HEREDOC
+openai api \
+    completions.create \
+    -e "$engine" \
+    -t "$temperature" \
+    -M "$max_tokens" \
+    -n "$sub_completions" \
+    $(
+        if test -n "$stop_sequence"; then
+            printf -- "%s" "--stop \"$stop_sequence\""
+        fi
+    ) \
+    -p "$prompt"
+HEREDOC
+
+# printf -- "%s\n" "$SHCODE" | tv
+# exit 1
+
+response_fp="$(eval "$SHCODE" | uq | s chomp | tf txt)"
+
+prompt_bytes="$(cat "$prompt_fp" | wc -c)"
+response_bytes="$(cat "$response_fp" | wc -c)"
+
+# it may not be a good idea to remove starting whitespace if I want to complete in emacs
+# tail -c +$((prompt_bytes + 1)) "$response_fp" | sed -z 's/^\s\+//;s/^\r\+//;s/^\n\+//'
+# tail -c +$((prompt_bytes + 1)) "$response_fp" | sed -z 's/^\r\+//;s/^\n\+//'
+# Don't remove whitespace at all
+tail -c +$((prompt_bytes + 1)) "$response_fp"
 {{< /highlight >}}
