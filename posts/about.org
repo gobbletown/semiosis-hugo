@@ -9,11 +9,10 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: nlp openai
 
-** Members
-*** =Shane Mulligan= ([[http://takaheai.github.io/][TakaheAI]])
+** =Shane Mulligan= ([[http://takaheai.github.io/][TakaheAI]])
 - Website: [[http://mullikine.github.io/][Bodacious Blog]]
 - GitHub: https://github.com/mullikine/
 
-*** =Chenrong Lü= ([[http://takaheai.github.io/][TakaheAI]])
+** =Chenrong Lü= ([[http://takaheai.github.io/][TakaheAI]])
 # + Website :: [[http://mullikine.github.io/][Bodacious Blog]]
 # + GitHub :: https://github.com/IpsumDominum
