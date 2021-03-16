@@ -41,6 +41,24 @@ This demonstration has shown that I can
 complete prose within an org file and complete
 python code, using =GPT-3=.
 
+** Commentary
+I think being able to make your own autocompletion functions will come in very
+handy.
+
+When GPT-3 finetuning is made available or alternatives for fine-tuning or
+training large language models are available, there will be also be the
+landscape of specialised language models for writing or coding in different
+languages or styles.
+
+Being able to step into the *style* of programming or writing of your choosing,
+it will become important to have a fully featured editing environment
+(autocompletion, error checking, etc.). Emacs provides a framework for
+reasoning about these environments and building new ones.
+
+If a 'prompt hub' prompt curation server exists, the editing landscape will be
+flooded with options on styles and languages to work within, along with editing
+functions.
+
 ** Code
 
 *** =OpenAI= API prompt
