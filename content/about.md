@@ -6,13 +6,13 @@ keywords = ["nlp", "openai"]
 draft = false
 +++
 
-## Members {#members}
-
-
-### `Shane Mulligan` ([TakaheAI](http://takaheai.github.io/)) {#shane-mulligan--takaheai}
+## `Shane Mulligan` {#shane-mulligan}
 
 -   Website: [Bodacious Blog](http://mullikine.github.io/)
 -   GitHub: <https://github.com/mullikine/>
 
 
-### `Chenrong Lü` ([TakaheAI](http://takaheai.github.io/)) {#chenrong-lü--takaheai}
+## `Chenrong Lü` {#chenrong-lü}
+
+
+## [TakaheAI](http://takaheai.github.io/) {#takaheai}
