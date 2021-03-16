@@ -87,7 +87,6 @@ flooded with options on styles and languages to work within, along with editing
 functions.
 
 ** Code
-
 *** =OpenAI= API prompt - =generic-file-type-completion.prompt=
 #+BEGIN_SRC yaml -n :async :results verbatim code
   title: "Generic file type completion"
