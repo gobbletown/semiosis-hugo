@@ -11,17 +11,14 @@ draft = false
 [Noam Chomsky - "The machine, the ghost, and the limits of understanding" - YouTube](https://www.youtube.com/watch?v=D5in5EdjhD0)
 
 
-### Shane Mulligan {#shane-mulligan}
+## Shane Mulligan {#shane-mulligan}
 
 -   Website: [Bodacious Blog](http://mullikine.github.io/)
 -   GitHub: <https://github.com/mullikine/>
 -   CV: <https://mullikine.github.io/cv/>
 
 
-## Affiliations {#affiliations}
-
-
-### TakaheAI {#takaheai}
+## TakaheAI {#takaheai}
 
 Website
 : <http://takaheai.github.io/>
