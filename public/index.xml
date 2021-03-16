@@ -9,6 +9,15 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Semiosis</title>
+      <link>http://semiosis.github.io/about/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/about/</guid>
+      <description>Members Shane Mulligan  Website http://mullikine.github.io/  </description>
+    </item>
+    
+    <item>
       <title>Autocompleting anything with GPT-3 in emacs</title>
       <link>http://semiosis.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/</link>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +1300</pubDate>
