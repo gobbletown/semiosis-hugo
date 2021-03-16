@@ -309,5 +309,9 @@ tail -c +$((prompt_bytes + 1)) "$response_fp"
 
 You could say that `company-mode`, which
 stands for "complete-any[thing]" has reached
-its apotheosis, but I still think it's only
-the beginning.
+its apotheosis. It seems like as a harness for
+completion backends goes, working with GPT-3
+exposes its limitations and the need to invent
+more advanced completion mechanisms to take
+advantage of more capable completion
+generators.
