@@ -482,6 +482,10 @@ response_bytes<span style="color:#f92672">=</span><span style="color:#e6db74">&#
 tail -c +<span style="color:#66d9ef">$((</span>prompt_bytes <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span> <span style="color:#e6db74">&#34;</span>$response_fp<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
+<p>You could say that <code>company-mode</code>, which
+stands for &ldquo;complete-any[thing]&rdquo; has reached
+its apotheosis, but I still think it&rsquo;s only
+the beginning.</p>
 ]]></content>
         </item>
         

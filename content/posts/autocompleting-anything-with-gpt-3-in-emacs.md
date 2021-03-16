@@ -306,3 +306,8 @@ response_bytes="$(cat "$response_fp" | wc -c)"
 # Don't remove whitespace at all
 tail -c +$((prompt_bytes + 1)) "$response_fp"
 {{< /highlight >}}
+
+You could say that `company-mode`, which
+stands for "complete-any[thing]" has reached
+its apotheosis, but I still think it's only
+the beginning.
