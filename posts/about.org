@@ -1,0 +1,14 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./
+
+#+TITLE: Semiosis
+#+DATE: <2021-03-17>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: nlp openai
+
+** Members
+*** =Shane Mulligan=
++ Website :: http://mullikine.github.io/
