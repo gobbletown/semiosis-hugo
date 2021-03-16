@@ -9,6 +9,8 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: nlp openai
 
+Semiosis is a blog on Natural Language Processing.
+
 ** =Shane Mulligan=
 - Website: [[http://mullikine.github.io/][Bodacious Blog]]
 - GitHub: https://github.com/mullikine/
