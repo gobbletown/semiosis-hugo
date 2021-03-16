@@ -11,11 +11,8 @@ draft = false
 
 ### `Shane Mulligan` ([TakaheAI](http://takaheai.github.io/)) {#shane-mulligan--takaheai}
 
-Website
-: [Bodacious Blog](http://mullikine.github.io/)
-
-GitHub
-: <https://github.com/mullikine/>
+-   Website: [Bodacious Blog](http://mullikine.github.io/)
+-   GitHub: <https://github.com/mullikine/>
 
 
 ### `Chenrong Lü` ([TakaheAI](http://takaheai.github.io/)) {#chenrong-lü--takaheai}
