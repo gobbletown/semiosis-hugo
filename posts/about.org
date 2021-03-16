@@ -18,7 +18,6 @@
 - GitHub: https://github.com/mullikine/
 - CV: https://mullikine.github.io/cv/
 
-** Affiliations
 *** TakaheAI
 - Website :: http://takaheai.github.io/
 
