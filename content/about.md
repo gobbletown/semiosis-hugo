@@ -15,6 +15,7 @@ draft = false
 
 -   Website: [Bodacious Blog](http://mullikine.github.io/)
 -   GitHub: <https://github.com/mullikine/>
+-   CV: <https://mullikine.github.io/cv/>
 
 
 ## Affiliations {#affiliations}
