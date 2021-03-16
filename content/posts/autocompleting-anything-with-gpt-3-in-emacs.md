@@ -34,6 +34,20 @@ This is GPT-3 completing some text for me.
 I can type a few characters and then GPT-3
 will complete the rest of the text.
 
+
+### Generating python code with GPT-3 {#generating-python-code-with-gpt-3}
+
+I generate a class with particular methods by
+writing the docstring first.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/a5dDY1goh2kWkUQQpPPsGZ87q" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/a5dDY1goh2kWkUQQpPPsGZ87q.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/a5dDY1goh2kWkUQQpPPsGZ87q.js" id="asciicast-a5dDY1goh2kWkUQQpPPsGZ87q" async></script>
+
+
+### Generate prose {#generate-prose}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/QpZSIuMPlwBQhP6hgr0qKrTh7" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/QpZSIuMPlwBQhP6hgr0qKrTh7.svg" /></a> -->
 <!-- Play on the blog -->
