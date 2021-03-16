@@ -6,8 +6,257 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Autocompleting anything with GPT-3 in emacs</title>
+            <link>http://semiosis.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/</link>
+            <pubDate>Tue, 16 Mar 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/</guid>
+            <description>Emacs package http://github.com/mullikine/emacs/blob/master/config/pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+I then make a company-mode completion function for it, and then demo its usage.
+This gives me a generic completion mechanism when dealing with any type of document.
+Demonstration This is GPT-3 completing some text for me.
+I can type a few characters and then GPT-3 will complete the rest of the text.</description>
+            <content type="html"><![CDATA[<dl>
+<dt>Emacs package</dt>
+<dd><a href="http://github.com/mullikine/emacs/blob/master/config/pen.el">http://github.com/mullikine/emacs/blob/master/config/pen.el</a></dd>
+<dt>Prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt</a></dd>
+</dl>
+<h2 id="summary">Summary</h2>
+<p>I make a prompt for the OpenAI API which
+completes given a file type and some preceding
+text.</p>
+<p>I then make a <code>company-mode</code> completion
+function for it, and then demo its usage.</p>
+<p>This gives me a generic completion mechanism
+when dealing with any type of document.</p>
+<h2 id="demonstration">Demonstration</h2>
+<p>This is GPT-3 completing some text for me.</p>
+<p>I can type a few characters and then GPT-3
+will complete the rest of the text.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/QpZSIuMPlwBQhP6hgr0qKrTh7" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/QpZSIuMPlwBQhP6hgr0qKrTh7.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/QpZSIuMPlwBQhP6hgr0qKrTh7.js" id="asciicast-QpZSIuMPlwBQhP6hgr0qKrTh7" async></script>
+<p>This demonstration has shown that I can
+complete prose within an org file and complete
+python code, using <code>GPT-3</code>.</p>
+<h2 id="code">Code</h2>
+<h3 id="openai-api-prompt"><code>OpenAI</code> API prompt</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Generic file type completion&#34;</span>
+<span style="color:#f92672">doc</span>: |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    </span>    <span style="color:#ae81ff">This is a generic completer for emacs.</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    File type: &lt;1&gt;
+</span><span style="color:#e6db74">    Contents:
+</span><span style="color:#e6db74">    &lt;2&gt;</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;davinci&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">60</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#75715e"># Not available yet: openai api completions.create --help</span>
+<span style="color:#f92672">frequency-penalty</span>: <span style="color:#ae81ff">0.5</span>
+<span style="color:#75715e"># If I make presence-penalty 0 then it will get very terse</span>
+<span style="color:#f92672">presence-penalty</span>: <span style="color:#ae81ff">0.0</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+<span style="color:#f92672">inject-start-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">inject-restart-text</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">show-probabilities</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;file type&#34;</span>
+- <span style="color:#e6db74">&#34;preceding text&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;python&#34;</span>
+- <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">external</span>: <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">conversation-mode</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#75715e"># Keep stitching together until reaching this limit</span>
+<span style="color:#75715e"># This allows a full response for answers which may need n*max-tokens to reach the stop-sequence.</span>
+<span style="color:#f92672">stitch-max</span>: <span style="color:#ae81ff">0</span>
+<span style="color:#f92672">needs-work</span>: <span style="color:#66d9ef">no</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="elisp">elisp</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun company-pen-filetype--candidates (prefix)
+  (let* ((preceding-text (str (<span style="color:#a6e22e">buffer-substring</span> (<span style="color:#a6e22e">point</span>) (<span style="color:#a6e22e">max</span> <span style="color:#ae81ff">1</span> (<span style="color:#a6e22e">-</span> (<span style="color:#a6e22e">point</span>) <span style="color:#ae81ff">1000</span>)))))
+         (response (pen-pf-generic-file-type-completion (detect-language) preceding-text))
+         <span style="color:#75715e">;; Take only the first line for starters</span>
+         (line (<span style="color:#a6e22e">car</span> (str2lines response)))
+         (res (str2list (snc <span style="color:#e6db74">&#34;monotonically-increasing-tuple-permutations.py&#34;</span> line))))
+    <span style="color:#75715e">;; Generate a list</span>
+    (<span style="color:#a6e22e">mapcar</span> (lambda (s) (<span style="color:#a6e22e">concat</span> (company-pen-filetype--prefix) s))
+            res)))
+
+(defun company-pen--grab-symbol ()
+  (<span style="color:#a6e22e">buffer-substring</span> (<span style="color:#a6e22e">point</span>) (save-excursion (<span style="color:#a6e22e">skip-syntax-backward</span> <span style="color:#e6db74">&#34;w_.&#34;</span>)
+                                            (<span style="color:#a6e22e">point</span>))))
+
+(defun company-pen-filetype--prefix ()
+  <span style="color:#e6db74">&#34;Grab prefix at point.&#34;</span>
+  (or (company-pen--grab-symbol)
+      <span style="color:#e6db74">&#39;stop</span>))
+
+(defun company-pen-filetype (command <span style="color:#66d9ef">&amp;optional</span> arg <span style="color:#66d9ef">&amp;rest</span> ignored)
+  (interactive (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#39;interactive</span>))
+  (cl-case command
+    (interactive (company-begin-backend <span style="color:#e6db74">&#39;company-pen-filetype</span>))
+    (prefix (company-pen-filetype--prefix))
+    (candidates (company-pen-filetype--candidates arg))
+    <span style="color:#75715e">;; TODO doc-buffer may contain info on the completion in the future</span>
+    <span style="color:#75715e">;; (doc-buffer (company-pen-filetype--doc-buffer arg))</span>
+    <span style="color:#75715e">;; TODO annotation may contain the probability in the future</span>
+    <span style="color:#75715e">;; (annotation (company-pen-filetype--annotation arg))</span>
+    ))
+
+(require <span style="color:#e6db74">&#39;company</span>)
+(defun my-completion-at-point ()
+  (interactive)
+  (if (<span style="color:#a6e22e">&gt;=</span> (<span style="color:#a6e22e">prefix-numeric-value</span> current-prefix-arg) <span style="color:#ae81ff">4</span>)
+      (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;company-pen-filetype</span>)
+    (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;completion-at-point</span>)))
+
+(<span style="color:#a6e22e">define-key</span> global-map (kbd <span style="color:#e6db74">&#34;M-~&#34;</span>) <span style="color:#a6e22e">#&#39;</span>my-completion-at-point)</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="python">python</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python3.6</span>
+
+<span style="color:#f92672">from</span> itertools <span style="color:#f92672">import</span> combinations
+
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> sys<span style="color:#f92672">.</span>stdin:
+    <span style="color:#75715e">## I can&#39;t split this way or I&#39;ll lose the starting space in emacs GPT autocomplete</span>
+    <span style="color:#75715e">#  lst = line.split()</span>
+    <span style="color:#75715e"># I must split like this</span>
+    lst <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)
+    <span style="color:#75715e">#  print(line)</span>
+    <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> lst:
+        <span style="color:#66d9ef">if</span> w <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> w<span style="color:#f92672">.</span>isspace() <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> w <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>:
+            <span style="color:#66d9ef">print</span>(w)
+        <span style="color:#66d9ef">break</span>
+
+    <span style="color:#66d9ef">for</span> start, end <span style="color:#f92672">in</span> combinations(range(len(lst)), <span style="color:#ae81ff">2</span>):
+        <span style="color:#66d9ef">if</span> start <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+            <span style="color:#66d9ef">break</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(lst[start:end<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>A tour of Ryan Ong&#39;s - NLP 365</title>
