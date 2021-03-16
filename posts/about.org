@@ -11,6 +11,8 @@
 
 =Semiosis= is a blog on Natural Language Processing and Formal Language Theory.
 
+[[https://www.youtube.com/watch?v=D5in5EdjhD0][Noam Chomsky - "The machine, the ghost, and the limits of understanding" - YouTube]]
+
 ** Members
 *** Shane Mulligan
 - Website: [[http://mullikine.github.io/][Bodacious Blog]]
