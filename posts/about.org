@@ -11,8 +11,8 @@
 
 ** Members
 *** =Shane Mulligan= ([[http://takaheai.github.io/][TakaheAI]])
-+ Website :: [[http://mullikine.github.io/][Bodacious Blog]]
-+ GitHub :: https://github.com/mullikine/
+- Website: [[http://mullikine.github.io/][Bodacious Blog]]
+- GitHub: https://github.com/mullikine/
 
 *** =Chenrong Lü= ([[http://takaheai.github.io/][TakaheAI]])
 # + Website :: [[http://mullikine.github.io/][Bodacious Blog]]
