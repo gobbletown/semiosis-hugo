@@ -6,13 +6,16 @@ keywords = ["nlp", "openai"]
 draft = false
 +++
 
-## `Shane Mulligan` {#shane-mulligan}
+`Semiosis` is a blog on Natural Language Processing and Formal Language Theory.
+
+
+## Shane Mulligan {#shane-mulligan}
 
 -   Website: [Bodacious Blog](http://mullikine.github.io/)
 -   GitHub: <https://github.com/mullikine/>
 
 
-## `Chenrong Lü` {#chenrong-lü}
+## Chenrong Lü {#chenrong-lü}
 
 
 ## [TakaheAI](http://takaheai.github.io/) {#takaheai}
