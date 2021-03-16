@@ -9,13 +9,22 @@ draft = false
 `Semiosis` is a blog on Natural Language Processing and Formal Language Theory.
 
 
-## Shane Mulligan {#shane-mulligan}
+## Members {#members}
+
+
+### Shane Mulligan {#shane-mulligan}
 
 -   Website: [Bodacious Blog](http://mullikine.github.io/)
 -   GitHub: <https://github.com/mullikine/>
 
 
-## Chenrong Lü {#chenrong-lü}
+### Chenrong Lü {#chenrong-lü}
 
 
-## [TakaheAI](http://takaheai.github.io/) {#takaheai}
+## Affiliations {#affiliations}
+
+
+### TakaheAI {#takaheai}
+
+Website
+: <http://takaheai.github.io/>
