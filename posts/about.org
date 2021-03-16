@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: Semiosis
+#+TITLE: About
 #+DATE: <2021-03-17>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: nlp openai
@@ -12,3 +12,4 @@
 ** Members
 *** =Shane Mulligan=
 + Website :: http://mullikine.github.io/
++ GitHub :: https://github.com/mullikine/
