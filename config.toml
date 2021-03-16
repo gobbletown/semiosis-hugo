@@ -55,7 +55,7 @@ unsafe= true
   # And you can even create generic menu
   [[menu.main]]
     identifier = "about"
-    name       = "About"
+    name       = "AboutSemiosis"
     url        = "/about"
 
   [[menu.main]]
