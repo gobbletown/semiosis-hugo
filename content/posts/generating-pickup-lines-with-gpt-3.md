@@ -54,6 +54,13 @@ If you could only dance to one song for the rest of your life, what song would i
 
 ### The prompt {#the-prompt}
 
+-   Design patterns used:
+    -   [mulitplex pattern](http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/multiplex-answers.org)
+    -   [### pattern](http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/use-separator-between-examples.org)
+    -   [prelude pattern](http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/reflective-description-of-task.org)
+
+This prompt multiplexes answers.
+
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 title: "generate pick up line"
 doc: "Generate pick up lines from a topic"
