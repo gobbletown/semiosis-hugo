@@ -46,6 +46,13 @@ lines.
 #+END_SRC
 
 *** The prompt
+
++ =mulitplex= Design pattern :: http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/multiplex-answers.org
+
++ =###= Design pattern :: http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/use-separator-between-examples.org
+
+This prompt multiplexes answers.
+
 #+BEGIN_SRC yaml -n :async :results verbatim code
   title: "generate pick up line"
   doc: "Generate pick up lines from a topic"
