@@ -47,9 +47,10 @@ lines.
 
 *** The prompt
 
-+ =mulitplex= Design pattern :: http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/multiplex-answers.org
-
-+ =###= Design pattern :: http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/use-separator-between-examples.org
++ Design patterns used:
+  - [[http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/multiplex-answers.org][mulitplex pattern]]
+  - [[http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/use-separator-between-examples.org][### pattern]]
+  - [[http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/reflective-description-of-task.org][prelude pattern]]
 
 This prompt multiplexes answers.
 
