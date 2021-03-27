@@ -111,3 +111,50 @@ filter: no
 stitch-max: 0
 needs-work: no
 {{< /highlight >}}
+
+
+## Further exploration {#further-exploration}
+
+I wonder if I put the temperature down to 0 if
+the pickup lines would all come out autistic.
+and if I raised it to 1, the pickup lines
+would be super random -- you know crazy girls
+might like that.
+
+
+### `temperature: 0.0` {#temperature-0-dot-0}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+What’s your favorite Harry Potter spell?
+What’s your patronus?
+What’s your favorite Harry Potter character?
+What’s your favorite Harry Potter movie?
+What’s your favorite Harry Potter book?
+What’s your favorite Harry Potter character?
+What’s your favorite Harry Potter spell?
+What’s your favorite Harry Potter movie?
+What’s your favorite Harry Potter book?
+What’s your favorite Harry Potter character?
+What’s your favorite Harry Potter spell?
+What’s your favorite Harry Potter movie?
+What’s your favorite Harry Potter book?
+What’s your favorite Harry Potter character?
+What’s your favorite Harry Potter spell?
+What’s your favorite Harry Potter movie?
+{{< /highlight >}}
+
+
+### `temperature: 1.0` {#temperature-1-dot-0}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+To your mind, what is the mixture of Hufflepuff, Slytherin, and Gryffindor?
+Did you know that Hermione Granger wasn’t real, she was just an illusion that you created in order to tell yourself that you didn’t have any hope of living a normal life?
+{{< /highlight >}}
+
+Oh my goodness. I love this.
+I'm keeping temperature 1.0. This is me in real life, actually.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/hAdkA7aBewFbNVEmRCNwgcnfq" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/hAdkA7aBewFbNVEmRCNwgcnfq.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/hAdkA7aBewFbNVEmRCNwgcnfq.js" id="asciicast-hAdkA7aBewFbNVEmRCNwgcnfq" async></script>
