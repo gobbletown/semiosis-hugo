@@ -33,7 +33,7 @@ unsafe= true
 
   [params.portrait]
     path        = "images/semiosis.png"
-    maxwidth        = "10em"
+    maxwidth        = "12em"
 
 [taxonomies]
     category = "blog"
