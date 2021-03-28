@@ -6,8 +6,287 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 27 Mar 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Mon, 29 Mar 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>GPT-3 for building mind maps with an AI tutor for any topic</title>
+            <link>http://semiosis.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/</link>
+            <pubDate>Mon, 29 Mar 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/</guid>
+            <description>Summary I combine GPT-3 with org-brain to expand on topics, suggesting subtopics and providing an interactive tutor for any topic.
+Demonstration Learn about AI 
+ Learn about microbiology  --  Code subtopic prompt tutor prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  title: &amp;#34;Generic tutor for any topic&amp;#34; prompt: |+ This is a conversation between a human and a brilliant AI.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I combine GPT-3 with <code>org-brain</code> to expand on
+topics, suggesting subtopics and providing an
+interactive tutor for any topic.</p>
+<h2 id="demonstration">Demonstration</h2>
+<h3 id="learn-about-ai">Learn about AI</h3>
+<!-- Play on asciinema.com -->
+<p><a title="asciinema recording" href="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.svg" /></a></p>
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.js" id="asciicast-tV37yuypzU8C4ttDL4w24HOtx" async></script>
+<h3 id="learn-about-microbiology">Learn about microbiology</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ.js" id="asciicast-R25hFKsdKc1wcfbMGeXnXa0iJ" async></script>
+<h2 id="code">Code</h2>
+<h3 id="subtopic-prompt">subtopic prompt</h3>
+<h3 id="tutor-prompt"><code>tutor</code> prompt</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">title: <span style="color:#e6db74">&#34;Generic tutor for any topic&#34;</span>
+prompt: <span style="color:#f92672">|+</span>
+    This <span style="color:#f92672">is</span> a conversation between a human <span style="color:#f92672">and</span> a brilliant AI<span style="color:#f92672">.</span>
+    The topic <span style="color:#f92672">is</span> <span style="color:#e6db74">&#34;&lt;1&gt;&#34;</span><span style="color:#f92672">.</span>
+
+    Human: Hello, are you my <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;</span> tutor<span style="color:#960050;background-color:#1e0010">?</span>
+    <span style="color:#75715e">###</span>
+    AI: Hi there<span style="color:#f92672">.</span> Yes I am<span style="color:#f92672">.</span> How can I help you today<span style="color:#960050;background-color:#1e0010">?</span>
+    <span style="color:#75715e">###</span>
+    Human: What questions can I ask you about <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;</span><span style="color:#960050;background-color:#1e0010">?</span>
+    <span style="color:#75715e">###</span>
+    AI: You may ask me anything relating to <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;.</span>
+    <span style="color:#75715e">###</span>
+    Human: OK then<span style="color:#f92672">.</span> <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">3</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#75715e">###</span>
+    AI: I would be happy to answer your question<span style="color:#f92672">.</span>
+engine: <span style="color:#e6db74">&#34;davinci&#34;</span>
+<span style="color:#75715e"># 0.0 = /r/hadastroke</span>
+<span style="color:#75715e"># 1.0 = /r/iamveryrandom</span>
+<span style="color:#75715e"># Use 0.3-0.8</span>
+temperature: <span style="color:#ae81ff">0.8</span>
+max<span style="color:#f92672">-</span>tokens: <span style="color:#ae81ff">60</span>
+top<span style="color:#f92672">-</span>p: <span style="color:#ae81ff">1.0</span>
+<span style="color:#75715e"># Not available yet: openai api completions.create --help</span>
+frequency<span style="color:#f92672">-</span>penalty: <span style="color:#ae81ff">0.5</span>
+<span style="color:#75715e"># If I make presence-penalty 0 then it will get very terse</span>
+presence<span style="color:#f92672">-</span>penalty: <span style="color:#ae81ff">0.0</span>
+best<span style="color:#f92672">-</span>of: <span style="color:#ae81ff">3</span>
+stop<span style="color:#f92672">-</span>sequences:
+<span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;###&#34;</span>
+inject<span style="color:#f92672">-</span>start<span style="color:#f92672">-</span>text: yes
+inject<span style="color:#f92672">-</span>restart<span style="color:#f92672">-</span>text: yes
+show<span style="color:#f92672">-</span>probabilities: off
+vars:
+<span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;topic&#34;</span>
+<span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;in the context of&#34;</span>
+<span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;question&#34;</span>
+examples:
+<span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;node js&#34;</span>
+<span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;programming&#34;</span>
+<span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;What was the version of node in 2018?&#34;</span>
+chomp<span style="color:#f92672">-</span>start: on
+chomp<span style="color:#f92672">-</span>end: off
+external: <span style="color:#e6db74">&#34;&#34;</span>
+conversation<span style="color:#f92672">-</span>mode: no
+filter: no
+<span style="color:#75715e"># Keep stitching together until reaching this limit</span>
+<span style="color:#75715e"># This allows a full response for answers which may need n*max-tokens to reach the stop-sequence.</span>
+stitch<span style="color:#f92672">-</span>max: <span style="color:#ae81ff">0</span>
+needs<span style="color:#f92672">-</span>work: no</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="elisp">elisp</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun org-brain-name-from-list-maybe (l)
+  (if (and (<span style="color:#a6e22e">listp</span> l)
+           (<span style="color:#a6e22e">&gt;</span> (<span style="color:#a6e22e">length</span> l) <span style="color:#ae81ff">1</span>))
+      (second l)
+    l))
+
+(defun org-brain-remove-irrelevant-names-from-path (path)
+  (-filter
+   (lambda
+     (e)
+     (not
+      (<span style="color:#a6e22e">string-equal</span> <span style="color:#e6db74">&#34;infogetics&#34;</span> e)))
+   path))
+
+(defun org-brain-parent-name ()
+  (snc <span style="color:#e6db74">&#34;s join&#34;</span>
+    (list2str
+           (org-brain-remove-irrelevant-names-from-path
+            (<span style="color:#a6e22e">mapcar</span>
+             <span style="color:#e6db74">&#39;org-brain-name-from-list-maybe</span>
+             (org-brain-parents org-brain--vis-entry))))))
+
+(defun org-brain-current-name ()
+  (<span style="color:#a6e22e">car</span>
+   (org-brain-remove-irrelevant-names-from-path
+    (<span style="color:#a6e22e">mapcar</span>
+     <span style="color:#e6db74">&#39;org-brain-name-from-list-maybe</span>
+     (<span style="color:#a6e22e">list</span> org-brain--vis-entry)))))
+
+(defun org-brain-current-topic (<span style="color:#66d9ef">&amp;optional</span> for-external-searching)
+  (interactive)
+  (let ((path
+         (<span style="color:#a6e22e">mapcar</span>
+          <span style="color:#e6db74">&#39;org-brain-name-from-list-maybe</span>
+          (<span style="color:#a6e22e">append</span> (org-brain-parents org-brain--vis-entry) (<span style="color:#a6e22e">list</span> org-brain--vis-entry)))))
+
+    (setq path
+          (if for-external-searching
+              (-filter (lambda (e) (not (<span style="color:#a6e22e">string-equal</span> <span style="color:#e6db74">&#34;infogetics&#34;</span> e))) path)
+            path))
+    (let ((topic
+           (chomp (<span style="color:#a6e22e">apply</span> <span style="color:#e6db74">&#39;cmd</span> path))))
+      (if (interactive-p)
+          (etv topic)
+        topic))))
+
+(defun org-brain-suggest-subtopics ()
+  (interactive)
+  (let ((subtopics
+         (pen-pf-keyword-extraction (org-brain-current-topic <span style="color:#66d9ef">t</span>))))
+    (if (interactive-p)
+        (etv subtopics)
+      subtopics)))
+
+(defun org-brain-asktutor (question)
+  (interactive (<span style="color:#a6e22e">list</span> (read-string-hist (<span style="color:#a6e22e">concat</span> (org-brain-current-topic) <span style="color:#e6db74">&#34;: &#34;</span>))))
+  (mu
+   (etv
+    (snc
+     (<span style="color:#a6e22e">concat</span>
+      (cmd
+       <span style="color:#e6db74">&#34;oci&#34;</span>
+       <span style="color:#e6db74">&#34;openai-complete&#34;</span>
+       <span style="color:#e6db74">&#34;$MYGIT/semiosis/prompts/prompts/tutor.prompt&#34;</span>
+       (org-brain-current-name)
+       (org-brain-parent-name)
+       question)
+      <span style="color:#e6db74">&#34; | tpp&#34;</span>)))))</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Generating pickup lines with GPT-3</title>

@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://semiosis.github.io/posts/generating-pickup-lines-with-gpt-3/</loc>
-    <lastmod>2021-03-27T00:00:00+13:00</lastmod>
+    <loc>http://semiosis.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/</loc>
+    <lastmod>2021-03-29T00:00:00+13:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/</loc>
-    <lastmod>2021-03-27T00:00:00+13:00</lastmod>
+    <lastmod>2021-03-29T00:00:00+13:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-03-29T00:00:00+13:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/generating-pickup-lines-with-gpt-3/</loc>
     <lastmod>2021-03-27T00:00:00+13:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/about/</loc>
