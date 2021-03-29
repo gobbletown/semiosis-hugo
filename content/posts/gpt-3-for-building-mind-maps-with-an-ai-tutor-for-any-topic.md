@@ -16,15 +16,21 @@ interactive tutor for any topic.
 ## Demonstration {#demonstration}
 
 
-### Learn about AI {#learn-about-ai}
+### Subtopic generation {#subtopic-generation}
+
+
+### Tutor demonstration {#tutor-demonstration}
+
+-   Rolling conversation is a work in progress, but on its way.
+
+<span class="underline">**Learn about AI**</span>
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.js" id="asciicast-tV37yuypzU8C4ttDL4w24HOtx" async></script>
 
-
-### Learn about microbiology {#learn-about-microbiology}
+<span class="underline">**Learn about microbiology**</span>
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ.svg" /></a> -->
@@ -197,7 +203,6 @@ needs-work: no
       (if (interactive-p)
           (etv topic)
         topic))))
-
 
 (defun org-brain-asktutor (question)
   (interactive (list (read-string-hist (concat (org-brain-current-topic) ": "))))

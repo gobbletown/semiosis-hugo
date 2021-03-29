@@ -16,18 +16,25 @@
             
             <guid>http://semiosis.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/</guid>
             <description>Summary I combine GPT-3 with org-brain to expand on topics, suggesting subtopics and providing an interactive tutor for any topic.
-Demonstration Learn about AI  --  Learn about microbiology  --  Code Subtopic prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52  title: &amp;#34;subtopic generation&amp;#34; prompt: |+The following is a list of subtopics relating to microbiology: - Bacteriology - Mycology - Protozoology - Phycology/algology - Parasitology - Immunology - Virology - Nematology ### The following is a list of subtopics relating to natural language processing / NLP: - extractive question answering - language modelling - named entity recognition - sequence classification - summarization - text generation - topic modelling - translation ### The following is a list of subtopics relating to language modelling in NLP: - casual language modelling - masked language modelling - gext generation ### The following is a list of subtopics relating to &amp;lt;1&amp;gt;: - engine: &amp;#34;davinci&amp;#34; temperature: 0.</description>
+Demonstration Subtopic generation Tutor demonstration  Rolling conversation is a work in progress, but on its way.  Learn about AI
+ --  Learn about microbiology
+ --  Code Subtopic prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52  title: &amp;#34;subtopic generation&amp;#34; prompt: |+The following is a list of subtopics relating to microbiology: - Bacteriology - Mycology - Protozoology - Phycology/algology - Parasitology - Immunology - Virology - Nematology ### The following is a list of subtopics relating to natural language processing / NLP: - extractive question answering - language modelling - named entity recognition - sequence classification - summarization - text generation - topic modelling - translation ### The following is a list of subtopics relating to language modelling in NLP: - casual language modelling - masked language modelling - gext generation ### The following is a list of subtopics relating to &amp;lt;1&amp;gt;: - engine: &amp;#34;davinci&amp;#34; temperature: 0.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I combine GPT-3 with <code>org-brain</code> to expand on
 topics, suggesting subtopics and providing an
 interactive tutor for any topic.</p>
 <h2 id="demonstration">Demonstration</h2>
-<h3 id="learn-about-ai">Learn about AI</h3>
+<h3 id="subtopic-generation">Subtopic generation</h3>
+<h3 id="tutor-demonstration">Tutor demonstration</h3>
+<ul>
+<li>Rolling conversation is a work in progress, but on its way.</li>
+</ul>
+<p><span class="underline"><strong>Learn about AI</strong></span></p>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.js" id="asciicast-tV37yuypzU8C4ttDL4w24HOtx" async></script>
-<h3 id="learn-about-microbiology">Learn about microbiology</h3>
+<p><span class="underline"><strong>Learn about microbiology</strong></span></p>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ.svg" /></a> -->
 <!-- Play on the blog -->
@@ -314,7 +321,6 @@ needs<span style="color:#f92672">-</span>work: no</code></pre></td></tr></table>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun org-brain-name-from-list-maybe (l)
@@ -362,7 +368,6 @@ needs<span style="color:#f92672">-</span>work: no</code></pre></td></tr></table>
       (if (interactive-p)
           (etv topic)
         topic))))
-
 
 (defun org-brain-asktutor (question)
   (interactive (<span style="color:#a6e22e">list</span> (read-string-hist (<span style="color:#a6e22e">concat</span> (org-brain-current-topic) <span style="color:#e6db74">&#34;: &#34;</span>))))
