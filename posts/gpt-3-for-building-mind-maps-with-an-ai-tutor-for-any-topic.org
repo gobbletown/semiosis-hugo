@@ -11,6 +11,8 @@
 
 + Code :: http://github.com/semiosis/pen.el
 
++ Prompts :: http://github.com/semiosis/prompts
+
 ** Summary
 I combine GPT-3 with =org-brain= to expand on
 topics, suggesting subtopics and providing an
