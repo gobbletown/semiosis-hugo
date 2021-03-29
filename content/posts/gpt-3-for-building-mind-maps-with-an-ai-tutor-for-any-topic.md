@@ -249,7 +249,10 @@ needs-work: no
 
 ## `pen.el` improvements {#pen-dot-el-improvements}
 
--   I plan on linking `.prompt` (prompt
-
-description) files into a graph format where
-fungible prompts can be observed.
+-   The plan is to linking `.prompt` (prompt description) files into a graph format where fungible prompts can be observed.
+-   Conversation mode.
+    -   Summarize the current conversation scope and also extract facts from it. Use this in the next prompt.
+    -   This will create a chatbot with rolling conversation.
+    -   <http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullets-to-summary.prompt>
+    -   <http://github.com/semiosis/prompts/blob/master/prompts/tldr.prompt>
+    -   <http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt>
