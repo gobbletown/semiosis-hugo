@@ -32,7 +32,7 @@ interactive tutor for any topic.
 #+END_EXPORT
 
 ** Code
-*** subtopic prompt
+*** Subtopic prompt
 #+BEGIN_SRC yaml -n :async :results verbatim code
   title: "subtopic generation"
   prompt: |+
