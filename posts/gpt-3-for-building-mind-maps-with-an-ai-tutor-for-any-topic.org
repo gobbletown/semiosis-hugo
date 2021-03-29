@@ -9,6 +9,8 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: GPT-3 emacs learning
 
++ Code :: http://github.com/semiosis/pen.el
+
 ** Summary
 I combine GPT-3 with =org-brain= to expand on
 topics, suggesting subtopics and providing an
