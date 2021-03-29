@@ -190,7 +190,6 @@ interactive tutor for any topic.
             (etv topic)
           topic))))
 
-
   (defun org-brain-asktutor (question)
     (interactive (list (read-string-hist (concat (org-brain-current-topic) ": "))))
     (mu
