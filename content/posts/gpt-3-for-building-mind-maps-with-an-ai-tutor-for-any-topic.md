@@ -35,7 +35,62 @@ interactive tutor for any topic.
 ## Code {#code}
 
 
-### subtopic prompt {#subtopic-prompt}
+### Subtopic prompt {#subtopic-prompt}
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+title: "subtopic generation"
+prompt: |+
+    The following is a list of subtopics relating to microbiology:
+    - Bacteriology
+    - Mycology
+    - Protozoology
+    - Phycology/algology
+    - Parasitology
+    - Immunology
+    - Virology
+    - Nematology
+    ###
+    The following is a list of subtopics relating to natural language processing / NLP:
+    - extractive question answering
+    - language modelling
+    - named entity recognition
+    - sequence classification
+    - summarization
+    - text generation
+    - topic modelling
+    - translation
+    ###
+    The following is a list of subtopics relating to language modelling in NLP:
+    - casual language modelling
+    - masked language modelling
+    - gext generation
+    ###
+    The following is a list of subtopics relating to <1>:
+    -
+engine: "davinci"
+temperature: 0.8
+max-tokens: 60
+top-p: 1
+frequency-penalty: 0.8
+presence-penalty: 0.0
+best-of: 1
+stop-sequences:
+- "###"
+chomp-start: on
+chomp-end: off
+inject-start-text: yes
+inject-restart-text: yes
+show-probabilities: off
+# Cache the function by default when running the prompt function
+cache: on
+vars:
+- "topic"
+examples:
+- "Advanced Type Systems in Haskell"
+# External provides an alternate script that performs the same function
+# external:
+# - "extract-keyphrases"
+{{< /highlight >}}
 
 
 ### `tutor` prompt {#tutor-prompt}
@@ -94,7 +149,7 @@ needs-work: no
 {{< /highlight >}}
 
 
-### elisp {#elisp}
+### elisp for the tutor {#elisp-for-the-tutor}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defun org-brain-name-from-list-maybe (l)
@@ -113,11 +168,11 @@ needs-work: no
 
 (defun org-brain-parent-name ()
   (snc "s join"
-    (list2str
-           (org-brain-remove-irrelevant-names-from-path
-            (mapcar
-             'org-brain-name-from-list-maybe
-             (org-brain-parents org-brain--vis-entry))))))
+       (list2str
+        (org-brain-remove-irrelevant-names-from-path
+         (mapcar
+          'org-brain-name-from-list-maybe
+          (org-brain-parents org-brain--vis-entry))))))
 
 (defun org-brain-current-name ()
   (car
@@ -143,13 +198,6 @@ needs-work: no
           (etv topic)
         topic))))
 
-(defun org-brain-suggest-subtopics ()
-  (interactive)
-  (let ((subtopics
-         (pen-pf-keyword-extraction (org-brain-current-topic t))))
-    (if (interactive-p)
-        (etv subtopics)
-      subtopics)))
 
 (defun org-brain-asktutor (question)
   (interactive (list (read-string-hist (concat (org-brain-current-topic) ": "))))
@@ -166,3 +214,37 @@ needs-work: no
        question)
       " | tpp")))))
 {{< /highlight >}}
+
+
+### elisp for subtopic generation {#elisp-for-subtopic-generation}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun org-brain-suggest-subtopics (&optional update)
+  (interactive)
+  (let ((subtopics
+         ;; (pen-pf-keyword-extraction (org-brain-current-topic t))
+         (let ((sh-update (or sh-update update)))
+           (pen-pf-subtopic-generation (org-brain-pf-topic)))))
+
+    (setq subtopics
+          (str2list
+           (cl-sn
+            "sed 's/^- //'"
+            :stdin
+            (chomp
+             (snc
+              (cmd "scrape" "^- [a-zA-Z -]+$")
+              subtopics)) :chomp t)))
+
+    (if (interactive-p)
+        (fz subtopics)
+      subtopics)))
+{{< /highlight >}}
+
+
+## `pen.el` improvements {#pen-dot-el-improvements}
+
+-   I plan on linking `.prompt` (prompt
+
+description) files into a graph format where
+fungible prompts can be observed.
