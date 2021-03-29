@@ -142,14 +142,14 @@ interactive tutor for any topic.
   needs-work: no
 #+END_SRC
 
-*** elisp
+*** elisp for the tutor
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defun org-brain-name-from-list-maybe (l)
     (if (and (listp l)
              (> (length l) 1))
         (second l)
       l))
-  
+
   (defun org-brain-remove-irrelevant-names-from-path (path)
     (-filter
      (lambda
@@ -157,7 +157,7 @@ interactive tutor for any topic.
        (not
         (string-equal "infogetics" e)))
      path))
-  
+
   (defun org-brain-parent-name ()
     (snc "s join"
       (list2str
@@ -165,21 +165,21 @@ interactive tutor for any topic.
               (mapcar
                'org-brain-name-from-list-maybe
                (org-brain-parents org-brain--vis-entry))))))
-  
+
   (defun org-brain-current-name ()
     (car
      (org-brain-remove-irrelevant-names-from-path
       (mapcar
        'org-brain-name-from-list-maybe
        (list org-brain--vis-entry)))))
-  
+
   (defun org-brain-current-topic (&optional for-external-searching)
     (interactive)
     (let ((path
            (mapcar
             'org-brain-name-from-list-maybe
             (append (org-brain-parents org-brain--vis-entry) (list org-brain--vis-entry)))))
-  
+
       (setq path
             (if for-external-searching
                 (-filter (lambda (e) (not (string-equal "infogetics" e))) path)
@@ -189,7 +189,7 @@ interactive tutor for any topic.
         (if (interactive-p)
             (etv topic)
           topic))))
-  
+
   (defun org-brain-suggest-subtopics ()
     (interactive)
     (let ((subtopics
@@ -197,7 +197,7 @@ interactive tutor for any topic.
       (if (interactive-p)
           (etv subtopics)
         subtopics)))
-  
+
   (defun org-brain-asktutor (question)
     (interactive (list (read-string-hist (concat (org-brain-current-topic) ": "))))
     (mu
@@ -212,6 +212,30 @@ interactive tutor for any topic.
          (org-brain-parent-name)
          question)
         " | tpp")))))
+#+END_SRC
+
+*** elisp for subtopic generation
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun org-brain-suggest-subtopics (&optional update)
+    (interactive)
+    (let ((subtopics
+           ;; (pen-pf-keyword-extraction (org-brain-current-topic t))
+           (let ((sh-update (or sh-update update)))
+             (pen-pf-subtopic-generation (org-brain-pf-topic)))))
+  
+      (setq subtopics
+            (str2list
+             (cl-sn
+              "sed 's/^- //'"
+              :stdin
+              (chomp
+               (snc
+                (cmd "scrape" "^- [a-zA-Z -]+$")
+                subtopics)) :chomp t)))
+  
+      (if (interactive-p)
+          (fz subtopics)
+        subtopics)))
 #+END_SRC
 
 ** =pen.el= improvements
