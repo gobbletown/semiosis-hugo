@@ -15,7 +15,12 @@ topics, suggesting subtopics and providing an
 interactive tutor for any topic.
 
 ** Demonstration
-*** Learn about AI
+*** Subtopic generation
+
+*** Tutor demonstration
+- Rolling conversation is a work in progress, but on its way.
+
+_*Learn about AI*_
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.svg" /></a> -->
@@ -23,7 +28,7 @@ interactive tutor for any topic.
 <script src="https://asciinema.org/a/tV37yuypzU8C4ttDL4w24HOtx.js" id="asciicast-tV37yuypzU8C4ttDL4w24HOtx" async></script>
 #+END_EXPORT
 
-*** Learn about microbiology
+_*Learn about microbiology*_
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/R25hFKsdKc1wcfbMGeXnXa0iJ.svg" /></a> -->
