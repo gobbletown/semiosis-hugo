@@ -33,6 +33,60 @@ interactive tutor for any topic.
 
 ** Code
 *** subtopic prompt
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  title: "subtopic generation"
+  prompt: |+
+      The following is a list of subtopics relating to microbiology:
+      - Bacteriology
+      - Mycology
+      - Protozoology
+      - Phycology/algology
+      - Parasitology
+      - Immunology
+      - Virology
+      - Nematology
+      ###
+      The following is a list of subtopics relating to natural language processing / NLP:
+      - extractive question answering
+      - language modelling
+      - named entity recognition  
+      - sequence classification
+      - summarization
+      - text generation
+      - topic modelling
+      - translation
+      ###
+      The following is a list of subtopics relating to language modelling in NLP:
+      - casual language modelling
+      - masked language modelling
+      - gext generation
+      ###
+      The following is a list of subtopics relating to <1>:
+      - 
+  engine: "davinci"
+  temperature: 0.8
+  max-tokens: 60
+  top-p: 1
+  frequency-penalty: 0.8
+  presence-penalty: 0.0
+  best-of: 1
+  stop-sequences:
+  - "###"
+  chomp-start: on
+  chomp-end: off
+  inject-start-text: yes
+  inject-restart-text: yes
+  show-probabilities: off
+  # Cache the function by default when running the prompt function
+  cache: on
+  vars:
+  - "topic"
+  examples:
+  - "Advanced Type Systems in Haskell"
+  # External provides an alternate script that performs the same function
+  # external:
+  # - "extract-keyphrases"
+#+END_SRC
 
 *** =tutor= prompt
 #+BEGIN_SRC python -n :i mypython :async :results verbatim code
