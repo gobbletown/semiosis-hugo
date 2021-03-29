@@ -10,7 +10,7 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Automatic GPT-3 mind maps with an AI tutor for any topic</title>
+            <title>GPT-3 mind maps with an AI tutor for any topic</title>
             <link>http://semiosis.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/</link>
             <pubDate>Mon, 29 Mar 2021 00:00:00 +1300</pubDate>
             
@@ -27,7 +27,7 @@ Demonstration Subtopic generation Tutor demonstration  Rolling conversation is a
 </dl>
 <h2 id="summary">Summary</h2>
 <p>I combine GPT-3 with <code>org-brain</code> to expand on
-topics, suggesting subtopics and providing an
+topics, <strong>suggesting</strong> subtopics and providing an
 interactive tutor for any topic.</p>
 <h2 id="demonstration">Demonstration</h2>
 <h3 id="subtopic-generation">Subtopic generation</h3>

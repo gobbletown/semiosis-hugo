@@ -1,5 +1,5 @@
 +++
-title = "Automatic GPT-3 mind maps with an AI tutor for any topic"
+title = "GPT-3 mind maps with an AI tutor for any topic"
 author = ["Shane Mulligan"]
 date = 2021-03-29T00:00:00+13:00
 keywords = ["GPT-3", "emacs", "learning"]
@@ -17,7 +17,7 @@ Prompts
 ## Summary {#summary}
 
 I combine GPT-3 with `org-brain` to expand on
-topics, suggesting subtopics and providing an
+topics, **suggesting** subtopics and providing an
 interactive tutor for any topic.
 
 
