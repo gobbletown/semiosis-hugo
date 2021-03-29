@@ -242,3 +242,4 @@ _*Learn about microbiology*_
   - This will create a chatbot with rolling conversation.
   - http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullets-to-summary.prompt
   - http://github.com/semiosis/prompts/blob/master/prompts/tldr.prompt
+  - http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt
