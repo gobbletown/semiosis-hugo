@@ -1,10 +1,18 @@
 +++
-title = "GPT-3 for building mind maps with an AI tutor for any topic"
+title = "Automatic GPT-3 mind maps with an AI tutor for any topic"
 author = ["Shane Mulligan"]
 date = 2021-03-29T00:00:00+13:00
 keywords = ["GPT-3", "emacs", "learning"]
 draft = false
 +++
+
+Code
+: <http://github.com/semiosis/pen.el>
+
+
+Prompts
+: <http://github.com/semiosis/prompts>
+
 
 ## Summary {#summary}
 
