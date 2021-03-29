@@ -97,7 +97,7 @@ _*Learn about microbiology*_
   # - "extract-keyphrases"
 #+END_SRC
 
-*** =tutor= prompt
+*** Tutor prompt
 #+BEGIN_SRC python -n :i mypython :async :results verbatim code
   title: "Generic tutor for any topic"
   prompt: |+
