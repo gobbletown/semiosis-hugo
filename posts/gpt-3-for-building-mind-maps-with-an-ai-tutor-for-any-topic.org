@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
-#+TITLE: Automatic GPT-3 mind maps with an AI tutor for any topic
+#+TITLE: GPT-3 mind maps with an AI tutor for any topic
 #+DATE: <2021-03-29>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: GPT-3 emacs learning
@@ -15,7 +15,7 @@
 
 ** Summary
 I combine GPT-3 with =org-brain= to expand on
-topics, suggesting subtopics and providing an
+topics, *suggesting* subtopics and providing an
 interactive tutor for any topic.
 
 ** Demonstration
