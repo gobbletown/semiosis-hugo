@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
-#+TITLE: GPT-3 for building mind maps with an AI tutor for any topic
+#+TITLE: Automatic GPT-3 mind maps with an AI tutor for any topic
 #+DATE: <2021-03-29>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: GPT-3 emacs learning
