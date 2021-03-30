@@ -26,6 +26,17 @@ interactive tutor for any topic.
 
 ### Subtopic generation {#subtopic-generation}
 
+I demonstrate how to explore arbitrary topics
+with GPT-3 by automatically generating
+subtopics, and then allowing you to invoke the
+GPT-3 tutor to answer questions within that
+context.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/3D1xmyAB3wZiPMu3d7rnK8Izd" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/3D1xmyAB3wZiPMu3d7rnK8Izd.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/3D1xmyAB3wZiPMu3d7rnK8Izd.js" id="asciicast-3D1xmyAB3wZiPMu3d7rnK8Izd" async></script>
+
 
 ### Tutor demonstration {#tutor-demonstration}
 
@@ -107,7 +118,7 @@ examples:
 {{< /highlight >}}
 
 
-### `tutor` prompt {#tutor-prompt}
+### Tutor prompt {#tutor-prompt}
 
 {{< highlight python "linenos=table, linenostart=1" >}}
 title: "Generic tutor for any topic"
@@ -234,12 +245,31 @@ needs-work: no
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defun org-brain-suggest-subtopics (&optional update)
   (interactive)
-  (let ((subtopics
+  (message "Using pen.el to suggest subtopics...")
+  (let ((subtopic-candidates
          ;; (pen-pf-keyword-extraction (org-brain-current-topic t))
-         (let ((sh-update (or sh-update update)))
-           (pen-pf-subtopic-generation (org-brain-pf-topic)))))
+         (let ((sh-update (or sh-update
+                              update
+                              (eq (prefix-numeric-value current-prefix-arg) 4))))
+           (let ((s (pen-pf-subtopic-generation (org-brain-pf-topic) (org-brain-existing-subtopics-stringlist))))
+             (if (not (sor s))
+                 (progn
+                   (message "Empty generation 1/3. Trying again.")
+                   (setq s (upd (pen-pf-subtopic-generation (org-brain-pf-topic) (org-brain-existing-subtopics-stringlist))))
+                   (if (not (sor s))
+                       (progn
+                         (message "Empty generation 2/3. Trying again.")
+                         (setq s (upd (pen-pf-subtopic-generation (org-brain-pf-topic) (org-brain-existing-subtopics-stringlist))))
+                         (if (not (sor s))
+                             (progn
+                               (message "Empty generation 3/3. Giving up.")
+                               (error "Empty generation 3/3. Giving up."))
+                           s))
+                     s)
+                   s)
+               s)))))
 
-    (setq subtopics
+    (setq subtopic-candidates
           (str2list
            (cl-sn
             "sed 's/^- //'"
@@ -247,17 +277,34 @@ needs-work: no
             (chomp
              (snc
               (cmd "scrape" "^- [a-zA-Z -]+$")
-              subtopics)) :chomp t)))
+              (concat "- " subtopic-candidates))) :chomp t)))
 
+    ;; (ns current-prefix-arg)
     (if (interactive-p)
-        (fz subtopics)
-      subtopics)))
+        (let ((subtopic-selected
+               (try
+                (cond
+                 ((or (>= (prefix-numeric-value current-prefix-arg) 16)
+                      (>= (prefix-numeric-value current-prefix-arg) 32))
+                  (let ((b (nbfs (list2str subtopic-candidates))))
+                    (with-current-buffer b
+                      (let ((r (if (yn "Add all?")
+                                   subtopic-candidates)))
+                        (kill-buffer b)
+                        r))))
+                 (t
+                  ;; Select one, do not refresh cache
+                  (list (fz subtopic-candidates)))))))
+          (if subtopic-selected
+              (cl-loop for st in subtopic-selected do
+                       (org-brain-add-child-headline org-brain--vis-entry st))))
+      subtopic-candidates)))
 {{< /highlight >}}
 
 
 ## `pen.el` improvements {#pen-dot-el-improvements}
 
--   The plan is to linking `.prompt` (prompt description) files into a graph format where fungible prompts can be observed.
+-   The plan is to link `.prompt` (prompt description) files into a graph format where fungible prompts can be noticed.
 -   Conversation mode.
     -   Summarize the current conversation scope and also extract facts from it. Use this in the next prompt.
     -   This will create a chatbot with rolling conversation.
