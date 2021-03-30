@@ -32,6 +32,14 @@ interactive tutor for any topic.
 <script src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.js" id="asciicast-JA82zhiL4Su0LVufE7gqH7Mej" async></script>
 
 
+### Asking the AI professor about Paleoceanography {#asking-the-ai-professor-about-paleoceanography}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.js" id="asciicast-9D6Ws3G0OvSAWnrLMtXJoDXoA" async></script>
+
+
 ### Subtopic generation {#subtopic-generation}
 
 I demonstrate how to explore arbitrary topics
