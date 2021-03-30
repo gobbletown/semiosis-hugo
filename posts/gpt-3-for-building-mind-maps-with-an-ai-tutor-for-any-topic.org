@@ -231,12 +231,31 @@ _*Learn about microbiology*_
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defun org-brain-suggest-subtopics (&optional update)
     (interactive)
-    (let ((subtopics
+    (message "Using pen.el to suggest subtopics...")
+    (let ((subtopic-candidates
            ;; (pen-pf-keyword-extraction (org-brain-current-topic t))
-           (let ((sh-update (or sh-update update)))
-             (pen-pf-subtopic-generation (org-brain-pf-topic)))))
-  
-      (setq subtopics
+           (let ((sh-update (or sh-update
+                                update
+                                (eq (prefix-numeric-value current-prefix-arg) 4))))
+             (let ((s (pen-pf-subtopic-generation (org-brain-pf-topic) (org-brain-existing-subtopics-stringlist))))
+               (if (not (sor s))
+                   (progn
+                     (message "Empty generation 1/3. Trying again.")
+                     (setq s (upd (pen-pf-subtopic-generation (org-brain-pf-topic) (org-brain-existing-subtopics-stringlist))))
+                     (if (not (sor s))
+                         (progn
+                           (message "Empty generation 2/3. Trying again.")
+                           (setq s (upd (pen-pf-subtopic-generation (org-brain-pf-topic) (org-brain-existing-subtopics-stringlist))))
+                           (if (not (sor s))
+                               (progn
+                                 (message "Empty generation 3/3. Giving up.")
+                                 (error "Empty generation 3/3. Giving up."))
+                             s))
+                       s)
+                     s)
+                 s)))))
+
+      (setq subtopic-candidates
             (str2list
              (cl-sn
               "sed 's/^- //'"
@@ -244,11 +263,28 @@ _*Learn about microbiology*_
               (chomp
                (snc
                 (cmd "scrape" "^- [a-zA-Z -]+$")
-                subtopics)) :chomp t)))
-  
+                (concat "- " subtopic-candidates))) :chomp t)))
+
+      ;; (ns current-prefix-arg)
       (if (interactive-p)
-          (fz subtopics)
-        subtopics)))
+          (let ((subtopic-selected
+                 (try
+                  (cond
+                   ((or (>= (prefix-numeric-value current-prefix-arg) 16)
+                        (>= (prefix-numeric-value current-prefix-arg) 32))
+                    (let ((b (nbfs (list2str subtopic-candidates))))
+                      (with-current-buffer b
+                        (let ((r (if (yn "Add all?")
+                                     subtopic-candidates)))
+                          (kill-buffer b)
+                          r))))
+                   (t
+                    ;; Select one, do not refresh cache
+                    (list (fz subtopic-candidates)))))))
+            (if subtopic-selected
+                (cl-loop for st in subtopic-selected do
+                         (org-brain-add-child-headline org-brain--vis-entry st))))
+        subtopic-candidates)))
 #+END_SRC
 
 ** =pen.el= improvements
