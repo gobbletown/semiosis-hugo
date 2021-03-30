@@ -20,6 +20,18 @@ interactive tutor for any topic.
 
 ** Demonstration
 *** Subtopic generation
+I demonstrate how to explore arbitrary topics
+with GPT-3 by automatically generating
+subtopics, and then allowing you to invoke the
+GPT-3 tutor to answer questions within that
+context.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<a title="asciinema recording" href="https://asciinema.org/a/3D1xmyAB3wZiPMu3d7rnK8Izd" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/3D1xmyAB3wZiPMu3d7rnK8Izd.svg" /></a>
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/3D1xmyAB3wZiPMu3d7rnK8Izd.js" id="asciicast-3D1xmyAB3wZiPMu3d7rnK8Izd" async></script>
+#+END_EXPORT
 
 *** Tutor demonstration
 - Rolling conversation is a work in progress, but on its way.
