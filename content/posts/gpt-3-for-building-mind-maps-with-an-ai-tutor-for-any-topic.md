@@ -24,22 +24,6 @@ interactive tutor for any topic.
 ## Demonstration {#demonstration}
 
 
-### Learning the flamenco guitar -- subtopic generation and tutor {#learning-the-flamenco-guitar-subtopic-generation-and-tutor}
-
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.js" id="asciicast-JA82zhiL4Su0LVufE7gqH7Mej" async></script>
-
-
-### Asking the AI professor about Paleoceanography {#asking-the-ai-professor-about-paleoceanography}
-
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.js" id="asciicast-9D6Ws3G0OvSAWnrLMtXJoDXoA" async></script>
-
-
 ### Subtopic generation {#subtopic-generation}
 
 I demonstrate how to explore arbitrary topics
@@ -327,3 +311,22 @@ needs-work: no
     -   <http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullets-to-summary.prompt>
     -   <http://github.com/semiosis/prompts/blob/master/prompts/tldr.prompt>
     -   <http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt>
+
+
+## Extra demos {#extra-demos}
+
+
+### Learning the flamenco guitar -- subtopic generation and tutor {#learning-the-flamenco-guitar-subtopic-generation-and-tutor}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.js" id="asciicast-JA82zhiL4Su0LVufE7gqH7Mej" async></script>
+
+
+### Asking the AI professor about Paleoceanography {#asking-the-ai-professor-about-paleoceanography}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.js" id="asciicast-9D6Ws3G0OvSAWnrLMtXJoDXoA" async></script>
