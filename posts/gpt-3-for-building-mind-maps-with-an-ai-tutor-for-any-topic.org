@@ -19,22 +19,6 @@ topics, *suggesting* subtopics and providing an
 interactive tutor for any topic.
 
 ** Demonstration
-*** Learning the flamenco guitar -- subtopic generation and tutor
-#+BEGIN_EXPORT html
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.js" id="asciicast-JA82zhiL4Su0LVufE7gqH7Mej" async></script>
-#+END_EXPORT
-
-*** Asking the AI professor about Paleoceanography
-#+BEGIN_EXPORT html
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.js" id="asciicast-9D6Ws3G0OvSAWnrLMtXJoDXoA" async></script>
-#+END_EXPORT
-
 *** Subtopic generation
 I demonstrate how to explore arbitrary topics
 with GPT-3 by automatically generating
@@ -311,3 +295,20 @@ _*Learn about microbiology*_
   - http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullets-to-summary.prompt
   - http://github.com/semiosis/prompts/blob/master/prompts/tldr.prompt
   - http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt
+
+** Extra demos
+*** Learning the flamenco guitar -- subtopic generation and tutor
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.js" id="asciicast-JA82zhiL4Su0LVufE7gqH7Mej" async></script>
+#+END_EXPORT
+
+*** Asking the AI professor about Paleoceanography
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/9D6Ws3G0OvSAWnrLMtXJoDXoA.js" id="asciicast-9D6Ws3G0OvSAWnrLMtXJoDXoA" async></script>
+#+END_EXPORT
