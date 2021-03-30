@@ -24,6 +24,14 @@ interactive tutor for any topic.
 ## Demonstration {#demonstration}
 
 
+### Learning the flamenco guitar -- subtopic generation and tutor {#learning-the-flamenco-guitar-subtopic-generation-and-tutor}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/JA82zhiL4Su0LVufE7gqH7Mej.js" id="asciicast-JA82zhiL4Su0LVufE7gqH7Mej" async></script>
+
+
 ### Subtopic generation {#subtopic-generation}
 
 I demonstrate how to explore arbitrary topics
