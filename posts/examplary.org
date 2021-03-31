@@ -4,22 +4,38 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: About
+#+TITLE: Examplary
 #+DATE: <2021-03-17>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: nlp openai
 
-=Semiosis= is a blog on Natural Language Processing and Formal Language Theory.
+=Examplary= is an example-oriented DSL that can be used to construct and
+compose functions based on prompts and external =String->String= commands.
 
-[[https://www.youtube.com/watch?v=D5in5EdjhD0][Noam Chomsky - "The machine, the ghost, and the limits of understanding" - YouTube]]
+Using examplary, one can keep track of their various =String->String= functions
+but also:
+- generate prompts from examples and an example generator
 
-*** Shane Mulligan
-- Website: [[http://mullikine.github.io/][Bodacious Blog]]
-- GitHub: https://github.com/mullikine/
-- CV: https://mullikine.github.io/cv/
+Here are some examples:
 
-*** TakaheAI
-- Website :: http://takaheai.github.io/
+#+BEGIN_SRC clojure -n :i clj :async :results verbatim code
+  (def regex
+    "example 1\nexample2" "^example [12]$"
+    "example 2\nexample3" "^example [23]$"
+    "pi4\npi5" "^pi[45]$")
+  
+  (def analogy
+    ;; Each line is a training example.
+    "Neural networks" "Neural networks are like genetic algorithms in that both are systems that learn from experience"
+    "Social media" "Social media is like a market in that both are systems that coordinate the actions of many individuals.")
+  
+  (def field
+    "chemistry" "study of chemicals"
+    "biology" "study of living things")
+#+END_SRC
+
+*** Related links
+- Code: http://github.com/semiosis/examplary
 
 # + Website :: [[http://mullikine.github.io/][Bodacious Blog]]
 # + GitHub :: https://github.com/IpsumDominum
