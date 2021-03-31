@@ -21,10 +21,6 @@ but also:
 
 Here are some examples:
 
-+ =:g= :: specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts)
-+ =:i= :: specifies a source of input (training) strings from a jsonl file
-+ =:o= :: specifies an output file for outputting jsonl
-
 #+BEGIN_SRC lisp -n :i clj :async :results verbatim code
   (def lines->regex
     :e "grex"
@@ -48,6 +44,17 @@ Here are some examples:
     "47 6	* * 7" "At 06:47 on Sunday."
     "52 6	1 * *" "At 06:52 on day-of-month 1.")
 #+END_SRC
+
+| syntax | description                                                      |
+|--------+------------------------------------------------------------------|
+| =:g=   | external generator command                                       |
+| =:i=   | specifies a source of input (training) strings from a jsonl file |
+| =:o=   | specifies an output file for outputting jsonl                    |
+
++ _external generator command_ :: specifies an external [pipable] command which
+    can generate examples or as a source of truth
+    for query reformulation (when generating
+    prompts)
 
 *** Related links
 - Code: http://github.com/semiosis/examplary
