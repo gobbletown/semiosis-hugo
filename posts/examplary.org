@@ -45,11 +45,7 @@ Here are some examples:
     "25 6	* * *" "At 06:25."
     "47 6	* * 7" "At 06:47 on Sunday."
     "52 6	1 * *" "At 06:52 on day-of-month 1.")
-
 #+END_SRC
-
-*** Why a programming language
-It's easier to 
 
 *** Related links
 - Code: http://github.com/semiosis/examplary
