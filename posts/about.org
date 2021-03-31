@@ -9,7 +9,9 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: nlp openai
 
-=Semiosis= is a blog on Natural Language Processing and Formal Language Theory.
+=Semiosis= is a GitHub organisation focused on building programming languages to keep computing textual.
+
+It is also a blog on Natural Language Processing and Formal Language Theory.
 
 [[https://www.youtube.com/watch?v=D5in5EdjhD0][Noam Chomsky - "The machine, the ghost, and the limits of understanding" - YouTube]]
 
