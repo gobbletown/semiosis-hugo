@@ -29,8 +29,6 @@ Here are some examples:
 <!--listend-->
 
 {{< highlight lisp "linenos=table, linenostart=1" >}}
-
-
 (def lines->regex
   :e "grex"
   "example 1\nexample2" "^example [12]$"
