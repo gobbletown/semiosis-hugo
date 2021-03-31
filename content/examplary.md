@@ -18,7 +18,7 @@ but also:
 Here are some examples:
 
 {{< highlight clojure "linenos=table, linenostart=1" >}}
-;; :g specifies function which can generate examples or as a source of truth for query reformulation (when generating prompts)
+;; :g specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts)
 ;; :i specifies a source of input (training) strings from a jsonl file
 ;; :o specifies an output file for outputting jsonl
 
