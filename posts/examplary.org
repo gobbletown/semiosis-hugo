@@ -35,6 +35,10 @@ Here are some examples:
     "biology" "study of living things")
 #+END_SRC
 
+*** What is the problem that needs solving?
+
+*** Why a programming language
+
 *** Related links
 - Code: http://github.com/semiosis/examplary
 - Design patterns: http://github.com/semiosis/prompt-engineering-patterns
