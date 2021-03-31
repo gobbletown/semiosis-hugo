@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[Shane Mulligan]">
+<meta name="description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&amp;gt;String commands.
+Using examplary, one can keep track of their various String-&amp;gt;String functions but also:
+ generate prompts from examples and an example generator  Here are some examples:
+1 2 3 4 5 6 7 8 9 10 11 12 13  (def regex &amp;#34;example 1\nexample2&amp;#34; &amp;#34;^example [12]$&amp;#34; &amp;#34;example 2\nexample3&amp;#34; &amp;#34;^example [23]$&amp;#34; &amp;#34;pi4\npi5&amp;#34; &amp;#34;^pi[45]$&amp;#34;) (def analogy ;; Each line is a training example." />
+<meta name="keywords" content="NLP GPT openai" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://semiosis.github.io/examplary/" />
+
+
+    <title>
+        
+            Examplary :: semiosis  — Signs, Natural Language and Coding
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.f435d2d57fac184d525be68206b3dfe6baa199d693a5a0abe09248140b89ace4.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Examplary">
+<meta itemprop="description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&gt;String commands.
+Using examplary, one can keep track of their various String-&gt;String functions but also:
+ generate prompts from examples and an example generator  Here are some examples:
+1 2 3 4 5 6 7 8 9 10 11 12 13  (def regex &#34;example 1\nexample2&#34; &#34;^example [12]$&#34; &#34;example 2\nexample3&#34; &#34;^example [23]$&#34; &#34;pi4\npi5&#34; &#34;^pi[45]$&#34;) (def analogy ;; Each line is a training example."><meta itemprop="datePublished" content="2021-03-17T00:00:00&#43;13:00" />
+<meta itemprop="dateModified" content="2021-03-17T00:00:00&#43;13:00" />
+<meta itemprop="wordCount" content="132"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://semiosis.github.io/"/>
+
+<meta name="twitter:title" content="Examplary"/>
+<meta name="twitter:description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&gt;String commands.
+Using examplary, one can keep track of their various String-&gt;String functions but also:
+ generate prompts from examples and an example generator  Here are some examples:
+1 2 3 4 5 6 7 8 9 10 11 12 13  (def regex &#34;example 1\nexample2&#34; &#34;^example [12]$&#34; &#34;example 2\nexample3&#34; &#34;^example [23]$&#34; &#34;pi4\npi5&#34; &#34;^pi[45]$&#34;) (def analogy ;; Each line is a training example."/>
+
+
+
+
+    <meta property="og:title" content="Examplary" />
+<meta property="og:description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&gt;String commands.
+Using examplary, one can keep track of their various String-&gt;String functions but also:
+ generate prompts from examples and an example generator  Here are some examples:
+1 2 3 4 5 6 7 8 9 10 11 12 13  (def regex &#34;example 1\nexample2&#34; &#34;^example [12]$&#34; &#34;example 2\nexample3&#34; &#34;^example [23]$&#34; &#34;pi4\npi5&#34; &#34;^pi[45]$&#34;) (def analogy ;; Each line is a training example." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://semiosis.github.io/examplary/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="" />
+<meta property="article:published_time" content="2021-03-17T00:00:00&#43;13:00" />
+<meta property="article:modified_time" content="2021-03-17T00:00:00&#43;13:00" /><meta property="og:site_name" content="semiosis" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-03-17 00:00:00 &#43;1300 NZDT" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">semiosis</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/examplary/">Examplary</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://semiosis.github.io/examplary/">Examplary</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><code>Examplary</code> is an example-oriented DSL that can be used to construct and
+compose functions based on prompts and external <code>String-&gt;String</code> commands.</p>
+<p>Using examplary, one can keep track of their various <code>String-&gt;String</code> functions
+but also:</p>
+<ul>
+<li>generate prompts from examples and an example generator</li>
+</ul>
+<p>Here are some examples:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>regex
+  <span style="color:#e6db74">&#34;example 1\nexample2&#34;</span> <span style="color:#e6db74">&#34;^example [12]$&#34;</span>
+  <span style="color:#e6db74">&#34;example 2\nexample3&#34;</span> <span style="color:#e6db74">&#34;^example [23]$&#34;</span>
+  <span style="color:#e6db74">&#34;pi4\npi5&#34;</span> <span style="color:#e6db74">&#34;^pi[45]$&#34;</span>)
+
+(<span style="color:#66d9ef">def </span>analogy
+  <span style="color:#75715e">;; Each line is a training example.</span>
+  <span style="color:#e6db74">&#34;Neural networks&#34;</span> <span style="color:#e6db74">&#34;Neural networks are like genetic algorithms in that both are systems that learn from experience&#34;</span>
+  <span style="color:#e6db74">&#34;Social media&#34;</span> <span style="color:#e6db74">&#34;Social media is like a market in that both are systems that coordinate the actions of many individuals.&#34;</span>)
+
+(<span style="color:#66d9ef">def </span>field
+  <span style="color:#e6db74">&#34;chemistry&#34;</span> <span style="color:#e6db74">&#34;study of chemicals&#34;</span>
+  <span style="color:#e6db74">&#34;biology&#34;</span> <span style="color:#e6db74">&#34;study of living things&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="related-links">Related links</h2>
+<ul>
+<li>Code: <a href="http://github.com/semiosis/examplary">http://github.com/semiosis/examplary</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span>Visit <a href="https://github.com/semiosis">semiosis on GitHub</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+
+
+
+    </body>
+</html>
