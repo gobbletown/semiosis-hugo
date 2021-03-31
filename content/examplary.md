@@ -12,7 +12,8 @@ compose functions based on prompts and external `String->String` commands.
 Using examplary, one can keep track of their various `String->String` functions
 but also:
 
--   generate prompts from examples and an example generator
+-   generate prompts from an example generator
+-   design prompts using design patterns
 
 Here are some examples:
 
@@ -36,3 +37,4 @@ Here are some examples:
 ## Related links {#related-links}
 
 -   Code: <http://github.com/semiosis/examplary>
+-   Design patterns: <http://github.com/semiosis/prompt-engineering-patterns>

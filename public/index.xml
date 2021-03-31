@@ -48,7 +48,7 @@ Shane Mulligan  Website: Bodacious Blog GitHub: https://github.com/mullikine/ CV
       <guid>http://semiosis.github.io/examplary/</guid>
       <description>Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&amp;gt;String commands.
 Using examplary, one can keep track of their various String-&amp;gt;String functions but also:
- generate prompts from examples and an example generator  Here are some examples:
+ generate prompts from an example generator design prompts using design patterns  Here are some examples:
 1 2 3 4 5 6 7 8 9 10 11 12 13  (def regex &amp;#34;example 1\nexample2&amp;#34; &amp;#34;^example [12]$&amp;#34; &amp;#34;example 2\nexample3&amp;#34; &amp;#34;^example [23]$&amp;#34; &amp;#34;pi4\npi5&amp;#34; &amp;#34;^pi[45]$&amp;#34;) (def analogy ;; Each line is a training example.</description>
     </item>
     
