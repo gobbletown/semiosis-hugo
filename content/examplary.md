@@ -18,20 +18,38 @@ but also:
 Here are some examples:
 
 {{< highlight clojure "linenos=table, linenostart=1" >}}
-(def regex
+;; :g specifies function which can generate examples or as a source of truth for query reformulation (when generating prompts)
+;; :i specifies a source of input (training) strings from a jsonl file
+;; :o specifies an output file for outputting jsonl
+
+(def lines->regex
+  :e "grex"
   "example 1\nexample2" "^example [12]$"
   "example 2\nexample3" "^example [23]$"
   "pi4\npi5" "^pi[45]$")
 
-(def analogy
+(def topic->analogy
   ;; Each line is a training example.
   "Neural networks" "Neural networks are like genetic algorithms in that both are systems that learn from experience"
   "Social media" "Social media is like a market in that both are systems that coordinate the actions of many individuals.")
 
-(def field
+(def topic->field-of-study
   "chemistry" "study of chemicals"
   "biology" "study of living things")
+
+(def cron->natural-language
+  :e "interpret-crontab"
+  "17 *	* * *" "At minute 17."
+  "25 6	* * *" "At 06:25."
+  "47 6	* * 7" "At 06:47 on Sunday."
+  "52 6	1 * *" "At 06:52 on day-of-month 1.")
+
 {{< /highlight >}}
+
+
+## Why a programming language {#why-a-programming-language}
+
+It's easier to
 
 
 ## Related links {#related-links}
