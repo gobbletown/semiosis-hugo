@@ -50,7 +50,7 @@ Shane Mulligan  Website: Bodacious Blog GitHub: https://github.com/mullikine/ CV
       <description>Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&amp;gt;String commands.
  Code: http://github.com/semiosis/examplary  Using examplary, one can keep track of their various String-&amp;gt;String functions but also:
  generate prompts from an example generator design prompts using design patterns  Here are some examples:
- :g specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts) :i specifies a source of input (training) strings from a jsonl file :o specifies an output file for outputting jsonl   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  (def lines-&amp;gt;regex :e &amp;#34;grex&amp;#34; &amp;#34;example 1\nexample2&amp;#34; &amp;#34;^example [12]$&amp;#34; &amp;#34;example 2\nexample3&amp;#34; &amp;#34;^example [23]$&amp;#34; &amp;#34;pi4\npi5&amp;#34; &amp;#34;^pi[45]$&amp;#34;) (def topic-&amp;gt;analogy ;; Each line is a training example.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  (def lines-&amp;gt;regex :e &amp;#34;grex&amp;#34; &amp;#34;example 1\nexample2&amp;#34; &amp;#34;^example [12]$&amp;#34; &amp;#34;example 2\nexample3&amp;#34; &amp;#34;^example [23]$&amp;#34; &amp;#34;pi4\npi5&amp;#34; &amp;#34;^pi[45]$&amp;#34;) (def topic-&amp;gt;analogy ;; Each line is a training example.</description>
     </item>
     
     <item>
