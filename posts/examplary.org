@@ -24,8 +24,6 @@ Here are some examples:
 + =:o= :: specifies an output file for outputting jsonl
 
 #+BEGIN_SRC lisp -n :i clj :async :results verbatim code
-
-
   (def lines->regex
     :e "grex"
     "example 1\nexample2" "^example [12]$"
