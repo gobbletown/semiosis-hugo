@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
 <meta name="description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&amp;gt;String commands.
-Using examplary, one can keep track of their various String-&amp;gt;String functions but also:
+ Code: http://github.com/semiosis/examplary  Using examplary, one can keep track of their various String-&amp;gt;String functions but also:
  generate prompts from an example generator design prompts using design patterns  Here are some examples:
  :g specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts) :i specifies a source of input (training) strings from a jsonl file :o specifies an output file for outputting jsonl   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  (def lines-&amp;gt;regex :e &amp;#34;grex&amp;#34; &amp;#34;example 1\nexample2&amp;#34; &amp;#34;^example [12]$&amp;#34; &amp;#34;example 2\nexample3&amp;#34; &amp;#34;^example [23]$&amp;#34; &amp;#34;pi4\npi5&amp;#34; &amp;#34;^pi[45]$&amp;#34;) (def topic-&amp;gt;analogy ;; Each line is a training example." />
 <meta name="keywords" content="NLP GPT openai" />
@@ -37,18 +37,18 @@ Using examplary, one can keep track of their various String-&amp;gt;String funct
 
 <meta itemprop="name" content="Examplary">
 <meta itemprop="description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&gt;String commands.
-Using examplary, one can keep track of their various String-&gt;String functions but also:
+ Code: http://github.com/semiosis/examplary  Using examplary, one can keep track of their various String-&gt;String functions but also:
  generate prompts from an example generator design prompts using design patterns  Here are some examples:
  :g specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts) :i specifies a source of input (training) strings from a jsonl file :o specifies an output file for outputting jsonl   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  (def lines-&gt;regex :e &#34;grex&#34; &#34;example 1\nexample2&#34; &#34;^example [12]$&#34; &#34;example 2\nexample3&#34; &#34;^example [23]$&#34; &#34;pi4\npi5&#34; &#34;^pi[45]$&#34;) (def topic-&gt;analogy ;; Each line is a training example."><meta itemprop="datePublished" content="2021-03-17T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-03-17T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="228"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="230"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Examplary"/>
 <meta name="twitter:description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&gt;String commands.
-Using examplary, one can keep track of their various String-&gt;String functions but also:
+ Code: http://github.com/semiosis/examplary  Using examplary, one can keep track of their various String-&gt;String functions but also:
  generate prompts from an example generator design prompts using design patterns  Here are some examples:
  :g specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts) :i specifies a source of input (training) strings from a jsonl file :o specifies an output file for outputting jsonl   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  (def lines-&gt;regex :e &#34;grex&#34; &#34;example 1\nexample2&#34; &#34;^example [12]$&#34; &#34;example 2\nexample3&#34; &#34;^example [23]$&#34; &#34;pi4\npi5&#34; &#34;^pi[45]$&#34;) (def topic-&gt;analogy ;; Each line is a training example."/>
 
@@ -57,7 +57,7 @@ Using examplary, one can keep track of their various String-&gt;String functions
 
     <meta property="og:title" content="Examplary" />
 <meta property="og:description" content="Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&gt;String commands.
-Using examplary, one can keep track of their various String-&gt;String functions but also:
+ Code: http://github.com/semiosis/examplary  Using examplary, one can keep track of their various String-&gt;String functions but also:
  generate prompts from an example generator design prompts using design patterns  Here are some examples:
  :g specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts) :i specifies a source of input (training) strings from a jsonl file :o specifies an output file for outputting jsonl   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  (def lines-&gt;regex :e &#34;grex&#34; &#34;example 1\nexample2&#34; &#34;^example [12]$&#34; &#34;example 2\nexample3&#34; &#34;^example [23]$&#34; &#34;pi4\npi5&#34; &#34;^pi[45]$&#34;) (def topic-&gt;analogy ;; Each line is a training example." />
 <meta property="og:type" content="article" />
@@ -142,6 +142,9 @@ Using examplary, one can keep track of their various String-&gt;String functions
             <div class="post-content">
                 <p><code>Examplary</code> is an example-oriented DSL that can be used to construct and
 compose functions based on prompts and external <code>String-&gt;String</code> commands.</p>
+<ul>
+<li>Code: <a href="http://github.com/semiosis/examplary">http://github.com/semiosis/examplary</a></li>
+</ul>
 <p>Using examplary, one can keep track of their various <code>String-&gt;String</code> functions
 but also:</p>
 <ul>

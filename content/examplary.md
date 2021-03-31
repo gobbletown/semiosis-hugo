@@ -9,6 +9,8 @@ draft = false
 `Examplary` is an example-oriented DSL that can be used to construct and
 compose functions based on prompts and external `String->String` commands.
 
+-   Code: <http://github.com/semiosis/examplary>
+
 Using examplary, one can keep track of their various `String->String` functions
 but also:
 
