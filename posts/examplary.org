@@ -13,7 +13,6 @@
 compose functions based on prompts and external =String->String= commands.
 
 - Code: http://github.com/semiosis/examplary
-- Design patterns: http://github.com/semiosis/prompt-engineering-patterns
 
 Using examplary, one can keep track of their various =String->String= functions
 but also:
