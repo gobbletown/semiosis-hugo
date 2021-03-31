@@ -17,7 +17,7 @@ but also:
 
 Here are some examples:
 
-{{< highlight clojure "linenos=table, linenostart=1" >}}
+{{< highlight lisp "linenos=table, linenostart=1" >}}
 ;; :g specifies an external [pipable] command which can generate examples or as a source of truth for query reformulation (when generating prompts)
 ;; :i specifies a source of input (training) strings from a jsonl file
 ;; :o specifies an output file for outputting jsonl
@@ -43,13 +43,7 @@ Here are some examples:
   "25 6	* * *" "At 06:25."
   "47 6	* * 7" "At 06:47 on Sunday."
   "52 6	1 * *" "At 06:52 on day-of-month 1.")
-
 {{< /highlight >}}
-
-
-## Why a programming language {#why-a-programming-language}
-
-It's easier to
 
 
 ## Related links {#related-links}
