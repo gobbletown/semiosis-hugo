@@ -120,15 +120,6 @@ prompt: |+
     Have you ever swam through an entire book?
     What book had the biggest impact on your life?
     ###
-    TOPIC: PSYCHOLOGY
-    OPENERS:
-    Have you ever had two days in a row where you didn’t text anyone?
-    How much do you pee per day?
-    Are you a certified psychologist?
-    Do you give pro-bono therapy?
-    What’s the difference between you and a psychologist?
-    Are you an expert on human behavior?
-    ###
     TOPIC: <1>
     OPENERS:
 engine: "davinci"
