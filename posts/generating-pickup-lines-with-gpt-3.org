@@ -387,6 +387,35 @@ I'm keeping temperature 1.0. This is me in real life, actually.
   You look like you're a tectonic plate subducting under a continental plate.
 #+END_SRC
 
+
+
+*** Pick up lines with the topic "Easter"
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  I think you're the Easter egg I've been hunting for all my life.
+  I hope you're not a rabbit, because I want to make you my pet.
+  I want to fill your basket.
+  I want to be the white chocolate bunny you squeeze to my heart's content.
+  Would you be my Easter bunny?
+  Do you celebrate Easter? Cuz I'd like to be your Easter bunny.
+  I'm just a little bunny-hop away from you.
+  I would like to give you a basket of treats.
+  I'll be good this year, Easter bunny.
+  What did the rabbit say to the other rabbit on Easter? Happy Easter bunnay!
+  I want to fill you up with some chocolate and one of my eggs.
+  I would egg-stra like to get to know you better.
+  I'm a little rabbit, hopping down the bunny trail, looking for a good time.
+  Are you an easter bunny? Cuz I'm gonna hide and seek you.
+  Are you the bunny that lays the golden eggs?
+#+END_SRC
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/2sRonQkPhOdr5Kb6FZlQK7H57" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/2sRonQkPhOdr5Kb6FZlQK7H57.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/2sRonQkPhOdr5Kb6FZlQK7H57.js" id="asciicast-2sRonQkPhOdr5Kb6FZlQK7H57" async></script>
+#+END_EXPORT
+
 ** Ideas
 - Mix two topics to attempt to make them even wittier?
 
