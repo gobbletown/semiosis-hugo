@@ -24,7 +24,7 @@ lines.
 <script src="https://asciinema.org/a/Dn3gncKZzJWdJ4PE4qCJPSwpF.js" id="asciicast-Dn3gncKZzJWdJ4PE4qCJPSwpF" async></script>
 #+END_EXPORT
 
-*** Pick up lines about "Settlers of Catan"
+*** Pick up lines with the topic "SETTLERS OF CATAN"
 
 #+BEGIN_SRC text -n :async :results verbatim code
   When playing Settlers of Catan, the shortest route is a straight line to my heart.
@@ -200,6 +200,7 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 *** Techniques to making a better prompt
 - Use query reformulation (pick the best ones and feed back in to improve the prompt)
 - Use a generic completer to more rapidly redesign the prompt
+- I label each generated pick up line so the new generations are more specific when leaving a label out that I want to avoid
 
 #+BEGIN_SRC text -n :async :results verbatim code
   title: "Very witty pick up lines for a topc"
