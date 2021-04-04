@@ -387,8 +387,6 @@ I'm keeping temperature 1.0. This is me in real life, actually.
   You look like you're a tectonic plate subducting under a continental plate.
 #+END_SRC
 
-
-
 *** Pick up lines with the topic "Easter"
 
 #+BEGIN_SRC text -n :async :results verbatim code
