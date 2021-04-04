@@ -9,7 +9,7 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: GPT-3 emacs examplary
 
-+ Original prompt :: https://www.reddit.com/r/GPT3/comments/mdl7fl/500_openers_for_tinder_written_by_gpt3_the_prompt/
++ Latest version of the pick up lines prompt :: http://github.com/semiosis/prompts/blob/master/prompts/very-witty-pick-up-lines.prompt
 
 ** Summary
 I create a prompt in my prompt description
@@ -394,3 +394,7 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 
 ** Ideas
 - Mix two topics to attempt to make them even wittier?
+
+** Appendix
+
++ Original prompt :: https://www.reddit.com/r/GPT3/comments/mdl7fl/500_openers_for_tinder_written_by_gpt3_the_prompt/
