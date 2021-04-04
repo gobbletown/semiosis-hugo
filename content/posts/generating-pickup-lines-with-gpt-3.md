@@ -67,10 +67,12 @@ I'd like to trade hexes with you.
 <script src="https://asciinema.org/a/Fio4sczoyqk5dMttvd36Dn5h2.js" id="asciicast-Fio4sczoyqk5dMttvd36Dn5h2" async></script>
 
 
-## Pick up lines {#pick-up-lines}
+## Original batch of pick up lines {#original-batch-of-pick-up-lines}
+
+These appeared to be more like questions.
 
 
-### Harry Potter {#harry-potter}
+### Topic: "Harry Potter" {#topic-harry-potter}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 What house would you be sorted into?
@@ -82,7 +84,7 @@ Are you OK with me using the Patronus charm to tell you I love you?
 {{< /highlight >}}
 
 
-### dancing {#dancing}
+### Topic: "dancing" {#topic-dancing}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 What’s the last song you danced to?
@@ -94,7 +96,7 @@ If you could only dance to one song for the rest of your life, what song would i
 {{< /highlight >}}
 
 
-### The prompt {#the-prompt}
+### Breakdown of the original prompt {#breakdown-of-the-original-prompt}
 
 -   Design patterns used:
     -   [mulitplex pattern](http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/multiplex-answers.org)
@@ -220,7 +222,7 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 
 <!--listend-->
 
-{{< highlight text "linenos=table, linenostart=1" >}}
+{{< highlight yaml "linenos=table, linenostart=1" >}}
 title: "Very witty pick up lines for a topc"
 # future-titles: ""
 # aims: |+
