@@ -357,6 +357,8 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 *** Pick up lines with the topic "tectonic plate"
 
 #+BEGIN_SRC text -n :async :results verbatim code
+  I think we could make some beautiful earthquakes together.
+  I want to go down on you until you erupt like a tectonic plate.
   I think we should meet at the fault-line.
   We're plates tectonically.
   I like you a lot.
