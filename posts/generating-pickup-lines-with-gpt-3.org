@@ -351,7 +351,7 @@ I'm keeping temperature 1.0. This is me in real life, actually.
   postprocessor: "awk 1"
 #+END_SRC
 
-*** Pick up lines about "tectonic plates"
+*** Pick up lines with the topic "tectonic plate"
 
 #+BEGIN_SRC text -n :async :results verbatim code
   I think we should meet at the fault-line.
