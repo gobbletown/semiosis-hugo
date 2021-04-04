@@ -376,6 +376,8 @@ postprocessor: "awk 1"
 ### Pick up lines with the topic "tectonic plate" {#pick-up-lines-with-the-topic-tectonic-plate}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
+I think we could make some beautiful earthquakes together.
+I want to go down on you until you erupt like a tectonic plate.
 I think we should meet at the fault-line.
 We're plates tectonically.
 I like you a lot.
