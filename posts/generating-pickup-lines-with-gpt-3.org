@@ -65,8 +65,10 @@ lines.
 <script src="https://asciinema.org/a/Fio4sczoyqk5dMttvd36Dn5h2.js" id="asciicast-Fio4sczoyqk5dMttvd36Dn5h2" async></script>
 #+END_EXPORT
 
-** Pick up lines
-*** Harry Potter
+** Original batch of pick up lines
+These appeared to be more like questions.
+
+*** Topic: "Harry Potter"
 #+BEGIN_SRC text -n :async :results verbatim code
   What house would you be sorted into?
   How many times have you watched the entire Harry Potter series?
@@ -76,7 +78,7 @@ lines.
   Are you OK with me using the Patronus charm to tell you I love you?
 #+END_SRC
 
-*** dancing
+*** Topic: "dancing"
 #+BEGIN_SRC text -n :async :results verbatim code
   What’s the last song you danced to?
   You’re my favorite dance move.
@@ -86,7 +88,7 @@ lines.
   If you could only dance to one song for the rest of your life, what song would it be?
 #+END_SRC
 
-*** The prompt
+*** Breakdown of the original prompt
 
 + Design patterns used:
   - [[http://github.com/semiosis/prompt-engineering-patterns/blob/master/patterns/multiplex-answers.org][mulitplex pattern]]
@@ -202,7 +204,7 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 - Use a generic completer to more rapidly redesign the prompt
 - I label each generated pick up line so the new generations are more specific when leaving a label out that I want to avoid
 
-#+BEGIN_SRC text -n :async :results verbatim code
+#+BEGIN_SRC yaml -n :async :results verbatim code
   title: "Very witty pick up lines for a topc"
   # future-titles: ""
   # aims: |+
