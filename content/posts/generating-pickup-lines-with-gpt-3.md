@@ -6,8 +6,8 @@ keywords = ["GPT-3", "emacs", "examplary"]
 draft = false
 +++
 
-Original prompt
-: <https://www.reddit.com/r/GPT3/comments/mdl7fl/500%5Fopeners%5Ffor%5Ftinder%5Fwritten%5Fby%5Fgpt3%5Fthe%5Fprompt/>
+Latest version of the pick up lines prompt
+: <http://github.com/semiosis/prompts/blob/master/prompts/very-witty-pick-up-lines.prompt>
 
 
 ## Summary {#summary}
@@ -415,3 +415,9 @@ You look like you're a tectonic plate subducting under a continental plate.
 ## Ideas {#ideas}
 
 -   Mix two topics to attempt to make them even wittier?
+
+
+## Appendix {#appendix}
+
+Original prompt
+: <https://www.reddit.com/r/GPT3/comments/mdl7fl/500%5Fopeners%5Ffor%5Ftinder%5Fwritten%5Fby%5Fgpt3%5Fthe%5Fprompt/>
