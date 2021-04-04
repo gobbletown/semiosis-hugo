@@ -25,7 +25,7 @@ lines.
 <script src="https://asciinema.org/a/Dn3gncKZzJWdJ4PE4qCJPSwpF.js" id="asciicast-Dn3gncKZzJWdJ4PE4qCJPSwpF" async></script>
 
 
-### Pick up lines about "Settlers of Catan" {#pick-up-lines-about-settlers-of-catan}
+### Pick up lines with the topic "SETTLERS OF CATAN" {#pick-up-lines-with-the-topic-settlers-of-catan}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 When playing Settlers of Catan, the shortest route is a straight line to my heart.
@@ -216,6 +216,7 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 
 -   Use query reformulation (pick the best ones and feed back in to improve the prompt)
 -   Use a generic completer to more rapidly redesign the prompt
+-   I label each generated pick up line so the new generations are more specific when leaving a label out that I want to avoid
 
 <!--listend-->
 
@@ -370,7 +371,7 @@ postprocessor: "awk 1"
 {{< /highlight >}}
 
 
-### Pick up lines about "techtonic plates" {#pick-up-lines-about-techtonic-plates}
+### Pick up lines with the topic "tectonic plate" {#pick-up-lines-with-the-topic-tectonic-plate}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 I think we should meet at the fault-line.
