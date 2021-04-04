@@ -16,7 +16,48 @@ I create a prompt in my prompt description
 format and use it to generate some pickup
 lines.
 
-** Demonstration
+** Demonstration (version 2)
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/Dn3gncKZzJWdJ4PE4qCJPSwpF" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Dn3gncKZzJWdJ4PE4qCJPSwpF.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/Dn3gncKZzJWdJ4PE4qCJPSwpF.js" id="asciicast-Dn3gncKZzJWdJ4PE4qCJPSwpF" async></script>
+#+END_EXPORT
+
+*** Pick up lines about "Settlers of Catan"
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  When playing Settlers of Catan, the shortest route is a straight line to my heart.
+  I wish you were a Settler so we could settle down together.
+  What do you want to trade me for one of your sheep?
+  Do you play Catan? Cuz I think you'd be a great development card for me.
+  May I join your settlement?
+  I'm not sure if you're a settlement that I want to build up or a barbarian I want to raze.
+  Do you play settlers of Catan? You should play with me.
+  I'd Like to settle on your face.
+  I'd like to settle between your settlements.
+  Do you have any wool? I want to get sheep with you.
+  I'd Like to settle down on Catan with you.
+  I think you're something special, like a good card in Catan.
+  When we play Settlers of Catan, I'll trade a brick for you.
+  I'm happy to be on your game board.
+  I like you a lot! I like you so much I'd trade all my sheep for you.
+  Settlers need resources, and I need you.
+  I like you a lot. I'd like to trade you for a sheep.
+  Do you Like Settlers of Catan? Cuz I'd Like to settle on your land.
+  You look like a settler I'd like to settle with.
+  If you were settlers of Catan, you'd be the grain.
+  Can I be the robber to your resources?
+  I'm a fan of Settlers of Catan, and I'd like you to be my 10.
+  I want to settle my people on your resources.
+  I'm a settler looking for a hex that will settle.
+  You look like a woman I'd like to settle island with.
+  I'd like to settle along your rivers and settle your hills.
+  You look like the type of girl I'd like to settle in a small island with.
+  I'd like to trade hexes with you.
+#+END_SRC
+
+** Demonstration (version 1, not as good)
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/Fio4sczoyqk5dMttvd36Dn5h2" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Fio4sczoyqk5dMttvd36Dn5h2.svg" /></a> -->
@@ -154,3 +195,201 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/hAdkA7aBewFbNVEmRCNwgcnfq.js" id="asciicast-hAdkA7aBewFbNVEmRCNwgcnfq" async></script>
 #+END_EXPORT
+
+** Version 2
+*** Techniques to making a better prompt
+- Use query reformulation (pick the best ones and feed back in to improve the prompt)
+- Use a generic completer to more rapidly redesign the prompt
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  title: "Very witty pick up lines for a topc"
+  # future-titles: ""
+  # aims: |+
+  # - More abstractive rewording
+  doc: "Given a topic, generate pick up lines, one at a time"
+  # aims: |+
+  # - Successful
+  prompt-version: 1
+  prompt: |+
+      The following are witty openers for Tinder:
+      ###
+      TOPIC: CATS AND DRUGS
+      - Can I call you my catnip?
+      ###
+      TOPIC: CATS
+      - If I said you had a purrfect body, would you hold it against me?
+      ###
+      TOPIC: CATS AND HAPPINESS
+      - Do you want to be my cat? You'll get fed, I'll pet you, you'll stay warm, and we'll both be happy.
+      ###
+      TOPIC: CATS AND FOOD
+      - You look like you'd taste good with a little milk.
+      ###
+      TOPIC: PIZZA
+      - You look like a slice of heaven.
+      ###
+      TOPIC: PIZZA INNUENDO
+      - If you were a pizza, you would be half cheese and half toppings.
+      ###
+      TOPIC: NACHOS INNUENDO
+      - Do you want to be my dipping sauce?
+      ###
+      TOPIC: FOOD ANALOGY
+      - You look like the salt to my pepper.
+      ###
+      TOPIC: SLEEP INNUENDO
+      - Are you a good pillow talker or a bad pillow talker?
+      ###
+      TOPIC: SLEEP ANALOGY
+      - You're like the sun in the morning.
+      ###
+      TOPIC: VIDEO GAMES
+      - Are people ever mean to you in games for being too cute?
+      ###
+      TOPIC: VIDEO GAMES
+      - You look like the type of girl I want to be a Pokemon trainer to.
+      ###
+      TOPIC: TRAVEL
+      - I want some of your culture.
+      ###
+      TOPIC: TRAVEL
+      - I want to explore every part of you.
+      ###
+      TOPIC: STARCRAFT
+      - I'm glad I scouted you.
+      ###
+      TOPIC: TRAVEL
+      - I think your exotic.
+      ###
+      TOPIC: TRAVEL
+      - I'm at the airport, looking at the plane schedule. Now all I need is you.
+      ###
+      TOPIC: TACOS AND INNUENDO
+      - You look like the type that would be good with a little hot sauce.
+      ###
+      TOPIC: ASTRONAUTS
+      - I think we should make space travel plans.
+      ###
+      TOPIC: ASTRONAUTS AND INNUENDO
+      - I'd like to be your space shuttle.
+      ###
+      TOPIC: COFFEE
+      - Do you like coffee? Cuz I like you a latte.
+      ###
+      TOPIC: <1>
+      -
+  # # Additional transformation of prompt after the template
+  # prompt-filter: "sed -z 's/\s\+$//'"
+  # # Trailing whitespace is always removed
+  # prompt-remove-trailing-whitespace: on
+  # myrc will select the completion engine using my config.
+  # This may be openi-complete or something else
+  engine: "myrc"
+  # if nothing is selected in myrc and openapi-complete is used
+  # by default, then openai should select this engine.
+  preferred-openai-engine: "davinci"
+  # 0.0 = /r/hadastroke
+  # 1.0 = /r/iamveryrandom
+  # Use 0.3-0.8
+  temperature: 0.8
+  max-tokens: 60
+  top-p: 1.0
+  # Not available yet: openai api completions.create --help
+  frequency-penalty: 0.5
+  # If I make presence-penalty 0 then it will get very terse
+  presence-penalty: 0.0
+  best-of: 1
+  stop-sequences:
+  # - "\n"
+  # - "\n\n"
+  - "###"
+  inject-start-text: yes
+  inject-restart-text: yes
+  show-probabilities: off
+  # Cache the function by default when running the prompt function
+  cache: on
+  vars:
+  - "topic"
+  examples:
+  - "tectonic plates"
+  # Completion is for generating a company-mode completion function
+  # completion: on
+  # # default values for pen -- evaled
+  # # This is useful for completion commands.
+  # pen-defaults:
+  # - "(detect-language)"
+  # - "(pen-preceding-text)"
+  # These are elisp String->String functions and run from pen.el
+  # It probably runs earlier than the preprocessors shell scripts
+  pen-preprocessors:
+  - "tr '[:lower:]' '[:upper:]'"
+  # # A preprocessor filters the var at that position
+  # the current implementation of preprocessors is kinda slow and will add ~100ml per variable
+  # # This may be useful to distinguish a block of text, for example
+  # preprocessors:
+  # - "sed 's/^/- /"
+  # - "cat"
+  chomp-start: on
+  chomp-end: off
+  prefer-external: on
+  external: ""
+  # Enable running conversation
+  conversation-mode: no
+  # Replace selected text
+  filter: no
+  # Keep stitching together until reaching this limit
+  # This allows a full response for answers which may need n*max-tokens to reach the stop-sequence.
+  stitch-max: 0
+  needs-work: no
+  n-test-runs: 5
+  # Prompt function aliases
+  # aliases:
+  # - "asktutor"
+  # postprocessor: "sed 's/- //' | uniqnosort"
+  # Run it n times and combine the output
+  n-collate: 10
+  postprocessor: "awk 1"
+#+END_SRC
+
+*** Pick up lines about "techtonic plates"
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  I think we should meet at the fault-line.
+  We're plates tectonically.
+  I like you a lot.
+  Are you the one that moved my earth plate?
+  I feel an Earth-shaking connection.
+  I've been looking for a long time to find a place like this.
+  We're like the same tectonic plate.
+  We fit together.
+  I'm a tectonic plate shifting.
+  If you were a tectonic plate, I'd want to be a volcano.
+  The only friction I want between us is in the bedroom.
+  You're the type of girl that I want to shift into a new continent with.
+  I think I can see your tectonic plates through your top.
+  I think we might be convergent.
+  The earth's plates just moved under me.
+  You're the tectonic plate I've been looking for.
+  If you were a tectonic plate, I'd be your subduction zone.
+  If you were a tectonic plate, I'd want to be a subduction zone.
+  If we don't go on a date, we'll be tectonically doomed.
+  Did you feel it?
+  The earth just moved.
+  I'd like to meet under the two continental plates.
+  Your smile is so magnetic, I feel the Earth move every time I see it.
+  I'm hoping we can someday collide tectonically.
+  I'd like to be on your plate.
+  You move me.
+  I like your tectonic plates.
+  You look like the type to go down and make a plate tectonic.
+  I want to be your tectonic plate.
+  I think that we would be a good tectonic plate couple.
+  We're like the tectonic plates of the Earth.
+  We'll never collide, but we'll have an earthquake whenever we meet.
+  I think we're two tectonic plates colliding.  
+  I think we should meet up and move together.
+  You look like you're a tectonic plate subducting under a continental plate.
+#+END_SRC
+
+** Ideas
+- Mix two topics to attempt to make them even wittier?
