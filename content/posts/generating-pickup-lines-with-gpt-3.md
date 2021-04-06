@@ -17,6 +17,16 @@ format and use it to generate some pickup
 lines.
 
 
+## Demonstration (v2 with emacs counsel integration) {#demonstration--v2-with-emacs-counsel-integration}
+
+New results are fed into a fuzzy finder as they are generated. I can stop and select at any time.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/vEP2XXQb6UYUchVLC8MOq0xoQ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/vEP2XXQb6UYUchVLC8MOq0xoQ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/vEP2XXQb6UYUchVLC8MOq0xoQ.js" id="asciicast-vEP2XXQb6UYUchVLC8MOq0xoQ" async></script>
+
+
 ## Demonstration (version 2) {#demonstration--version-2}
 
 <!-- Play on asciinema.com -->
