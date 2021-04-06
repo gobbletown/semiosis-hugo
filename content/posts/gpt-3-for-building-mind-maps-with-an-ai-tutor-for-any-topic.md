@@ -2,7 +2,7 @@
 title = "GPT-3 mind maps with an AI tutor for any topic"
 author = ["Shane Mulligan"]
 date = 2021-03-29T00:00:00+13:00
-keywords = ["GPT-3", "emacs", "learning"]
+keywords = ["GPT-3", "emacs", "learning", "openai", "NLP"]
 draft = false
 +++
 

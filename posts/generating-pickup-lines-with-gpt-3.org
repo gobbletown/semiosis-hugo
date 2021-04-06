@@ -7,7 +7,7 @@
 #+TITLE: Generating pickup lines with GPT-3
 #+DATE: <2021-03-27>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3 emacs examplary
+#+KEYWORDS: GPT-3 emacs examplary openai NLP
 
 + Latest version of the pick up lines prompt :: http://github.com/semiosis/prompts/blob/master/prompts/very-witty-pick-up-lines.prompt
 

@@ -2,7 +2,7 @@
 title = "Fictional statements of remorse with GPT-3 in the 1st and 3rd person"
 author = ["Shane Mulligan"]
 date = 2021-04-07T00:00:00+12:00
-keywords = ["GPT-3"]
+keywords = ["GPT-3", "openai", "emacs", "NLP"]
 draft = false
 +++
 

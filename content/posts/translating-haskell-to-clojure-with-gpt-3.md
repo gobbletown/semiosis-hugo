@@ -2,7 +2,7 @@
 title = "Translating Haskell to Clojure with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-03-07T00:00:00+13:00
-keywords = ["GPT-3"]
+keywords = ["GPT-3", "openai", "emacs"]
 draft = false
 +++
 

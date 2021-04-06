@@ -7,7 +7,7 @@
 #+TITLE: Translating Haskell to Clojure with GPT-3
 #+DATE: <2021-03-07>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3
+#+KEYWORDS: GPT-3 openai emacs
 
 + Relevant material :: https://hyperpolyglot.org/ml
 

@@ -2,7 +2,7 @@
 title = "Generating pickup lines with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-03-27T00:00:00+13:00
-keywords = ["GPT-3", "emacs", "examplary"]
+keywords = ["GPT-3", "emacs", "examplary", "openai", "NLP"]
 draft = false
 +++
 

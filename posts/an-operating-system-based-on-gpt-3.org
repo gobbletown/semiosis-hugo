@@ -7,7 +7,7 @@
 #+TITLE: An operating system based on GPT-3
 #+DATE: <2021-03-08>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3
+#+KEYWORDS: GPT-3 openai emacs
 
 + Reference :: http://github.com/semiosis/examplary
 

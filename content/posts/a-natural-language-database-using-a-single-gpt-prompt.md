@@ -2,7 +2,7 @@
 title = "A natural language database using a single GPT prompt"
 author = ["Shane Mulligan"]
 date = 2021-03-07T00:00:00+13:00
-keywords = ["GPT-3", "NLP"]
+keywords = ["GPT-3", "NLP", "openai", "NLP"]
 draft = false
 +++
 

@@ -2,7 +2,7 @@
 title = "Translating with GPT-3 and Emacs"
 author = ["Shane Mulligan"]
 date = 2021-04-06T00:00:00+12:00
-keywords = ["GPT-3"]
+keywords = ["GPT-3", "openai", "emacs", "NLP"]
 draft = false
 +++
 

@@ -7,7 +7,7 @@
 #+TITLE: Fictional statements of remorse with GPT-3 in the 1st and 3rd person
 #+DATE: <2021-04-07>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3
+#+KEYWORDS: GPT-3 openai emacs NLP
 
 ** Summary
 I use GPT-3 to generate fictional statements
