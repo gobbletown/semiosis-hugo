@@ -27,8 +27,8 @@ unsafe= true
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "My new homepage or blog"
-  keywords = "homepage, blog"
+  description = "Signs, Natural Language and Coding"
+  keywords = "NLP, GPT-3"
   images = [""]
 
   [params.portrait]
