@@ -424,6 +424,19 @@ I'm keeping temperature 1.0. This is me in real life, actually.
 <script src="https://asciinema.org/a/2sRonQkPhOdr5Kb6FZlQK7H57.js" id="asciicast-2sRonQkPhOdr5Kb6FZlQK7H57" async></script>
 #+END_EXPORT
 
+*** Pick up lines with the topic "Computers"
+#+BEGIN_SRC text -n :async :results verbatim code
+  Do you like computers? Cuz I'd like to compute with you.
+  If you were a computer program, I'd always choose to open you.
+  I'd like to RAM you.
+  I turn you on?
+  I like your hard drive.
+  I think you are a hot piece of hardware.
+  I think my computer is broken because it won't stop saying I'm single. May I borrow yours to fix it?
+  Do you like Apple products? Or would you rather I take you windows shopping?
+  I'm in the computer lab with you, but all I can think about is taking you to my server.
+#+END_SRC
+
 ** Ideas
 - Mix two topics to attempt to make them even wittier?
 
