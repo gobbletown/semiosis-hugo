@@ -443,6 +443,21 @@ Are you the bunny that lays the golden eggs?
 <script src="https://asciinema.org/a/2sRonQkPhOdr5Kb6FZlQK7H57.js" id="asciicast-2sRonQkPhOdr5Kb6FZlQK7H57" async></script>
 
 
+### Pick up lines with the topic "Computers" {#pick-up-lines-with-the-topic-computers}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Do you like computers? Cuz I'd like to compute with you.
+If you were a computer program, I'd always choose to open you.
+I'd like to RAM you.
+I turn you on?
+I like your hard drive.
+I think you are a hot piece of hardware.
+I think my computer is broken because it won't stop saying I'm single. May I borrow yours to fix it?
+Do you like Apple products? Or would you rather I take you windows shopping?
+I'm in the computer lab with you, but all I can think about is taking you to my server.
+{{< /highlight >}}
+
+
 ## Ideas {#ideas}
 
 -   Mix two topics to attempt to make them even wittier?
