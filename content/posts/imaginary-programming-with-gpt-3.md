@@ -6,6 +6,17 @@ keywords = ["GPT-3"]
 draft = false
 +++
 
+Code
+: <https://github.com/semiosis/pen.el>
+
+
+Prompts:: <https://github.com/semiosis/prompts/>
+
+
+Disclaimer
+: Please contribute as this is an open source project! It's very hard to find free prompts online currently and that's because everyone is out for themselves. Please support open source. Thank you.
+
+
 ## Summary {#summary}
 
 This is a demonstration of an imaginary
