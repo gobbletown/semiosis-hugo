@@ -8,9 +8,9 @@ draft = false
 
 ## Summary {#summary}
 
-I build an imaginary programming environment.
-
-This development environment is a work in progress.
+This is a demonstration of an imaginary
+programming environment. There may be nothing
+else like it in the world today.
 
 
 ### What does it mean to be imaginary? {#what-does-it-mean-to-be-imaginary}
