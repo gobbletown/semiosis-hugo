@@ -12,7 +12,7 @@
 ** Summary
 This is a demonstration of an imaginary
 programming environment. There may be nothing
-like it in the world today.
+else like it in the world today.
 
 *** What does it mean to be imaginary?
 Several of the components of a normal
