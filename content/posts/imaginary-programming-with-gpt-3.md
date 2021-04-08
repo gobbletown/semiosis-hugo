@@ -45,8 +45,8 @@ These components are replaced by GPT-3 prompts.
 -   There are no interpreters or compilers being used but you can still generate code using words and evaluate code by inference.
 -   All requests take the same amount of time to run.
 -   All languages have equally facilitated environments.
--   You may program in any language
--   It's runs broken code
+-   You may program in any language.
+-   It runs broken code.
 -   One day you may design new languages within the latent space of GPT-3, without doing any programming.
 -   You may have an interpreter for languages with no interpreter, such as C++.
 -   You may have code completion for scripting languages without a completion engine.
