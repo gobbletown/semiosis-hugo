@@ -17,14 +17,13 @@
             <guid>http://semiosis.github.io/posts/imaginary-programming-with-gpt-3/</guid>
             <description>Summary I build an imaginary programming environment.
 This development environment is a work in progress.
-What does that mean? Several of the components of a normal programming environment are replaced by functions that infer rather than evaluate.
+What does it mean to be imaginary? Several of the components of a normal programming environment are replaced by functions that infer rather than evaluate.
 These components are replaced by GPT-3 prompts.
- linter, indenter/reformatter, code completion, interpreter  Current progress Some of the plumbing, including the interpreter and the autocompletion system are in an MVP stage.
-Demonstration  --  Prompts kickstarter This prompt initiates the imaginary interpreter / REPL.</description>
+ linter, indenter/reformatter, code completion, interpreter  The implications There are interpreters or compilers but you can generate code with words and evaluate code by inference.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I build an imaginary programming environment.</p>
 <p>This development environment is a work in progress.</p>
-<h3 id="what-does-that-mean">What does that mean?</h3>
+<h3 id="what-does-it-mean-to-be-imaginary">What does it mean to be imaginary?</h3>
 <p>Several of the components of a normal
 programming environment are replaced by
 functions that infer rather than evaluate.</p>
@@ -35,6 +34,12 @@ functions that infer rather than evaluate.</p>
 <li>code completion,</li>
 <li>interpreter</li>
 </ul>
+<h3 id="the-implications">The implications</h3>
+<p>There are interpreters or compilers but you can generate code with words and evaluate code by inference.</p>
+<p>This lets you program in any language and is resiliant to errors.</p>
+<p>You may have an interpreter for languages with no interpreter, such as C++.</p>
+<p>You may have code completion for scripting languages without a completion engine.</p>
+<p>It&rsquo;s great for thought experiments.</p>
 <h3 id="current-progress">Current progress</h3>
 <p>Some of the plumbing, including the
 interpreter and the autocompletion system are

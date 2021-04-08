@@ -13,7 +13,7 @@ I build an imaginary programming environment.
 This development environment is a work in progress.
 
 
-### What does that mean? {#what-does-that-mean}
+### What does it mean to be imaginary? {#what-does-it-mean-to-be-imaginary}
 
 Several of the components of a normal
 programming environment are replaced by
@@ -25,6 +25,19 @@ These components are replaced by GPT-3 prompts.
 -   indenter/reformatter,
 -   code completion,
 -   interpreter
+
+
+### The implications {#the-implications}
+
+There are interpreters or compilers but you can generate code with words and evaluate code by inference.
+
+This lets you program in any language and is resiliant to errors.
+
+You may have an interpreter for languages with no interpreter, such as C++.
+
+You may have code completion for scripting languages without a completion engine.
+
+It's great for thought experiments.
 
 
 ### Current progress {#current-progress}
