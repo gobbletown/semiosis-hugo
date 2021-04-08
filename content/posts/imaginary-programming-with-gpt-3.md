@@ -29,9 +29,17 @@ These components are replaced by GPT-3 prompts.
 
 ### The implications {#the-implications}
 
-There are interpreters or compilers but you can generate code with words and evaluate code by inference.
+There are no interpreters or compilers being used but you can still
+generate code using words and evaluate code by inference.
 
-This lets you program in any language and is resiliant to errors.
+All requests take the same amount of time to run.
+
+All languages have equally facilitated environments.
+
+This lets you program in any language and is
+resiliant to errors, and one day design new
+languages within the latent space of GPT-3,
+without doing any programming.
 
 You may have an interpreter for languages with no interpreter, such as C++.
 
