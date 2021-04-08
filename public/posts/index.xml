@@ -19,7 +19,7 @@
 This development environment is a work in progress.
 What does it mean to be imaginary? Several of the components of a normal programming environment are replaced by functions that infer rather than evaluate.
 These components are replaced by GPT-3 prompts.
- linter, indenter/reformatter, code completion, interpreter  The implications There are no interpreters or compilers being used but you can still generate code using words and evaluate code by inference.</description>
+ linter, indenter/reformatter, code completion, interpreter  The implications  There are no interpreters or compilers being used but you can still generate code using words and evaluate code by inference.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I build an imaginary programming environment.</p>
 <p>This development environment is a work in progress.</p>
@@ -35,17 +35,18 @@ functions that infer rather than evaluate.</p>
 <li>interpreter</li>
 </ul>
 <h3 id="the-implications">The implications</h3>
-<p>There are no interpreters or compilers being used but you can still
-generate code using words and evaluate code by inference.</p>
-<p>All requests take the same amount of time to run.</p>
-<p>All languages have equally facilitated environments.</p>
-<p>This lets you program in any language and is
-resiliant to errors, and one day design new
-languages within the latent space of GPT-3,
-without doing any programming.</p>
-<p>You may have an interpreter for languages with no interpreter, such as C++.</p>
-<p>You may have code completion for scripting languages without a completion engine.</p>
-<p>It&rsquo;s great for thought experiments.</p>
+<ul>
+<li>There are no interpreters or compilers being used but you can still generate code using words and evaluate code by inference.</li>
+<li>All requests take the same amount of time to run.</li>
+<li>All languages have equally facilitated environments.</li>
+<li>You may program in any language</li>
+<li>It&rsquo;s runs broken code</li>
+<li>One day you may design new languages within the latent space of GPT-3, without doing any programming.</li>
+<li>You may have an interpreter for languages with no interpreter, such as C++.</li>
+<li>You may have code completion for scripting languages without a completion engine.</li>
+<li>You may use it for languages which are dead and an interpreter is not available.</li>
+<li>It&rsquo;s great for thought experiments.</li>
+</ul>
 <h3 id="current-progress">Current progress</h3>
 <p>Some of the plumbing, including the
 interpreter and the autocompletion system are
