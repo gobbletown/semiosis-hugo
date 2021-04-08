@@ -10,7 +10,8 @@ Code
 : <https://github.com/semiosis/pen.el>
 
 
-Prompts:: <https://github.com/semiosis/prompts/>
+Prompts
+: <https://github.com/semiosis/prompts/>
 
 
 Disclaimer
