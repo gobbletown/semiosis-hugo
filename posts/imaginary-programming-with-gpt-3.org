@@ -9,6 +9,12 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: GPT-3
 
++ Code :: https://github.com/semiosis/pen.el
+
++ Prompts:: https://github.com/semiosis/prompts/
+
+Please contribute as this is an open source project! If open source dies freedom dies. Thanks.
+
 ** Summary
 This is a demonstration of an imaginary
 programming environment. There may be nothing
