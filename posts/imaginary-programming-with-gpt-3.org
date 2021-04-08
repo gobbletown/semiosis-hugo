@@ -31,6 +31,10 @@ These components are replaced by GPT-3 prompts.
 - code completion,
 - interpreter
 
+Imaginary seems to be a good word because:
+- GPT-3 is imagining the environment, the code and the output.
+- the languages are kinda like imaginary numbers. They are all understood within the same language model, kinda like a coordinate space.
+
 *** The implications
 - There are no interpreters or compilers being used but you can still generate code using words and evaluate code by inference.
 - All requests take the same amount of time to run.
