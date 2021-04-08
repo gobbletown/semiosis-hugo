@@ -38,6 +38,12 @@ These components are replaced by GPT-3 prompts.
 -   code completion,
 -   interpreter
 
+Imaginary seems to be a good word because:
+
+-   GPT-3 is imagining the environment, the code and the output.
+-   the languages are kinda like imaginary numbers. They are all understood within the same language model, kinda like a coordinate space.
+-   it lets you be very imaginative!
+
 
 ### The implications {#the-implications}
 
