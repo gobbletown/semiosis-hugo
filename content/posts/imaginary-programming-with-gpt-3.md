@@ -2,7 +2,7 @@
 title = "Imaginary programming with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-04-08T00:00:00+12:00
-keywords = ["GPT-3"]
+keywords = ["GPT-3", "openai"]
 draft = false
 +++
 
