@@ -7,7 +7,7 @@
 #+TITLE: Imaginary programming with GPT-3
 #+DATE: <2021-04-08>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3
+#+KEYWORDS: GPT-3 openai
 
 + Code :: https://github.com/semiosis/pen.el
 
