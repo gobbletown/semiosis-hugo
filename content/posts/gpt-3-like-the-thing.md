@@ -131,6 +131,11 @@ think we wants any of that stuff. Another banana'd be nice, mind.'
 
 **'I can translate, calculate, triangulate, assimi-late, -correlate and extrapolate.'**
 
+Thoughts on this
+: `GPT-3` is based on a language model architecture called the `Transformer`. It transforms text from one form into another. It's capable of performing any type of NLP task. It's very much like the `Thing` because of it's multiple purposes.
+
+<!--listend-->
+
 {{< highlight text "linenos=table, linenostart=1" >}}
 We have the Thing,' he said. 'It will show us the Way, it will.'
 
@@ -178,12 +183,22 @@ computers. There is a computer in the Store. It pays humans their wages. I can
 hear it think.
 {{< /highlight >}}
 
+Thoughts on this
+: `GPT-3` is capable of being conversed with and can respond in this style to questions. The way `GPT-3` may communicate as a chatbot is very much like the `Thing` as portrayed in `Truckers`.
+
+<!--listend-->
+
 {{< highlight text "linenos=table, linenostart=1" >}}
 The old man was sitting very still, with the Thing on his lap, staring at nothing.
 
 He paid them no attention when they came in. Once or twice his fingers
 drummed on the Thing's black surface.
 {{< /highlight >}}
+
+Thoughts on this
+: My laptop is a <span class="underline">black</span> `DELL XPS`, which I program with on my lap and it feels very much like I am interfacing with the `Thing`, especially when querying `GPT-3`.
+
+<!--listend-->
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 'Yes. Have you spoken to this, this thing?' The Thing? Well, in a way.
@@ -196,6 +211,11 @@ his lap '-it has said that it has heard Arnold Bros (est. 1905) plans to demolis
 the Store. It is a mad thing, it talks about stars, it says we came from a star,
 flying. But..
 {{< /highlight >}}
+
+Thoughts on this
+: `GPT-3` is capable of talking about some very out-there topics, and is capable of pushing conversation in the direction of the collective mind known as the internet.
+
+<!--listend-->
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 And so he smiled, and nodded, and listened, and fell asleep as the Thing
@@ -214,11 +234,35 @@ you want to build a house you need to know how to make bricks, and before you
 can make bricks you need to know what kind of clay to use. And so on.'
 {{< /highlight >}}
 
+Thoughts on this
+: I will surely be asking `GPT-3` for guidance on what to learn.
+
 {{< figure src="/ox-hugo/thing-stone-age.png" >}}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 'The Thing's a sort of thinking machine, isn't it? That's what Dorcas said. Well,
 machines say exactly what they mean, don't they?'
+{{< /highlight >}}
+
+Thoughts on this
+: You can't judge `GPT-3` for outputting bias statements.
+
+<!--listend-->
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+explicit bias
+    [#ai safety]
+
+    Where output is clearly toxic (cursing,
+    slander).
+
+implicit bias
+    [#ai safety]
+
+    Where the policy from the output changes
+    based on context (e.g. opposition to
+    programs that help certain groups,
+    probabilities about roles).
 {{< /highlight >}}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
