@@ -437,6 +437,17 @@ I'm keeping temperature 1.0. This is me in real life, actually.
   I'm in the computer lab with you, but all I can think about is taking you to my server.
 #+END_SRC
 
+*** Pick up lines with the topic "Solar System"
+#+BEGIN_SRC text -n :async :results verbatim code
+  If you were the sun, I'd orbit around you.
+  I'd like to be your sun.
+  I'd like to be your universe.
+  You're the sun, I'm the moon. You're the stars, I'm the sky.
+  I think we were long distance once, but I finally found the distance I was looking for.
+  I'm in love with Pluto. Wanna make out?
+  I'd like to be your orbit.
+#+END_SRC
+
 ** Ideas
 - Mix two topics to attempt to make them even wittier?
 
