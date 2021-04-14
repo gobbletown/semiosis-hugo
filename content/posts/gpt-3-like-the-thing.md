@@ -2,7 +2,7 @@
 title = "GPT-3 is The Thing"
 author = ["Shane Mulligan"]
 date = 2021-04-14T00:00:00+12:00
-keywords = ["gpt-3", "gpt", "openai"]
+keywords = ["gpt-3", "gpt", "openai", "bci"]
 draft = false
 +++
 
@@ -371,3 +371,22 @@ when the baffled men went back to their car to report Listen, will you, listen?
 There isn't anyone driving it!, it became the story of the lorry that started up
 again, rolled away from the astonished men, and vanished into the night.
 {{< /highlight >}}
+
+
+### What about this gold nugget at the start of the book? {#what-about-this-gold-nugget-at-the-start-of-the-book}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+One of the shortest-lived creatures on the planet Earth is the adult common
+mayfly. It lasts for one day. The longest- living things are bristlecone pine trees,
+at 4,700 years and still counting.
+
+This may seem tough on mayflies. But the important thing is not how long your
+life is, but how long it seems.
+{{< /highlight >}}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+It's all a sort of relativity. The faster you live, the more time stretches out. To a
+nome, a year lasts as long as ten years does to a human.
+{{< /highlight >}}
+
+`BCI` anyone?
