@@ -458,6 +458,19 @@ I'm in the computer lab with you, but all I can think about is taking you to my 
 {{< /highlight >}}
 
 
+### Pick up lines with the topic "Solar System" {#pick-up-lines-with-the-topic-solar-system}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+If you were the sun, I'd orbit around you.
+I'd like to be your sun.
+I'd like to be your universe.
+You're the sun, I'm the moon. You're the stars, I'm the sky.
+I think we were long distance once, but I finally found the distance I was looking for.
+I'm in love with Pluto. Wanna make out?
+I'd like to be your orbit.
+{{< /highlight >}}
+
+
 ## Ideas {#ideas}
 
 -   Mix two topics to attempt to make them even wittier?
