@@ -7,7 +7,7 @@
 #+TITLE: GPT-3 is The Thing
 #+DATE: <2021-04-14 Wed>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt-3 gpt openai
+#+KEYWORDS: gpt-3 gpt openai bci
 
 ** Summary
 The Thing is a lot like GPT-3 due to it being extremely capable, but limited to the queries you give it.
@@ -339,3 +339,20 @@ signed several centuries earlier.
   There isn't anyone driving it!, it became the story of the lorry that started up
   again, rolled away from the astonished men, and vanished into the night.
 #+END_SRC
+
+*** What about this gold nugget at the start of the book?
+ #+BEGIN_SRC text -n :async :results verbatim code
+   One of the shortest-lived creatures on the planet Earth is the adult common
+   mayfly. It lasts for one day. The longest- living things are bristlecone pine trees,
+   at 4,700 years and still counting.
+  
+   This may seem tough on mayflies. But the important thing is not how long your
+   life is, but how long it seems.
+ #+END_SRC
+
+ #+BEGIN_SRC text -n :async :results verbatim code
+   It's all a sort of relativity. The faster you live, the more time stretches out. To a
+   nome, a year lasts as long as ten years does to a human.
+ #+END_SRC
+
+ =BCI= anyone?
