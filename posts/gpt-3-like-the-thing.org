@@ -279,6 +279,8 @@ signed several centuries earlier.
 
 [[https://youtu.be/KEdIRgpCWrM][Opening to Terry Pratchett's Truckers UK VHS {1997, V2} {2} - YouTube]]
 
+[[./truckers-opening.gif]]
+
 #+BEGIN_SRC python -n :i mypython :async :results verbatim code
   This is the story of the Going Home.
   This is the story of the Critical Path.
