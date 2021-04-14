@@ -288,3 +288,86 @@ Say no more Terry. Say no more
     understand. Every time we climb up a step we
     settle down and think we've got to the top of
     the stairs, and start bickering about things.
+
+
+## Book vs mini-series {#book-vs-mini-series}
+
+
+### Reviews {#reviews}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Adventure, parable, satire, it is all of those at once.
+A wonderful conceit brilliantly realised.
+The internal jokes are really finely honed, fit to work on several levels.
+A well crafted adventure which should gain an adult audience as well as enthralling children.
+{{< /highlight >}}
+
+Promo
+: [Terry Pratchett's Truckers 1992 Thames TV Promo - YouTube](https://www.youtube.com/watch?v=nsh-pj7R4mA)
+
+
+### I transcribe the opening of the Mini-series for you. {#i-transcribe-the-opening-of-the-mini-series-for-you-dot}
+
+[Opening to Terry Pratchett's Truckers UK VHS {1997, V2} {2} - YouTube](https://youtu.be/KEdIRgpCWrM)
+
+{{< figure src="/ox-hugo/truckers-opening.gif" >}}
+
+{{< highlight python "linenos=table, linenostart=1" >}}
+This is the story of the Going Home.
+This is the story of the Critical Path.
+
+Hello, CK Beta One, proceeding west along Cape
+Bridge Road in pursuit of stolen lorry.
+
+We have visual contact.
+
+He's stopping.
+
+Right, that's it for tonight then. You hang on
+here. I'll have this comedian.
+
+Right son, you're ...
+
+Gordon Benett, there's noone in there!
+
+Dave!
+
+What?
+
+He's done a runner!
+
+What??
+
+PC all 4832 to CK Beta One.
+
+Go ahead, 4832.
+
+This truck sir, it...
+There's no-one driving it.
+
+No, listen sir, listen. Will you listen? There isn't anyone driving it!
+
+What's up Pete?
+
+He's disappeared!
+
+What the?
+
+It must be someone. Let's get after it!
+{{< /highlight >}}
+
+
+### The following passage, for comparison is the opening of the novel. {#the-following-passage-for-comparison-is-the-opening-of-the-novel-dot}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+From The Book of Nome, Basements VI-XII 1
+
+This is the story of the Going Home. This is the story of the Critical Path.
+
+This is the story of the lorry roaring through the sleeping city and out into the
+country lanes, smashing through street lamps and swinging from side to side and
+shattering shop windows and roll-ing to a halt when the police chased it. And
+when the baffled men went back to their car to report Listen, will you, listen?
+There isn't anyone driving it!, it became the story of the lorry that started up
+again, rolled away from the astonished men, and vanished into the night.
+{{< /highlight >}}
