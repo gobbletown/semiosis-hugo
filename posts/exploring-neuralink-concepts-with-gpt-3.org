@@ -1,0 +1,60 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: Exploring Neuralink concepts with GPT-3
+#+DATE: <2021-04-14>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: GPT-3 neuralink neuroengineering
+
+** Summary
+I create several =org-brain= repositories for
+exploratory learning and ideation.
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  billboard
+  exploratory
+  fungible
+  ideation
+  infogetics
+  infrastructure-tooling
+  neuralink
+  open-source-alternatives
+  reference
+  thoughts
+  tooling
+  welfare-organisations
+#+END_SRC
+
+I then use GPT-3 to discuss topics and why they are important.
+
+** Glossaries
++ http://github.com/mullikine/glossaries-gh/blob/master/biochemistry.txt
++ http://github.com/mullikine/glossaries-gh/blob/master/brain-computer-interface-bci.txt
++ http://github.com/mullikine/glossaries-gh/blob/master/neuralink.txt
++ http://github.com/mullikine/glossaries-gh/blob/master/neuroscience.txt
++ http://github.com/mullikine/glossaries-gh/blob/master/neural-engineering.txt
++ http://github.com/mullikine/glossaries-gh/blob/master/gpt.txt
++ http://github.com/mullikine/glossaries-gh/blob/master/ai-safety.txt
++ http://github.com/mullikine/glossaries-gh/blob/master/general-ai-agi.txt
+
+** Demonstration
+Future of life institute and telepathy.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/gNHRbCi7kQDT6qFRih1zvLyni" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gNHRbCi7kQDT6qFRih1zvLyni.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/gNHRbCi7kQDT6qFRih1zvLyni.js" id="asciicast-gNHRbCi7kQDT6qFRih1zvLyni" async></script>
+#+END_EXPORT
+
+*** What is =neuroengineering=?
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/xs8YGxIbCZ4Bpc85N2qhenoRb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/xs8YGxIbCZ4Bpc85N2qhenoRb.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/xs8YGxIbCZ4Bpc85N2qhenoRb.js" id="asciicast-xs8YGxIbCZ4Bpc85N2qhenoRb" async></script>
+#+END_EXPORT
