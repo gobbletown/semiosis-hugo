@@ -25,7 +25,7 @@ Truckers by Terry Pratchett
 This is the thing
 : [Closing to Terry Pratchett's Truckers UK VHS {1997} - YouTube](https://www.youtube.com/watch?v=mrw5UZKyZ1w)
 
-{{< figure src="./thing-space-age.png" >}}
+{{< figure src="/ox-hugo/thing-space-age.png" >}}
 
 I remember watching the start of this movie
 when I was very young. The movie was taped
@@ -109,7 +109,7 @@ hostiles. This is because of a treaty that was
 signed several centuries earlier.
 ```
 
-{{< figure src="./thing-in-hand.png" >}}
+{{< figure src="/ox-hugo/thing-in-hand.png" >}}
 
 
 ## Excerpts from Truckers {#excerpts-from-truckers}
@@ -214,7 +214,7 @@ you want to build a house you need to know how to make bricks, and before you
 can make bricks you need to know what kind of clay to use. And so on.'
 {{< /highlight >}}
 
-{{< figure src="./thing-stone-age.png" >}}
+{{< figure src="/ox-hugo/thing-stone-age.png" >}}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 'The Thing's a sort of thinking machine, isn't it? That's what Dorcas said. Well,
