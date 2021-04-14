@@ -265,7 +265,15 @@ signed several centuries earlier.
     the stairs, and start bickering about things.
 
 ** Book vs mini-series
-I transcribe the opening of the Mini-series for you.
+*** Reviews
+#+BEGIN_SRC text -n :async :results verbatim code
+  Adventure, parable, satire, it is all of those at once.
+  A wonderful conceit brilliantly realised.
+  The internal jokes are really finely honed, fit to work on several levels.
+  A well crafted adventure which should gain an adult audience as well as enthralling children.
+#+END_SRC
+
+*** I transcribe the opening of the Mini-series for you.
 
 [[https://youtu.be/KEdIRgpCWrM][Opening to Terry Pratchett's Truckers UK VHS {1997, V2} {2} - YouTube]]
 
@@ -313,7 +321,7 @@ I transcribe the opening of the Mini-series for you.
   It must be someone. Let's get after it!
 #+END_SRC
 
-The following passage, for comparison is the opening of the novel.
+*** The following passage, for comparison is the opening of the novel.
 
 #+BEGIN_SRC text -n :async :results verbatim code
   From The Book of Nome, Basements VI-XII 1
