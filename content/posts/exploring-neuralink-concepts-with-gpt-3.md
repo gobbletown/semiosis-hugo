@@ -1,10 +1,13 @@
 +++
-title = "Exploring Neuralink concepts with GPT-3"
+title = "Exploring Neuralink concepts with GPT-3 (WIP)"
 author = ["Shane Mulligan"]
 date = 2021-04-14T00:00:00+12:00
 keywords = ["GPT-3", "neuralink", "neuroengineering"]
 draft = false
 +++
+
+<span class="underline">_This article is a work in progress._</span>
+
 
 ## Summary {#summary}
 
@@ -59,6 +62,108 @@ Future of life institute and telepathy.
 <script src="https://asciinema.org/a/xs8YGxIbCZ4Bpc85N2qhenoRb.js" id="asciicast-xs8YGxIbCZ4Bpc85N2qhenoRb" async></script>
 
 
+## A paper from my professor Zhiyi Huang {#a-paper-from-my-professor-zhiyi-huang}
+
+<https://link.springer.com/article/10.1007%2Fs13755-021-00142-y>
+
+
+### New terms taken from the synopsis {#new-terms-taken-from-the-synopsis}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Crosstalk
+    Unintended brain activations that
+    interfere with bimanual actions and could
+    also occur during motor imagery.
+
+Bimanual coordination
+    Encompasses a large class of situations in
+    which the brain must simultaneously
+    control multiple movements, such as when
+    we use our two hands to manipulate an
+    object or perform a task.
+
+    Bimanual coordination has been one of the
+    most widely studied problems in motor
+    control.
+
+Pairwise classification
+    A class binarization procedure that
+    converts a multi-class problem into a
+    series of two-class problems, one problem
+    for each pair of classes.
+
+Motor imagery
+    A dynamic state during which an individual
+    mentally simulates a physical action.
+
+    This type of phenomenal experience implies
+    that the subject feels themselves
+    performing the action.
+{{< /highlight >}}
+
+
+### Synopsis (tidied) {#synopsis--tidied}
+
+Brain–computer interfaces (BCIs) target
+specific brain activity for neuropsychological
+rehabilitation, and also allow patients with
+motor disabilities to control mobility and
+communication devices.
+
+Motor imagery of single-handed actions is used
+in BCIs but many users cannot control the BCIs
+effectively, limiting applications in the
+health systems.
+
+Crosstalk is unintended brain activations that
+interfere with bimanual actions and could also
+occur during motor imagery.
+
+To test if crosstalk impaired BCI user
+performance, we recorded EEG in 46
+participants while they imagined movements in
+four experimental conditions using motor
+imagery: left hand (L), right hand (R), tongue
+(T) and feet (F).
+
+Pairwise classification accuracies of the
+tasks were compared (LR, LF, LT, RF, RT, FT),
+using common spatio-spectral filters and
+linear discriminant analysis.
+
+We hypothesized that LR classification
+accuracy would be lower than every other
+combination that included a hand imagery due
+to crosstalk.
+
+As predicted, classification accuracy for LR
+(58%) was reliably the lowest.
+
+Interestingly, participants who showed poor LR
+classification also demonstrated at least one
+good TR, TL, FR or FL classification; and good
+LR classification was detected in 16% of the
+participants.
+
+For the first time, we showed that crosstalk
+occurred in motor imagery, and affected BCI
+performance negatively.
+
+Such effects are effector-sensitive regardless
+of the BCI methods used; and likely not
+apparent to the user or the BCI developer.
+
+This means that tasks choice is crucial when
+designing BCI.
+
+Critically, the effects of crosstalk appear
+mitigatable.
+
+We conclude that understanding crosstalk
+mitigation is important for improving BCI
+applicability.
+
+
 ## Scrape the neuralink website for youtube videos {#scrape-the-neuralink-website-for-youtube-videos}
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
@@ -87,9 +192,14 @@ $MYGIT/semiosis/prompts/prompts/key-points.prompt
 <script src="https://asciinema.org/a/NNGjEYHB9B2rOyvUAPzMPI0sa.js" id="asciicast-NNGjEYHB9B2rOyvUAPzMPI0sa" async></script>
 
 
+### [Neuralink Monkey MindPong Deconstructed - YouTube](https://www.youtube.com/watch?v=rzNOuJIzk2E) {#neuralink-monkey-mindpong-deconstructed-youtube}
+
+<./monkey-mindpong-deconstructed.txt>
+
+
 ### [Neuralink Progress Update, Summer 2020 - YouTube](https://www.youtube.com/watch?v=DVvmgjBL74w) {#neuralink-progress-update-summer-2020-youtube}
 
-$DUMP/tmp/scratchF4ZkzB.txt
+<./neuralink-progress-summer2020.txt>
 
 
 ### [Monkey MindPong - YouTube](https://www.youtube.com/watch?v=rsCul1sp4hQ) {#monkey-mindpong-youtube}

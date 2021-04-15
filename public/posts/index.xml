@@ -10,16 +10,17 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Exploring Neuralink concepts with GPT-3</title>
+            <title>Exploring Neuralink concepts with GPT-3 (WIP)</title>
             <link>http://semiosis.github.io/posts/exploring-neuralink-concepts-with-gpt-3/</link>
             <pubDate>Wed, 14 Apr 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/exploring-neuralink-concepts-with-gpt-3/</guid>
-            <description>Summary I create several org-brain repositories for exploratory learning and ideation.
+            <description>This article is a work in progress.
+Summary I create several org-brain repositories for exploratory learning and ideation.
 1 2 3 4 5 6 7 8 9 10 11 12  billboard exploratory fungible ideation infogetics infrastructure-tooling neuralink open-source-alternatives reference thoughts tooling welfare-organisations   I then use GPT-3 to discuss topics and why they are important.
-Glossaries  http://github.com/mullikine/glossaries-gh/blob/master/biochemistry.txt http://github.com/mullikine/glossaries-gh/blob/master/brain-computer-interface-bci.txt http://github.com/mullikine/glossaries-gh/blob/master/neuralink.txt http://github.com/mullikine/glossaries-gh/blob/master/neuroscience.txt http://github.com/mullikine/glossaries-gh/blob/master/neural-engineering.txt http://github.com/mullikine/glossaries-gh/blob/master/gpt.txt http://github.com/mullikine/glossaries-gh/blob/master/ai-safety.txt http://github.com/mullikine/glossaries-gh/blob/master/general-ai-agi.txt  Demonstration Future of life institute and telepathy.
- --  What is neuroengineering?</description>
-            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+Glossaries  http://github.com/mullikine/glossaries-gh/blob/master/biochemistry.txt http://github.com/mullikine/glossaries-gh/blob/master/brain-computer-interface-bci.txt http://github.com/mullikine/glossaries-gh/blob/master/neuralink.txt http://github.com/mullikine/glossaries-gh/blob/master/neuroscience.txt http://github.com/mullikine/glossaries-gh/blob/master/neural-engineering.txt http://github.com/mullikine/glossaries-gh/blob/master/gpt.txt http://github.com/mullikine/glossaries-gh/blob/master/ai-safety.txt http://github.com/mullikine/glossaries-gh/blob/master/general-ai-agi.txt  Demonstration Future of life institute and telepathy.</description>
+            <content type="html"><![CDATA[<p><span class="underline"><em>This article is a work in progress.</em></span></p>
+<h2 id="summary">Summary</h2>
 <p>I create several <code>org-brain</code> repositories for
 exploratory learning and ideation.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -75,6 +76,120 @@ welfare-organisations</code></pre></td></tr></table>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/xs8YGxIbCZ4Bpc85N2qhenoRb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/xs8YGxIbCZ4Bpc85N2qhenoRb.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/xs8YGxIbCZ4Bpc85N2qhenoRb.js" id="asciicast-xs8YGxIbCZ4Bpc85N2qhenoRb" async></script>
+<h2 id="a-paper-from-my-professor-zhiyi-huang">A paper from my professor Zhiyi Huang</h2>
+<p><a href="https://link.springer.com/article/10.1007%2Fs13755-021-00142-y">https://link.springer.com/article/10.1007%2Fs13755-021-00142-y</a></p>
+<h3 id="new-terms-taken-from-the-synopsis">New terms taken from the synopsis</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Crosstalk
+    Unintended brain activations that
+    interfere with bimanual actions and could
+    also occur during motor imagery.
+
+Bimanual coordination
+    Encompasses a large class of situations in
+    which the brain must simultaneously
+    control multiple movements, such as when
+    we use our two hands to manipulate an
+    object or perform a task.
+
+    Bimanual coordination has been one of the
+    most widely studied problems in motor
+    control.
+
+Pairwise classification
+    A class binarization procedure that
+    converts a multi-class problem into a
+    series of two-class problems, one problem
+    for each pair of classes.
+
+Motor imagery
+    A dynamic state during which an individual
+    mentally simulates a physical action.
+
+    This type of phenomenal experience implies
+    that the subject feels themselves
+    performing the action.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="synopsis--tidied">Synopsis (tidied)</h3>
+<p>Brain–computer interfaces (BCIs) target
+specific brain activity for neuropsychological
+rehabilitation, and also allow patients with
+motor disabilities to control mobility and
+communication devices.</p>
+<p>Motor imagery of single-handed actions is used
+in BCIs but many users cannot control the BCIs
+effectively, limiting applications in the
+health systems.</p>
+<p>Crosstalk is unintended brain activations that
+interfere with bimanual actions and could also
+occur during motor imagery.</p>
+<p>To test if crosstalk impaired BCI user
+performance, we recorded EEG in 46
+participants while they imagined movements in
+four experimental conditions using motor
+imagery: left hand (L), right hand (R), tongue
+(T) and feet (F).</p>
+<p>Pairwise classification accuracies of the
+tasks were compared (LR, LF, LT, RF, RT, FT),
+using common spatio-spectral filters and
+linear discriminant analysis.</p>
+<p>We hypothesized that LR classification
+accuracy would be lower than every other
+combination that included a hand imagery due
+to crosstalk.</p>
+<p>As predicted, classification accuracy for LR
+(58%) was reliably the lowest.</p>
+<p>Interestingly, participants who showed poor LR
+classification also demonstrated at least one
+good TR, TL, FR or FL classification; and good
+LR classification was detected in 16% of the
+participants.</p>
+<p>For the first time, we showed that crosstalk
+occurred in motor imagery, and affected BCI
+performance negatively.</p>
+<p>Such effects are effector-sensitive regardless
+of the BCI methods used; and likely not
+apparent to the user or the BCI developer.</p>
+<p>This means that tasks choice is crucial when
+designing BCI.</p>
+<p>Critically, the effects of crosstalk appear
+mitigatable.</p>
+<p>We conclude that understanding crosstalk
+mitigation is important for improving BCI
+applicability.</p>
 <h2 id="scrape-the-neuralink-website-for-youtube-videos">Scrape the neuralink website for youtube videos</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -99,8 +214,10 @@ anygrep rosie-urls | grep youtube.com | oc -u | pavs</code></pre></td></tr></tab
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/NNGjEYHB9B2rOyvUAPzMPI0sa" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/NNGjEYHB9B2rOyvUAPzMPI0sa.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/NNGjEYHB9B2rOyvUAPzMPI0sa.js" id="asciicast-NNGjEYHB9B2rOyvUAPzMPI0sa" async></script>
+<h3 id="neuralink-monkey-mindpong-deconstructed-youtube"><a href="https://www.youtube.com/watch?v=rzNOuJIzk2E">Neuralink Monkey MindPong Deconstructed - YouTube</a></h3>
+<p>&lt;./monkey-mindpong-deconstructed.txt&gt;</p>
 <h3 id="neuralink-progress-update-summer-2020-youtube"><a href="https://www.youtube.com/watch?v=DVvmgjBL74w">Neuralink Progress Update, Summer 2020 - YouTube</a></h3>
-<p>$DUMP/tmp/scratchF4ZkzB.txt</p>
+<p>&lt;./neuralink-progress-summer2020.txt&gt;</p>
 <h3 id="monkey-mindpong-youtube"><a href="https://www.youtube.com/watch?v=rsCul1sp4hQ">Monkey MindPong - YouTube</a></h3>
 <dl>
 <dt>Transcript</dt>
