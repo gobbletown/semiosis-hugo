@@ -33,6 +33,9 @@ exploratory learning and ideation.
 
 I then use GPT-3 to discuss topics and why they are important.
 
+** Mind terminal
+[[./mind-terminal.gif]]
+
 ** Glossaries
 + http://github.com/mullikine/glossaries-gh/blob/master/biochemistry.txt
 + http://github.com/mullikine/glossaries-gh/blob/master/brain-computer-interface-bci.txt
