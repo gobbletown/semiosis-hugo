@@ -32,6 +32,11 @@ welfare-organisations
 I then use GPT-3 to discuss topics and why they are important.
 
 
+## Mind terminal {#mind-terminal}
+
+{{< figure src="/ox-hugo/mind-terminal.gif" >}}
+
+
 ## Glossaries {#glossaries}
 
 -   <http://github.com/mullikine/glossaries-gh/blob/master/biochemistry.txt>
