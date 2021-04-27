@@ -57,8 +57,8 @@ but I regressed to =Terraform v0.14.0-dev= and =Ubuntu 16.04= due to my computer
 - So far no communication with the web app on port 3000.
 
 ** Problems so far
-- The computer I was using died one day into beginning this project, so I've had to continue
-  on an older computer running Ubuntu 16.04, but it is a much older environment and is lacking many conveniences.
+- The computer I was using died one day into starting this project, so I've had to continue
+  on an older computer, but it has a much older environment and is lacking many conveniences.
   - I'm unable to demonstrate that I can make =tabulated list modes= for =aws= =cli= commands.
     They allow me to create user interfaces with key bindings bound to commands for working with =aws=.
     I had begun automating AWS policies this way before my computer died.    
@@ -79,7 +79,7 @@ but I regressed to =Terraform v0.14.0-dev= and =Ubuntu 16.04= due to my computer
   - log into instances
   - start and stop instances
 - Clojure editing
-  - Parsing
+  - Parsing =project.clj= with babashka to automate dependency imports.
 
 ** Steps
 *** Automate terraform editor
