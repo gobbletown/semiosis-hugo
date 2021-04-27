@@ -630,3 +630,43 @@ It takes significant time to shut down.
   - Then I can collect database of cluster states
 - Partially done
   - All outputs of the =aws= and =terraform= commands are stored in a database.
+
+** automate terraform file migration
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+  
+  # Terraform has auto-upgrade tooling
+  # terraform 0.12upgrade
+  
+  while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
+      "") { shift; }; ;;
+      -f) {
+          force=y
+          shift
+      }
+      ;;
+  
+      *) break;
+  esac; done
+  
+  stdin_exists() {
+      ! [ -t 0 ] && ! test "$(readlink /proc/$$/fd/0)" = /dev/null
+  }
+  
+  # Interestingly, heredocs should not be 'uninterpolated'
+  # sp +/"container_definitions = <<DEFINITION" "$MYGIT/chrishowejones/film-ratings-terraform/film-ratings-db-task-definition.tf"
+  
+  if stdin_exists; then
+      # sed '/"\${/{s/"\${\([^}]*\)}"/\1/g;s/\\"/"/g;s/\bvar\.//}'
+      sed '/"\${/{s/"\${\([^}]*\)}"/\1/g;s/\\"/"/g;}' |
+          sed '/ \[ *"[^"]\+\.[^"]\+" *\]/{s/\[ *"\([^"]\+\.[^"]\+\)" *\]/[ \1 ]/g}'
+  elif test "$force" = y || yn "Recursively migrate?"; then
+      find . -type f -name '*.tf' | awk1 | while IFS=$'\n' read -r line; do
+          (
+          exec 0</dev/null
+          cat "$line" | migrate-terraform | sponge "$line"
+          )
+      done
+  fi
+#+END_SRC
