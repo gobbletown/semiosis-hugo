@@ -104,6 +104,11 @@ e.g. <a href="https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX">https://asciine
 </li>
 <li>Deployment to the cluster</li>
 <li>aws cli command completion</li>
+<li>aws iam users and policies management in emacs
+<ul>
+<li>Add and remove policies from users</li>
+</ul>
+</li>
 <li>ec2 instance management in emacs
 <ul>
 <li>inspect ec2 instances</li>

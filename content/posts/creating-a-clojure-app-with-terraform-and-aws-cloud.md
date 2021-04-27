@@ -89,6 +89,8 @@ but I regressed to `Terraform v0.14.0-dev` and `Ubuntu 16.04` due to my computer
     -   Ubuntu 20.04
 -   Deployment to the cluster
 -   aws cli command completion
+-   aws iam users and policies management in emacs
+    -   Add and remove policies from users
 -   ec2 instance management in emacs
     -   inspect ec2 instances
     -   display `UserData`
