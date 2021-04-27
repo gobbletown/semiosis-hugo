@@ -87,8 +87,9 @@ but I regressed to =Terraform v0.14.0-dev= and =Ubuntu 16.04= due to my computer
 *** 
 
 *** =direnv=
-I have stored the actual passwords in my
-private password store.
+I have stored the actual passwords for =tf= in my
+private password store, but direnv can still
+retrieve them.
 
 #+BEGIN_SRC sh -n :sps bash :async :results none
   curl -sfL https://direnv.net/install.sh | bash
