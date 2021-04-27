@@ -392,6 +392,8 @@ I have chosen to automate the process with the =aws= =cli=.
   "AdministratorAccess","arn:aws:iam::aws:policy/AdministratorAccess"
 #+END_SRC
 
+aws-policy-tablist
+
 #+BEGIN_SRC text -n :async :results verbatim code
   "arn:aws:iam::aws:policy/AdministratorAccess"
 #+END_SRC
