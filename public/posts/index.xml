@@ -20,7 +20,7 @@ This is a work in progress.
 Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
 I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
- It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&amp;rsquo;s the language I&amp;rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&amp;rsquo;s libraries  Project Code  http://github.</description>
+ It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&amp;rsquo;s the language I&amp;rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&amp;rsquo;s libraries  I was initially working with Terraform 0.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>These are the steps I have taken to automate
 the process of building a Web Application in
@@ -46,6 +46,9 @@ implement the blob uploader for the following reasons:</p>
 <li>It has very good support for concurrency</li>
 <li>Access to all of Java&rsquo;s libraries</li>
 </ul>
+<p>I was initially working with Terraform 0.15,
+but I regressed to <code>v0.14.0-dev</code> when I went
+back to Ubuntu 16.04.</p>
 <h2 id="project-code">Project Code</h2>
 <ul>
 <li><a href="http://github.com/mullikine/blob-uploader-terraform">http://github.com/mullikine/blob-uploader-terraform</a></li>
@@ -129,6 +132,7 @@ highlighted according to rules I specify.</p>
 <li>Selecting different regions.</li>
 <li>Selecting an <code>ami</code> from an owner such as Canonical.</li>
 <li>Displaying terraform documention for <code>resources</code> and other things inside <code>tf</code> files.</li>
+<li>migrating terraform files</li>
 </ul>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/fneAXIjLJhseQhikfTRw546kQ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/fneAXIjLJhseQhikfTRw546kQ.svg" /></a> -->
@@ -894,6 +898,91 @@ sudo mount -t efs <span style="color:#e6db74">${</span>aws_efs_mount_target.blob
 </ul>
 </li>
 </ul>
+<h2 id="automate-terraform-file-migration">automate terraform file migration</h2>
+<p>Terraform has auto-upgrade tooling e.g.
+<code>terraform 0.12upgrade</code> but they only work
+from version to consecutive version. I was
+migrating older <code>tf</code> files so I made my own
+migration script.</p>
+<p><code>migrate-terraform</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#75715e"># Terraform has auto-upgrade tooling</span>
+<span style="color:#75715e"># terraform 0.12upgrade</span>
+
+<span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> $# -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span> opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$opt<span style="color:#e6db74">&#34;</span> in
+    <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> shift; <span style="color:#f92672">}</span>; ;;
+    -f<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        force<span style="color:#f92672">=</span>y
+        shift
+    <span style="color:#f92672">}</span>
+    ;;
+
+    *<span style="color:#f92672">)</span> break;
+<span style="color:#66d9ef">esac</span>; <span style="color:#66d9ef">done</span>
+
+stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    ! <span style="color:#f92672">[</span> -t <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> ! test <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>readlink /proc/$$/fd/0<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> /dev/null
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Interestingly, heredocs should not be &#39;uninterpolated&#39;</span>
+<span style="color:#75715e"># sp +/&#34;container_definitions = &lt;&lt;DEFINITION&#34; &#34;$MYGIT/chrishowejones/film-ratings-terraform/film-ratings-db-task-definition.tf&#34;</span>
+
+<span style="color:#66d9ef">if</span> stdin_exists; <span style="color:#66d9ef">then</span>
+    <span style="color:#75715e"># sed &#39;/&#34;\${/{s/&#34;\${\([^}]*\)}&#34;/\1/g;s/\\&#34;/&#34;/g;s/\bvar\.//}&#39;</span>
+    sed <span style="color:#e6db74">&#39;/&#34;\${/{s/&#34;\${\([^}]*\)}&#34;/\1/g;s/\\&#34;/&#34;/g;}&#39;</span> |
+        sed <span style="color:#e6db74">&#39;/ \[ *&#34;[^&#34;]\+\.[^&#34;]\+&#34; *\]/{s/\[ *&#34;\([^&#34;]\+\.[^&#34;]\+\)&#34; *\]/[ \1 ]/g}&#39;</span>
+<span style="color:#66d9ef">elif</span> test <span style="color:#e6db74">&#34;</span>$force<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> y <span style="color:#f92672">||</span> yn <span style="color:#e6db74">&#34;Recursively migrate?&#34;</span>; <span style="color:#66d9ef">then</span>
+    find . -type f -name <span style="color:#e6db74">&#39;*.tf&#39;</span> | awk1 | <span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span><span style="color:#e6db74">$&#39;\n&#39;</span> read -r line; <span style="color:#66d9ef">do</span>
+        <span style="color:#f92672">(</span>
+        exec 0&lt;/dev/null
+        cat <span style="color:#e6db74">&#34;</span>$line<span style="color:#e6db74">&#34;</span> | migrate-terraform | sponge <span style="color:#e6db74">&#34;</span>$line<span style="color:#e6db74">&#34;</span>
+        <span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">done</span>
+<span style="color:#66d9ef">fi</span></code></pre></td></tr></table>
+</div>
+</div>
 ]]></content>
         </item>
         

@@ -37,6 +37,10 @@ implement the blob uploader for the following reasons:
 -   It has very good support for concurrency
 -   Access to all of Java's libraries
 
+I was initially working with Terraform 0.15,
+but I regressed to `v0.14.0-dev` when I went
+back to Ubuntu 16.04.
+
 
 ## Project Code {#project-code}
 
@@ -113,6 +117,7 @@ I've automated the following:
 -   Selecting different regions.
 -   Selecting an `ami` from an owner such as Canonical.
 -   Displaying terraform documention for `resources` and other things inside `tf` files.
+-   migrating terraform files
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/fneAXIjLJhseQhikfTRw546kQ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/fneAXIjLJhseQhikfTRw546kQ.svg" /></a> -->
@@ -623,3 +628,53 @@ It takes significant time to shut down.
     -   Then I can collect database of cluster states
 -   Partially done
     -   All outputs of the `aws` and `terraform` commands are stored in a database.
+
+
+## automate terraform file migration {#automate-terraform-file-migration}
+
+Terraform has auto-upgrade tooling e.g.
+`terraform 0.12upgrade` but they only work
+from version to consecutive version. I was
+migrating older `tf` files so I made my own
+migration script.
+
+`migrate-terraform`
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+# Terraform has auto-upgrade tooling
+# terraform 0.12upgrade
+
+while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
+    "") { shift; }; ;;
+    -f) {
+        force=y
+        shift
+    }
+    ;;
+
+    *) break;
+esac; done
+
+stdin_exists() {
+    ! [ -t 0 ] && ! test "$(readlink /proc/$$/fd/0)" = /dev/null
+}
+
+# Interestingly, heredocs should not be 'uninterpolated'
+# sp +/"container_definitions = <<DEFINITION" "$MYGIT/chrishowejones/film-ratings-terraform/film-ratings-db-task-definition.tf"
+
+if stdin_exists; then
+    # sed '/"\${/{s/"\${\([^}]*\)}"/\1/g;s/\\"/"/g;s/\bvar\.//}'
+    sed '/"\${/{s/"\${\([^}]*\)}"/\1/g;s/\\"/"/g;}' |
+        sed '/ \[ *"[^"]\+\.[^"]\+" *\]/{s/\[ *"\([^"]\+\.[^"]\+\)" *\]/[ \1 ]/g}'
+elif test "$force" = y || yn "Recursively migrate?"; then
+    find . -type f -name '*.tf' | awk1 | while IFS=$'\n' read -r line; do
+        (
+        exec 0</dev/null
+        cat "$line" | migrate-terraform | sponge "$line"
+        )
+    done
+fi
+{{< /highlight >}}
