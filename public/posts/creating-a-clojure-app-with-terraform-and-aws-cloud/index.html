@@ -45,7 +45,7 @@ I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
  It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&rsquo;s the language I&rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&rsquo;s libraries  I was initially working with Terraform 0."><meta itemprop="datePublished" content="2021-04-27T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-27T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="2279"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2341"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -730,24 +730,56 @@ oci aws iam create-access-key --user-name Administrator &gt;&gt; $NOTES/personal
 </div>
 </div>
 <dl>
-<dt>Automated policies management with <code>tabulated-list-mode</code></dt>
-<dd>Using emacs, tablist and this tool (<a href="http://harelba.github.io/q/">http://harelba.github.io/q/</a>), create a tabulated list mode for managing aws policies.</dd>
+<dt>Automated user and policies management with <code>tabulated-list-mode</code></dt>
+<dd>Using emacs, tablist and this tool (<a href="http://harelba.github.io/q/">http://harelba.github.io/q/</a>), create tabulated list modes for managing aws.</dd>
 </dl>
-<!--listend-->
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7.js" id="asciicast-g6Cc64u1p5lF9geoSmCKgwmd7" async></script>
+<p>The above is a demonstration of adding the <code>AdministratorAccess</code> policy to a user account.</p>
+<p><code>aws-policy-tablist</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+create-tablist list-aws-iam-policies-csv aws-policies t <span style="color:#e6db74">&#34;30 80&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>list-aws-iam-policies-csv</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#f92672">{</span>
+echo name,arn
+unbuffer oci aws iam list-policies | jq -r <span style="color:#e6db74">&#34;.Policies[] | [ .PolicyName, .Arn ] | @csv&#34;</span>
+<span style="color:#f92672">}</span> | mnm | pavs</code></pre></td></tr></table>
+</div>
+</div>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;AdministratorAccess&#34;</span>,<span style="color:#e6db74">&#34;arn:aws:iam::aws:policy/AdministratorAccess&#34;</span></code></pre></td></tr></table>
-</div>
-</div>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#34;arn:aws:iam::aws:policy/AdministratorAccess&#34;</code></pre></td></tr></table>
 </div>
 </div>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -1136,7 +1168,7 @@ stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{<
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2279 Words
+        2341 Words
       </p>
 
       <p>
@@ -1286,7 +1318,8 @@ stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{<
     <div class="footer__inner">
         <div class="footer__content">
             
-            <span>Visit <a href="https://github.com/semiosis">semiosis on GitHub</a></span>
+            <span>Visit <a href="https://github.com/semiosis"><image src="/New_Zealand_Simplified.svg" style="display:inline-block; line-height:2em; vertical-align:middle; height: 2em;" /> semiosis on GitHub</a></span>
+
           </div>
     </div>
 </footer>

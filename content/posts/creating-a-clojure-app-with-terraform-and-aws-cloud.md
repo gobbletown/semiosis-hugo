@@ -391,17 +391,39 @@ oci aws iam list-policies | jq -r ".Policies[] | [ .PolicyName, .Arn ] | @csv"
 "AdministratorAccess","arn:aws:iam::aws:policy/AdministratorAccess"
 {{< /highlight >}}
 
-Automated policies management with `tabulated-list-mode`
-: Using emacs, tablist and this tool (<http://harelba.github.io/q/>), create a tabulated list mode for managing aws policies.
+Automated user and policies management with `tabulated-list-mode`
+: Using emacs, tablist and this tool (<http://harelba.github.io/q/>), create tabulated list modes for managing aws.
 
-<!--listend-->
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7.js" id="asciicast-g6Cc64u1p5lF9geoSmCKgwmd7" async></script>
+
+The above is a demonstration of adding the `AdministratorAccess` policy to a user account.
+
+`aws-policy-tablist`
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+create-tablist list-aws-iam-policies-csv aws-policies t "30 80"
+{{< /highlight >}}
+
+`list-aws-iam-policies-csv`
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+{
+echo name,arn
+unbuffer oci aws iam list-policies | jq -r ".Policies[] | [ .PolicyName, .Arn ] | @csv"
+} | mnm | pavs
+{{< /highlight >}}
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
 "AdministratorAccess","arn:aws:iam::aws:policy/AdministratorAccess"
-{{< /highlight >}}
-
-{{< highlight text "linenos=table, linenostart=1" >}}
-"arn:aws:iam::aws:policy/AdministratorAccess"
 {{< /highlight >}}
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
