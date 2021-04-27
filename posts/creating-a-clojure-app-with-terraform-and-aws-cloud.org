@@ -83,7 +83,22 @@ but I regressed to =Terraform v0.14.0-dev= and =Ubuntu 16.04= due to my computer
 - Clojure editing
   - Parsing =project.clj= with babashka to automate dependency imports.
 
-** Steps
+** Automations
+*** 
+
+*** =direnv=
+I have stored the actual passwords in my
+private password store.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  curl -sfL https://direnv.net/install.sh | bash
+#+END_SRC
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  export TF_VAR_aws_access_key_id="$(myrc .tf_aws_access_key_id)"
+  export TF_VAR_aws_secret_access_key="$(myrc .tf_aws_secret_access_key)"
+#+END_SRC
+
 *** Automate terraform editor
 While I am editing =terraform= or any type of document, I may
 click on things that have been automatically
