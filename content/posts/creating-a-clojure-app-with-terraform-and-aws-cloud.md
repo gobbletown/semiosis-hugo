@@ -28,13 +28,14 @@ I have taken steps and copied code from this article.
 I have chosen Clojure as the language to
 implement the blob uploader for the following reasons:
 
--   It's data-driven
--   One language for backend and front-end
--   I am using it for multiple other projects
--   It's very reliable
--   It's very easy to understand
+-   It is very reliable
+-   It is easy to understand
+-   REPL workflow
+-   Live updates
+-   One language for both the back-end and front-end
+-   It's the language I'm growing into for most of my work
 -   It has very good support for concurrency
--   Access to all of java's libraries
+-   Access to all of Java's libraries
 
 
 ## Project Code {#project-code}
@@ -42,7 +43,7 @@ implement the blob uploader for the following reasons:
 -   <http://github.com/mullikine/blob-uploader-terraform>
 -   <http://github.com/mullikine/blob-uploader>
 -   Notes:
-    -   <https://github.com/mullikine/code-org-tidbits>
+-   <https://github.com/mullikine/code-org-tidbits>
 
 
 ## Current state {#current-state}
@@ -52,7 +53,12 @@ implement the blob uploader for the following reasons:
 
 -   Cluster is successfully created using `terraform apply`.
 -   Deployment of the web app to the cluster is working.
--   `UserData` script works.
+
+
+### Things I fixed from the original code {#things-i-fixed-from-the-original-code}
+
+-   `UserData` and installing `amazon-efs-utils` on the Ubuntu instances.
+-   The original code used the Amazon ECS image.
 
 
 ### What's not working yet {#what-s-not-working-yet}
@@ -62,31 +68,36 @@ implement the blob uploader for the following reasons:
 
 ## Problems so far {#problems-so-far}
 
--   My computer running Ubuntu 20.04 died one day into beginning this project, so I've had to continue
-    on an older computer running Ubuntu 16.04, but it has some older scripts.
-    -   I'm unable to demonstrate creating `tabulated list modes` for `aws` `cli` features I've automated on my newer machine.
-        Essentially, they allow me to create user interfaces with key bindings bound to commands.
-        I had begun automating AWS policies this way before my computer died.
-        e.g. <https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX>
+-   The computer I was using died one day into beginning this project, so I've had to continue
+
+on an older computer running Ubuntu 16.04, but it is a much older environment and is lacking many conveniences.
+
+-   I'm unable to demonstrate that I can make `tabulated list modes` for `aws` `cli` commands.
+
+They allow me to create user interfaces with key bindings bound to commands for working with `aws`.
+I had begun automating AWS policies this way before my computer died.
+e.g. <https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX>
 
 
 ## Things I have automated for the purpose of this project {#things-i-have-automated-for-the-purpose-of-this-project}
 
 -   Terraform editor
-    -   Parsing terraform files with `json2hcl`.
-        <https://asciinema.org/a/1lqm2POncL3NmuqmYIynRurMH>
+-   Parsing terraform files with `json2hcl`.
+
+<https://asciinema.org/a/1lqm2POncL3NmuqmYIynRurMH>
+
 -   Diagram editing with `plantuml` for AWS infrastructure diagrams
 -   Cluster creation
-    -   Ubuntu 20.04
+-   Ubuntu 20.04
 -   Deployment to the cluster
 -   aws cli command completion
 -   ec2 instance management in emacs
-    -   inspect ec2 instances
-    -   display `UserData`
-    -   log into instances
-    -   start and stop instances
+-   inspect ec2 instances
+-   display `UserData`
+-   log into instances
+-   start and stop instances
 -   Clojure editing
-    -   Parsing
+-   Parsing
 
 
 ## Steps {#steps}
@@ -119,161 +130,161 @@ I've automated the following:
 ;; these buttons should do something useful
 
 (defsetface filter-cmd-button-face
-  '((t :foreground "#66cc00"
-       ;; It's better for the glossary buttons to have no background, so normal syntax things, such as LSP highlighting can still be visible
-       ;; underline is enough
-       ;; :background "#2e2e2e"
-       :background nil
-       :weight bold
-       :underline t))
-  "Face for filter-cmd buttons.")
+'((t :foreground "#66cc00"
+;; It's better for the glossary buttons to have no background, so normal syntax things, such as LSP highlighting can still be visible
+;; underline is enough
+;; :background "#2e2e2e"
+:background nil
+:weight bold
+:underline t))
+"Face for filter-cmd buttons.")
 
 (define-button-type 'filter-cmd-button 'follow-link t 'help-echo "Click to run command" 'face 'filter-cmd-button-face)
 
 (defset filter-cmd-buttonize-2-tuples
-  ;; TODO Replace %q with a quoted argument
-  '(("scrape \"\\bami-[a-z0-9]+\\b\"" "sps zrepl -cm pavit aws ec2 describe-images --image-ids %q")
-    ;; ("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps zrepl -cm pavit aws ec2 describe-instance-types --instance-types")
-    ("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps aws-list-instance-types")
-    ("sed -n 's/\\bregion\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps aws-list-regions")
-    ;; ("sed -n 's/.*\\bowners\\s*=\\s*\\[\"\\([^\"]*\\)\"\\].*/\\1/p'" "sps aws-list-image-names-from-owner")
-    ("json2hcl -reverse | jq -r '.data[].aws_ami[][][].owners[]'" "sps aws-list-image-names-from-owner")
-    ;; ("sed -n 's/^resource \\s*\"\\([^\\\"]*\\)\" \"[^\\\"]*\" *{$/\\1/p'" "go-to-terraform-resource %q")
-    ("scrape-terraform-resource" "go-to-terraform-resource %q")))
+;; TODO Replace %q with a quoted argument
+'(("scrape \"\\bami-[a-z0-9]+\\b\"" "sps zrepl -cm pavit aws ec2 describe-images --image-ids %q")
+;; ("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps zrepl -cm pavit aws ec2 describe-instance-types --instance-types")
+("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps aws-list-instance-types")
+("sed -n 's/\\bregion\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps aws-list-regions")
+;; ("sed -n 's/.*\\bowners\\s*=\\s*\\[\"\\([^\"]*\\)\"\\].*/\\1/p'" "sps aws-list-image-names-from-owner")
+("json2hcl -reverse | jq -r '.data[].aws_ami[][][].owners[]'" "sps aws-list-image-names-from-owner")
+;; ("sed -n 's/^resource \\s*\"\\([^\\\"]*\\)\" \"[^\\\"]*\" *{$/\\1/p'" "go-to-terraform-resource %q")
+("scrape-terraform-resource" "go-to-terraform-resource %q")))
 
 
 (add-hook 'terraform-mode-hook 'make-buttons-for-all-filter-cmds)
 
 
 (defun remove-filter-cmd-buttons-over-region (beg end)
-  (interactive "r")
-  (remove-overlays beg end 'face 'filter-cmd-button-face))
+(interactive "r")
+(remove-overlays beg end 'face 'filter-cmd-button-face))
 
 (defun remove-all-filter-cmd-buttons (beg end)
-  (interactive "r")
-  (remove-filter-cmd-buttons-over-region (point-min) (point-max)))
+(interactive "r")
+(remove-filter-cmd-buttons-over-region (point-min) (point-max)))
 (defalias 'clear-filter-cmd-buttons 'remove-all-filter-cmd-buttons)
 
 (defun get-filter-cmd-button-data-at (p)
-  (interactive (list (point)))
-  (-filter
-   (l (tp)
-     (apply 'gnus-and tp))
-   (cl-loop
-    for
-    o
-    in
-    (overlays-at p)
-    collect
-    (list
-     (button-get o 'term)
-     (button-get o 'runfunc)
-     (button-get o 'filtercmd)))))
+(interactive (list (point)))
+(-filter
+(l (tp)
+(apply 'gnus-and tp))
+(cl-loop
+for
+o
+in
+(overlays-at p)
+collect
+(list
+(button-get o 'term)
+(button-get o 'runfunc)
+(button-get o 'filtercmd)))))
 
 (defun filter-cmd-button-pressed (button)
-  "When I press a filtercmd button, it should run the button's function"
-  (let* (
-         ;; (term (button-get-text button))
-         (term (button-get button 'term))
-         (runfunc (button-get button 'runfunc))
-         (start (button-start button))
-         (filtercmd (button-get button 'filtercmd))
-         (buttons-data-here (get-filter-cmd-button-data-at start)))
+"When I press a filtercmd button, it should run the button's function"
+(let* (
+;; (term (button-get-text button))
+(term (button-get button 'term))
+(runfunc (button-get button 'runfunc))
+(start (button-start button))
+(filtercmd (button-get button 'filtercmd))
+(buttons-data-here (get-filter-cmd-button-data-at start)))
 
-    (if (< 1 (length buttons-data-here))
-        (let* ((button-line (umn (fz (mnm (pp-map-line buttons-data-here)))))
-               (button-tuple (if button-line
-                                 (my-eval-string (concat "'" button-line))))
-               (selected-button (if button-tuple
-                                    (car (-filter (l (li) (and (equal (first button-tuple) (button-get li 'term))
-                                                               (equal (second button-tuple) (button-get li 'runfunc))
-                                                               (equal (third button-tuple) (button-get li 'filtercmd))))
-                                                  (overlays-at start))))))
-          (if selected-button
-              (progn
-                (setq button selected-button)
-                ;; (setq term (button-get-text button))
-                (setq term (button-get button 'term))
-                (setq runfunc (button-get button 'runfunc))
-                (setq start (button-start button))
-                ;; filtercmd isnt used here
-                (setq filtercmd (button-get button 'filtercmd))
-                (setq buttons-data-here (get-filter-cmd-button-data-at start)))
-            (backward-char))))
-    (cond
-     ((equal current-prefix-arg (list 4)) (setq current-prefix-arg nil))
-     ((not current-prefix-arg) (setq current-prefix-arg (list 4))))
+(if (< 1 (length buttons-data-here))
+(let* ((button-line (umn (fz (mnm (pp-map-line buttons-data-here)))))
+(button-tuple (if button-line
+(my-eval-string (concat "'" button-line))))
+(selected-button (if button-tuple
+(car (-filter (l (li) (and (equal (first button-tuple) (button-get li 'term))
+(equal (second button-tuple) (button-get li 'runfunc))
+(equal (third button-tuple) (button-get li 'filtercmd))))
+(overlays-at start))))))
+(if selected-button
+(progn
+(setq button selected-button)
+;; (setq term (button-get-text button))
+(setq term (button-get button 'term))
+(setq runfunc (button-get button 'runfunc))
+(setq start (button-start button))
+;; filtercmd isnt used here
+(setq filtercmd (button-get button 'filtercmd))
+(setq buttons-data-here (get-filter-cmd-button-data-at start)))
+(backward-char))))
+(cond
+((equal current-prefix-arg (list 4)) (setq current-prefix-arg nil))
+((not current-prefix-arg) (setq current-prefix-arg (list 4))))
 
-    (funcall runfunc term)))
+(funcall runfunc term)))
 
 (defun create-buttons-for-filtrate (term beg end filtercmd runfunc buttontype)
-  ""
-  (if (not buttontype)
-      (setq buttontype 'filter-cmd-button))
+""
+(if (not buttontype)
+(setq buttontype 'filter-cmd-button))
 
-  (goto-char beg)
-  (let ((pat
-         (concat
-          "\\(\\b\\|[. ']\\|^\\)"
-          (regexp-quote term)
-          "s?\\(\\b\\|[. ']\\|$\\)")))
-    (while (re-search-forward pat end t)
-      (progn
-        ;; (message "%s" (concat "searching forward " (str (point))))
-        (let ((contents (match-string 0))
-              (beg (match-beginning 0))
-              (end (match-end 0)))
-          (make-button
-           (if (string-match "^[ '.].*" contents)
-               (+ beg 1)
-             beg)
-           (if (string-match ".*[' .]$" contents)
-               (- end 1)
-             end)
-           'term term
-           'runfunc runfunc
-           'filtercmd filtercmd
-           'action 'filter-cmd-button-pressed
-           'type buttontype))))))
+(goto-char beg)
+(let ((pat
+(concat
+"\\(\\b\\|[. ']\\|^\\)"
+(regexp-quote term)
+"s?\\(\\b\\|[. ']\\|$\\)")))
+(while (re-search-forward pat end t)
+(progn
+;; (message "%s" (concat "searching forward " (str (point))))
+(let ((contents (match-string 0))
+(beg (match-beginning 0))
+(end (match-end 0)))
+(make-button
+(if (string-match "^[ '.].*" contents)
+(+ beg 1)
+beg)
+(if (string-match ".*[' .]$" contents)
+(- end 1)
+end)
+'term term
+'runfunc runfunc
+'filtercmd filtercmd
+'action 'filter-cmd-button-pressed
+'type buttontype))))))
 
 
 (defun make-buttons-for-filter-cmd (beg end filtercmd runcmd &optional clear-first)
-  "Makes buttons for terms found by filter-cmd in this buffer."
-  (interactive (list (point-min)
-                     (point-max)
-                     (read-string-hist "filter-cmd: ")
-                     (read-string-hist "runcmd %s: ")))
+"Makes buttons for terms found by filter-cmd in this buffer."
+(interactive (list (point-min)
+(point-max)
+(read-string-hist "filter-cmd: ")
+(read-string-hist "runcmd %s: ")))
 
-  (if clear-first (remove-all-filter-cmd-buttons))
+(if clear-first (remove-all-filter-cmd-buttons))
 
-  (let* ((terms (-filter 'sor (-uniq (str2list (snc filtercmd (region2string beg end))))))
-         (runfunc (eval `(lambda (term) (sn
-                                         (if (re-match-p "%q" ,runcmd)
-                                             (s-replace-regexp "%q" (q term) ,runcmd)
-                                           (concat ,runcmd " " (q term))))))))
-    (if (not (or (major-mode-p 'org-modmfse)
-                 (major-mode-p 'outline-mode)
-                 (string-equal (buffer-name) "*glossary cloud*")))
-        (save-excursion
-          (cl-loop for term in terms do
-                   (progn
-                     (message "creating for %s" term)
-                     (create-buttons-for-filtrate
-                      term
-                      beg end
-                      ;; This is just to make it easy to introspect
-                      filtercmd
-                      runfunc
-                      'filter-cmd-button)))))))
+(let* ((terms (-filter 'sor (-uniq (str2list (snc filtercmd (region2string beg end))))))
+(runfunc (eval `(lambda (term) (sn
+(if (re-match-p "%q" ,runcmd)
+(s-replace-regexp "%q" (q term) ,runcmd)
+(concat ,runcmd " " (q term))))))))
+(if (not (or (major-mode-p 'org-modmfse)
+(major-mode-p 'outline-mode)
+(string-equal (buffer-name) "*glossary cloud*")))
+(save-excursion
+(cl-loop for term in terms do
+(progn
+(message "creating for %s" term)
+(create-buttons-for-filtrate
+term
+beg end
+;; This is just to make it easy to introspect
+filtercmd
+runfunc
+'filter-cmd-button)))))))
 
 (defun make-buttons-for-all-filter-cmds (&optional clear-first)
-  (interactive)
-  (cl-loop for tp in filter-cmd-buttonize-2-tuples do
-           (make-buttons-for-filter-cmd
-            (point-min) (point-max)
-            (car tp)
-            (second tp)
-            clear-first)))
+(interactive)
+(cl-loop for tp in filter-cmd-buttonize-2-tuples do
+(make-buttons-for-filter-cmd
+(point-min) (point-max)
+(car tp)
+(second tp)
+clear-first)))
 
 (provide 'my-filter-cmd-buttonize)
 {{< /highlight >}}
@@ -287,14 +298,14 @@ aws ec2 describe-key-pairs
 
 ```bash
 {
-    "KeyPairs": [
-        {
-            "KeyPairId": "key-09fb6b77288849f3b",
-            "KeyFingerprint": "f2:77:ec:1f:8c:3d:65:23:12:1a:65:70:5a:0b:6f:c6:fc:46:d4:cd",
-            "KeyName": "blob_uploader_key_pair",
-            "Tags": []
-        }
-    ]
+"KeyPairs": [
+{
+"KeyPairId": "key-09fb6b77288849f3b",
+"KeyFingerprint": "f2:77:ec:1f:8c:3d:65:23:12:1a:65:70:5a:0b:6f:c6:fc:46:d4:cd",
+"KeyName": "blob_uploader_key_pair",
+"Tags": []
+}
+]
 }
 ```
 
@@ -310,9 +321,8 @@ download and save the json.
 
 A caveat
 : There is no way yet to specify a region for the cli subcommand, so this step must be done manually via the AWS console
-    <https://docs.aws.amazon.com/cli/latest/reference/ec2/create-key-pair.html>
 
-<!--listend-->
+<https://docs.aws.amazon.com/cli/latest/reference/ec2/create-key-pair.html>
 
 {{< highlight sh "linenos=table, linenostart=1" >}}
 # The would-be way to create the key
@@ -320,7 +330,7 @@ aws ec2 create-key-pair --key-name blob_uploader_key_pair
 {{< /highlight >}}
 
 -   Steps automated:
-    -   Download key to ssh file when it's created
+-   Download key to ssh file when it's created
 
 <!--listend-->
 
@@ -356,13 +366,13 @@ oci aws iam create-user --user-name Administrator
 
 ```bash
 {
-    "User": {
-        "Path": "/",
-        "UserName": "Administrator",
-        "UserId": "AIDAR55HCH7KNSLMHLBLO",
-        "Arn": "arn:aws:iam::132957487060:user/Administrator",
-        "CreateDate": "2021-04-26T00:07:09Z"
-    }
+"User": {
+"Path": "/",
+"UserName": "Administrator",
+"UserId": "AIDAR55HCH7KNSLMHLBLO",
+"Arn": "arn:aws:iam::132957487060:user/Administrator",
+"CreateDate": "2021-04-26T00:07:09Z"
+}
 }
 ```
 
@@ -504,10 +514,10 @@ Instead of setting up the following tool, I extended emacs' `aws-instances` plug
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 Error: Error creating launch configuration: ValidationError: The key pair 'blob_uploader_key_pair' does not exist
-        status code: 400, request id: 42206521-5721-44ce-9a11-7bc24d1b440c
+status code: 400, request id: 42206521-5721-44ce-9a11-7bc24d1b440c
 
-  on launch-configuration.tf line 1, in resource "aws_launch_configuration" "ecs-launch-configuration":
-   1: resource "aws_launch_configuration" "ecs-launch-configuration" {
+on launch-configuration.tf line 1, in resource "aws_launch_configuration" "ecs-launch-configuration":
+1: resource "aws_launch_configuration" "ecs-launch-configuration" {
 {{< /highlight >}}
 
 
@@ -586,23 +596,23 @@ It takes significant time to shut down.
 ;; TODO Make an ssh into box script
 
 (defun aws-ssh-into-box (id)
-  (interactive (list (tabulated-list-get-id)))
+(interactive (list (tabulated-list-get-id)))
 
-  (if (major-mode-p 'aws-instances-mode)
-      (sps (concat "aws-ssh-into-box " id))))
+(if (major-mode-p 'aws-instances-mode)
+(sps (concat "aws-ssh-into-box " id))))
 
 (defun aws-show-user-data (id)
-  (interactive (list (tabulated-list-get-id)))
+(interactive (list (tabulated-list-get-id)))
 
-  (if (major-mode-p 'aws-instances-mode)
-      ;; https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
-      (etv (snc (concat
-                 "aws ec2 describe-instance-attribute --instance-id "
-                 id
-                 " --attribute userData --output text --query \"UserData.Value\" | base64 --decode")))
-    ;;
-    ;; (sps (concat "aws-ssh-into-box " id))
-    ))
+(if (major-mode-p 'aws-instances-mode)
+;; https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
+(etv (snc (concat
+"aws ec2 describe-instance-attribute --instance-id "
+id
+" --attribute userData --output text --query \"UserData.Value\" | base64 --decode")))
+;;
+;; (sps (concat "aws-ssh-into-box " id))
+))
 
 (define-key aws-instances-mode-map (kbd ";") 'aws-ssh-into-box)
 (define-key aws-instances-mode-map (kbd "D") 'aws-show-user-data)
@@ -614,6 +624,6 @@ It takes significant time to shut down.
 ### <span class="org-todo todo TODO">TODO</span> Automate collection of `terraform apply output` {#automate-collection-of-terraform-apply-output}
 
 -   Specifically variables
-    -   Then I can collect database of cluster states
+-   Then I can collect database of cluster states
 -   Partially done
-    -   All outputs of the `aws` and `terraform` commands are stored in a database.
+-   All outputs of the `aws` and `terraform` commands are stored in a database.

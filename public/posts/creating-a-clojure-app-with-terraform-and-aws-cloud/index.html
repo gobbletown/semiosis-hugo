@@ -10,7 +10,7 @@ This is a work in progress.
 Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
 I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
- It&amp;rsquo;s data-driven One language for backend and front-end I am using it for multiple other projects It&amp;rsquo;s very reliable It&amp;rsquo;s very easy to understand It has very good support for concurrency Access to all of java&amp;rsquo;s libraries  Project Code  http://github." />
+ It is very reliable It is easy to understand REPL workflow Live updates One language for both the back-end and front-end It&amp;rsquo;s the language I&amp;rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&amp;rsquo;s libraries  Project Code  http://github." />
 <meta name="keywords" content="NLP GPT openai" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -43,9 +43,9 @@ This is a work in progress.
 Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
 I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
- It&rsquo;s data-driven One language for backend and front-end I am using it for multiple other projects It&rsquo;s very reliable It&rsquo;s very easy to understand It has very good support for concurrency Access to all of java&rsquo;s libraries  Project Code  http://github."><meta itemprop="datePublished" content="2021-04-27T00:00:00&#43;12:00" />
+ It is very reliable It is easy to understand REPL workflow Live updates One language for both the back-end and front-end It&rsquo;s the language I&rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&rsquo;s libraries  Project Code  http://github."><meta itemprop="datePublished" content="2021-04-27T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-27T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="2026"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2060"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -56,7 +56,7 @@ This is a work in progress.
 Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
 I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
- It&rsquo;s data-driven One language for backend and front-end I am using it for multiple other projects It&rsquo;s very reliable It&rsquo;s very easy to understand It has very good support for concurrency Access to all of java&rsquo;s libraries  Project Code  http://github."/>
+ It is very reliable It is easy to understand REPL workflow Live updates One language for both the back-end and front-end It&rsquo;s the language I&rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&rsquo;s libraries  Project Code  http://github."/>
 
 
 
@@ -67,7 +67,7 @@ This is a work in progress.
 Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
 I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
- It&rsquo;s data-driven One language for backend and front-end I am using it for multiple other projects It&rsquo;s very reliable It&rsquo;s very easy to understand It has very good support for concurrency Access to all of java&rsquo;s libraries  Project Code  http://github." />
+ It is very reliable It is easy to understand REPL workflow Live updates One language for both the back-end and front-end It&rsquo;s the language I&rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&rsquo;s libraries  Project Code  http://github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/creating-a-clojure-app-with-terraform-and-aws-cloud/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-27T00:00:00&#43;12:00" />
@@ -170,30 +170,32 @@ AWS cluster defined by a Terraform module.</p>
 <p>I have chosen Clojure as the language to
 implement the blob uploader for the following reasons:</p>
 <ul>
-<li>It&rsquo;s data-driven</li>
-<li>One language for backend and front-end</li>
-<li>I am using it for multiple other projects</li>
-<li>It&rsquo;s very reliable</li>
-<li>It&rsquo;s very easy to understand</li>
+<li>It is very reliable</li>
+<li>It is easy to understand</li>
+<li>REPL workflow</li>
+<li>Live updates</li>
+<li>One language for both the back-end and front-end</li>
+<li>It&rsquo;s the language I&rsquo;m growing into for most of my work</li>
 <li>It has very good support for concurrency</li>
-<li>Access to all of java&rsquo;s libraries</li>
+<li>Access to all of Java&rsquo;s libraries</li>
 </ul>
 <h2 id="project-code">Project Code</h2>
 <ul>
 <li><a href="http://github.com/mullikine/blob-uploader-terraform">http://github.com/mullikine/blob-uploader-terraform</a></li>
 <li><a href="http://github.com/mullikine/blob-uploader">http://github.com/mullikine/blob-uploader</a></li>
-<li>Notes:
-<ul>
+<li>Notes:</li>
 <li><a href="https://github.com/mullikine/code-org-tidbits">https://github.com/mullikine/code-org-tidbits</a></li>
-</ul>
-</li>
 </ul>
 <h2 id="current-state">Current state</h2>
 <h3 id="what-s-working">What&rsquo;s working</h3>
 <ul>
 <li>Cluster is successfully created using <code>terraform apply</code>.</li>
 <li>Deployment of the web app to the cluster is working.</li>
-<li><code>UserData</code> script works.</li>
+</ul>
+<h3 id="things-i-fixed-from-the-original-code">Things I fixed from the original code</h3>
+<ul>
+<li><code>UserData</code> and installing <code>amazon-efs-utils</code> on the Ubuntu instances.</li>
+<li>The original code used the Amazon ECS image.</li>
 </ul>
 <h3 id="what-s-not-working-yet">What&rsquo;s not working yet</h3>
 <ul>
@@ -201,45 +203,34 @@ implement the blob uploader for the following reasons:</p>
 </ul>
 <h2 id="problems-so-far">Problems so far</h2>
 <ul>
-<li>My computer running Ubuntu 20.04 died one day into beginning this project, so I&rsquo;ve had to continue
-on an older computer running Ubuntu 16.04, but it has some older scripts.
+<li>The computer I was using died one day into beginning this project, so I&rsquo;ve had to continue</li>
+</ul>
+<p>on an older computer running Ubuntu 16.04, but it is a much older environment and is lacking many conveniences.</p>
 <ul>
-<li>I&rsquo;m unable to demonstrate creating <code>tabulated list modes</code> for <code>aws</code> <code>cli</code> features I&rsquo;ve automated on my newer machine.
-Essentially, they allow me to create user interfaces with key bindings bound to commands.
+<li>I&rsquo;m unable to demonstrate that I can make <code>tabulated list modes</code> for <code>aws</code> <code>cli</code> commands.</li>
+</ul>
+<p>They allow me to create user interfaces with key bindings bound to commands for working with <code>aws</code>.
 I had begun automating AWS policies this way before my computer died.
-e.g. <a href="https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX">https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX</a></li>
-</ul>
-</li>
-</ul>
+e.g. <a href="https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX">https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX</a></p>
 <h2 id="things-i-have-automated-for-the-purpose-of-this-project">Things I have automated for the purpose of this project</h2>
 <ul>
-<li>Terraform editor
-<ul>
-<li>Parsing terraform files with <code>json2hcl</code>.
-<a href="https://asciinema.org/a/1lqm2POncL3NmuqmYIynRurMH">https://asciinema.org/a/1lqm2POncL3NmuqmYIynRurMH</a></li>
+<li>Terraform editor</li>
+<li>Parsing terraform files with <code>json2hcl</code>.</li>
 </ul>
-</li>
+<p><a href="https://asciinema.org/a/1lqm2POncL3NmuqmYIynRurMH">https://asciinema.org/a/1lqm2POncL3NmuqmYIynRurMH</a></p>
+<ul>
 <li>Diagram editing with <code>plantuml</code> for AWS infrastructure diagrams</li>
-<li>Cluster creation
-<ul>
+<li>Cluster creation</li>
 <li>Ubuntu 20.04</li>
-</ul>
-</li>
 <li>Deployment to the cluster</li>
 <li>aws cli command completion</li>
-<li>ec2 instance management in emacs
-<ul>
+<li>ec2 instance management in emacs</li>
 <li>inspect ec2 instances</li>
 <li>display <code>UserData</code></li>
 <li>log into instances</li>
 <li>start and stop instances</li>
-</ul>
-</li>
-<li>Clojure editing
-<ul>
+<li>Clojure editing</li>
 <li>Parsing</li>
-</ul>
-</li>
 </ul>
 <h2 id="steps">Steps</h2>
 <h3 id="automate-terraform-editor">Automate terraform editor</h3>
@@ -430,161 +421,161 @@ highlighted according to rules I specify.</p>
 <span style="color:#75715e">;; these buttons should do something useful</span>
 
 (defsetface filter-cmd-button-face
-  <span style="color:#f92672">&#39;</span>((<span style="color:#66d9ef">t</span> :foreground <span style="color:#e6db74">&#34;#66cc00&#34;</span>
-       <span style="color:#75715e">;; It&#39;s better for the glossary buttons to have no background, so normal syntax things, such as LSP highlighting can still be visible</span>
-       <span style="color:#75715e">;; underline is enough</span>
-       <span style="color:#75715e">;; :background &#34;#2e2e2e&#34;</span>
-       :background <span style="color:#66d9ef">nil</span>
-       :weight bold
-       :underline <span style="color:#66d9ef">t</span>))
-  <span style="color:#e6db74">&#34;Face for filter-cmd buttons.&#34;</span>)
+<span style="color:#f92672">&#39;</span>((<span style="color:#66d9ef">t</span> :foreground <span style="color:#e6db74">&#34;#66cc00&#34;</span>
+<span style="color:#75715e">;; It&#39;s better for the glossary buttons to have no background, so normal syntax things, such as LSP highlighting can still be visible</span>
+<span style="color:#75715e">;; underline is enough</span>
+<span style="color:#75715e">;; :background &#34;#2e2e2e&#34;</span>
+:background <span style="color:#66d9ef">nil</span>
+:weight bold
+:underline <span style="color:#66d9ef">t</span>))
+<span style="color:#e6db74">&#34;Face for filter-cmd buttons.&#34;</span>)
 
 (define-button-type <span style="color:#e6db74">&#39;filter-cmd-button</span> <span style="color:#e6db74">&#39;follow-link</span> <span style="color:#66d9ef">t</span> <span style="color:#e6db74">&#39;help-echo</span> <span style="color:#e6db74">&#34;Click to run command&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#e6db74">&#39;filter-cmd-button-face</span>)
 
 (defset filter-cmd-buttonize-2-tuples
-  <span style="color:#75715e">;; TODO Replace %q with a quoted argument</span>
-  <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;scrape \&#34;\\bami-[a-z0-9]+\\b\&#34;&#34;</span> <span style="color:#e6db74">&#34;sps zrepl -cm pavit aws ec2 describe-images --image-ids %q&#34;</span>)
-    <span style="color:#75715e">;; (&#34;sed -n &#39;s/.*instance_type\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34; &#34;sps zrepl -cm pavit aws ec2 describe-instance-types --instance-types&#34;)</span>
-    (<span style="color:#e6db74">&#34;sed -n &#39;s/.*instance_type\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34;</span> <span style="color:#e6db74">&#34;sps aws-list-instance-types&#34;</span>)
-    (<span style="color:#e6db74">&#34;sed -n &#39;s/\\bregion\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34;</span> <span style="color:#e6db74">&#34;sps aws-list-regions&#34;</span>)
-    <span style="color:#75715e">;; (&#34;sed -n &#39;s/.*\\bowners\\s*=\\s*\\[\&#34;\\([^\&#34;]*\\)\&#34;\\].*/\\1/p&#39;&#34; &#34;sps aws-list-image-names-from-owner&#34;)</span>
-    (<span style="color:#e6db74">&#34;json2hcl -reverse | jq -r &#39;.data[].aws_ami[][][].owners[]&#39;&#34;</span> <span style="color:#e6db74">&#34;sps aws-list-image-names-from-owner&#34;</span>)
-    <span style="color:#75715e">;; (&#34;sed -n &#39;s/^resource \\s*\&#34;\\([^\\\&#34;]*\\)\&#34; \&#34;[^\\\&#34;]*\&#34; *{$/\\1/p&#39;&#34; &#34;go-to-terraform-resource %q&#34;)</span>
-    (<span style="color:#e6db74">&#34;scrape-terraform-resource&#34;</span> <span style="color:#e6db74">&#34;go-to-terraform-resource %q&#34;</span>)))
+<span style="color:#75715e">;; TODO Replace %q with a quoted argument</span>
+<span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;scrape \&#34;\\bami-[a-z0-9]+\\b\&#34;&#34;</span> <span style="color:#e6db74">&#34;sps zrepl -cm pavit aws ec2 describe-images --image-ids %q&#34;</span>)
+<span style="color:#75715e">;; (&#34;sed -n &#39;s/.*instance_type\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34; &#34;sps zrepl -cm pavit aws ec2 describe-instance-types --instance-types&#34;)</span>
+(<span style="color:#e6db74">&#34;sed -n &#39;s/.*instance_type\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34;</span> <span style="color:#e6db74">&#34;sps aws-list-instance-types&#34;</span>)
+(<span style="color:#e6db74">&#34;sed -n &#39;s/\\bregion\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34;</span> <span style="color:#e6db74">&#34;sps aws-list-regions&#34;</span>)
+<span style="color:#75715e">;; (&#34;sed -n &#39;s/.*\\bowners\\s*=\\s*\\[\&#34;\\([^\&#34;]*\\)\&#34;\\].*/\\1/p&#39;&#34; &#34;sps aws-list-image-names-from-owner&#34;)</span>
+(<span style="color:#e6db74">&#34;json2hcl -reverse | jq -r &#39;.data[].aws_ami[][][].owners[]&#39;&#34;</span> <span style="color:#e6db74">&#34;sps aws-list-image-names-from-owner&#34;</span>)
+<span style="color:#75715e">;; (&#34;sed -n &#39;s/^resource \\s*\&#34;\\([^\\\&#34;]*\\)\&#34; \&#34;[^\\\&#34;]*\&#34; *{$/\\1/p&#39;&#34; &#34;go-to-terraform-resource %q&#34;)</span>
+(<span style="color:#e6db74">&#34;scrape-terraform-resource&#34;</span> <span style="color:#e6db74">&#34;go-to-terraform-resource %q&#34;</span>)))
 
 
 (add-hook <span style="color:#e6db74">&#39;terraform-mode-hook</span> <span style="color:#e6db74">&#39;make-buttons-for-all-filter-cmds</span>)
 
 
 (defun remove-filter-cmd-buttons-over-region (beg end)
-  (interactive <span style="color:#e6db74">&#34;r&#34;</span>)
-  (remove-overlays beg end <span style="color:#e6db74">&#39;face</span> <span style="color:#e6db74">&#39;filter-cmd-button-face</span>))
+(interactive <span style="color:#e6db74">&#34;r&#34;</span>)
+(remove-overlays beg end <span style="color:#e6db74">&#39;face</span> <span style="color:#e6db74">&#39;filter-cmd-button-face</span>))
 
 (defun remove-all-filter-cmd-buttons (beg end)
-  (interactive <span style="color:#e6db74">&#34;r&#34;</span>)
-  (remove-filter-cmd-buttons-over-region (<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>)))
+(interactive <span style="color:#e6db74">&#34;r&#34;</span>)
+(remove-filter-cmd-buttons-over-region (<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>)))
 (defalias <span style="color:#e6db74">&#39;clear-filter-cmd-buttons</span> <span style="color:#e6db74">&#39;remove-all-filter-cmd-buttons</span>)
 
 (defun get-filter-cmd-button-data-at (p)
-  (interactive (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">point</span>)))
-  (-filter
-   (l (tp)
-     (<span style="color:#a6e22e">apply</span> <span style="color:#e6db74">&#39;gnus-and</span> tp))
-   (cl-loop
-    for
-    o
-    in
-    (<span style="color:#a6e22e">overlays-at</span> p)
-    collect
-    (<span style="color:#a6e22e">list</span>
-     (button-get o <span style="color:#e6db74">&#39;term</span>)
-     (button-get o <span style="color:#e6db74">&#39;runfunc</span>)
-     (button-get o <span style="color:#e6db74">&#39;filtercmd</span>)))))
+(interactive (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">point</span>)))
+(-filter
+(l (tp)
+(<span style="color:#a6e22e">apply</span> <span style="color:#e6db74">&#39;gnus-and</span> tp))
+(cl-loop
+for
+o
+in
+(<span style="color:#a6e22e">overlays-at</span> p)
+collect
+(<span style="color:#a6e22e">list</span>
+(button-get o <span style="color:#e6db74">&#39;term</span>)
+(button-get o <span style="color:#e6db74">&#39;runfunc</span>)
+(button-get o <span style="color:#e6db74">&#39;filtercmd</span>)))))
 
 (defun filter-cmd-button-pressed (button)
-  <span style="color:#e6db74">&#34;When I press a filtercmd button, it should run the button&#39;s function&#34;</span>
-  (let* (
-         <span style="color:#75715e">;; (term (button-get-text button))</span>
-         (term (button-get button <span style="color:#e6db74">&#39;term</span>))
-         (runfunc (button-get button <span style="color:#e6db74">&#39;runfunc</span>))
-         (start (button-start button))
-         (filtercmd (button-get button <span style="color:#e6db74">&#39;filtercmd</span>))
-         (buttons-data-here (get-filter-cmd-button-data-at start)))
+<span style="color:#e6db74">&#34;When I press a filtercmd button, it should run the button&#39;s function&#34;</span>
+(let* (
+<span style="color:#75715e">;; (term (button-get-text button))</span>
+(term (button-get button <span style="color:#e6db74">&#39;term</span>))
+(runfunc (button-get button <span style="color:#e6db74">&#39;runfunc</span>))
+(start (button-start button))
+(filtercmd (button-get button <span style="color:#e6db74">&#39;filtercmd</span>))
+(buttons-data-here (get-filter-cmd-button-data-at start)))
 
-    (if (<span style="color:#a6e22e">&lt;</span> <span style="color:#ae81ff">1</span> (<span style="color:#a6e22e">length</span> buttons-data-here))
-        (let* ((button-line (umn (fz (mnm (pp-map-line buttons-data-here)))))
-               (button-tuple (if button-line
-                                 (my-eval-string (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> button-line))))
-               (selected-button (if button-tuple
-                                    (<span style="color:#a6e22e">car</span> (-filter (l (li) (and (<span style="color:#a6e22e">equal</span> (first button-tuple) (button-get li <span style="color:#e6db74">&#39;term</span>))
-                                                               (<span style="color:#a6e22e">equal</span> (second button-tuple) (button-get li <span style="color:#e6db74">&#39;runfunc</span>))
-                                                               (<span style="color:#a6e22e">equal</span> (third button-tuple) (button-get li <span style="color:#e6db74">&#39;filtercmd</span>))))
-                                                  (<span style="color:#a6e22e">overlays-at</span> start))))))
-          (if selected-button
-              (progn
-                (setq button selected-button)
-                <span style="color:#75715e">;; (setq term (button-get-text button))</span>
-                (setq term (button-get button <span style="color:#e6db74">&#39;term</span>))
-                (setq runfunc (button-get button <span style="color:#e6db74">&#39;runfunc</span>))
-                (setq start (button-start button))
-                <span style="color:#75715e">;; filtercmd isnt used here</span>
-                (setq filtercmd (button-get button <span style="color:#e6db74">&#39;filtercmd</span>))
-                (setq buttons-data-here (get-filter-cmd-button-data-at start)))
-            (<span style="color:#a6e22e">backward-char</span>))))
-    (cond
-     ((<span style="color:#a6e22e">equal</span> current-prefix-arg (<span style="color:#a6e22e">list</span> <span style="color:#ae81ff">4</span>)) (setq current-prefix-arg <span style="color:#66d9ef">nil</span>))
-     ((not current-prefix-arg) (setq current-prefix-arg (<span style="color:#a6e22e">list</span> <span style="color:#ae81ff">4</span>))))
+(if (<span style="color:#a6e22e">&lt;</span> <span style="color:#ae81ff">1</span> (<span style="color:#a6e22e">length</span> buttons-data-here))
+(let* ((button-line (umn (fz (mnm (pp-map-line buttons-data-here)))))
+(button-tuple (if button-line
+(my-eval-string (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> button-line))))
+(selected-button (if button-tuple
+(<span style="color:#a6e22e">car</span> (-filter (l (li) (and (<span style="color:#a6e22e">equal</span> (first button-tuple) (button-get li <span style="color:#e6db74">&#39;term</span>))
+(<span style="color:#a6e22e">equal</span> (second button-tuple) (button-get li <span style="color:#e6db74">&#39;runfunc</span>))
+(<span style="color:#a6e22e">equal</span> (third button-tuple) (button-get li <span style="color:#e6db74">&#39;filtercmd</span>))))
+(<span style="color:#a6e22e">overlays-at</span> start))))))
+(if selected-button
+(progn
+(setq button selected-button)
+<span style="color:#75715e">;; (setq term (button-get-text button))</span>
+(setq term (button-get button <span style="color:#e6db74">&#39;term</span>))
+(setq runfunc (button-get button <span style="color:#e6db74">&#39;runfunc</span>))
+(setq start (button-start button))
+<span style="color:#75715e">;; filtercmd isnt used here</span>
+(setq filtercmd (button-get button <span style="color:#e6db74">&#39;filtercmd</span>))
+(setq buttons-data-here (get-filter-cmd-button-data-at start)))
+(<span style="color:#a6e22e">backward-char</span>))))
+(cond
+((<span style="color:#a6e22e">equal</span> current-prefix-arg (<span style="color:#a6e22e">list</span> <span style="color:#ae81ff">4</span>)) (setq current-prefix-arg <span style="color:#66d9ef">nil</span>))
+((not current-prefix-arg) (setq current-prefix-arg (<span style="color:#a6e22e">list</span> <span style="color:#ae81ff">4</span>))))
 
-    (<span style="color:#a6e22e">funcall</span> runfunc term)))
+(<span style="color:#a6e22e">funcall</span> runfunc term)))
 
 (defun create-buttons-for-filtrate (term beg end filtercmd runfunc buttontype)
-  <span style="color:#e6db74">&#34;&#34;</span>
-  (if (not buttontype)
-      (setq buttontype <span style="color:#e6db74">&#39;filter-cmd-button</span>))
+<span style="color:#e6db74">&#34;&#34;</span>
+(if (not buttontype)
+(setq buttontype <span style="color:#e6db74">&#39;filter-cmd-button</span>))
 
-  (<span style="color:#a6e22e">goto-char</span> beg)
-  (let ((pat
-         (<span style="color:#a6e22e">concat</span>
-          <span style="color:#e6db74">&#34;\\(\\b\\|[. &#39;]\\|^\\)&#34;</span>
-          (<span style="color:#a6e22e">regexp-quote</span> term)
-          <span style="color:#e6db74">&#34;s?\\(\\b\\|[. &#39;]\\|$\\)&#34;</span>)))
-    (while (<span style="color:#a6e22e">re-search-forward</span> pat end <span style="color:#66d9ef">t</span>)
-      (progn
-        <span style="color:#75715e">;; (message &#34;%s&#34; (concat &#34;searching forward &#34; (str (point))))</span>
-        (let ((contents (match-string <span style="color:#ae81ff">0</span>))
-              (beg (<span style="color:#a6e22e">match-beginning</span> <span style="color:#ae81ff">0</span>))
-              (end (<span style="color:#a6e22e">match-end</span> <span style="color:#ae81ff">0</span>)))
-          (make-button
-           (if (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;^[ &#39;.].*&#34;</span> contents)
-               (<span style="color:#a6e22e">+</span> beg <span style="color:#ae81ff">1</span>)
-             beg)
-           (if (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;.*[&#39; .]$&#34;</span> contents)
-               (<span style="color:#a6e22e">-</span> end <span style="color:#ae81ff">1</span>)
-             end)
-           <span style="color:#e6db74">&#39;term</span> term
-           <span style="color:#e6db74">&#39;runfunc</span> runfunc
-           <span style="color:#e6db74">&#39;filtercmd</span> filtercmd
-           <span style="color:#e6db74">&#39;action</span> <span style="color:#e6db74">&#39;filter-cmd-button-pressed</span>
-           <span style="color:#e6db74">&#39;type</span> buttontype))))))
+(<span style="color:#a6e22e">goto-char</span> beg)
+(let ((pat
+(<span style="color:#a6e22e">concat</span>
+<span style="color:#e6db74">&#34;\\(\\b\\|[. &#39;]\\|^\\)&#34;</span>
+(<span style="color:#a6e22e">regexp-quote</span> term)
+<span style="color:#e6db74">&#34;s?\\(\\b\\|[. &#39;]\\|$\\)&#34;</span>)))
+(while (<span style="color:#a6e22e">re-search-forward</span> pat end <span style="color:#66d9ef">t</span>)
+(progn
+<span style="color:#75715e">;; (message &#34;%s&#34; (concat &#34;searching forward &#34; (str (point))))</span>
+(let ((contents (match-string <span style="color:#ae81ff">0</span>))
+(beg (<span style="color:#a6e22e">match-beginning</span> <span style="color:#ae81ff">0</span>))
+(end (<span style="color:#a6e22e">match-end</span> <span style="color:#ae81ff">0</span>)))
+(make-button
+(if (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;^[ &#39;.].*&#34;</span> contents)
+(<span style="color:#a6e22e">+</span> beg <span style="color:#ae81ff">1</span>)
+beg)
+(if (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;.*[&#39; .]$&#34;</span> contents)
+(<span style="color:#a6e22e">-</span> end <span style="color:#ae81ff">1</span>)
+end)
+<span style="color:#e6db74">&#39;term</span> term
+<span style="color:#e6db74">&#39;runfunc</span> runfunc
+<span style="color:#e6db74">&#39;filtercmd</span> filtercmd
+<span style="color:#e6db74">&#39;action</span> <span style="color:#e6db74">&#39;filter-cmd-button-pressed</span>
+<span style="color:#e6db74">&#39;type</span> buttontype))))))
 
 
 (defun make-buttons-for-filter-cmd (beg end filtercmd runcmd <span style="color:#66d9ef">&amp;optional</span> clear-first)
-  <span style="color:#e6db74">&#34;Makes buttons for terms found by filter-cmd in this buffer.&#34;</span>
-  (interactive (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">point-min</span>)
-                     (<span style="color:#a6e22e">point-max</span>)
-                     (read-string-hist <span style="color:#e6db74">&#34;filter-cmd: &#34;</span>)
-                     (read-string-hist <span style="color:#e6db74">&#34;runcmd %s: &#34;</span>)))
+<span style="color:#e6db74">&#34;Makes buttons for terms found by filter-cmd in this buffer.&#34;</span>
+(interactive (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">point-min</span>)
+(<span style="color:#a6e22e">point-max</span>)
+(read-string-hist <span style="color:#e6db74">&#34;filter-cmd: &#34;</span>)
+(read-string-hist <span style="color:#e6db74">&#34;runcmd %s: &#34;</span>)))
 
-  (if clear-first (remove-all-filter-cmd-buttons))
+(if clear-first (remove-all-filter-cmd-buttons))
 
-  (let* ((terms (-filter <span style="color:#e6db74">&#39;sor</span> (-uniq (str2list (snc filtercmd (region2string beg end))))))
-         (runfunc (<span style="color:#a6e22e">eval</span> <span style="color:#f92672">`</span>(lambda (term) (sn
-                                         (if (re-match-p <span style="color:#e6db74">&#34;%q&#34;</span> <span style="color:#f92672">,</span>runcmd)
-                                             (s-replace-regexp <span style="color:#e6db74">&#34;%q&#34;</span> (q term) <span style="color:#f92672">,</span>runcmd)
-                                           (<span style="color:#a6e22e">concat</span> <span style="color:#f92672">,</span>runcmd <span style="color:#e6db74">&#34; &#34;</span> (q term))))))))
-    (if (not (or (major-mode-p <span style="color:#e6db74">&#39;org-modmfse</span>)
-                 (major-mode-p <span style="color:#e6db74">&#39;outline-mode</span>)
-                 (<span style="color:#a6e22e">string-equal</span> (<span style="color:#a6e22e">buffer-name</span>) <span style="color:#e6db74">&#34;*glossary cloud*&#34;</span>)))
-        (save-excursion
-          (cl-loop for term in terms do
-                   (progn
-                     (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;creating for %s&#34;</span> term)
-                     (create-buttons-for-filtrate
-                      term
-                      beg end
-                      <span style="color:#75715e">;; This is just to make it easy to introspect</span>
-                      filtercmd
-                      runfunc
-                      <span style="color:#e6db74">&#39;filter-cmd-button</span>)))))))
+(let* ((terms (-filter <span style="color:#e6db74">&#39;sor</span> (-uniq (str2list (snc filtercmd (region2string beg end))))))
+(runfunc (<span style="color:#a6e22e">eval</span> <span style="color:#f92672">`</span>(lambda (term) (sn
+(if (re-match-p <span style="color:#e6db74">&#34;%q&#34;</span> <span style="color:#f92672">,</span>runcmd)
+(s-replace-regexp <span style="color:#e6db74">&#34;%q&#34;</span> (q term) <span style="color:#f92672">,</span>runcmd)
+(<span style="color:#a6e22e">concat</span> <span style="color:#f92672">,</span>runcmd <span style="color:#e6db74">&#34; &#34;</span> (q term))))))))
+(if (not (or (major-mode-p <span style="color:#e6db74">&#39;org-modmfse</span>)
+(major-mode-p <span style="color:#e6db74">&#39;outline-mode</span>)
+(<span style="color:#a6e22e">string-equal</span> (<span style="color:#a6e22e">buffer-name</span>) <span style="color:#e6db74">&#34;*glossary cloud*&#34;</span>)))
+(save-excursion
+(cl-loop for term in terms do
+(progn
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;creating for %s&#34;</span> term)
+(create-buttons-for-filtrate
+term
+beg end
+<span style="color:#75715e">;; This is just to make it easy to introspect</span>
+filtercmd
+runfunc
+<span style="color:#e6db74">&#39;filter-cmd-button</span>)))))))
 
 (defun make-buttons-for-all-filter-cmds (<span style="color:#66d9ef">&amp;optional</span> clear-first)
-  (interactive)
-  (cl-loop for tp in filter-cmd-buttonize-2-tuples do
-           (make-buttons-for-filter-cmd
-            (<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>)
-            (<span style="color:#a6e22e">car</span> tp)
-            (second tp)
-            clear-first)))
+(interactive)
+(cl-loop for tp in filter-cmd-buttonize-2-tuples do
+(make-buttons-for-filter-cmd
+(<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>)
+(<span style="color:#a6e22e">car</span> tp)
+(second tp)
+clear-first)))
 
 (provide <span style="color:#e6db74">&#39;my-filter-cmd-buttonize</span>)</code></pre></td></tr></table>
 </div>
@@ -599,14 +590,14 @@ highlighted according to rules I specify.</p>
 </div>
 </div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>
-    <span style="color:#e6db74">&#34;KeyPairs&#34;</span>: <span style="color:#f92672">[</span>
-        <span style="color:#f92672">{</span>
-            <span style="color:#e6db74">&#34;KeyPairId&#34;</span>: <span style="color:#e6db74">&#34;key-09fb6b77288849f3b&#34;</span>,
-            <span style="color:#e6db74">&#34;KeyFingerprint&#34;</span>: <span style="color:#e6db74">&#34;f2:77:ec:1f:8c:3d:65:23:12:1a:65:70:5a:0b:6f:c6:fc:46:d4:cd&#34;</span>,
-            <span style="color:#e6db74">&#34;KeyName&#34;</span>: <span style="color:#e6db74">&#34;blob_uploader_key_pair&#34;</span>,
-            <span style="color:#e6db74">&#34;Tags&#34;</span>: <span style="color:#f92672">[]</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">]</span>
+<span style="color:#e6db74">&#34;KeyPairs&#34;</span>: <span style="color:#f92672">[</span>
+<span style="color:#f92672">{</span>
+<span style="color:#e6db74">&#34;KeyPairId&#34;</span>: <span style="color:#e6db74">&#34;key-09fb6b77288849f3b&#34;</span>,
+<span style="color:#e6db74">&#34;KeyFingerprint&#34;</span>: <span style="color:#e6db74">&#34;f2:77:ec:1f:8c:3d:65:23:12:1a:65:70:5a:0b:6f:c6:fc:46:d4:cd&#34;</span>,
+<span style="color:#e6db74">&#34;KeyName&#34;</span>: <span style="color:#e6db74">&#34;blob_uploader_key_pair&#34;</span>,
+<span style="color:#e6db74">&#34;Tags&#34;</span>: <span style="color:#f92672">[]</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">]</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Because the private key isn&rsquo;t stored in AWS and can
 be retrieved only when it&rsquo;s created, you can&rsquo;t
@@ -616,10 +607,9 @@ download and save the json.</p>
 <h3 id="create-key">Create key</h3>
 <dl>
 <dt>A caveat</dt>
-<dd>There is no way yet to specify a region for the cli subcommand, so this step must be done manually via the AWS console
-<a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-key-pair.html">https://docs.aws.amazon.com/cli/latest/reference/ec2/create-key-pair.html</a></dd>
+<dd>There is no way yet to specify a region for the cli subcommand, so this step must be done manually via the AWS console</dd>
 </dl>
-<!--listend-->
+<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-key-pair.html">https://docs.aws.amazon.com/cli/latest/reference/ec2/create-key-pair.html</a></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -631,11 +621,8 @@ aws ec2 create-key-pair --key-name blob_uploader_key_pair</code></pre></td></tr>
 </div>
 </div>
 <ul>
-<li>Steps automated:
-<ul>
+<li>Steps automated:</li>
 <li>Download key to ssh file when it&rsquo;s created</li>
-</ul>
-</li>
 </ul>
 <!--listend-->
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -682,13 +669,13 @@ oci aws iam create-access-key --user-name Administrator &gt;&gt; $NOTES/personal
 </div>
 </div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>
-    <span style="color:#e6db74">&#34;User&#34;</span>: <span style="color:#f92672">{</span>
-        <span style="color:#e6db74">&#34;Path&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>,
-        <span style="color:#e6db74">&#34;UserName&#34;</span>: <span style="color:#e6db74">&#34;Administrator&#34;</span>,
-        <span style="color:#e6db74">&#34;UserId&#34;</span>: <span style="color:#e6db74">&#34;AIDAR55HCH7KNSLMHLBLO&#34;</span>,
-        <span style="color:#e6db74">&#34;Arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::132957487060:user/Administrator&#34;</span>,
-        <span style="color:#e6db74">&#34;CreateDate&#34;</span>: <span style="color:#e6db74">&#34;2021-04-26T00:07:09Z&#34;</span>
-    <span style="color:#f92672">}</span>
+<span style="color:#e6db74">&#34;User&#34;</span>: <span style="color:#f92672">{</span>
+<span style="color:#e6db74">&#34;Path&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>,
+<span style="color:#e6db74">&#34;UserName&#34;</span>: <span style="color:#e6db74">&#34;Administrator&#34;</span>,
+<span style="color:#e6db74">&#34;UserId&#34;</span>: <span style="color:#e6db74">&#34;AIDAR55HCH7KNSLMHLBLO&#34;</span>,
+<span style="color:#e6db74">&#34;Arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::132957487060:user/Administrator&#34;</span>,
+<span style="color:#e6db74">&#34;CreateDate&#34;</span>: <span style="color:#e6db74">&#34;2021-04-26T00:07:09Z&#34;</span>
+<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -854,10 +841,10 @@ InstanceCW -down-&gt; DB: Port 5432</code></pre>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Error: Error creating launch configuration: ValidationError: The key pair &#39;blob_uploader_key_pair&#39; does not exist
-        status code: 400, request id: 42206521-5721-44ce-9a11-7bc24d1b440c
+status code: 400, request id: 42206521-5721-44ce-9a11-7bc24d1b440c
 
-  on launch-configuration.tf line 1, in resource &#34;aws_launch_configuration&#34; &#34;ecs-launch-configuration&#34;:
-   1: resource &#34;aws_launch_configuration&#34; &#34;ecs-launch-configuration&#34; {</code></pre></td></tr></table>
+on launch-configuration.tf line 1, in resource &#34;aws_launch_configuration&#34; &#34;ecs-launch-configuration&#34;:
+1: resource &#34;aws_launch_configuration&#34; &#34;ecs-launch-configuration&#34; {</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="successful-terraform-apply-dot-cluster-created-dot">Successful <code>terraform apply</code>. Cluster created.</h3>
@@ -982,23 +969,23 @@ sudo mount -t efs <span style="color:#e6db74">${</span>aws_efs_mount_target.blob
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; TODO Make an ssh into box script</span>
 
 (defun aws-ssh-into-box (id)
-  (interactive (<span style="color:#a6e22e">list</span> (tabulated-list-get-id)))
+(interactive (<span style="color:#a6e22e">list</span> (tabulated-list-get-id)))
 
-  (if (major-mode-p <span style="color:#e6db74">&#39;aws-instances-mode</span>)
-      (sps (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;aws-ssh-into-box &#34;</span> id))))
+(if (major-mode-p <span style="color:#e6db74">&#39;aws-instances-mode</span>)
+(sps (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;aws-ssh-into-box &#34;</span> id))))
 
 (defun aws-show-user-data (id)
-  (interactive (<span style="color:#a6e22e">list</span> (tabulated-list-get-id)))
+(interactive (<span style="color:#a6e22e">list</span> (tabulated-list-get-id)))
 
-  (if (major-mode-p <span style="color:#e6db74">&#39;aws-instances-mode</span>)
-      <span style="color:#75715e">;; https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html</span>
-      (etv (snc (<span style="color:#a6e22e">concat</span>
-                 <span style="color:#e6db74">&#34;aws ec2 describe-instance-attribute --instance-id &#34;</span>
-                 id
-                 <span style="color:#e6db74">&#34; --attribute userData --output text --query \&#34;UserData.Value\&#34; | base64 --decode&#34;</span>)))
-    <span style="color:#75715e">;;</span>
-    <span style="color:#75715e">;; (sps (concat &#34;aws-ssh-into-box &#34; id))</span>
-    ))
+(if (major-mode-p <span style="color:#e6db74">&#39;aws-instances-mode</span>)
+<span style="color:#75715e">;; https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html</span>
+(etv (snc (<span style="color:#a6e22e">concat</span>
+<span style="color:#e6db74">&#34;aws ec2 describe-instance-attribute --instance-id &#34;</span>
+id
+<span style="color:#e6db74">&#34; --attribute userData --output text --query \&#34;UserData.Value\&#34; | base64 --decode&#34;</span>)))
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; (sps (concat &#34;aws-ssh-into-box &#34; id))</span>
+))
 
 (<span style="color:#a6e22e">define-key</span> aws-instances-mode-map (kbd <span style="color:#e6db74">&#34;;&#34;</span>) <span style="color:#e6db74">&#39;aws-ssh-into-box</span>)
 (<span style="color:#a6e22e">define-key</span> aws-instances-mode-map (kbd <span style="color:#e6db74">&#34;D&#34;</span>) <span style="color:#e6db74">&#39;aws-show-user-data</span>)
@@ -1008,16 +995,10 @@ sudo mount -t efs <span style="color:#e6db74">${</span>aws_efs_mount_target.blob
 </div>
 <h3 id="automate-collection-of-terraform-apply-output"><span class="org-todo todo TODO">TODO</span> Automate collection of <code>terraform apply output</code></h3>
 <ul>
-<li>Specifically variables
-<ul>
+<li>Specifically variables</li>
 <li>Then I can collect database of cluster states</li>
-</ul>
-</li>
-<li>Partially done
-<ul>
+<li>Partially done</li>
 <li>All outputs of the <code>aws</code> and <code>terraform</code> commands are stored in a database.</li>
-</ul>
-</li>
 </ul>
 
       </div>
@@ -1037,7 +1018,7 @@ sudo mount -t efs <span style="color:#e6db74">${</span>aws_efs_mount_target.blob
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2026 Words
+        2060 Words
       </p>
 
       <p>
