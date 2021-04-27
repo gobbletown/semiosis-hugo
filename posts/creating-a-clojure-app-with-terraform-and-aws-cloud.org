@@ -392,6 +392,8 @@ I have chosen to automate the process with the =aws= =cli=.
   "AdministratorAccess","arn:aws:iam::aws:policy/AdministratorAccess"
 #+END_SRC
 
+Demonstration of adding the =AdministratorAccess= policy to my =Administrator= user account.
+
 #+BEGIN_SRC sh -n :sps bash :async :results none
   aws-policy-tablist
 #+END_SRC
