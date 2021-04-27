@@ -35,6 +35,10 @@ implement the blob uploader for the following reasons:
 - It has very good support for concurrency
 - Access to all of Java's libraries
 
+I was initially working with Terraform 0.15,
+but I regressed to =v0.14.0-dev= when I went
+back to Ubuntu 16.04.
+
 ** Project Code
 - http://github.com/mullikine/blob-uploader-terraform
 - http://github.com/mullikine/blob-uploader
