@@ -121,6 +121,11 @@ done | uniqnosort
   (my/copy (fz (snc "cd $NOTES; oci clojure-list-deps"))))
 {{< /highlight >}}
 
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/Fr9f19x6LyIZNauJQSoIYqwBz" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Fr9f19x6LyIZNauJQSoIYqwBz.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/Fr9f19x6LyIZNauJQSoIYqwBz.js" id="asciicast-Fr9f19x6LyIZNauJQSoIYqwBz" async></script>
+
 
 ### `direnv` {#direnv}
 
