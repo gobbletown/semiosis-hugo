@@ -122,7 +122,7 @@ I've automated the following:
   (define-button-type 'filter-cmd-button 'follow-link t 'help-echo "Click to run command" 'face 'filter-cmd-button-face)
   
   (defset filter-cmd-buttonize-2-tuples
-    ;; TODO Replace %q with a quoted argument
+    ;; Replace %q with a quoted argument
     '(("scrape \"\\bami-[a-z0-9]+\\b\"" "sps zrepl -cm pavit aws ec2 describe-images --image-ids %q")
       ;; ("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps zrepl -cm pavit aws ec2 describe-instance-types --instance-types")
       ("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps aws-list-instance-types")
@@ -269,7 +269,7 @@ I've automated the following:
   (provide 'my-filter-cmd-buttonize)
 #+END_SRC
 
-*** DONE Key management
+*** Key management
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   aws ec2 describe-key-pairs
 #+END_SRC
@@ -542,8 +542,7 @@ https://github.com/pmazurek/aws-fuzzy-finder
 <script src="https://asciinema.org/a/zrCqjoxfv1h0n6PshGRCjrBDx.js" id="asciicast-zrCqjoxfv1h0n6PshGRCjrBDx" async></script>
 #+END_EXPORT
 
-** DONE Automate adding my public key to an instance and ssh into the box
-  CLOSED: [2021-04-27 Tue 19:42]
+** Automate adding my public key to an instance and ssh into the box
 - Inspect from emacs =aws-instances=
 - Get region and availability zone
 
@@ -595,13 +594,12 @@ After running above command, for the next 60 seconds I can ssh in to the box.
   # sudo mount -t efs fs-3d3ad725.efs.us-west-1.amazonaws.com:/ efs
 #+END_SRC
 
-**** TODO Reapply to see if it worked
+**** Reapply to see if it worked
 It takes significant time to shut down.
 
-*** DONE Automate showing =userData= for an instance
-   CLOSED: [2021-04-27 Tue 19:43]
+*** Automated showing the =userData= of an instance in emacs
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
-  ;; TODO Make an ssh into box script
+  ;; Make an ssh into box script
   
   (defun aws-ssh-into-box (id)
     (interactive (list (tabulated-list-get-id)))
@@ -628,7 +626,7 @@ It takes significant time to shut down.
   (provide 'my-aws)
 #+END_SRC
 
-*** TODO Automate collection of =terraform apply output=
+*** Automate collection of =terraform apply output=
 - Specifically variables
   - Then I can collect database of cluster states
 - Partially done
