@@ -92,6 +92,7 @@ I've automated the following:
 - Selecting different regions.
 - Selecting an =ami= from an owner such as Canonical.
 - Displaying terraform documention for =resources= and other things inside =tf= files.
+- migrating terraform files
 
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
