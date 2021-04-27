@@ -94,6 +94,12 @@ but I regressed to =Terraform v0.14.0-dev= and =Ubuntu 16.04= due to my computer
   done | uniqnosort
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun clojure-select-copy-dependency ()
+    (interactive)
+    (my/copy (fz (snc "cd $NOTES; oci clojure-list-deps"))))
+#+END_SRC
+
 *** =direnv=
 I have stored the actual passwords for =tf= in my
 private password store, but direnv can still
