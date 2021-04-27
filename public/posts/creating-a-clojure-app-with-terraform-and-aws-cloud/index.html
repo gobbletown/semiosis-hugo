@@ -45,7 +45,7 @@ I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
  It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&rsquo;s the language I&rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&rsquo;s libraries  I was initially working with Terraform 0."><meta itemprop="datePublished" content="2021-04-27T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-27T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="2273"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2279"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -182,9 +182,8 @@ implement the blob uploader for the following reasons:</p>
 <li>It has very good support for concurrency</li>
 <li>Access to all of Java&rsquo;s libraries</li>
 </ul>
-<p>I was initially working with Terraform 0.15,
-but I regressed to <code>v0.14.0-dev</code> when I went
-back to Ubuntu 16.04.</p>
+<p>I was initially working with <code>Terraform 0.15</code> on <code>Ubuntu 20.04</code>,
+but I regressed to <code>Terraform v0.14.0-dev</code> and <code>Ubuntu 16.04</code> due to my computer breaking down.</p>
 <h2 id="project-code">Project Code</h2>
 <ul>
 <li><a href="http://github.com/mullikine/blob-uploader-terraform">http://github.com/mullikine/blob-uploader-terraform</a></li>
@@ -215,8 +214,8 @@ back to Ubuntu 16.04.</p>
 </ul>
 <h2 id="problems-so-far">Problems so far</h2>
 <ul>
-<li>The computer I was using died one day into beginning this project, so I&rsquo;ve had to continue
-on an older computer running Ubuntu 16.04, but it is a much older environment and is lacking many conveniences.
+<li>The computer I was using died one day into starting this project, so I&rsquo;ve had to continue
+on an older computer, but it has a much older environment and is lacking many conveniences.
 <ul>
 <li>I&rsquo;m unable to demonstrate that I can make <code>tabulated list modes</code> for <code>aws</code> <code>cli</code> commands.
 They allow me to create user interfaces with key bindings bound to commands for working with <code>aws</code>.
@@ -251,7 +250,7 @@ e.g. <a href="https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX">https://asciine
 </li>
 <li>Clojure editing
 <ul>
-<li>Parsing</li>
+<li>Parsing <code>project.clj</code> with babashka to automate dependency imports.</li>
 </ul>
 </li>
 </ul>
@@ -457,7 +456,7 @@ highlighted according to rules I specify.</p>
 (define-button-type <span style="color:#e6db74">&#39;filter-cmd-button</span> <span style="color:#e6db74">&#39;follow-link</span> <span style="color:#66d9ef">t</span> <span style="color:#e6db74">&#39;help-echo</span> <span style="color:#e6db74">&#34;Click to run command&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#e6db74">&#39;filter-cmd-button-face</span>)
 
 (defset filter-cmd-buttonize-2-tuples
-  <span style="color:#75715e">;; TODO Replace %q with a quoted argument</span>
+  <span style="color:#75715e">;; Replace %q with a quoted argument</span>
   <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;scrape \&#34;\\bami-[a-z0-9]+\\b\&#34;&#34;</span> <span style="color:#e6db74">&#34;sps zrepl -cm pavit aws ec2 describe-images --image-ids %q&#34;</span>)
     <span style="color:#75715e">;; (&#34;sed -n &#39;s/.*instance_type\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34; &#34;sps zrepl -cm pavit aws ec2 describe-instance-types --instance-types&#34;)</span>
     (<span style="color:#e6db74">&#34;sed -n &#39;s/.*instance_type\\s*=\\s*\&#34;\\([^\&#34;]*\\)\&#34;.*/\\1/p&#39;&#34;</span> <span style="color:#e6db74">&#34;sps aws-list-instance-types&#34;</span>)
@@ -604,7 +603,7 @@ highlighted according to rules I specify.</p>
 (provide <span style="color:#e6db74">&#39;my-filter-cmd-buttonize</span>)</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="key-management"><span class="org-todo done DONE">DONE</span> Key management</h3>
+<h3 id="key-management">Key management</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -880,7 +879,7 @@ InstanceCW -down-&gt; DB: Port 5432</code></pre>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/zrCqjoxfv1h0n6PshGRCjrBDx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/zrCqjoxfv1h0n6PshGRCjrBDx.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/zrCqjoxfv1h0n6PshGRCjrBDx.js" id="asciicast-zrCqjoxfv1h0n6PshGRCjrBDx" async></script>
-<h2 id="automate-adding-my-public-key-to-an-instance-and-ssh-into-the-box"><span class="org-todo done DONE">DONE</span> Automate adding my public key to an instance and ssh into the box</h2>
+<h2 id="automate-adding-my-public-key-to-an-instance-and-ssh-into-the-box">Automate adding my public key to an instance and ssh into the box</h2>
 <ul>
 <li>Inspect from emacs <code>aws-instances</code></li>
 <li>Get region and availability zone</li>
@@ -962,9 +961,9 @@ sudo mount -t efs <span style="color:#e6db74">${</span>aws_efs_mount_target.blob
 <span style="color:#75715e"># sudo mount -t efs fs-3d3ad725.efs.us-west-1.amazonaws.com:/ efs</span></code></pre></td></tr></table>
 </div>
 </div>
-<h4 id="reapply-to-see-if-it-worked"><span class="org-todo todo TODO">TODO</span> Reapply to see if it worked</h4>
+<h4 id="reapply-to-see-if-it-worked">Reapply to see if it worked</h4>
 <p>It takes significant time to shut down.</p>
-<h3 id="automate-showing-userdata-for-an-instance"><span class="org-todo done DONE">DONE</span> Automate showing <code>userData</code> for an instance</h3>
+<h3 id="automated-showing-the-userdata-of-an-instance-in-emacs">Automated showing the <code>userData</code> of an instance in emacs</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -994,7 +993,7 @@ sudo mount -t efs <span style="color:#e6db74">${</span>aws_efs_mount_target.blob
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; TODO Make an ssh into box script</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Make an ssh into box script</span>
 
 (defun aws-ssh-into-box (id)
   (interactive (<span style="color:#a6e22e">list</span> (tabulated-list-get-id)))
@@ -1021,7 +1020,7 @@ sudo mount -t efs <span style="color:#e6db74">${</span>aws_efs_mount_target.blob
 (provide <span style="color:#e6db74">&#39;my-aws</span>)</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="automate-collection-of-terraform-apply-output"><span class="org-todo todo TODO">TODO</span> Automate collection of <code>terraform apply output</code></h3>
+<h3 id="automate-collection-of-terraform-apply-output">Automate collection of <code>terraform apply output</code></h3>
 <ul>
 <li>Specifically variables
 <ul>
@@ -1137,7 +1136,7 @@ stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{<
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2273 Words
+        2279 Words
       </p>
 
       <p>

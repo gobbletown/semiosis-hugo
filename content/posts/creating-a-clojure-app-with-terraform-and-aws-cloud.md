@@ -37,9 +37,8 @@ implement the blob uploader for the following reasons:
 -   It has very good support for concurrency
 -   Access to all of Java's libraries
 
-I was initially working with Terraform 0.15,
-but I regressed to `v0.14.0-dev` when I went
-back to Ubuntu 16.04.
+I was initially working with `Terraform 0.15` on `Ubuntu 20.04`,
+but I regressed to `Terraform v0.14.0-dev` and `Ubuntu 16.04` due to my computer breaking down.
 
 
 ## Project Code {#project-code}
@@ -72,8 +71,8 @@ back to Ubuntu 16.04.
 
 ## Problems so far {#problems-so-far}
 
--   The computer I was using died one day into beginning this project, so I've had to continue
-    on an older computer running Ubuntu 16.04, but it is a much older environment and is lacking many conveniences.
+-   The computer I was using died one day into starting this project, so I've had to continue
+    on an older computer, but it has a much older environment and is lacking many conveniences.
     -   I'm unable to demonstrate that I can make `tabulated list modes` for `aws` `cli` commands.
         They allow me to create user interfaces with key bindings bound to commands for working with `aws`.
         I had begun automating AWS policies this way before my computer died.
@@ -96,7 +95,7 @@ back to Ubuntu 16.04.
     -   log into instances
     -   start and stop instances
 -   Clojure editing
-    -   Parsing
+    -   Parsing `project.clj` with babashka to automate dependency imports.
 
 
 ## Steps {#steps}
@@ -142,7 +141,7 @@ I've automated the following:
 (define-button-type 'filter-cmd-button 'follow-link t 'help-echo "Click to run command" 'face 'filter-cmd-button-face)
 
 (defset filter-cmd-buttonize-2-tuples
-  ;; TODO Replace %q with a quoted argument
+  ;; Replace %q with a quoted argument
   '(("scrape \"\\bami-[a-z0-9]+\\b\"" "sps zrepl -cm pavit aws ec2 describe-images --image-ids %q")
     ;; ("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps zrepl -cm pavit aws ec2 describe-instance-types --instance-types")
     ("sed -n 's/.*instance_type\\s*=\\s*\"\\([^\"]*\\)\".*/\\1/p'" "sps aws-list-instance-types")
@@ -290,7 +289,7 @@ I've automated the following:
 {{< /highlight >}}
 
 
-### <span class="org-todo done DONE">DONE</span> Key management {#key-management}
+### Key management {#key-management}
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
 aws ec2 describe-key-pairs
@@ -530,7 +529,7 @@ Error: Error creating launch configuration: ValidationError: The key pair 'blob_
 <script src="https://asciinema.org/a/zrCqjoxfv1h0n6PshGRCjrBDx.js" id="asciicast-zrCqjoxfv1h0n6PshGRCjrBDx" async></script>
 
 
-## <span class="org-todo done DONE">DONE</span> Automate adding my public key to an instance and ssh into the box {#automate-adding-my-public-key-to-an-instance-and-ssh-into-the-box}
+## Automate adding my public key to an instance and ssh into the box {#automate-adding-my-public-key-to-an-instance-and-ssh-into-the-box}
 
 -   Inspect from emacs `aws-instances`
 -   Get region and availability zone
@@ -586,15 +585,15 @@ sudo mount -t efs ${aws_efs_mount_target.blobdbefs-mnt.0.dns_name}:/ efs
 {{< /highlight >}}
 
 
-#### <span class="org-todo todo TODO">TODO</span> Reapply to see if it worked {#reapply-to-see-if-it-worked}
+#### Reapply to see if it worked {#reapply-to-see-if-it-worked}
 
 It takes significant time to shut down.
 
 
-### <span class="org-todo done DONE">DONE</span> Automate showing `userData` for an instance {#automate-showing-userdata-for-an-instance}
+### Automated showing the `userData` of an instance in emacs {#automated-showing-the-userdata-of-an-instance-in-emacs}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-;; TODO Make an ssh into box script
+;; Make an ssh into box script
 
 (defun aws-ssh-into-box (id)
   (interactive (list (tabulated-list-get-id)))
@@ -622,7 +621,7 @@ It takes significant time to shut down.
 {{< /highlight >}}
 
 
-### <span class="org-todo todo TODO">TODO</span> Automate collection of `terraform apply output` {#automate-collection-of-terraform-apply-output}
+### Automate collection of `terraform apply output` {#automate-collection-of-terraform-apply-output}
 
 -   Specifically variables
     -   Then I can collect database of cluster states
