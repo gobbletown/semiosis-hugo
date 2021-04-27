@@ -369,6 +369,25 @@ I have chosen to automate the process with the =aws= =cli=.
 
 + Automated policies management with =tabulated-list-mode= :: Using emacs, tablist and this tool (http://harelba.github.io/q/), create a tabulated list mode for managing aws policies.
 
+=aws-policy-tablist=
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+  
+  create-tablist list-aws-iam-policies-csv aws-policies t "30 80"
+#+END_SRC
+
+=list-aws-iam-policies-csv=
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+  
+  {
+  echo name,arn
+  unbuffer oci aws iam list-policies | jq -r ".Policies[] | [ .PolicyName, .Arn ] | @csv"
+  } | mnm | pavs
+#+END_SRC
+
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   "AdministratorAccess","arn:aws:iam::aws:policy/AdministratorAccess"
 #+END_SRC
