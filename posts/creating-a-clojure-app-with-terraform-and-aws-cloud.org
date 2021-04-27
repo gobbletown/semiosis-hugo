@@ -367,7 +367,14 @@ I have chosen to automate the process with the =aws= =cli=.
   "AdministratorAccess","arn:aws:iam::aws:policy/AdministratorAccess"
 #+END_SRC
 
-+ Automated policies management with =tabulated-list-mode= :: Using emacs, tablist and this tool (http://harelba.github.io/q/), create a tabulated list mode for managing aws policies.
++ Automated user and policies management with =tabulated-list-mode= :: Using emacs, tablist and this tool (http://harelba.github.io/q/), create tabulated list modes for managing aws.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7.js" id="asciicast-g6Cc64u1p5lF9geoSmCKgwmd7" async></script>
+#+END_EXPORT
 
 =aws-policy-tablist=
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
