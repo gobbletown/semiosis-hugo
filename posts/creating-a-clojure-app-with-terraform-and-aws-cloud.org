@@ -636,8 +636,13 @@ It takes significant time to shut down.
   - All outputs of the =aws= and =terraform= commands are stored in a database.
 
 ** automate terraform file migration
-Terraform has auto-upgrade tooling e.g. =terraform 0.12upgrade=
+Terraform has auto-upgrade tooling e.g.
+=terraform 0.12upgrade= but they only work
+from version to consecutive version. I was
+migrating older =tf= files so I made my own
+migration script.
 
+=migrate-terraform=
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   #!/bin/bash
   export TTY
