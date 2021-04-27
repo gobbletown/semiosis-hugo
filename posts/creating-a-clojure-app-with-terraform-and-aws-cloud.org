@@ -81,6 +81,7 @@ but I regressed to =Terraform v0.14.0-dev= and =Ubuntu 16.04= due to my computer
 
 ** Automations
 *** Parsing =project.clj= with babashka to automate dependency imports
+=clojure-list-deps=
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   #!/bin/bash
   export TTY
