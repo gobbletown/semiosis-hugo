@@ -122,9 +122,9 @@ done | uniqnosort
 {{< /highlight >}}
 
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/Fr9f19x6LyIZNauJQSoIYqwBz" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Fr9f19x6LyIZNauJQSoIYqwBz.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/WT5T7OVcNYk9CENb8gVAH0DHa" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/WT5T7OVcNYk9CENb8gVAH0DHa.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/Fr9f19x6LyIZNauJQSoIYqwBz.js" id="asciicast-Fr9f19x6LyIZNauJQSoIYqwBz" async></script>
+<script src="https://asciinema.org/a/WT5T7OVcNYk9CENb8gVAH0DHa.js" id="asciicast-WT5T7OVcNYk9CENb8gVAH0DHa" async></script>
 
 
 ### `direnv` {#direnv}
