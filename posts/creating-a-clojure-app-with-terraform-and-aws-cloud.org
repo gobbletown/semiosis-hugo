@@ -376,6 +376,8 @@ I have chosen to automate the process with the =aws= =cli=.
 <script src="https://asciinema.org/a/g6Cc64u1p5lF9geoSmCKgwmd7.js" id="asciicast-g6Cc64u1p5lF9geoSmCKgwmd7" async></script>
 #+END_EXPORT
 
+The above is a demonstration of adding the =AdministratorAccess= policy to a user account.
+
 =aws-policy-tablist=
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   #!/bin/bash
@@ -397,16 +399,6 @@ I have chosen to automate the process with the =aws= =cli=.
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   "AdministratorAccess","arn:aws:iam::aws:policy/AdministratorAccess"
-#+END_SRC
-
-Demonstration of adding the =AdministratorAccess= policy to my =Administrator= user account.
-
-#+BEGIN_SRC sh -n :sps bash :async :results none
-  aws-policy-tablist
-#+END_SRC
-
-#+BEGIN_SRC text -n :async :results verbatim code
-  "arn:aws:iam::aws:policy/AdministratorAccess"
 #+END_SRC
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
