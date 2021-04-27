@@ -69,14 +69,11 @@ implement the blob uploader for the following reasons:
 ## Problems so far {#problems-so-far}
 
 -   The computer I was using died one day into beginning this project, so I've had to continue
-
-on an older computer running Ubuntu 16.04, but it is a much older environment and is lacking many conveniences.
-
+    on an older computer running Ubuntu 16.04, but it is a much older environment and is lacking many conveniences.
 -   I'm unable to demonstrate that I can make `tabulated list modes` for `aws` `cli` commands.
-
-They allow me to create user interfaces with key bindings bound to commands for working with `aws`.
-I had begun automating AWS policies this way before my computer died.
-e.g. <https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX>
+    They allow me to create user interfaces with key bindings bound to commands for working with `aws`.
+    I had begun automating AWS policies this way before my computer died.
+    e.g. <https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX>
 
 
 ## Things I have automated for the purpose of this project {#things-i-have-automated-for-the-purpose-of-this-project}
