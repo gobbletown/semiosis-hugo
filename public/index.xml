@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a clojure app with terraform and AWS Cloud</title>
+      <link>http://semiosis.github.io/posts/creating-a-clojure-app-with-terraform-and-aws-cloud/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/creating-a-clojure-app-with-terraform-and-aws-cloud/</guid>
+      <description>Summary These are the steps I have taken to automate the process of building a Web Application in Clojure and deploying said application to an AWS cluster defined by a Terraform module.
+This is a work in progress.
+Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
+I have taken steps and copied code from this article.
+Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
+ It&amp;rsquo;s data-driven One language for backend and front-end I am using it for multiple other projects It&amp;rsquo;s very reliable It&amp;rsquo;s very easy to understand It has very good support for concurrency Access to all of java&amp;rsquo;s libraries  Project Code  http://github.</description>
+    </item>
+    
     <item>
       <title>Exploring Neuralink concepts with GPT-3 (WIP)</title>
       <link>http://semiosis.github.io/posts/exploring-neuralink-concepts-with-gpt-3/</link>
