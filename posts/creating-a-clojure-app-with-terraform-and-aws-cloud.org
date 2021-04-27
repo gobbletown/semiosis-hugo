@@ -84,7 +84,7 @@ but I regressed to =Terraform v0.14.0-dev= and =Ubuntu 16.04= due to my computer
   - Parsing =project.clj= with babashka to automate dependency imports.
 
 ** Automations
-*** 
+*** Parsing =project.clj= with babashka to automate dependency imports
 
 *** =direnv=
 I have stored the actual passwords for =tf= in my
