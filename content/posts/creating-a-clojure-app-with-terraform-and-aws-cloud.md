@@ -73,10 +73,6 @@ but I regressed to `Terraform v0.14.0-dev` and `Ubuntu 16.04` due to my computer
 
 -   The computer I was using died one day into starting this project, so I've had to continue
     on an older computer, but it has a much older environment and is lacking many conveniences.
-    -   I'm unable to demonstrate that I can make `tabulated list modes` for `aws` `cli` commands.
-        They allow me to create user interfaces with key bindings bound to commands for working with `aws`.
-        I had begun automating AWS policies this way before my computer died.
-        e.g. <https://asciinema.org/a/sylmYDekVSy9MO6hjPcmWxOFX>
 
 
 ## Things I have automated for the purpose of this project {#things-i-have-automated-for-the-purpose-of-this-project}
@@ -100,7 +96,51 @@ but I regressed to `Terraform v0.14.0-dev` and `Ubuntu 16.04` due to my computer
     -   Parsing `project.clj` with babashka to automate dependency imports.
 
 
-## Steps {#steps}
+## Automations {#automations}
+
+
+### Parsing `project.clj` with babashka to automate dependency imports {#parsing-project-dot-clj-with-babashka-to-automate-dependency-imports}
+
+`clojure-list-deps`
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+lf "project.clj" | umn | awk1 | while IFS=$'\n' read -r line; do
+    (
+    exec 0</dev/null
+    cat "$line" | bb -i "(doseq [l (map str (->> (read-string (clojure.string/join \" \" *input*)) (drop-while (complement #{:dependencies})) next first))] (println l))" -o 2>/dev/null | cat
+    )
+done | uniqnosort
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun clojure-select-copy-dependency ()
+  (interactive)
+  (my/copy (fz (snc "cd $NOTES; oci clojure-list-deps"))))
+{{< /highlight >}}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ZMHumPAVAnrmxbaTRm5HwGfYq" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ZMHumPAVAnrmxbaTRm5HwGfYq.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ZMHumPAVAnrmxbaTRm5HwGfYq.js" id="asciicast-ZMHumPAVAnrmxbaTRm5HwGfYq" async></script>
+
+
+### `direnv` {#direnv}
+
+I have stored the actual passwords for `tf` in my
+private password store, but direnv can still
+retrieve them.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+curl -sfL https://direnv.net/install.sh | bash
+{{< /highlight >}}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+export TF_VAR_aws_access_key_id="$(myrc .tf_aws_access_key_id)"
+export TF_VAR_aws_secret_access_key="$(myrc .tf_aws_secret_access_key)"
+{{< /highlight >}}
 
 
 ### Automate terraform editor {#automate-terraform-editor}
