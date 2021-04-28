@@ -8,10 +8,24 @@ draft = false
 
 ## Summary {#summary}
 
-I create some tools to make editing in Clojure easier.
+-   I install/learn some existing tooling
+-   I create some tools for missing functionality
 
 
-## Tools {#tools}
+## Install tools {#install-tools}
+
+-   <https://github.com/clojure-emacs/clj-refactor.el>
+
+
+### `clj-refactor.el` {#clj-refactor-dot-el}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/mMVFa96FeZkLVEUeANRqtgYpF" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mMVFa96FeZkLVEUeANRqtgYpF.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/mMVFa96FeZkLVEUeANRqtgYpF.js" id="asciicast-mMVFa96FeZkLVEUeANRqtgYpF" async></script>
+
+
+## Create tools {#create-tools}
 
 
 ### `clojure-find-deps` {#clojure-find-deps}
