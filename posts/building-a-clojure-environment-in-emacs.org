@@ -10,9 +10,21 @@
 #+KEYWORDS: clojure eamcs
 
 ** Summary
-I create some tools to make editing in Clojure easier.
+- I install/learn some existing tooling
+- I create some tools for missing functionality
 
-** Tools
+** Install tools
+- https://github.com/clojure-emacs/clj-refactor.el
+
+*** =clj-refactor.el=
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/mMVFa96FeZkLVEUeANRqtgYpF" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mMVFa96FeZkLVEUeANRqtgYpF.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/mMVFa96FeZkLVEUeANRqtgYpF.js" id="asciicast-mMVFa96FeZkLVEUeANRqtgYpF" async></script>
+#+END_EXPORT
+
+** Create tools
 *** =clojure-find-deps=
 This script searches the =clojars= website for dependencies.
 
