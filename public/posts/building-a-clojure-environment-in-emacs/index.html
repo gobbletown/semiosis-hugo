@@ -5,9 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools clojure-find-deps This script searches the clojars website for dependencies.
-This is useful because it&amp;rsquo;s arduous to find libraries and the correct version to import.
-emacs will ask if you want to search google for appropriate libraries. This is great because you can use any search terms, such as &amp;ldquo;web framework&amp;rdquo; and the libraries you want will be suggested." />
+<meta name="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
+ https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies." />
 <meta name="keywords" content="NLP GPT openai" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -35,27 +34,24 @@ emacs will ask if you want to search google for appropriate libraries. This is g
 
 
 <meta itemprop="name" content="Building a Clojure environment in emacs">
-<meta itemprop="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools clojure-find-deps This script searches the clojars website for dependencies.
-This is useful because it&rsquo;s arduous to find libraries and the correct version to import.
-emacs will ask if you want to search google for appropriate libraries. This is great because you can use any search terms, such as &ldquo;web framework&rdquo; and the libraries you want will be suggested."><meta itemprop="datePublished" content="2021-04-28T00:00:00&#43;12:00" />
+<meta itemprop="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
+ https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies."><meta itemprop="datePublished" content="2021-04-28T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-28T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="463"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="498"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Building a Clojure environment in emacs"/>
-<meta name="twitter:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools clojure-find-deps This script searches the clojars website for dependencies.
-This is useful because it&rsquo;s arduous to find libraries and the correct version to import.
-emacs will ask if you want to search google for appropriate libraries. This is great because you can use any search terms, such as &ldquo;web framework&rdquo; and the libraries you want will be suggested."/>
+<meta name="twitter:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
+ https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies."/>
 
 
 
 
     <meta property="og:title" content="Building a Clojure environment in emacs" />
-<meta property="og:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools clojure-find-deps This script searches the clojars website for dependencies.
-This is useful because it&rsquo;s arduous to find libraries and the correct version to import.
-emacs will ask if you want to search google for appropriate libraries. This is great because you can use any search terms, such as &ldquo;web framework&rdquo; and the libraries you want will be suggested." />
+<meta property="og:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
+ https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/building-a-clojure-environment-in-emacs/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-28T00:00:00&#43;12:00" />
@@ -160,6 +156,14 @@ emacs will ask if you want to search google for appropriate libraries. This is g
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/mMVFa96FeZkLVEUeANRqtgYpF.js" id="asciicast-mMVFa96FeZkLVEUeANRqtgYpF" async></script>
 <h2 id="create-tools">Create tools</h2>
+<h3 id="antlr4-current-buffer-parser"><code>antlr4</code> current buffer parser</h3>
+<p>Using <code>antlr4</code> I would like to be able to
+obtain a parse tree of the current source file
+of any language and a clojure <code>repl</code> for
+visiting that parse tree.</p>
+<ul>
+<li><a href="https://github.com/aphyr/clj-antlr">https://github.com/aphyr/clj-antlr</a></li>
+</ul>
 <h3 id="clojure-find-deps"><code>clojure-find-deps</code></h3>
 <p>This script searches the <code>clojars</code> website for dependencies.</p>
 <p>This is useful because it&rsquo;s arduous to find
@@ -382,7 +386,7 @@ lf <span style="color:#e6db74">&#34;project.clj&#34;</span> | umn | awk1 | <span
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        463 Words
+        498 Words
       </p>
 
       <p>

@@ -28,6 +28,16 @@ draft = false
 ## Create tools {#create-tools}
 
 
+### `antlr4` current buffer parser {#antlr4-current-buffer-parser}
+
+Using `antlr4` I would like to be able to
+obtain a parse tree of the current source file
+of any language and a clojure `repl` for
+visiting that parse tree.
+
+-   <https://github.com/aphyr/clj-antlr>
+
+
 ### `clojure-find-deps` {#clojure-find-deps}
 
 This script searches the `clojars` website for dependencies.
