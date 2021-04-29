@@ -157,7 +157,7 @@ https://github.com/antlr/grammars-v4
        . "ej | jq .")
       ((sor (antlr-grammar-path-from-name (f-ext (get-path))))
        . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (f-ext (get-path)))) (buffer-string)))
-      ((sor (antlr-grammar-path-from-name (detect-language)))
+      ((sor (antlr-grammar-path-from-name (antlr-detect-language)))
        . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (f-ext (get-path)))) (buffer-string)))))
 
   (defun assoc-collect-true (al)
