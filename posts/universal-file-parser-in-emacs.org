@@ -267,6 +267,38 @@ https://github.com/antlr/grammars-v4
   (provide 'my-file-parsers)
 #+END_SRC
 
+** Parser scripts
+*** =semantic-parse= (GitHub Semantic)
+=semantic-parse=
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+  
+  ( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+  
+  fp="$1"
+  test -f "$fp" || exit 1
+  
+  rp="$(realpath "$fp")"
+  bn="$(basename "$fp")"
+  dn="$(dirname "$rp")"
+  
+  cwdslug="$(p "$dn" | slugify)"
+  
+  unbuffer docker run \
+      --rm \
+      -v "$dn:/$cwdslug" \
+      -w "/$cwdslug" \
+      -ti \
+      --entrypoint= \
+      docker.pkg.github.com/github/semantic/semantic:sha_248a1b3646643613960e444fe8ab6623224d47b1 \
+      /usr/local/bin/semantic \
+      parse \
+      "$bn" |
+          erase-trailing-whitespace |
+          pa -E "tf lisp | xa orspe"
+#+END_SRC
+
 ** Parser language support
 *** GitHub Semantic
 | Language   | Support |
