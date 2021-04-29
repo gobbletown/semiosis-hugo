@@ -257,3 +257,20 @@ https://github.com/antlr/grammars-v4
 
   (provide 'my-file-parsers)
 #+END_SRC
+
+** Parser language support
+*** GitHub Semantic
+| Language   | Support |
+|------------+---------|
+| Ruby       | ✓       |
+| JavaScript | ✓       |
+| TypeScript | ✓       |
+| Python     | ✓       |
+| Go         | ✓       |
+| PHP        | ✓       |
+| Java       | ✗       |
+| JSON       | ✓       |
+| JSX        | ✓       |
+| TSX        | ✓       |
+| CodeQL     | ✓       |
+| Haskell    | ✗       |
