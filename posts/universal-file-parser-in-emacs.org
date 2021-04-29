@@ -7,7 +7,7 @@
 #+TITLE: Universal file parser and query tool in emacs
 #+DATE: <2021-04-29>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: antlr emacs
+#+KEYWORDS: antlr emacs semantic
 
 ** Summary
 I make a way to get a more abstract
@@ -30,6 +30,10 @@ The reason I want an automated way of parsing
 and then querying source code and prose is so
 I can build tooling which automates it and be
 programming at a higher abstraction level.
+
+*** Tools used
+- =antlr=
+- GitHub =semantic=
 
 ** Problems encountered
 =antlr= seems to be fairly unreliable at
