@@ -10,19 +10,32 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>universal file parser in emacs</title>
+            <title>Universal file parser in emacs</title>
             <link>http://semiosis.github.io/posts/universal-file-parser-in-emacs/</link>
             <pubDate>Thu, 29 Apr 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/universal-file-parser-in-emacs/</guid>
-            <description>Summary I make a way to get a more abstract representation of any buffer in emacs utilising parsers, antlr4 in particular.
-Demonstration Going from edn to json to json schema All I need to do is press M-&amp;amp; 2 times to do this.
-The idea is that every time you press M-&amp;amp;, it takes you to a more abstract representation of what you are looking at.
- --  Using the universal antlr parser  Steps Set up antlr Follow the setup instructions.</description>
+            <description>Summary I make a way to get a more abstract representation of any type of file or buffer in emacs utilising parsers, antlr4 in particular.
+I also want to be able to query the contents of the source code.
+I also want to be able to query prose programmatically.
+Motivation In the past I have used ctags to get simple lists of source code components such as functions and classes. I would like to have much finer control over queries to source code.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I make a way to get a more abstract
-representation of any buffer in emacs
+representation of any type of file or buffer in emacs
 utilising parsers, <code>antlr4</code> in particular.</p>
+<p>I also want to be able to query the contents
+of the source code.</p>
+<p>I also want to be able to query prose programmatically.</p>
+<h3 id="motivation">Motivation</h3>
+<p>In the past I have used <code>ctags</code> to get simple
+lists of source code components such as
+functions and classes. I would like to have
+much finer control over queries to source
+code.</p>
+<p>The reason I want an automated way of parsing
+and then querying source code and prose is so
+I can build tooling which automates it and be
+programming at a higher abstraction level.</p>
 <h2 id="demonstration">Demonstration</h2>
 <h3 id="going-from-edn-to-json-to-json-schema">Going from <code>edn</code> to <code>json</code> to <code>json schema</code></h3>
 <p>All I need to do is press <code>M-&amp;</code> 2 times to do this.</p>

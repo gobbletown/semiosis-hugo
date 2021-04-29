@@ -1,5 +1,5 @@
 +++
-title = "universal file parser in emacs"
+title = "Universal file parser in emacs"
 author = ["Shane Mulligan"]
 date = 2021-04-29T00:00:00+12:00
 keywords = ["antlr", "emacs"]
@@ -9,8 +9,27 @@ draft = false
 ## Summary {#summary}
 
 I make a way to get a more abstract
-representation of any buffer in emacs
+representation of any type of file or buffer in emacs
 utilising parsers, `antlr4` in particular.
+
+I also want to be able to query the contents
+of the source code.
+
+I also want to be able to query prose programmatically.
+
+
+### Motivation {#motivation}
+
+In the past I have used `ctags` to get simple
+lists of source code components such as
+functions and classes. I would like to have
+much finer control over queries to source
+code.
+
+The reason I want an automated way of parsing
+and then querying source code and prose is so
+I can build tooling which automates it and be
+programming at a higher abstraction level.
 
 
 ## Demonstration {#demonstration}
