@@ -6,6 +6,10 @@ keywords = ["prolog", "nlp"]
 draft = false
 +++
 
+Book in question
+: <span class="underline">Prolog and Natural-Language Analysis</span> by Fernando C. N. Pereira and Stuart M. Shieber
+
+
 ## Review {#review}
 
 This book has been interesting so far.
