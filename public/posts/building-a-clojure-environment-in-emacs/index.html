@@ -35,7 +35,7 @@
 <meta itemprop="name" content="Building a Clojure environment in emacs">
 <meta itemprop="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Missing functionality  Google (semantic) search for clojure libaries / versions  clj-refactor.el lists all libraries on clojars, but you have to lexically select from that &ldquo;web framework&rdquo; should yield lists of web framework libraries   Require a library into a source file from the dependencies imported in project.clj  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor."><meta itemprop="datePublished" content="2021-04-28T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-28T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="544"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="672"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -121,7 +121,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        4 minutes
 
         
       </p>
@@ -375,6 +375,84 @@ lf <span style="color:#e6db74">&#34;project.clj&#34;</span> | umn | awk1 | <span
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/4gNTXRw9ifeGZ3WmSQWAdfyki" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/4gNTXRw9ifeGZ3WmSQWAdfyki.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/4gNTXRw9ifeGZ3WmSQWAdfyki.js" id="asciicast-4gNTXRw9ifeGZ3WmSQWAdfyki" async></script>
+<h2 id="tidy-cider">Tidy <code>cider</code></h2>
+<h3 id="automatically-run-cider-jack-in">Automatically run cider <code>jack-in</code></h3>
+<ul>
+<li>ignore it if it&rsquo;s already connected</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun ignore-truthy (<span style="color:#66d9ef">&amp;rest</span> _arguments)
+  <span style="color:#e6db74">&#34;Do nothing and return nil.
+</span><span style="color:#e6db74">This function accepts any number of ARGUMENTS, but ignores them.&#34;</span>
+  (interactive)
+  <span style="color:#66d9ef">t</span>)
+
+(defmacro auto-yes (<span style="color:#66d9ef">&amp;rest</span> body)
+  <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">`</span>(cl-letf (((<span style="color:#a6e22e">symbol-function</span> <span style="color:#e6db74">&#39;yes-or-no-p</span>) <span style="color:#a6e22e">#&#39;</span>ignore-truthy)
+             ((<span style="color:#a6e22e">symbol-function</span> <span style="color:#e6db74">&#39;y-or-n-p</span>) <span style="color:#a6e22e">#&#39;</span>ignore-truthy))
+     (progn <span style="color:#f92672">,@</span>body)))
+(defmacro auto-no (<span style="color:#66d9ef">&amp;rest</span> body)
+  <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">`</span>(cl-letf (((<span style="color:#a6e22e">symbol-function</span> <span style="color:#e6db74">&#39;yes-or-no-p</span>) <span style="color:#a6e22e">#&#39;</span>ignore)
+             ((<span style="color:#a6e22e">symbol-function</span> <span style="color:#e6db74">&#39;y-or-n-p</span>) <span style="color:#a6e22e">#&#39;</span>ignore))
+     (progn <span style="color:#f92672">,@</span>body)))
+
+(defvar my-do-cider-auto-jack-in <span style="color:#66d9ef">t</span>)
+
+(defun cider-auto-jack-in ()
+  <span style="color:#75715e">;; Make sure to be more precise. jack in with cljs too if it should</span>
+  <span style="color:#75715e">;; j:cider-jack-in-cllj</span>
+  <span style="color:#75715e">;; j:cider-jack-in-cljs</span>
+  <span style="color:#75715e">;; j:cider-jack-in-clj&amp;cljs</span>
+
+  (if my-do-cider-auto-jack-in
+      (auto-no (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;cider-jack-in</span>))))
+
+(add-hook <span style="color:#e6db74">&#39;clojure-mode-hook</span> <span style="color:#e6db74">&#39;cider-auto-jack-in</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Add to <code>toggle-values</code></li>
+</ul>
+<figure>
+    <img src="./auto-jack-in.png"/> 
+</figure>
+
+
       </div>
     </article>
 
@@ -392,7 +470,7 @@ lf <span style="color:#e6db74">&#34;project.clj&#34;</span> | umn | awk1 | <span
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        544 Words
+        672 Words
       </p>
 
       <p>

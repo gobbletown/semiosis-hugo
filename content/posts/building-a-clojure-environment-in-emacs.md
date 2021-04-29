@@ -175,3 +175,49 @@ done | uniqnosort
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/4gNTXRw9ifeGZ3WmSQWAdfyki" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/4gNTXRw9ifeGZ3WmSQWAdfyki.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/4gNTXRw9ifeGZ3WmSQWAdfyki.js" id="asciicast-4gNTXRw9ifeGZ3WmSQWAdfyki" async></script>
+
+
+## Tidy `cider` {#tidy-cider}
+
+
+### Automatically run cider `jack-in` {#automatically-run-cider-jack-in}
+
+-   ignore it if it's already connected
+
+<!--listend-->
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun ignore-truthy (&rest _arguments)
+  "Do nothing and return nil.
+This function accepts any number of ARGUMENTS, but ignores them."
+  (interactive)
+  t)
+
+(defmacro auto-yes (&rest body)
+  ""
+  `(cl-letf (((symbol-function 'yes-or-no-p) #'ignore-truthy)
+             ((symbol-function 'y-or-n-p) #'ignore-truthy))
+     (progn ,@body)))
+(defmacro auto-no (&rest body)
+  ""
+  `(cl-letf (((symbol-function 'yes-or-no-p) #'ignore)
+             ((symbol-function 'y-or-n-p) #'ignore))
+     (progn ,@body)))
+
+(defvar my-do-cider-auto-jack-in t)
+
+(defun cider-auto-jack-in ()
+  ;; Make sure to be more precise. jack in with cljs too if it should
+  ;; j:cider-jack-in-cllj
+  ;; j:cider-jack-in-cljs
+  ;; j:cider-jack-in-clj&cljs
+
+  (if my-do-cider-auto-jack-in
+      (auto-no (call-interactively 'cider-jack-in))))
+
+(add-hook 'clojure-mode-hook 'cider-auto-jack-in)
+{{< /highlight >}}
+
+-   Add to `toggle-values`
+
+{{< figure src="./auto-jack-in.png" >}}
