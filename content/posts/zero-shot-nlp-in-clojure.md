@@ -32,6 +32,7 @@ Code
 (defn -main
   "I classify stuff."
   [& args]
+  ;; import transformers; transformers.pipeline("zero-shot-classification")
   (def classifier (py. transformers "pipeline" "zero-shot-classification"))
 
   (def text "French Toast with egg and bacon in the center with maple syrup on top. Sprinkle with powdered sugar if desired.")
@@ -41,6 +42,18 @@ Code
   (let [s (classifier text labels)
         j (clojure.data.json/write-str s)]
     (sh "sh" "-c" "jq . | tv" :in j)))
+{{< /highlight >}}
+
+In python, the following syntax is used to get a classifier.
+
+{{< highlight python "linenos=table, linenostart=1" >}}
+import transformers; transformers.pipeline("zero-shot-classification")
+{{< /highlight >}}
+
+In clojure, this is how it's done with the interop.
+
+{{< highlight clojure "linenos=table, linenostart=1" >}}
+(py. transformers "pipeline" "zero-shot-classification")
 {{< /highlight >}}
 
 {{< highlight json "linenos=table, linenostart=1" >}}
