@@ -18,6 +18,13 @@ NL parser in `prolog`. It would a fast way to
 explore building my own programmatic (as
 opposed to transformer-based) NL parser.
 
+`writing this blog article`
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo.js" id="asciicast-Wm1oQDZHQCFRCUwDT40LPuGRo" async></script>
+
 
 ## Build a prolog database system in emacs {#build-a-prolog-database-system-in-emacs}
 
