@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
-#+TITLE: Universal file parser in emacs
+#+TITLE: Universal file parser and query tool in emacs
 #+DATE: <2021-04-29>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: antlr emacs
