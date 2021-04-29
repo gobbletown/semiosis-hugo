@@ -4,15 +4,31 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
-#+TITLE: universal file parser in emacs
+#+TITLE: Universal file parser in emacs
 #+DATE: <2021-04-29>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: antlr emacs
 
 ** Summary
 I make a way to get a more abstract
-representation of any buffer in emacs
+representation of any type of file or buffer in emacs
 utilising parsers, =antlr4= in particular.
+
+I also want to be able to query the contents
+of the source code.
+
+I also want to be able to query prose programmatically.
+
+*** Motivation
+In the past I have used =ctags= to get simple
+lists of source code components such as
+functions and classes. I would like to have
+much finer control over queries to source
+code.
+
+The reason I want an automated way of parsing
+and then querying source code and prose is so
+I can build tooling which automates it.
 
 ** Demonstration
 *** Going from =edn= to =json= to =json schema=
