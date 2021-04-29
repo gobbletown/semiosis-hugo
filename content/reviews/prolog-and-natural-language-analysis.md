@@ -30,7 +30,16 @@ opposed to transformer-based) NL parser.
 <script src="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo.js" id="asciicast-Wm1oQDZHQCFRCUwDT40LPuGRo" async></script>
 
 
-## Build a prolog database system in emacs {#build-a-prolog-database-system-in-emacs}
+## Extend emacs to do write `prolog` more easily {#extend-emacs-to-do-write-prolog-more-easily}
+
+-   Automate the writing of:
+    -   axioms
+    -   facts
+-   Fuzzy search to build new rules
+    -   Construct the database
+
+
+### Build a prolog database system in emacs {#build-a-prolog-database-system-in-emacs}
 
 {{< highlight prolog "linenos=table, linenostart=1" >}}
 professor(terry).
@@ -48,7 +57,90 @@ concerns(begriffsschrift, logic).
 {{< /highlight >}}
 
 
-## Makee some upgrades to my Prolog environment {#makee-some-upgrades-to-my-prolog-environment}
+### Learn the built in functions first {#learn-the-built-in-functions-first}
+
+
+#### remember {#remember}
+
+| kb    | f                            |       |
+|-------|------------------------------|-------|
+| `M-e` | `prolog-end-of-clause`       | `nil` |
+| `M-a` | `prolog-beginning-of-clause` | `nil` |
+
+
+#### Rebind these {#rebind-these}
+
+-   prolog-consult-region
+-   prolog-consult-file
+-   prolog-consult-file
+
+<!--listend-->
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+C-c C-z         run-prolog
+C-c C-d         prolog-debug-on
+C-c C-n         prolog-insert-predicate-template
+C-c C-p         prolog-consult-predicate
+C-c C-r         prolog-consult-region
+C-c C-s         prolog-insert-predspec
+C-c C-t         prolog-trace-on
+C-c C-c b       prolog-compile-buffer
+C-c C-c f       prolog-compile-file
+C-c C-c p       prolog-compile-predicate
+C-c C-c r       prolog-compile-region
+C-c C-v C-s     prolog-view-predspec
+C-c C-v a       prolog-variables-to-anonymous
+{{< /highlight >}}
+
+| kb        | f                       |       |
+|-----------|-------------------------|-------|
+| `C-c C-b` | `prolog-consult-buffer` | `nil` |
+
+
+### new unit clauses {#new-unit-clauses}
+
+
+#### new relation/clause (wrote) {#new-relation-clause--wrote}
+
+{{< highlight prolog "linenos=table, linenostart=1" >}}
+wrote(roger, sam).
+{{< /highlight >}}
+
+
+#### new facts {#new-facts}
+
+{{< highlight prolog "linenos=table, linenostart=1" >}}
+program(lunar).
+{{< /highlight >}}
+
+
+### Create rules {#create-rules}
+
+{{< highlight prolog "linenos=table, linenostart=1" >}}
+author(Person) :- book(Book), wrote(Person, Book).
+{{< /highlight >}}
+
+
+### query {#query}
+
+
+#### yes/no (provable) queries {#yes-no--provable--queries}
+
+{{< highlight prolog "linenos=table, linenostart=1" >}}
+:- wrote(terry, shrdlu).
+{{< /highlight >}}
+
+{{< highlight prolog "linenos=table, linenostart=1" >}}
+:- program(principia).
+{{< /highlight >}}
+
+
+#### Search queries (variable/wildcard) {#search-queries--variable-wildcard}
+
+:- wrote(Who,shrdlu).
+
+
+## Make some upgrades to my Prolog environment {#make-some-upgrades-to-my-prolog-environment}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (require 'ob-prolog)

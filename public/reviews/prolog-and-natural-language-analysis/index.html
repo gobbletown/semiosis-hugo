@@ -39,7 +39,7 @@ On reading the 2nd chapter I realised I would like to make a NL parser in prolog
 On reading the 1st chapter, I discovered how to build Semantic Networks in prolog.
 On reading the 2nd chapter I realised I would like to make a NL parser in prolog. It would a fast way to explore building my own programmatic (as opposed to transformer-based) NL parser."><meta itemprop="datePublished" content="2021-04-30T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-30T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="235"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="379"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -153,7 +153,21 @@ opposed to transformer-based) NL parser.</p>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo.js" id="asciicast-Wm1oQDZHQCFRCUwDT40LPuGRo" async></script>
-<h2 id="build-a-prolog-database-system-in-emacs">Build a prolog database system in emacs</h2>
+<h2 id="extend-emacs-to-do-write-prolog-more-easily">Extend emacs to do write <code>prolog</code> more easily</h2>
+<ul>
+<li>Automate the writing of:
+<ul>
+<li>axioms</li>
+<li>facts</li>
+</ul>
+</li>
+<li>Fuzzy search to build new rules
+<ul>
+<li>Construct the database</li>
+</ul>
+</li>
+</ul>
+<h3 id="build-a-prolog-database-system-in-emacs">Build a prolog database system in emacs</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -184,7 +198,133 @@ opposed to transformer-based) NL parser.</p>
 <span style="color:#a6e22e">concerns</span>(<span style="color:#e6db74">begriffsschrift</span>, <span style="color:#e6db74">logic</span>).</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="makee-some-upgrades-to-my-prolog-environment">Makee some upgrades to my Prolog environment</h2>
+<h3 id="learn-the-built-in-functions-first">Learn the built in functions first</h3>
+<h4 id="remember">remember</h4>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M-e</code></td>
+<td><code>prolog-end-of-clause</code></td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>M-a</code></td>
+<td><code>prolog-beginning-of-clause</code></td>
+<td><code>nil</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="rebind-these">Rebind these</h4>
+<ul>
+<li>prolog-consult-region</li>
+<li>prolog-consult-file</li>
+<li>prolog-consult-file</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C-c C-z         run-prolog
+C-c C-d         prolog-debug-on
+C-c C-n         prolog-insert-predicate-template
+C-c C-p         prolog-consult-predicate
+C-c C-r         prolog-consult-region
+C-c C-s         prolog-insert-predspec
+C-c C-t         prolog-trace-on
+C-c C-c b       prolog-compile-buffer
+C-c C-c f       prolog-compile-file
+C-c C-c p       prolog-compile-predicate
+C-c C-c r       prolog-compile-region
+C-c C-v C-s     prolog-view-predspec
+C-c C-v a       prolog-variables-to-anonymous</code></pre></td></tr></table>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>C-c C-b</code></td>
+<td><code>prolog-consult-buffer</code></td>
+<td><code>nil</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="new-unit-clauses">new unit clauses</h3>
+<h4 id="new-relation-clause--wrote">new relation/clause (wrote)</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-prolog" data-lang="prolog"><span style="color:#a6e22e">wrote</span>(<span style="color:#e6db74">roger</span>, <span style="color:#e6db74">sam</span>).</code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="new-facts">new facts</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-prolog" data-lang="prolog"><span style="color:#a6e22e">program</span>(<span style="color:#e6db74">lunar</span>).</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="create-rules">Create rules</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-prolog" data-lang="prolog"><span style="color:#a6e22e">author</span>(Person) :- <span style="color:#a6e22e">book</span>(Book), <span style="color:#a6e22e">wrote</span>(Person, Book).</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="query">query</h3>
+<h4 id="yes-no--provable--queries">yes/no (provable) queries</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-prolog" data-lang="prolog">:- <span style="color:#a6e22e">wrote</span>(<span style="color:#e6db74">terry</span>, <span style="color:#e6db74">shrdlu</span>).</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-prolog" data-lang="prolog">:- <span style="color:#a6e22e">program</span>(<span style="color:#e6db74">principia</span>).</code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="search-queries--variable-wildcard">Search queries (variable/wildcard)</h4>
+<p>:- wrote(Who,shrdlu).</p>
+<h2 id="make-some-upgrades-to-my-prolog-environment">Make some upgrades to my Prolog environment</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
