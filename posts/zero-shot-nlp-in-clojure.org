@@ -30,6 +30,7 @@
   (defn -main
     "I classify stuff."
     [& args]
+    ;; import transformers; transformers.pipeline("zero-shot-classification")
     (def classifier (py. transformers "pipeline" "zero-shot-classification"))
 
     (def text "French Toast with egg and bacon in the center with maple syrup on top. Sprinkle with powdered sugar if desired.")
@@ -39,6 +40,18 @@
     (let [s (classifier text labels)
           j (clojure.data.json/write-str s)]
       (sh "sh" "-c" "jq . | tv" :in j)))
+#+END_SRC
+
+In python, the following syntax is used to get a classifier.
+
+#+BEGIN_SRC python -n :i mypython :async :results verbatim code
+  import transformers; transformers.pipeline("zero-shot-classification")
+#+END_SRC
+
+In clojure, this is how it's done with the interop.
+
+#+BEGIN_SRC clojure -n :i clj :async :results verbatim code
+  (py. transformers "pipeline" "zero-shot-classification")
 #+END_SRC
 
 #+BEGIN_SRC json -n :async :results verbatim code
