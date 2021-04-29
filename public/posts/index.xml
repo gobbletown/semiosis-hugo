@@ -1023,7 +1023,7 @@ This is a work in progress.
 Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
 I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
- It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&amp;rsquo;s the language I&amp;rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&amp;rsquo;s libraries  I was initially working with Terraform 0.</description>
+ It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&amp;rsquo;s the language I&amp;rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&amp;rsquo;s libraries Access to all of Python&amp;rsquo;s libraries via clj-python/libpython-clj  I was initially working with Terraform 0.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>These are the steps I have taken to automate
 the process of building a Web Application in
@@ -1048,6 +1048,7 @@ implement the blob uploader for the following reasons:</p>
 <li>It&rsquo;s the language I&rsquo;m growing into for most of my work</li>
 <li>It has very good support for concurrency</li>
 <li>Access to all of Java&rsquo;s libraries</li>
+<li>Access to all of Python&rsquo;s libraries via <code>clj-python/libpython-clj</code></li>
 </ul>
 <p>I was initially working with <code>Terraform 0.15</code> on <code>Ubuntu 20.04</code>,
 but I regressed to <code>Terraform v0.14.0-dev</code> and <code>Ubuntu 16.04</code> due to my computer breaking down.</p>

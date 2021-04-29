@@ -49,7 +49,7 @@ This is a work in progress.
 Original article https://dzone.com/articles/deploy-a-clojure-web-application-to-aws-using-terr
 I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
- It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&amp;rsquo;s the language I&amp;rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&amp;rsquo;s libraries  I was initially working with Terraform 0.</description>
+ It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&amp;rsquo;s the language I&amp;rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&amp;rsquo;s libraries Access to all of Python&amp;rsquo;s libraries via clj-python/libpython-clj  I was initially working with Terraform 0.</description>
     </item>
     
     <item>
