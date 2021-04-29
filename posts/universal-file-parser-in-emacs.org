@@ -31,6 +31,14 @@ and then querying source code and prose is so
 I can build tooling which automates it and be
 programming at a higher abstraction level.
 
+** Problems encountered
+=antlr= seems to be fairly unreliable at
+parsing, or at least is too pedantic for this purpose.
+
+I will attempt to do this with GitHub's
+=semantic= parser as it is designed to be a
+pragmatic parser.
+
 ** Demonstration
 *** Going from =edn= to =json= to =json schema=
 All I need to do is press =M-&= 2 times to do this.
