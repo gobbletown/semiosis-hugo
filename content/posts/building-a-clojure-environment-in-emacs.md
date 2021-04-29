@@ -12,6 +12,14 @@ draft = false
 -   I create some tools for missing functionality
 
 
+## Missing functionality {#missing-functionality}
+
+-   Google (semantic) search for clojure libaries / versions
+    -   `clj-refactor.el` lists all libraries on `clojars`, but you have to lexically select from that
+    -   "web framework" should yield lists of web framework libraries
+-   Require a library into a source file from the dependencies imported in `project.clj`
+
+
 ## Install tools {#install-tools}
 
 -   <https://github.com/clojure-emacs/clj-refactor.el>

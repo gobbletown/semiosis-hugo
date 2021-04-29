@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
- https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies." />
+<meta name="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Missing functionality  Google (semantic) search for clojure libaries / versions  clj-refactor.el lists all libraries on clojars, but you have to lexically select from that &amp;ldquo;web framework&amp;rdquo; should yield lists of web framework libraries   Require a library into a source file from the dependencies imported in project.clj  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor." />
 <meta name="keywords" content="NLP GPT openai" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -34,24 +33,21 @@
 
 
 <meta itemprop="name" content="Building a Clojure environment in emacs">
-<meta itemprop="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
- https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies."><meta itemprop="datePublished" content="2021-04-28T00:00:00&#43;12:00" />
+<meta itemprop="description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Missing functionality  Google (semantic) search for clojure libaries / versions  clj-refactor.el lists all libraries on clojars, but you have to lexically select from that &ldquo;web framework&rdquo; should yield lists of web framework libraries   Require a library into a source file from the dependencies imported in project.clj  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor."><meta itemprop="datePublished" content="2021-04-28T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-28T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="498"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="544"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Building a Clojure environment in emacs"/>
-<meta name="twitter:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
- https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies."/>
+<meta name="twitter:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Missing functionality  Google (semantic) search for clojure libaries / versions  clj-refactor.el lists all libraries on clojars, but you have to lexically select from that &ldquo;web framework&rdquo; should yield lists of web framework libraries   Require a library into a source file from the dependencies imported in project.clj  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor."/>
 
 
 
 
     <meta property="og:title" content="Building a Clojure environment in emacs" />
-<meta property="og:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
- https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies." />
+<meta property="og:description" content="Summary  I install/learn some existing tooling I create some tools for missing functionality  Missing functionality  Google (semantic) search for clojure libaries / versions  clj-refactor.el lists all libraries on clojars, but you have to lexically select from that &ldquo;web framework&rdquo; should yield lists of web framework libraries   Require a library into a source file from the dependencies imported in project.clj  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/building-a-clojure-environment-in-emacs/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-28T00:00:00&#43;12:00" />
@@ -145,6 +141,16 @@
 <ul>
 <li>I install/learn some existing tooling</li>
 <li>I create some tools for missing functionality</li>
+</ul>
+<h2 id="missing-functionality">Missing functionality</h2>
+<ul>
+<li>Google (semantic) search for clojure libaries / versions
+<ul>
+<li><code>clj-refactor.el</code> lists all libraries on <code>clojars</code>, but you have to lexically select from that</li>
+<li>&ldquo;web framework&rdquo; should yield lists of web framework libraries</li>
+</ul>
+</li>
+<li>Require a library into a source file from the dependencies imported in <code>project.clj</code></li>
 </ul>
 <h2 id="install-tools">Install tools</h2>
 <ul>
@@ -386,7 +392,7 @@ lf <span style="color:#e6db74">&#34;project.clj&#34;</span> | umn | awk1 | <span
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        498 Words
+        544 Words
       </p>
 
       <p>

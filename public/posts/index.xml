@@ -242,12 +242,21 @@ sn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><s
             <pubDate>Wed, 28 Apr 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/building-a-clojure-environment-in-emacs/</guid>
-            <description>Summary  I install/learn some existing tooling I create some tools for missing functionality  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.el  --  Create tools antlr4 current buffer parser Using antlr4 I would like to be able to obtain a parse tree of the current source file of any language and a clojure repl for visiting that parse tree.
- https://github.com/aphyr/clj-antlr  clojure-find-deps This script searches the clojars website for dependencies.</description>
+            <description>Summary  I install/learn some existing tooling I create some tools for missing functionality  Missing functionality  Google (semantic) search for clojure libaries / versions  clj-refactor.el lists all libraries on clojars, but you have to lexically select from that &amp;ldquo;web framework&amp;rdquo; should yield lists of web framework libraries   Require a library into a source file from the dependencies imported in project.clj  Install tools  https://github.com/clojure-emacs/clj-refactor.el  clj-refactor.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <ul>
 <li>I install/learn some existing tooling</li>
 <li>I create some tools for missing functionality</li>
+</ul>
+<h2 id="missing-functionality">Missing functionality</h2>
+<ul>
+<li>Google (semantic) search for clojure libaries / versions
+<ul>
+<li><code>clj-refactor.el</code> lists all libraries on <code>clojars</code>, but you have to lexically select from that</li>
+<li>&ldquo;web framework&rdquo; should yield lists of web framework libraries</li>
+</ul>
+</li>
+<li>Require a library into a source file from the dependencies imported in <code>project.clj</code></li>
 </ul>
 <h2 id="install-tools">Install tools</h2>
 <ul>
