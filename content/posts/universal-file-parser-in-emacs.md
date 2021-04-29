@@ -1,8 +1,8 @@
 +++
-title = "Universal file parser in emacs"
+title = "Universal file parser and query tool in emacs"
 author = ["Shane Mulligan"]
 date = 2021-04-29T00:00:00+12:00
-keywords = ["antlr", "emacs"]
+keywords = ["antlr", "emacs", "semantic"]
 draft = false
 +++
 
@@ -30,6 +30,25 @@ The reason I want an automated way of parsing
 and then querying source code and prose is so
 I can build tooling which automates it and be
 programming at a higher abstraction level.
+
+
+### External parsers used {#external-parsers-used}
+
+-   `antlr`
+-   GitHub `semantic`
+-   `json2hcl`
+-   `ej`
+-   `jq`
+
+
+## Problems encountered {#problems-encountered}
+
+`antlr` seems to be fairly unreliable at
+parsing, or at least is too pedantic for this purpose.
+
+I will attempt to do this with GitHub's
+`semantic` parser as it is designed to be a
+pragmatic parser.
 
 
 ## Demonstration {#demonstration}
@@ -92,6 +111,37 @@ case "$sn" in
 esac
 {{< /highlight >}}
 
+Create the `universal-antlr-parse` script.
+
+`universal-antlr-parse`
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+
+grammar_fp="$1"
+src="$2"
+
+stdin_exists() {
+    ! [ -t 0 ] && ! test "$(readlink /proc/$$/fd/0)" = /dev/null
+}
+
+if test -f "$src"; then
+    src="$(cat "$src")"
+fi
+
+if ! test -n "$src" && stdin_exists; then
+    src="$(cat)"
+fi
+
+# grammar_fp=$MYGIT/antlr/grammars-v4/json/JSON.g4
+
+cd $MYGIT/mullikine/universal-antlr-clojure-visitor-interpreter
+lein run "$grammar_fp" "$src" | pavs
+{{< /highlight >}}
+
 
 ### Obtain the grammars {#obtain-the-grammars}
 
@@ -103,6 +153,29 @@ esac
 Code
 : <http://github.com/mullikine/universal-antlr-clojure-visitor-interpreter>
 
+<!--listend-->
+
+{{< highlight clojure "linenos=table, linenostart=1" >}}
+(ns universal-antlr-clojure-visitor-interpreter.core
+  (:gen-class)
+  (:require [clj-antlr.core :as antlr]
+            [clojure.pprint :as pp]))
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  ;; Use :throw? to ignore errors
+  (def parser (antlr/parser (first args) {:throw? false}))
+  (pp/pprint (parser (slurp (second args)))))
+{{< /highlight >}}
+
+`demo`: Creating a parse tree with `antlr`.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/QFTXJWTmZupXuLcLGpirm4NIl" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/QFTXJWTmZupXuLcLGpirm4NIl.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/QFTXJWTmZupXuLcLGpirm4NIl.js" id="asciicast-QFTXJWTmZupXuLcLGpirm4NIl" async></script>
+
 
 ### Create an interface in emacs {#create-an-interface-in-emacs}
 
@@ -110,6 +183,32 @@ Code
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 ;; Mode is not enough information to determine
+
+(defun antlr-list-all-grammars ()
+  (snc "cd $MYGIT/antlr/grammars-v4/; find . -name '*.g4' | xargs -l basename | sed 's/\..*//'"))
+
+(defun antlr-grammar-path-from-name (name)
+  (let* ((cmd (format
+               "cd $MYGIT/antlr/grammars-v4/; find . -iname '%s.g4' | sed 's/.\\///' | head -n 1"
+               name))
+         (result (snc cmd)))
+    (if (sor result)
+        (umn (concat "$MYGIT/antlr/grammars-v4/"
+                     result)))))
+
+;; $MYGIT/antlr/grammars-v4/
+
+(defun get-buffer-python-version ()
+  (if (string-equal (detect-language) "python")
+      (snc (cmd "vermin" (tf "python" (buffer-string))))))
+
+(defun antlr-detect-language ()
+  ;; Detecting the language is not good enough
+  ;; Sometimes I also need to know the language version, such as python3
+  (let ((lang (detect-language)))
+    (cond ((string-equal lang "python")
+           (concat "python" (get-buffer-python-version)))
+          (t lang))))
 
 ;; universal-antlr-parse "$MYGIT/antlr/grammars-v4/json/JSON.g4" "[4, 5, 6]"
 (defset file-parser-2-tuples
@@ -119,7 +218,11 @@ Code
      . "zh -j")
     ((and (major-mode-p 'clojure-mode)
           (string-equal "edn" (f-ext (get-path))))
-     . "ej | jq .")))
+     . "ej | jq .")
+    ((sor (antlr-grammar-path-from-name (f-ext (get-path))))
+     . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (f-ext (get-path)))) (buffer-string)))
+    ((sor (antlr-grammar-path-from-name (antlr-detect-language)))
+     . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (antlr-detect-language))) (buffer-string)))))
 
 (defun assoc-collect-true (al)
   (-distinct
@@ -147,7 +250,10 @@ Code
   (let ((parser
          (assoc-get-first-true file-parser-2-tuples)))
     (if parser
-        (let ((parse (snc (concat parser " 2>&1") (buffer-string))))
+        (let ((parse
+               (if (stringp parser)
+                   (snc (concat parser " 2>&1") (buffer-string))
+                 (eval parser))))
           (if (sor parse)
               (with-current-buffer
                   (nbfs
