@@ -219,10 +219,19 @@ Code
     ((and (major-mode-p 'clojure-mode)
           (string-equal "edn" (f-ext (get-path))))
      . "ej | jq .")
+    ((or (and (major-mode-p 'c++-mode)
+              (string-equal "cpp" (f-ext (get-path))))
+         (and (major-mode-p 'python-mode)
+              (string-equal "py" (f-ext (get-path))))
+         (and (major-mode-p 'java-mode)
+              (string-equal "java" (f-ext (get-path))))
+         (and (major-mode-p 'haskell-mode)
+              (string-equal "hs" (f-ext (get-path)))))
+     . (snc (cmd "semantic-parse" (get-path))))
     ((sor (antlr-grammar-path-from-name (f-ext (get-path))))
-     . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (f-ext (get-path)))) (buffer-string)))
+     . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (f-ext (get-path))) (tf "code" (selection-or-buffer-string)))))
     ((sor (antlr-grammar-path-from-name (antlr-detect-language)))
-     . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (antlr-detect-language))) (buffer-string)))))
+     . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (antlr-detect-language)) (tf "code" (selection-or-buffer-string)))))))
 
 (defun assoc-collect-true (al)
   (-distinct
@@ -278,3 +287,61 @@ Code
 
 (provide 'my-file-parsers)
 {{< /highlight >}}
+
+
+## Parser scripts {#parser-scripts}
+
+
+### `semantic-parse` (GitHub Semantic) {#semantic-parse--github-semantic}
+
+`semantic-parse`
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+
+fp="$1"
+test -f "$fp" || exit 1
+
+rp="$(realpath "$fp")"
+bn="$(basename "$fp")"
+dn="$(dirname "$rp")"
+
+cwdslug="$(p "$dn" | slugify)"
+
+unbuffer docker run \
+    --rm \
+    -v "$dn:/$cwdslug" \
+    -w "/$cwdslug" \
+    -ti \
+    --entrypoint= \
+    docker.pkg.github.com/github/semantic/semantic:sha_248a1b3646643613960e444fe8ab6623224d47b1 \
+    /usr/local/bin/semantic \
+    parse \
+    "$bn" |
+        erase-trailing-whitespace |
+        pa -E "tf lisp | xa orspe"
+{{< /highlight >}}
+
+
+## Parser language support {#parser-language-support}
+
+
+### GitHub Semantic {#github-semantic}
+
+| Language   | Support |
+|------------|---------|
+| Ruby       | ✓       |
+| JavaScript | ✓       |
+| TypeScript | ✓       |
+| Python     | ✓       |
+| Go         | ✓       |
+| PHP        | ✓       |
+| Java       | ✗       |
+| JSON       | ✓       |
+| JSX        | ✓       |
+| TSX        | ✓       |
+| CodeQL     | ✓       |
+| Haskell    | ✗       |
