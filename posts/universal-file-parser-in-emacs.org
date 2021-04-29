@@ -28,7 +28,8 @@ code.
 
 The reason I want an automated way of parsing
 and then querying source code and prose is so
-I can build tooling which automates it.
+I can build tooling which automates it and be
+programming at a higher abstraction level.
 
 ** Demonstration
 *** Going from =edn= to =json= to =json schema=
