@@ -122,6 +122,30 @@ https://github.com/antlr/grammars-v4
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   ;; Mode is not enough information to determine
 
+  (defun antlr-list-all-grammars ()
+    (snc "cd $MYGIT/antlr/grammars-v4/; find . -name '*.g4' | xargs -l basename | sed 's/\..*//'"))
+
+  (defun antlr-grammar-path-from-name (name)
+    (let ((cmd (format
+                "cd $MYGIT/antlr/grammars-v4/; find . -iname '%s.g4' | sed 's/.\\///' | head -n 1"
+                name)))
+      (umn (concat "$MYGIT/antlr/grammars-v4/"
+                   (snc cmd)))))
+
+  ;; $MYGIT/antlr/grammars-v4/
+
+  (defun get-buffer-python-version ()
+    (if (string-equal (detect-language) "python")
+        (snc (cmd "vermin" (tf "python" (buffer-string))))))
+
+  (defun antlr-detect-language ()
+    ;; Detecting the language is not good enough
+    ;; Sometimes I also need to know the language version, such as python3
+    (let ((lang (detect-language)))
+      (cond ((string-equal lang "python")
+             (concat "python" (get-buffer-python-version)))
+            (t lang))))
+
   ;; universal-antlr-parse "$MYGIT/antlr/grammars-v4/json/JSON.g4" "[4, 5, 6]"
   (defset file-parser-2-tuples
     '(((major-mode-p 'terraform-mode)
