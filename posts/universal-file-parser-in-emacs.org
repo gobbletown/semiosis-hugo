@@ -85,6 +85,32 @@ Create the =antlr4= script.
   esac
 #+END_SRC
 
+Create the =universal-antlr-parse= script.
+
+=universal-antlr-parse=
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+  
+  ( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+  
+  grammar_fp="$1"
+  source="$2"
+  
+  stdin_exists() {
+      ! [ -t 0 ] && ! test "$(readlink /proc/$$/fd/0)" = /dev/null
+  }
+  
+  if ! test -n "$source" && stdin_exists; then
+      source="$(cat)"
+  fi
+  
+  # grammar_fp=$MYGIT/antlr/grammars-v4/json/JSON.g4
+  
+  cd $MYGIT/mullikine/universal-antlr-clojure-visitor-interpreter
+  lein run "$grammar_fp" "$source" | pavs
+#+END_SRC
+
 *** Obtain the grammars
 https://github.com/antlr/grammars-v4
 
