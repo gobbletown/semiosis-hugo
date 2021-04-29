@@ -36,6 +36,7 @@ programming at a higher abstraction level.
 - GitHub =semantic=
 - =json2hcl=
 - =ej=
+- =jq=
 
 ** Problems encountered
 =antlr= seems to be fairly unreliable at
