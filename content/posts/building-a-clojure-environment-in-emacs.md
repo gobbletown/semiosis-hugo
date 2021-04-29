@@ -220,4 +220,4 @@ This function accepts any number of ARGUMENTS, but ignores them."
 
 -   Add to `toggle-values`
 
-{{< figure src="./auto-jack-in.png" >}}
+{{< figure src="/ox-hugo/auto-jack-in.png" >}}
