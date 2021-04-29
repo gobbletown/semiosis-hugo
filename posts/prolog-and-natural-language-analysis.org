@@ -27,23 +27,91 @@ opposed to transformer-based) NL parser.
 <script src="https://asciinema.org/a/Wm1oQDZHQCFRCUwDT40LPuGRo.js" id="asciicast-Wm1oQDZHQCFRCUwDT40LPuGRo" async></script>
 #+END_EXPORT
 
-** Build a prolog database system in emacs
-#+BEGIN_SRC prolog -n :async :results verbatim code
-  professor(terry).
-  professor(roger).
-  professor(bertrand).
-  professor(gottlob).
-  
-  concerns(shrdlu, blocks).
-  concerns(lunar, rocks).
-  concerns(sam, stories).
-  
-  concerns(principia, logic).
-  concerns(principia, mathematics).
-  concerns(begriffsschrift, logic).
-#+END_SRC
+** Extend emacs to do write =prolog= more easily
+- Automate the writing of:
+  - axioms
+  - facts
+- Fuzzy search to build new rules
+  - Construct the database
 
-** Makee some upgrades to my Prolog environment
+*** Build a prolog database system in emacs
+ #+BEGIN_SRC prolog -n :async :results verbatim code
+   professor(terry).
+   professor(roger).
+   professor(bertrand).
+   professor(gottlob).
+  
+   concerns(shrdlu, blocks).
+   concerns(lunar, rocks).
+   concerns(sam, stories).
+  
+   concerns(principia, logic).
+   concerns(principia, mathematics).
+   concerns(begriffsschrift, logic).
+ #+END_SRC
+
+*** Learn the built in functions first
+**** remember
+ | kb    | f                            |       |
+ |-------+------------------------------+-------|
+ | =M-e= | =prolog-end-of-clause=       | =nil= |
+ | =M-a= | =prolog-beginning-of-clause= | =nil= |
+
+**** Rebind these
+ - prolog-consult-region
+ - prolog-consult-file
+ - prolog-consult-file
+
+ #+BEGIN_SRC text -n :async :results verbatim code
+   C-c C-z         run-prolog
+   C-c C-d         prolog-debug-on
+   C-c C-n         prolog-insert-predicate-template
+   C-c C-p         prolog-consult-predicate
+   C-c C-r         prolog-consult-region
+   C-c C-s         prolog-insert-predspec
+   C-c C-t         prolog-trace-on
+   C-c C-c b       prolog-compile-buffer
+   C-c C-c f       prolog-compile-file
+   C-c C-c p       prolog-compile-predicate
+   C-c C-c r       prolog-compile-region
+   C-c C-v C-s     prolog-view-predspec
+   C-c C-v a       prolog-variables-to-anonymous
+ #+END_SRC
+
+ | kb        | f                       |       |
+ |-----------+-------------------------+-------|
+ | =C-c C-b= | =prolog-consult-buffer= | =nil= |
+
+*** new unit clauses
+**** new relation/clause (wrote)
+ #+BEGIN_SRC prolog -n :async :results verbatim code
+   wrote(roger, sam).
+ #+END_SRC
+
+**** new facts
+ #+BEGIN_SRC prolog -n :async :results verbatim code
+   program(lunar).
+ #+END_SRC
+
+*** Create rules
+ #+BEGIN_SRC prolog -n :async :results verbatim code
+   author(Person) :- book(Book), wrote(Person, Book).
+ #+END_SRC
+
+*** query
+**** yes/no (provable) queries
+ #+BEGIN_SRC prolog -n :async :results verbatim code
+   :- wrote(terry, shrdlu).
+ #+END_SRC
+
+ #+BEGIN_SRC prolog -n :async :results verbatim code
+   :- program(principia).
+ #+END_SRC
+
+**** Search queries (variable/wildcard)
+ :- wrote(Who,shrdlu).
+
+** Make some upgrades to my Prolog environment
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (require 'ob-prolog)
   
