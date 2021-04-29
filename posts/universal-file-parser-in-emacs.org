@@ -31,9 +31,11 @@ and then querying source code and prose is so
 I can build tooling which automates it and be
 programming at a higher abstraction level.
 
-*** Tools used
+*** External parsers used
 - =antlr=
 - GitHub =semantic=
+- =json2hcl=
+- =ej=
 
 ** Problems encountered
 =antlr= seems to be fairly unreliable at
