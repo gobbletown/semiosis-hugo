@@ -121,7 +121,7 @@ https://github.com/antlr/grammars-v4
 =my-file-parsers.el=
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   ;; Mode is not enough information to determine
-  
+
   ;; universal-antlr-parse "$MYGIT/antlr/grammars-v4/json/JSON.g4" "[4, 5, 6]"
   (defset file-parser-2-tuples
     '(((major-mode-p 'terraform-mode)
@@ -130,8 +130,12 @@ https://github.com/antlr/grammars-v4
        . "zh -j")
       ((and (major-mode-p 'clojure-mode)
             (string-equal "edn" (f-ext (get-path))))
-       . "ej | jq .")))
-  
+       . "ej | jq .")
+      ((sor (antlr-grammar-path-from-name (f-ext (get-path))))
+       . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (f-ext (get-path)))) (buffer-string)))
+      ((sor (antlr-grammar-path-from-name (detect-language)))
+       . (snc (cmd "universal-antlr-parse" (antlr-grammar-path-from-name (f-ext (get-path)))) (buffer-string)))))
+
   (defun assoc-collect-true (al)
     (-distinct
      (-flatten
@@ -142,19 +146,19 @@ https://github.com/antlr/grammars-v4
        al
        collect
        (if (eval (car kv)) (cdr kv))))))
-  
+
   (defun assoc-get-first-true (al)
     (car (assoc-collect-true al)))
-  
-  
+
+
   ;; (defun get-parse-for-file (path)
   ;;   (interactive (list (current-path)))
-  
+
   ;;   (assoc 'terraform-mode file-parser-2-tuples))
-  
+
   (defun parse-current-buffer ()
     (interactive)
-  
+
     (let ((parser
            (assoc-get-first-true file-parser-2-tuples)))
       (if parser
@@ -165,7 +169,7 @@ https://github.com/antlr/grammars-v4
                      parse)
                   (detect-language-set-mode))
               (message "No parse created")))))
-  
+
     ;; (let* (;; (p (current-path))
     ;;        (cm major-mode)
     ;;        (parser (assoc cm file-parser-2-tuples)))
@@ -178,8 +182,8 @@ https://github.com/antlr/grammars-v4
     ;;               (detect-language-set-mode))
     ;;           (message "No parse created")))))
     )
-  
+
   (define-key my-mode-map (kbd "H-&") 'parse-current-buffer)
-  
+
   (provide 'my-file-parsers)
 #+END_SRC
