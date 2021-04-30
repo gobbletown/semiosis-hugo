@@ -77,3 +77,23 @@ Be more intelligent than this, though.
 
 (provide 'my-sql-mode)
 {{< /highlight >}}
+
+
+## Testing it out {#testing-it-out}
+
+Start postgres with docker.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+docker \
+    run \
+    --rm \
+    -p 5432:5432 \
+    -e POSTGRES_PASSWORD=admin \
+    -v "$(pwd):/$(pwd | slugify)" \
+    -w "/$(pwd | slugify)" \
+    -ti \
+    --entrypoint= \
+    postgres:alpine \
+    docker-entrypoint.sh \
+    postgres
+{{< /highlight >}}
