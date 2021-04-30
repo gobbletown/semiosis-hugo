@@ -23,6 +23,8 @@ Be more intelligent than this, though.
 ** Tools to accommodate
 - https://github.com/dbcli/mycli
 - https://github.com/dbcli/pgcli
+
+*** Files too somehow?
 - https://github.com/dbcli/litecli
 
 ** elisp
