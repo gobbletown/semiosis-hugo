@@ -10,6 +10,123 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Auto-suggest tooling to handle ports on a network</title>
+            <link>http://semiosis.github.io/posts/auto-suggest-tooling-to-handle-ports-on-a-network/</link>
+            <pubDate>Fri, 30 Apr 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/auto-suggest-tooling-to-handle-ports-on-a-network/</guid>
+            <description>Work in progress
+Summary Given a server (default localhost), suggest tooling to handle said ports.
+For example, if you are running a postgres server, suggest pgcli (a TUI) to allow you to connect to it.
+Be more intelligent than this, though.
+Tools to accommodate  https://github.com/dbcli/mycli https://github.com/dbcli/pgcli  elisp Detect ports 1 2 3 4  (defset server-command-tuples &amp;#39;((sql-mysql 3306) (sql-postgres 5432))) (provide &amp;#39;my-server-suggest)   Handle ports 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34  (require &amp;#39;sql) ;; Like format but quotes string arguments ;; This would be nice.</description>
+            <content type="html"><![CDATA[<p><span class="underline"><strong>Work in progress</strong></span></p>
+<h2 id="summary">Summary</h2>
+<p>Given a server (default localhost), suggest tooling to handle said ports.</p>
+<p>For example, if you are running a postgres
+server, suggest <code>pgcli</code> (a <code>TUI</code>) to allow you
+to connect to it.</p>
+<p>Be more intelligent than this, though.</p>
+<h2 id="tools-to-accommodate">Tools to accommodate</h2>
+<ul>
+<li><a href="https://github.com/dbcli/mycli">https://github.com/dbcli/mycli</a></li>
+<li><a href="https://github.com/dbcli/pgcli">https://github.com/dbcli/pgcli</a></li>
+</ul>
+<h2 id="elisp">elisp</h2>
+<h3 id="detect-ports">Detect ports</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defset server-command-tuples <span style="color:#f92672">&#39;</span>((sql-mysql <span style="color:#ae81ff">3306</span>)
+                                (sql-postgres <span style="color:#ae81ff">5432</span>)))
+
+(provide <span style="color:#e6db74">&#39;my-server-suggest</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="handle-ports">Handle ports</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;sql</span>)
+
+<span style="color:#75715e">;; Like format but quotes string arguments</span>
+<span style="color:#75715e">;; This would be nice. It would be easy to achieve in racket</span>
+<span style="color:#75715e">;; (defmacro formatq (&amp;rest body)</span>
+<span style="color:#75715e">;;   &#34;Do not return anything.&#34;</span>
+<span style="color:#75715e">;;   ;; body</span>
+<span style="color:#75715e">;;   `(progn (,@body) nil))</span>
+
+(defun sql-mode-sps-tui ()
+  (interactive)
+  (if (major-mode-p <span style="color:#e6db74">&#39;sql-interactive-mode</span>)
+      (cond ((<span style="color:#a6e22e">string-equal</span> <span style="color:#e6db74">&#34;mysql&#34;</span> sql-product)
+             (sps (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;mycli -u %s --pass %s %s&#34;</span> (q sql-user) (q sql-password) (q sql-database))))
+            ((<span style="color:#a6e22e">string-equal</span> <span style="color:#e6db74">&#34;postgres&#34;</span> sql-product)
+             (sps (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;pgcli -u %s -W %s -d %s&#34;</span> (q sql-user) (q sql-password) (q sql-database)))))
+    (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;need to be in sql-mode&#34;</span>)))
+
+<span style="color:#75715e">;; export PGPASSWORD=$POSTGRES_PASSWORD</span>
+  <span style="color:#75715e">;; - psql -h &#34;postgres&#34; -U &#34;$POSTGRES_USER&#34; -d &#34;$POSTGRES_DB&#34; -c &#34;SELECT &#39;OK&#39; AS status;&#34;</span>
+(defun sql-mode-sps-cli ()
+  (interactive)
+  (if (major-mode-p <span style="color:#e6db74">&#39;sql-interactive-mode</span>)
+      (cond ((<span style="color:#a6e22e">string-equal</span> <span style="color:#e6db74">&#34;mysql&#34;</span> sql-product)
+             <span style="color:#75715e">;; (zrepl (format &#34;mysql --user=%s --password=%s %s&#34; (q sql-user) (q sql-password) (q sql-database)))</span>
+             (zreplcm (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;mysql --user=%s --password=%s %s&#34;</span> (q sql-user) (q sql-password) (q sql-database))))
+            ((<span style="color:#a6e22e">string-equal</span> <span style="color:#e6db74">&#34;postgres&#34;</span> sql-product)
+             (sps (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;psql -U %s -W %s -d %s&#34;</span> (q sql-user) (q sql-password) (q sql-database)))))
+    (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;need to be in sql-mode&#34;</span>)))
+
+(<span style="color:#a6e22e">define-key</span> sql-interactive-mode-map (kbd <span style="color:#e6db74">&#34;M-i&#34;</span>) <span style="color:#e6db74">&#39;sql-mode-sps-cli</span>)
+(<span style="color:#a6e22e">define-key</span> sql-interactive-mode-map (kbd <span style="color:#e6db74">&#34;M-o&#34;</span>) <span style="color:#e6db74">&#39;sql-mode-sps-tui</span>)
+
+(provide <span style="color:#e6db74">&#39;my-sql-mode</span>)</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Zero-shot NLP in Clojure</title>
             <link>http://semiosis.github.io/posts/zero-shot-nlp-in-clojure/</link>
             <pubDate>Fri, 30 Apr 2021 00:00:00 +1200</pubDate>
