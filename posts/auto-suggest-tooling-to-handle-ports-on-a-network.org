@@ -23,6 +23,7 @@ Be more intelligent than this, though.
 ** Tools to accommodate
 - https://github.com/dbcli/mycli
 - https://github.com/dbcli/pgcli
+- https://github.com/dbcli/litecli
 
 ** elisp
 *** Detect ports
