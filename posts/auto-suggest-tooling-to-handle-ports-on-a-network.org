@@ -70,3 +70,21 @@ Be more intelligent than this, though.
   
   (provide 'my-sql-mode)
 #+END_SRC
+
+** Testing it out
+Start postgres with docker.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  docker \
+      run \
+      --rm \
+      -p 5432:5432 \
+      -e POSTGRES_PASSWORD=admin \
+      -v "$(pwd):/$(pwd | slugify)" \
+      -w "/$(pwd | slugify)" \
+      -ti \
+      --entrypoint= \
+      postgres:alpine \
+      docker-entrypoint.sh \
+      postgres
+#+END_SRC
