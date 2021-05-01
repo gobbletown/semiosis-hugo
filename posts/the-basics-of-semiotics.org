@@ -7,7 +7,7 @@
 #+KEYWORDS: linguistics semiotics
 
 + Books in question:
-- _Basics of Semiotics Advances in Semiotics_ by John N. Deely
+- _Basics of Semiotics Advances in Semiotics_ by John N. Deely ([[http://library.lol/main/76679C58CDB995642645E25913B4E93F][PDF]])
 
 + Chapters read:
   - 1. Literary Semiotics And The Doctrine Of Signs
