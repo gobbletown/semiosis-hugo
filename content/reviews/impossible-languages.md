@@ -99,7 +99,8 @@ it.
 
 ## Impossible Languages {#impossible-languages}
 
--   1 Learning From The Impossible
--   2 Capturing The "stem Mind"
--   3 Sentences As Snowflakes
--   4 The Unreasonable Sieve
+-   Chapters read:
+    -   1 Learning From The Impossible
+    -   2 Capturing The "stem Mind"
+    -   3 Sentences As Snowflakes
+    -   4 The Unreasonable Sieve
