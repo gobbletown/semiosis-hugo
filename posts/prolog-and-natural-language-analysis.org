@@ -6,7 +6,7 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: prolog nlp
 
-+ Book in question :: _Prolog and Natural-Language Analysis_ by Fernando C. N. Pereira and Stuart M. Shieber
++ Book in question :: _Prolog and Natural-Language Analysis_ by Fernando C. N. Pereira and Stuart M. Shieber ([[http://library.lol/main/534E15BB9D6CCB1E05CBA13E2BB8C849][PDF]])
 
 ** Review 
 This book has been interesting so far.
