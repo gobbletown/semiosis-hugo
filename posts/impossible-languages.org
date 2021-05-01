@@ -1,0 +1,17 @@
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./reviews
+
+#+TITLE: Impossible Languages
+#+DATE: <2021-05-01>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: linguistics
+
+** Preface
+
+** Chapters read
+
+- 1 Learning From The Impossible
+- 2 Capturing The "stem Mind"
+- 3 Sentences As Snowflakes
+- 4 The Unreasonable Sieve
+- 5 The Boundaries Of Babel
