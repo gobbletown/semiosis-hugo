@@ -7,7 +7,7 @@ draft = false
 +++
 
 Book in question
-: <span class="underline">Prolog and Natural-Language Analysis</span> by Fernando C. N. Pereira and Stuart M. Shieber
+: <span class="underline">Prolog and Natural-Language Analysis</span> by Fernando C. N. Pereira and Stuart M. Shieber ([PDF](http://library.lol/main/534E15BB9D6CCB1E05CBA13E2BB8C849))
 
 
 ## Review {#review}
