@@ -7,7 +7,7 @@ draft = false
 +++
 
 -   Books in question:
-    -   <span class="underline">The Boundaries of Babel</span> (The Brain and the Enigma of Impossible Languages) by Andrea Moro (2016)
+    -   <span class="underline">The Boundaries of Babel</span> (The Brain and the Enigma of Impossible Languages) by Andrea Moro (2008)
     -   <span class="underline">Impossible Languages</span> by Andrea Moro (2016)
 
 Glossary:
