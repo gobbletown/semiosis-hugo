@@ -10,6 +10,14 @@
   - _The Boundaries of Babel_ (The Brain and the Enigma of Impossible Languages) by Andrea Moro (2016)
   - _Impossible Languages_ by Andrea Moro (2016)
 
+Glossary:
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  universal grammar
+      Arguments for:
+      - Convergence
+#+END_SRC
+
 ** The Boundaries of Babel
 *** Preface
 _*Tantan*_
