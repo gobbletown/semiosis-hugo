@@ -17,3 +17,40 @@
   - 5. Zoosemiotics And Anthroposemiotics
 
 ** Glossary
+#+BEGIN_SRC text -n :async :results verbatim code
+  semiosis
+      It is important to understand what I mean
+      by semiosis.
+    
+      All dynamical action, or action of brute
+      force, physical or psychical, either takes
+      place between two subjects (whether they
+      react equally upon each other, or one is
+      agent and the other patient, entirely or
+      partially) or at any rate is a resultant
+      of such actions between pairs.
+    
+      But by “semiosis” I mean, on the contrary,
+      an action, or influence, which is, or
+      involves, a coöperation of three subjects,
+      such as a sign, its object, and its
+      interpretant, this tri-relative influence
+      not being in any way resolvable into
+      actions between pairs.
+#+END_SRC
+
+** Summary
+I found this book refreshing after having been
+engrossing myself in books and videos to do
+with Noam Chomsky's perspectives on language.
+
+The reason is that communication, though it
+may be separated from language, is a topic
+that demands as much inquiring, in my opinion,
+as I am more puzzled and intrigued by the
+study of language and communication outside of
+human beings, including artificial
+intelligences, other biological lifeforms and
+potetentially aliens.
+
+It's a good book. I'll continue reading it.
