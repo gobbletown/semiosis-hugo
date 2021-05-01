@@ -18,4 +18,20 @@
 
 ** Chapter 5 - The Boundaries Of Babel
 
-*** Tan-Tan
+*** =Tantan=
+A man nicknamed Tantan because he would always
+reply to questions asked of him by saying "tan
+tan".
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  The doctor who conducted the autopsy found a
+  rammollisement (softening) of Leborgne’s left
+  frontal lobe; this discovery was immediately
+  recognized by the physician as evi- dence that
+  language not only depended on brain activity,
+  but on a specific portion of the brain.
+  
+  The name of the doctor who per- formed the
+  autopsy was Paul Broca, and this portion of
+  the brain was subsequently named Broca’s area.
+#+END_SRC
