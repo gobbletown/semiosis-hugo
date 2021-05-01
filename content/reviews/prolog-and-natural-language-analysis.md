@@ -10,6 +10,10 @@ Book in question
 : <span class="underline">Prolog and Natural-Language Analysis</span> by Fernando C. N. Pereira and Stuart M. Shieber ([PDF](http://library.lol/main/534E15BB9D6CCB1E05CBA13E2BB8C849))
 
 
+Notes on Semantic Nets and Frames
+: <http://www.eecs.qmul.ac.uk/~mmh/AINotes/AINotes4.pdf>
+
+
 ## Review {#review}
 
 This book has been interesting so far.
