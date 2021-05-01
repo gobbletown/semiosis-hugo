@@ -5,3 +5,15 @@
 #+DATE: <2021-05-01>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: linguistics semiotics
+
++ Books in question:
+- _Basics of Semiotics Advances in Semiotics_ by John N. Deely
+
++ Chapters read:
+  - 1. Literary Semiotics And The Doctrine Of Signs
+  - 2. Semiotics: Method Or Point Of View?
+  - 3. Semiosis: The Subject Matter Of Semiotic Inquiry
+  - 4. Signs: The Medium Of Semiosis
+  - 5. Zoosemiotics And Anthroposemiotics
+
+** Glossary

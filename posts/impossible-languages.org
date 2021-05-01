@@ -16,6 +16,44 @@ Glossary:
   universal grammar
       Arguments for:
       - Convergence
+
+  neurobiological correlates
+      https://mitpress.mit.edu/books/boundaries-babel
+
+  constructive vs selective grammar
+      We will distinguish between selective
+      grammars and constructive grammars
+      following the spirit of the classical
+      terminological distinction that Massimo
+      Piattelli-Palmarini (1989) originally
+      introduced into linguistics from biology.
+
+      In textbooks, you will never find the
+      rules that eliminate the impossible
+      combinations of words (selective
+      grammars).
+
+      You only find the rules that describe the
+      possible combinations (constructive
+      grammars), and among these rules, you are
+      likely to find just those that lead to
+      ‘‘proper’’ language rather than actual
+      spoken language.
+
+      The Boundaries of Babel_ The Brain and the Enigma of Impossible Languages (2008, The MIT Press) - libgen.lc.pdf
+
+  impossible language
+       The human mind, despite its almost
+       infinite ingenuity, can't invent a
+       language that doesn't share the
+       fundamental properties of language
+       itself.
+
+      - the conditions of possibility of language.
+      - the mystery of human communication
+      - studies of syntax with neurology   
+
+      https://mitpress.mit.edu/books/impossible-languages
 #+END_SRC
 
 ** The Boundaries of Babel
