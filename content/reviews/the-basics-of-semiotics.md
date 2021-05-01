@@ -7,7 +7,7 @@ draft = false
 +++
 
 -   Books in question:
--   <span class="underline">Basics of Semiotics Advances in Semiotics</span> by John N. Deely
+-   <span class="underline">Basics of Semiotics Advances in Semiotics</span> by John N. Deely ([PDF](http://library.lol/main/76679C58CDB995642645E25913B4E93F))
 
 -   Chapters read:
     -   1. Literary Semiotics And The Doctrine Of Signs
