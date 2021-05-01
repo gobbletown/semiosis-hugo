@@ -7,8 +7,8 @@
 #+KEYWORDS: linguistics
 
 + Books in question:
-  - _The Boundaries of Babel_ (The Brain and the Enigma of Impossible Languages) by Andrea Moro (2008)
-  - _Impossible Languages_ by Andrea Moro (2016)
+  - _The Boundaries of Babel_ (The Brain and the Enigma of Impossible Languages) by Andrea Moro (2008) ([[http://library.lol/main/87E592008AEA168E31CA6AD1042ED582][PDF]])
+  - _Impossible Languages_ by Andrea Moro (2016) ([[http://library.lol/main/7F0B78DC4CF12EEB6ACA926C0C859534][PDF]])
 
 Glossary:
 
