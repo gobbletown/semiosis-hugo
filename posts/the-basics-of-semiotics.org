@@ -41,6 +41,8 @@
       actions between pairs.
 #+END_SRC
 
+[[./semiotics-the-basics.png]]
+
 ** Summary
 I found this book refreshing after having been
 engrossing myself in books and videos to do
