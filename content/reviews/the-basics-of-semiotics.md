@@ -1,5 +1,5 @@
 +++
-title = "The Basics of Semiotics"
+title = "Basics of Semiotics"
 author = ["Shane Mulligan"]
 date = 2021-05-01T00:00:00+12:00
 keywords = ["linguistics", "semiotics"]
@@ -8,6 +8,8 @@ draft = false
 
 -   Books in question:
 -   <span class="underline">Basics of Semiotics Advances in Semiotics</span> by John N. Deely ([PDF](http://library.lol/main/76679C58CDB995642645E25913B4E93F))
+
+{{< figure src="./basics-of-semiotics-cover.jpg" >}}
 
 -   Chapters read:
     -   1. Literary Semiotics And The Doctrine Of Signs
@@ -41,6 +43,10 @@ semiosis
     actions between pairs.
 {{< /highlight >}}
 
+John Deely has written a number of similar books on Semiotics.
+
+{{< figure src="./semiotics-the-basics.png" >}}
+
 
 ## Summary {#summary}
 
@@ -58,3 +64,5 @@ intelligences, other biological lifeforms and
 potetentially aliens.
 
 It's a good book. I'll continue reading it.
+
+{{< figure src="./basics-of-semiotics-pages.jpg" >}}
