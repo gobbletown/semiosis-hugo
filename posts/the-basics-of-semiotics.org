@@ -1,7 +1,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./reviews
 
-#+TITLE: The Basics of Semiotics
+#+TITLE: Basics of Semiotics
 #+DATE: <2021-05-01>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: linguistics semiotics
