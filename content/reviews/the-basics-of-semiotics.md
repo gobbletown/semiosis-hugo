@@ -9,7 +9,7 @@ draft = false
 -   Books in question:
 -   <span class="underline">Basics of Semiotics Advances in Semiotics</span> by John N. Deely ([PDF](http://library.lol/main/76679C58CDB995642645E25913B4E93F))
 
-{{< figure src="./basics-of-semiotics-cover.jpg" >}}
+{{< figure src="/ox-hugo/basics-of-semiotics-cover.jpg" >}}
 
 -   Chapters read:
     -   1. Literary Semiotics And The Doctrine Of Signs
@@ -45,7 +45,7 @@ semiosis
 
 John Deely has written a number of similar books on Semiotics.
 
-{{< figure src="./semiotics-the-basics.png" >}}
+{{< figure src="/ox-hugo/semiotics-the-basics.png" >}}
 
 
 ## Summary {#summary}
@@ -65,4 +65,4 @@ potetentially aliens.
 
 It's a good book. I'll continue reading it.
 
-{{< figure src="./basics-of-semiotics-pages.jpg" >}}
+{{< figure src="/ox-hugo/basics-of-semiotics-pages.jpg" >}}
