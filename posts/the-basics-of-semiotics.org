@@ -41,6 +41,8 @@
       actions between pairs.
 #+END_SRC
 
+John Deely has written a number of similar books on Semiotics.
+
 [[./semiotics-the-basics.png]]
 
 ** Summary
