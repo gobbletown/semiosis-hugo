@@ -5,3 +5,5 @@
 #+DATE: <2021-05-03>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: linguistics
+
+[[./subjects-and-universal-grammar.jpg]]
