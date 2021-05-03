@@ -47,5 +47,14 @@ On reading the 1st chapter, I discovered how to build Semantic Networks in prolo
 On reading the 2nd chapter I realised I would like to make a NL parser in prolog. It would a fast way to explore building my own programmatic (as opposed to transformer-based) NL parser.</description>
     </item>
     
+    <item>
+      <title>Review of &#39;[2006.03511] Unsupervised Translation of Programming Languages&#39;</title>
+      <link>http://semiosis.github.io/reviews/review-of-2006-03511-unsupervised-translation-of-programming-languages/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/reviews/review-of-2006-03511-unsupervised-translation-of-programming-languages/</guid>
+      <description>Original article 2006.03511 Unsupervised Translation of Programming Languages News https://venturebeat.com/2020/06/08/facebooks-transcoder-ai-converts-code-from-one-programming-language-into-another/ Research Lample et al. Researcher Guillaume Lample Facebook AI Research glample@fb.com  Fully unsupervised neural transcompiler  Converts languages obtained from GitHub  BigQuery   unsupervised  it looks for previously undetected patterns in data sets without labels and with a minimal amount of human supervision   outperforms rule-based baselines by a “significant” margin.  Model of TransCoder   seq2seq with attention</description>
+    </item>
+    
   </channel>
 </rss>
