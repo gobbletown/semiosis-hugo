@@ -190,8 +190,7 @@ results in a fairly high number of anchor
 points, and the model naturally becomes cross-
 lingual.
 
-** Summary
-
+** Arxiv Summary
 #+BEGIN_SRC text -n :async :results verbatim code
   A transcompiler, also known as source-to-
   source translator, is a system that converts
@@ -248,3 +247,9 @@ lingual.
   We show that our model outperforms rule-based
   commercial baselines by a significant margin.
 #+END_SRC
+
+** GPT-3 summary of Arxiv summary
+We train a neural transcompiler using
+monolingual source code from GitHub, and show
+that it can translate functions between C++,
+Java, and Python with high accuracy.
