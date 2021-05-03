@@ -26,10 +26,63 @@ Be more intelligent than this, though.
 -   <https://github.com/dbcli/pgcli>
 
 
+### Files too somehow? {#files-too-somehow}
+
+-   <https://github.com/dbcli/litecli>
+
+
 ## elisp {#elisp}
 
 
 ### Detect ports {#detect-ports}
+
+<span class="underline">**shell**</span>
+`n-list-open-ports`
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+
+hn="$1"
+: "${hn:="localhost"}"
+
+{
+echo "Port State Service"
+sudo nmap -sT -O "$hn" | sed "0,/^PORT /{d}" | sed "/^[^0-9]\\+/,\$d"
+} | sed "s/ \\+/,/g" | pavs
+{{< /highlight >}}
+
+`ports-tablist`
+This generates a CSV.
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+hn="$1"
+: "${hn:=""}"
+
+create-tablist n-list-open-ports ports t
+{{< /highlight >}}
+
+Add to the tablist mode list.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defset my-tablist-modes-cmds-or-paths
+  '(
+    ;; "arp -a | spaces2tabs | tsv2csv"
+    "arp"
+    "prompts"
+    "ports"
+    "aws-policies"
+    "aws-users"
+    "mygit")
+  "A list of commands or csv paths to create tablist minor modes for")
+{{< /highlight >}}
+
+Create handlers in `my-server-suggest.el`.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defset server-command-tuples '((sql-mysql 3306)
@@ -77,6 +130,37 @@ Be more intelligent than this, though.
 
 (provide 'my-sql-mode)
 {{< /highlight >}}
+
+
+### Add to `tablist-modes` {#add-to-tablist-modes}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defset my-tablist-mode-tuples
+  '(("list-venv-dirs-csv" . ("venv" t "30 40 20"))
+    ("n-list-open-ports" . ("ports" t))
+    ("mygit-tablist" . ("mygit" t))
+    ("arp-details" . ("arp" t))
+    ("list-aws-iam-policies-csv" . ("aws-policies" t "30 80"))
+    ("oci prompts-details -csv" . ("prompts" t "30 30 20 10 15 15 15 10"))
+    ("upd list-aws-iam-users-csv" . ("aws-users" t "20 60 20"))))
+
+(defun my-start-tablist ()
+  (interactive)
+  (let* ((tlname (fz (mapcar 'car my-tablist-mode-tuples)))
+        (args
+         (if (sor tlname)
+             (assoc tlname my-tablist-mode-tuples)
+             ;; (cdr (assoc tlname my-tablist-mode-tuples))
+           )))
+    (apply 'create-tablist args)))
+{{< /highlight >}}
+
+<span class="underline">**Demo of tablist modes**</span>
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.js" id="asciicast-a0wET1hJtxz3CqANFRWuRHu8c" async></script>
 
 
 ## Testing it out {#testing-it-out}

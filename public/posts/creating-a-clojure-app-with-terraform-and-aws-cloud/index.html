@@ -45,7 +45,7 @@ I have taken steps and copied code from this article.
 Design I have chosen Clojure as the language to implement the blob uploader for the following reasons:
  It is very reliable It is easy to understand REPL workflow  Live updates   One language for both the back-end and front-end It&rsquo;s the language I&rsquo;m growing into for most of my work It has very good support for concurrency Access to all of Java&rsquo;s libraries Access to all of Python&rsquo;s libraries via clj-python/libpython-clj  I was initially working with Terraform 0."><meta itemprop="datePublished" content="2021-04-27T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-04-27T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="2433"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2448"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -853,6 +853,12 @@ unbuffer oci aws iam list-policies | jq -r <span style="color:#e6db74">&#34;.Pol
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oci aws iam attach-user-policy --user-name Administrator --policy-arn <span style="color:#e6db74">&#34;arn:aws:iam::aws:policy/AdministratorAccess&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
+<p><span class="underline"><strong>Demo of tablist modes</strong></span></p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.js" id="asciicast-a0wET1hJtxz3CqANFRWuRHu8c" async></script>
+<p>I&rsquo;m making a way to manage arbitrarily many tablist modes.</p>
 <h2 id="create-a-diagram-of-the-cluster">Create a diagram of the cluster</h2>
 <p>Automate the process of building infra diagrams with plantuml.</p>
 <p><code>:$SCRIPTS/plantuml-list-sprites</code></p>
@@ -1231,7 +1237,7 @@ stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{<
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2433 Words
+        2448 Words
       </p>
 
       <p>

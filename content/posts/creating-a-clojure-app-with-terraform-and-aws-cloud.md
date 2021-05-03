@@ -473,6 +473,15 @@ unbuffer oci aws iam list-policies | jq -r ".Policies[] | [ .PolicyName, .Arn ] 
 oci aws iam attach-user-policy --user-name Administrator --policy-arn "arn:aws:iam::aws:policy/AdministratorAccess"
 {{< /highlight >}}
 
+<span class="underline">**Demo of tablist modes**</span>
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.js" id="asciicast-a0wET1hJtxz3CqANFRWuRHu8c" async></script>
+
+I'm making a way to manage arbitrarily many tablist modes.
+
 
 ## Create a diagram of the cluster {#create-a-diagram-of-the-cluster}
 
