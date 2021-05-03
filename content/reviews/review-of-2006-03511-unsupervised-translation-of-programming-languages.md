@@ -206,7 +206,7 @@ points, and the model naturally becomes cross-
 lingual.
 
 
-## Summary {#summary}
+## Arxiv Summary {#arxiv-summary}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 A transcompiler, also known as source-to-
@@ -264,3 +264,11 @@ translations.
 We show that our model outperforms rule-based
 commercial baselines by a significant margin.
 {{< /highlight >}}
+
+
+## GPT-3 summary of Arxiv summary {#gpt-3-summary-of-arxiv-summary}
+
+We train a neural transcompiler using
+monolingual source code from GitHub, and show
+that it can translate functions between C++,
+Java, and Python with high accuracy.
