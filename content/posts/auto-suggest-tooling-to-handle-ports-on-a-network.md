@@ -2,12 +2,9 @@
 title = "Auto-suggest tooling to handle ports on a network"
 author = ["Shane Mulligan"]
 date = 2021-04-30T00:00:00+12:00
-keywords = ["infra"]
+keywords = ["infra", "emacs"]
 draft = false
 +++
-
-<span class="underline">**Work in progress**</span>
-
 
 ## Summary {#summary}
 
@@ -155,17 +152,116 @@ Create handlers in `my-server-suggest.el`.
     (apply 'create-tablist args)))
 {{< /highlight >}}
 
-<span class="underline">**Demo of tablist modes**</span>
 
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/a0wET1hJtxz3CqANFRWuRHu8c.js" id="asciicast-a0wET1hJtxz3CqANFRWuRHu8c" async></script>
+### Detect open ports and suggest {#detect-open-ports-and-suggest}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(require 'my-net)
+
+(defun connect-to-mysql (&optional hn port user dbname pass)
+  (interactive (list (read-string-hist "mysql hn: ")
+                     (read-string-hist "mysql port: ")
+                     (read-string-hist "mysql user: ")
+                     (read-string-hist "mysql db: ")
+                     (read-string-hist "mysql pw: ")))
+
+  (if (not (sor hn)) (setq hn "localhost"))
+  (if (not (sor port)) (setq port "3306"))
+  (if (not (sor user)) (setq user "admin"))
+  (if (not (sor dbname)) (setq dbname "main"))
+  (if (not (sor pass)) (setq pass "admin"))
+
+  (sps (concat (cmd
+                "mycli"
+                "-initcmd" "\\d"
+                "-h" hn
+                "-p" port
+                "-D" dbname
+                "-y" user
+                "-p" pass)
+               "; pak")))
+
+(defun connect-to-postgres (&optional hn port user dbname pass)
+  (interactive (list (read-string-hist "pg hn: ")
+                     (read-string-hist "pg port: ")
+                     (read-string-hist "pg user: ")
+                     (read-string-hist "pg db: ")
+                     (read-string-hist "pg pw: ")))
+
+  (if (not (sor hn)) (setq hn "localhost"))
+  (if (not (sor port)) (setq port "5432"))
+  (if (not (sor user)) (setq user "admin"))
+  (if (not (sor dbname)) (setq dbname "main"))
+  (if (not (sor pass)) (setq pass "admin"))
+
+  (sps (concat (cmd
+                "pgcli"
+                "-pw" pass
+                "-initcmd" "\\d"
+                "-h" hn
+                "-p" port
+                "-d" dbname
+                "-U" user
+                "-W")
+               "; pak")))
+
+(defset server-command-tuples '((3306 . ((call-interactively 'connect-to-mysql)
+                                         (call-interactively 'sql-mysql)))
+                                (5432 . ((connect-to-postgres hn port "admin" "main" "admin")
+                                         (connect-to-postgres hn port "ahungry" "ahungry" "ahungry")
+                                         (call-interactively 'connect-to-postgres)
+                                         (call-interactively 'sql-postgres)))))
+
+(defun server-suggestions (hostname)
+  (interactive (list (read-string-hist "hostname: ")))
+  (let* ((open (n-list-open-ports hostname))
+         (hnopen
+          (mapcar
+           (lambda (tp) (-drop 1 tp))
+           (-filter (lambda (tp) (string-equal hostname (car tp)))
+                    (n-list-open-ports hostname))))
+         (openmap
+          (mapcar
+           (lambda (tp)
+             (cons (string-to-int (car tp))
+                   (cdr tp)))
+           hnopen))
+         ;; (etv openmap)
+         (suggestions
+          (flatten-once
+           (-filter
+            'identity
+            (cl-loop
+             for tp in
+             openmap
+             collect
+             ;; https://en.wikipedia.org/wiki/Relational_algebra
+             (let* ((cand (assoc (car tp) server-command-tuples))
+                    (hnport (list hostname (car cand)))
+                    (cs (cdr cand)))
+               (if cand
+                   (cl-loop for subtp in cs collect
+                            (append hnport subtp)))
+               ))))))
+    suggestions))
+
+(defun server-suggest (hostname)
+  (interactive (list (read-string-hist "hostname: ")))
+  (let* ((ss (server-suggestions hostname))
+         (c (fz (mapcar 'pp-oneline ss))))
+    (if c
+        (let* ((sel (my-eval-string (concat "'" c)))
+               (hn (car sel))
+               (port (str (second sel)))
+               (c2 (-drop 2 sel)))
+          (eval c2)))))
+{{< /highlight >}}
 
 
 ## Testing it out {#testing-it-out}
 
-Start postgres with docker.
+
+### Start postgres with docker {#start-postgres-with-docker}
 
 {{< highlight sh "linenos=table, linenostart=1" >}}
 docker \
@@ -173,6 +269,8 @@ docker \
     --rm \
     -p 5432:5432 \
     -e POSTGRES_PASSWORD=admin \
+    -e POSTGRES_USER=admin \
+    -e POSTGRES_DB=main \
     -v "$(pwd):/$(pwd | slugify)" \
     -w "/$(pwd | slugify)" \
     -ti \
@@ -181,3 +279,23 @@ docker \
     docker-entrypoint.sh \
     postgres
 {{< /highlight >}}
+
+
+### Demo {#demo}
+
+emacs will suggest programs to connect to open
+ports for a host.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qkK74e4Y4IbLSEYJm6SLOd0gm" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qkK74e4Y4IbLSEYJm6SLOd0gm.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/qkK74e4Y4IbLSEYJm6SLOd0gm.js" id="asciicast-qkK74e4Y4IbLSEYJm6SLOd0gm" async></script>
+
+Thanks to this, I will no longer need to
+remember which programs I commonly associate
+with certain ports.
+
+As I am browsing the network through emacs, I
+will be able to click on a host and select
+from suggested programs to interact with ports
+on that host.
