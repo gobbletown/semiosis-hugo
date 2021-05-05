@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://semiosis.github.io/reviews/</loc>
-    <lastmod>2021-05-03T00:00:00+12:00</lastmod>
+    <loc>http://semiosis.github.io/posts/network-exploration-with-nmap-and-emacs/</loc>
+    <lastmod>2021-05-05T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/</loc>
+    <lastmod>2021-05-05T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-05-05T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/reviews/</loc>
     <lastmod>2021-05-03T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/reviews/subjects-and-universal-grammar/</loc>
@@ -18,9 +24,6 @@
     <lastmod>2021-05-01T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/auto-suggest-tooling-to-handle-ports-on-a-network/</loc>
-    <lastmod>2021-04-30T00:00:00+12:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/posts/</loc>
     <lastmod>2021-04-30T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/reviews/prolog-and-natural-language-analysis/</loc>
