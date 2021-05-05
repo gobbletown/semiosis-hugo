@@ -27,11 +27,11 @@ I create some bindings to operate on the tabulated =nmap= output.
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   #!/bin/bash
   export TTY
-  
+
   ( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
-  
+
   # https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/
-  
+
   while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
       "") { shift; }; ;;
       -csv) {
@@ -39,14 +39,14 @@ I create some bindings to operate on the tabulated =nmap= output.
           shift
       }
       ;;
-  
+
       *) break;
   esac; done
-  
+
   test -f "/usr/bin/nmap" && : "${bin:="/usr/bin/nmap"}"
-  
+
   test -f "$bin" || agi nmap &>/dev/null
-  
+
   if test "$csv_output" = "y"; then
       out="$(0</dev/null tf csv)"
       "$bin" -oX "$out" "$@" &>/dev/null
@@ -64,46 +64,46 @@ Symlink to =list-current-subnet-computers-details=.
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   #!/bin/bash
   export TTY
-  
+
   sn="$(basename "$0")"
-  
+
   ( hs "$(basename "$0")" "$@" 0</dev/null ) &>/dev/null
-  
+
   list_ip_range_for_subnet() {
       cidr="$1"
       : ${cidr:="192.168.1.0/24"}
-  
+
       # $HOME/notes2018/ws/ip-networking/cidr.org
-  
+
       nmap -sL -n "$cidr" | grep 'Nmap scan report for' | cut -f 5 -d ' '
       return 0
   }
-  
+
   list_connected_raspberry_pi_dcbc() {
       nmap-s list_all_ssh_ips_for_subnet 192.168.1.1/24
   }
-  
+
   list_current_subnet_computers_details() {
       oci -t 600 -E "$(cmd-nice nmap -csv -sT -F "$(i gateway)/24")" | pavd
-  
+
       # n-list-open-ports -F localhost
       # list-ips-for-current-network
   }
-  
+
   list_ips_for_current_network() {
       # list_all_ssh_ips_for_subnet "$(i gateway)/24"
       list_all_ips_for_subnet "$(i gateway)/24"
   }
-  
+
   list_all_ips_for_subnet() {
       cidr="$1"
       : ${cidr:="$(ci -t 600 i gateway)/24"}
-  
-      nmap -sn "$cidr" | sed 1d | paste -s -d' \n' | sed '$d' | grep "Host is up" | rosie-ips 
-  
+
+      nmap -sn "$cidr" | sed 1d | paste -s -d' \n' | sed '$d' | grep "Host is up" | rosie-ips
+
       # nmap -sn "$cidr" | aatr "\n\n" "tr '\n' _ | eipct -E $(aqf "grep -q open") | tr _ '\n'" | rosie-ips
   }
-  
+
   list_all_ssh_ips_for_subnet() {
       while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
           "") { shift; }; ;;
@@ -113,26 +113,26 @@ Symlink to =list-current-subnet-computers-details=.
               shift
           }
           ;;
-  
+
           *) break;
       esac; done
-  
+
       : ${port:="22"}
-  
+
       cidr="$1"
       : ${cidr:="$(ci -t 600 i gateway)/24"}
-  
+
       nmap -p "$port" "$cidr" | aatr "\n\n" "tr '\n' _ | eipct -E $(aqf "grep -q open") | tr _ '\n'" | rosie-ips
   }
-  
+
   nmap_s() {
       eval "$@"
   }
-  
+
   f_from_sn() {
       tr - _
   }
-  
+
   eval "$(printf -- "%s" "$sn" | tr - _)" "$@"
 #+END_SRC
 
@@ -174,6 +174,78 @@ Symlink to =list-current-subnet-computers-details=.
     (interactive (list tablist-selected-id))
     (if tablist-selected-id
         (server-suggest tablist-selected-id)))
-  
+
   (define-key subnetscan-tablist-mode-map (kbd "'") 'server-suggest-subnet-scan)
+#+END_SRC
+
+** =pathfinder=
++ Project code :: https://github.com/TKCERT/pathfinder
+
+Pathfinder will make a dot graph out of =nmap='s traceroute output.
+
+I script around pathfinder to get it to generate an ASCII dot graph from a list of hostnames.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  pathfinder mullikine.github.io semiosis.github.io
+#+END_SRC
+
+*** =demo=
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/LH9r7DsTKvlOdNJZtcceO6V6Q" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/LH9r7DsTKvlOdNJZtcceO6V6Q.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/LH9r7DsTKvlOdNJZtcceO6V6Q.js" id="asciicast-LH9r7DsTKvlOdNJZtcceO6V6Q" async></script>
+#+END_EXPORT
+
+*** =scripts=
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+
+  ( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+
+  while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
+      "") { shift; }; ;;
+      -a) {
+          all=y
+          shift
+      }
+      ;;
+
+      *) break;
+  esac; done
+
+  hn="$1"
+  test -n "$hn" || exit 1
+
+  dir="$MYGIT/TKCERT/pathfinder"
+
+  test -d "$dir" || {
+      cd "$(gc "https://github.com/TKCERT/pathfinder")"
+      sudo apt-get install graphviz graphviz-dev
+      plf Graph::Easy # cpan
+      py i pygraphviz
+      py i untangle
+  } &>/dev/null
+
+  test -d "$dir" || exit 1
+
+  cd "$dir"
+
+  nm_fp="$(oci msudo nmap -xml -sn --traceroute "$@" | tf xml)"
+
+  pf_dot="$(tf dot)"
+
+  # sps v "$nm_fp"
+  #exit
+
+  {
+      if test "$all" = "y"; then
+          mypython pathfinder.py --destIpToNetwork -i "$nm_fp" -o "$pf_dot"
+      else
+          mypython pathfinder.py -i "$nm_fp" -o "$pf_dot"
+      fi
+  }
+
+  cat "${pf_dot}.dot" | show-dot | pavs
 #+END_SRC
