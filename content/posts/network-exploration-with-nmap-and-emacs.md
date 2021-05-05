@@ -191,3 +191,80 @@ Article explaining this
 
 (define-key subnetscan-tablist-mode-map (kbd "'") 'server-suggest-subnet-scan)
 {{< /highlight >}}
+
+
+## `pathfinder` {#pathfinder}
+
+Project code
+: <https://github.com/TKCERT/pathfinder>
+
+Pathfinder will make a dot graph out of `nmap`'s traceroute output.
+
+I script around pathfinder to get it to generate an ASCII dot graph from a list of hostnames.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+pathfinder mullikine.github.io semiosis.github.io
+{{< /highlight >}}
+
+
+### `demo` {#demo}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/LH9r7DsTKvlOdNJZtcceO6V6Q" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/LH9r7DsTKvlOdNJZtcceO6V6Q.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/LH9r7DsTKvlOdNJZtcceO6V6Q.js" id="asciicast-LH9r7DsTKvlOdNJZtcceO6V6Q" async></script>
+
+
+### `scripts` {#scripts}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+
+while [ $# -gt 0 ]; do opt="$1"; case "$opt" in
+    "") { shift; }; ;;
+    -a) {
+        all=y
+        shift
+    }
+    ;;
+
+    *) break;
+esac; done
+
+hn="$1"
+test -n "$hn" || exit 1
+
+dir="$MYGIT/TKCERT/pathfinder"
+
+test -d "$dir" || {
+    cd "$(gc "https://github.com/TKCERT/pathfinder")"
+    sudo apt-get install graphviz graphviz-dev
+    plf Graph::Easy # cpan
+    py i pygraphviz
+    py i untangle
+} &>/dev/null
+
+test -d "$dir" || exit 1
+
+cd "$dir"
+
+nm_fp="$(oci msudo nmap -xml -sn --traceroute "$@" | tf xml)"
+
+pf_dot="$(tf dot)"
+
+# sps v "$nm_fp"
+#exit
+
+{
+    if test "$all" = "y"; then
+        mypython pathfinder.py --destIpToNetwork -i "$nm_fp" -o "$pf_dot"
+    else
+        mypython pathfinder.py -i "$nm_fp" -o "$pf_dot"
+    fi
+}
+
+cat "${pf_dot}.dot" | show-dot | pavs
+{{< /highlight >}}
