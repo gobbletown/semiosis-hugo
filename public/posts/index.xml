@@ -6,8 +6,384 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 05 May 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Thu, 06 May 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Generate graphviz and prolog from org-brain</title>
+            <link>http://semiosis.github.io/posts/generate-graphviz-and-prolog-from-org-brain/</link>
+            <pubDate>Thu, 06 May 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/generate-graphviz-and-prolog-from-org-brain/</guid>
+            <description>Summary I would like to be creating graphs interactively with org-brain and then using them to generate graphviz, plantuml and mermaid diagrams, and also knowledge bases with prolog.
+Why Prolog? Prolog is incredibly useful for querying KBs. If I plan on working for a large corporation with their own ontologies and knowledge graphs, then I will want to be skilled with Prolog.
+Graphviz  --  elisp 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81  (defvar org-brain-visited-ht) (defun org-brain-recursive-associates-visited (entry max-level &amp;amp;optional func) &amp;#34;Return a tree of ENTRY and its (grand)associates up to MAX-LEVEL.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I would like to be creating graphs
+interactively with <code>org-brain</code> and then using
+them to generate graphviz, plantuml and
+mermaid diagrams, and also knowledge bases with prolog.</p>
+<p>Why Prolog? Prolog is incredibly useful for
+querying KBs. If I plan on working for a large
+corporation with their own ontologies and
+knowledge graphs, then I will want to be
+skilled with Prolog.</p>
+<h2 id="graphviz">Graphviz</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/9CPWDAd1ZR4azTOxyXEosNOUr" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/9CPWDAd1ZR4azTOxyXEosNOUr.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/9CPWDAd1ZR4azTOxyXEosNOUr.js" id="asciicast-9CPWDAd1ZR4azTOxyXEosNOUr" async></script>
+<h3 id="elisp">elisp</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defvar org-brain-visited-ht)
+
+(defun org-brain-recursive-associates-visited (entry max-level <span style="color:#66d9ef">&amp;optional</span> func)
+  <span style="color:#e6db74">&#34;Return a tree of ENTRY and its (grand)associates up to MAX-LEVEL.
+</span><span style="color:#e6db74">Apply FUNC to each tree member. FUNC is a function which takes an
+</span><span style="color:#e6db74">entry as the only argument. If FUNC is nil or omitted, get the
+</span><span style="color:#e6db74">raw entry data.
+</span><span style="color:#e6db74">Also stop descending if a node has been visited before.
+</span><span style="color:#e6db74">&#34;</span>
+  (let ((en (org-brain-entry-name entry)))
+    (if (not (and (ht-contains? org-brain-visited-ht (sxhash-equal en))))
+        (<span style="color:#a6e22e">cons</span> (<span style="color:#a6e22e">funcall</span> (or func <span style="color:#a6e22e">#&#39;identity</span>) entry)
+              (when (<span style="color:#a6e22e">&gt;</span> max-level <span style="color:#ae81ff">0</span>)
+                (ht-set org-brain-visited-ht (sxhash-equal en) <span style="color:#66d9ef">t</span>)
+                (<span style="color:#a6e22e">mapcar</span> (lambda (x) (org-brain-recursive-associates-visited x (<span style="color:#a6e22e">1-</span> max-level) func))
+                        (org-brain-associates entry)))))))
+
+(defun org-brain-to-dot-associates (<span style="color:#66d9ef">&amp;optional</span> depth)
+  (interactive (<span style="color:#a6e22e">list</span> (string-to-int (read-string-hist <span style="color:#e6db74">&#34;depth: &#34;</span> <span style="color:#e6db74">&#34;5&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#ae81ff">5</span>))))
+
+  (if (not depth)
+      (setq depth <span style="color:#ae81ff">5</span>))
+
+  (let* ((recurfun <span style="color:#e6db74">&#39;org-brain-recursive-associates-visited</span>)
+         (tre
+          (-flatten
+           (progn
+             (setq org-brain-visited-ht (<span style="color:#a6e22e">make-hash-table</span>))
+             (<span style="color:#a6e22e">funcall</span> recurfun
+                      (org-brain-current-entry) depth
+                      (lambda (e)
+                        (let* ((n (org-brain-entry-name e))
+                               (fs (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;org-brain-entry-name</span> (org-brain-friends e)))
+                               (cs (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;org-brain-entry-name</span> (org-brain-children e))))
+                          (<span style="color:#a6e22e">list</span>
+                           <span style="color:#75715e">;; (concat &#34;[&#34; n &#34;]&#34;)</span>
+                           (if fs
+                               (loop for f in fs
+                                     collect
+                                     (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">concat</span> (e/q n) <span style="color:#e6db74">&#34; -&gt; &#34;</span> (e/q f))
+                                           (<span style="color:#a6e22e">concat</span> (e/q f) <span style="color:#e6db74">&#34; -&gt; &#34;</span> (e/q n))))
+                             <span style="color:#75715e">;; &#34;FRIENDS&#34;</span>
+                             )
+                           (if cs
+                               (loop for c in cs
+                                     collect
+                                     (<span style="color:#a6e22e">concat</span> (e/q n) <span style="color:#e6db74">&#34; -&gt; &#34;</span> (e/q c)))
+                             <span style="color:#75715e">;; &#34;CHILDREN&#34;</span>
+                             )))
+                        <span style="color:#75715e">;; (list (org-brain-entry-name e)</span>
+                        <span style="color:#75715e">;;       (org-brain-friends e))</span>
+                        ))))))
+
+    (nbfs (snc <span style="color:#e6db74">&#34;uniqnosort&#34;</span> (list2str tre)) <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;graphviz-dot-mode</span>))
+
+  <span style="color:#75715e">;; (etv (pp-to-string (org-brain-recursive-children (org-brain-current-entry) 10 &#39;org-brain-entry-name)))</span>
+
+  <span style="color:#75715e">;; (loop for c in t)</span>
+  )
+
+(defun dot-digraph ()
+  (interactive)
+  (let* ((td (snc <span style="color:#e6db74">&#34;td&#34;</span>))
+         (f (snc (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;cd &#34;</span> (e/q td) <span style="color:#e6db74">&#34;; dot-digraph -norg&#34;</span>) (region-or-buffer-string)))
+         (fp (<span style="color:#a6e22e">concat</span> td f)))
+    (my/copy fp)
+    (if (interactive-p)
+        (if (yn <span style="color:#e6db74">&#34;show?&#34;</span>)
+            (sps (cmd <span style="color:#e6db74">&#34;o&#34;</span> fp))))))
+
+(defun neato-digraph ()
+  (interactive)
+  (let* ((td (snc <span style="color:#e6db74">&#34;td&#34;</span>))
+         (f (snc (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;cd &#34;</span> (e/q td) <span style="color:#e6db74">&#34;; neato-digraph -norg&#34;</span>) (region-or-buffer-string)))
+         (fp (<span style="color:#a6e22e">concat</span> td f)))
+    (my/copy fp)
+    (if (interactive-p)
+        (if (yn <span style="color:#e6db74">&#34;show?&#34;</span>)
+            (sps (cmd <span style="color:#e6db74">&#34;o&#34;</span> fp))))))
+
+(provide <span style="color:#e6db74">&#39;my-graphviz</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="shell">shell</h3>
+<p><code>dot-digraph</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+read -r -d <span style="color:#e6db74">&#39;&#39;</span> dotcode <span style="color:#e6db74">&lt;&lt;HEREDOC
+</span><span style="color:#e6db74"># graph [style=filled,color=lightgrey,label=subgraph];
+</span><span style="color:#e6db74">graph [style=filled,color=lightgrey];
+</span><span style="color:#e6db74"># node [style=filled,color=white,shape=circle,fontsize=8,fixedsize=true,width=0.9];
+</span><span style="color:#e6db74">node [style=filled,fillcolor=white,shape=circle];
+</span><span style="color:#e6db74"># edge [fontsize=8];
+</span><span style="color:#e6db74"># rankdir=LR;
+</span><span style="color:#e6db74"># size=&#34;6,6&#34;;
+</span><span style="color:#e6db74">HEREDOC</span>
+
+<span style="color:#f92672">{</span>
+    echo <span style="color:#e6db74">&#34;digraph Q {&#34;</span>
+    echo <span style="color:#e6db74">&#34;</span>$dotcode<span style="color:#e6db74">&#34;</span>
+    awk1
+    echo <span style="color:#e6db74">&#34;}&#34;</span>
+<span style="color:#f92672">}</span> | dot-png <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>dot-png</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#f92672">(</span> hs <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;&lt;==&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -o comm<span style="color:#f92672">=</span> $PPID<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> 0&lt;/dev/null <span style="color:#f92672">)</span> &amp;&gt;/dev/null
+
+do_org_output<span style="color:#f92672">=</span>y
+<span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> $# -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span> opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$opt<span style="color:#e6db74">&#34;</span> in
+    <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> shift; <span style="color:#f92672">}</span>; ;;
+    -norg<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        do_org_output<span style="color:#f92672">=</span>n
+        shift
+    <span style="color:#f92672">}</span>
+    ;;
+
+    -org<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        do_org_output<span style="color:#f92672">=</span>y
+        shift
+    <span style="color:#f92672">}</span>
+    ;;
+
+    *<span style="color:#f92672">)</span> break;
+<span style="color:#66d9ef">esac</span>; <span style="color:#66d9ef">done</span>
+
+is_tty<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">[[</span> -t <span style="color:#ae81ff">1</span> <span style="color:#f92672">]]</span>
+<span style="color:#f92672">}</span>
+
+stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    ! <span style="color:#f92672">[</span> -t <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
+<span style="color:#f92672">}</span>
+
+tf_dot<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tf dot<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#75715e"># trap &#34;rm \&#34;$tf_dot\&#34; 2&gt;/dev/null&#34; 0</span>
+
+<span style="color:#75715e"># cat &gt; &#34;$tf_dot&#34;</span>
+
+fn<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$tf_dot<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+dn<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span>$tf_dot<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+ext<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>fn##*.<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+mant<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>fn%.*<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+
+nf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>mant<span style="color:#e6db74">}</span><span style="color:#e6db74">.png&#34;</span>
+<span style="color:#75715e"># echo &#34;$nf&#34; | tv &amp;&gt;/dev/null</span>
+
+<span style="color:#66d9ef">if</span> test -n <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+    nf<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">.png&#34;</span>
+    shift
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">if</span> is_tty; <span style="color:#66d9ef">then</span>
+    dot -q -T png <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$tf_dot<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span>$nf<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">else</span>
+    <span style="color:#75715e"># echo &#34;$nf&#34; | tv &amp;&gt;/dev/null</span>
+    dot -q -T png <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$tf_dot<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span>$nf<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">if</span> test <span style="color:#e6db74">&#34;</span>$do_org_output<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y&#34;</span>; <span style="color:#66d9ef">then</span>
+    echo -n <span style="color:#e6db74">&#34;[[file:</span>$nf<span style="color:#e6db74">]]&#34;</span>
+<span style="color:#66d9ef">else</span>
+    echo -n <span style="color:#e6db74">&#34;</span>$nf<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prolog">Prolog</h2>
+<h2 id="mermaid">Mermaid</h2>
+<h2 id="plantuml">PlantUML</h2>
+]]></content>
+        </item>
         
         <item>
             <title>Network exploration with nmap and emacs</title>
