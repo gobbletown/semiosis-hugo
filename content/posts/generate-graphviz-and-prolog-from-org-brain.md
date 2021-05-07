@@ -27,6 +27,13 @@ skilled with Prolog.
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/9CPWDAd1ZR4azTOxyXEosNOUr.js" id="asciicast-9CPWDAd1ZR4azTOxyXEosNOUr" async></script>
 
+
+### A generated graphviz `neato` diagram {#a-generated-graphviz-neato-diagram}
+
+This has been generated from an `org-brain`.
+
+It shows only the headings.
+
 {{< figure src="/ox-hugo/brain-billboard-gv.png" >}}
 
 
