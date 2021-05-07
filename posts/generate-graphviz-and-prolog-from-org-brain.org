@@ -29,6 +29,8 @@ skilled with Prolog.
 <script src="https://asciinema.org/a/9CPWDAd1ZR4azTOxyXEosNOUr.js" id="asciicast-9CPWDAd1ZR4azTOxyXEosNOUr" async></script>
 #+END_EXPORT
 
+[[./brain-billboard-gv.png]]
+
 *** elisp
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defvar org-brain-visited-ht)
