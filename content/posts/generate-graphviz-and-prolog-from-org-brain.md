@@ -27,6 +27,8 @@ skilled with Prolog.
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/9CPWDAd1ZR4azTOxyXEosNOUr.js" id="asciicast-9CPWDAd1ZR4azTOxyXEosNOUr" async></script>
 
+{{< figure src="/ox-hugo/brain-billboard-gv.png" >}}
+
 
 ### elisp {#elisp}
 
