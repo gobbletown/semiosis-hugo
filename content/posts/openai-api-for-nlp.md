@@ -28,7 +28,7 @@ Here are some of the things I had managed to do with emacs and GPT-3 so far.
 -   [GPT-3 mind maps with an AI tutor for any topic // Bodacious Blog](https://mullikine.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/)
     -   I integrate `GPT-3` into `org-brain` to auto-scaffold a mind map and provide a tutor for anything.
 -   [Generating pickup lines with GPT-3 // Bodacious Blog](https://mullikine.github.io/posts/generating-pickup-lines-with-gpt-3/)
-    -   I integrate `GPT-3` into `cousel` for emacs.
+    -   I integrate `GPT-3` into `counsel` for emacs.
     -   This allows me to fuzzy search with an ever growing candidates list.
 -   [Autocompleting anything with GPT-3 in emacs // Bodacious Blog](https://mullikine.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/)
     -   I integrate `GPT-3` into `company` for emacs. This allows me to autocomplete in emacs.
