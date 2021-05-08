@@ -371,6 +371,17 @@ I decided since the hour is late I would work on productivity tools that anyone 
     </item>
     
     <item>
+      <title>OpenAI API for NLP</title>
+      <link>http://semiosis.github.io/posts/openai-api-for-nlp/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/openai-api-for-nlp/</guid>
+      <description>OpenAI API https://beta.openai.com/  Summary I&amp;rsquo;d like to add some OpenAI support to emacs. GPT-3 is easy to integrate because it is a very general-purpose transformer. In a later article, I&amp;rsquo;d like to integrate more specialised huggingface transformers.
+Results Here are some of the things I had managed to do with emacs and GPT-3 so far.
+ Imaginary programming with GPT-3 // Bodacious Blog  Here I assemble an imaginary programming environment in GPT-3.</description>
+    </item>
+    
+    <item>
       <title>Review of &#39;[2006.03511] Unsupervised Translation of Programming Languages&#39;</title>
       <link>http://semiosis.github.io/reviews/review-of-2006-03511-unsupervised-translation-of-programming-languages/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +1200</pubDate>
