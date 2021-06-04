@@ -7,7 +7,7 @@ draft = false
 +++
 
 Latest version of the pick up lines prompt
-: <http://github.com/semiosis/prompts/blob/master/prompts/very-witty-pick-up-lines.prompt>
+: <http://github.com/mullikine/prompts/blob/master/prompts/pick-up-line.prompt>
 
 
 ## Summary {#summary}
