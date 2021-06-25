@@ -9,7 +9,7 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: GPT-3 openai emacs
 
-+ Emacs package :: http://github.com/mullikine/emacs/blob/master/config/pen.el
++ Emacs package :: https://github.com/semiosis/pen.el
 
 + Prompt :: http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt
 
