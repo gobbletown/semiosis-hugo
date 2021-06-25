@@ -8220,14 +8220,14 @@ I&#39;d like to be your orbit.</code></pre></td></tr></table>
             <pubDate>Tue, 16 Mar 2021 00:00:00 +1300</pubDate>
             
             <guid>http://semiosis.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/</guid>
-            <description>Emacs package http://github.com/mullikine/emacs/blob/master/config/pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+            <description>Emacs package https://github.com/semiosis/pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
 Demonstration This is GPT-3 completing some text for me.
 I can type a few characters and then GPT-3 will complete the rest of the text.</description>
             <content type="html"><![CDATA[<dl>
 <dt>Emacs package</dt>
-<dd><a href="http://github.com/mullikine/emacs/blob/master/config/pen.el">http://github.com/mullikine/emacs/blob/master/config/pen.el</a></dd>
+<dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a></dd>
 <dt>Prompt</dt>
 <dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt</a></dd>
 </dl>

@@ -7,7 +7,7 @@ draft = false
 +++
 
 Emacs package
-: <http://github.com/mullikine/emacs/blob/master/config/pen.el>
+: <https://github.com/semiosis/pen.el>
 
 
 Prompt
