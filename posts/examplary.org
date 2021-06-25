@@ -19,6 +19,20 @@ but also:
 - generate prompts from an example generator
 - design prompts using design patterns
 
+#+BEGIN_SRC text -n :async :results verbatim code
+  fifth-generation programming language
+  5GL
+      Any programming language based on problem
+      solving using constraints given to the
+      program, rather than using an algorithm
+      written by a programmer.
+      
+      Most constraint-based and logic
+      programming languages and some other
+      declarative languages are fifth-generation
+      languages.
+#+END_SRC
+
 Here are some examples:
 
 #+BEGIN_SRC lisp -n :i clj :async :results verbatim code
