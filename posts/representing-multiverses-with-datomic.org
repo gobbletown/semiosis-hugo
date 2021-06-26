@@ -25,17 +25,6 @@ Something which caught my attention which Rich
 Hickey mentioned was the need for immutability
 and to *not* throw away data, in order to make progress.
 
-In the markdown file linked to above and in
-his videos about Datomic Rich Hickey tells us
-that tells us that mastery comes from always
-working slightly beyond your comfort/ability
-zone, pushing it ever forward. He also
-designed Datomic to efficiently accrete
-and distribute knowledge, whilst remaining
-queryable. It allows you to both offload logic
-to the database and run logic locally which
-would've been conducted on the database.
-
 =|:ϝ∷¦ϝ= also mentioned this when we talked
 about keeping our notes around and one day
 fine-tuning LMs on them.
@@ -144,3 +133,17 @@ database.
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/4EMtFoULbap3OtMKg9HqFojf5.js" id="asciicast-4EMtFoULbap3OtMKg9HqFojf5" async></script>
 #+END_EXPORT
+
+** Learning with Datomic
+In the markdown file linked to above and in
+his videos about Datomic Rich Hickey tells us
+that tells us that mastery comes from always
+working slightly beyond your comfort/ability
+zone, pushing it ever forward.
+
+He also designed Datomic to efficiently
+accrete and distribute knowledge, whilst
+remaining queryable. It allows you to both
+offload logic to the database and run logic
+locally which traditionally would've been
+conducted remotely on the database.
