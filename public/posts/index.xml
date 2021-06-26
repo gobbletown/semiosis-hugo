@@ -6,8 +6,199 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 16 Jun 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Sat, 26 Jun 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Representing multiverses with Datomic</title>
+            <link>http://semiosis.github.io/posts/representing-multiverses-with-datomic/</link>
+            <pubDate>Sat, 26 Jun 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/representing-multiverses-with-datomic/</guid>
+            <description>Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&amp;rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube  Summary I investigate Datomic as an appropriate storage for storing LM generations.
+Something which caught my attention which Rich Hickey mentioned was the need for immutability and to not throw away data, in order to make progress.</description>
+            <content type="html"><![CDATA[<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="https://generative.ink/posts/language-models-are-multiverse-generators/">Language models are multiverse generators <code>::</code>  Moire</a>
+<ul>
+<li><code>|:ϝ∷¦ϝ</code>&rsquo;s blog post on exploring language models.</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=9TYfcyvSpEQ">Datomic with Rich Hickey - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=7Fi-UvrRpyI">Writing Datomic in Clojure - Rich Hickey - YouTube</a></li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>I investigate Datomic as an appropriate
+storage for storing LM generations.</p>
+<p>Something which caught my attention which Rich
+Hickey mentioned was the need for immutability
+and to <strong>not</strong> throw away data, in order to make progress.</p>
+<p><code>|:ϝ∷¦ϝ</code> also mentioned this when we talked
+about keeping our notes around and one day
+fine-tuning LMs on them.</p>
+<p>Since we are now using LM&rsquo;s to facilitate our
+creativity, we need a rock solid and
+distributed foundation for retaining memories.
+Datomic is a great candidate for such a
+database.</p>
+<ul>
+<li>It&rsquo;s a time-travelling database
+<ul>
+<li><a href="https://stackoverflow.com/questions/49309263/how-to-achieve-time-travel-with-clojure/49310124">https://stackoverflow.com/questions/49309263/how-to-achieve-time-travel-with-clojure/49310124</a></li>
+</ul>
+</li>
+<li>An entire database is considered a value.</li>
+<li>Transactions are broken down into functions.</li>
+<li>A local copy is kept inside the application.</li>
+<li>Datomic has a lisp domain specific logic-oriented language embedded for doing querying.
+<ul>
+<li><a href="https://mullikine.github.io/posts/generate-graphviz-and-prolog-from-org-brain/">Generate graphviz and prolog from org-brain // Bodacious Blog</a>
+<ul>
+<li>Datomic is a semantic subset of prolog.</li>
+<li>It&rsquo;s a lisp, so is naturally multidimensional in structure.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="datomic-with-rich-hickey-youtube"><a href="https://www.youtube.com/watch?v=9TYfcyvSpEQ">Datomic with Rich Hickey - YouTube</a></h2>
+<ul>
+<li>Datomic can harness storage from many different storage and database services
+<ul>
+<li>Even relational databases</li>
+</ul>
+</li>
+<li>Has pluggable comparators
+<ul>
+<li>Two sorts that are always maintained
+<ul>
+<li>Primary by entity</li>
+<li>Primary by attribute</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Has both the characteristics of a document store and a column store</li>
+<li>assert and retract are insufficient
+<ul>
+<li>So we have tx-fn (transaction functions)</li>
+</ul>
+</li>
+<li>stable basis
+<ul>
+<li>same query (including time), same result</li>
+</ul>
+</li>
+<li>transactions well defined
+<ul>
+<li>A transaction is a function to a database</li>
+<li>functional accretion</li>
+</ul>
+</li>
+<li>Embedded Datalog
+<ul>
+<li><a href="https://youtu.be/9TYfcyvSpEQ">Datomic with Rich Hickey - YouTube</a></li>
+<li>Subset of Prolog.</li>
+<li>guaranteed termination.</li>
+<li>Set oriented.
+Has set orientation, unlike prolog which
+is tuple at a time.</li>
+<li>A datalog program contains
+<ul>
+<li>db(s) + rules + queries
+<ul>
+<li>one or more databases,</li>
+<li>a set of rules which you can map to views</li>
+<li>a set of queries</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Completely data-driven interface to datalog</li>
+<li>has the power of relational algebra</li>
+<li>It&rsquo;s embedded in clojure
+<ul>
+<li>syntactically subset of Clojure</li>
+<li>semantically subset of prolog</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-datalog-code">Example datalog code</h3>
+<ul>
+<li><a href="https://youtu.be/9TYfcyvSpEQ">Datomic with Rich Hickey - YouTube</a></li>
+</ul>
+<p>Can read this as a map where each key maps to a list.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#e6db74">:find</span> [?customer ?product]
+ <span style="color:#e6db74">:where</span> [[?customer <span style="color:#e6db74">:shipAddress</span> ?addr]
+         [?addr <span style="color:#e6db74">:zip</span> ?zip]
+         [?product <span style="color:#e6db74">:product/weight</span> ?weight]
+
+         [?product <span style="color:#e6db74">:product/price</span> ?price]
+         [(<span style="color:#a6e22e">Shipping/estimate</span> ?zip ?weight) ?shipCost]
+         [(&lt;= ?price ?shipCost)]]}</code></pre></td></tr></table>
+</div>
+</div>
+<p>No joins &ndash; all joins are implicit.</p>
+<p>Unification unifies all the values of customer
+to be the same customer as the product ~~&hellip;</p>
+<h2 id="writing-datomic-in-clojure-rich-hickey-youtube"><a href="https://www.youtube.com/watch?v=7Fi-UvrRpyI">Writing Datomic in Clojure - Rich Hickey - YouTube</a></h2>
+<p>Database is distributed.</p>
+<p>Brings power from database (where
+traditionally it would be found), to the
+application logic.</p>
+<ul>
+<li>The application gets its own brain (datomic database copy)
+<ul>
+<li>The app becomes a peer</li>
+<li>The db is effectively local</li>
+</ul>
+</li>
+</ul>
+<h3 id="datalog">datalog</h3>
+<ul>
+<li>The big advantage over <code>core.logic</code> or <code>prolog</code>
+<ul>
+<li>The semantics of those are tuple at a time</li>
+<li>The semantics of datalog is set at a time
+<ul>
+<li>This means that underneath the hood, entire sets are being merge-joined</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="peer-implementation">Peer implementation</h4>
+<p><a href="https://youtu.be/7Fi-UvrRpyI">Writing Datomic in Clojure - Rich Hickey - YouTube</a></p>
+<h4 id="consistency-and-scale">Consistency and Scale</h4>
+<h4 id="testing">Testing</h4>
+<ul>
+<li>Functional tests</li>
+<li>Simulation-based testing
+<ul>
+<li>I like.</li>
+</ul>
+</li>
+</ul>
+<h2 id="querying-datomic">Querying Datomic</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/4EMtFoULbap3OtMKg9HqFojf5" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/4EMtFoULbap3OtMKg9HqFojf5.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/4EMtFoULbap3OtMKg9HqFojf5.js" id="asciicast-4EMtFoULbap3OtMKg9HqFojf5" async></script>]]></content>
+        </item>
         
         <item>
             <title>explainshell with GPT-3</title>
