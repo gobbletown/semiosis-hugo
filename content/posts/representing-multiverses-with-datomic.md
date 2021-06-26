@@ -105,6 +105,38 @@ No joins -- all joins are implicit.
 Unification unifies all the values of customer
 to be the same customer as the product ~~...
 
+{{< highlight text "linenos=table, linenostart=1" >}}
+unification
+    [#prolog]
+    [operator]
+
+    Essentially a combination of assignment
+    and equality.
+
+    vimlinks +/"?- 2 = 3." "https://learnxinyminutes.com/docs/prolog/"
+
+    If both sides are bound (ie, defined),
+    check equality.
+    2 = 3
+
+    IMPORTANT (the essence of unification):
+    If one side is free (ie, undefined),
+    assign to match the other side.
+    X = 3
+
+    If both sides are free, the assignment is
+    remembered. With some luck, one of the two
+    sides will eventually be bound, but this
+    isn't necessary.
+    X = Y are both free, so Prolog remembers
+    it. Therefore assigning X will also assign
+    Y. IS is another assigment operator in prolog.
+    X = Y, X = 2, Z is Y + 3.
+
+    See:
+        vim +/"modus ponens" "$NOTES/ws/logic/glossary.txt"
+{{< /highlight >}}
+
 
 ## [Writing Datomic in Clojure - Rich Hickey - YouTube](https://www.youtube.com/watch?v=7Fi-UvrRpyI) {#writing-datomic-in-clojure-rich-hickey-youtube}
 
