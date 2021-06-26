@@ -15,8 +15,7 @@
             <pubDate>Sat, 26 Jun 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/representing-multiverses-with-datomic/</guid>
-            <description>Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&amp;rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary I investigate Datomic as an appropriate storage for storing LM generations.
-Something which caught my attention which Rich Hickey mentioned was the need for immutability and to not throw away data, in order to make progress.</description>
+            <description>Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&amp;rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary After reading |:ϝ∷¦ϝ&amp;rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations.</description>
             <content type="html"><![CDATA[<h2 id="related-articles">Related articles</h2>
 <ul>
 <li><a href="https://generative.ink/posts/language-models-are-multiverse-generators/">Language models are multiverse generators <code>::</code>  Moire</a>
@@ -33,8 +32,10 @@ Something which caught my attention which Rich Hickey mentioned was the need for
 </li>
 </ul>
 <h2 id="summary">Summary</h2>
-<p>I investigate Datomic as an appropriate
-storage for storing LM generations.</p>
+<p>After reading <code>|:ϝ∷¦ϝ</code>&rsquo;s blog article
+<a href="https://generative.ink/posts/language-%20models-are-multiverse-generators/">LMs are multiverse generators <code>::</code> Moire</a>, I
+decided to take a closer look into Datomic as
+a possible store for LM generations.</p>
 <p>Something which caught my attention which Rich
 Hickey mentioned was the need for immutability
 and to <strong>not</strong> throw away data, in order to make progress.</p>

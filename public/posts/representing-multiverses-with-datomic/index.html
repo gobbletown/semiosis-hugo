@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&amp;rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary I investigate Datomic as an appropriate storage for storing LM generations.
-Something which caught my attention which Rich Hickey mentioned was the need for immutability and to not throw away data, in order to make progress." />
+<meta name="description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&amp;rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary After reading |:ϝ∷¦ϝ&amp;rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations." />
 <meta name="keywords" content="NLP GPT openai" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -34,24 +33,21 @@ Something which caught my attention which Rich Hickey mentioned was the need for
 
 
 <meta itemprop="name" content="Representing multiverses with Datomic">
-<meta itemprop="description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary I investigate Datomic as an appropriate storage for storing LM generations.
-Something which caught my attention which Rich Hickey mentioned was the need for immutability and to not throw away data, in order to make progress."><meta itemprop="datePublished" content="2021-06-26T00:00:00&#43;12:00" />
+<meta itemprop="description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary After reading |:ϝ∷¦ϝ&rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations."><meta itemprop="datePublished" content="2021-06-26T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-06-26T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="600"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="616"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Representing multiverses with Datomic"/>
-<meta name="twitter:description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary I investigate Datomic as an appropriate storage for storing LM generations.
-Something which caught my attention which Rich Hickey mentioned was the need for immutability and to not throw away data, in order to make progress."/>
+<meta name="twitter:description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary After reading |:ϝ∷¦ϝ&rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations."/>
 
 
 
 
     <meta property="og:title" content="Representing multiverses with Datomic" />
-<meta property="og:description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary I investigate Datomic as an appropriate storage for storing LM generations.
-Something which caught my attention which Rich Hickey mentioned was the need for immutability and to not throw away data, in order to make progress." />
+<meta property="og:description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary After reading |:ϝ∷¦ϝ&rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/representing-multiverses-with-datomic/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-06-26T00:00:00&#43;12:00" />
@@ -172,8 +168,10 @@ Something which caught my attention which Rich Hickey mentioned was the need for
 </li>
 </ul>
 <h2 id="summary">Summary</h2>
-<p>I investigate Datomic as an appropriate
-storage for storing LM generations.</p>
+<p>After reading <code>|:ϝ∷¦ϝ</code>&rsquo;s blog article
+<a href="https://generative.ink/posts/language-%20models-are-multiverse-generators/">LMs are multiverse generators <code>::</code> Moire</a>, I
+decided to take a closer look into Datomic as
+a possible store for LM generations.</p>
 <p>Something which caught my attention which Rich
 Hickey mentioned was the need for immutability
 and to <strong>not</strong> throw away data, in order to make progress.</p>
@@ -372,7 +370,7 @@ conducted remotely on the database.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        600 Words
+        616 Words
       </p>
 
       <p>

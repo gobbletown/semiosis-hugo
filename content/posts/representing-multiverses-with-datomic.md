@@ -18,8 +18,10 @@ draft = false
 
 ## Summary {#summary}
 
-I investigate Datomic as an appropriate
-storage for storing LM generations.
+After reading `|:ϝ∷¦ϝ`'s blog article
+[LMs are multiverse generators `::` Moire](https://generative.ink/posts/language-%20models-are-multiverse-generators/), I
+decided to take a closer look into Datomic as
+a possible store for LM generations.
 
 Something which caught my attention which Rich
 Hickey mentioned was the need for immutability
