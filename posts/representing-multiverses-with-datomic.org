@@ -14,6 +14,8 @@
   - =|:ϝ∷¦ϝ='s blog post on exploring language models.
 - [[https://www.youtube.com/watch?v=9TYfcyvSpEQ][Datomic with Rich Hickey - YouTube]]
 - [[https://www.youtube.com/watch?v=7Fi-UvrRpyI][Writing Datomic in Clojure - Rich Hickey - YouTube]]
+- [[https://gist.github.com/prakhar1989/1b0a2c9849b2e1e912fb][richhickey.md GitHub]]
+  - Rich Hickey on becoming a better developer
 
 ** Summary
 I investigate Datomic as an appropriate
@@ -22,6 +24,17 @@ storage for storing LM generations.
 Something which caught my attention which Rich
 Hickey mentioned was the need for immutability
 and to *not* throw away data, in order to make progress.
+
+In the markdown file linked to above and in
+his videos about Datomic Rich Hickey tells us
+that tells us that mastery comes from always
+working slightly beyond your comfort/ability
+zone, pushing it ever forward. He also
+designed Datomic to efficiently accrete
+and distribute knowledge, whilst remaining
+queryable. It allows you to both offload logic
+to the database and run logic locally which
+would've been conducted on the database.
 
 =|:ϝ∷¦ϝ= also mentioned this when we talked
 about keeping our notes around and one day
