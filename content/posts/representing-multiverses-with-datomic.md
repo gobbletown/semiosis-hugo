@@ -12,6 +12,8 @@ draft = false
     -   `|:ϝ∷¦ϝ`'s blog post on exploring language models.
 -   [Datomic with Rich Hickey - YouTube](https://www.youtube.com/watch?v=9TYfcyvSpEQ)
 -   [Writing Datomic in Clojure - Rich Hickey - YouTube](https://www.youtube.com/watch?v=7Fi-UvrRpyI)
+-   [richhickey.md GitHub](https://gist.github.com/prakhar1989/1b0a2c9849b2e1e912fb)
+    -   Rich Hickey on becoming a better developer
 
 
 ## Summary {#summary}
@@ -144,3 +146,19 @@ application logic.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/4EMtFoULbap3OtMKg9HqFojf5" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/4EMtFoULbap3OtMKg9HqFojf5.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/4EMtFoULbap3OtMKg9HqFojf5.js" id="asciicast-4EMtFoULbap3OtMKg9HqFojf5" async></script>
+
+
+## Learning with Datomic {#learning-with-datomic}
+
+In the markdown file linked to above and in
+his videos about Datomic Rich Hickey tells us
+that tells us that mastery comes from always
+working slightly beyond your comfort/ability
+zone, pushing it ever forward.
+
+He also designed Datomic to efficiently
+accrete and distribute knowledge, whilst
+remaining queryable. It allows you to both
+offload logic to the database and run logic
+locally which traditionally would've been
+conducted remotely on the database.
