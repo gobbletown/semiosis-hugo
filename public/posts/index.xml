@@ -67,6 +67,10 @@ database.</p>
 </ul>
 </li>
 </ul>
+<figure>
+    <img src="/ox-hugo/datomic-memory-engine.png"/> 
+</figure>
+
 <h2 id="datomic-with-rich-hickey-youtube"><a href="https://www.youtube.com/watch?v=9TYfcyvSpEQ">Datomic with Rich Hickey - YouTube</a></h2>
 <ul>
 <li>Datomic can harness storage from many different storage and database services

@@ -47,6 +47,8 @@ database.
         -   Datomic is a semantic subset of prolog.
         -   It's a lisp, so is naturally multidimensional in structure.
 
+{{< figure src="/ox-hugo/datomic-memory-engine.png" >}}
+
 
 ## [Datomic with Rich Hickey - YouTube](https://www.youtube.com/watch?v=9TYfcyvSpEQ) {#datomic-with-rich-hickey-youtube}
 
