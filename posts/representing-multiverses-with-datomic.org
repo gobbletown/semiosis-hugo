@@ -18,8 +18,11 @@
   - Rich Hickey on becoming a better developer
 
 ** Summary
-I investigate Datomic as an appropriate
-storage for storing LM generations.
+After reading =|:ϝ∷¦ϝ='s blog article
+[[https://generative.ink/posts/language-
+models-are-multiverse-generators/][LMs are multiverse generators =::= Moire]], I
+decided to take a closer look into Datomic as
+a possible store for LM generations.
 
 Something which caught my attention which Rich
 Hickey mentioned was the need for immutability
