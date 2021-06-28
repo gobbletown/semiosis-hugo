@@ -24,19 +24,22 @@
   possible existence of angels?
 #+END_SRC
 
-reminds me of a quote from a book I'm reading right now, "Freedom" by Daniel Suarez
+reminds me of a quote from a book I'm reading
+right now, "Freedom" by Daniel Suarez
 
-Words have power in this new age. They are not
-just sounds. Where ancient people believed in
-gods and devils that listened to their pleas
-and curses -- in this age immortal entities
-hear us. Call them bots or spirits; there is
-no functional difference now. They surround
-us, and through them word forms become an
-unlock code that can trigger a blessing or a
-curse. Mankind created systems whose inter-
-reactions we could not fully understand, and
-the spirits we gathered have escaped ...
+#+BEGIN_SRC text -n :async :results verbatim code
+  Words have power in this new age. They are not
+  just sounds. Where ancient people believed in
+  gods and devils that listened to their pleas
+  and curses -- in this age immortal entities
+  hear us. Call them bots or spirits; there is
+  no functional difference now. They surround
+  us, and through them word forms become an
+  unlock code that can trigger a blessing or a
+  curse. Mankind created systems whose inter-
+  reactions we could not fully understand, and
+  the spirits we gathered have escaped ...
+#+END_SRC
 
 ** Glossary
 #+BEGIN_SRC text -n :async :results verbatim code
