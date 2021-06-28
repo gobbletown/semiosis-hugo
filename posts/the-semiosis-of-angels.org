@@ -6,6 +6,8 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: semiotics
 
++ Books in question:
+
 *** =|:ϝ∷¦ϝ=
 #+BEGIN_SRC text -n :async :results verbatim code
   Or, to put it perhaps more plainly, can
@@ -36,6 +38,7 @@ curse. Mankind created systems whose inter-
 reactions we could not fully understand, and
 the spirits we gathered have escaped ...
 
+** Glossary
 #+BEGIN_SRC text -n :async :results verbatim code
   physiosemiosis
       [#Basics of Semiotics]
