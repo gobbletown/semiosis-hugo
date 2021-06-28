@@ -58,6 +58,9 @@ we could not fully understand, and the spirits
 we gathered have escaped ...
 {{< /highlight >}}
 
+The Pyramid of Anthroposemiosis
+: {{< figure src="/ox-hugo/pyramid-of-anthroposemiosis.png" >}}
+
 
 ## Glossary {#glossary}
 
