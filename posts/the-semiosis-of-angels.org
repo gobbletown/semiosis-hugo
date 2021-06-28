@@ -56,6 +56,8 @@ right now, "Freedom" by Daniel Suarez
   we gathered have escaped ...
 #+END_SRC
 
++ The Pyramid of Anthroposemiotics :: [[./pyramid-of-anthroposemiosis.png]]
+
 ** Glossary
 #+BEGIN_SRC text -n :async :results verbatim code
   physiosemiosis
