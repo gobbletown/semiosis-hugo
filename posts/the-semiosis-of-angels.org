@@ -7,7 +7,8 @@
 #+KEYWORDS: semiotics
 
 + Books in question:
-  - The Semiosis of Angels (2004) ([[https://muse.jhu.edu/article/636617/summary][PDF]])
+  - The Semiosis of Angels by John Deely (2004) ([[https://muse.jhu.edu/article/636617/summary][PDF]])
+  - Freedom by Daniel Suarez ([[http://library.lol/main/A5CA1EAB4F3331CB1AC1DE3F4665C17D][PDF]])
 
 *** =|:ϝ∷¦ϝ=
 #+BEGIN_SRC text -n :async :results verbatim code
