@@ -7,6 +7,7 @@
 #+KEYWORDS: semiotics
 
 + Books in question:
+  - The Semiosis of Angels (2004) ([[https://muse.jhu.edu/article/636617/summary][PDF]])
 
 *** =|:ϝ∷¦ϝ=
 #+BEGIN_SRC text -n :async :results verbatim code
