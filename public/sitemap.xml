@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://semiosis.github.io/reviews/</loc>
+    <lastmod>2021-06-28T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-06-28T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/reviews/the-semiosis-of-angels/</loc>
+    <lastmod>2021-06-28T00:00:00+12:00</lastmod>
+  </url><url>
     <loc>http://semiosis.github.io/posts/</loc>
     <lastmod>2021-06-26T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/representing-multiverses-with-datomic/</loc>
-    <lastmod>2021-06-26T00:00:00+12:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/</loc>
     <lastmod>2021-06-26T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/explainshell-with-gpt-3/</loc>
@@ -22,9 +28,6 @@
   </url><url>
     <loc>http://semiosis.github.io/posts/network-exploration-with-nmap-and-emacs/</loc>
     <lastmod>2021-05-05T00:00:00+12:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/reviews/</loc>
-    <lastmod>2021-05-03T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/reviews/subjects-and-universal-grammar/</loc>
     <lastmod>2021-05-03T00:00:00+12:00</lastmod>
