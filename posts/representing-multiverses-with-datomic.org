@@ -188,6 +188,8 @@ conducted remotely on the database.
 ** Additional reading
 *** [[https://www.youtube.com/watch?v=oo-7mN9WXTw][DOMAIN MODELING WITH DATALOG by Norbert Wojtowicz - YouTube]]
 
+[[./datomic-stream.png]]
+
 - Complete notes :: https://github.com/semiosis/code-org-tidbits/blob/master/datomic/domain-modeling-with-datalog.org
 
 Example: github.
