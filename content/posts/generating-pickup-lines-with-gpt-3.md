@@ -10,6 +10,11 @@ Latest version of the pick up lines prompt
 : <http://github.com/mullikine/prompts/blob/master/prompts/pick-up-line.prompt>
 
 
+Original Pick-up-lines prompt by Jan Kolar
+: <https://www.producthunt.com/posts/500-openers-for-tinder-written-by-gpt-3> \\
+    <https://www.reddit.com/r/GPT3/comments/mdl7fl/500%5Fopeners%5Ffor%5Ftinder%5Fwritten%5Fby%5Fgpt3%5Fthe%5Fprompt/>
+
+
 ## Summary {#summary}
 
 I create a prompt in my prompt description
