@@ -35,7 +35,7 @@
 <meta itemprop="name" content="Representing multiverses with Datomic">
 <meta itemprop="description" content="Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary After reading |:ϝ∷¦ϝ&rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations."><meta itemprop="datePublished" content="2021-06-26T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-06-26T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="759"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="852"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -420,6 +420,47 @@ remaining queryable. It allows you to both
 offload logic to the database and run logic
 locally which traditionally would&rsquo;ve been
 conducted remotely on the database.</p>
+<h2 id="additional-reading">Additional reading</h2>
+<h3 id="domain-modeling-with-datalog-by-norbert-wojtowicz-youtube"><a href="https://www.youtube.com/watch?v=oo-7mN9WXTw">DOMAIN MODELING WITH DATALOG by Norbert Wojtowicz - YouTube</a></h3>
+<p>Example: github.
+New users.
+There are 3 users here in our system.
+3 ids means they are different things.
+Each row is a <code>datum</code>.</p>
+<table>
+<thead>
+<tr>
+<th>entity</th>
+<th>attribute</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td><code>:user/name</code></td>
+<td>richhickey</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>:user/name</code></td>
+<td>tonsky</td>
+</tr>
+<tr>
+<td>33</td>
+<td><code>:user/name</code></td>
+<td>pithyless</td>
+</tr>
+</tbody>
+</table>
+<p>We use pattern-matching for querying (Datomic).</p>
+<p>A pattern in this case will be a vector of 3
+elements that represents the EAV structure in
+our database.</p>
+<p>Underscore means I don&rsquo;t care (wildcard).</p>
+<p><code>[11 _ _]</code></p>
+<p>Variables start with a question mark and some
+name i.e. <code>?entity</code>.</p>
 
       </div>
     </article>
@@ -438,7 +479,7 @@ conducted remotely on the database.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        759 Words
+        852 Words
       </p>
 
       <p>

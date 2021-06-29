@@ -198,3 +198,34 @@ remaining queryable. It allows you to both
 offload logic to the database and run logic
 locally which traditionally would've been
 conducted remotely on the database.
+
+
+## Additional reading {#additional-reading}
+
+
+### [DOMAIN MODELING WITH DATALOG by Norbert Wojtowicz - YouTube](https://www.youtube.com/watch?v=oo-7mN9WXTw) {#domain-modeling-with-datalog-by-norbert-wojtowicz-youtube}
+
+Example: github.
+New users.
+There are 3 users here in our system.
+3 ids means they are different things.
+Each row is a `datum`.
+
+| entity | attribute    | value      |
+|--------|--------------|------------|
+| 11     | `:user/name` | richhickey |
+| 22     | `:user/name` | tonsky     |
+| 33     | `:user/name` | pithyless  |
+
+We use pattern-matching for querying (Datomic).
+
+A pattern in this case will be a vector of 3
+elements that represents the EAV structure in
+our database.
+
+Underscore means I don't care (wildcard).
+
+`[11 _ _]`
+
+Variables start with a question mark and some
+name i.e. `?entity`.
