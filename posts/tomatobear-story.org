@@ -13,6 +13,9 @@
 
 + Story origins :: https://github.com/semiosis/tomato-bear-story/blob/master/docs/28.06.21/story-origins.org
 
+** Journal
+*** <2021-06-29 Tue> I have uploaded the story
+
 ** Perspective
 *** Stories will auto-complete one day
 By this, I mean, if I place an incomplete
