@@ -68,6 +68,11 @@ unsafe= true
     url        = "/reviews/"
 
   [[menu.main]]
+    identifier = "stories"
+    name       = "Stories"
+    url        = "/stories/"
+
+  [[menu.main]]
     identifier = "examplary"
     name       = "Examplary"
     url        = "/examplary/"
