@@ -235,3 +235,38 @@ Underscore means I don't care (wildcard).
 
 Variables start with a question mark and some
 name i.e. `?entity`.
+
+
+## Annex {#annex}
+
+I want to mention this excerpt about the
+origins of surreal numbers because I think
+there is some allegory here.
+
+
+### Surreal numbers {#surreal-numbers}
+
+<https://ianopolous.peergos.me/maths/surreal>
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+In 1972, Conway described his system of
+numbers to computer scientist Donald Knuth at
+Stanford.
+
+Knuth (creator of the $\TeX$ typesetting
+system) then went away and wrote a short
+novelette introducing these numbers.
+
+It was the first time for a major mathematical
+discovery to be published in a work of fiction
+first.
+
+Knuth coined the term surreal numbers; taking
+“Sur” from the French for “above”.
+
+The surreal numbers satisfy the axioms for a
+field (but the question of whether or not they
+constitute a field is complicated by the fact
+that, collectively, they are too large to form
+a set).
+{{< /highlight >}}
