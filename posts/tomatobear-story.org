@@ -15,7 +15,7 @@
 
 ** Journal
 *** <2021-06-29 Tue> I have uploaded the story
-I will document the progress of its evolution.
+I will document the progress of its evolution here.
 
 ** Perspective
 *** Stories will auto-complete one day
