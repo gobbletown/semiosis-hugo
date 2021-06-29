@@ -1,7 +1,7 @@
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+OPTIONS: toc:nil
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_BASE_DIR: /home/shane/dump/home/shane/notes/ws/blog/blog
 #+HUGO_SECTION: ./posts
 
 #+TITLE: Representing multiverses with Datomic
@@ -187,6 +187,8 @@ conducted remotely on the database.
 
 ** Additional reading
 *** [[https://www.youtube.com/watch?v=oo-7mN9WXTw][DOMAIN MODELING WITH DATALOG by Norbert Wojtowicz - YouTube]]
+
+- Complete notes :: https://github.com/semiosis/code-org-tidbits/blob/master/datomic/domain-modeling-with-datalog.org
 
 Example: github.
 New users.
