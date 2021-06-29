@@ -15,7 +15,7 @@
             <pubDate>Sat, 26 Jun 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/representing-multiverses-with-datomic/</guid>
-            <description>Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&amp;rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer    Summary After reading |:ϝ∷¦ϝ&amp;rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations.</description>
+            <description>Related articles  Language models are multiverse generators :: Moire  |:ϝ∷¦ϝ&amp;rsquo;s blog post on exploring language models.   Datomic with Rich Hickey - YouTube Writing Datomic in Clojure - Rich Hickey - YouTube richhickey.md GitHub  Rich Hickey on becoming a better developer   Notes: https://github.com/semiosis/code-org-tidbits/blob/master/datomic/basic-query.org  Summary After reading |:ϝ∷¦ϝ&amp;rsquo;s blog article LMs are multiverse generators :: Moire, I decided to take a closer look into Datomic as a possible store for LM generations.</description>
             <content type="html"><![CDATA[<h2 id="related-articles">Related articles</h2>
 <ul>
 <li><a href="https://generative.ink/posts/language-models-are-multiverse-generators/">Language models are multiverse generators <code>::</code>  Moire</a>
@@ -30,6 +30,7 @@
 <li>Rich Hickey on becoming a better developer</li>
 </ul>
 </li>
+<li>Notes: <a href="https://github.com/semiosis/code-org-tidbits/blob/master/datomic/basic-query.org">https://github.com/semiosis/code-org-tidbits/blob/master/datomic/basic-query.org</a></li>
 </ul>
 <h2 id="summary">Summary</h2>
 <p>After reading <code>|:ϝ∷¦ϝ</code>&rsquo;s blog article
@@ -286,6 +287,14 @@ locally which traditionally would&rsquo;ve been
 conducted remotely on the database.</p>
 <h2 id="additional-reading">Additional reading</h2>
 <h3 id="domain-modeling-with-datalog-by-norbert-wojtowicz-youtube"><a href="https://www.youtube.com/watch?v=oo-7mN9WXTw">DOMAIN MODELING WITH DATALOG by Norbert Wojtowicz - YouTube</a></h3>
+<figure>
+    <img src="/ox-hugo/datomic-stream.png"/> 
+</figure>
+
+<dl>
+<dt>Complete notes</dt>
+<dd><a href="https://github.com/semiosis/code-org-tidbits/blob/master/datomic/domain-modeling-with-datalog.org">https://github.com/semiosis/code-org-tidbits/blob/master/datomic/domain-modeling-with-datalog.org</a></dd>
+</dl>
 <p>Example: github.
 New users.
 There are 3 users here in our system.

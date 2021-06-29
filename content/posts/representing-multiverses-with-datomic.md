@@ -14,6 +14,7 @@ draft = false
 -   [Writing Datomic in Clojure - Rich Hickey - YouTube](https://www.youtube.com/watch?v=7Fi-UvrRpyI)
 -   [richhickey.md GitHub](https://gist.github.com/prakhar1989/1b0a2c9849b2e1e912fb)
     -   Rich Hickey on becoming a better developer
+-   Notes: <https://github.com/semiosis/code-org-tidbits/blob/master/datomic/basic-query.org>
 
 
 ## Summary {#summary}
@@ -204,6 +205,11 @@ conducted remotely on the database.
 
 
 ### [DOMAIN MODELING WITH DATALOG by Norbert Wojtowicz - YouTube](https://www.youtube.com/watch?v=oo-7mN9WXTw) {#domain-modeling-with-datalog-by-norbert-wojtowicz-youtube}
+
+{{< figure src="/ox-hugo/datomic-stream.png" >}}
+
+Complete notes
+: <https://github.com/semiosis/code-org-tidbits/blob/master/datomic/domain-modeling-with-datalog.org>
 
 Example: github.
 New users.
