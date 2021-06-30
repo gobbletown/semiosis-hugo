@@ -8,6 +8,7 @@ draft = false
 
 Emacs package
 : <https://github.com/semiosis/pen.el>
+    Help/developers desperately needed in developing `pen.el`! Prompt engineering is very easy so don't be intimidated!
 
 
 Prompt

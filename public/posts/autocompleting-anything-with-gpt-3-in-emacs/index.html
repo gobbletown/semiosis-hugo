@@ -5,11 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Emacs package https://github.com/semiosis/pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta name="description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&amp;rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
-Demonstration This is GPT-3 completing some text for me.
-I can type a few characters and then GPT-3 will complete the rest of the text." />
+Demonstration This is GPT-3 completing some text for me." />
 <meta name="keywords" content="NLP GPT openai" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -37,33 +36,30 @@ I can type a few characters and then GPT-3 will complete the rest of the text." 
 
 
 <meta itemprop="name" content="Autocompleting anything with GPT-3 in emacs">
-<meta itemprop="description" content="Emacs package https://github.com/semiosis/pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta itemprop="description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
-Demonstration This is GPT-3 completing some text for me.
-I can type a few characters and then GPT-3 will complete the rest of the text."><meta itemprop="datePublished" content="2021-03-16T00:00:00&#43;13:00" />
+Demonstration This is GPT-3 completing some text for me."><meta itemprop="datePublished" content="2021-03-16T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-03-16T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="1178"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1193"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Autocompleting anything with GPT-3 in emacs"/>
-<meta name="twitter:description" content="Emacs package https://github.com/semiosis/pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta name="twitter:description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
-Demonstration This is GPT-3 completing some text for me.
-I can type a few characters and then GPT-3 will complete the rest of the text."/>
+Demonstration This is GPT-3 completing some text for me."/>
 
 
 
 
     <meta property="og:title" content="Autocompleting anything with GPT-3 in emacs" />
-<meta property="og:description" content="Emacs package https://github.com/semiosis/pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta property="og:description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
-Demonstration This is GPT-3 completing some text for me.
-I can type a few characters and then GPT-3 will complete the rest of the text." />
+Demonstration This is GPT-3 completing some text for me." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-16T00:00:00&#43;13:00" />
@@ -170,7 +166,8 @@ I can type a few characters and then GPT-3 will complete the rest of the text." 
       <div class="post-content">
         <dl>
 <dt>Emacs package</dt>
-<dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a></dd>
+<dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a>
+Help/developers desperately needed in developing <code>pen.el</code>! Prompt engineering is very easy so don&rsquo;t be intimidated!</dd>
 <dt>Prompt</dt>
 <dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt</a></dd>
 </dl>
@@ -656,7 +653,7 @@ generators.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1178 Words
+        1193 Words
       </p>
 
       <p>
