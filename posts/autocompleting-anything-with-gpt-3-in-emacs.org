@@ -10,6 +10,7 @@
 #+KEYWORDS: GPT-3 openai emacs
 
 + Emacs package :: https://github.com/semiosis/pen.el
+  Help/developers desperately needed in developing =pen.el=! Prompt engineering is very easy so don't be intimidated!
 
 + Prompt :: http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt
 
