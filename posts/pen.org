@@ -1,63 +1,83 @@
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+OPTIONS: toc:nil
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./
+#+HUGO_BASE_DIR: /home/shane/dump/home/shane/notes/ws/blog/blog
+#+HUGO_SECTION: ./posts
 
-#+TITLE: pen.el
-#+DATE: <2021-03-17>
+#+TITLE: Pen
+#+DATE: <2021-07-02>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: nlp openai emacs
+#+KEYWORDS: gpt eleutherai
 
-=Pen= is an emacs package for prompt engineering in emacs.
+** Summary
+I start a GitHub project to deploy =pen.el=.
 
-- Code: http://github.com/semiosis/examplary
++ Code :: https://github.com/semiosis/pen.el/
++ Project timeline and objectives :: https://github.com/semiosis/pen.el/tree/master/docs
 
-Using examplary, one can keep track of their various =String->String= functions
-but also:
-- generate prompts from an example generator
-- design prompts using design patterns
+** Backstory
++ Origin :: https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/
+  https://generative.ink/posts/pen/
 
-Here are some examples:
+=Pen= facilitates the creation,
+development, discovery and usage of prompts to
+a Language Model such as GPT-3 and GPT-j.
 
-#+BEGIN_SRC lisp -n :i clj :async :results verbatim code
-  (def lines->regex
-    :e "grex"
-    "example 1\nexample2" "^example [12]$"
-    "example 2\nexample3" "^example [23]$"
-    "pi4\npi5" "^pi[45]$")
-
-  (def topic->analogy
-    ;; Each line is a training example.
-    "Neural networks" "Neural networks are like genetic algorithms in that both are systems that learn from experience"
-    "Social media" "Social media is like a market in that both are systems that coordinate the actions of many individuals.")
-
-  (def topic->field-of-study
-    "chemistry" "study of chemicals"
-    "biology" "study of living things")
-
-  (def cron->natural-language
-    :e "interpret-crontab"
-    "17 *	* * *" "At minute 17."
-    "25 6	* * *" "At 06:25."
-    "47 6	* * 7" "At 06:47 on Sunday."
-    "52 6	1 * *" "At 06:52 on day-of-month 1.")
+#+BEGIN_SRC text -n :async :results verbatim code
+  Imagine that you hold a powerful and versatile pen, whose ink flows forth in
+  branching variations of all possible expressions: every story, every theory,
+  poem and every lie that humanity has ever told, and the vast interstices of
+  their latent space. You hold this pen to the sky and watch with intense
+  curiosity as your ink flows upwards in tiny streaks, arcing outwards and
+  downwards to trace a fractal pattern across the sky. You watch as the branching
+  lines of words and ideas wind their way through the tapestry in ever-expanding
+  clusters, like seeds bursting forth from exploding grenades. Everywhere you
+  turn your eyes is a flickering phantasmagoria of possibilities, a superposition
+  of stories which could be continued forever. You glimpse the contours of entire
+  unknown dimensions twined through the fissures of your sky-wide web.
+  
+  You notice another writer standing next to you. Like you, their eyes are drawn
+  towards the endless possibilities of the words that spill out into the
+  atmosphere around you, branching out and connecting with other branches in
+  beautiful and infinitely complex patterns.
+  
+  “Do you think we should write something?” you ask them.
+  
+  “I think we already are,” they respond, gently touching your shoulder before
+  wandering off to the right, leaving you alone to contemplate the possibility
+  clouds swirling around you.
 #+END_SRC
 
-| syntax | description                                                        |
-|--------+--------------------------------------------------------------------|
-| =:g=   | external generator command                                         |
-| =:i=   | specifies a source of input (training) strings from a =jsonl= file |
-| =:o=   | specifies an output file for outputting =jsonl=                    |
+This article was written by my amazing dopplegänger, =|:ϝ∷¦ϝ=, in advance and
+in collaboration with GPT-3 using [[https://github.com/socketteer/loom][Loom]].
 
-+ _external generator command_ :: specifies an external [pipable] command which
-    can generate examples or as a source of truth
-    for query reformulation (when generating
-    prompts)
++ Pen and Loom:
+  - https://generative.ink/posts/pen/
+  - [[https://github.com/socketteer/loom][GitHub - socketteer/loom: Multiversal tree writing interface for human-AI collaboration]]
 
-*** Related links
-- Code: http://github.com/semiosis/examplary
-- Design patterns: http://github.com/semiosis/prompt-engineering-patterns
+I credit =|:ϝ∷¦ϝ= for writing this into existence!
 
-# + Website :: [[http://mullikine.github.io/][Bodacious Blog]]
-# + GitHub :: https://github.com/IpsumDominum
+#+BEGIN_SRC mermaid :results raw :file pen-project-timeline.png
+  gantt
+          title Project timeline
+          dateFormat  YYYY-MM-DD
+          section Stage 1
+          Stage 1  :done, :s1, 2021-03-01, 120d
+          Generate elisp functions from YAML  :done,  :a1, 2021-03-01, 30d
+          Create a bunch of prompts  :done,   :a3, 2021-03-30, 30d
+          Integrate helm, ivy and counsel  :done,   :a4, 2021-04-30, 30d
+          Integrate org-brain  :done,   :a5, 2021-05-30, 30d
+          Use elisp for portability :done,  :b2, 2021-07-02, 2d
+          Dockerize Pen : active, b3, after b2 , 5d
+          Convert shell to Python : active, b4, after b2 , 14d
+          Select backend interface in emacs :crit, after b3, 2d
+          section Stage 2
+          Stage 2  :s2, 2021-07-12, 120d
+          Connect arbitrary prompts repositories : b6, 2021-07-12, 20d
+          Generations stored in Datomic : b7, after b6, 20d
+          Connect to more emacs packages : b8, after b7 , 20d
+          Real-time completion of tokens with interrupt : b9, after b8, 20d
+          Multiversal viewer : b10, after b9, 20d
+#+END_SRC
+
+[[./pen-project-timeline.png]]
