@@ -20,7 +20,7 @@ Project timeline and objectives
 ## Backstory {#backstory}
 
 Origin
-: <https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/>
+: <https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/> \\
     <https://generative.ink/posts/pen/>
 
 `Pen` facilitates the creation,
@@ -84,4 +84,4 @@ gantt
         Multiversal viewer : b10, after b9, 20d
 ```
 
-{{< figure src="./pen-project-timeline.png" >}}
+{{< figure src="/ox-hugo/pen-project-timeline.png" >}}
