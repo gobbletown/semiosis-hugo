@@ -91,5 +91,3 @@ gantt
 ```
 
 {{< figure src="/ox-hugo/pen-project-timeline.png" >}}
-
-{{< figure src="/ox-hugo/pen-project-timeline.png" >}}
