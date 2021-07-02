@@ -88,5 +88,3 @@ I credit =|:ϝ∷¦ϝ= for writing this into existence!
 
 #+RESULTS:
 [[file:pen-project-timeline.png]]
-
-[[./pen-project-timeline.png]]
