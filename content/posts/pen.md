@@ -2,7 +2,7 @@
 title = "Pen"
 author = ["Shane Mulligan"]
 date = 2021-07-02T00:00:00+12:00
-keywords = ["gpt", "eleutherai"]
+keywords = ["gpt", "eleutherai", "huggingface"]
 draft = false
 +++
 
@@ -61,33 +61,16 @@ in collaboration with GPT-3 using [Loom](https://github.com/socketteer/loom).
 
 I credit `|:ϝ∷¦ϝ` for writing this into existence!
 
-```mermaid
-gantt
-        title Project timeline
-        dateFormat  YYYY-MM-DD
-        section Stage 1
-        Stage 1  :done, :s1, 2021-03-01, 120d
-        Generate elisp functions from YAML  :done,  :a1, 2021-03-01, 30d
-        Create a bunch of prompts  :done,   :a3, 2021-03-30, 30d
-        Integrate helm, ivy and counsel  :done,   :a4, 2021-04-30, 30d
-        Integrate org-brain  :done,   :a5, 2021-05-30, 30d
-        Use elisp for portability :done,  :b2, 2021-07-02, 2d
-        Dockerize Pen : active, b3, after b2 , 5d
-        Convert shell to Python : active, b4, after b2 , 14d
-        Select backend interface in emacs :crit, after b3, 2d
-        section Stage 2
-        Stage 2  :s2, 2021-07-12, 120d
-        Prompt Catalog : b6a, 2021-07-12, 20d
-        Imaginary interpreter + imaginary-mode : b11, 2021-07-12, 20d
-        Incorporate semantic search : b12, 2021-07-12, 20d
-        Connect arbitrary prompts repositories : b6, 2021-07-12, 20d
-        Generations stored in Datomic : b7, after b6, 20d
-        Connect to more emacs packages : b8, after b7 , 20d
-        Real-time completion of tokens with interrupt : b9, after b8, 20d
-        Multiversal viewer : b10, after b9, 20d
-        section Stage 3
-        Stage 3  :s3, 2021-12-12, 120d
-        Incorporate OpenAI Codex model : c1, 2021-12-12, 1d
-```
-
 {{< figure src="/ox-hugo/pen-project-timeline.png" >}}
+
+
+## Journal {#journal}
+
+
+### 07.07.21 {#07-dot-07-dot-21}
+
+The project has been excised from my main `emacs.d`.
+
+Now the plan is to incorporate the backend of
+`loom` so the completions are faster and there
+is less reliance on shell scripts.
