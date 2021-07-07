@@ -44,7 +44,7 @@ unsafe= true
   [languages.en]
     title = "semiosis"
     subtitle = "Signs, Natural Language and Coding"
-    keywords = "NLP GPT openai"
+    keywords = "NLP GPT OpenAI EleutherAI Huggingface AGI"
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
 
@@ -71,6 +71,11 @@ unsafe= true
     identifier = "stories"
     name       = "Stories"
     url        = "/stories/"
+
+  [[menu.main]]
+    identifier = "pen"
+    name       = "Pen"
+    url        = "/pen/"
 
   [[menu.main]]
     identifier = "examplary"
