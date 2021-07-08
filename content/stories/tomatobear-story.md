@@ -14,14 +14,6 @@ Story origins
 : <https://github.com/semiosis/tomato-bear-story/blob/master/docs/28.06.21/story-origins.org>
 
 
-## Journal {#journal}
-
-
-### <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-29 Tue&gt; </span></span> I have uploaded the story {#i-have-uploaded-the-story}
-
-I will document the progress of its evolution here.
-
-
 ## Perspective {#perspective}
 
 
@@ -36,3 +28,18 @@ now, if I want.
 
 Therefore, I must focus on connecting things
 to sources of immutable truth.
+
+
+### Journal {#journal}
+
+
+#### <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-29 Tue&gt; </span></span> I have uploaded the story {#i-have-uploaded-the-story}
+
+I will document the progress of its evolution here.
+
+
+#### <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-07-08 Thu&gt; </span></span> Here is an image of Tomato Bear {#here-is-an-image-of-tomato-bear}
+
+Conceived as a sculpture by Chen and Milly.
+
+{{< figure src="/ox-hugo/tomato-bear.jpg" >}}
