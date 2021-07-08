@@ -74,3 +74,9 @@ The project has been excised from my main `emacs.d`.
 Now the plan is to incorporate the backend of
 `loom` so the completions are faster and there
 is less reliance on shell scripts.
+
+
+### 08.07.21 {#08-dot-07-dot-21}
+
+A zone plate has been chosen as the minor-mode lighter.
+This is because `|:ϝ∷¦ϝ` likes zone plates and also used it as the logo to `loom`.
