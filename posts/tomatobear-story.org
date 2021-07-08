@@ -13,10 +13,6 @@
 
 + Story origins :: https://github.com/semiosis/tomato-bear-story/blob/master/docs/28.06.21/story-origins.org
 
-** Journal
-*** <2021-06-29 Tue> I have uploaded the story
-I will document the progress of its evolution here.
-
 ** Perspective
 *** Stories will auto-complete one day
 By this, I mean, if I place an incomplete
@@ -28,3 +24,13 @@ now, if I want.
 
 Therefore, I must focus on connecting things
 to sources of immutable truth.
+
+*** Journal
+**** <2021-06-29 Tue> I have uploaded the story
+ I will document the progress of its evolution here.
+
+**** <2021-07-08 Thu> Here is an image of Tomato Bear
+
+Conceived as a sculpture by Chen and Milly.
+
+[[./tomato-bear.jpg]]
