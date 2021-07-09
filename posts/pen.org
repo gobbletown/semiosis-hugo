@@ -7,7 +7,7 @@
 #+TITLE: Pen (Prompt Engineering in Emacs)
 #+DATE: <2021-07-02>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt eleutherai huggingface
+#+KEYWORDS: pen gpt eleutherai huggingface
 
 ** Summary
 I start a GitHub project to deploy =pen.el=.
