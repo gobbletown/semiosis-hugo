@@ -7,21 +7,53 @@
 #+TITLE: Pen (Prompt Engineering in Emacs)
 #+DATE: <2021-07-02>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: pen gpt eleutherai huggingface
+#+KEYWORDS: emacs gpt eleutherai huggingface
 
-** Summary
+** Introducing =Pen=
 I start a GitHub project to deploy =pen.el=.
 
-+ Code :: https://github.com/semiosis/pen.el/
++ GitHub project :: [[https://github.com/semiosis/pen.el/][GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI's GPT-3 or EleutherAI's GPT-j.]]
 + Project timeline and objectives :: https://github.com/semiosis/pen.el/tree/master/docs
++ Prompt README :: [[http://github.com/semiosis/prompts/blob/master/README.org][prompts/README.org at master  semiosis/prompts  GitHub]]
 
-** Backstory
-+ Origin :: https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/ \
-  https://generative.ink/posts/pen/
+=Pen= facilitates the creation,
+development, discovery and usage of prompts to
+a Language Model such as OpenAI's =GPT-3= or EleutherAI's =GPT-j=.
+
+- Create elisp functions based on "Language Model" prompts
+- Chain prompts together using keyboard macros and functions
+- Interactively query, generate and transfrom both prose and code
+- Use the LM as a search engine and a semantic search engine within emacs
+  - Search the internet
+  - Search documents
+    - https://beta.openai.com/docs/introduction/semantic-search
+    - https://gpttools.com/semanticsearch
+
+The Prompt =README= will teach you how to
+write and test prompts for =pen.el=
+
+For example, here is a very basic prompt file.
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  title: "Once upon a time there"
+  prompt: "Complete this sentence"
+  temperature: 0.8
+  max-tokens: 60
+#+END_SRC
+
+Completing this prompt will start writing a story for you.
+
+** Backstory of =Pen=
++ Origin #1 :: [[https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/][Creating a playground for GPT-3 in emacs =::=]]
++ Origin #2 :: [[https://generative.ink/posts/pen/][Pen =::=  Moire]]
 
 =Pen= facilitates the creation,
 development, discovery and usage of prompts to
 a Language Model such as GPT-3 and GPT-j.
+
+Here is a story by Prompt Researcher Laria,
+written by =GPT-3= and herself. Her blog is
+https://generative.ink/.
 
 #+BEGIN_SRC text -n :async :results verbatim code
   Imagine that you hold a powerful and versatile pen, whose ink flows forth in
@@ -48,14 +80,16 @@ a Language Model such as GPT-3 and GPT-j.
   clouds swirling around you.
 #+END_SRC
 
-This article was written by my amazing dopplegänger, =|:ϝ∷¦ϝ=, in advance and
-in collaboration with GPT-3 using [[https://github.com/socketteer/loom][Loom]].
+This article was written by my amazing
+dopplegänger, =|:ϝ∷¦ϝ= (Laria), in advance and
+in collaboration with GPT-3 using
+[[https://github.com/socketteer/loom][Loom]].
 
 + Pen and Loom:
   - https://generative.ink/posts/pen/
   - [[https://github.com/socketteer/loom][GitHub - socketteer/loom: Multiversal tree writing interface for human-AI collaboration]]
 
-I credit =|:ϝ∷¦ϝ= for writing this into existence!
+I credit =|:ϝ∷¦ϝ= for writing =Pen= into existence!
 
 [[./pen-project-timeline.png]]
 
