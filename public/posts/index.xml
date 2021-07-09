@@ -1606,6 +1606,170 @@ repl_run<span style="color:#f92672">()</span> <span style="color:#f92672">{</spa
         </item>
         
         <item>
+            <title>GPT-3 assistants for emacs modes</title>
+            <link>http://semiosis.github.io/posts/gpt-3-assistants-for-emacs-modes/</link>
+            <pubDate>Wed, 02 Jun 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/gpt-3-assistants-for-emacs-modes/</guid>
+            <description>Summary I&amp;rsquo;m looking for places to integrate GPT-3 into emacs.
+Context menus for refactoring stuff is good.
+I&amp;rsquo;d also like to make some personal assistants, so I can do things like select error messages and ask what they mean.
+Please see my article on Pen (Prompt Engineering in emacs) Pen // Bodacious Blog.
+Please email me if you would like to help: mailto:mullikine@gmail.com.
+Pen facilitates the creation, development, discovery and usage of prompts to a LM such as GPT-3 and GPT-j.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I&rsquo;m looking for places to integrate GPT-3 into emacs.</p>
+<p>Context menus for refactoring stuff is good.</p>
+<p>I&rsquo;d also like to make some personal
+assistants, so I can do things like select
+error messages and ask what they mean.</p>
+<p>Please see my article on <code>Pen</code> (Prompt Engineering in emacs) <a href="https://mullikine.github.io/posts/pen/">Pen // Bodacious Blog</a>.</p>
+<p>Please email me if you would like to help: <a href="mailto:mullikine@gmail.com">mailto:mullikine@gmail.com</a>.</p>
+<p>Pen facilitates the creation, development,
+discovery and usage of prompts to a LM such as
+GPT-3 and GPT-j.</p>
+<dl>
+<dt><code>pen.el</code> code</dt>
+<dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a></dd>
+</dl>
+<h2 id="shell"><code>shell</code></h2>
+<p>This is what I want to integrate into emacs.</p>
+<h3 id="asktutor"><code>asktutor</code></h3>
+<dl>
+<dt>Code</dt>
+<dd><a href="https://github.com/semiosis/pen.el/blob/master/scripts/openai-complete.sh">https://github.com/semiosis/pen.el/blob/master/scripts/openai-complete.sh</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">asktutor haskell ghc <span style="color:#e6db74">&#34;What does could not deduce mean?&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+topic<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+test -n <span style="color:#e6db74">&#34;</span>$topic<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> exit <span style="color:#ae81ff">1</span>
+shift
+
+in_the_context_of<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+test -n <span style="color:#e6db74">&#34;</span>$in_the_context_of<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> exit <span style="color:#ae81ff">1</span>
+shift
+
+question<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+test -n <span style="color:#e6db74">&#34;</span>$question<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> exit <span style="color:#ae81ff">1</span>
+
+<span style="color:#66d9ef">if</span> ! pl <span style="color:#e6db74">&#34;</span>$question<span style="color:#e6db74">&#34;</span> | grep -q -P <span style="color:#e6db74">&#34;.*\\?&#34;</span>; <span style="color:#66d9ef">then</span>
+    question<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>question<span style="color:#e6db74">}</span><span style="color:#e6db74">?&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+oci openai-complete $MYGIT/semiosis/prompts/prompts/tutor.prompt <span style="color:#e6db74">&#34;</span>$topic<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$in_the_context_of<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$question<span style="color:#e6db74">&#34;</span> | pavs</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cq haskell could not deduce from the context</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="converting-above-into-elisp-together-with-a-prompt-function">Converting above into elisp together with a prompt function</h2>
+<p><code>pen-pf-asktutor</code> is generated from a <code>.prompt</code> file.</p>
+<h3 id="pen-tutor-mode-assist"><code>pen-tutor-mode-assist</code></h3>
+<dl>
+<dt>Code</dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/pen-contrib.el">http://github.com/semiosis/pen.el/blob/master/pen-contrib.el</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-tutor-mode-assist (query)
+  (interactive (let* ((bl (buffer-language <span style="color:#66d9ef">t</span> <span style="color:#66d9ef">t</span>)))
+                 (<span style="color:#a6e22e">list</span>
+                  (read-string-hist
+                   (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;asktutor (&#34;</span> bl <span style="color:#e6db74">&#34;): &#34;</span>)
+                   (my/thing-at-point)))))
+  (pen-pf-asktutor bl bl query))</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="right-click-context-click-menu"><code>right-click-context-click-menu</code></h3>
+<dl>
+<dt>Right click menu code</dt>
+<dd><a href="https://github.com/semiosis/pen.el/blob/master/pen-right-click-menu.el#L126">https://github.com/semiosis/pen.el/blob/master/pen-right-click-menu.el#L126</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#e6db74">&#34;GPT-3: Convert Haskell to Clojure&#34;</span>
+ :call pen-pf-translate-haskell-to-clojure
+ :if (gpt-test-haskell))
+(<span style="color:#e6db74">&#34;pen (code)&#34;</span>
+ (<span style="color:#e6db74">&#34;asktutor&#34;</span>
+  :call pen-tutor-mode-assist
+  :if (major-mode-p <span style="color:#e6db74">&#39;prog-mode</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="tutor-gpt-3-prompt-in-yaml">Tutor <code>GPT-3</code> prompt in <code>yaml</code></h2>
+<figure>
+    <img src="./tutor-code.png"/> 
+</figure>
+
+<p><code>tutor.prompt</code></p>
+<dl>
+<dt>Tutor prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt">http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt</a></dd>
+<dt>Tutor elisp code</dt>
+<dd><a href="https://github.com/semiosis/pen.el/blob/master/pen-brain.el#L98">https://github.com/semiosis/pen.el/blob/master/pen-brain.el#L98</a></dd>
+</dl>
+]]></content>
+        </item>
+        
+        <item>
             <title>Generate graphviz and prolog from org-brain</title>
             <link>http://semiosis.github.io/posts/generate-graphviz-and-prolog-from-org-brain/</link>
             <pubDate>Thu, 06 May 2021 00:00:00 +1200</pubDate>
