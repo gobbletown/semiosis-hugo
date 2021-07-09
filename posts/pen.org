@@ -45,7 +45,7 @@ Completing this prompt will start writing a story for you.
 
 ** Backstory of =Pen=
 + Origin #1 :: [[https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/][Creating a playground for GPT-3 in emacs =::=]]
-+ Origin #2 :: [[https://generative.ink/posts/pen/][Pen =::=  Moire]]
++ Origin #2 :: [[https://generative.ink/posts/pen/][Pen =::=  Moire]] (Laria's blog)
 
 Here is a story by Prompt Researcher Laria,
 written by =GPT-3= and herself. Her blog is
