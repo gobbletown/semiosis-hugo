@@ -53,15 +53,10 @@ Origin #1
 : [Creating a playground for GPT-3 in emacs `::`](https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/)
 
 Origin #2
-: [Pen `::`  Moire](https://generative.ink/posts/pen/)
+: [Pen `::`  Moire](https://generative.ink/posts/pen/) (moire's blog)
 
-`Pen` facilitates the creation,
-development, discovery and usage of prompts to
-a Language Model such as GPT-3 and GPT-j.
-
-Here is a story by Prompt Researcher Laria,
-written by `GPT-3` and herself. Her blog is
-<https://generative.ink/>.
+Here is a story by Prompt Researcher [pseudonym] moire,
+written in collaboration with `GPT-3`.
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 Imagine that you hold a powerful and versatile pen, whose ink flows forth in
@@ -89,7 +84,7 @@ clouds swirling around you.
 {{< /highlight >}}
 
 This article was written by my amazing
-dopplegänger, `|:ϝ∷¦ϝ` (Laria), in advance and
+dopplegänger, `|:ϝ∷¦ϝ` (moire), in advance and
 in collaboration with GPT-3 using
 [Loom](https://github.com/socketteer/loom).
 
