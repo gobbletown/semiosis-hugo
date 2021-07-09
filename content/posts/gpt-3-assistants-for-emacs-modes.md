@@ -8,45 +8,67 @@ draft = false
 
 ## Summary {#summary}
 
-I'm looking for places to integrate GPT-3 into emacs.
+In this article I will show how I transition
+from using shell script to emacs lisp with my
+'any topic' tutor in emacs lisp.
 
-Context menus for refactoring stuff is good.
+I am working on integrating GPT-3, GPT-j and
+more GPT completion engines into emacs, and
+connecting more and more emacs packages to
+GPT-3.
 
-I'd also like to make some personal
-assistants, so I can do things like select
-error messages and ask what they mean.
+Some ideas I have:
 
-Please see my article on `Pen` (Prompt Engineering in emacs) [Pen // Bodacious Blog](https://mullikine.github.io/posts/pen/).
+-   Correct spelling and grammar in conversations over `erc` and other `emacs` chat modes.
+-   Select error messages and ask what they mean.
 
-Please email me if you would like to help: <mailto:mullikine@gmail.com>.
+What I've already built:
+
+-   Context menus for selecting text and running prompt functions on that text
+    -   Translating
+    -   Context-aware functions
+    -   Natural language shell for any OS.
+    -   Explain shell code.
+    -   Get a code snippet.
+    -   Get a code one-liner.
+    -   Generate code from comments.
+    -   Automatically add comments to code
+    -   Ask GPT-3, "What is the word for ..."
+    -   Abstractive summarization of text within emacs.
+    -   Subtopic generation for mind maps
+    -   Tutor for any topic
+        -   e.g. JavaScript. Ask it which version of node was available in 2018.
+    -   Generate lists of things
+
+
+### Introducing `pen.el` (Prompt Engineering in emacs) {#introducing-pen-dot-el--prompt-engineering-in-emacs}
+
+Please see my article on `Pen`  [Pen // Bodacious Blog](https://mullikine.github.io/posts/pen/).
 
 Pen facilitates the creation, development,
 discovery and usage of prompts to a LM such as
 GPT-3 and GPT-j.
 
-`pen.el` code
+And please email me if you would like to help: <mailto:mullikine@gmail.com>.
+
+Pen Project on GitHub
 : <https://github.com/semiosis/pen.el>
 
 
-## `shell` {#shell}
+## Original `shell` script, `asktutor` {#original-shell-script-asktutor}
 
-This is what I want to integrate into emacs.
+`asktutor` queries the OpenAI API via the python library (`pip install openai`).
 
-
-### `asktutor` {#asktutor}
-
-Code
-: <https://github.com/semiosis/pen.el/blob/master/scripts/openai-complete.sh>
-
-<!--listend-->
+This is how it is called:
 
 {{< highlight sh "linenos=table, linenostart=1" >}}
 asktutor haskell ghc "What does could not deduce mean?"
 {{< /highlight >}}
 
+Here is its code:
+
 {{< highlight bash "linenos=table, linenostart=1" >}}
 #!/bin/bash
-export TTY
 
 topic="$1"
 test -n "$topic" || exit 1
@@ -66,17 +88,30 @@ fi
 oci openai-complete $MYGIT/semiosis/prompts/prompts/tutor.prompt "$topic" "$in_the_context_of" "$question" | pavs
 {{< /highlight >}}
 
-{{< highlight sh "linenos=table, linenostart=1" >}}
-cq haskell could not deduce from the context
-{{< /highlight >}}
-
 
 ## Converting above into elisp together with a prompt function {#converting-above-into-elisp-together-with-a-prompt-function}
 
-`pen-pf-asktutor` is generated from a `.prompt` file.
+`pen-pf-asktutor` is generated from a `.prompt` file (<http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt>).
 
+Here is the generation function, `pen-generate-prompt-functions`: <https://github.com/semiosis/pen.el/blob/master/pen.el#L131>
 
-### `pen-tutor-mode-assist` {#pen-tutor-mode-assist}
+Now we can use `pen-pf-asktutor` inside `org-
+brain`. We supply the parent node as the
+context to the function.
+
+Org-brain tutor code
+: <https://github.com/semiosis/pen.el/blob/master/pen-brain.el#L98>
+
+The prompt function calls a simple shell script (`openai-complete.sh`) which sends the final templated prompt to the OpenAI API.
+
+This can be substituted for other completers such as GPT-j.
+
+`openai-complete.sh`
+: <https://github.com/semiosis/pen.el/blob/master/scripts/openai-complete.sh>
+
+`pen-tutor-mode-assist` is another example of using the same prompt function.
+
+`M-x pen-tutor-mode-assist`, enter your query and have the answer displayed in a new buffer.
 
 Code
 : <http://github.com/semiosis/pen.el/blob/master/pen-contrib.el>
@@ -94,7 +129,13 @@ Code
 {{< /highlight >}}
 
 
-### `right-click-context-click-menu` {#right-click-context-click-menu}
+## `right-click-context-click-menu` {#right-click-context-click-menu}
+
+This is an example of connecting a prompt function to `right-click-context-menu`.
+
+GPT language models are capable of classification as well as generation.
+
+Classification is just a downstream task of generation, it seems.
 
 Right click menu code
 : <https://github.com/semiosis/pen.el/blob/master/pen-right-click-menu.el#L126>
@@ -114,13 +155,4 @@ Right click menu code
 
 ## Tutor `GPT-3` prompt in `yaml` {#tutor-gpt-3-prompt-in-yaml}
 
-{{< figure src="./tutor-code.png" >}}
-
-`tutor.prompt`
-
-Tutor prompt
-: <http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt>
-
-
-Tutor elisp code
-: <https://github.com/semiosis/pen.el/blob/master/pen-brain.el#L98>
+{{< figure src="/ox-hugo/tutor-code.png" >}}
