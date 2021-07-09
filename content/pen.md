@@ -1,5 +1,5 @@
 +++
-title = "Pen"
+title = "Pen (Prompt Engineering in Emacs)"
 author = ["Shane Mulligan"]
 date = 2021-07-02T00:00:00+12:00
 keywords = ["gpt", "eleutherai", "huggingface"]
