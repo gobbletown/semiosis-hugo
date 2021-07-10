@@ -167,7 +167,7 @@ future-titles:- Get code snippet
 {{< /highlight >}}
 
 <!-- Play on asciinema.com -->
-<a title="asciinema recording" href="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY.svg" /></a>
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY.js" id="asciicast-foNqrgSZLJcDPDsaqanffOJSY" async></script>
 
