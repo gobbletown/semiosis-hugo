@@ -84,7 +84,7 @@ Here is its code:
   oci openai-complete $MYGIT/semiosis/prompts/prompts/tutor.prompt "$topic" "$in_the_context_of" "$question" | pavs
 #+END_SRC
 
-** Converting above into elisp together with a prompt function
+*** Converting above into elisp together with a prompt function
 =pen-pf-asktutor= is generated from a =.prompt= file (http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt).
 
 Here is the generation function, =pen-generate-prompt-functions=: https://github.com/semiosis/pen.el/blob/master/pen.el#L131
@@ -116,6 +116,47 @@ This can be substituted for other completers such as GPT-j.
                      (my/thing-at-point)))))
     (pen-pf-asktutor bl bl query))
 #+END_SRC
+
+** Original =shell= script, =cq=
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+  
+  ( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+  
+  topic="$1"
+  test -n "$topic" || exit 1
+  shift
+  
+  task="$@"
+  test -n "$task" || exit 1
+  
+  openai-complete code-snippet.prompt "$topic" "$task"
+#+END_SRC
+
+*** Converting above into elisp together with a prompt function
+=pen-pf-cq= is generated from a =.prompt= file (http://github.com/semiosis/prompts/blob/master/prompts/code-snippet.prompt).
+
+Documentation for generated function:
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  pen-pf-cq is an alias for ‘pen-pf-code-snippet-from-natural-language’
+  in ‘pen-example-config.el’.
+  
+  (pen-pf-cq LANGUAGE TASK)
+
+  code snippet from natural language
+  Get a bash one liner from natural langauge
+  future-titles:- Get code snippet
+  - Get snippet
+#+END_SRC
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<a title="asciinema recording" href="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY.svg" /></a>
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY.js" id="asciicast-foNqrgSZLJcDPDsaqanffOJSY" async></script>
+#+END_EXPORT
 
 ** =right-click-context-click-menu=
 This is an example of connecting a prompt function to =right-click-context-menu=.
