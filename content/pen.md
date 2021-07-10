@@ -47,6 +47,25 @@ max-tokens: 60
 Completing this prompt will start writing a story for you.
 
 
+## Vision {#vision}
+
+At its heart, emacs is an operating system
+based on a tty, which is a text stream.
+
+emacs supports a text-only mode. This makes it
+ideally suited for training a LM such as a GPT
+(Generative Pre-trained Transformer).
+
+emacs lisp provides a skeleton on which NLP
+functions can built around. Ultimately, emacs
+will become a fractal in the latent space of a
+future LM (language model). A graphical editor would not
+benefit from this effect until much later on.
+
+Between here and now we can write prompt
+functions to help preserve emacs.
+
+
 ## Backstory of `Pen` {#backstory-of-pen}
 
 Origin #1
