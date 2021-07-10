@@ -6130,7 +6130,7 @@ nome, a year lasts as long as ten years does to a human.</code></pre></td></tr><
             
             <guid>http://semiosis.github.io/posts/imaginary-programming-with-gpt-3/</guid>
             <description>Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts/ Disclaimer Please contribute as this is an open source project! It&amp;rsquo;s very hard to find free prompts online currently and that&amp;rsquo;s because everyone is out for themselves. Please support open source. Thank you.  Summary This is a demonstration of an imaginary programming environment. There may be nothing else like it in the world today.
-What does it mean to be imaginary? Several of the components of a normal programming environment are replaced by functions that infer rather than evaluate.</description>
+The world needs to get ready for the next generations of Large LMs, such as GPT-4.</description>
             <content type="html"><![CDATA[<dl>
 <dt>Code</dt>
 <dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a></dd>
@@ -6143,6 +6143,19 @@ What does it mean to be imaginary? Several of the components of a normal program
 <p>This is a demonstration of an imaginary
 programming environment. There may be nothing
 else like it in the world today.</p>
+<p>The world needs to get ready for the next
+generations of Large LMs, such as <code>GPT-4</code>.</p>
+<p>Indeed, they will be able to dream up the
+entire experience of a textual user interface
+by inferring how it changes based on keyboard
+input. That is because a <code>tty</code> is simple text
+stream.</p>
+<p>A current generation GPT trained on <code>tty</code>
+recordings would most certainly probably be
+able to do this already, but with <code>GPT-4</code> and
+future LMs comes convenience in the form of
+prompt tuning.</p>
+<p>An imaginary programming environment is <a href="https://github.com/semiosis/pen.el/blob/master/docs/README.org">one of the supported features</a> of <code>pen.el</code>.</p>
 <h3 id="what-does-it-mean-to-be-imaginary">What does it mean to be imaginary?</h3>
 <p>Several of the components of a normal
 programming environment are replaced by
@@ -6158,7 +6171,7 @@ functions that infer rather than evaluate.</p>
 <ul>
 <li>GPT-3 is imagining the environment, the code and the output.</li>
 <li>the languages are kinda like imaginary numbers. They are all understood within the same language model, kinda like a coordinate space.</li>
-<li>it lets you be very imaginative!</li>
+<li>It lets you be very imaginative!</li>
 </ul>
 <h3 id="the-implications">The implications</h3>
 <ul>

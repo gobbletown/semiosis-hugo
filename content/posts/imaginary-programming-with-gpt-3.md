@@ -2,7 +2,7 @@
 title = "Imaginary programming with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-04-08T00:00:00+12:00
-keywords = ["GPT-3", "openai"]
+keywords = ["gpt", "openai"]
 draft = false
 +++
 
@@ -24,6 +24,23 @@ This is a demonstration of an imaginary
 programming environment. There may be nothing
 else like it in the world today.
 
+The world needs to get ready for the next
+generations of Large LMs, such as `GPT-4`.
+
+Indeed, they will be able to dream up the
+entire experience of a textual user interface
+by inferring how it changes based on keyboard
+input. That is because a `tty` is simple text
+stream.
+
+A current generation GPT trained on `tty`
+recordings would most certainly probably be
+able to do this already, but with `GPT-4` and
+future LMs comes convenience in the form of
+prompt tuning.
+
+An imaginary programming environment is [one of the supported features](https://github.com/semiosis/pen.el/blob/master/docs/README.org) of `pen.el`.
+
 
 ### What does it mean to be imaginary? {#what-does-it-mean-to-be-imaginary}
 
@@ -42,7 +59,7 @@ Imaginary seems to be a good word because:
 
 -   GPT-3 is imagining the environment, the code and the output.
 -   the languages are kinda like imaginary numbers. They are all understood within the same language model, kinda like a coordinate space.
--   it lets you be very imaginative!
+-   It lets you be very imaginative!
 
 
 ### The implications {#the-implications}
