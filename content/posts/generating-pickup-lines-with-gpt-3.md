@@ -40,7 +40,7 @@ New results are fed into a fuzzy finder as they are generated. I can stop and se
 <script src="https://asciinema.org/a/Dn3gncKZzJWdJ4PE4qCJPSwpF.js" id="asciicast-Dn3gncKZzJWdJ4PE4qCJPSwpF" async></script>
 
 
-### Pick up lines with the topic "SETTLERS OF CATAN" {#pick-up-lines-with-the-topic-settlers-of-catan}
+### Pick up lines with the topic "SETTLERS OF CATAN" ⌂ ⌂⌂ ━ ━ {#pick-up-lines-with-the-topic-settlers-of-catan}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 When playing Settlers of Catan, the shortest route is a straight line to my heart.
