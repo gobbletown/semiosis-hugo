@@ -89,7 +89,7 @@ oci openai-complete $MYGIT/semiosis/prompts/prompts/tutor.prompt "$topic" "$in_t
 {{< /highlight >}}
 
 
-## Converting above into elisp together with a prompt function {#converting-above-into-elisp-together-with-a-prompt-function}
+### Converting above into elisp together with a prompt function {#converting-above-into-elisp-together-with-a-prompt-function}
 
 `pen-pf-asktutor` is generated from a `.prompt` file (<http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt>).
 
@@ -127,6 +127,49 @@ Code
                    (my/thing-at-point)))))
   (pen-pf-asktutor bl bl query))
 {{< /highlight >}}
+
+
+## Original `shell` script, `cq` {#original-shell-script-cq}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+#!/bin/bash
+export TTY
+
+( hs "$(basename "$0")" "$@" "#" "<==" "$(ps -o comm= $PPID)" 0</dev/null ) &>/dev/null
+
+topic="$1"
+test -n "$topic" || exit 1
+shift
+
+task="$@"
+test -n "$task" || exit 1
+
+openai-complete code-snippet.prompt "$topic" "$task"
+{{< /highlight >}}
+
+
+### Converting above into elisp together with a prompt function {#converting-above-into-elisp-together-with-a-prompt-function}
+
+`pen-pf-cq` is generated from a `.prompt` file (<http://github.com/semiosis/prompts/blob/master/prompts/code-snippet.prompt>).
+
+Documentation for generated function:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+pen-pf-cq is an alias for ‘pen-pf-code-snippet-from-natural-language’
+in ‘pen-example-config.el’.
+
+(pen-pf-cq LANGUAGE TASK)
+
+code snippet from natural language
+Get a bash one liner from natural langauge
+future-titles:- Get code snippet
+- Get snippet
+{{< /highlight >}}
+
+<!-- Play on asciinema.com -->
+<a title="asciinema recording" href="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY.svg" /></a>
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/foNqrgSZLJcDPDsaqanffOJSY.js" id="asciicast-foNqrgSZLJcDPDsaqanffOJSY" async></script>
 
 
 ## `right-click-context-click-menu` {#right-click-context-click-menu}
