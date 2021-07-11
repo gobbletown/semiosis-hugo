@@ -8,7 +8,7 @@
 <meta name="description" content="Summary This is a tutorial for how to use pen.el.
 Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
 pen.el emulates a Hyper key with C-M-\.
-Regenerate key bindings Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/." />
+Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -39,9 +39,9 @@ Regenerate key bindings Running pen-generate-prompt-functions will load all prom
 <meta itemprop="description" content="Summary This is a tutorial for how to use pen.el.
 Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
 pen.el emulates a Hyper key with C-M-\.
-Regenerate key bindings Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/."><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
+Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/."><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-07-11T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="627"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="756"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -50,7 +50,7 @@ Regenerate key bindings Running pen-generate-prompt-functions will load all prom
 <meta name="twitter:description" content="Summary This is a tutorial for how to use pen.el.
 Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
 pen.el emulates a Hyper key with C-M-\.
-Regenerate key bindings Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/."/>
+Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/."/>
 
 
 
@@ -59,7 +59,7 @@ Regenerate key bindings Running pen-generate-prompt-functions will load all prom
 <meta property="og:description" content="Summary This is a tutorial for how to use pen.el.
 Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
 pen.el emulates a Hyper key with C-M-\.
-Regenerate key bindings Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/." />
+Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-tutorial/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-11T00:00:00&#43;12:00" />
@@ -148,7 +148,7 @@ Regenerate key bindings Running pen-generate-prompt-functions will load all prom
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        4 minutes
 
         
       </p>
@@ -195,7 +195,7 @@ Regenerate key bindings Running pen-generate-prompt-functions will load all prom
 </table>
 <p><code>H</code> is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.</p>
 <p><code>pen.el</code> emulates a Hyper key with <code>C-M-\</code>.</p>
-<h2 id="regenerate-key-bindings">Regenerate key bindings</h2>
+<h3 id="usage">Usage</h3>
 <p>Running <code>pen-generate-prompt-functions</code> will
 load all prompts from the prompts directory,
 which is typically located here: <code>~/.emacs.d/prompts</code>.</p>
@@ -402,6 +402,79 @@ vim ~/.pen/openai_api_key</code></pre></td></tr></table>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx.js" id="asciicast-gwnk0DXnHKSzvUfLmfnQegfCx" async></script>
+<h3 id="prompt-engineering-workflow">Prompt Engineering Workflow</h3>
+<ul>
+<li>
+<p>Setup</p>
+<ul>
+<li>Install <code>prompt</code> snippet into yasnippet.</li>
+<li>M-x <code>yas/reload-all</code></li>
+<li>M-x <code>yas-insert-snippet</code></li>
+</ul>
+</li>
+<li>
+<p>Prompt design</p>
+<ul>
+<li>
+<ol>
+<li>Come up with a task. Let&rsquo;s call it &ldquo;Negate sentence&rdquo;</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Insert the prompt snippet into a new prompt file.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Remove keys from prompts file which we don&rsquo;t need.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li><code>var-defaults</code> is an advanced usage of prompts</li>
+</ol>
+<ul>
+<li>But we will remove them</li>
+</ul>
+</li>
+<li>
+<ol start="5">
+<li>Now load the prompt with <code>M-x pen-generate-prompt-functions</code></li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>Now look at the prompt function documentation</li>
+</ol>
+<ul>
+<li>The binding <code>C-h C-f</code> is used to bring up help for a function</li>
+</ul>
+</li>
+<li>
+<ol start="7">
+<li>Looks like we made an error: &ldquo;The Mars is very far away.&rdquo;</li>
+</ol>
+<ul>
+<li>Change it and update the version of the prompt</li>
+</ul>
+</li>
+<li>
+<ol start="8">
+<li>Reload functions</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>Test it out.</p>
+<p>I want to eat dinner now.</p>
+<p>It didn&rsquo;t work. hurm.</p>
+<p>Well, here is the basic process anyway. I&rsquo;ll try and debug this.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI.js" id="asciicast-ofJjyh1A696NDOjwNx0zR6DAI" async></script>
       </div>
     </article>
 
@@ -419,7 +492,7 @@ vim ~/.pen/openai_api_key</code></pre></td></tr></table>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        627 Words
+        756 Words
       </p>
 
       <p>
