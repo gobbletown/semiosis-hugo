@@ -24,7 +24,7 @@ This is a tutorial for how to use `pen.el`.
 `pen.el` emulates a Hyper key with `C-M-\`.
 
 
-## Regenerate key bindings {#regenerate-key-bindings}
+### Usage {#usage}
 
 Running `pen-generate-prompt-functions` will
 load all prompts from the prompts directory,
@@ -216,3 +216,37 @@ vim ~/.pen/openai_api_key
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx.js" id="asciicast-gwnk0DXnHKSzvUfLmfnQegfCx" async></script>
+
+
+### Prompt Engineering Workflow {#prompt-engineering-workflow}
+
+-   Setup
+    -   Install `prompt` snippet into yasnippet.
+    -   M-x `yas/reload-all`
+    -   M-x `yas-insert-snippet`
+
+-   Prompt design
+    -   1. Come up with a task. Let's call it "Negate sentence"
+    -   2. Insert the prompt snippet into a new prompt file.
+    -   3. Remove keys from prompts file which we don't need.
+    -   4. `var-defaults` is an advanced usage of prompts
+        -   But we will remove them
+    -   5. Now load the prompt with `M-x pen-generate-prompt-functions`
+    -   6. Now look at the prompt function documentation
+        -   The binding `C-h C-f` is used to bring up help for a function
+    -   7. Looks like we made an error: "The Mars is very far away."
+        -   Change it and update the version of the prompt
+    -   8. Reload functions
+
+Test it out.
+
+I want to eat dinner now.
+
+It didn't work. hurm.
+
+Well, here is the basic process anyway. I'll try and debug this.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI.js" id="asciicast-ofJjyh1A696NDOjwNx0zR6DAI" async></script>
