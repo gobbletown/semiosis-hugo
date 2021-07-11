@@ -138,3 +138,13 @@ is less reliance on shell scripts.
 
 A zone plate has been chosen as the minor-mode lighter.
 This is because `|:ϝ∷¦ϝ` likes zone plates and also used it as the logo to `loom`.
+
+
+### 12.07.21 {#12-dot-07-dot-21}
+
+First successful docker run.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/tdI8acXoSLeSjCLTyK67EWkJu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tdI8acXoSLeSjCLTyK67EWkJu.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/tdI8acXoSLeSjCLTyK67EWkJu.js" id="asciicast-tdI8acXoSLeSjCLTyK67EWkJu" async></script>
