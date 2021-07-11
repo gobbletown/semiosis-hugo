@@ -94,8 +94,7 @@ will output the language that text is in.
 It works for both world languages and for code.
 
 The =title= of the prompt will be
-[[https://pypi.org/project/python-
-slugify/][slugified]] and used as the name of
+[[https://pypi.org/project/python-slugify/][slugified]] and used as the name of
 the prompt function.
 
 =doc= and =notes= will both go into the
