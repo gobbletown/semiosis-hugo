@@ -6,8 +6,258 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 26 Jun 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Sun, 11 Jul 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Pen Tutorial</title>
+            <link>http://semiosis.github.io/posts/pen-tutorial/</link>
+            <pubDate>Sun, 11 Jul 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
+            <description>Summary This is a tutorial for how to use pen.el.
+Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
+pen.el emulates a Hyper key with C-M-\.
+Regenerate key bindings Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>This is a tutorial for how to use <code>pen.el</code>.</p>
+<h2 id="default-key-bindings">Default Key bindings</h2>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>H-TAB g</code></td>
+<td><code>pen-generate-prompt-functions</code></td>
+<td><code>pen-map</code></td>
+</tr>
+<tr>
+<td><code>H-TAB r</code></td>
+<td><code>pen-run-prompt-function</code></td>
+<td><code>pen-map</code></td>
+</tr>
+<tr>
+<td><code>SPC</code></td>
+<td><code>pen-run-prompt-function</code></td>
+<td><code>selected-map</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>H</code> is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.</p>
+<p><code>pen.el</code> emulates a Hyper key with <code>C-M-\</code>.</p>
+<h2 id="regenerate-key-bindings">Regenerate key bindings</h2>
+<p>Running <code>pen-generate-prompt-functions</code> will
+load all prompts from the prompts directory,
+which is typically located here: <code>~/.emacs.d/prompts</code>.</p>
+<p>Running <code>pen-run-prompt-function</code> will run a prompt function.</p>
+<p>You may also press <code>SPC</code> while some text is selected to run a prompt function.</p>
+<h2 id="demos">Demos</h2>
+<h3 id="select-some-text-and-running-a-prompt-function">Select some text and running a prompt function</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/XrtPxWfh0yhJRdMXpnMnm8i70" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/XrtPxWfh0yhJRdMXpnMnm8i70.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/XrtPxWfh0yhJRdMXpnMnm8i70.js" id="asciicast-XrtPxWfh0yhJRdMXpnMnm8i70" async></script>
+<h3 id="run-a-prompt-function-like-an-m-x-interactive-command">Run a prompt function like an M-x interactive command</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/mVe7Ujx7urB1nyPdiEuqGUcb4" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mVe7Ujx7urB1nyPdiEuqGUcb4.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/mVe7Ujx7urB1nyPdiEuqGUcb4.js" id="asciicast-mVe7Ujx7urB1nyPdiEuqGUcb4" async></script>
+<h2 id="an-exhibition-of-a-dot-prompt">An exhibition of a <code>.prompt</code></h2>
+<dl>
+<dt>Prompt file</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/get-language.prompt">prompts/get-language.prompt at master  semiosis/prompts  GitHub</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">Get language</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">doc</span>: <span style="color:#ae81ff">This prompt detects the language</span>
+<span style="color:#f92672">notes</span>:
+- <span style="color:#e6db74">&#34;It appears that combining ### with Input: Output: has no improvement&#34;</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    Given some text, return the language.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Input: Hello
+</span><span style="color:#e6db74">    Output: English
+</span><span style="color:#e6db74">    Input: Bon anniversaire !
+</span><span style="color:#e6db74">    Output: French
+</span><span style="color:#e6db74">    Input: printf -- &#34;%s\n&#34; &#34;$lang&#34;
+</span><span style="color:#e6db74">    Output: bash
+</span><span style="color:#e6db74">    Input: Zdravstvuyte
+</span><span style="color:#e6db74">    Output: Russian
+</span><span style="color:#e6db74">    Input: &lt;1&gt;
+</span><span style="color:#e6db74">    Output:</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">davinci</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">200</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">text-or-code</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#ae81ff">Happy birthday</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#e6db74">&#34;sed -z &#39;s/\\n/\\\\n/g&#39;&#34;</span>
+<span style="color:#f92672">aliases</span>:
+- <span style="color:#ae81ff">detect-language</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>This is a prompt which, given text selected
+will output the language that text is in.</p>
+<p>It works for both world languages and for code.</p>
+<p>The <code>title</code> of the prompt will be
+<a href="https://pypi.org/project/python-%20slugify/">slugified</a> and used as the name of
+the prompt function.</p>
+<p><code>doc</code> and <code>notes</code> will both go into the
+documentation for the function.</p>
+<p>The prompt is using the <code>Input</code> <code>Output</code>
+pattern.</p>
+<p><code>engine</code> is the name of a language model.</p>
+<p>An API such as the <code>OpenAI API</code> (<code>GPT-3</code>) may serve
+several different models.</p>
+<ul>
+<li>Some alternative models for <code>GPT-3</code>:
+<ul>
+<li>babbage</li>
+<li>content-filter-alpha-c4</li>
+<li>content-filter-dev</li>
+<li>curie</li>
+<li>cursing-filter-v6</li>
+<li>davinci</li>
+<li>instruct-curie-beta</li>
+<li>instruct-davinci-beta</li>
+</ul>
+</li>
+</ul>
+<p><code>vars</code> is a list of variable names. Each
+variable is substituted into the prompt if it
+has a corresponding template placeholder.</p>
+<p>For example, the <code>&lt;1&gt;</code> in the prompt
+corresponds to where the first variable
+(<code>text-or-code</code>) will be substituted.</p>
+<p><code>examples</code> is a list with the same number of
+elements as <code>vars</code>. The values in <code>examples</code>
+may be suggested as initial input when
+running the prompt function and may be used in
+test cases. They also serve as documentation
+for the user.</p>
+<p><code>preprocessors</code> are a list of shell
+pipelineable commands (stream filters) which
+expect both input and output and can be used
+to preprocess the variables before they are
+substituted into the prompt template.</p>
+<p>This prompt doesn&rsquo;t have a <code>postprocessor</code>,
+but if it did it would postprocess the
+returned completions in a similar fashion to
+how the variables are preprocessed.</p>
+<p>Finally, <code>aliases</code> is a list of alternative
+function names for this prompt.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="install-dependencies-and-compile-emacs-with-with-modules">Install dependencies and compile emacs with <code>--with-modules</code></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
+cd pen.el/src
+<span style="color:#75715e"># Careful with setup script.</span>
+<span style="color:#75715e"># Run the commands manually as this is designed for root user, intended for a Docker container.</span>
+./setup.sh</code></pre></td></tr></table>
+</div>
+</div>
+<p>Demo of running the script on a vanilla VPS.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/EzlkZpFMS0NVEUOjcNnlKEJao" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/EzlkZpFMS0NVEUOjcNnlKEJao.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/EzlkZpFMS0NVEUOjcNnlKEJao.js" id="asciicast-EzlkZpFMS0NVEUOjcNnlKEJao" async></script>
+<h3 id="ensure-the-following-or-similar-file-structure">Ensure the following or similar file structure</h3>
+<p>Or make the additions / adjustments to your own emacs config.</p>
+<p>Take the parts you need from the <code>init.el</code> and place inside your own <code>~/.emacs</code>.</p>
+<p>If you don&rsquo;t have an init file of your own then run this.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ln -sf ~/.emacs.d/pen.el/init.el ~/.emacs</code></pre></td></tr></table>
+</div>
+</div>
+<p>Ensure you have the prompts repository in place.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts/tree/master/prompts&#34;</span> ~/.emacs.d/prompts</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="openai-just-request-a-key-and-place-it-here">OpenAI - Just request a key and place it here</h3>
+<p>Install OpenAI API key.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.pen
+touch ~/.pen/openai_api_key
+vim ~/.pen/openai_api_key</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="using-pen">Using Pen</h2>
+<h3 id="just-starting-on-a-vanilla-installation">Just starting on a vanilla installation</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/gwnk0DXnHKSzvUfLmfnQegfCx.js" id="asciicast-gwnk0DXnHKSzvUfLmfnQegfCx" async></script>]]></content>
+        </item>
         
         <item>
             <title>Representing multiverses with Datomic</title>
