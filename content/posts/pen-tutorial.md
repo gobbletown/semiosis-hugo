@@ -102,7 +102,7 @@ will output the language that text is in.
 It works for both world languages and for code.
 
 The `title` of the prompt will be
-[slugified](https://pypi.org/project/python-%20slugify/) and used as the name of
+[slugified](https://pypi.org/project/python-slugify/) and used as the name of
 the prompt function.
 
 `doc` and `notes` will both go into the
