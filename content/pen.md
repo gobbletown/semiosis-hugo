@@ -13,11 +13,17 @@ I start a GitHub project to deploy `pen.el`.
 GitHub project
 : [GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI's GPT-3 or EleutherAI's GPT-j.](https://github.com/semiosis/pen.el/)
 
+
 Project timeline and objectives
 : <https://github.com/semiosis/pen.el/tree/master/docs>
 
+
 Prompt README
 : [prompts/README.org at master  semiosis/prompts  GitHub](http://github.com/semiosis/prompts/blob/master/README.org)
+
+
+Tutorial
+: <https://semiosis.github.io/posts/pen-tutorial/>
 
 `Pen` facilitates the creation,
 development, discovery and usage of prompts to
