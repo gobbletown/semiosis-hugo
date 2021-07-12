@@ -20,6 +20,10 @@ I start a GitHub project to deploy =pen.el=.
 
 + Tutorial :: https://semiosis.github.io/posts/pen-tutorial/
 
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  docker pull semiosis/pen.el:latest
+#+END_SRC
+
 =Pen= facilitates the creation,
 development, discovery and usage of prompts to
 a Language Model such as OpenAI's =GPT-3= or EleutherAI's =GPT-j=.
