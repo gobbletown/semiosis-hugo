@@ -28,7 +28,7 @@ Tutorial
 <!--listend-->
 
 {{< highlight sh "linenos=table, linenostart=1" >}}
-docker pull semiosis/pen.el:latest
+docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
 {{< /highlight >}}
 
 `Pen` facilitates the creation,
