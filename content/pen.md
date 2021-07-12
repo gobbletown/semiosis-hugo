@@ -25,6 +25,12 @@ Prompt README
 Tutorial
 : <https://semiosis.github.io/posts/pen-tutorial/>
 
+<!--listend-->
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+docker pull semiosis/pen.el:latest
+{{< /highlight >}}
+
 `Pen` facilitates the creation,
 development, discovery and usage of prompts to
 a Language Model such as OpenAI's `GPT-3` or EleutherAI's `GPT-j`.
@@ -67,6 +73,13 @@ functions can built around. Ultimately, emacs
 will become a fractal in the latent space of a
 future LM (language model). A graphical editor would not
 benefit from this effect until much later on.
+
+`emacs` could, if supported, become **the**
+vehicle for controllable text generation, or
+has the potential to become that, only
+actually surpassed when the imaginary
+programming environment is normal and other
+interfaces can be prompted into existence.
 
 Between here and now we can write prompt
 functions to help preserve emacs.
