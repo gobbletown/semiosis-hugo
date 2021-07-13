@@ -12,6 +12,11 @@
 ** Summary
 This is a tutorial for how to use =pen.el=.
 
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  # Latest docker image of =pen.el=
+  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+#+END_SRC
+
 ** Default Key bindings
 | kb        | f                               |                |
 |-----------+---------------------------------+----------------|
