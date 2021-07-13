@@ -2,7 +2,7 @@
 title = "GPT-3 assistants for emacs modes"
 author = ["Shane Mulligan"]
 date = 2021-06-02T00:00:00+12:00
-keywords = ["gpt", "emacs"]
+keywords = ["gpt", "emacs", "pen"]
 draft = false
 +++
 
@@ -16,6 +16,11 @@ I am working on integrating GPT-3, GPT-j and
 more GPT completion engines into emacs, and
 connecting more and more emacs packages to
 GPT-3.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+# Latest docker image of =pen.el=
+docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+{{< /highlight >}}
 
 Some ideas I have:
 

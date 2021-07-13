@@ -10,6 +10,11 @@ draft = false
 
 This is a tutorial for how to use `pen.el`.
 
+{{< highlight sh "linenos=table, linenostart=1" >}}
+# Latest docker image of =pen.el=
+docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+{{< /highlight >}}
+
 
 ## Default Key bindings {#default-key-bindings}
 

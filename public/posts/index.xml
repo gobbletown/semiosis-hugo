@@ -16,11 +16,19 @@
             
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
             <description>Summary This is a tutorial for how to use pen.el.
-Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
-pen.el emulates a Hyper key with C-M-\.
-Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/.</description>
+1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a tutorial for how to use <code>pen.el</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Latest docker image of =pen.el=</span>
+docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="default-key-bindings">Default Key bindings</h2>
 <table>
 <thead>
@@ -2171,8 +2179,7 @@ repl_run<span style="color:#f92672">()</span> <span style="color:#f92672">{</spa
             <guid>http://semiosis.github.io/posts/gpt-3-assistants-for-emacs-modes/</guid>
             <description>Summary In this article I will show how I transition from using shell script to emacs lisp with my &amp;lsquo;any topic&amp;rsquo; tutor in emacs lisp.
 I am working on integrating GPT-3, GPT-j and more GPT completion engines into emacs, and connecting more and more emacs packages to GPT-3.
-Some ideas I have:
- Correct spelling and grammar in conversations over erc and other emacs chat modes. Select error messages and ask what they mean.</description>
+1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Some ideas I have:</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>In this article I will show how I transition
 from using shell script to emacs lisp with my
@@ -2181,6 +2188,16 @@ from using shell script to emacs lisp with my
 more GPT completion engines into emacs, and
 connecting more and more emacs packages to
 GPT-3.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Latest docker image of =pen.el=</span>
+docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+</div>
+</div>
 <p>Some ideas I have:</p>
 <ul>
 <li>Correct spelling and grammar in conversations over <code>erc</code> and other <code>emacs</code> chat modes.</li>

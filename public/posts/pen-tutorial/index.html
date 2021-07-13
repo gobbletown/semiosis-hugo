@@ -6,9 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
 <meta name="description" content="Summary This is a tutorial for how to use pen.el.
-Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
-pen.el emulates a Hyper key with C-M-\.
-Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/." />
+1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -37,29 +35,23 @@ Usage Running pen-generate-prompt-functions will load all prompts from the promp
 
 <meta itemprop="name" content="Pen Tutorial">
 <meta itemprop="description" content="Summary This is a tutorial for how to use pen.el.
-Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
-pen.el emulates a Hyper key with C-M-\.
-Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/."><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
+1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift."><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-07-11T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1267"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1282"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Pen Tutorial"/>
 <meta name="twitter:description" content="Summary This is a tutorial for how to use pen.el.
-Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
-pen.el emulates a Hyper key with C-M-\.
-Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/."/>
+1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift."/>
 
 
 
 
     <meta property="og:title" content="Pen Tutorial" />
 <meta property="og:description" content="Summary This is a tutorial for how to use pen.el.
-Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
-pen.el emulates a Hyper key with C-M-\.
-Usage Running pen-generate-prompt-functions will load all prompts from the prompts directory, which is typically located here: ~/." />
+1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-tutorial/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-11T00:00:00&#43;12:00" />
@@ -148,7 +140,7 @@ Usage Running pen-generate-prompt-functions will load all prompts from the promp
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        6 minutes
+        7 minutes
 
         
       </p>
@@ -166,6 +158,16 @@ Usage Running pen-generate-prompt-functions will load all prompts from the promp
       <div class="post-content">
         <h2 id="summary">Summary</h2>
 <p>This is a tutorial for how to use <code>pen.el</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Latest docker image of =pen.el=</span>
+docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="default-key-bindings">Default Key bindings</h2>
 <table>
 <thead>
@@ -722,7 +724,7 @@ to transform the prompt before sending to the
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1267 Words
+        1282 Words
       </p>
 
       <p>
