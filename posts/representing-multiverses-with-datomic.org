@@ -20,7 +20,7 @@
 
 ---
 
-+ Project :: https://github.com/semiosis/pen.el/
++ Project code :: https://github.com/semiosis/pen.el/
 
 ** Summary
 After reading =|:ϝ∷¦ϝ='s blog article
