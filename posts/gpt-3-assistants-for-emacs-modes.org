@@ -7,7 +7,7 @@
 #+TITLE: GPT-3 assistants for emacs modes
 #+DATE: <2021-06-02>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt emacs
+#+KEYWORDS: gpt emacs pen
 
 ** Summary
 In this article I will show how I transition
@@ -18,6 +18,11 @@ I am working on integrating GPT-3, GPT-j and
 more GPT completion engines into emacs, and
 connecting more and more emacs packages to
 GPT-3.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  # Latest docker image of =pen.el=
+  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+#+END_SRC
 
 Some ideas I have:
 - Correct spelling and grammar in conversations over =erc= and other =emacs= chat modes.
