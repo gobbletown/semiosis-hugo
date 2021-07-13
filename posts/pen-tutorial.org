@@ -28,12 +28,12 @@ branch. Docker support coming. =GPT-j= also in
 the works.
 
 ** Default Key bindings
-| kb        | f                               |                |                             |
-|-----------+---------------------------------+----------------+-----------------------------|
-| =H-TAB g= | =pen-generate-prompt-functions= | =pen-map=      |                             |
-| =H-TAB r= | =pen-run-prompt-function=       | =pen-map=      |                             |
-| =SPC=     | =pen-run-prompt-function=       | =selected-map= |                             |
-| =H-TAB l= | =pen-complete-long=             | =pen-map=      |                             |
+| kb        | f                               |                |
+|-----------+---------------------------------+----------------|
+| =H-TAB g= | =pen-generate-prompt-functions= | =pen-map=      |
+| =H-TAB r= | =pen-run-prompt-function=       | =pen-map=      |
+| =SPC=     | =pen-run-prompt-function=       | =selected-map= |
+| =H-TAB l= | =pen-complete-long=             | =pen-map=      |
 
 =H= is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard.
 
