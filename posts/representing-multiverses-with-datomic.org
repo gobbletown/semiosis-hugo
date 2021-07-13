@@ -7,7 +7,7 @@
 #+TITLE: Representing multiverses with Datomic
 #+DATE: <2021-06-26>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt clojure
+#+KEYWORDS: gpt clojure pen
 
 ** Related articles
 - [[https://generative.ink/posts/language-models-are-multiverse-generators/][Language models are multiverse generators =::=  Moire]]
