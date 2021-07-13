@@ -7,7 +7,7 @@
 #+TITLE: Pen (Prompt Engineering in Emacs)
 #+DATE: <2021-07-02>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: emacs gpt eleutherai huggingface
+#+KEYWORDS: emacs gpt eleutherai huggingface pen
 
 ** Introducing =Pen=
 I start a GitHub project to deploy =pen.el=.
@@ -141,3 +141,12 @@ First successful docker run.
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/tdI8acXoSLeSjCLTyK67EWkJu.js" id="asciicast-tdI8acXoSLeSjCLTyK67EWkJu" async></script>
 #+END_EXPORT
+
+*** 14.07.21
+Released a new version of pen.
+
+Hopefully get some more views.
+
+https://news.ycombinator.com/item?id=27818854
+
+Getting haircut today.
