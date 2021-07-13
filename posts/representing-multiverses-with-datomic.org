@@ -18,6 +18,8 @@
   - Rich Hickey on becoming a better developer
 - Notes: https://github.com/semiosis/code-org-tidbits/blob/master/datomic/basic-query.
 
+---
+
 + Project :: https://github.com/semiosis/pen.el/
 
 ** Summary
