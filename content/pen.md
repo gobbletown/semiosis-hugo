@@ -2,7 +2,7 @@
 title = "Pen (Prompt Engineering in Emacs)"
 author = ["Shane Mulligan"]
 date = 2021-07-02T00:00:00+12:00
-keywords = ["emacs", "gpt", "eleutherai", "huggingface"]
+keywords = ["emacs", "gpt", "eleutherai", "huggingface", "pen"]
 draft = false
 +++
 
@@ -161,3 +161,14 @@ First successful docker run.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/tdI8acXoSLeSjCLTyK67EWkJu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tdI8acXoSLeSjCLTyK67EWkJu.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/tdI8acXoSLeSjCLTyK67EWkJu.js" id="asciicast-tdI8acXoSLeSjCLTyK67EWkJu" async></script>
+
+
+### 14.07.21 {#14-dot-07-dot-21}
+
+Released a new version of pen.
+
+Hopefully get some more views.
+
+<https://news.ycombinator.com/item?id=27818854>
+
+Getting haircut today.
