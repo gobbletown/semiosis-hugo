@@ -14,9 +14,12 @@ draft = false
 -   [Writing Datomic in Clojure - Rich Hickey - YouTube](https://www.youtube.com/watch?v=7Fi-UvrRpyI)
 -   [richhickey.md GitHub](https://gist.github.com/prakhar1989/1b0a2c9849b2e1e912fb)
     -   Rich Hickey on becoming a better developer
--   Notes: <https://github.com/semiosis/code-org-tidbits/blob/master/datomic/basic-query>.+
+-   Notes: <https://github.com/semiosis/code-org-tidbits/blob/master/datomic/basic-query>.
 
--   <https://github.com/semiosis/pen.el/>
+---
+
+Project code
+: <https://github.com/semiosis/pen.el/>
 
 
 ## Summary {#summary}
