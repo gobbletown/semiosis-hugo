@@ -2,7 +2,7 @@
 title = "Representing multiverses with Datomic"
 author = ["Shane Mulligan"]
 date = 2021-06-26T00:00:00+12:00
-keywords = ["gpt", "clojure"]
+keywords = ["gpt", "clojure", "pen"]
 draft = false
 +++
 
