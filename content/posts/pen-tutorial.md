@@ -2,7 +2,7 @@
 title = "Pen Tutorial"
 author = ["Shane Mulligan"]
 date = 2021-07-11T00:00:00+12:00
-keywords = ["gpt", "emacs"]
+keywords = ["gpt", "emacs", "pen"]
 draft = false
 +++
 
@@ -250,3 +250,145 @@ Well, here is the basic process anyway. I'll try and debug this.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/ofJjyh1A696NDOjwNx0zR6DAI.js" id="asciicast-ofJjyh1A696NDOjwNx0zR6DAI" async></script>
+
+
+## Another `.prompt` exhibition {#another-dot-prompt-exhibition}
+
+
+### I create a new prompt here for translating between any world language {#i-create-a-new-prompt-here-for-translating-between-any-world-language}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/jiBD5ZpRJQWXFMlHdvGGgSxjk" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/jiBD5ZpRJQWXFMlHdvGGgSxjk.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/jiBD5ZpRJQWXFMlHdvGGgSxjk.js" id="asciicast-jiBD5ZpRJQWXFMlHdvGGgSxjk" async></script>
+
+Maori isn't a very prominent language on the
+web, but it still managed to capture the idea
+of a welcome message, which I think is
+amazing! I am Maori, so I appreciate this!
+
+I want to demonstrate the usage of two more `.prompt` keys.
+
+The technical jargon
+: `var-defaults` overrides the default behaviour of the `(interactive)` form in emacs.
+
+By specifying `var-defaults`, you can change
+what functions or expressions are run to
+acquire the values for the parameters to the
+prompt.
+
+The prompt here captures the selected text and
+puts it into the second placeholder, `<2>`.
+
+By default, that would go into the first one, `<1>`.
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+var-defaults:
+- "(read-string \"language: \")"
+- "(pen-selected-text)"
+{{< /highlight >}}
+
+
+### Original prompt {#original-prompt}
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+---
+title: Translate from English to
+prompt-version: 2
+doc: This prompt translates English text to any world langauge
+issues:
+- I think the unicode characters may be multibyte causing issues with completion
+prompt: |
+  ###
+  # English: Hello
+  # Russian: Zdravstvuyte
+  # Italian: Salve
+  # Japanese: Konnichiwa
+  # German: Guten Tag
+  # French: Bonjour
+  # Spanish: Hola
+  ###
+  # English: Happy birthday!
+  # French: Bon anniversaire !
+  # German: Alles Gute zum Geburtstag!
+  # Italian: Buon compleanno!
+  # Indonesian: Selamat ulang tahun!
+  ###
+  # English: <2>
+  # <1>:
+engine: davinci
+temperature: 0.5
+max-tokens: 200
+top-p: 1
+stop-sequences:
+- "#"
+vars:
+- language
+- phrase
+# ascification of the prompt is not ideal
+prompt-filter: pen-c ascify
+examples:
+- French
+- Goodnight
+var-defaults:
+- "(read-string \"language: \")"
+- "(pen-selected-text)"
+{{< /highlight >}}
+
+
+### I create this prompt {#i-create-this-prompt}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+prompt-filter: pen-c ascify
+{{< /highlight >}}
+
+The `prompt-filter` is a final filter script
+to transform the prompt before sending to the
+`API` / `LM` for completion.
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+---
+title: Translate from world language X to Y
+prompt-version: 2
+doc: This prompt translates English text to any world langauge
+issues:
+- I think the unicode characters may be multibyte causing issues with completion
+prompt: |
+  ###
+  # English: Hello
+  # Russian: Zdravstvuyte
+  # Italian: Salve
+  # Japanese: Konnichiwa
+  # German: Guten Tag
+  # French: Bonjour
+  # Spanish: Hola
+  ###
+  # English: Happy birthday!
+  # French: Bon anniversaire !
+  # German: Alles Gute zum Geburtstag!
+  # Italian: Buon compleanno!
+  # Indonesian: Selamat ulang tahun!
+  ###
+  # <1>: <3>
+  # <2>:
+engine: davinci
+temperature: 0.5
+max-tokens: 200
+top-p: 1
+stop-sequences:
+- "#"
+vars:
+- from-language
+- to-language
+- phrase
+# ascification of the prompt is not ideal
+prompt-filter: pen-c ascify
+examples:
+- English
+- French
+- Goodnight
+var-defaults:
+- "(read-string \"From language: \")"
+- "(read-string \"To language: \")"
+- "(pen-selected-text)"
+{{< /highlight >}}
