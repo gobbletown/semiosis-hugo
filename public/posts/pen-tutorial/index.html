@@ -6,7 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
 <meta name="description" content="Summary This is a tutorial for how to use pen.el.
-1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift." />
+The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
+1  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh    Project code https://github.com/semiosis/pen.el/  For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch. Docker support coming. GPT-j also in the works.
+Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map   H-TAB l pen-complete-long pen-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -35,23 +37,29 @@
 
 <meta itemprop="name" content="Pen Tutorial">
 <meta itemprop="description" content="Summary This is a tutorial for how to use pen.el.
-1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift."><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
+The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
+1  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh    Project code https://github.com/semiosis/pen.el/  For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch. Docker support coming. GPT-j also in the works.
+Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map   H-TAB l pen-complete-long pen-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard."><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-07-11T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1282"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1576"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Pen Tutorial"/>
 <meta name="twitter:description" content="Summary This is a tutorial for how to use pen.el.
-1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift."/>
+The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
+1  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh    Project code https://github.com/semiosis/pen.el/  For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch. Docker support coming. GPT-j also in the works.
+Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map   H-TAB l pen-complete-long pen-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard."/>
 
 
 
 
     <meta property="og:title" content="Pen Tutorial" />
 <meta property="og:description" content="Summary This is a tutorial for how to use pen.el.
-1 2  # Latest docker image of =pen.el= docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh   Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift." />
+The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
+1  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh    Project code https://github.com/semiosis/pen.el/  For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch. Docker support coming. GPT-j also in the works.
+Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map   H-TAB l pen-complete-long pen-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-tutorial/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-11T00:00:00&#43;12:00" />
@@ -140,7 +148,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        7 minutes
+        8 minutes
 
         
       </p>
@@ -158,16 +166,25 @@
       <div class="post-content">
         <h2 id="summary">Summary</h2>
 <p>This is a tutorial for how to use <code>pen.el</code>.</p>
+<p>The following command starts <code>pen.el</code>. You
+only need to have docker installed and an
+<code>OpenAI GPT-3</code> key to try this out.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Latest docker image of =pen.el=</span>
-docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
 </div>
 </div>
+<dl>
+<dt>Project code</dt>
+<dd><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></dd>
+</dl>
+<p>For <code>GPT-neo</code>, <code>GPT-2</code> and <code>booste</code> support,
+and latest updates, please install from master
+branch. Docker support coming. <code>GPT-j</code> also in
+the works.</p>
 <h2 id="default-key-bindings">Default Key bindings</h2>
 <table>
 <thead>
@@ -193,10 +210,54 @@ docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pe
 <td><code>pen-run-prompt-function</code></td>
 <td><code>selected-map</code></td>
 </tr>
+<tr>
+<td><code>H-TAB l</code></td>
+<td><code>pen-complete-long</code></td>
+<td><code>pen-map</code></td>
+</tr>
 </tbody>
 </table>
-<p><code>H</code> is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.</p>
-<p><code>pen.el</code> emulates a Hyper key with <code>C-M-\</code>.</p>
+<p><code>H</code> is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard.</p>
+<p><code>pen.el</code> emulates a Hyper key (<code>H-</code>) with <code>C-M-\</code>.</p>
+<p>I like <code>Hyper</code> because you&rsquo;re writing <code>hyperreality</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hyperreality
+    [#semiotics]
+    [#postmodernism]
+
+    An inability of consciousness to
+    distinguish reality from a simulation of
+    reality, especially in technologically
+    advanced postmodern societies.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="how-to-run-h-tab-r-for-emacs-noobies">How to run <code>H-TAB r</code> for emacs noobies</h3>
+<dl>
+<dt>For mac users</dt>
+<dd>Select some text, tap <code>Esc</code>, hold <code>Ctrl</code> and press  <code>\</code>, release and tap <code>r</code>.</dd>
+<dt>For everyone else</dt>
+<dd>Select some text, hold <code>Ctrl Alt \</code>, release and tap <code>r</code>.</dd>
+</dl>
+<p>You may also press <code>SPC</code> while some text is selected to run a prompt function.</p>
+<p>You may also use <code>right click</code> for starting the context menu.</p>
+<h3 id="company-mode">Company-mode</h3>
+<dl>
+<dt>For mac users</dt>
+<dd>Select some text, tap <code>Esc</code>, hold <code>Ctrl</code> and press  <code>\</code>, release and tap <code>c</code>.</dd>
+<dt>For everyone else</dt>
+<dd>Select some text, hold <code>Ctrl Alt \</code>, release and tap <code>c</code>.</dd>
+</dl>
 <h3 id="usage">Usage</h3>
 <p>Running <code>pen-generate-prompt-functions</code> will
 load all prompts from the prompts directory,
@@ -706,6 +767,44 @@ to transform the prompt before sending to the
 - <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="current-development">Current Development</h2>
+<h3 id="company-mode"><code>company-mode</code></h3>
+<p>I&rsquo;m trying to do something a little more
+ambitious than simply having a single
+completion function.</p>
+<p>There will be infinitely many completion functions that you can select from.</p>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>H-TAB c</code></td>
+<td><code>pen-company-complete</code></td>
+<td><code>pen-map</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="huggingface-transformers">HuggingFace transformers</h3>
+<p>Mark Watson in his book &ldquo;Practical Artificial
+Intelligence Programming With Clojure&rdquo; uses
+spaCy and the HuggingFace transformers library
+from Clojure. I would like to connect to
+HuggingFace&rsquo;s transformers library in this way.</p>
+<p>See &ldquo;<a href="https://markwatson.com/">https://markwatson.com/</a>&rdquo;.</p>
+<h3 id="gpt-neo">GPT-neo</h3>
+<p><a href="https://github.com/samrawal/emacs-secondmate/">https://github.com/samrawal/emacs-secondmate/</a></p>
+<h3 id="gpt-2">GPT-2</h3>
+<p>Thank you <code>@Samin</code> and <code>@erik</code> for the
+<code>booste</code> API support in integrating a free to
+use GPT-2.</p>
+<p>Please visit <a href="https://www.booste.io/">https://www.booste.io/</a> to get your key.</p>
+<h3 id="gpt-j"><code>GPT-j</code></h3>
+<p>Currently working on a way to integrate this.</p>
 
       </div>
     </article>
@@ -724,7 +823,7 @@ to transform the prompt before sending to the
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1282 Words
+        1576 Words
       </p>
 
       <p>

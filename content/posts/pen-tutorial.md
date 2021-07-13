@@ -10,10 +10,21 @@ draft = false
 
 This is a tutorial for how to use `pen.el`.
 
+The following command starts `pen.el`. You
+only need to have docker installed and an
+`OpenAI GPT-3` key to try this out.
+
 {{< highlight sh "linenos=table, linenostart=1" >}}
-# Latest docker image of =pen.el=
 docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
 {{< /highlight >}}
+
+Project code
+: <https://github.com/semiosis/pen.el/>
+
+For `GPT-neo`, `GPT-2` and `booste` support,
+and latest updates, please install from master
+branch. Docker support coming. `GPT-j` also in
+the works.
 
 
 ## Default Key bindings {#default-key-bindings}
@@ -23,10 +34,48 @@ docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
 | `H-TAB g` | `pen-generate-prompt-functions` | `pen-map`      |
 | `H-TAB r` | `pen-run-prompt-function`       | `pen-map`      |
 | `SPC`     | `pen-run-prompt-function`       | `selected-map` |
+| `H-TAB l` | `pen-complete-long`             | `pen-map`      |
 
-`H` is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift.
+`H` is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard.
 
-`pen.el` emulates a Hyper key with `C-M-\`.
+`pen.el` emulates a Hyper key (`H-`) with `C-M-\`.
+
+I like `Hyper` because you're writing `hyperreality`.
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+hyperreality
+    [#semiotics]
+    [#postmodernism]
+
+    An inability of consciousness to
+    distinguish reality from a simulation of
+    reality, especially in technologically
+    advanced postmodern societies.
+{{< /highlight >}}
+
+
+### How to run `H-TAB r` for emacs noobies {#how-to-run-h-tab-r-for-emacs-noobies}
+
+For mac users
+: Select some text, tap `Esc`, hold `Ctrl` and press  `\`, release and tap `r`.
+
+
+For everyone else
+: Select some text, hold `Ctrl Alt \`, release and tap `r`.
+
+You may also press `SPC` while some text is selected to run a prompt function.
+
+You may also use `right click` for starting the context menu.
+
+
+### Company-mode {#company-mode}
+
+For mac users
+: Select some text, tap `Esc`, hold `Ctrl` and press  `\`, release and tap `c`.
+
+
+For everyone else
+: Select some text, hold `Ctrl Alt \`, release and tap `c`.
 
 
 ### Usage {#usage}
@@ -397,3 +446,49 @@ var-defaults:
 - "(read-string \"To language: \")"
 - "(pen-selected-text)"
 {{< /highlight >}}
+
+
+## Current Development {#current-development}
+
+
+### `company-mode` {#company-mode}
+
+I'm trying to do something a little more
+ambitious than simply having a single
+completion function.
+
+There will be infinitely many completion functions that you can select from.
+
+| kb        | f                      |           |
+|-----------|------------------------|-----------|
+| `H-TAB c` | `pen-company-complete` | `pen-map` |
+
+
+### HuggingFace transformers {#huggingface-transformers}
+
+Mark Watson in his book "Practical Artificial
+Intelligence Programming With Clojure" uses
+spaCy and the HuggingFace transformers library
+from Clojure. I would like to connect to
+HuggingFace's transformers library in this way.
+
+See "<https://markwatson.com/>".
+
+
+### GPT-neo {#gpt-neo}
+
+<https://github.com/samrawal/emacs-secondmate/>
+
+
+### GPT-2 {#gpt-2}
+
+Thank you `@Samin` and `@erik` for the
+`booste` API support in integrating a free to
+use GPT-2.
+
+Please visit <https://www.booste.io/> to get your key.
+
+
+### `GPT-j` {#gpt-j}
+
+Currently working on a way to integrate this.
