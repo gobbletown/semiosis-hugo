@@ -37,6 +37,8 @@ Running =pen-run-prompt-function= will run a prompt function.
 
 You may also press =SPC= while some text is selected to run a prompt function.
 
+You may also use =right-click= for starting the context menu.
+
 ** Demos
 *** Select some text and running a prompt function
 
