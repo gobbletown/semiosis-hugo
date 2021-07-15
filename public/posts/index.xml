@@ -17,7 +17,7 @@
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
             <description>Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest    Project code https://github.com/semiosis/pen.el/ Join discord https://discord.gg/HH6PY27d  For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch.</description>
+1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest    Project code https://github.com/semiosis/pen.el/ Join discord https://discord.gg/HH6PY27d    For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a tutorial for how to use <code>pen.el</code>.</p>
 <p>The following command starts <code>pen.el</code>. You
@@ -43,6 +43,10 @@ docker pull semiosis/pen.el:latest</code></pre></td></tr></table>
 <dt>Join discord</dt>
 <dd><a href="https://discord.gg/HH6PY27d">https://discord.gg/HH6PY27d</a></dd>
 </dl>
+<figure>
+    <img src="/ox-hugo/wizard4.png"/> 
+</figure>
+
 <p>For <code>GPT-neo</code>, <code>GPT-2</code> and <code>booste</code> support,
 and latest updates, please install from master
 branch. Docker support coming. <code>GPT-j</code> also in
@@ -119,6 +123,10 @@ the works.</p>
     advanced postmodern societies.</code></pre></td></tr></table>
 </div>
 </div>
+<dl>
+<dt>Imagining <code>Pen.el</code></dt>
+<dd><a href="https://mullikine.github.io/posts/creating-some-imagery-for-pen-el-with-clip/">Imagery for Pen.el with CLIP and inspired from Myst: The Book of Atrus // Bodacious Blog</a></dd>
+</dl>
 <h3 id="how-to-run-h-tab-r-for-emacs-noobies">How to run <code>H-TAB r</code> for emacs noobies</h3>
 <dl>
 <dt>For mac users</dt>

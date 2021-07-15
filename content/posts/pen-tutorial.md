@@ -28,6 +28,8 @@ Project code
 Join discord
 : <https://discord.gg/HH6PY27d>
 
+{{< figure src="/ox-hugo/wizard4.png" >}}
+
 For `GPT-neo`, `GPT-2` and `booste` support,
 and latest updates, please install from master
 branch. Docker support coming. `GPT-j` also in
@@ -62,6 +64,9 @@ hyperreality
     reality, especially in technologically
     advanced postmodern societies.
 {{< /highlight >}}
+
+Imagining `Pen.el`
+: [Imagery for Pen.el with CLIP and inspired from Myst: The Book of Atrus // Bodacious Blog](https://mullikine.github.io/posts/creating-some-imagery-for-pen-el-with-clip/)
 
 
 ### How to run `H-TAB r` for emacs noobies {#how-to-run-h-tab-r-for-emacs-noobies}
