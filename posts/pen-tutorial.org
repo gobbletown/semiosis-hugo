@@ -18,22 +18,30 @@ only need to have docker installed and an
 
 #+BEGIN_SRC sh -n :sps bash :async :results none
   docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+
+  # And to update the image
+  docker pull semiosis/pen.el:latest
 #+END_SRC
 
 + Project code :: https://github.com/semiosis/pen.el/
+
++ Join discord :: https://discord.gg/HH6PY27d
 
 For =GPT-neo=, =GPT-2= and =booste= support,
 and latest updates, please install from master
 branch. Docker support coming. =GPT-j= also in
 the works.
 
-** Default Key bindings
-| kb        | f                               |                |
-|-----------+---------------------------------+----------------|
-| =H-TAB g= | =pen-generate-prompt-functions= | =pen-map=      |
-| =H-TAB r= | =pen-run-prompt-function=       | =pen-map=      |
-| =SPC=     | =pen-run-prompt-function=       | =selected-map= |
-| =H-TAB l= | =pen-complete-long=             | =pen-map=      |
+** Basic Key bindings
+| kb        | f                                 |                                                                                    |
+|-----------+-----------------------------------+------------------------------------------------------------------------------------|
+| =H-TAB g= | =pen-generate-prompt-functions=   | This reloads the prompt functions.                                                 |
+| =H-TAB r= | =pen-run-prompt-function=         | Running a prompt function like this will not insert text or replace it.            |
+| =M-1=     | =pen-company-filetype=            | This completes the current line.                                                   |
+| =H-TAB s= | =pen-filter-with-prompt-function= | This filters the text through a prompt function specifically designed for this.    |
+| =H-TAB c= | =pen-company-complete=            | Select a prompt function as the completer for =company-mode= and complete with it. |
+| =SPC=     | =pen-run-prompt-function=         | When text is selected, will run with that text as first argument.                  |
+| =H-TAB l= | =pen-complete-long=               | This is a multiline completion.                                                    |
 
 =H= is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard.
 
@@ -67,6 +75,13 @@ You may also use =right click= for starting the context menu.
 
 + For everyone else :: Select some text, hold =Ctrl Alt \=, release and tap =c=.
 
+More company bindings.
+
+| kb        | f                                 |                                                 |
+|-----------+-----------------------------------+-------------------------------------------------|
+| =H-TAB f= | =pen-company-complete-choose=     | Select a single completer. Remove others.       |
+| =H-TAB a= | =pen-company-complete-add=        | Add other completers to the completer list      |
+
 *** Usage
 Running =pen-generate-prompt-functions= will
 load all prompts from the prompts directory,
@@ -99,7 +114,7 @@ You may also press =SPC= while some text is selected to run a prompt function.
 
 #+BEGIN_SRC yaml -n :async :results verbatim code
   title: Get language
-  prompt-version: 1
+  version: 1
   doc: This prompt detects the language
   notes:
   - "It appears that combining ### with Input: Output: has no improvement"
@@ -372,7 +387,7 @@ to transform the prompt before sending to the
 #+BEGIN_SRC yaml -n :async :results verbatim code
   ---
   title: Translate from world language X to Y
-  prompt-version: 2
+  version: 2
   doc: This prompt translates English text to any world langauge
   issues:
   - I think the unicode characters may be multibyte causing issues with completion
@@ -415,6 +430,94 @@ to transform the prompt before sending to the
   - "(read-string \"To language: \")"
   - "(pen-selected-text)"
 #+END_SRC
+
+** Using prompt functions in your code
+Prompt functions automatically 'curry' when
+you leave out their arguments.
+
+Here is an example, =pf-translate-from-world-language-x-to-y=:
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  pf-translate-from-world-language-x-to-y is an interactive function
+  defined in pen-example-config.el.
+
+  Signature
+  (pf-translate-from-world-language-x-to-y &optional FROM-LANGUAGE TO-LANGUAGE PHRASE)
+
+  Documentation
+  Translate from world language X to Y
+  This prompt translates English text to any world langauge
+
+  path:
+  - /home/shane/source/git/spacemacs/prompts/prompts/translate-world-languages.prompt
+
+  examples:
+  - English
+  - French
+  - Goodnight
+
+  preprocessors:
+  - cat
+  - cat
+  - sed -z 's/\n/\\n/g'
+
+  var-defaults:
+  - (read-string-hist "Pen From language: ")
+  - (read-string-hist "Pen To language: ")
+  - (pen-selected-text)
+
+  prompt-filter:
+  - pen-c ascify
+#+END_SRC
+
+If this function is run without a selection
+then =pen-selected-text= will resort to asking
+the user for input.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  ;; Leave out all arguments to be prompted for each argument
+  (pf-translate-from-world-language-x-to-y)
+#+END_SRC
+
+The following default functions / expressions
+(i.e. =var-defaults=) are run when called
+interactively or to acquire the values of
+optional parameters that were left out of the
+call to the prompt function.
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  var-defaults:
+  - "(read-string-hist \"Pen From language: \")"
+  - "(read-string-hist \"Pen To language: \")"
+  - "(pen-selected-text)"
+#+END_SRC
+
+The following invocation supplies ="French"=
+as the first parameter, but the others will be
+requested.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (pf-translate-from-world-language-x-to-y "French")
+#+END_SRC
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  烤面包
+#+END_SRC
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/lG511sKyJPjhwtn98IPbSZjYx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/lG511sKyJPjhwtn98IPbSZjYx.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/lG511sKyJPjhwtn98IPbSZjYx.js" id="asciicast-lG511sKyJPjhwtn98IPbSZjYx" async></script>
+#+END_EXPORT
+
+** An assistant for any major mode
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b.js" id="asciicast-MS8xMQfLoExEVyh4Nqu9fX49b" async></script>
+#+END_EXPORT
 
 ** Current Development
 *** =company-mode=
