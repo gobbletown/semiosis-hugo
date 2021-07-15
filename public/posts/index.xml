@@ -17,8 +17,7 @@
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
             <description>Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh    Project code https://github.com/semiosis/pen.el/  For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch. Docker support coming. GPT-j also in the works.
-Default Key bindings    kb f      H-TAB g pen-generate-prompt-functions pen-map   H-TAB r pen-run-prompt-function pen-map   SPC pen-run-prompt-function selected-map   H-TAB l pen-complete-long pen-map    H is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard.</description>
+1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest    Project code https://github.com/semiosis/pen.el/ Join discord https://discord.gg/HH6PY27d  For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a tutorial for how to use <code>pen.el</code>.</p>
 <p>The following command starts <code>pen.el</code>. You
@@ -27,20 +26,28 @@ only need to have docker installed and an
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh
+
+<span style="color:#75715e"># And to update the image</span>
+docker pull semiosis/pen.el:latest</code></pre></td></tr></table>
 </div>
 </div>
 <dl>
 <dt>Project code</dt>
 <dd><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></dd>
+<dt>Join discord</dt>
+<dd><a href="https://discord.gg/HH6PY27d">https://discord.gg/HH6PY27d</a></dd>
 </dl>
 <p>For <code>GPT-neo</code>, <code>GPT-2</code> and <code>booste</code> support,
 and latest updates, please install from master
 branch. Docker support coming. <code>GPT-j</code> also in
 the works.</p>
-<h2 id="default-key-bindings">Default Key bindings</h2>
+<h2 id="basic-key-bindings">Basic Key bindings</h2>
 <table>
 <thead>
 <tr>
@@ -53,22 +60,37 @@ the works.</p>
 <tr>
 <td><code>H-TAB g</code></td>
 <td><code>pen-generate-prompt-functions</code></td>
-<td><code>pen-map</code></td>
+<td>This reloads the prompt functions.</td>
 </tr>
 <tr>
 <td><code>H-TAB r</code></td>
 <td><code>pen-run-prompt-function</code></td>
-<td><code>pen-map</code></td>
+<td>Running a prompt function like this will not insert text or replace it.</td>
+</tr>
+<tr>
+<td><code>M-1</code></td>
+<td><code>pen-company-filetype</code></td>
+<td>This completes the current line.</td>
+</tr>
+<tr>
+<td><code>H-TAB s</code></td>
+<td><code>pen-filter-with-prompt-function</code></td>
+<td>This filters the text through a prompt function specifically designed for this.</td>
+</tr>
+<tr>
+<td><code>H-TAB c</code></td>
+<td><code>pen-company-complete</code></td>
+<td>Select a prompt function as the completer for <code>company-mode</code> and complete with it.</td>
 </tr>
 <tr>
 <td><code>SPC</code></td>
 <td><code>pen-run-prompt-function</code></td>
-<td><code>selected-map</code></td>
+<td>When text is selected, will run with that text as first argument.</td>
 </tr>
 <tr>
 <td><code>H-TAB l</code></td>
 <td><code>pen-complete-long</code></td>
-<td><code>pen-map</code></td>
+<td>This is a multiline completion.</td>
 </tr>
 </tbody>
 </table>
@@ -113,6 +135,28 @@ the works.</p>
 <dt>For everyone else</dt>
 <dd>Select some text, hold <code>Ctrl Alt \</code>, release and tap <code>c</code>.</dd>
 </dl>
+<p>More company bindings.</p>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>H-TAB f</code></td>
+<td><code>pen-company-complete-choose</code></td>
+<td>Select a single completer. Remove others.</td>
+</tr>
+<tr>
+<td><code>H-TAB a</code></td>
+<td><code>pen-company-complete-add</code></td>
+<td>Add other completers to the completer list</td>
+</tr>
+</tbody>
+</table>
 <h3 id="usage">Usage</h3>
 <p>Running <code>pen-generate-prompt-functions</code> will
 load all prompts from the prompts directory,
@@ -173,7 +217,7 @@ which is typically located here: <code>~/.emacs.d/prompts</code>.</p>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">Get language</span>
-<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">version</span>: <span style="color:#ae81ff">1</span>
 <span style="color:#f92672">doc</span>: <span style="color:#ae81ff">This prompt detects the language</span>
 <span style="color:#f92672">notes</span>:
 - <span style="color:#e6db74">&#34;It appears that combining ### with Input: Output: has no improvement&#34;</span>
@@ -578,7 +622,7 @@ to transform the prompt before sending to the
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Translate from world language X to Y</span>
-<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
 <span style="color:#f92672">doc</span>: <span style="color:#ae81ff">This prompt translates English text to any world langauge</span>
 <span style="color:#f92672">issues</span>:
 - <span style="color:#ae81ff">I think the unicode characters may be multibyte causing issues with completion</span>
@@ -622,6 +666,136 @@ to transform the prompt before sending to the
 - <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="using-prompt-functions-in-your-code">Using prompt functions in your code</h2>
+<p>Prompt functions automatically &lsquo;curry&rsquo; when
+you leave out their arguments.</p>
+<p>Here is an example, <code>pf-translate-from-world-language-x-to-y</code>:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">pf-translate-from-world-language-x-to-y is an interactive function
+defined in pen-example-config.el.
+
+Signature
+(pf-translate-from-world-language-x-to-y &amp;optional FROM-LANGUAGE TO-LANGUAGE PHRASE)
+
+Documentation
+Translate from world language X to Y
+This prompt translates English text to any world langauge
+
+path:
+- /home/shane/source/git/spacemacs/prompts/prompts/translate-world-languages.prompt
+
+examples:
+- English
+- French
+- Goodnight
+
+preprocessors:
+- cat
+- cat
+- sed -z &#39;s/\n/\\n/g&#39;
+
+var-defaults:
+- (read-string-hist &#34;Pen From language: &#34;)
+- (read-string-hist &#34;Pen To language: &#34;)
+- (pen-selected-text)
+
+prompt-filter:
+- pen-c ascify</code></pre></td></tr></table>
+</div>
+</div>
+<p>If this function is run without a selection
+then <code>pen-selected-text</code> will resort to asking
+the user for input.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Leave out all arguments to be prompted for each argument</span>
+(pf-translate-from-world-language-x-to-y)</code></pre></td></tr></table>
+</div>
+</div>
+<p>The following default functions / expressions
+(i.e. <code>var-defaults</code>) are run when called
+interactively or to acquire the values of
+optional parameters that were left out of the
+call to the prompt function.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(read-string-hist \&#34;Pen From language: \&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(read-string-hist \&#34;Pen To language: \&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The following invocation supplies <code>&quot;French&quot;</code>
+as the first parameter, but the others will be
+requested.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(pf-translate-from-world-language-x-to-y <span style="color:#e6db74">&#34;French&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">烤面包</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/lG511sKyJPjhwtn98IPbSZjYx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/lG511sKyJPjhwtn98IPbSZjYx.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/lG511sKyJPjhwtn98IPbSZjYx.js" id="asciicast-lG511sKyJPjhwtn98IPbSZjYx" async></script>
+<h2 id="an-assistant-for-any-major-mode">An assistant for any major mode</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b.js" id="asciicast-MS8xMQfLoExEVyh4Nqu9fX49b" async></script>
 <h2 id="current-development">Current Development</h2>
 <h3 id="company-mode"><code>company-mode</code></h3>
 <p>I&rsquo;m trying to do something a little more
