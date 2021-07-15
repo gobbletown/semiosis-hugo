@@ -27,6 +27,8 @@ only need to have docker installed and an
 
 + Join discord :: https://discord.gg/HH6PY27d
 
+[[./wizard4.png]]
+
 For =GPT-neo=, =GPT-2= and =booste= support,
 and latest updates, please install from master
 branch. Docker support coming. =GPT-j= also in
@@ -59,6 +61,8 @@ I like =Hyper= because you're writing =hyperreality=.
       reality, especially in technologically
       advanced postmodern societies.
 #+END_SRC
+
++ Imagining =Pen.el= :: [[https://mullikine.github.io/posts/creating-some-imagery-for-pen-el-with-clip/][Imagery for Pen.el with CLIP and inspired from Myst: The Book of Atrus // Bodacious Blog]]
 
 *** How to run =H-TAB r= for emacs noobies
 
