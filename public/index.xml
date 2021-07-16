@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 11 Jul 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imagery for Pen.el with CLIP and inspired from Myst: The Book of Atrus</title>
+      <link>http://semiosis.github.io/posts/creating-some-imagery-for-pen-el-with-clip/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/creating-some-imagery-for-pen-el-with-clip/</guid>
+      <description>Original source material https://generative.ink/posts/alchemical-marriage-gpt-3-x-clip/#you-spin-worlds-together-and-untwine-them  Summary I follow the same instructions as in the aforementioned article to generate some imagery for Pen.el.
+ Project code https://github.com/semiosis/pen.el/ Tutorial and exhibition https://mullikine.github.io/posts/pen-tutorial/ Join discord https://discord.gg/HH6PY27d  Thoughts Using Pen to generate a programming environment using a LM. NL is the easiest to use code for transforming images, programming languages and NLs. That&amp;rsquo;s why Pen exists, to be a shell for creativity, provenance and intelligibility, so as to not get lost in the interactive fiction.</description>
+    </item>
+    
     <item>
       <title>Pen Tutorial</title>
       <link>http://semiosis.github.io/posts/pen-tutorial/</link>

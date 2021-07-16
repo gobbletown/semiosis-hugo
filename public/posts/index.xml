@@ -6,8 +6,445 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 11 Jul 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Imagery for Pen.el with CLIP and inspired from Myst: The Book of Atrus</title>
+            <link>http://semiosis.github.io/posts/creating-some-imagery-for-pen-el-with-clip/</link>
+            <pubDate>Thu, 15 Jul 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/creating-some-imagery-for-pen-el-with-clip/</guid>
+            <description>Original source material https://generative.ink/posts/alchemical-marriage-gpt-3-x-clip/#you-spin-worlds-together-and-untwine-them  Summary I follow the same instructions as in the aforementioned article to generate some imagery for Pen.el.
+ Project code https://github.com/semiosis/pen.el/ Tutorial and exhibition https://mullikine.github.io/posts/pen-tutorial/ Join discord https://discord.gg/HH6PY27d  Thoughts Using Pen to generate a programming environment using a LM. NL is the easiest to use code for transforming images, programming languages and NLs. That&amp;rsquo;s why Pen exists, to be a shell for creativity, provenance and intelligibility, so as to not get lost in the interactive fiction.</description>
+            <content type="html"><![CDATA[<dl>
+<dt>Original source material</dt>
+<dd><a href="https://generative.ink/posts/alchemical-marriage-gpt-3-x-clip/#you-spin-worlds-together-and-untwine-them">https://generative.ink/posts/alchemical-marriage-gpt-3-x-clip/#you-spin-worlds-together-and-untwine-them</a></dd>
+</dl>
+<h2 id="summary">Summary</h2>
+<p>I follow the same instructions as in the
+aforementioned article to generate some
+imagery for <code>Pen.el</code>.</p>
+<dl>
+<dt>Project code</dt>
+<dd><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></dd>
+<dt>Tutorial and exhibition</dt>
+<dd><a href="https://mullikine.github.io/posts/pen-tutorial/">https://mullikine.github.io/posts/pen-tutorial/</a></dd>
+<dt>Join discord</dt>
+<dd><a href="https://discord.gg/HH6PY27d">https://discord.gg/HH6PY27d</a></dd>
+</dl>
+<h3 id="thoughts">Thoughts</h3>
+<p>Using Pen to generate a programming
+environment using a LM. NL is the easiest to
+use code for transforming images, programming
+languages and NLs. That&rsquo;s why Pen exists, to
+be a shell for creativity, provenance and
+intelligibility, so as to not get lost in the
+interactive fiction.</p>
+<p>Don&rsquo;t you want to understand things via code rather than become lost in lost in the interactive fiction?
+There&rsquo;s a natural tendency to be amazed at tech like neural image generation, and a tendency to focus on that.
+But I think that the best place to focus thought is in the generative process, and in intelligibility.
+So though it may not be pretty, the NL shell and the prompt sharing etc. is essentially creating the &lsquo;linking books&rsquo; that Ghen was referring to in Myst.
+You have to make the linking books. It&rsquo;s the first rule.
+Otherwise u get stuck inside another world unable to escape.
+Great allegory there.</p>
+<h3 id="docker-install-pen-dot-el">Docker install <code>pen.el</code></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh
+
+<span style="color:#75715e"># And to update the image</span>
+docker pull semiosis/pen.el:latest</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<p>I extract part of a passage from <code>Myst: The Book of Atrus</code>, using GPT-3 and <code>pen.el</code>.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/2XH4Io6Zb973qlOB73gW3mie1" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/2XH4Io6Zb973qlOB73gW3mie1.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/2XH4Io6Zb973qlOB73gW3mie1.js" id="asciicast-2XH4Io6Zb973qlOB73gW3mie1" async></script>
+<h2 id="generating-the-imagery">Generating the imagery</h2>
+<h3 id="generation-1">Generation 1</h3>
+<p>This is the passage I have decided upon.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">A time-traveling wizard who uses a magic book and pen to create worlds.</code></pre></td></tr></table>
+</div>
+</div>
+<figure>
+    <img src="/ox-hugo/wizard2.png"/> 
+</figure>
+
+<p>I like the little magic swirl above the planet on a pedestel.</p>
+<h3 id="generation-2">Generation 2</h3>
+<figure>
+    <img src="/ox-hugo/wizard4.png"/> 
+</figure>
+
+<h3 id="generation-3">Generation 3</h3>
+<figure>
+    <img src="/ox-hugo/wizard5.png"/> 
+</figure>
+
+<h3 id="generation-4">Generation 4</h3>
+<figure>
+    <img src="/ox-hugo/wizard7.png"/> 
+</figure>
+
+<h3 id="generation-5">Generation 5</h3>
+<figure>
+    <img src="/ox-hugo/wizard8.png"/> 
+</figure>
+
+<p>This reminds me of how I imagined Atrus or Ghen</p>
+<h2 id="thoughts">Thoughts</h2>
+<ul>
+<li><a href="https://generative.ink/posts/language-models-are-multiverse-generators/">https://generative.ink/posts/language-models-are-multiverse-generators/</a></li>
+<li><a href="https://semiosis.github.io/posts/representing-multiverses-with-datomic/">https://semiosis.github.io/posts/representing-multiverses-with-datomic/</a></li>
+</ul>
+<p>Hypothesis: both people and language models are multiverse generators.</p>
+<h2 id="excerpt-from-myst-the-book-of-atrus">Excerpt from <code>Myst: The Book of Atrus</code></h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#34;Ink?&#34;
+
+&#34;Yes ... but not just any ink.
+
+It has special powers that ordinary ink does
+not possess.
+
+So, too, with the pages of the book.
+
+They are made of a special paper, the formula
+for which was kept secret by the Guild.&#34;
+
+&#34;And the pen?&#34; Atrus asked, pointing to it,
+&#34;Is that special, too?&#34;
+
+Gehn smiled.
+
+&#34;No.
+
+The pen is but a pen.
+
+However, if anyone else tried to do what we
+are about to do- anyone, that is, without D&#39;ni
+blood-then they would fail.
+
+It would be impossible.&#34;
+
+Turning to face the page, Gehn set the ink pot
+down, then, dipping the metallic rip of the
+quill into it, lifted the pen above the page
+and began to write.
+
+Slowly a D&#39;ni character-the word &#34;island,&#34;
+Atrus noted-began to form, its intense
+blackness burned almost into the pure white
+surface by the pen.
+
+Gehn wrote another dozen characters onto the
+page, then lifted the pen and looked to Atrus.
+
+&#34;Is it done?&#34; Atrus asked, surprised that
+there had not been more.
+
+He had expected fireworks or the heavens to
+open.
+
+&#34;Have you made a new Age?&#34;
+
+Gehn laughed.
+
+&#34;It exists, yes ... but as yet it is very
+crude.
+
+It takes a great deal of work to create an
+Age.
+
+There are special formulas you have to follow,
+precise laws to obey.
+
+As I said, it is not simply an Art, it is a
+science-the science of precise description.&#34;
+
+He gestured toward the open book.
+
+&#34;As yet, I have merely sketched out the most
+basic elements of my new world.
+
+Ahead lies an immense amount of hard work.
+
+Every aspect of the Age must be described,
+each new element fitted in.
+
+But that is not all.&#34;
+
+Reaching across, Gehn took another, much
+smaller book from a pile at the side and held
+it out to Atrus.
+
+&#34;Once the Age is complete, one must always-
+always-make a Linking Book.&#34;
+
+Atrus took the small book and opened it,
+noting at once how few pages were in it.
+
+All of them were blank.
+
+&#34;Yes,&#34; Gehn continued.
+
+&#34;Whenever you travel to a newly written Age
+you must always carry a Linking Book with you.
+
+If you did not, you would be trapped there,
+without any way of traveling back.&#34;
+
+Atrus looked back at his father, wide-eyed.
+
+&#34;But what&#39;s actually in one of these Linking
+Books?&#34;
+
+Gehn took the book back.
+
+&#34;Each Linking Book refers to one of the larger
+descriptive books-to one specific book.
+
+You might say that it contains the essence of
+the larger book- certain phrases and words
+that fuses it to that book and no other.
+
+But that is not all.
+
+For a Linking Book to work, it must also
+include an accurate description of the place
+one wishes to link to on that particular Age,
+which is recorded by writing a special D&#39;ni
+symbol, a Garo-hertee.
+
+Yes, and a Linking Book must be written in the
+Age and location it is meant to link to.
+
+And so a Linking Book is, in a sense, a
+working substitute for a descriptive book.&#34;
+
+Atrus thought a moment, then.
+
+&#34;And can there be only one Linking Book for
+each descriptive book?&#34;
+
+&#34;Not at all,&#34; Gehn answered, delighted by his
+son&#39;s understanding.
+
+Then, setting the slender book back on the
+pile, he added.
+
+&#34;You can make as many Linking Books as you
+want.
+
+But you must always make at least one.
+
+That is the first rule.
+
+One you must not forget.&#34;
+
+Atrus nodded, then.
+
+&#34;But what if you change the Age?
+
+What if you decide to write more in the
+descriptive book?
+
+Would the Linking Book cease to work?&#34;
+
+&#34;No.
+
+If the descriptive book is changed, then all
+Linking Books associated with it will link to
+the changed world.&#34;
+
+Atruss eyes lit, imagining it, only now
+realizing just how complex and powerful this
+Writing was.
+
+&#34;It sounds . .. astonishing!&#34;</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Pen Tutorial</title>
