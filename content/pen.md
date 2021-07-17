@@ -29,7 +29,14 @@ Tutorial
 
 {{< highlight sh "linenos=table, linenostart=1" >}}
 docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+
+# And to update the image
+docker pull semiosis/pen.el:latest
 {{< /highlight >}}
+
+_The pen of imagination - |:ϝ∷¦ϝ._
+
+{{< figure src="/ox-hugo/the_pen_of_imagination.png" >}}
 
 `Pen` facilitates the creation,
 development, discovery and usage of prompts to
