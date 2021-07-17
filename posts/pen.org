@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./
+#+HUGO_SECTION: ./posts
 
 #+TITLE: Pen (Prompt Engineering in Emacs)
 #+DATE: <2021-07-02>
