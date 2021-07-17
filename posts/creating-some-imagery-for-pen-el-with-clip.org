@@ -34,7 +34,7 @@ interactive fiction.
 Don't you want to understand things via code rather than become lost in lost in the interactive fiction?
 There's a natural tendency to be amazed at tech like neural image generation, and a tendency to focus on that.
 But I think that the best place to focus thought is in the generative process, and in intelligibility.
-So though it may not be pretty, the NL shell and the prompt sharing etc. is essentially creating the 'linking books' that Ghen was referring to in Myst.
+So though it may not be pretty, the NL shell and the prompt sharing etc. is essentially creating the 'linking books' that Gehn was referring to in Myst.
 You have to make the linking books. It's the first rule.
 Otherwise u get stuck inside another world unable to escape.
 Great allegory there.
@@ -83,7 +83,7 @@ I like the little magic swirl above the planet on a pedestel.
 *** Generation 5
 [[./wizard8.png]]
 
-This reminds me of how I imagined Atrus or Ghen
+This reminds me of how I imagined Atrus or Gehn
 
 ** Thoughts
 - https://generative.ink/posts/language-models-are-multiverse-generators/
