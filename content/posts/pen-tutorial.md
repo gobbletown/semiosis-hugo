@@ -21,6 +21,15 @@ docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
 docker pull semiosis/pen.el:latest
 {{< /highlight >}}
 
+{{< highlight sh "linenos=table, linenostart=1" >}}
+# For windows
+docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+
+# You may need winpty
+git clone https://github.com/rprichard/winpty
+winpty docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+{{< /highlight >}}
+
 Project code
 : <https://github.com/semiosis/pen.el/>
 
@@ -36,7 +45,21 @@ branch. Docker support coming. `GPT-j` also in
 the works.
 
 
-## Basic Key bindings {#basic-key-bindings}
+## Key bindings for emacs noobs (enabled in docker) {#key-bindings-for-emacs-noobs--enabled-in-docker}
+
+| kb                     | f                                 |                                                                                 |
+|------------------------|-----------------------------------|---------------------------------------------------------------------------------|
+| `Alt-p`                | `pen-super-newb-dired-prompts`    | Open the prompts directory in dired                                             |
+| `Alt-s`                | `pen-super-newb-scratch`          | Start writing in an empty file                                                  |
+| `Alt-r`                | `pen-run-prompt-function`         | Running a prompt function like this will not insert text or replace it.         |
+| `Alt-TAB`              | `pen-company-filetype`            | This completes the current line.                                                |
+| `Alt-l`                | `pen-complete-long`               | This is a multiline completion.                                                 |
+| `Alt-g`                | `pen-generate-prompt-functions`   | This reloads the prompt functions.                                              |
+| Select text then `TAB` | `pen-filter-with-prompt-function` | This filters the text through a prompt function specifically designed for this. |
+| `Spacebar`             | `pen-run-prompt-function`         | When text is selected, will run with that text as first argument.               |
+
+
+## Key bindings for emacs wizards (also enabled in docker) {#key-bindings-for-emacs-wizards--also-enabled-in-docker}
 
 | kb        | f                                 |                                                                                    |
 |-----------|-----------------------------------|------------------------------------------------------------------------------------|

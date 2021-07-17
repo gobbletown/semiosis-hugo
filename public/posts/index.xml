@@ -454,7 +454,7 @@ Writing was.
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
             <description>Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest    Project code https://github.com/semiosis/pen.el/ Join discord https://discord.gg/HH6PY27d    For GPT-neo, GPT-2 and booste support, and latest updates, please install from master branch.</description>
+1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest   1 2 3 4 5 6  # For windows docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest .</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a tutorial for how to use <code>pen.el</code>.</p>
 <p>The following command starts <code>pen.el</code>. You
@@ -474,6 +474,24 @@ only need to have docker installed and an
 docker pull semiosis/pen.el:latest</code></pre></td></tr></table>
 </div>
 </div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># For windows</span>
+docker.exe run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh
+
+<span style="color:#75715e"># You may need winpty</span>
+git clone https://github.com/rprichard/winpty
+winpty docker.exe run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+</div>
+</div>
 <dl>
 <dt>Project code</dt>
 <dd><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></dd>
@@ -488,7 +506,59 @@ docker pull semiosis/pen.el:latest</code></pre></td></tr></table>
 and latest updates, please install from master
 branch. Docker support coming. <code>GPT-j</code> also in
 the works.</p>
-<h2 id="basic-key-bindings">Basic Key bindings</h2>
+<h2 id="key-bindings-for-emacs-noobs--enabled-in-docker">Key bindings for emacs noobs (enabled in docker)</h2>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Alt-p</code></td>
+<td><code>pen-super-newb-dired-prompts</code></td>
+<td>Open the prompts directory in dired</td>
+</tr>
+<tr>
+<td><code>Alt-s</code></td>
+<td><code>pen-super-newb-scratch</code></td>
+<td>Start writing in an empty file</td>
+</tr>
+<tr>
+<td><code>Alt-r</code></td>
+<td><code>pen-run-prompt-function</code></td>
+<td>Running a prompt function like this will not insert text or replace it.</td>
+</tr>
+<tr>
+<td><code>Alt-TAB</code></td>
+<td><code>pen-company-filetype</code></td>
+<td>This completes the current line.</td>
+</tr>
+<tr>
+<td><code>Alt-l</code></td>
+<td><code>pen-complete-long</code></td>
+<td>This is a multiline completion.</td>
+</tr>
+<tr>
+<td><code>Alt-g</code></td>
+<td><code>pen-generate-prompt-functions</code></td>
+<td>This reloads the prompt functions.</td>
+</tr>
+<tr>
+<td>Select text then <code>TAB</code></td>
+<td><code>pen-filter-with-prompt-function</code></td>
+<td>This filters the text through a prompt function specifically designed for this.</td>
+</tr>
+<tr>
+<td><code>Spacebar</code></td>
+<td><code>pen-run-prompt-function</code></td>
+<td>When text is selected, will run with that text as first argument.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-bindings-for-emacs-wizards--also-enabled-in-docker">Key bindings for emacs wizards (also enabled in docker)</h2>
 <table>
 <thead>
 <tr>
