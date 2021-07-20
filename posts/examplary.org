@@ -27,7 +27,7 @@ but also:
       solving using constraints given to the
       program, rather than using an algorithm
       written by a programmer.
-      
+
       Most constraint-based and logic
       programming languages and some other
       declarative languages are fifth-generation
