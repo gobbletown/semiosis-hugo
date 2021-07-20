@@ -71,7 +71,7 @@ Leave out =:task= to have it inferred.
 #+END_SRC
 
 Even leave out =:gen= to have it inferred from
-the variable name.
+tthe variable name.
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defprompt ("short lines of code" regex) :filter "grex")
