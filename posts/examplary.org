@@ -47,7 +47,7 @@ but also:
     :lm-command "openai-complete.sh")
 #+END_SRC
 
-With regards to the list oof examples,
+With regards to the list of examples,
 the third argument (if supplied) should be
 incorrect output (a counterexample).
 
