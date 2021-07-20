@@ -35,10 +35,12 @@ but also:
 #+END_SRC
 
 ** Emacs-lisp implementation
+Generate input with =:gen= when example input is not present.
+- Use shell or emacs lisp for generators and filters
+
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defprompt ("lines of code" regex)
     :task "Convert lines to regex"
-    ;; Generate input with this
     :gen "examplary-edit-generator shane"
     :filter "grex"
     :examples '(("example 1\nexample2")
