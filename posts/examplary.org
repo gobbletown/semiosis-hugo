@@ -22,7 +22,7 @@ but also:
 
 #+BEGIN_SRC text -n :async :results verbatim code
   fifth-generation programming language
-  5GL
+  s5GL
       Any programming language based on problem
       solving using constraints given to the
       program, rather than using an algorithm
