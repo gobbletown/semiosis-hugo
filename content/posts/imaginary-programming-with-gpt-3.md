@@ -194,6 +194,53 @@ literate programming
     the code.
 {{< /highlight >}}
 
+Imaginary programming is a programming
+paradigm in which a computer program's
+behaviour exists in relativity to language models (LM), such as
+OpenAI's GPT-3.
+
+To make an analogy, imaginary programming is a
+type of programming, where similarly to pure-
+functional programming, the subset of code
+who's behaviour depends on the output of a LM
+(either pending or precomputed outputs) stands
+apart from the rest of the code that has no
+such association. What is deemed _imaginary_
+code is code that uses or is waiting on output
+from a LM and its behaviour is so altered by
+it. What is deemed _ordinary_ code is code
+which is not 'imaginary'.
+
+A distinction is made between grounded and
+non-grounded imaginary programming. _Non-grounded imaginary programming_ may also be
+called _pure imaginary programming_. If an
+imaginary function has the LM as a parameter
+then it is considered _grounded_. If an
+imaginary function relies on the output of
+functions that have in the past used a LM as a
+parameter, but does not contain a reference to
+specific LM used then it is considered _non-grounded_ or _pure imaginary_. Non-grounded
+code is still code in a similar way to how
+pure functional code is considered code.
+
+In contrast to imaginary programming, ordinary
+programming refers to the style of programming
+where functions have no dependence on the
+output of a LM and thus have no imaginary
+dimension.
+
+_holographic programming_ is a type of
+imaginary programming where the LMs being used
+are trained on a dataset that is comprised of
+software. The imaginary code being written,
+therefore, may employ associations made
+between elements of the code during the
+training of the LM, and possibly how the
+application is used, to build applications.
+Such appliations may be based on knowledge of
+how a program has been used in the past and
+not contain any of the original source code.
+
 
 ## Prompts {#prompts}
 
