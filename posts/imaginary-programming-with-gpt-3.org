@@ -101,12 +101,25 @@ in an =MVP= stage.
 ** Glossary
 #+BEGIN_SRC text -n :async :results verbatim code
   imaginary programming
+  IP
+      A programming paradigm in which a computer
+      program's behaviour exists in relativity to
+      language models.
+
       To make an analogy, imaginary programming
-      is a type of programming much like
-      pure-functional, where what is deemed
-      'imaginary' is code that has been
-      'contaminated' by output from a language
-      and behaviour altered by it.
+      is a type of programming, where much like
+      pure-functional, code who's behaviour
+      depends on the output of a language model,
+      either pending or precomputed, stands
+      apart from that which has no such
+      association.
+
+      What is deemed 'imaginary' is code has or
+      will be be 'contaminated' by output from a
+      language and behaviour so altered by it.
+
+      What is deemed 'ordinary' is code which is
+      not 'imaginary'.
 
       A distinction is made between grounded and
       non-grounded imaginary programming.
@@ -114,6 +127,7 @@ in an =MVP= stage.
   grounded
   grounded imaginary programming
   non-grounded
+  pure imaginary programming
       If an imaginary function has the language
       model as a parameter then it is considered
       'grounded'.
@@ -123,10 +137,11 @@ in an =MVP= stage.
       used a language model as a parameter, but
       does not contain a reference to specific
       language model used then it is considered
-      'non-grounded'.
+      'non-grounded' or 'pure imaginary'.
 
-      non-grounded code is still code in the way
-      that pure functional code is code.
+      Non-grounded code is still code in a
+      similar way to how pure functional code is
+      considered code.
 
   ordinary programming
       Programming with functions that do not
@@ -152,6 +167,12 @@ in an =MVP= stage.
       of a language model to enable things like:
       - reflection
       - inference in place of computation
+
+  literate programming
+      A programming paradigm that emphasizes the
+      importance of the reading and writing of
+      code over the importance of the design of
+      the code.
 #+END_SRC
 
 ** Prompts
