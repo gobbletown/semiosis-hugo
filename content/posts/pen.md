@@ -25,6 +25,9 @@ Prompt README
 Tutorial
 : <https://semiosis.github.io/posts/pen-tutorial/>
 
+
+Video demo : [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw)
+
 <!--listend-->
 
 {{< highlight sh "linenos=table, linenostart=1" >}}

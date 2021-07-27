@@ -1392,7 +1392,7 @@ use GPT-2.</p>
             
             <guid>http://semiosis.github.io/posts/pen/</guid>
             <description>Introducing Pen I start a GitHub project to deploy pen.el.
- GitHub project GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI&amp;rsquo;s GPT-3 or EleutherAI&amp;rsquo;s GPT-j. Project timeline and objectives https://github.com/semiosis/pen.el/tree/master/docs Prompt README prompts/README.org at master semiosis/prompts GitHub Tutorial https://semiosis.github.io/posts/pen-tutorial/   1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.</description>
+ GitHub project GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI&amp;rsquo;s GPT-3 or EleutherAI&amp;rsquo;s GPT-j. Project timeline and objectives https://github.com/semiosis/pen.el/tree/master/docs Prompt README prompts/README.org at master semiosis/prompts GitHub Tutorial https://semiosis.github.io/posts/pen-tutorial/  Video demo : Augment Minds 2021: Demo of Loom and Pen.</description>
             <content type="html"><![CDATA[<h2 id="introducing-pen">Introducing <code>Pen</code></h2>
 <p>I start a GitHub project to deploy <code>pen.el</code>.</p>
 <dl>
@@ -1405,6 +1405,7 @@ use GPT-2.</p>
 <dt>Tutorial</dt>
 <dd><a href="https://semiosis.github.io/posts/pen-tutorial/">https://semiosis.github.io/posts/pen-tutorial/</a></dd>
 </dl>
+<p>Video demo : <a href="https://www.youtube.com/watch?v=J9BnZjWV1jw">Augment Minds 2021: Demo of Loom and Pen.el - YouTube</a></p>
 <!--listend-->
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
