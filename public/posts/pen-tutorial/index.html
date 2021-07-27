@@ -7,7 +7,8 @@
 <meta name="author" content="[Shane Mulligan]">
 <meta name="description" content="Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest   1 2 3 4 5 6  # For windows docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ." />
+These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir ~/.pen echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/.pen/openai_api_key ./pen.el/scripts/pen   Or for Windows users:" />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -37,9 +38,10 @@ The following command starts pen.el. You only need to have docker installed and 
 <meta itemprop="name" content="Pen Tutorial">
 <meta itemprop="description" content="Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest   1 2 3 4 5 6  # For windows docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ."><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
+These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5  git clone &#34;https://github.com/semiosis/pen.el&#34; git clone &#34;https://github.com/semiosis/prompts&#34; mkdir ~/.pen echo &#34;sk-&lt;openai key here&gt;&#34; &gt; ~/.pen/openai_api_key ./pen.el/scripts/pen   Or for Windows users:"><meta itemprop="datePublished" content="2021-07-11T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-07-11T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="2064"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2227"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -47,7 +49,8 @@ The following command starts pen.el. You only need to have docker installed and 
 <meta name="twitter:title" content="Pen Tutorial"/>
 <meta name="twitter:description" content="Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest   1 2 3 4 5 6  # For windows docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ."/>
+These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5  git clone &#34;https://github.com/semiosis/pen.el&#34; git clone &#34;https://github.com/semiosis/prompts&#34; mkdir ~/.pen echo &#34;sk-&lt;openai key here&gt;&#34; &gt; ~/.pen/openai_api_key ./pen.el/scripts/pen   Or for Windows users:"/>
 
 
 
@@ -55,7 +58,8 @@ The following command starts pen.el. You only need to have docker installed and 
     <meta property="og:title" content="Pen Tutorial" />
 <meta property="og:description" content="Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest   1 2 3 4 5 6  # For windows docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ." />
+These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5  git clone &#34;https://github.com/semiosis/pen.el&#34; git clone &#34;https://github.com/semiosis/prompts&#34; mkdir ~/.pen echo &#34;sk-&lt;openai key here&gt;&#34; &gt; ~/.pen/openai_api_key ./pen.el/scripts/pen   Or for Windows users:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-tutorial/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-11T00:00:00&#43;12:00" />
@@ -144,7 +148,7 @@ The following command starts pen.el. You only need to have docker installed and 
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        10 minutes
+        11 minutes
 
         
       </p>
@@ -165,20 +169,7 @@ The following command starts pen.el. You only need to have docker installed and 
 <p>The following command starts <code>pen.el</code>. You
 only need to have docker installed and an
 <code>OpenAI GPT-3</code> key to try this out.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh
-
-<span style="color:#75715e"># And to update the image</span>
-docker pull semiosis/pen.el:latest</code></pre></td></tr></table>
-</div>
-</div>
+<p>These are the steps to run <code>Pen</code>. It will use a docker image.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -186,23 +177,52 @@ docker pull semiosis/pen.el:latest</code></pre></td></tr></table>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># For windows</span>
-docker.exe run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh
-
-<span style="color:#75715e"># You may need winpty</span>
-git clone https://github.com/rprichard/winpty
-winpty docker.exe run --rm -ti --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
+git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#34;</span>
+mkdir ~/.pen
+echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key
+./pen.el/scripts/pen</code></pre></td></tr></table>
 </div>
 </div>
-<dl>
-<dt>Project code</dt>
-<dd><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></dd>
-<dt>Join discord</dt>
-<dd><a href="https://discord.gg/HH6PY27d">https://discord.gg/HH6PY27d</a></dd>
-</dl>
+<p>Or for Windows users:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">cd ~
+git.exe clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
+git.exe clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#34;</span>
+.\pen.el\scripts\pen.ps1</code></pre></td></tr></table>
+</div>
+</div>
+<p>If there are any issues with the powershell
+script, either fix the script and submit a
+patch or invoke the docker command manually.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker.exe run -ti -v <span style="color:#e6db74">&#34;C:\&lt;path to prompts&gt;:/root/.emacs.d/host/prompts&#34;</span> --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>
+<p>Video demo : <a href="https://www.youtube.com/watch?v=J9BnZjWV1jw">Augment Minds 2021: Demo of Loom and Pen.el - YouTube</a></p>
+</li>
+<li>
+<p><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></p>
+</li>
+<li>
+<p><a href="https://discord.gg/GDSqFt6j">https://discord.gg/GDSqFt6j</a></p>
+</li>
+</ul>
 <figure>
     <img src="/ox-hugo/wizard4.png"/> 
 </figure>
@@ -211,54 +231,65 @@ winpty docker.exe run --rm -ti --entrypoint<span style="color:#f92672">=</span> 
 and latest updates, please install from master
 branch. Docker support coming. <code>GPT-j</code> also in
 the works.</p>
-<h2 id="key-bindings-for-emacs-noobs--enabled-in-docker">Key bindings for emacs noobs (enabled in docker)</h2>
+<h2 id="configuration">Configuration</h2>
+<p>For linux users, if you place your OpenAI API
+key in the file <code>~/.pen/openai_api_key</code>, the
+<a href="https://github.com/semiosis/pen.el/blob/mast%20er/scripts/pen">pen shell script</a> will
+automatically pick that up.</p>
+<p>If you run <code>pen</code> in a directory that contains a <a href="https://github.com/semiosis/prompts/tree/master/prompts">prompts repository</a> then that repository will be used by <code>pen.el</code>.
+That way you can persist changes to your prompts repository.</p>
+<p>If you run <code>pen</code> in a directory containing a <a href="https://github.com/semiosis/pen.el/blob/master/src/pen.el">pen.el repository</a> then that code will be what is run in the docker, rather than the <code>pen.el</code> contained within.</p>
+<p>You may save files to the <code>~/.pen</code> directory
+within the docker and those files will be
+accessible to the host and will not be erased.</p>
+<h2 id="acolyte-mode-key-bindings-for-emacs-noobs"><code>Acolyte Mode</code> - Key bindings for emacs noobs</h2>
+<p>These are enabled by default with the docker image.</p>
 <table>
 <thead>
 <tr>
 <th>kb</th>
-<th>f</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Alt-p</code></td>
-<td><code>pen-super-newb-dired-prompts</code></td>
 <td>Open the prompts directory in dired</td>
 </tr>
 <tr>
-<td><code>Alt-s</code></td>
-<td><code>pen-super-newb-scratch</code></td>
+<td><code>Alt-t</code></td>
 <td>Start writing in an empty file</td>
 </tr>
 <tr>
+<td><code>Alt-s</code></td>
+<td>Save file</td>
+</tr>
+<tr>
 <td><code>Alt-r</code></td>
-<td><code>pen-run-prompt-function</code></td>
 <td>Running a prompt function like this will not insert text or replace it.</td>
 </tr>
 <tr>
 <td><code>Alt-TAB</code></td>
-<td><code>pen-company-filetype</code></td>
 <td>This completes the current line.</td>
 </tr>
 <tr>
-<td><code>Alt-l</code></td>
-<td><code>pen-complete-long</code></td>
-<td>This is a multiline completion.</td>
+<td><code>Alt-l</code> (little L)</td>
+<td>Multiline (long) completion.</td>
 </tr>
 <tr>
 <td><code>Alt-g</code></td>
-<td><code>pen-generate-prompt-functions</code></td>
 <td>This reloads the prompt functions.</td>
 </tr>
 <tr>
-<td>Select text then <code>TAB</code></td>
-<td><code>pen-filter-with-prompt-function</code></td>
+<td><code>Alt-m</code></td>
+<td>Right click menu</td>
+</tr>
+<tr>
+<td>Select text then <code>Alt-f</code></td>
 <td>This filters the text through a prompt function specifically designed for this.</td>
 </tr>
 <tr>
 <td><code>Spacebar</code></td>
-<td><code>pen-run-prompt-function</code></td>
 <td>When text is selected, will run with that text as first argument.</td>
 </tr>
 </tbody>
@@ -273,6 +304,11 @@ the works.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>H-.</code> or <code>H-n</code></td>
+<td><code>global-pen-acolyte-minor-mode</code></td>
+<td>This toggles Acolyte mode.</td>
+</tr>
 <tr>
 <td><code>H-TAB g</code></td>
 <td><code>pen-generate-prompt-functions</code></td>
@@ -1072,7 +1108,7 @@ use GPT-2.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2064 Words
+        2227 Words
       </p>
 
       <p>

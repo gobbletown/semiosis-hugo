@@ -14,28 +14,38 @@ The following command starts `pen.el`. You
 only need to have docker installed and an
 `OpenAI GPT-3` key to try this out.
 
-{{< highlight sh "linenos=table, linenostart=1" >}}
-docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+These are the steps to run `Pen`. It will use a docker image.
 
-# And to update the image
-docker pull semiosis/pen.el:latest
+{{< highlight bash "linenos=table, linenostart=1" >}}
+git clone "https://github.com/semiosis/pen.el"
+git clone "https://github.com/semiosis/prompts"
+mkdir ~/.pen
+echo "sk-<openai key here>" > ~/.pen/openai_api_key
+./pen.el/scripts/pen
 {{< /highlight >}}
 
-{{< highlight sh "linenos=table, linenostart=1" >}}
-# For windows
-docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+Or for Windows users:
 
-# You may need winpty
-git clone https://github.com/rprichard/winpty
-winpty docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+{{< highlight powershell "linenos=table, linenostart=1" >}}
+cd ~
+git.exe clone "https://github.com/semiosis/pen.el"
+git.exe clone "https://github.com/semiosis/prompts"
+.\pen.el\scripts\pen.ps1
 {{< /highlight >}}
 
-Project code
-: <https://github.com/semiosis/pen.el/>
+If there are any issues with the powershell
+script, either fix the script and submit a
+patch or invoke the docker command manually.
 
+{{< highlight sh "linenos=table, linenostart=1" >}}
+docker.exe run -ti -v "C:\<path to prompts>:/root/.emacs.d/host/prompts" --entrypoint= semiosis/pen.el:latest ./run.sh
+{{< /highlight >}}
 
-Join discord
-: <https://discord.gg/HH6PY27d>
+-   Video demo : [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw)
+
+-   <https://github.com/semiosis/pen.el/>
+
+-   <https://discord.gg/GDSqFt6j>
 
 {{< figure src="/ox-hugo/wizard4.png" >}}
 
@@ -45,31 +55,53 @@ branch. Docker support coming. `GPT-j` also in
 the works.
 
 
-## Key bindings for emacs noobs (enabled in docker) {#key-bindings-for-emacs-noobs--enabled-in-docker}
+## Configuration {#configuration}
 
-| kb                     | f                                 |                                                                                 |
-|------------------------|-----------------------------------|---------------------------------------------------------------------------------|
-| `Alt-p`                | `pen-super-newb-dired-prompts`    | Open the prompts directory in dired                                             |
-| `Alt-s`                | `pen-super-newb-scratch`          | Start writing in an empty file                                                  |
-| `Alt-r`                | `pen-run-prompt-function`         | Running a prompt function like this will not insert text or replace it.         |
-| `Alt-TAB`              | `pen-company-filetype`            | This completes the current line.                                                |
-| `Alt-l`                | `pen-complete-long`               | This is a multiline completion.                                                 |
-| `Alt-g`                | `pen-generate-prompt-functions`   | This reloads the prompt functions.                                              |
-| Select text then `TAB` | `pen-filter-with-prompt-function` | This filters the text through a prompt function specifically designed for this. |
-| `Spacebar`             | `pen-run-prompt-function`         | When text is selected, will run with that text as first argument.               |
+For linux users, if you place your OpenAI API
+key in the file `~/.pen/openai_api_key`, the
+[pen shell script](https://github.com/semiosis/pen.el/blob/mast%20er/scripts/pen) will
+automatically pick that up.
+
+If you run `pen` in a directory that contains a [prompts repository](https://github.com/semiosis/prompts/tree/master/prompts) then that repository will be used by `pen.el`.
+That way you can persist changes to your prompts repository.
+
+If you run `pen` in a directory containing a [pen.el repository](https://github.com/semiosis/pen.el/blob/master/src/pen.el) then that code will be what is run in the docker, rather than the `pen.el` contained within.
+
+You may save files to the `~/.pen` directory
+within the docker and those files will be
+accessible to the host and will not be erased.
+
+
+## `Acolyte Mode` - Key bindings for emacs noobs {#acolyte-mode-key-bindings-for-emacs-noobs}
+
+These are enabled by default with the docker image.
+
+| kb                       |                                                                                 |
+|--------------------------|---------------------------------------------------------------------------------|
+| `Alt-p`                  | Open the prompts directory in dired                                             |
+| `Alt-t`                  | Start writing in an empty file                                                  |
+| `Alt-s`                  | Save file                                                                       |
+| `Alt-r`                  | Running a prompt function like this will not insert text or replace it.         |
+| `Alt-TAB`                | This completes the current line.                                                |
+| `Alt-l` (little L)       | Multiline (long) completion.                                                    |
+| `Alt-g`                  | This reloads the prompt functions.                                              |
+| `Alt-m`                  | Right click menu                                                                |
+| Select text then `Alt-f` | This filters the text through a prompt function specifically designed for this. |
+| `Spacebar`               | When text is selected, will run with that text as first argument.               |
 
 
 ## Key bindings for emacs wizards (also enabled in docker) {#key-bindings-for-emacs-wizards--also-enabled-in-docker}
 
-| kb        | f                                 |                                                                                    |
-|-----------|-----------------------------------|------------------------------------------------------------------------------------|
-| `H-TAB g` | `pen-generate-prompt-functions`   | This reloads the prompt functions.                                                 |
-| `H-TAB r` | `pen-run-prompt-function`         | Running a prompt function like this will not insert text or replace it.            |
-| `M-1`     | `pen-company-filetype`            | This completes the current line.                                                   |
-| `H-TAB s` | `pen-filter-with-prompt-function` | This filters the text through a prompt function specifically designed for this.    |
-| `H-TAB c` | `pen-company-complete`            | Select a prompt function as the completer for `company-mode` and complete with it. |
-| `SPC`     | `pen-run-prompt-function`         | When text is selected, will run with that text as first argument.                  |
-| `H-TAB l` | `pen-complete-long`               | This is a multiline completion.                                                    |
+| kb             | f                                 |                                                                                    |
+|----------------|-----------------------------------|------------------------------------------------------------------------------------|
+| `H-.` or `H-n` | `global-pen-acolyte-minor-mode`   | This toggles Acolyte mode.                                                         |
+| `H-TAB g`      | `pen-generate-prompt-functions`   | This reloads the prompt functions.                                                 |
+| `H-TAB r`      | `pen-run-prompt-function`         | Running a prompt function like this will not insert text or replace it.            |
+| `M-1`          | `pen-company-filetype`            | This completes the current line.                                                   |
+| `H-TAB s`      | `pen-filter-with-prompt-function` | This filters the text through a prompt function specifically designed for this.    |
+| `H-TAB c`      | `pen-company-complete`            | Select a prompt function as the completer for `company-mode` and complete with it. |
+| `SPC`          | `pen-run-prompt-function`         | When text is selected, will run with that text as first argument.                  |
+| `H-TAB l`      | `pen-complete-long`               | This is a multiline completion.                                                    |
 
 `H` is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard.
 

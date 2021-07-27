@@ -26,7 +26,8 @@
       <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
       <description>Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-1 2 3 4  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh # And to update the image docker pull semiosis/pen.el:latest   1 2 3 4 5 6  # For windows docker.exe run --rm -ti --entrypoint= semiosis/pen.el:latest .</description>
+These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir ~/.pen echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/.pen/openai_api_key ./pen.el/scripts/pen   Or for Windows users:</description>
     </item>
     
     <item>
