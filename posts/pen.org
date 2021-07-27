@@ -20,6 +20,8 @@ I start a GitHub project to deploy =pen.el=.
 
 + Tutorial :: https://semiosis.github.io/posts/pen-tutorial/
 
++ Video demo : [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]
+
 #+BEGIN_SRC sh -n :sps bash :async :results none
   docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
 
