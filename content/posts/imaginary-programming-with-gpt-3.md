@@ -18,6 +18,10 @@ Disclaimer
 : Please contribute as this is an open source project! It's very hard to find free prompts online currently and that's because everyone is out for themselves. Please support open source. Thank you.
 
 
+Glossary
+: <http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
+
+
 ## Summary {#summary}
 
 This is a demonstration of an imaginary
@@ -76,6 +80,27 @@ Imaginary seems to be a good word because:
 -   It's great for thought experiments.
 
 
+### Literate programming {#literate-programming}
+
+Imaginary programming seems to be an orthogonal extension to literate programming.
+
+According to Wikipedia, <span class="underline">literate programming</span>
+is A programming paradigm introduced by Donald
+Knuth in which a computer program is given an
+explanation of its logic in a NL, such as
+English, interspersed with snippets of macros
+and traditional source code, from which
+compilable source code can be generated.[1]
+The approach is used in scientific computing
+and in data science routinely for reproducible
+research and open access purposes.[2] Literate
+programming tools are used by millions of
+programmers today.[3]
+
+Literate programming
+: <https://en.wikipedia.org/wiki/Literate%5Fprogramming>
+
+
 ### Current progress {#current-progress}
 
 Some of the plumbing, including the
@@ -89,6 +114,64 @@ in an `MVP` stage.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/G8HPLtlCWTQIzGssLrM3ZvxhT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/G8HPLtlCWTQIzGssLrM3ZvxhT.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/G8HPLtlCWTQIzGssLrM3ZvxhT.js" id="asciicast-G8HPLtlCWTQIzGssLrM3ZvxhT" async></script>
+
+
+## Glossary {#glossary}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+imaginary programming
+    To make an analogy, imaginary programming
+    is a type of programming much like
+    pure-functional, where what is deemed
+    'imaginary' is code that has been
+    'contaminated' by output from a language
+    and behaviour altered by it.
+
+    A distinction is made between grounded and
+    non-grounded imaginary programming.
+
+grounded
+grounded imaginary programming
+non-grounded
+    If an imaginary function has the language
+    model as a parameter then it is considered
+    'grounded'.
+
+    If an imaginary function relies on the
+    output of functions that have in the past
+    used a language model as a parameter, but
+    does not contain a reference to specific
+    language model used then it is considered
+    'non-grounded'.
+
+    non-grounded code is still code in the way
+    that pure functional code is code.
+
+ordinary programming
+    Programming with functions that do not
+    have an imaginary dimension (they do not
+    take a language model as a parameter and
+    the result of ordinary code is not
+    polluted by a language model).
+
+holographic programming
+    [type of imaginary programming]
+
+    This is like imaginary programming but
+    where the language models are trained on
+    software.
+
+    The code being written, therefore, is
+    employing associations made between
+    elements of the code, how that code is
+    used and how it is described, to build
+    applications.
+
+    This lets you code within the hyperspace
+    of a language model to enable things like:
+    - reflection
+    - inference in place of computation
+{{< /highlight >}}
 
 
 ## Prompts {#prompts}
