@@ -2,7 +2,7 @@
 title = "Imaginary programming with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-04-08T00:00:00+12:00
-keywords = ["gpt", "openai"]
+keywords = ["gpt", "openai", "imaginary-programming"]
 draft = false
 +++
 
@@ -82,23 +82,97 @@ Imaginary seems to be a good word because:
 
 ### Literate programming {#literate-programming}
 
-Imaginary programming seems to be an orthogonal extension to literate programming.
-
 According to Wikipedia, <span class="underline">literate programming</span>
-is A programming paradigm introduced by Donald
+is a programming paradigm introduced by Donald
 Knuth in which a computer program is given an
 explanation of its logic in a NL, such as
 English, interspersed with snippets of macros
 and traditional source code, from which
-compilable source code can be generated.[1]
+compilable source code can be generated.
+
 The approach is used in scientific computing
 and in data science routinely for reproducible
-research and open access purposes.[2] Literate
-programming tools are used by millions of
-programmers today.[3]
+research and open access purposes.
+
+Literate programming tools are used by
+millions of programmers today.
 
 Literate programming
 : <https://en.wikipedia.org/wiki/Literate%5Fprogramming>
+
+
+### Imaginary programming {#imaginary-programming}
+
+Imaginary programming seems to be orthogonal
+to literate programming.
+
+Imaginary programming (IP) programming
+paradigm in which a computer program's
+behaviour exists in relativity to LMs.
+
+To make an analogy, imaginary programming is a
+type of programming, where much like pure-
+functional, the code who's behaviour depends
+on the output of a LM, either pending or
+precomputed, stands apart from the part that
+has no such association.
+
+What is deemed 'imaginary' is code that uses
+or is waiting on output from a LM and its
+behaviour is so altered by it.
+
+What is deemed 'ordinary' is code which is not
+'imaginary'.
+
+A distinction is made between grounded and
+non-grounded imaginary programming. 'Non-
+grounded imaginary programming' may also be
+called 'pure imaginary programming'.
+
+If a function has a LM as a parameter
+affecting its behaviour and besides from that
+has no other imaginary inputs then it is
+considered 'grounded'.
+
+If a function has a LM as a parameter
+affecting its behaviour and contains other
+imaginary inputs then it is considered
+'tethered'.
+
+If an imaginary function relies on the output
+of functions that have in the past used a LM
+as a parameter, but does not contain a
+reference to specific LM used then it is
+considered 'non-grounded' or 'pure imaginary'.
+
+A function can be both tethered and pure
+imaginary.
+
+Pure imaginary code is still code in a similar
+way to how pure functional code is considered
+code and may be used to create useful
+datastructures and algorithms.
+
+Ordinary programming is programming with
+functions that do not have an imaginary
+dimension (they do not take a LM as a
+parameter and the result of ordinary code is
+not polluted by a LM).
+
+Holographic programming is like imaginary
+programming but where the LMs are trained on
+software. Holographic code, therefore, may
+employ associations made between elements of
+the original code, how that code is used and
+how it is described, to build applications.
+Holographic programming lets you use the
+latent space of a LM as a kind of hyperspace
+to enable things like:
+
+-   bridge the usage of an application with
+    the application's code
+-   imaginary reflection
+-   inference in place of computation
 
 
 ### Current progress {#current-progress}
@@ -114,132 +188,6 @@ in an `MVP` stage.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/G8HPLtlCWTQIzGssLrM3ZvxhT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/G8HPLtlCWTQIzGssLrM3ZvxhT.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/G8HPLtlCWTQIzGssLrM3ZvxhT.js" id="asciicast-G8HPLtlCWTQIzGssLrM3ZvxhT" async></script>
-
-
-## Glossary {#glossary}
-
-{{< highlight text "linenos=table, linenostart=1" >}}
-imaginary programming
-IP
-    A programming paradigm in which a computer
-    program's behaviour exists in relativity to
-    language models.
-
-    To make an analogy, imaginary programming
-    is a type of programming, where much like
-    pure-functional, code who's behaviour
-    depends on the output of a language model,
-    either pending or precomputed, stands
-    apart from that which has no such
-    association.
-
-    What is deemed 'imaginary' is code has or
-    will be be 'contaminated' by output from a
-    language and behaviour so altered by it.
-
-    What is deemed 'ordinary' is code which is
-    not 'imaginary'.
-
-    A distinction is made between grounded and
-    non-grounded imaginary programming.
-
-grounded
-grounded imaginary programming
-non-grounded
-pure imaginary programming
-    If an imaginary function has the language
-    model as a parameter then it is considered
-    'grounded'.
-
-    If an imaginary function relies on the
-    output of functions that have in the past
-    used a language model as a parameter, but
-    does not contain a reference to specific
-    language model used then it is considered
-    'non-grounded' or 'pure imaginary'.
-
-    Non-grounded code is still code in a
-    similar way to how pure functional code is
-    considered code.
-
-ordinary programming
-    Programming with functions that do not
-    have an imaginary dimension (they do not
-    take a language model as a parameter and
-    the result of ordinary code is not
-    polluted by a language model).
-
-holographic programming
-    [type of imaginary programming]
-
-    This is like imaginary programming but
-    where the language models are trained on
-    software.
-
-    The code being written, therefore, is
-    employing associations made between
-    elements of the code, how that code is
-    used and how it is described, to build
-    applications.
-
-    This lets you code within the hyperspace
-    of a language model to enable things like:
-    - reflection
-    - inference in place of computation
-
-literate programming
-    A programming paradigm that emphasizes the
-    importance of the reading and writing of
-    code over the importance of the design of
-    the code.
-{{< /highlight >}}
-
-Imaginary programming is a programming
-paradigm in which a computer program's
-behaviour exists in relativity to language models (LM), such as
-OpenAI's GPT-3.
-
-To make an analogy, imaginary programming is a
-type of programming, where similarly to pure-
-functional programming, the subset of code
-who's behaviour depends on the output of a LM
-(either pending or precomputed outputs) stands
-apart from the rest of the code that has no
-such association. What is deemed _imaginary_
-code is code that uses or is waiting on output
-from a LM and its behaviour is so altered by
-it. What is deemed _ordinary_ code is code
-which is not 'imaginary'.
-
-A distinction is made between grounded and
-non-grounded imaginary programming. _Non-grounded imaginary programming_ may also be
-called _pure imaginary programming_. If an
-imaginary function has the LM as a parameter
-then it is considered _grounded_. If an
-imaginary function relies on the output of
-functions that have in the past used a LM as a
-parameter, but does not contain a reference to
-specific LM used then it is considered _non-grounded_ or _pure imaginary_. Non-grounded
-code is still code in a similar way to how
-pure functional code is considered code.
-
-In contrast to imaginary programming, ordinary
-programming refers to the style of programming
-where functions have no dependence on the
-output of a LM and thus have no imaginary
-dimension.
-
-_holographic programming_ is a type of
-imaginary programming where the LMs being used
-are trained on a dataset that is comprised of
-software. The imaginary code being written,
-therefore, may employ associations made
-between elements of the code during the
-training of the LM, and possibly how the
-application is used, to build applications.
-Such appliations may be based on knowledge of
-how a program has been used in the past and
-not contain any of the original source code.
 
 
 ## Prompts {#prompts}
