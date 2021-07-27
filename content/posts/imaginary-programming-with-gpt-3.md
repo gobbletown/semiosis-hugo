@@ -103,47 +103,39 @@ Literate programming
 
 ### Imaginary programming {#imaginary-programming}
 
-Imaginary programming seems to be orthogonal
-to literate programming.
-
-Imaginary programming (IP) programming
-paradigm in which a computer program's
-behaviour exists in relativity to LMs.
-
-To make an analogy, imaginary programming is a
+Imaginary programming (IP) seems to be
+orthogonal to literate programming. Imaginary
+programming is a programming paradigm in which
+a computer program's behaviour exists in
+relativity to LMs. To make an analogy, imaginary programming is a
 type of programming, where much like pure-
 functional, the code who's behaviour depends
 on the output of a LM, either pending or
 precomputed, stands apart from the part that
 has no such association.
 
-What is deemed 'imaginary' is code that uses
+What is deemed _imaginary_ is code that uses
 or is waiting on output from a LM and its
-behaviour is so altered by it.
-
-What is deemed 'ordinary' is code which is not
-'imaginary'.
+behaviour is so altered by it. What is deemed
+_ordinary_ is code which is not _imaginary_.
 
 A distinction is made between grounded and
-non-grounded imaginary programming. 'Non-
-grounded imaginary programming' may also be
-called 'pure imaginary programming'.
+non-grounded imaginary programming. _Non-grounded imaginary programming_ may also be
+called _pure imaginary programming_.
 
 If a function has a LM as a parameter
 affecting its behaviour and besides from that
 has no other imaginary inputs then it is
-considered 'grounded'.
-
-If a function has a LM as a parameter
+considered _grounded_. If a function has a LM as a parameter
 affecting its behaviour and contains other
 imaginary inputs then it is considered
-'tethered'.
+_tethered_'.
 
 If an imaginary function relies on the output
 of functions that have in the past used a LM
 as a parameter, but does not contain a
 reference to specific LM used then it is
-considered 'non-grounded' or 'pure imaginary'.
+considered _non-grounded_ or _pure imaginary_.
 
 A function can be both tethered and pure
 imaginary.
@@ -159,7 +151,7 @@ dimension (they do not take a LM as a
 parameter and the result of ordinary code is
 not polluted by a LM).
 
-Holographic programming is like imaginary
+`Holographic programming` is like imaginary
 programming but where the LMs are trained on
 software. Holographic code, therefore, may
 employ associations made between elements of
