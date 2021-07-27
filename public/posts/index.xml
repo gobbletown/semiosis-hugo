@@ -7822,15 +7822,49 @@ in an <code>MVP</code> stage.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">imaginary programming
+IP
+    A programming paradigm in which a computer
+    program&#39;s behaviour exists in relativity to
+    language models.
+
     To make an analogy, imaginary programming
-    is a type of programming much like
-    pure-functional, where what is deemed
-    &#39;imaginary&#39; is code that has been
-    &#39;contaminated&#39; by output from a language
-    and behaviour altered by it.
+    is a type of programming, where much like
+    pure-functional, code who&#39;s behaviour
+    depends on the output of a language model,
+    either pending or precomputed, stands
+    apart from that which has no such
+    association.
+
+    What is deemed &#39;imaginary&#39; is code has or
+    will be be &#39;contaminated&#39; by output from a
+    language and behaviour so altered by it.
+
+    What is deemed &#39;ordinary&#39; is code which is
+    not &#39;imaginary&#39;.
 
     A distinction is made between grounded and
     non-grounded imaginary programming.
@@ -7838,6 +7872,7 @@ in an <code>MVP</code> stage.</p>
 grounded
 grounded imaginary programming
 non-grounded
+pure imaginary programming
     If an imaginary function has the language
     model as a parameter then it is considered
     &#39;grounded&#39;.
@@ -7847,10 +7882,11 @@ non-grounded
     used a language model as a parameter, but
     does not contain a reference to specific
     language model used then it is considered
-    &#39;non-grounded&#39;.
+    &#39;non-grounded&#39; or &#39;pure imaginary&#39;.
 
-    non-grounded code is still code in the way
-    that pure functional code is code.
+    Non-grounded code is still code in a
+    similar way to how pure functional code is
+    considered code.
 
 ordinary programming
     Programming with functions that do not
@@ -7875,7 +7911,13 @@ holographic programming
     This lets you code within the hyperspace
     of a language model to enable things like:
     - reflection
-    - inference in place of computation</code></pre></td></tr></table>
+    - inference in place of computation
+
+literate programming
+    A programming paradigm that emphasizes the
+    importance of the reading and writing of
+    code over the importance of the design of
+    the code.</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="prompts">Prompts</h2>
