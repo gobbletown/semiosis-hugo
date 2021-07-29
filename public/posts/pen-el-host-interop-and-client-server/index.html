@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software." />
+<meta name="description" content="Summary Pen.el may now run as a server. On your host OS, you can create symlinks to the pen script with names matching the name of prompts. Running those symlinks will then run the prompt via the server and return the result.
+Alternatively, you can run pen pf-my-prompt-function &amp;quot;first arg&amp;quot; &amp;quot;second arg&amp;quot; &amp;quot;etc.&amp;quot; on the host machine and it will run the prompt function on the server and return the output as stdout on the host." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -33,21 +34,24 @@
 
 
 <meta itemprop="name" content="Pen.el host interop and client/server">
-<meta itemprop="description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software."><meta itemprop="datePublished" content="2021-07-29T00:00:00&#43;12:00" />
+<meta itemprop="description" content="Summary Pen.el may now run as a server. On your host OS, you can create symlinks to the pen script with names matching the name of prompts. Running those symlinks will then run the prompt via the server and return the result.
+Alternatively, you can run pen pf-my-prompt-function &quot;first arg&quot; &quot;second arg&quot; &quot;etc.&quot; on the host machine and it will run the prompt function on the server and return the output as stdout on the host."><meta itemprop="datePublished" content="2021-07-29T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-07-29T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="533"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="779"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Pen.el host interop and client/server"/>
-<meta name="twitter:description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software."/>
+<meta name="twitter:description" content="Summary Pen.el may now run as a server. On your host OS, you can create symlinks to the pen script with names matching the name of prompts. Running those symlinks will then run the prompt via the server and return the result.
+Alternatively, you can run pen pf-my-prompt-function &quot;first arg&quot; &quot;second arg&quot; &quot;etc.&quot; on the host machine and it will run the prompt function on the server and return the output as stdout on the host."/>
 
 
 
 
     <meta property="og:title" content="Pen.el host interop and client/server" />
-<meta property="og:description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software." />
+<meta property="og:description" content="Summary Pen.el may now run as a server. On your host OS, you can create symlinks to the pen script with names matching the name of prompts. Running those symlinks will then run the prompt via the server and return the result.
+Alternatively, you can run pen pf-my-prompt-function &quot;first arg&quot; &quot;second arg&quot; &quot;etc.&quot; on the host machine and it will run the prompt function on the server and return the output as stdout on the host." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-29T00:00:00&#43;12:00" />
@@ -136,7 +140,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        4 minutes
 
         
       </p>
@@ -153,30 +157,28 @@
 
       <div class="post-content">
         <h2 id="summary">Summary</h2>
-<p>Using <code>Pen.el</code>, one may start the prompt-
-engineering environment as a background server
-and create symlinks on your Host machine that
-link to the pen script. If the symlink has the
-same name as a prompts it will run the prompt
-in the background using the server and return
-the result. This means it is now dead simple
+<p><code>Pen.el</code> may now run as a server.
+On your host OS, you can create symlinks to the <code>pen</code> script
+with names matching the name of prompts.
+Running those symlinks will then run the prompt
+via the server and return the result.</p>
+<p>Alternatively, you can run <code>pen pf-my-prompt-function &quot;first arg&quot; &quot;second arg&quot; &quot;etc.&quot;</code> on
+the host machine and it will run the prompt
+function on the server and return the output
+as stdout on the host.</p>
+<p>You can even pipe into <code>pen</code> or the symlinks
+and the stdin will be used as the first
+argument to the prompt.</p>
+<p>This means it is now dead simple
 to integrate GPT-3 and other LMs easily into
-your bash pipelines and other software. =Pen.e=l
+your bash pipelines and other software. <code>Pen.el</code>
 is now your management system for LMs and
 prompting.</p>
-<p>You may create multiple clients to <code>Pen.el</code>,
-which means you can have many prompt-
-engineering workflows going at once.</p>
-<p>You may run a single <code>Pen.el</code> server and have
-multiple clients connect to it.</p>
+<p>You may create multiple client interfaces to <code>Pen.el</code>,
+which means you can have many prompt-engineering workflows going at once.</p>
 <p>You may want to be working with multiple
 documents, for example, or have a separate
 client just for prompt engineering.</p>
-<p>You may also run prompt commands and interact
-with the dockerified emacs via the terminal on
-the host and use <code>Pen.el</code>&rsquo;s prompt functions
-remotely and in other software via shell
-commands.</p>
 <dl>
 <dt>GitHub project</dt>
 <dd><a href="https://github.com/semiosis/pen.el/">GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI&rsquo;s GPT-3 or EleutherAI&rsquo;s GPT-j.</a></dd>
@@ -243,6 +245,57 @@ Andre Agassi
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;How shave a beard&#34;</span> | pen pf-complicated-explanation-of-how-to-x</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">A beard is the collection of coarse hair that
+grows on the chin and cheeks of humans and
+some non-human animals. The term is often used
+to describe acollection of hair that forms on
+the chin and cheeks of humans, and to a lesser
+extent on the face of some male monkeys.
+Depending on the context, the term might refer
+to the hair on the chin or to the collection
+of hair on the lower face. In the English
+language the term beard also refers to the
+hair that grows on the
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;How to crack an egg&#34;</span> | pen pf-complicated-explanation-of-how-to-x</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cracking an egg involves application of force
+sufficient to cause the eggshell to separate
+from the egg white and the egg yolk. The
+eggshell is composed of calcium carbonate
+which is soluble in dilute hydrochloric acid.
+Solution of calcium carbonate is achieved by
+application of heat. The application of heat
+is achieved by creating a temperature gradient
+between the egg and the egg receptacle. The
+egg receptacle is composed of ceramic
+materials which are highly resistant to
+thermal shock. Cracking the egg results
+</code></pre></div><p><code>Pen.el</code> saves the outputs of prompt functions
+by default, so extending the command as below
+will reuse the same output.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;How to crack an egg&#34;</span> | pen pf-complicated-explanation-of-how-to-x | pen pf-tldr-summarization</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">I cracked an egg on a ceramic plate and the eggshell separated from the egg white and yolk.
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pf-very-witty-pick-up-lines-for-a-topic egypt</code></pre></td></tr></table>
 </div>
 </div>
@@ -288,7 +341,7 @@ Do you want to be queen of my Nile?
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        533 Words
+        779 Words
       </p>
 
       <p>
