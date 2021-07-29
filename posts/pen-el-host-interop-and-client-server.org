@@ -27,7 +27,7 @@ argument to the prompt.
 
 This means it is now dead simple
 to integrate GPT-3 and other LMs easily into
-your bash pipelines and other software. =Pen.e=
+your bash pipelines and other software. =Pen.el=
 is now your management system for LMs and
 prompting.
 
