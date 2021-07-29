@@ -8,12 +8,24 @@ draft = false
 
 ## Summary {#summary}
 
-I have set up interop between the host OS and
-`Pen.el` docker container.
+Using `Pen.el`, one may start the prompt-
+engineering environment as a background server
+and create symlinks on your Host machine that
+link to the pen script. If the symlink has the
+same name as a prompts it will run the prompt
+in the background using the server and return
+the result. This means it is now dead simple
+to integrate GPT-3 and other LMs easily into
+your bash pipelines and other software. =Pen.e=l
+is now your management system for LMs and
+prompting.
 
-This means you can run a single `Pen.el`
-server and have multiple clients connect to
-it.
+You may create multiple clients to `Pen.el`,
+which means you can have many prompt-
+engineering workflows going at once.
+
+You may run a single `Pen.el` server and have
+multiple clients connect to it.
 
 You may want to be working with multiple
 documents, for example, or have a separate

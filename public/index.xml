@@ -14,10 +14,7 @@
       <pubDate>Thu, 29 Jul 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/</guid>
-      <description>Summary I have set up interop between the host OS and Pen.el docker container.
-This means you can run a single Pen.el server and have multiple clients connect to it.
-You may want to be working with multiple documents, for example, or have a separate client just for prompt engineering.
-You may also run prompt commands and interact with the dockerified emacs via the terminal on the host and use Pen.</description>
+      <description>Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software.</description>
     </item>
     
     <item>

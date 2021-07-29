@@ -5,10 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Summary I have set up interop between the host OS and Pen.el docker container.
-This means you can run a single Pen.el server and have multiple clients connect to it.
-You may want to be working with multiple documents, for example, or have a separate client just for prompt engineering.
-You may also run prompt commands and interact with the dockerified emacs via the terminal on the host and use Pen." />
+<meta name="description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -36,30 +33,21 @@ You may also run prompt commands and interact with the dockerified emacs via the
 
 
 <meta itemprop="name" content="Pen.el host interop and client/server">
-<meta itemprop="description" content="Summary I have set up interop between the host OS and Pen.el docker container.
-This means you can run a single Pen.el server and have multiple clients connect to it.
-You may want to be working with multiple documents, for example, or have a separate client just for prompt engineering.
-You may also run prompt commands and interact with the dockerified emacs via the terminal on the host and use Pen."><meta itemprop="datePublished" content="2021-07-29T00:00:00&#43;12:00" />
+<meta itemprop="description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software."><meta itemprop="datePublished" content="2021-07-29T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-07-29T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="447"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="533"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Pen.el host interop and client/server"/>
-<meta name="twitter:description" content="Summary I have set up interop between the host OS and Pen.el docker container.
-This means you can run a single Pen.el server and have multiple clients connect to it.
-You may want to be working with multiple documents, for example, or have a separate client just for prompt engineering.
-You may also run prompt commands and interact with the dockerified emacs via the terminal on the host and use Pen."/>
+<meta name="twitter:description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software."/>
 
 
 
 
     <meta property="og:title" content="Pen.el host interop and client/server" />
-<meta property="og:description" content="Summary I have set up interop between the host OS and Pen.el docker container.
-This means you can run a single Pen.el server and have multiple clients connect to it.
-You may want to be working with multiple documents, for example, or have a separate client just for prompt engineering.
-You may also run prompt commands and interact with the dockerified emacs via the terminal on the host and use Pen." />
+<meta property="og:description" content="Summary Using Pen.el, one may start the prompt- engineering environment as a background server and create symlinks on your Host machine that link to the pen script. If the symlink has the same name as a prompts it will run the prompt in the background using the server and return the result. This means it is now dead simple to integrate GPT-3 and other LMs easily into your bash pipelines and other software." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-07-29T00:00:00&#43;12:00" />
@@ -165,11 +153,22 @@ You may also run prompt commands and interact with the dockerified emacs via the
 
       <div class="post-content">
         <h2 id="summary">Summary</h2>
-<p>I have set up interop between the host OS and
-<code>Pen.el</code> docker container.</p>
-<p>This means you can run a single <code>Pen.el</code>
-server and have multiple clients connect to
-it.</p>
+<p>Using <code>Pen.el</code>, one may start the prompt-
+engineering environment as a background server
+and create symlinks on your Host machine that
+link to the pen script. If the symlink has the
+same name as a prompts it will run the prompt
+in the background using the server and return
+the result. This means it is now dead simple
+to integrate GPT-3 and other LMs easily into
+your bash pipelines and other software. =Pen.e=l
+is now your management system for LMs and
+prompting.</p>
+<p>You may create multiple clients to <code>Pen.el</code>,
+which means you can have many prompt-
+engineering workflows going at once.</p>
+<p>You may run a single <code>Pen.el</code> server and have
+multiple clients connect to it.</p>
 <p>You may want to be working with multiple
 documents, for example, or have a separate
 client just for prompt engineering.</p>
@@ -289,7 +288,7 @@ Do you want to be queen of my Nile?
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        447 Words
+        533 Words
       </p>
 
       <p>
