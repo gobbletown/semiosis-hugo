@@ -6,8 +6,128 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Thu, 29 Jul 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Pen.el host interop and client/server</title>
+            <link>http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/</link>
+            <pubDate>Thu, 29 Jul 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/</guid>
+            <description>Summary I have set up interop between the host OS and Pen.el docker container.
+This means you can run a single Pen.el server and have multiple clients connect to it.
+You may want to be working with multiple documents, for example, or have a separate client just for prompt engineering.
+You may also run prompt commands and interact with the dockerified emacs via the terminal on the host and use Pen.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I have set up interop between the host OS and
+<code>Pen.el</code> docker container.</p>
+<p>This means you can run a single <code>Pen.el</code>
+server and have multiple clients connect to
+it.</p>
+<p>You may want to be working with multiple
+documents, for example, or have a separate
+client just for prompt engineering.</p>
+<p>You may also run prompt commands and interact
+with the dockerified emacs via the terminal on
+the host and use <code>Pen.el</code>&rsquo;s prompt functions
+remotely and in other software via shell
+commands.</p>
+<dl>
+<dt>GitHub project</dt>
+<dd><a href="https://github.com/semiosis/pen.el/">GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI&rsquo;s GPT-3 or EleutherAI&rsquo;s GPT-j.</a></dd>
+<dt>Project timeline and objectives</dt>
+<dd><a href="https://github.com/semiosis/pen.el/tree/master/docs">https://github.com/semiosis/pen.el/tree/master/docs</a></dd>
+<dt>Prompt README</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/README.org">prompts/README.org at master  semiosis/prompts  GitHub</a></dd>
+<dt>Tutorial</dt>
+<dd><a href="https://semiosis.github.io/posts/pen-tutorial/">https://semiosis.github.io/posts/pen-tutorial/</a></dd>
+</dl>
+<p>Video demo of <code>Pen.el</code> : <a href="https://www.youtube.com/watch?v=J9BnZjWV1jw">Augment Minds 2021: Demo of Loom and Pen.el - YouTube</a></p>
+<h2 id="running-a-prompt-function-from-the-host">Running a prompt function from the host</h2>
+<h3 id="firstly-start-a-server">Firstly, start a server</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen</code></pre></td></tr></table>
+</div>
+</div>
+<p>To run additional clients, just run <code>pen</code>
+again in a different terminal.</p>
+<h3 id="then-run-a-prompt-function">Then run a prompt function</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -e <span style="color:#e6db74">&#39;(car (pf-list-of 5 &#34;tennis players&#34; :no-select-result t))&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Elena Dementieva
+Roger Federer
+Marat Safin
+Anastasia Myskina
+Andre Agassi
+</code></pre></div><h3 id="alternatively-make-a-symlink-to-the-pen-script">Alternatively, make a symlink to the <code>pen</code> script</h3>
+<p>Like so:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ln -sf pen pf-list-of</code></pre></td></tr></table>
+</div>
+</div>
+<p>Then you may run the functions as scripts on your host.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pf-list-of <span style="color:#ae81ff">5</span> <span style="color:#e6db74">&#34;tennis players&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Elena Dementieva
+Roger Federer
+Marat Safin
+Anastasia Myskina
+Andre Agassi
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pf-very-witty-pick-up-lines-for-a-topic egypt</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">I wonder <span style="color:#66d9ef">if</span> the pyramids would<span style="color:#e6db74">&#39;ve still been built if the Egyptians had Tinder?
+</span><span style="color:#e6db74">Did you know, in Egypt, cats are considered to be good luck?
+</span><span style="color:#e6db74">I&#39;</span>m in Egypt, looking <span style="color:#66d9ef">for</span> some artefacts.
+Are you Cleopatra? Because I want you to be my Queen.
+My heart says mummies, but my body says pyramids.
+You look like pharaoh material.
+I want to be the one you wake up to in the morning.
+Your sarcophagus would be mine.
+I want to make you my pyramid.
+I want to be where the Nile flows.
+Have you ever been to Egypt? I don<span style="color:#e6db74">&#39;t think it&#39;</span>s the pyramids, I think it<span style="color:#e6db74">&#39;s you.
+</span><span style="color:#e6db74">You look like Cleopatra reincarnated.
+</span><span style="color:#e6db74">Let&#39;</span>s spend a day in Egypt.
+Do you like Egyptian men? Cuz I like Egyptian women even though they don<span style="color:#e6db74">&#39;t exist.
+</span><span style="color:#e6db74">Hey, I&#39;</span>m Tut, you<span style="color:#960050;background-color:#1e0010">&#39;</span>re my Ka, I guess that makes you my cat.
+You look like the type that would be found in the Valley of the Kings.
+Your body is like the pyramids. Uncovering you would be a true archeological find.
+I want to build a pyramid. With you. Inside you.
+If you were a pharaoh I would build you a pyramid.
+Do you want to be queen of my Nile?
+</code></pre></div><h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/dw0c0VueMHC8NOvGHmEgUUDcr" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/dw0c0VueMHC8NOvGHmEgUUDcr.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/dw0c0VueMHC8NOvGHmEgUUDcr.js" id="asciicast-dw0c0VueMHC8NOvGHmEgUUDcr" async></script>]]></content>
+        </item>
         
         <item>
             <title>Imagery for Pen.el with CLIP and inspired from Myst: The Book of Atrus</title>

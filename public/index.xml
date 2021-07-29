@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pen.el host interop and client/server</title>
+      <link>http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/</link>
+      <pubDate>Thu, 29 Jul 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/</guid>
+      <description>Summary I have set up interop between the host OS and Pen.el docker container.
+This means you can run a single Pen.el server and have multiple clients connect to it.
+You may want to be working with multiple documents, for example, or have a separate client just for prompt engineering.
+You may also run prompt commands and interact with the dockerified emacs via the terminal on the host and use Pen.</description>
+    </item>
+    
     <item>
       <title>Imagery for Pen.el with CLIP and inspired from Myst: The Book of Atrus</title>
       <link>http://semiosis.github.io/posts/creating-some-imagery-for-pen-el-with-clip/</link>
