@@ -10,34 +10,33 @@
 #+KEYWORDS: gpt emacs nlp docker pen
 
 ** Summary
-Using =Pen.el=, one may start the prompt-
-engineering environment as a background server
-and create symlinks on your Host machine that
-link to the pen script. If the symlink has the
-same name as a prompts it will run the prompt
-in the background using the server and return
-the result. This means it is now dead simple
+=Pen.el= may now run as a server.
+On your host OS, you can create symlinks to the =pen= script
+with names matching the name of prompts.
+Running those symlinks will then run the prompt
+via the server and return the result.
+
+Alternatively, you can run =pen pf-my-prompt-function "first arg" "second arg" "etc."= on
+the host machine and it will run the prompt
+function on the server and return the output
+as stdout on the host.
+
+You can even pipe into =pen= or the symlinks
+and the stdin will be used as the first
+argument to the prompt.
+
+This means it is now dead simple
 to integrate GPT-3 and other LMs easily into
-your bash pipelines and other software. =Pen.e=l
+your bash pipelines and other software. =Pen.e=
 is now your management system for LMs and
 prompting.
 
-You may create multiple clients to =Pen.el=,
-which means you can have many prompt-
-engineering workflows going at once.
-
-You may run a single =Pen.el= server and have
-multiple clients connect to it.
+You may create multiple client interfaces to =Pen.el=,
+which means you can have many prompt-engineering workflows going at once.
 
 You may want to be working with multiple
 documents, for example, or have a separate
 client just for prompt engineering.
-
-You may also run prompt commands and interact
-with the dockerified emacs via the terminal on
-the host and use =Pen.el='s prompt functions
-remotely and in other software via shell
-commands.
 
 + GitHub project :: [[https://github.com/semiosis/pen.el/][GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI's GPT-3 or EleutherAI's GPT-j.]]
 
@@ -90,6 +89,58 @@ Roger Federer
 Marat Safin
 Anastasia Myskina
 Andre Agassi
+#+end_src
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  echo "How shave a beard" | pen pf-complicated-explanation-of-how-to-x
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+A beard is the collection of coarse hair that
+grows on the chin and cheeks of humans and
+some non-human animals. The term is often used
+to describe acollection of hair that forms on
+the chin and cheeks of humans, and to a lesser
+extent on the face of some male monkeys.
+Depending on the context, the term might refer
+to the hair on the chin or to the collection
+of hair on the lower face. In the English
+language the term beard also refers to the
+hair that grows on the
+#+end_src
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  echo "How to crack an egg" | pen pf-complicated-explanation-of-how-to-x
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+Cracking an egg involves application of force
+sufficient to cause the eggshell to separate
+from the egg white and the egg yolk. The
+eggshell is composed of calcium carbonate
+which is soluble in dilute hydrochloric acid.
+Solution of calcium carbonate is achieved by
+application of heat. The application of heat
+is achieved by creating a temperature gradient
+between the egg and the egg receptacle. The
+egg receptacle is composed of ceramic
+materials which are highly resistant to
+thermal shock. Cracking the egg results
+#+end_src
+
+=Pen.el= saves the outputs of prompt functions
+by default, so extending the command as below
+will reuse the same output.
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  echo "How to crack an egg" | pen pf-complicated-explanation-of-how-to-x | pen pf-tldr-summarization
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+I cracked an egg on a ceramic plate and the eggshell separated from the egg white and yolk.
 #+end_src
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
