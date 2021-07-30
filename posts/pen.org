@@ -23,10 +23,19 @@ I start a GitHub project to deploy =pen.el=.
 + Video demo : [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]
 
 #+BEGIN_SRC sh -n :sps bash :async :results none
-  docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+  git clone "https://github.com/semiosis/pen.el"
+  git clone "https://github.com/semiosis/prompts"
+  mkdir ~/.pen
+  echo "sk-<openai key here>" > ~/.pen/openai_api_key
 
-  # And to update the image
-  docker pull semiosis/pen.el:latest
+  # Add the scripts to the PATH
+  echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
+
+  # Source your .profile
+  . ~/.profile
+
+  # Run pen
+  pen
 #+END_SRC
 
 /The pen of imagination - |:ϝ∷¦ϝ./
