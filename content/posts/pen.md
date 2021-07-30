@@ -31,10 +31,19 @@ Video demo : [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www
 <!--listend-->
 
 {{< highlight sh "linenos=table, linenostart=1" >}}
-docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
+git clone "https://github.com/semiosis/pen.el"
+git clone "https://github.com/semiosis/prompts"
+mkdir ~/.pen
+echo "sk-<openai key here>" > ~/.pen/openai_api_key
 
-# And to update the image
-docker pull semiosis/pen.el:latest
+# Add the scripts to the PATH
+echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
+
+# Source your .profile
+. ~/.profile
+
+# Run pen
+pen
 {{< /highlight >}}
 
 _The pen of imagination - |:ϝ∷¦ϝ._
