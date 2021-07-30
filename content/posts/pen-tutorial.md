@@ -21,7 +21,15 @@ git clone "https://github.com/semiosis/pen.el"
 git clone "https://github.com/semiosis/prompts"
 mkdir ~/.pen
 echo "sk-<openai key here>" > ~/.pen/openai_api_key
-./pen.el/scripts/pen
+
+# Add the scripts to the PATH
+echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
+
+# Source your .profile
+. ~/.profile
+
+# Run pen
+pen
 {{< /highlight >}}
 
 Or for Windows users:
@@ -55,6 +63,18 @@ branch. Docker support coming. `GPT-j` also in
 the works.
 
 
+## Invoking `Pen.el`: Client and server {#invoking-pen-dot-el-client-and-server}
+
+Please glance over this to learn how to invoke.
+
+It'll get you going with `Pen.el` very quickly.
+
+<https://mullikine.github.io/posts/pen-el-host-interop-and-client-server/>
+
+The essence is you simply run the `pen` script
+and it takes care of running the emacs+docker server.
+
+
 ## Configuration {#configuration}
 
 For linux users, if you place your OpenAI API
@@ -70,6 +90,19 @@ If you run `pen` in a directory containing a [pen.el repository](https://github.
 You may save files to the `~/.pen` directory
 within the docker and those files will be
 accessible to the host and will not be erased.
+
+
+## Running `Pen.el` from the host, in bash {#running-pen-dot-el-from-the-host-in-bash}
+
+With a server running, you have these commands available on the host:
+
+| Script name | Function                                             | Example                                        |
+|-------------|------------------------------------------------------|------------------------------------------------|
+| `pen`       | Start a new client                                   |                                                |
+| `penl`      | List the prompt functions                            |                                                |
+| `penh`      | Get the signature of a prompt function               | `penh pf-list-of`                              |
+| `pene`      | Run some emacs code from the host and get the result | `pene '(progn (message "hi") (message "yo"))'` |
+| `penq`      | Quit the server                                      |                                                |
 
 
 ## `Acolyte Mode` - Key bindings for emacs noobs {#acolyte-mode-key-bindings-for-emacs-noobs}

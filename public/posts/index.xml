@@ -633,7 +633,7 @@ Writing was.
             <description>Summary This is a tutorial for how to use pen.el.
 The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
 These are the steps to run Pen. It will use a docker image.
-1 2 3 4 5  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir ~/.pen echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/.pen/openai_api_key ./pen.el/scripts/pen   Or for Windows users:</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir ~/.pen echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a tutorial for how to use <code>pen.el</code>.</p>
 <p>The following command starts <code>pen.el</code>. You
@@ -642,18 +642,34 @@ only need to have docker installed and an
 <p>These are the steps to run <code>Pen</code>. It will use a docker image.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
 git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#34;</span>
 mkdir ~/.pen
 echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key
-./pen.el/scripts/pen</code></pre></td></tr></table>
+
+<span style="color:#75715e"># Add the scripts to the PATH</span>
+echo export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath .<span style="color:#66d9ef">)</span><span style="color:#e6db74">/pen.el/scripts:\$PATH&#34;</span> &gt;&gt; ~/.profile
+
+<span style="color:#75715e"># Source your .profile</span>
+. ~/.profile
+
+<span style="color:#75715e"># Run pen</span>
+pen</code></pre></td></tr></table>
 </div>
 </div>
 <p>Or for Windows users:</p>
@@ -701,6 +717,12 @@ patch or invoke the docker command manually.</p>
 and latest updates, please install from master
 branch. Docker support coming. <code>GPT-j</code> also in
 the works.</p>
+<h2 id="invoking-pen-dot-el-client-and-server">Invoking <code>Pen.el</code>: Client and server</h2>
+<p>Please glance over this to learn how to invoke.</p>
+<p>It&rsquo;ll get you going with <code>Pen.el</code> very quickly.</p>
+<p><a href="https://mullikine.github.io/posts/pen-el-host-interop-and-client-server/">https://mullikine.github.io/posts/pen-el-host-interop-and-client-server/</a></p>
+<p>The essence is you simply run the <code>pen</code> script
+and it takes care of running the emacs+docker server.</p>
 <h2 id="configuration">Configuration</h2>
 <p>For linux users, if you place your OpenAI API
 key in the file <code>~/.pen/openai_api_key</code>, the
@@ -712,6 +734,44 @@ That way you can persist changes to your prompts repository.</p>
 <p>You may save files to the <code>~/.pen</code> directory
 within the docker and those files will be
 accessible to the host and will not be erased.</p>
+<h2 id="running-pen-dot-el-from-the-host-in-bash">Running <code>Pen.el</code> from the host, in bash</h2>
+<p>With a server running, you have these commands available on the host:</p>
+<table>
+<thead>
+<tr>
+<th>Script name</th>
+<th>Function</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pen</code></td>
+<td>Start a new client</td>
+<td></td>
+</tr>
+<tr>
+<td><code>penl</code></td>
+<td>List the prompt functions</td>
+<td></td>
+</tr>
+<tr>
+<td><code>penh</code></td>
+<td>Get the signature of a prompt function</td>
+<td><code>penh pf-list-of</code></td>
+</tr>
+<tr>
+<td><code>pene</code></td>
+<td>Run some emacs code from the host and get the result</td>
+<td><code>pene '(progn (message &quot;hi&quot;) (message &quot;yo&quot;))'</code></td>
+</tr>
+<tr>
+<td><code>penq</code></td>
+<td>Quit the server</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="acolyte-mode-key-bindings-for-emacs-noobs"><code>Acolyte Mode</code> - Key bindings for emacs noobs</h2>
 <p>These are enabled by default with the docker image.</p>
 <table>
