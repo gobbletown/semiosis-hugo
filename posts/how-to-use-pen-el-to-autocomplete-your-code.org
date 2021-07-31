@@ -13,6 +13,8 @@
 I will just do some demonstrations on actually
 using =Pen.el= from within emacs.
 
++ Project code :: https://github.com/semiosis/pen.el/
+
 ** Config
 *** Pen map and Acolyte-mode map
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
