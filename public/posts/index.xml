@@ -6,8 +6,152 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 29 Jul 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Sat, 31 Jul 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>How to use Pen.el to autocomplete your code</title>
+            <link>http://semiosis.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/</link>
+            <pubDate>Sat, 31 Jul 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/</guid>
+            <description>Summary I will just do some demonstrations on actually using Pen.el from within emacs.
+Config Pen map and Acolyte-mode map 1 2 3 4 5 6 7  (define-key pen-map (kbd &amp;#34;M-1&amp;#34;) #&amp;#39;pen-company-filetype-word) (define-key pen-map (kbd &amp;#34;M-2&amp;#34;) #&amp;#39;pen-company-filetype-words) (define-key pen-map (kbd &amp;#34;M-3&amp;#34;) #&amp;#39;pen-company-filetype-line) ;; company-mode long (define-key pen-map (kbd &amp;#34;M-4&amp;#34;) #&amp;#39;pen-company-filetype-long) ;; This uses ivy instead of company to present multiple lines (define-key pen-acolyte-minor-mode-map (kbd &amp;#34;M-l&amp;#34;) &amp;#39;pen-complete-long)   Pen autocompletion modes Word 1 2 3 4 5 6 7 8 9  (defmacro pen-word-complete (&amp;amp;rest body) &amp;#34;This wraps around pen function calls to make them complete long&amp;#34; `(eval `(let ((max-tokens 1) (stop-sequence &amp;#34;##long complete##&amp;#34;) (stop-sequences &amp;#39;(&amp;#34;##long complete##&amp;#34;)) (n-collate 1) (n-completions 40)) ,&amp;#39;,@body)))    --  Words 1 2 3 4 5 6 7 8 9  (defmacro pen-words-complete (&amp;amp;rest body) &amp;#34;This wraps around pen function calls to make them complete long&amp;#34; `(eval `(let ((max-tokens 5) (stop-sequence &amp;#34;##long complete##&amp;#34;) (stop-sequences &amp;#39;(&amp;#34;##long complete##&amp;#34;)) (n-collate 1) (n-completions 20)) ,&amp;#39;,@body)))    --  Line 1 2 3 4 5 6 7  (defmacro pen-line-complete (&amp;amp;rest body) &amp;#34;This wraps around pen function calls to make them complete line only&amp;#34; `(eval `(let ((max-tokens 100) (stop-sequence &amp;#34;\n&amp;#34;) (stop-sequences &amp;#39;(&amp;#34;\n&amp;#34;))) ,&amp;#39;,@body)))    --  Long 1 2 3 4 5 6 7  (defmacro pen-long-complete (&amp;amp;rest body) &amp;#34;This wraps around pen function calls to make them complete long&amp;#34; `(eval `(let ((max-tokens 200) (stop-sequence &amp;#34;##long complete##&amp;#34;) (stop-sequences &amp;#39;(&amp;#34;##long complete##&amp;#34;))) ,&amp;#39;,@body)))    -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I will just do some demonstrations on actually
+using <code>Pen.el</code> from within emacs.</p>
+<h2 id="config">Config</h2>
+<h3 id="pen-map-and-acolyte-mode-map">Pen map and Acolyte-mode map</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-1&#34;</span>) <span style="color:#a6e22e">#&#39;</span>pen-company-filetype-word)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-2&#34;</span>) <span style="color:#a6e22e">#&#39;</span>pen-company-filetype-words)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-3&#34;</span>) <span style="color:#a6e22e">#&#39;</span>pen-company-filetype-line)
+<span style="color:#75715e">;; company-mode long</span>
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-4&#34;</span>) <span style="color:#a6e22e">#&#39;</span>pen-company-filetype-long)
+<span style="color:#75715e">;; This uses ivy instead of company to present multiple lines</span>
+(<span style="color:#a6e22e">define-key</span> pen-acolyte-minor-mode-map (kbd <span style="color:#e6db74">&#34;M-l&#34;</span>) <span style="color:#e6db74">&#39;pen-complete-long</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="pen-autocompletion-modes">Pen autocompletion modes</h2>
+<h3 id="word">Word</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro pen-word-complete (<span style="color:#66d9ef">&amp;rest</span> body)
+  <span style="color:#e6db74">&#34;This wraps around pen function calls to make them complete long&#34;</span>
+  <span style="color:#f92672">`</span>(<span style="color:#a6e22e">eval</span>
+    <span style="color:#f92672">`</span>(let ((max-tokens <span style="color:#ae81ff">1</span>)
+           (stop-sequence <span style="color:#e6db74">&#34;##long complete##&#34;</span>)
+           (stop-sequences <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;##long complete##&#34;</span>))
+           (n-collate <span style="color:#ae81ff">1</span>)
+           (n-completions <span style="color:#ae81ff">40</span>))
+       <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,@body</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/S9dRnpubg37QIPETgssrL7YKr" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/S9dRnpubg37QIPETgssrL7YKr.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/S9dRnpubg37QIPETgssrL7YKr.js" id="asciicast-S9dRnpubg37QIPETgssrL7YKr" async></script>
+<h3 id="words">Words</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro pen-words-complete (<span style="color:#66d9ef">&amp;rest</span> body)
+  <span style="color:#e6db74">&#34;This wraps around pen function calls to make them complete long&#34;</span>
+  <span style="color:#f92672">`</span>(<span style="color:#a6e22e">eval</span>
+    <span style="color:#f92672">`</span>(let ((max-tokens <span style="color:#ae81ff">5</span>)
+           (stop-sequence <span style="color:#e6db74">&#34;##long complete##&#34;</span>)
+           (stop-sequences <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;##long complete##&#34;</span>))
+           (n-collate <span style="color:#ae81ff">1</span>)
+           (n-completions <span style="color:#ae81ff">20</span>))
+       <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,@body</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/kbLWcmwHMNYxIeC2AUfgmqZqN" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/kbLWcmwHMNYxIeC2AUfgmqZqN.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/kbLWcmwHMNYxIeC2AUfgmqZqN.js" id="asciicast-kbLWcmwHMNYxIeC2AUfgmqZqN" async></script>
+<h3 id="line">Line</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro pen-line-complete (<span style="color:#66d9ef">&amp;rest</span> body)
+  <span style="color:#e6db74">&#34;This wraps around pen function calls to make them complete line only&#34;</span>
+  <span style="color:#f92672">`</span>(<span style="color:#a6e22e">eval</span>
+    <span style="color:#f92672">`</span>(let ((max-tokens <span style="color:#ae81ff">100</span>)
+           (stop-sequence <span style="color:#e6db74">&#34;\n&#34;</span>)
+           (stop-sequences <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\n&#34;</span>)))
+       <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,@body</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/X9oeQhXxmRZYf1isnfXXnu56O" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/X9oeQhXxmRZYf1isnfXXnu56O.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/X9oeQhXxmRZYf1isnfXXnu56O.js" id="asciicast-X9oeQhXxmRZYf1isnfXXnu56O" async></script>
+<h3 id="long">Long</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro pen-long-complete (<span style="color:#66d9ef">&amp;rest</span> body)
+  <span style="color:#e6db74">&#34;This wraps around pen function calls to make them complete long&#34;</span>
+  <span style="color:#f92672">`</span>(<span style="color:#a6e22e">eval</span>
+    <span style="color:#f92672">`</span>(let ((max-tokens <span style="color:#ae81ff">200</span>)
+           (stop-sequence <span style="color:#e6db74">&#34;##long complete##&#34;</span>)
+           (stop-sequences <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;##long complete##&#34;</span>)))
+       <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,@body</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/PNDrLo9KQ5MdKzGPCEb46Fqn6" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/PNDrLo9KQ5MdKzGPCEb46Fqn6.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/PNDrLo9KQ5MdKzGPCEb46Fqn6.js" id="asciicast-PNDrLo9KQ5MdKzGPCEb46Fqn6" async></script>]]></content>
+        </item>
         
         <item>
             <title>Pen.el host interop and client/server</title>
