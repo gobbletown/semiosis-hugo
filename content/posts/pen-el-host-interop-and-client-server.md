@@ -55,6 +55,150 @@ Tutorial
 Video demo of `Pen.el` : [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw)
 
 
+Bash prompting README
+: <http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org>
+
+
+## Using prompt functions in bash {#using-prompt-functions-in-bash}
+
+
+### Start the server on the host and open a separate terminal elsewhere {#start-the-server-on-the-host-and-open-a-separate-terminal-elsewhere}
+
+-   Run `pen` in a terminal.
+-   Open a terminal
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/Q2YQw5OnTGFSfJ6t4baoQYb5G" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Q2YQw5OnTGFSfJ6t4baoQYb5G.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/Q2YQw5OnTGFSfJ6t4baoQYb5G.js" id="asciicast-Q2YQw5OnTGFSfJ6t4baoQYb5G" async></script>
+
+
+### List out the prompt functions and get help {#list-out-the-prompt-functions-and-get-help}
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+penl | fzf
+{{< /highlight >}}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+penh pf-code-one-liners-from-natural-language
+{{< /highlight >}}
+
+```bash
+(pf-code-one-liners-from-natural-language &optional LANGUAGE TASK &key NO-SELECT-RESULT)
+```
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/CdmhI44EThh6QBi4sGoHEggUX" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/CdmhI44EThh6QBi4sGoHEggUX.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/CdmhI44EThh6QBi4sGoHEggUX.js" id="asciicast-CdmhI44EThh6QBi4sGoHEggUX" async></script>
+
+
+### Caching is default {#caching-is-default}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pene '(car (pf-list-of 7 "tennis players" :no-select-result t))'
+{{< /highlight >}}
+
+```bash
+Roger Federer
+Katarina Srebotnik
+Venus Williams
+Bernard Tomic
+Andre Agassi
+Amélie Mauresmo
+Katharina Kruger
+```
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/5oayO80jrdJJ8k77tdsSdW9tM" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/5oayO80jrdJJ8k77tdsSdW9tM.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/5oayO80jrdJJ8k77tdsSdW9tM.js" id="asciicast-5oayO80jrdJJ8k77tdsSdW9tM" async></script>
+
+
+### Special functions {#special-functions}
+
+
+#### `pen-update` {#pen-update}
+
+This updates the disk memoization.
+
+You may use `pene` (or `pen -e`) and specify
+`pen-update` manually, or you may use `penu`
+(`pen -u`) which has a default `pen-update`.
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pene '(car (pen-update (pf-list-of 7 "tennis players" :no-select-result t)))'
+{{< /highlight >}}
+
+```bash
+Andre Agassi
+Billie Jean King
+Samantha Stosur
+Roger Federer
+Andy Murray
+Juan Martín del Potro
+Ivo Karlović
+```
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+penu '(car (pf-list-of 7 "tennis players" :no-select-result t))'
+{{< /highlight >}}
+
+```bash
+Evonne Goolagong
+John McEnroe
+Chris Evert
+Martina Navratilova
+Patty Schnyder
+Arantxa Sánchez Vicario
+Steffi Graf
+```
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ZK3goXrWfSU83KEVxStVCZyF2" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ZK3goXrWfSU83KEVxStVCZyF2.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ZK3goXrWfSU83KEVxStVCZyF2.js" id="asciicast-ZK3goXrWfSU83KEVxStVCZyF2" async></script>
+
+
+### You may also use prompt functions this way {#you-may-also-use-prompt-functions-this-way}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pen pf-nlsh "arch linux" "install python package"
+{{< /highlight >}}
+
+```bash
+pacman -S python-pip
+```
+
+Another way to update is to prefix `upd`.
+
+I'm going to deliberately request an ambiguous command "open an image".
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+upd pen pf-nlsh "arch linux" "open an image"
+{{< /highlight >}}
+
+```bash
+rxvt -bg black -fg white -geometry 130x30 foo.png
+sxiv foo.png
+feh --bg-scale foo.png
+gthumb foo.png
+eog foo.png
+```
+
+You may also use the `UPDATE` environment variable.
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+UPDATE=y pen pf-nlsh "arch linux" "open an image"
+{{< /highlight >}}
+
+```bash
+feh filename.png
+imagemagick filename.jpg
+convert image.jpg image.png
+```
+
+
 ## Running a prompt function from the host {#running-a-prompt-function-from-the-host}
 
 
@@ -188,3 +332,8 @@ Do you want to be queen of my Nile?
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/dw0c0VueMHC8NOvGHmEgUUDcr" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/dw0c0VueMHC8NOvGHmEgUUDcr.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/dw0c0VueMHC8NOvGHmEgUUDcr.js" id="asciicast-dw0c0VueMHC8NOvGHmEgUUDcr" async></script>
+
+
+### See also {#see-also}
+
+-   <https://mullikine.github.io/posts/pen-el-host-interop-and-client-server/>
