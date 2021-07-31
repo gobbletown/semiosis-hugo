@@ -11,6 +11,9 @@ draft = false
 I will just do some demonstrations on actually
 using `Pen.el` from within emacs.
 
+Project code
+: <https://github.com/semiosis/pen.el/>
+
 
 ## Config {#config}
 

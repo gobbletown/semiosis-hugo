@@ -138,6 +138,9 @@ I credit =|:ϝ∷¦ϝ= for writing =Pen= into existence!
 
 [[./pen-project-timeline.png]]
 
+** The Tower of Babel
+[[./pen-tower-of-babel.png]]
+
 ** Journal
 *** 07.07.21
 The project has been excised from my main =emacs.d=.
