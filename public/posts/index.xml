@@ -6,8 +6,190 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 31 Jul 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Arbitrary keyword extraction with GPT-3, Pen.el and emacs</title>
+            <link>http://semiosis.github.io/posts/arbitrary-keyword-extraction-with-gpt-3-pen-el-and-emacs/</link>
+            <pubDate>Sun, 01 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/arbitrary-keyword-extraction-with-gpt-3-pen-el-and-emacs/</guid>
+            <description>Summary Using a mixture of emacs lisp, sed and prompts, I have made a reliable keyword extractor for emacs.
+This is useful to be fed into other prompt functions, say for defining a word with the context which is given by the keyword extractor.
+Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  title: keyword extraction prompt-version: 6 prompt: |+Text and keywords: Text: Ethereum is a blockchain Keywords: blockchain, smart contracts, Turing-complete, distributed ledger ### Text and keywords: Text: &amp;lt;1&amp;gt; Keywords: engine: davinci n-collate: 1 n-completions: 3 temperature: 0.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>Using a mixture of emacs lisp, sed and
+prompts, I have made a reliable keyword
+extractor for emacs.</p>
+<p>This is useful to be fed into other prompt
+functions, say for defining a word with the
+context which is given by the keyword extractor.</p>
+<h2 id="prompt">Prompt</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">keyword extraction</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">6</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  Text and keywords:
+</span><span style="color:#e6db74">  Text: Ethereum is a blockchain
+</span><span style="color:#e6db74">  Keywords: blockchain, smart contracts, Turing-complete, distributed ledger
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Text and keywords:
+</span><span style="color:#e6db74">  Text: &lt;1&gt;
+</span><span style="color:#e6db74">  Keywords:</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">davinci</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">1000</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">text</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-words 40 (pen-selection-or-surrounding-context))&#34;</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#e6db74">&#34;pen-s list2args&#34;</span>
+<span style="color:#f92672">examples</span>:
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">  GPT-3 showed that language can be used to instruct a large neural network
+</span><span style="color:#e6db74">  to perform a variety of text generation tasks. Image GPT showed that the
+</span><span style="color:#e6db74">  same type of neural network can also be used to generate images with high
+</span><span style="color:#e6db74">  fidelity. We extend these findings to show that manipulating visual
+</span><span style="color:#e6db74">  concepts through language is now within reach.</span>  
+<span style="color:#f92672">external</span>: <span style="color:#ae81ff">extract-keyphrases</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="elisp">elisp</h2>
+<p>Here, spelling correction using Pen/GPT-3 is
+used alongside sed to prepare the text for the
+prompt.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-words (<span style="color:#66d9ef">&amp;optional</span> n input)
+  (setq n (or n <span style="color:#ae81ff">5</span>))
+  (s-join <span style="color:#e6db74">&#34; &#34;</span> (-take n (s-split-words input))))
+
+<span style="color:#75715e">;; Great for NLP tasks such as keyword extraction</span>
+(defun pen-selection-or-surrounding-context ()
+  (let ((context
+         (if (selected-p)
+             (pen-selected-text)
+           (pen-surrounding-context))))
+    <span style="color:#75715e">;; Correcting the spelling and grammer helps massively</span>
+    (<span style="color:#a6e22e">car</span>
+     (pf-correct-english-spelling-and-grammar
+      (pen-snc <span style="color:#e6db74">&#34;sed -z &#39;s/\\s\\+/ /g&#39;&#34;</span> (snc <span style="color:#e6db74">&#34;pen-c context-chars&#34;</span> context))
+      :no-select-result <span style="color:#66d9ef">t</span>))))</code></pre></td></tr></table>
+</div>
+</div>
+<p>When defining a word via the right-click menu,
+the topic is determined by actually using the
+keywords prompt-function, and some other logic.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-define (term)
+  (interactive (<span style="color:#a6e22e">list</span> (pen-thing-at-point-ask)))
+  (<span style="color:#a6e22e">message</span> (lm-define term <span style="color:#66d9ef">t</span> (pen-topic <span style="color:#66d9ef">t</span> <span style="color:#66d9ef">t</span>))))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="bash">bash</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">list2args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    sed -z -e <span style="color:#e6db74">&#34;s/^\\s*//&#34;</span> -e <span style="color:#e6db74">&#34;s/\\s*</span>$<span style="color:#e6db74">//&#34;</span> |
+    sed -z -e <span style="color:#e6db74">&#34;s/, /\\n/g&#34;</span> -e <span style="color:#e6db74">&#34;s/,</span>$<span style="color:#e6db74">//&#34;</span> |
+        uniqnosort |
+        sed -e <span style="color:#e6db74">&#39;s/^/&#34;/&#39;</span> -e <span style="color:#e6db74">&#39;s/$/&#34;/&#39;</span> |
+        pen-s join <span style="color:#e6db74">&#39; &#39;</span>
+<span style="color:#f92672">}</span>
+;;</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">context-chars<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    sed <span style="color:#e6db74">&#39;s/[^a-zA-Z0-9_. -]\+/ /g&#39;</span>
+<span style="color:#f92672">}</span> ;;</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/sH6XWonH9jPUyCwm7yMiRLlkv" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/sH6XWonH9jPUyCwm7yMiRLlkv.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/sH6XWonH9jPUyCwm7yMiRLlkv.js" id="asciicast-sH6XWonH9jPUyCwm7yMiRLlkv" async></script>]]></content>
+        </item>
         
         <item>
             <title>How to use Pen.el to autocomplete your code</title>
