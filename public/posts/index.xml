@@ -6,8 +6,307 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Templating for prompt description files in Pen.el</title>
+            <link>http://semiosis.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/</link>
+            <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/</guid>
+            <description>Summary I improve the templating system in .prompt files.
+include key 1 2 3 4 5  title: ada include: Generic completion 50 tokens prompt-version: 1 lm-command: &amp;#34;openai-complete.sh&amp;#34; engine: ada   The above .prompt file will inherit the below keys, but may override some values.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  title: Generic completion 50 tokens prompt-version: 3 doc: This is a generic completer.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I improve the templating system in <code>.prompt</code> files.</p>
+<h2 id="include-key"><code>include</code> key</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">ada</span>
+<span style="color:#f92672">include</span>: <span style="color:#ae81ff">Generic completion 50 tokens</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">lm-command</span>: <span style="color:#e6db74">&#34;openai-complete.sh&#34;</span>
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">ada</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The above <code>.prompt</code> file will inherit the
+below keys, but may override some values.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">Generic completion 50 tokens</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">doc</span>: <span style="color:#ae81ff">This is a generic completer.</span>
+<span style="color:#f92672">prompt</span>: <span style="color:#e6db74">&#34;&lt;1&gt;&#34;</span>
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">davinci</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.8</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">50</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;###&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">text</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#ae81ff">Recycling is good for the world, no, you could not be more wrong</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-preceding-text)&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="subprompts-and-named-template-variables"><code>subprompts</code> and named template variables</h2>
+<p>Below you can see that the prompt has been
+subdivided into subsections.</p>
+<p>This is partly to distinguish the <code>metaprompt</code>
+from the rest of the prompt, but the main
+purpose is to then enable other prompts to
+inherit from a prompt the subsections without
+redefining them.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">Generic tutor for any topic and subtopic</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">6</span>
+<span style="color:#75715e"># I have broken up this prompt so another prompt may import and use</span>
+<span style="color:#f92672">subprompts</span>:
+- <span style="color:#f92672">metaprompt</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">    This is a conversation between a human and a brilliant AI.
+</span><span style="color:#e6db74">    The topic is &#34;&lt;in the context of&gt;&#34; in the context of &#34;&lt;topic&gt;&#34;.</span>    
+- <span style="color:#f92672">pretext</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">    Human: Hello, are you my &lt;topic&gt; tutor?
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    AI: Hi there.
+</span><span style="color:#e6db74">    Yes I am.
+</span><span style="color:#e6db74">    How can I help you today?
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Human: What questions can I ask you about &lt;topic&gt;?
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    AI: You may ask me anything relating to &#34;&lt;in the context of&gt;&#34; in the context of &#34;&lt;topic&gt;&#34;.
+</span><span style="color:#e6db74">    ###
+</span><span style="color:#e6db74">    Human: OK then</span>    
+<span style="color:#f92672">prompt</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;metaprompt&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;pretext&gt;. &lt;question&gt;
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  AI: I would be happy to answer your question.</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">davinci</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.8</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">500</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">stop-sequences:cd</span>
+- <span style="color:#e6db74">&#34;###&#34;</span>
+- <span style="color:#e6db74">&#34;Human:&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">topic</span>
+- <span style="color:#ae81ff">in the context of</span>
+- <span style="color:#ae81ff">question</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#ae81ff">node js</span>
+- <span style="color:#ae81ff">programming</span>
+- <span style="color:#ae81ff">What was the version of node in 2018?</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-topic-ask)&#34;</span>
+- <span style="color:#e6db74">&#34;(read-string-hist \&#34;Pen subtopic: \&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span>
+<span style="color:#f92672">conversation-mode</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">conversation-pretext-generator</span>: <span style="color:#ae81ff">human-conversation</span>
+<span style="color:#f92672">aliases</span>:
+- <span style="color:#ae81ff">asktutor</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pen-pretty-paragraph</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Now the below <code>.prompt</code> can be created with much re-use:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">Explain error</span>
+<span style="color:#f92672">include</span>: <span style="color:#ae81ff">Generic tutor for any topic and subtopic</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;metaprompt&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;pretext&gt;. What does the following error mean? &lt;question&gt;
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  AI: I would be happy to answer your question.</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">davinci</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.8</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">500</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;###&#34;</span>
+- <span style="color:#e6db74">&#34;Human:&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">topic</span>
+- <span style="color:#ae81ff">in the context of</span>
+- <span style="color:#ae81ff">question</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#ae81ff">node js</span>
+- <span style="color:#ae81ff">error messages</span>
+- <span style="color:#ae81ff">undefined</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-topic-ask)&#34;</span>
+- <span style="color:#e6db74">&#34;\&#34;error messages\&#34;&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The AI tutor can now be primed to take
+particular questions. You may simply select
+error messages now and ask for an
+explanation. That&rsquo;s a very convenient alternative to Stack Exchange!</p>
+<h2 id="demo">Demo</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TypeError: &#39;method&#39; object is not subscriptable</code></pre></td></tr></table>
+</div>
+</div>
+<p>It returned a stack exchange answer, but the link is incorrect! Quite amazing though.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">That error means the object referred to by the variable &#39;method&#39; does not have a subscript that matches the index parameter passed to [subscript].
+For example:
+def sampleMethod(self, arg):
+arg = 12
+list1 = list(sampleMethod) # &lt;- here index is 0
+##
+If the method is a tuple, unpacking the tuple into individual variables might succeed:
+tramps = [&#39;Jack&#39;, &#39;Jill&#39;]
+[str(tramp[&#39;name&#39;]) for tramp in tramps]
+##
+See also: http://stackoverflow.com/questions/276510/why-is-typeerror-object-is-not-subscriptable</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="actual-link">Actual link</h3>
+<p><a href="https://stackoverflow.com/a/216980">https://stackoverflow.com/a/216980</a></p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/lCi9h2i8kbk2caniKgIbJ8Za1" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/lCi9h2i8kbk2caniKgIbJ8Za1.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/lCi9h2i8kbk2caniKgIbJ8Za1.js" id="asciicast-lCi9h2i8kbk2caniKgIbJ8Za1" async></script>]]></content>
+        </item>
         
         <item>
             <title>Arbitrary keyword extraction with GPT-3, Pen.el and emacs</title>

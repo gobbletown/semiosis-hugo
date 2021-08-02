@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Templating for prompt description files in Pen.el</title>
+      <link>http://semiosis.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/</guid>
+      <description>Summary I improve the templating system in .prompt files.
+include key 1 2 3 4 5  title: ada include: Generic completion 50 tokens prompt-version: 1 lm-command: &amp;#34;openai-complete.sh&amp;#34; engine: ada   The above .prompt file will inherit the below keys, but may override some values.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  title: Generic completion 50 tokens prompt-version: 3 doc: This is a generic completer.</description>
+    </item>
+    
     <item>
       <title>Arbitrary keyword extraction with GPT-3, Pen.el and emacs</title>
       <link>http://semiosis.github.io/posts/arbitrary-keyword-extraction-with-gpt-3-pen-el-and-emacs/</link>
