@@ -8,22 +8,32 @@ draft = false
 
 ## Summary {#summary}
 
-This is a tutorial for how to use `pen.el`.
+The following commands set up `pen.el` for the first time.
 
-The following command starts `pen.el`. You
-only need to have docker installed and an
-`OpenAI GPT-3` key to try this out.
+Apply for a GPT-3 key
+: <https://beta.openai.com/>
+
+
+Free AIX GPT-j key
+: <https://apps.aixsolutionsgroup.com/>
 
 These are the steps to run `Pen`. It will use a docker image.
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
 git clone "https://github.com/semiosis/pen.el"
 git clone "https://github.com/semiosis/prompts"
-mkdir ~/.pen
+
+mkdir -p ~/.pen
+
+# Put in your keys, or do not, it's up to you!
 echo "sk-<openai key here>" > ~/.pen/openai_api_key
+echo "<aix key here>" > ~/.pen/aix_api_key
 
 # Add the scripts to the PATH
 echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
+
+# Add this to prevent C-s from freezing the terminal
+echo "stty stop undef; stty start undef" | tee -a ~/.zshrc >> ~/.bashrc
 
 # Source your .profile
 . ~/.profile

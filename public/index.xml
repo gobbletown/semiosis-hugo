@@ -66,10 +66,9 @@ Alternatively, you can run pen pf-my-prompt-function &amp;quot;first arg&amp;quo
       <pubDate>Sun, 11 Jul 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
-      <description>Summary This is a tutorial for how to use pen.el.
-The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-These are the steps to run Pen. It will use a docker image.
-1 2 3 4 5 6 7 8 9 10 11 12 13  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir ~/.pen echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/.</description>
+      <description>Summary The following commands set up pen.el for the first time.
+ Apply for a GPT-3 key https://beta.openai.com/ Free AIX GPT-j key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir -p ~/.pen # Put in your keys, or do not, it&amp;#39;s up to you!</description>
     </item>
     
     <item>

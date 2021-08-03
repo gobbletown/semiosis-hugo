@@ -1397,15 +1397,17 @@ Writing was.
             <pubDate>Sun, 11 Jul 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
-            <description>Summary This is a tutorial for how to use pen.el.
-The following command starts pen.el. You only need to have docker installed and an OpenAI GPT-3 key to try this out.
-These are the steps to run Pen. It will use a docker image.
-1 2 3 4 5 6 7 8 9 10 11 12 13  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir ~/.pen echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/.</description>
+            <description>Summary The following commands set up pen.el for the first time.
+ Apply for a GPT-3 key https://beta.openai.com/ Free AIX GPT-j key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir -p ~/.pen # Put in your keys, or do not, it&amp;#39;s up to you!</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
-<p>This is a tutorial for how to use <code>pen.el</code>.</p>
-<p>The following command starts <code>pen.el</code>. You
-only need to have docker installed and an
-<code>OpenAI GPT-3</code> key to try this out.</p>
+<p>The following commands set up <code>pen.el</code> for the first time.</p>
+<dl>
+<dt>Apply for a GPT-3 key</dt>
+<dd><a href="https://beta.openai.com/">https://beta.openai.com/</a></dd>
+<dt>Free AIX GPT-j key</dt>
+<dd><a href="https://apps.aixsolutionsgroup.com/">https://apps.aixsolutionsgroup.com/</a></dd>
+</dl>
 <p>These are the steps to run <code>Pen</code>. It will use a docker image.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1422,15 +1424,29 @@ only need to have docker installed and an
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
 git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#34;</span>
-mkdir ~/.pen
+
+mkdir -p ~/.pen
+
+<span style="color:#75715e"># Put in your keys, or do not, it&#39;s up to you!</span>
 echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key
+echo <span style="color:#e6db74">&#34;&lt;aix key here&gt;&#34;</span> &gt; ~/.pen/aix_api_key
 
 <span style="color:#75715e"># Add the scripts to the PATH</span>
 echo export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath .<span style="color:#66d9ef">)</span><span style="color:#e6db74">/pen.el/scripts:\$PATH&#34;</span> &gt;&gt; ~/.profile
+
+<span style="color:#75715e"># Add this to prevent C-s from freezing the terminal</span>
+echo <span style="color:#e6db74">&#34;stty stop undef; stty start undef&#34;</span> | tee -a ~/.zshrc &gt;&gt; ~/.bashrc
 
 <span style="color:#75715e"># Source your .profile</span>
 . ~/.profile
