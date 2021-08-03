@@ -10,6 +10,61 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Pen.el the first IDE for both EleutherAI and OpenAI</title>
+            <link>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</link>
+            <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</guid>
+            <description>Summary I add support for EleutherAI&amp;rsquo;s GPT-j model via https://apps.aixsolutionsgroup.com/.
+Get yourself a key from the link above if you&amp;rsquo;d like to try it out.
+To try this out, firstly follow the setup instructions here:
+ https://mullikine.github.io/posts/pen-tutorial/  To update / remove the keys at any time, use the following key bindings.
+   kb f      M-o pen-add-key-openai pen-acolyte-minor-mode-map   M-a pen-add-key-aix pen-acolyte-minor-mode-map    If you remove one of the keys then Pen will attempt to use the other engine.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I add support for EleutherAI&rsquo;s GPT-j model via
+<a href="https://apps.aixsolutionsgroup.com/">https://apps.aixsolutionsgroup.com/</a>.</p>
+<p>Get yourself a key from the link above if you&rsquo;d like to try it out.</p>
+<p>To try this out, firstly follow the setup instructions here:</p>
+<ul>
+<li><a href="https://mullikine.github.io/posts/pen-tutorial/">https://mullikine.github.io/posts/pen-tutorial/</a></li>
+</ul>
+<p>To update / remove the keys at any time, use
+the following key bindings.</p>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M-o</code></td>
+<td><code>pen-add-key-openai</code></td>
+<td><code>pen-acolyte-minor-mode-map</code></td>
+</tr>
+<tr>
+<td><code>M-a</code></td>
+<td><code>pen-add-key-aix</code></td>
+<td><code>pen-acolyte-minor-mode-map</code></td>
+</tr>
+</tbody>
+</table>
+<p>If you remove one of the keys then Pen will
+attempt to use the other engine.</p>
+<p>Prompts may still prefer a given engine.</p>
+<p>Learn to write prompt description files here:</p>
+<ul>
+<li><a href="https://github.com/semiosis/prompts/">https://github.com/semiosis/prompts/</a></li>
+</ul>
+<p><code>Pen.el</code> supports arbitrary backends and takes
+care of prompt engine preferences and your own
+preferences (local(private), libre and commercial).</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Templating for prompt description files in Pen.el</title>
             <link>http://semiosis.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/</link>
             <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>

@@ -9,6 +9,19 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Pen.el the first IDE for both EleutherAI and OpenAI</title>
+      <link>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</guid>
+      <description>Summary I add support for EleutherAI&amp;rsquo;s GPT-j model via https://apps.aixsolutionsgroup.com/.
+Get yourself a key from the link above if you&amp;rsquo;d like to try it out.
+To try this out, firstly follow the setup instructions here:
+ https://mullikine.github.io/posts/pen-tutorial/  To update / remove the keys at any time, use the following key bindings.
+   kb f      M-o pen-add-key-openai pen-acolyte-minor-mode-map   M-a pen-add-key-aix pen-acolyte-minor-mode-map    If you remove one of the keys then Pen will attempt to use the other engine.</description>
+    </item>
+    
+    <item>
       <title>Templating for prompt description files in Pen.el</title>
       <link>http://semiosis.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>
