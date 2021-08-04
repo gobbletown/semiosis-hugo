@@ -2,7 +2,7 @@
 title = "nlsh (Natural Language Shell) with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-06-16T00:00:00+12:00
-keywords = ["gpt"]
+keywords = ["gpt", "pen", "openai", "imaginary-programming"]
 draft = false
 +++
 
@@ -421,9 +421,9 @@ fi
 
 ### prompt {#prompt}
 
-<http://github.com/mullikine/prompts/blob/master/prompts/nlsh-shell-for-given-os.prompt>
+<http://github.com/mullikine/prompts/blob/master/prompts/bash-one-liner-generator-on-os-from-natural-language.prompt>
 
-`nlsh-shell-for-given-os.prompt`
+`bash-one-liner-generator-on-os-from-natural-language.prompt`
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 title: "bash one liner generator on OS from natural language"

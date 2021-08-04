@@ -2,7 +2,7 @@
 title = "Context menus based on GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-03-09T00:00:00+13:00
-keywords = ["GPT-3", "openai", "emacs"]
+keywords = ["gpt", "openai", "emacs"]
 draft = false
 +++
 
@@ -13,7 +13,7 @@ code is Haskell and use it as a test inside
 emacs to suggest further functions.
 
 Prompt file
-: <http://github.com/semiosis/prompts/blob/master/prompts/text-is-haskell.prompt>
+: <http://github.com/semiosis/prompts/blob/master/prompts/get-language.prompt>
 
 
 ## Demonstration {#demonstration}
@@ -34,6 +34,10 @@ This uses emacs' `language-detection` package.
 
 
 ## Create a prompt to check if selected code is Haskell {#create-a-prompt-to-check-if-selected-code-is-haskell}
+
+-   The following prompt has been obsoleted by `get-language.prompt`.
+
+<!--listend-->
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 title: "test if text is haskell"

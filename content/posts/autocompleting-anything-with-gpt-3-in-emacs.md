@@ -2,7 +2,7 @@
 title = "Autocompleting anything with GPT-3 in emacs"
 author = ["Shane Mulligan"]
 date = 2021-03-16T00:00:00+13:00
-keywords = ["GPT-3", "openai", "emacs"]
+keywords = ["gpt", "openai", "emacs", "pen"]
 draft = false
 +++
 
@@ -12,7 +12,7 @@ Emacs package
 
 
 Prompt
-: <http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt>
+: <http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt>
 
 
 ## Summary {#summary}
@@ -97,7 +97,7 @@ functions.
 ## Code {#code}
 
 
-### `OpenAI` API prompt - `generic-file-type-completion.prompt` {#openai-api-prompt-generic-file-type-completion-dot-prompt}
+### `OpenAI` API prompt - `generic-completion-50-tokens.prompt` {#openai-api-prompt-generic-completion-50-tokens-dot-prompt}
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 title: "Generic file type completion"

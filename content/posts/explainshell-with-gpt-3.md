@@ -2,7 +2,7 @@
 title = "explainshell with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-06-16T00:00:00+12:00
-keywords = ["gpt"]
+keywords = ["gpt", "emacs", "pen"]
 draft = false
 +++
 
@@ -156,7 +156,7 @@ external-related:
 needs-work: no
 n-test-runs: 5
 related-prompts:
-- "annotate-with-commentary.prompt"
+- "annotate-code-with-commentary.prompt"
 # Prompt function aliases
 # aliases:
 # - "asktutor"

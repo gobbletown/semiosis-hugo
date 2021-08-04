@@ -87,7 +87,7 @@ temperature: 0.8
 max-tokens: 500
 top-p: 1
 best-of: 3
-stop-sequences:cd
+stop-sequences:
 - "###"
 - "Human:"
 vars:

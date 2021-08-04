@@ -23,6 +23,12 @@
     <loc>http://semiosis.github.io/posts/pen-el-host-interop-and-client-server/</loc>
     <lastmod>2021-07-29T00:00:00+12:00</lastmod>
   </url><url>
+    <loc>http://semiosis.github.io/posts/using-emacs-prompt-functions-inside-other-prompt-functions/</loc>
+    <lastmod>2021-07-20T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/davinci-instruct-beta-in-emacs-and-pen-el/</loc>
+    <lastmod>2021-07-18T00:00:00+12:00</lastmod>
+  </url><url>
     <loc>http://semiosis.github.io/posts/creating-some-imagery-for-pen-el-with-clip/</loc>
     <lastmod>2021-07-15T00:00:00+12:00</lastmod>
   </url><url>
@@ -72,6 +78,9 @@
     <lastmod>2021-05-01T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/reviews/impossible-languages/</loc>
+    <lastmod>2021-05-01T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/stories/tmux-integrated-gpt-3-stack-exchange-and-google-code-help/</loc>
     <lastmod>2021-05-01T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/auto-suggest-tooling-to-handle-ports-on-a-network/</loc>

@@ -2,17 +2,21 @@
 title = "Generating pickup lines with GPT-3"
 author = ["Shane Mulligan"]
 date = 2021-03-27T00:00:00+13:00
-keywords = ["GPT-3", "emacs", "examplary", "openai", "NLP"]
+keywords = ["gpt", "openai", "emacs", "examplary", "nlp", "pen"]
 draft = false
 +++
 
 Latest version of the pick up lines prompt
-: <http://github.com/mullikine/prompts/blob/master/prompts/pick-up-line.prompt>
+: <http://github.com/mullikine/prompts/blob/master/prompts/very-witty-pick-up-lines-for-a-topic.prompt>
 
 
 Original Pick-up-lines prompt by Jan Kolar
 : <https://www.producthunt.com/posts/500-openers-for-tinder-written-by-gpt-3> \\
     <https://www.reddit.com/r/GPT3/comments/mdl7fl/500%5Fopeners%5Ffor%5Ftinder%5Fwritten%5Fby%5Fgpt3%5Fthe%5Fprompt/>
+
+
+Pen tutorial
+: <https://mullikine.github.io/posts/pen-tutorial/>
 
 
 ## Summary {#summary}

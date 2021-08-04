@@ -2,7 +2,7 @@
 title = "GPT-3 mind maps with an AI tutor for any topic"
 author = ["Shane Mulligan"]
 date = 2021-03-29T00:00:00+13:00
-keywords = ["GPT-3", "emacs", "learning", "openai", "NLP"]
+keywords = ["gpt", "emacs", "learning", "openai", "nlp", "pen"]
 draft = false
 +++
 
@@ -308,9 +308,9 @@ needs-work: no
 -   Conversation mode.
     -   Summarize the current conversation scope and also extract facts from it. Use this in the next prompt.
     -   This will create a chatbot with rolling conversation.
-    -   <http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullets-to-summary.prompt>
-    -   <http://github.com/semiosis/prompts/blob/master/prompts/tldr.prompt>
-    -   <http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt>
+    -   <http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullet-points-to-summary.prompt>
+    -   <http://github.com/semiosis/prompts/blob/master/prompts/tldr-summarization.prompt>
+    -   <http://github.com/semiosis/prompts/blob/master/prompts/generic-tutor-for-any-topic-and-subtopic.prompt>
 
 
 ## Extra demos {#extra-demos}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&amp;rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta name="description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&amp;rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
 Demonstration This is GPT-3 completing some text for me." />
@@ -36,7 +36,7 @@ Demonstration This is GPT-3 completing some text for me." />
 
 
 <meta itemprop="name" content="Autocompleting anything with GPT-3 in emacs">
-<meta itemprop="description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta itemprop="description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
 Demonstration This is GPT-3 completing some text for me."><meta itemprop="datePublished" content="2021-03-16T00:00:00&#43;13:00" />
@@ -47,7 +47,7 @@ Demonstration This is GPT-3 completing some text for me."><meta itemprop="datePu
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Autocompleting anything with GPT-3 in emacs"/>
-<meta name="twitter:description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta name="twitter:description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
 Demonstration This is GPT-3 completing some text for me."/>
@@ -56,7 +56,7 @@ Demonstration This is GPT-3 completing some text for me."/>
 
 
     <meta property="og:title" content="Autocompleting anything with GPT-3 in emacs" />
-<meta property="og:description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
+<meta property="og:description" content="Emacs package https://github.com/semiosis/pen.el Help/developers desperately needed in developing pen.el! Prompt engineering is very easy so don&rsquo;t be intimidated! Prompt http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt  Summary I make a prompt for the OpenAI API which completes given a file type and some preceding text.
 I then make a company-mode completion function for it, and then demo its usage.
 This gives me a generic completion mechanism when dealing with any type of document.
 Demonstration This is GPT-3 completing some text for me." />
@@ -169,7 +169,7 @@ Demonstration This is GPT-3 completing some text for me." />
 <dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a>
 Help/developers desperately needed in developing <code>pen.el</code>! Prompt engineering is very easy so don&rsquo;t be intimidated!</dd>
 <dt>Prompt</dt>
-<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt</a></dd>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt</a></dd>
 </dl>
 <h2 id="summary">Summary</h2>
 <p>I make a prompt for the OpenAI API which
@@ -223,7 +223,7 @@ reasoning about these environments and building new ones.</p>
 flooded with options on styles and languages to work within, along with editing
 functions.</p>
 <h2 id="code">Code</h2>
-<h3 id="openai-api-prompt-generic-file-type-completion-dot-prompt"><code>OpenAI</code> API prompt - <code>generic-file-type-completion.prompt</code></h3>
+<h3 id="openai-api-prompt-generic-completion-50-tokens-dot-prompt"><code>OpenAI</code> API prompt - <code>generic-completion-50-tokens.prompt</code></h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1

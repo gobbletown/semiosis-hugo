@@ -22,6 +22,13 @@ GPT-3.
 docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
 {{< /highlight >}}
 
+Here is an assistant for any major mode / context.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/MS8xMQfLoExEVyh4Nqu9fX49b.js" id="asciicast-MS8xMQfLoExEVyh4Nqu9fX49b" async></script>
+
 Some ideas I have:
 
 -   Correct spelling and grammar in conversations over `erc` and other `emacs` chat modes.
@@ -96,7 +103,7 @@ oci openai-complete $MYGIT/semiosis/prompts/prompts/tutor.prompt "$topic" "$in_t
 
 ### Converting above into elisp together with a prompt function {#converting-above-into-elisp-together-with-a-prompt-function}
 
-`pen-pf-asktutor` is generated from a `.prompt` file (<http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt>).
+`pen-pf-asktutor` is generated from a `.prompt` file (<http://github.com/semiosis/prompts/blob/master/prompts/generic-tutor-for-any-topic-and-subtopic.prompt>).
 
 Here is the generation function, `pen-generate-prompt-functions`: <https://github.com/semiosis/pen.el/blob/master/pen.el#L131>
 
@@ -155,7 +162,7 @@ openai-complete code-snippet.prompt "$topic" "$task"
 
 ### Converting above into elisp together with a prompt function {#converting-above-into-elisp-together-with-a-prompt-function}
 
-`pen-pf-cq` is generated from a `.prompt` file (<http://github.com/semiosis/prompts/blob/master/prompts/code-snippet.prompt>).
+`pen-pf-cq` is generated from a `.prompt` file (<http://github.com/semiosis/prompts/blob/master/prompts/code-snippet-from-natural-language.prompt>).
 
 Documentation for generated function:
 
