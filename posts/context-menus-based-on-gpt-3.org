@@ -7,14 +7,14 @@
 #+TITLE: Context menus based on GPT-3
 #+DATE: <2021-03-09>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3 openai emacs
+#+KEYWORDS: gpt openai emacs
 
 ** Summary
 I create a GPT-3 prompt for testing to see if
 code is Haskell and use it as a test inside
 emacs to suggest further functions.
 
-+ Prompt file :: http://github.com/semiosis/prompts/blob/master/prompts/text-is-haskell.prompt
++ Prompt file :: http://github.com/semiosis/prompts/blob/master/prompts/get-language.prompt
 
 ** Demonstration
 As you can see, GPT-3 is able to detect the
@@ -36,6 +36,8 @@ This uses emacs' =language-detection= package.
 #+END_EXPORT
 
 ** Create a prompt to check if selected code is Haskell
+- The following prompt has been obsoleted by =get-language.prompt=.
+
 #+BEGIN_SRC yaml -n :async :results verbatim code
   title: "test if text is haskell"
   doc: "tests if text is haskell code"
@@ -137,3 +139,4 @@ It will then provide a context menu option to translate it into Clojure.
            ("spaCy" :call (call-interactively 'sps-play-spacy) :if (selected-p)))
   ))
 #+END_SRC
+

@@ -7,12 +7,12 @@
 #+TITLE: Autocompleting anything with GPT-3 in emacs
 #+DATE: <2021-03-16>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3 openai emacs
+#+KEYWORDS: gpt openai emacs pen
 
 + Emacs package :: https://github.com/semiosis/pen.el
   Help/developers desperately needed in developing =pen.el=! Prompt engineering is very easy so don't be intimidated!
 
-+ Prompt :: http://github.com/semiosis/prompts/blob/master/prompts/generic-file-type-completion.prompt
++ Prompt :: http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tokens.prompt
 
 ** Summary
 I make a prompt for the OpenAI API which
@@ -88,7 +88,7 @@ flooded with options on styles and languages to work within, along with editing
 functions.
 
 ** Code
-*** =OpenAI= API prompt - =generic-file-type-completion.prompt=
+*** =OpenAI= API prompt - =generic-completion-50-tokens.prompt=
 #+BEGIN_SRC yaml -n :async :results verbatim code
   title: "Generic file type completion"
   doc: |-
