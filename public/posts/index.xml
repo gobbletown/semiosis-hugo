@@ -1665,14 +1665,18 @@ Writing was.
             
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
             <description>Summary The following commands set up pen.el for the first time.
- Apply for a GPT-3 key https://beta.openai.com/ Free AIX GPT-j key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen. It will use a docker image.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; mkdir -p ~/.pen # Put in your keys, or do not, it&amp;#39;s up to you!</description>
-            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+ Apply for a GPT-3 key https://beta.openai.com/ Free AIx GPT-J-6B key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen. It will use a docker image.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  mkdir -p ~/.emacs.d cd ~/.emacs.d git clone &amp;#34;https://github.</description>
+            <content type="html"><![CDATA[<figure>
+    <img src="/ox-hugo/wizard4.png"/> 
+</figure>
+
+<h2 id="summary">Summary</h2>
 <p>The following commands set up <code>pen.el</code> for the first time.</p>
 <dl>
 <dt>Apply for a GPT-3 key</dt>
 <dd><a href="https://beta.openai.com/">https://beta.openai.com/</a></dd>
-<dt>Free AIX GPT-j key</dt>
+<dt>Free AIx GPT-J-6B key</dt>
 <dd><a href="https://apps.aixsolutionsgroup.com/">https://apps.aixsolutionsgroup.com/</a></dd>
 </dl>
 <p>These are the steps to run <code>Pen</code>. It will use a docker image.</p>
@@ -1698,9 +1702,15 @@ Writing was.
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.emacs.d
+cd ~/.emacs.d
+
+git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
 git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#34;</span>
 
 mkdir -p ~/.pen
@@ -1713,7 +1723,7 @@ echo <span style="color:#e6db74">&#34;&lt;aix key here&gt;&#34;</span> &gt; ~/.p
 echo export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath .<span style="color:#66d9ef">)</span><span style="color:#e6db74">/pen.el/scripts:\$PATH&#34;</span> &gt;&gt; ~/.profile
 
 <span style="color:#75715e"># Add this to prevent C-s from freezing the terminal</span>
-echo <span style="color:#e6db74">&#34;stty stop undef; stty start undef&#34;</span> | tee -a ~/.zshrc &gt;&gt; ~/.bashrc
+echo <span style="color:#e6db74">&#34;stty stop undef 2&gt;/dev/null; stty start undef 2&gt;/dev/null&#34;</span> | tee -a ~/.zshrc &gt;&gt; ~/.bashrc
 
 <span style="color:#75715e"># Source your .profile</span>
 . ~/.profile
@@ -1748,21 +1758,14 @@ patch or invoke the docker command manually.</p>
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker.exe run -ti -v <span style="color:#e6db74">&#34;C:\&lt;path to prompts&gt;:/root/.emacs.d/host/prompts&#34;</span> --entrypoint<span style="color:#f92672">=</span> semiosis/pen.el:latest ./run.sh</code></pre></td></tr></table>
 </div>
 </div>
-<ul>
-<li>
-<p>Video demo : <a href="https://www.youtube.com/watch?v=J9BnZjWV1jw">Augment Minds 2021: Demo of Loom and Pen.el - YouTube</a></p>
-</li>
-<li>
-<p><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></p>
-</li>
-<li>
-<p><a href="https://discord.gg/GDSqFt6j">https://discord.gg/GDSqFt6j</a></p>
-</li>
-</ul>
-<figure>
-    <img src="/ox-hugo/wizard4.png"/> 
-</figure>
-
+<dl>
+<dt>Video demo</dt>
+<dd><a href="https://www.youtube.com/watch?v=J9BnZjWV1jw">Augment Minds 2021: Demo of Loom and Pen.el - YouTube</a></dd>
+<dt>Project code</dt>
+<dd><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></dd>
+<dt>Join discord</dt>
+<dd><a href="https://discord.gg/6wP4MwCM">https://discord.gg/6wP4MwCM</a></dd>
+</dl>
 <p>For <code>GPT-neo</code>, <code>GPT-2</code> and <code>booste</code> support,
 and latest updates, please install from master
 branch. Docker support coming. <code>GPT-j</code> also in

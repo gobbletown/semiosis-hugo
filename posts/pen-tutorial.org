@@ -9,16 +9,21 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: gpt emacs pen
 
+[[./wizard4.png]]
+
 ** Summary
 The following commands set up =pen.el= for the first time.
 
 + Apply for a GPT-3 key :: https://beta.openai.com/
 
-+ Free AIX GPT-j key :: https://apps.aixsolutionsgroup.com/
++ Free AIx GPT-J-6B key :: https://apps.aixsolutionsgroup.com/
 
 These are the steps to run =Pen=. It will use a docker image.
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  mkdir -p ~/.emacs.d
+  cd ~/.emacs.d
+
   git clone "https://github.com/semiosis/pen.el"
   git clone "https://github.com/semiosis/prompts"
 
@@ -32,7 +37,7 @@ These are the steps to run =Pen=. It will use a docker image.
   echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
 
   # Add this to prevent C-s from freezing the terminal
-  echo "stty stop undef; stty start undef" | tee -a ~/.zshrc >> ~/.bashrc
+  echo "stty stop undef 2>/dev/null; stty start undef 2>/dev/null" | tee -a ~/.zshrc >> ~/.bashrc
 
   # Source your .profile
   . ~/.profile
@@ -58,13 +63,11 @@ patch or invoke the docker command manually.
   docker.exe run -ti -v "C:\<path to prompts>:/root/.emacs.d/host/prompts" --entrypoint= semiosis/pen.el:latest ./run.sh
 #+END_SRC
 
-+ Video demo : [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]
++ Video demo :: [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]
 
 + Project code :: https://github.com/semiosis/pen.el/
 
-+ Join discord :: https://discord.gg/GDSqFt6j
-
-[[./wizard4.png]]
++ Join discord :: https://discord.gg/6wP4MwCM
 
 For =GPT-neo=, =GPT-2= and =booste= support,
 and latest updates, please install from master
