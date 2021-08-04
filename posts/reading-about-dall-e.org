@@ -48,7 +48,7 @@
 Both of the following summarizations were made
 my =GPT-3= using the following prompt:
 
-http://github.com/semiosis/prompts/blob/master/prompts/summarize-for-2nd-grader.prompt
+http://github.com/semiosis/prompts/blob/master/prompts/eli5-explain-like-i-m-five.prompt
 
 + Abstractive summarizations of the abstract
   - This is how we can make a computer that can make a picture of words.

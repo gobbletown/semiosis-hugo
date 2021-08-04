@@ -7,12 +7,14 @@
 #+TITLE: Generating pickup lines with GPT-3
 #+DATE: <2021-03-27>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3 emacs examplary openai NLP
+#+KEYWORDS: gpt openai emacs examplary nlp pen
 
-+ Latest version of the pick up lines prompt :: http://github.com/mullikine/prompts/blob/master/prompts/pick-up-line.prompt
++ Latest version of the pick up lines prompt :: http://github.com/mullikine/prompts/blob/master/prompts/very-witty-pick-up-lines-for-a-topic.prompt
 
 + Original Pick-up-lines prompt by Jan Kolar :: https://www.producthunt.com/posts/500-openers-for-tinder-written-by-gpt-3 \
   https://www.reddit.com/r/GPT3/comments/mdl7fl/500_openers_for_tinder_written_by_gpt3_the_prompt/
+
++ Pen tutorial :: https://mullikine.github.io/posts/pen-tutorial/
 
 ** Summary
 I create a prompt in my prompt description

@@ -7,7 +7,7 @@
 #+TITLE: explainshell with GPT-3
 #+DATE: <2021-06-16>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt
+#+KEYWORDS: gpt emacs pen
 
 ** Summary
 I make a simple GPT-3 prompt to explain shell
@@ -155,7 +155,7 @@ pseudocode.
   needs-work: no
   n-test-runs: 5
   related-prompts:
-  - "annotate-with-commentary.prompt"
+  - "annotate-code-with-commentary.prompt"
   # Prompt function aliases
   # aliases:
   # - "asktutor"

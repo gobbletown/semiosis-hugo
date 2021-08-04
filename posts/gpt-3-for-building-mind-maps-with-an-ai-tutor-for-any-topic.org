@@ -7,7 +7,7 @@
 #+TITLE: GPT-3 mind maps with an AI tutor for any topic
 #+DATE: <2021-03-29>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: GPT-3 emacs learning openai NLP
+#+KEYWORDS: gpt emacs learning openai nlp pen
 
 + Code :: http://github.com/semiosis/pen.el
 
@@ -292,9 +292,9 @@ _*Learn about microbiology*_
 - Conversation mode.
   - Summarize the current conversation scope and also extract facts from it. Use this in the next prompt.
   - This will create a chatbot with rolling conversation.
-  - http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullets-to-summary.prompt
-  - http://github.com/semiosis/prompts/blob/master/prompts/tldr.prompt
-  - http://github.com/semiosis/prompts/blob/master/prompts/tutor.prompt
+  - http://github.com/semiosis/prompts/blob/master/prompts/meeting-bullet-points-to-summary.prompt
+  - http://github.com/semiosis/prompts/blob/master/prompts/tldr-summarization.prompt
+  - http://github.com/semiosis/prompts/blob/master/prompts/generic-tutor-for-any-topic-and-subtopic.prompt
 
 ** Extra demos
 *** Learning the flamenco guitar -- subtopic generation and tutor
