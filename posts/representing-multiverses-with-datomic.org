@@ -24,8 +24,7 @@
 
 ** Summary
 After reading =|:ϝ∷¦ϝ='s blog article
-[[https://generative.ink/posts/language-
-models-are-multiverse-generators/][LMs are multiverse generators =::= Moire]], I
+[[https://generative.ink/posts/language-models-are-multiverse-generators/][LMs are multiverse generators =::= Moire]], I
 decided to take a closer look into Datomic as
 a possible store for LM generations.
 
