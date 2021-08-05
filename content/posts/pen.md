@@ -8,54 +8,31 @@ draft = false
 
 ## Introducing `Pen.el` {#introducing-pen-dot-el}
 
-{{< figure src="/ox-hugo/the_pen_of_imagination.png" >}}
-
 _The pen of imagination - |:ϝ∷¦ϝ._
 
+{{< figure src="/ox-hugo/the_pen_of_imagination.png" >}}
+
 I started a GitHub project to deploy `Pen.el`.
-
-`Pen.el` integrates LMs (language models) such as OpenAI's
+`Pen.el` integrates LMs (LMs) such as OpenAI's
 `GPT-3` or EleutherAI's `GPT-J` into emacs by
-generating functions from prompts that map emacs's corners
-loosely onto LMs. These functions can be used
-interactively or non-interactively and in a
-variety of configurable ways.
-
-`Pen.el` also facilitates the creation,
+generating functions from prompts that map
+emacs's corners loosely onto LMs. These
+functions can be used interactively or non-
+interactively and in a variety of configurable
+ways. `Pen.el` also facilitates the creation,
 development, discovery and usage of prompts.
-
 It's completely free, libre and open-source.
 
-Pen.el on GitHub
-: <https://github.com/semiosis/pen.el/>
-
-
-Project timeline and objectives
-: <https://github.com/semiosis/pen.el/tree/master/docs>
-
-
-Prompts on GitHub
-: <http://github.com/semiosis/prompts/>
-
-
-Tutorial
-: <https://semiosis.github.io/posts/pen-tutorial/>
-
-
-Demo video
-: [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw)
-
-
-Discord channel invite
-: <https://discord.gg/6wP4MwCM>
-
-
-Thesis
-: <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>
-
-
-Glossary of imaginary programming
-: <http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
+|                                   | URL                                                                                                  |
+|-----------------------------------|------------------------------------------------------------------------------------------------------|
+| Pen.el on GitHub                  | <https://github.com/semiosis/pen.el/>                                                                |
+| Project timeline and objectives   | <https://github.com/semiosis/pen.el/tree/master/docs>                                                |
+| Prompts on GitHub                 | <http://github.com/semiosis/prompts/>                                                                |
+| Tutorial                          | <https://semiosis.github.io/posts/pen-tutorial/>                                                     |
+| Demo video                        | [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw) |
+| Discord channel invite            | <https://discord.gg/6wP4MwCM>                                                                        |
+| Thesis                            | <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>                    |
+| Glossary of imaginary programming | <http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>                     |
 
 
 ## Further introduction {#further-introduction}
@@ -105,14 +82,12 @@ functions to help preserve emacs.
 
 ## Backstory {#backstory}
 
-Origin #1
-: [Creating a playground for GPT-3 in emacs `::`](https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/)
+Pen.el was imagined contemporaneously between myself and Laria.
 
-Origin #2
-: [Pen `::`  Moire](https://generative.ink/posts/pen/) (moire's blog)
+-   [Creating a playground for GPT-3 in emacs `::`](https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/)
+-   [Pen `::`  Moire](https://generative.ink/posts/pen/) (Laria's blog)
 
-Here is a story by Prompt Researcher [pseudonym] moire,
-written in collaboration with `GPT-3`.
+Here is a story by prompt researcher Laria, written in collaboration with `GPT-3`.
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 Imagine that you hold a powerful and versatile pen, whose ink flows forth in
