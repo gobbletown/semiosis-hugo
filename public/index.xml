@@ -29,6 +29,19 @@
     </item>
     
     <item>
+      <title>vim dvorak colemak in insert mode</title>
+      <link>http://semiosis.github.io/posts/vim-dvorak-colemak-in-insert-mode/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/vim-dvorak-colemak-in-insert-mode/</guid>
+      <description>Summary I demonstrate typing with dvorak / colemak while in insert mode, but retaining vim&amp;rsquo;s normal key bindings.
+It&amp;rsquo;s better to do it this way then replacing your keyboard because the dvorak / colemak is only in insert-mode.
+To switch bindings, use :K.
+Code vimrc
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  set keymap=dvorakfunction!</description>
+    </item>
+    
+    <item>
       <title>Pen.el the first IDE for both EleutherAI and OpenAI</title>
       <link>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>

@@ -1,0 +1,266 @@
++++
+title = "vim dvorak colemak in insert mode"
+author = ["Shane Mulligan"]
+date = 2021-08-06T00:00:00+12:00
+keywords = ["vim"]
+draft = false
++++
+
+## Summary {#summary}
+
+I demonstrate typing with dvorak / colemak while in
+insert mode, but retaining vim's normal key
+bindings.
+
+It's better to do it this way then replacing
+your keyboard because the dvorak / colemak is only in
+insert-mode.
+
+To switch bindings, use `:K`.
+
+
+## Code {#code}
+
+`vimrc`
+
+{{< highlight vimrc "linenos=table, linenostart=1" >}}
+set keymap=dvorak
+
+function! ToggleKeymap()
+    if &keymap == ""
+        set keymap=dvorak
+        set imsearch=0
+        echom "dvorak"
+    elseif &keymap == "dvorak"
+        set keymap=colemak
+        set imsearch=0
+        echom "colemak"
+    elseif &keymap == "colemak"
+        set keymap=dvorak-german
+        set imsearch=0
+        echom "dvorak-german"
+    else
+        set keymap=
+        set iminsert=0
+        echom "qwerty"
+    endif
+endfunction
+
+command! K call ToggleKeymap() " This is the one I should use
+{{< /highlight >}}
+
+
+## Cheat sheet {#cheat-sheet}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+q w e r t y u i o p [ ]
+q w f p g j l u y ; [ ]
+                  : { }
+a s d f g h j k l ; '
+a r s t d h n e i o '
+                  O
+z x c v b n m , . /
+z x c v b k m , . /
+{{< /highlight >}}
+
+
+## Demo {#demo}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/PUY64IcmUekcdMH0apkaE629a" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/PUY64IcmUekcdMH0apkaE629a.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/PUY64IcmUekcdMH0apkaE629a.js" id="asciicast-PUY64IcmUekcdMH0apkaE629a" async></script>
+
+
+## More vim code {#more-vim-code}
+
+Place these key maps in the corresponding files.
+
+`$VIMCONFIG/vim/keymap/colemak.vim`
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+"this appears at the end of the status line
+let b:keymap_name="colemak"
+"A cursor color for when keymaps are in use.
+"highlight lCursor ctermbg=red guibg=red
+
+loadkeymap
+a a
+b b
+c c
+d s
+e f
+f t
+g d
+h h
+i u
+j n
+k e
+l i
+m m
+n k
+o y
+p ;
+q q
+r p
+s r
+t g
+u l
+v v
+w w
+x x
+y j
+z z
+- -
+[ [
+; o
+' '
+, ,
+. .
+/ /
+A A
+B B
+C C
+D S
+E F
+F T
+G D
+H H
+I U
+J N
+K E
+L I
+M M
+N K
+O Y
+P :
+Q Q
+R P
+S R
+T G
+U L
+V V
+W W
+X X
+Y J
+Z Z
+_ _
+{ {
+: O
+\" \"
+< <
+> >
+? ?
+= =
++ +
+] ]
+} }
+{{< /highlight >}}
+
+`$VIMCONFIG/vim/keymap/dvorak-german.vim`
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+" this is a mixture of the german dvorak type 1 and type 2 layouts
+"this appears at the end of the status line
+let b:keymap_name="dvorak-german"
+"A cursor color for when keymaps are in use.
+"highlight lCursor ctermbg=red guibg=red
+
+
+" äöüß€’„“«»“”–—
+
+" no key for ä, sits under the a -- to the left, where shift is
+" make an alternative binding for this
+
+" just use digraph for this for the moment «A:»
+" also assigned it to backtick for the moment
+
+" backslash will be the minus sign key
+" CARE: it's still the leader key
+
+loadkeymap
+b x
+B X
+c j
+C J
+d e
+D E
+e .
+E :
+f i
+F I
+g u
+G U
+h h
+H H
+i c
+I C
+j d
+J D
+k r
+K R
+l n
+L N
+; s
+: S
+' l
+\" L
+m m
+, w
+< W
+. v
+> V
+/ #
+? '
+M M
+n b
+N B
+o t
+O T
+p z
+P Z
+q ü
+Q Ü
+r p
+R P
+s o
+S O
+t y
+T Y
+u g
+U G
+v k
+V K
+w ,
+W ;
+x q
+X Q
+y f
+Y F
+z ö
+Z Ö
+@ "
+# §
+^ &
+& /
+* (
+( )
+) =
+- +
+_ *
+= <
++ >
+[ ?
+{ ß
+] -
+} _
+| /
+` ä
+~ Ä
+ [
+ ]
+ {
+ }
+ |
+ @
+{{< /highlight >}}
