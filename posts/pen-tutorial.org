@@ -10,6 +10,10 @@
 #+KEYWORDS: gpt emacs pen
 
 ** Quick Setup using Docker
+[[./wizard4.png]]
+
+/A time-traveling wizard who uses a magic book and pen to create worlds./
+
 The following commands set up =pen.el= for the first time.
 
 + Apply for a GPT-3 key :: https://beta.openai.com/
@@ -46,10 +50,6 @@ instructions.
   # Run pen
   pen
 #+END_SRC
-
-[[./wizard4.png]]
-
-/A time-traveling wizard who uses a magic book and pen to create worlds./
 
 + Video demo :: [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]
 
