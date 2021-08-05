@@ -2757,15 +2757,15 @@ patch or invoke the docker command manually.</p>
             
             <guid>http://semiosis.github.io/posts/pen/</guid>
             <description>Introducing Pen.el The pen of imagination - |:ϝ∷¦ϝ.
-  I started a GitHub project to deploy Pen.el. Pen.el integrates LMs (LMs) such as OpenAI&amp;rsquo;s GPT-3 or EleutherAI&amp;rsquo;s GPT-J into emacs by generating functions from prompts that map emacs&amp;rsquo;s corners loosely onto LMs. These functions can be used interactively or non- interactively and in a variety of configurable ways. Pen.el also facilitates the creation, development, discovery and usage of prompts. It&amp;rsquo;s completely free, libre and open-source.</description>
+  Pen.el integrates LMs (Language Models) such as OpenAI&amp;rsquo;s GPT-3 or EleutherAI&amp;rsquo;s GPT-J into emacs by generating functions from prompts that map emacs&amp;rsquo;s corners loosely onto LMs. These functions can be used interactively or non- interactively and in a variety of configurable ways. Pen.el also facilitates the creation, development, discovery and usage of prompts. It&amp;rsquo;s completely free, libre and open-source.
+         Pen.</description>
             <content type="html"><![CDATA[<h2 id="introducing-pen-dot-el">Introducing <code>Pen.el</code></h2>
 <p><em>The pen of imagination - |:ϝ∷¦ϝ.</em></p>
 <figure>
     <img src="/ox-hugo/the_pen_of_imagination.png"/> 
 </figure>
 
-<p>I started a GitHub project to deploy <code>Pen.el</code>.
-<code>Pen.el</code> integrates LMs (LMs) such as OpenAI&rsquo;s
+<p><code>Pen.el</code> integrates LMs (Language Models) such as OpenAI&rsquo;s
 <code>GPT-3</code> or EleutherAI&rsquo;s <code>GPT-J</code> into emacs by
 generating functions from prompts that map
 emacs&rsquo;s corners loosely onto LMs. These

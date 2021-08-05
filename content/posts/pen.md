@@ -12,8 +12,7 @@ _The pen of imagination - |:ϝ∷¦ϝ._
 
 {{< figure src="/ox-hugo/the_pen_of_imagination.png" >}}
 
-I started a GitHub project to deploy `Pen.el`.
-`Pen.el` integrates LMs (LMs) such as OpenAI's
+`Pen.el` integrates LMs (Language Models) such as OpenAI's
 `GPT-3` or EleutherAI's `GPT-J` into emacs by
 generating functions from prompts that map
 emacs's corners loosely onto LMs. These
