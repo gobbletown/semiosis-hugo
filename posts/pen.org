@@ -4,70 +4,62 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
-#+TITLE: Pen (Prompt Engineering in Emacs)
+#+TITLE: Pen.el (Prompt Engineering in Emacs)
 #+DATE: <2021-07-02>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs gpt eleutherai huggingface pen
 
-** Introducing =Pen=
-I start a GitHub project to deploy =pen.el=.
-
-+ GitHub project :: [[https://github.com/semiosis/pen.el/][GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI's GPT-3 or EleutherAI's GPT-j.]]
-
-+ Project timeline and objectives :: https://github.com/semiosis/pen.el/tree/master/docs
-
-+ Prompt README :: [[http://github.com/semiosis/prompts/blob/master/README.org][prompts/README.org at master  semiosis/prompts  GitHub]]
-
-+ Tutorial :: https://semiosis.github.io/posts/pen-tutorial/
-
-+ Video demo : [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]
-
-#+BEGIN_SRC sh -n :sps bash :async :results none
-  git clone "https://github.com/semiosis/pen.el"
-  git clone "https://github.com/semiosis/prompts"
-  mkdir ~/.pen
-  echo "sk-<openai key here>" > ~/.pen/openai_api_key
-
-  # Add the scripts to the PATH
-  echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
-
-  # Source your .profile
-  . ~/.profile
-
-  # Run pen
-  pen
-#+END_SRC
+** Introducing =Pen.el=
+[[./the_pen_of_imagination.png]]
 
 /The pen of imagination - |:ϝ∷¦ϝ./
 
-[[./the_pen_of_imagination.png]]
+I started a GitHub project to deploy =Pen.el=.
 
-=Pen= facilitates the creation,
-development, discovery and usage of prompts to
-a Language Model such as OpenAI's =GPT-3= or EleutherAI's =GPT-j=.
+=Pen.el= integrates LMs (language models) such as OpenAI's
+=GPT-3= or EleutherAI's =GPT-J= into emacs by
+generating functions from prompts that map emacs's corners
+loosely onto LMs. These functions can be used
+interactively or non-interactively and in a
+variety of configurable ways.
 
-- Create elisp functions based on "Language Model" prompts
-- Chain prompts together using keyboard macros and functions
-- Interactively query, generate and transfrom both prose and code
-- Use the LM as a search engine and a semantic search engine within emacs
-  - Search the internet
-  - Search documents
-    - https://beta.openai.com/docs/introduction/semantic-search
-    - https://gpttools.com/semanticsearch
+=Pen.el= also facilitates the creation,
+development, discovery and usage of prompts.
 
-The Prompt =README= will teach you how to
-write and test prompts for =pen.el=
+It's completely free, libre and open-source.
 
-For example, here is a very basic prompt file.
++ Pen.el on GitHub :: https://github.com/semiosis/pen.el/
 
-#+BEGIN_SRC yaml -n :async :results verbatim code
-  title: "Once upon a time there"
-  prompt: "Complete this sentence"
-  temperature: 0.8
-  max-tokens: 60
-#+END_SRC
++ Project timeline and objectives :: https://github.com/semiosis/pen.el/tree/master/docs
 
-Completing this prompt will start writing a story for you.
++ Prompts on GitHub :: http://github.com/semiosis/prompts/
+
++ Tutorial :: https://semiosis.github.io/posts/pen-tutorial/
+
++ Demo video :: [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]
+
++ Discord channel invite :: https://discord.gg/6wP4MwCM
+
+- Thesis :: https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org
+
+- Glossary of imaginary programming :: http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
+
+** Further introduction
+=Pen.el= is Google search, stackoverflow,
+Grammarly, Copilot, =conversion.ai=, mind
+mapping software (based on GPT-3) etc. all
+rolled into one package and allows you to
+extend emacs with GPT wherever your mind takes
+you. It's a LM (Language Model) that can generate
+multiversal continuations of text according to
+probability from the data that it was trained
+on.
+
+=Pen.el's= domain specific language =examplary= also helps
+you to generate your own prompts using known
+design patterns and minimal inputs and
+description. It does this by weaving prompt
+functions into each other.
 
 ** Vision
 At its heart, emacs is an operating system
@@ -93,7 +85,7 @@ interfaces can be prompted into existence.
 Between here and now we can write prompt
 functions to help preserve emacs.
 
-** Backstory of =Pen=
+** Backstory
 + Origin #1 :: [[https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/][Creating a playground for GPT-3 in emacs =::=]]
 + Origin #2 :: [[https://generative.ink/posts/pen/][Pen =::=  Moire]] (moire's blog)
 
@@ -126,7 +118,7 @@ written in collaboration with =GPT-3=.
 #+END_SRC
 
 This article was written by my amazing
-dopplegänger, =|:ϝ∷¦ϝ= (moire), in advance and
+dopplegänger, =|:ϝ∷¦ϝ= (Laria), in advance and
 in collaboration with GPT-3 using
 [[https://github.com/socketteer/loom][Loom]].
 
@@ -134,12 +126,82 @@ in collaboration with GPT-3 using
   - https://generative.ink/posts/pen/
   - [[https://github.com/socketteer/loom][GitHub - socketteer/loom: Multiversal tree writing interface for human-AI collaboration]]
 
-I credit =|:ϝ∷¦ϝ= for writing =Pen= into existence!
-
-[[./pen-project-timeline.png]]
+I credit =|:ϝ∷¦ϝ= for writing Pen.el into
+existence, but also for her encouragement and help!
 
 ** The Tower of Babel
 [[./pen-tower-of-babel.png]]
+
+** Documentation
+- [[./docs][Documentation directory]]
+  - [[./docs/playground-settings.org][OpenAI Playground Settings]]
+  - [[./docs/README.org][Project timeline and design]]
+
+** Information and Learning Material
+*** Prompt engineering
+**** Learning material
+- https://generative.ink/posts/methods-of-prompt-programming/
+- https://mullikine.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/
+- https://mullikine.github.io/posts/using-emacs-prompt-functions-inside-other-prompt-functions/
+
+**** Demos and examples of usage
+- https://mullikine.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/
+- https://mullikine.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/
+- https://mullikine.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/
+- https://mullikine.github.io/posts/gpt-3-assistants-for-emacs-modes/
+- https://mullikine.github.io/posts/nlsh-natural-language-shell/
+- https://mullikine.github.io/posts/translating-with-gpt-3-and-emacs/
+- https://mullikine.github.io/posts/generating-pickup-lines-with-gpt-3/
+- https://mullikine.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/
+- https://mullikine.github.io/posts/context-menus-based-on-gpt-3/
+- https://mullikine.github.io/posts/explainshell-with-gpt-3/
+- https://mullikine.github.io/posts/creating-some-imagery-for-pen-el-with-clip/
+- https://mullikine.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/
+- https://mullikine.github.io/tags/pen/
+- https://mullikine.github.io/tags/gpt/
+
+**** Glossaries
+- https://github.com/semiosis/pen.el/blob/master/glossary.txt
+- https://github.com/semiosis/pen.el/blob/master/docs/glossaries/prompt-engineering.txt
+- https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai-api.txt
+- https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai.txt
+- https://github.com/semiosis/pen.el/blob/master/docs/glossaries/nlp-natural-language-processing.txt
+
+** Related projects
+I would love some help with these projects! :)
+
+*** =examplary=
+Examplary is a Domain Specific Language, or
+set of macros embedded in lisp which
+facilitate the integration of prompts as
+functions into the language, the
+composition of them, the generation of prompts
+via sets of examples.
+
+https://github.com/semiosis/examplary
+
+*** =lm-complete=
+=lm-complete= is a language completer that aims
+to unify a bunch of alternative completion under one umbrella.
+
+https://github.com/semiosis/lm-complete
+
+**** This book by Mark Watson provides some reasonable blueprints
+https://leanpub.com/clojureai
+
+*** =ink.el=: A DSL that encodes provenance
+- Encode into the text the origin of the text
+
+https://github.com/semiosis/ink.el
+
+*** =openai-api.el=
+- An interface for emacs to the OpenAI API.
+
+https://github.com/semiosis/openai-api.el
+
+** Contributing
+- [[./CONTRIBUTING.org]]
+- [[./docs/related-projects.org]]
 
 ** Journal
 *** 07.07.21
@@ -171,3 +233,6 @@ Hopefully get some more views.
 https://news.ycombinator.com/item?id=27818854
 
 Getting haircut today.
+
+*** 03.08.21
+GPT-J Support via AIx.
