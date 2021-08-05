@@ -80,7 +80,7 @@ and it takes care of running the emacs+docker server.
 
 For linux users, if you place your OpenAI API
 key in the file `~/.pen/openai_api_key`, the
-[pen shell script](https://github.com/semiosis/pen.el/blob/mast%20er/scripts/pen) will
+[pen shell script](https://github.com/semiosis/pen.el/blob/master/scripts/pen) will
 automatically pick that up.
 
 If you run `pen` in a directory that contains a [prompts repository](https://github.com/semiosis/prompts/tree/master/prompts) then that repository will be used by `pen.el`.

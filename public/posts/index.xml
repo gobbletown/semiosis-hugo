@@ -1754,7 +1754,7 @@ and it takes care of running the emacs+docker server.</p>
 <h2 id="configuration">Configuration</h2>
 <p>For linux users, if you place your OpenAI API
 key in the file <code>~/.pen/openai_api_key</code>, the
-<a href="https://github.com/semiosis/pen.el/blob/mast%20er/scripts/pen">pen shell script</a> will
+<a href="https://github.com/semiosis/pen.el/blob/master/scripts/pen">pen shell script</a> will
 automatically pick that up.</p>
 <p>If you run <code>pen</code> in a directory that contains a <a href="https://github.com/semiosis/prompts/tree/master/prompts">prompts repository</a> then that repository will be used by <code>pen.el</code>.
 That way you can persist changes to your prompts repository.</p>
