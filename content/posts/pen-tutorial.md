@@ -8,6 +8,10 @@ draft = false
 
 ## Quick Setup using Docker {#quick-setup-using-docker}
 
+{{< figure src="/ox-hugo/wizard4.png" >}}
+
+_A time-traveling wizard who uses a magic book and pen to create worlds._
+
 The following commands set up `pen.el` for the first time.
 
 Apply for a GPT-3 key
@@ -47,10 +51,6 @@ echo "stty stop undef 2>/dev/null; stty start undef 2>/dev/null" | tee -a ~/.zsh
 # Run pen
 pen
 {{< /highlight >}}
-
-{{< figure src="/ox-hugo/wizard4.png" >}}
-
-_A time-traveling wizard who uses a magic book and pen to create worlds._
 
 Video demo
 : [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw)

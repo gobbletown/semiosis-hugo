@@ -1664,10 +1664,16 @@ Writing was.
             <pubDate>Sun, 11 Jul 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
-            <description>Quick Setup using Docker The following commands set up pen.el for the first time.
+            <description>Quick Setup using Docker   A time-traveling wizard who uses a magic book and pen to create worlds.
+The following commands set up pen.el for the first time.
  Apply for a GPT-3 key https://beta.openai.com/ Free AIx GPT-J-6B key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen on a linux machine. It will use a docker image. See the bottom of this document for Windows instructions.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  mkdir -p ~/.</description>
             <content type="html"><![CDATA[<h2 id="quick-setup-using-docker">Quick Setup using Docker</h2>
+<figure>
+    <img src="/ox-hugo/wizard4.png"/> 
+</figure>
+
+<p><em>A time-traveling wizard who uses a magic book and pen to create worlds.</em></p>
 <p>The following commands set up <code>pen.el</code> for the first time.</p>
 <dl>
 <dt>Apply for a GPT-3 key</dt>
@@ -1731,11 +1737,6 @@ echo <span style="color:#e6db74">&#34;stty stop undef 2&gt;/dev/null; stty start
 pen</code></pre></td></tr></table>
 </div>
 </div>
-<figure>
-    <img src="/ox-hugo/wizard4.png"/> 
-</figure>
-
-<p><em>A time-traveling wizard who uses a magic book and pen to create worlds.</em></p>
 <dl>
 <dt>Video demo</dt>
 <dd><a href="https://www.youtube.com/watch?v=J9BnZjWV1jw">Augment Minds 2021: Demo of Loom and Pen.el - YouTube</a></dd>
