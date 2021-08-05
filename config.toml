@@ -74,7 +74,7 @@ unsafe= true
 
   [[menu.main]]
     identifier = "pen"
-    name       = "Pen"
+    name       = "Pen.el"
     url        = "/pen/"
 
   [[menu.main]]
