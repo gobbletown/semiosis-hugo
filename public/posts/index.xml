@@ -1745,10 +1745,6 @@ pen</code></pre></td></tr></table>
 <dt>Join discord</dt>
 <dd><a href="https://discord.gg/6wP4MwCM">https://discord.gg/6wP4MwCM</a></dd>
 </dl>
-<p>For <code>GPT-neo</code>, <code>GPT-2</code> and <code>booste</code> support,
-and latest updates, please install from master
-branch. Docker support coming. <code>GPT-j</code> also in
-the works.</p>
 <h2 id="invoking-pen-dot-el-client-and-server">Invoking <code>Pen.el</code>: Client and server</h2>
 <p>Please glance over this to learn how to invoke.</p>
 <p>It&rsquo;ll get you going with <code>Pen.el</code> very quickly.</p>
@@ -1779,13 +1775,13 @@ accessible to the host and will not be erased.</p>
 <tbody>
 <tr>
 <td><code>pen</code></td>
-<td>Start a new client</td>
-<td></td>
+<td>Start the servv and successive clients</td>
+<td><code>pen</code></td>
 </tr>
 <tr>
 <td><code>penl</code></td>
 <td>List the prompt functions</td>
-<td></td>
+<td><code>penl</code></td>
 </tr>
 <tr>
 <td><code>penh</code></td>
@@ -1800,7 +1796,17 @@ accessible to the host and will not be erased.</p>
 <tr>
 <td><code>penq</code></td>
 <td>Quit the server</td>
-<td></td>
+<td><code>penq</code></td>
+</tr>
+<tr>
+<td><code>penf</code></td>
+<td>Run a prompt function</td>
+<td><code>penf -u write-a-blog-post sky 300</code></td>
+</tr>
+<tr>
+<td><code>pena</code></td>
+<td>Run a prompt function and gather all results</td>
+<td><code>pena pf-very-witty-pick-up-lines-for-a-topic semiotics</code></td>
 </tr>
 </tbody>
 </table>
@@ -1854,6 +1860,26 @@ accessible to the host and will not be erased.</p>
 <td><code>Spacebar</code></td>
 <td>When text is selected, will run with that text as first argument.</td>
 </tr>
+<tr>
+<td><code>Alt-1</code></td>
+<td>Complete 1 word</td>
+</tr>
+<tr>
+<td><code>Alt-2</code></td>
+<td>Complete 5 words</td>
+</tr>
+<tr>
+<td><code>Alt-3</code></td>
+<td>Complete line</td>
+</tr>
+<tr>
+<td><code>Alt-4</code></td>
+<td>Complete long (use Alt-l though, as you can see the multilines)</td>
+</tr>
+<tr>
+<td><code>Alt-u Alt-2</code></td>
+<td>Complete 5 words, but get a new completion (updates the cache)</td>
+</tr>
 </tbody>
 </table>
 <h2 id="key-bindings-for-emacs-wizards--also-enabled-in-docker">Key bindings for emacs wizards (also enabled in docker)</h2>
@@ -1905,6 +1931,31 @@ accessible to the host and will not be erased.</p>
 <td><code>H-TAB l</code></td>
 <td><code>pen-complete-long</code></td>
 <td>This is a multiline completion.</td>
+</tr>
+<tr>
+<td><code>H-1</code></td>
+<td><code>pen-company-filetype-word</code></td>
+<td>Complete 1 word</td>
+</tr>
+<tr>
+<td><code>H-2</code></td>
+<td><code>pen-company-filetype-words</code></td>
+<td>Complete 5 words</td>
+</tr>
+<tr>
+<td><code>H-3</code></td>
+<td><code>pen-company-filetype-line</code></td>
+<td>Complete line</td>
+</tr>
+<tr>
+<td><code>H-4</code></td>
+<td><code>pen-company-filetype-long</code></td>
+<td>Complete long (use H-l though, as you can see the multilines)</td>
+</tr>
+<tr>
+<td><code>H-u H-2</code></td>
+<td></td>
+<td>Complete 5 words, but get a new completion (updates the cache)</td>
 </tr>
 </tbody>
 </table>
