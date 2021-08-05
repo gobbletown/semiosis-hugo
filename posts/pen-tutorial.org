@@ -57,11 +57,6 @@ instructions.
 
 + Join discord :: https://discord.gg/6wP4MwCM
 
-For =GPT-neo=, =GPT-2= and =booste= support,
-and latest updates, please install from master
-branch. Docker support coming. =GPT-j= also in
-the works.
-
 ** Invoking =Pen.el=: Client and server
 Please glance over this to learn how to invoke.
 
@@ -91,13 +86,15 @@ accessible to the host and will not be erased.
 ** Running =Pen.el= from the host, in bash
 With a server running, you have these commands available on the host:
 
-| Script name | Function                                             | Example                                        |
-|-------------+------------------------------------------------------+------------------------------------------------|
-| =pen=       | Start a new client                                   |                                                |
-| =penl=      | List the prompt functions                            |                                                |
-| =penh=      | Get the signature of a prompt function               | =penh pf-list-of=                              |
-| =pene=      | Run some emacs code from the host and get the result | =pene '(progn (message "hi") (message "yo"))'= |
-| =penq=      | Quit the server                                      |                                                |
+| Script name | Function                                             | Example                                                  |
+|-------------+------------------------------------------------------+----------------------------------------------------------|
+| =pen=       | Start the servv and successive clients               | =pen=                                                    |
+| =penl=      | List the prompt functions                            | =penl=                                                   |
+| =penh=      | Get the signature of a prompt function               | =penh pf-list-of=                                        |
+| =pene=      | Run some emacs code from the host and get the result | =pene '(progn (message "hi") (message "yo"))'=           |
+| =penq=      | Quit the server                                      | =penq=                                                   |
+| =penf=      | Run a prompt function                                | =penf -u write-a-blog-post sky 300=                      |
+| =pena=      | Run a prompt function and gather all results         | =pena pf-very-witty-pick-up-lines-for-a-topic semiotics= |
 
 ** =Acolyte Mode= - Key bindings for emacs noobs
 These are enabled by default with the docker image.
@@ -114,6 +111,11 @@ These are enabled by default with the docker image.
 | =Alt-m=                  | Right click menu                                                                |
 | Select text then =Alt-f= | This filters the text through a prompt function specifically designed for this. |
 | =Spacebar=               | When text is selected, will run with that text as first argument.               |
+| =Alt-1=                  | Complete 1 word                                                                 |
+| =Alt-2=                  | Complete 5 words                                                                |
+| =Alt-3=                  | Complete line                                                                   |
+| =Alt-4=                  | Complete long (use Alt-l though, as you can see the multilines)                 |
+| =Alt-u Alt-2=            | Complete 5 words, but get a new completion (updates the cache)                  |
 
 ** Key bindings for emacs wizards (also enabled in docker)
 | kb             | f                                 |                                                                                    |
@@ -126,6 +128,11 @@ These are enabled by default with the docker image.
 | =H-TAB c=      | =pen-company-complete=            | Select a prompt function as the completer for =company-mode= and complete with it. |
 | =SPC=          | =pen-run-prompt-function=         | When text is selected, will run with that text as first argument.                  |
 | =H-TAB l=      | =pen-complete-long=               | This is a multiline completion.                                                    |
+| =H-1=          | =pen-company-filetype-word=       | Complete 1 word                                                                    |
+| =H-2=          | =pen-company-filetype-words=      | Complete 5 words                                                                   |
+| =H-3=          | =pen-company-filetype-line=       | Complete line                                                                      |
+| =H-4=          | =pen-company-filetype-long=       | Complete long (use H-l though, as you can see the multilines)                      |
+| =H-u H-2=      |                                   | Complete 5 words, but get a new completion (updates the cache)                     |
 
 =H= is the Hyper key, which works similar to Escape, Meta, Alt, Control or Shift that is present on the Space Cadet Keyboard.
 
