@@ -1,69 +1,56 @@
 +++
-title = "Pen (Prompt Engineering in Emacs)"
+title = "Pen.el (Prompt Engineering in Emacs)"
 author = ["Shane Mulligan"]
 date = 2021-07-02T00:00:00+12:00
 keywords = ["emacs", "gpt", "eleutherai", "huggingface", "pen"]
 draft = false
 +++
 
-## Introducing `Pen` {#introducing-pen}
-
-I start a GitHub project to deploy `pen.el`.
-
-GitHub project
-: [GitHub - semiosis/pen.el: pen.el is a package for prompt engineering in emacs. It facilitates the creation, ongoing development, discovery and usage of prompts to a language model such as OpenAI's GPT-3 or EleutherAI's GPT-j.](https://github.com/semiosis/pen.el/)
-
-
-Project timeline and objectives
-: <https://github.com/semiosis/pen.el/tree/master/docs>
-
-
-Prompt README
-: [prompts/README.org at master  semiosis/prompts  GitHub](http://github.com/semiosis/prompts/blob/master/README.org)
-
-
-Tutorial
-: <https://semiosis.github.io/posts/pen-tutorial/>
-
-<!--listend-->
-
-{{< highlight sh "linenos=table, linenostart=1" >}}
-docker run --rm -ti --entrypoint= semiosis/pen.el:latest ./run.sh
-
-# And to update the image
-docker pull semiosis/pen.el:latest
-{{< /highlight >}}
+## Introducing `Pen.el` {#introducing-pen-dot-el}
 
 _The pen of imagination - |:ϝ∷¦ϝ._
 
 {{< figure src="/ox-hugo/the_pen_of_imagination.png" >}}
 
-`Pen` facilitates the creation,
-development, discovery and usage of prompts to
-a Language Model such as OpenAI's `GPT-3` or EleutherAI's `GPT-j`.
+`Pen.el` integrates LMs (Language Models) such as OpenAI's
+`GPT-3` or EleutherAI's `GPT-J` into emacs by
+generating functions from prompts that map
+emacs's corners loosely onto LMs. These
+functions can be used interactively or non-
+interactively and in a variety of configurable
+ways. `Pen.el` also facilitates the creation,
+development, discovery and usage of prompts.
+It's completely free, libre and open-source.
 
--   Create elisp functions based on "Language Model" prompts
--   Chain prompts together using keyboard macros and functions
--   Interactively query, generate and transfrom both prose and code
--   Use the LM as a search engine and a semantic search engine within emacs
-    -   Search the internet
-    -   Search documents
-        -   <https://beta.openai.com/docs/introduction/semantic-search>
-        -   <https://gpttools.com/semanticsearch>
+|                                   |                                                                                                      |
+|-----------------------------------|------------------------------------------------------------------------------------------------------|
+| Pen.el on GitHub                  | <https://github.com/semiosis/pen.el/>                                                                |
+| Project timeline and objectives   | <https://github.com/semiosis/pen.el/tree/master/docs>                                                |
+| Prompts on GitHub                 | <http://github.com/semiosis/prompts/>                                                                |
+| Tutorial                          | <https://semiosis.github.io/posts/pen-tutorial/>                                                     |
+| Demo video                        | [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw) |
+| Discord channel invite            | <https://discord.gg/6wP4MwCM>                                                                        |
+| Thesis                            | <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>                    |
+| Glossary of imaginary programming | <http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>                     |
 
-The Prompt `README` will teach you how to
-write and test prompts for `pen.el`
 
-For example, here is a very basic prompt file.
+## Further introduction {#further-introduction}
 
-{{< highlight yaml "linenos=table, linenostart=1" >}}
-title: "Once upon a time there"
-prompt: "Complete this sentence"
-temperature: 0.8
-max-tokens: 60
-{{< /highlight >}}
+`Pen.el` is Google search, stackoverflow,
+Grammarly, Copilot, `conversion.ai`, mind
+mapping software (based on GPT-3) etc. all
+rolled into one package and allows you to
+extend emacs with GPT wherever your mind takes
+you. It's a LM (Language Model) that can generate
+multiversal continuations of text according to
+probability from the data that it was trained
+on.
 
-Completing this prompt will start writing a story for you.
+`Pen.el's` domain specific language `examplary` also helps
+you to generate your own prompts using known
+design patterns and minimal inputs and
+description. It does this by weaving prompt
+functions into each other.
 
 
 ## Vision {#vision}
@@ -92,16 +79,14 @@ Between here and now we can write prompt
 functions to help preserve emacs.
 
 
-## Backstory of `Pen` {#backstory-of-pen}
+## Backstory {#backstory}
 
-Origin #1
-: [Creating a playground for GPT-3 in emacs `::`](https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/)
+Pen.el was imagined contemporaneously between myself and Laria.
 
-Origin #2
-: [Pen `::`  Moire](https://generative.ink/posts/pen/) (moire's blog)
+-   [Creating a playground for GPT-3 in emacs `::`](https://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/)
+-   [Pen `::`  Moire](https://generative.ink/posts/pen/) (Laria's blog)
 
-Here is a story by Prompt Researcher [pseudonym] moire,
-written in collaboration with `GPT-3`.
+Here is a story by prompt researcher Laria, written in collaboration with `GPT-3`.
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 Imagine that you hold a powerful and versatile pen, whose ink flows forth in
@@ -129,7 +114,7 @@ clouds swirling around you.
 {{< /highlight >}}
 
 This article was written by my amazing
-dopplegänger, `|:ϝ∷¦ϝ` (moire), in advance and
+dopplegänger, `|:ϝ∷¦ϝ` (Laria), in advance and
 in collaboration with GPT-3 using
 [Loom](https://github.com/socketteer/loom).
 
@@ -137,9 +122,20 @@ in collaboration with GPT-3 using
     -   <https://generative.ink/posts/pen/>
     -   [GitHub - socketteer/loom: Multiversal tree writing interface for human-AI collaboration](https://github.com/socketteer/loom)
 
-I credit `|:ϝ∷¦ϝ` for writing `Pen` into existence!
+I credit `|:ϝ∷¦ϝ` for writing Pen.el into
+existence, but also for her encouragement and help!
 
-{{< figure src="/ox-hugo/pen-project-timeline.png" >}}
+
+## The Tower of Babel {#the-tower-of-babel}
+
+{{< figure src="/ox-hugo/pen-tower-of-babel.png" >}}
+
+
+## Documentation {#documentation}
+
+-   [Documentation directory](./docs)
+    -   [OpenAI Playground Settings]({{< relref "playground-settings" >}})
+    -   [Project timeline and design]({{< relref "README" >}})
 
 
 ## Journal {#journal}
@@ -179,3 +175,8 @@ Hopefully get some more views.
 <https://news.ycombinator.com/item?id=27818854>
 
 Getting haircut today.
+
+
+### 03.08.21 {#03-dot-08-dot-21}
+
+GPT-J Support via AIx.
