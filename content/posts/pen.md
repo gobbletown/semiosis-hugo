@@ -23,7 +23,7 @@ ways. `Pen.el` also facilitates the creation,
 development, discovery and usage of prompts.
 It's completely free, libre and open-source.
 
-|                                   | URL                                                                                                  |
+|                                   |                                                                                                      |
 |-----------------------------------|------------------------------------------------------------------------------------------------------|
 | Pen.el on GitHub                  | <https://github.com/semiosis/pen.el/>                                                                |
 | Project timeline and objectives   | <https://github.com/semiosis/pen.el/tree/master/docs>                                                |
@@ -137,96 +137,6 @@ existence, but also for her encouragement and help!
 -   [Documentation directory](./docs)
     -   [OpenAI Playground Settings]({{< relref "playground-settings" >}})
     -   [Project timeline and design]({{< relref "README" >}})
-
-
-## Information and Learning Material {#information-and-learning-material}
-
-
-### Prompt engineering {#prompt-engineering}
-
-
-#### Learning material {#learning-material}
-
--   <https://generative.ink/posts/methods-of-prompt-programming/>
--   <https://mullikine.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/>
--   <https://mullikine.github.io/posts/using-emacs-prompt-functions-inside-other-prompt-functions/>
-
-
-#### Demos and examples of usage {#demos-and-examples-of-usage}
-
--   <https://mullikine.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/>
--   <https://mullikine.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/>
--   <https://mullikine.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/>
--   <https://mullikine.github.io/posts/gpt-3-assistants-for-emacs-modes/>
--   <https://mullikine.github.io/posts/nlsh-natural-language-shell/>
--   <https://mullikine.github.io/posts/translating-with-gpt-3-and-emacs/>
--   <https://mullikine.github.io/posts/generating-pickup-lines-with-gpt-3/>
--   <https://mullikine.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/>
--   <https://mullikine.github.io/posts/context-menus-based-on-gpt-3/>
--   <https://mullikine.github.io/posts/explainshell-with-gpt-3/>
--   <https://mullikine.github.io/posts/creating-some-imagery-for-pen-el-with-clip/>
--   <https://mullikine.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/>
--   <https://mullikine.github.io/tags/pen/>
--   <https://mullikine.github.io/tags/gpt/>
-
-
-#### Glossaries {#glossaries}
-
--   <https://github.com/semiosis/pen.el/blob/master/glossary.txt>
--   <https://github.com/semiosis/pen.el/blob/master/docs/glossaries/prompt-engineering.txt>
--   <https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai-api.txt>
--   <https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai.txt>
--   <https://github.com/semiosis/pen.el/blob/master/docs/glossaries/nlp-natural-language-processing.txt>
-
-
-## Related projects {#related-projects}
-
-I would love some help with these projects! :)
-
-
-### `examplary` {#examplary}
-
-Examplary is a Domain Specific Language, or
-set of macros embedded in lisp which
-facilitate the integration of prompts as
-functions into the language, the
-composition of them, the generation of prompts
-via sets of examples.
-
-<https://github.com/semiosis/examplary>
-
-
-### `lm-complete` {#lm-complete}
-
-`lm-complete` is a language completer that aims
-to unify a bunch of alternative completion under one umbrella.
-
-<https://github.com/semiosis/lm-complete>
-
-
-#### This book by Mark Watson provides some reasonable blueprints {#this-book-by-mark-watson-provides-some-reasonable-blueprints}
-
-<https://leanpub.com/clojureai>
-
-
-### `ink.el`: A DSL that encodes provenance {#ink-dot-el-a-dsl-that-encodes-provenance}
-
--   Encode into the text the origin of the text
-
-<https://github.com/semiosis/ink.el>
-
-
-### `openai-api.el` {#openai-api-dot-el}
-
--   An interface for emacs to the OpenAI API.
-
-<https://github.com/semiosis/openai-api.el>
-
-
-## Contributing {#contributing}
-
--   [{{< relref "CONTRIBUTING" >}}]({{< relref "CONTRIBUTING" >}})
--   [{{< relref "related-projects" >}}]({{< relref "related-projects" >}})
 
 
 ## Journal {#journal}

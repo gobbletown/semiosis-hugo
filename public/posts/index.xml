@@ -2778,7 +2778,7 @@ It&rsquo;s completely free, libre and open-source.</p>
 <thead>
 <tr>
 <th></th>
-<th>URL</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -2934,70 +2934,6 @@ existence, but also for her encouragement and help!</p>
 <li><a href="">Project timeline and design</a></li>
 </ul>
 </li>
-</ul>
-<h2 id="information-and-learning-material">Information and Learning Material</h2>
-<h3 id="prompt-engineering">Prompt engineering</h3>
-<h4 id="learning-material">Learning material</h4>
-<ul>
-<li><a href="https://generative.ink/posts/methods-of-prompt-programming/">https://generative.ink/posts/methods-of-prompt-programming/</a></li>
-<li><a href="https://mullikine.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/">https://mullikine.github.io/posts/improved-templating-for-prompt-description-files-in-pen-el/</a></li>
-<li><a href="https://mullikine.github.io/posts/using-emacs-prompt-functions-inside-other-prompt-functions/">https://mullikine.github.io/posts/using-emacs-prompt-functions-inside-other-prompt-functions/</a></li>
-</ul>
-<h4 id="demos-and-examples-of-usage">Demos and examples of usage</h4>
-<ul>
-<li><a href="https://mullikine.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/">https://mullikine.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</a></li>
-<li><a href="https://mullikine.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/">https://mullikine.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/</a></li>
-<li><a href="https://mullikine.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/">https://mullikine.github.io/posts/gpt-3-for-building-mind-maps-with-an-ai-tutor-for-any-topic/</a></li>
-<li><a href="https://mullikine.github.io/posts/gpt-3-assistants-for-emacs-modes/">https://mullikine.github.io/posts/gpt-3-assistants-for-emacs-modes/</a></li>
-<li><a href="https://mullikine.github.io/posts/nlsh-natural-language-shell/">https://mullikine.github.io/posts/nlsh-natural-language-shell/</a></li>
-<li><a href="https://mullikine.github.io/posts/translating-with-gpt-3-and-emacs/">https://mullikine.github.io/posts/translating-with-gpt-3-and-emacs/</a></li>
-<li><a href="https://mullikine.github.io/posts/generating-pickup-lines-with-gpt-3/">https://mullikine.github.io/posts/generating-pickup-lines-with-gpt-3/</a></li>
-<li><a href="https://mullikine.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/">https://mullikine.github.io/posts/autocompleting-anything-with-gpt-3-in-emacs/</a></li>
-<li><a href="https://mullikine.github.io/posts/context-menus-based-on-gpt-3/">https://mullikine.github.io/posts/context-menus-based-on-gpt-3/</a></li>
-<li><a href="https://mullikine.github.io/posts/explainshell-with-gpt-3/">https://mullikine.github.io/posts/explainshell-with-gpt-3/</a></li>
-<li><a href="https://mullikine.github.io/posts/creating-some-imagery-for-pen-el-with-clip/">https://mullikine.github.io/posts/creating-some-imagery-for-pen-el-with-clip/</a></li>
-<li><a href="https://mullikine.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/">https://mullikine.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/</a></li>
-<li><a href="https://mullikine.github.io/tags/pen/">https://mullikine.github.io/tags/pen/</a></li>
-<li><a href="https://mullikine.github.io/tags/gpt/">https://mullikine.github.io/tags/gpt/</a></li>
-</ul>
-<h4 id="glossaries">Glossaries</h4>
-<ul>
-<li><a href="https://github.com/semiosis/pen.el/blob/master/glossary.txt">https://github.com/semiosis/pen.el/blob/master/glossary.txt</a></li>
-<li><a href="https://github.com/semiosis/pen.el/blob/master/docs/glossaries/prompt-engineering.txt">https://github.com/semiosis/pen.el/blob/master/docs/glossaries/prompt-engineering.txt</a></li>
-<li><a href="https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai-api.txt">https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai-api.txt</a></li>
-<li><a href="https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai.txt">https://github.com/semiosis/pen.el/blob/master/docs/glossaries/openai.txt</a></li>
-<li><a href="https://github.com/semiosis/pen.el/blob/master/docs/glossaries/nlp-natural-language-processing.txt">https://github.com/semiosis/pen.el/blob/master/docs/glossaries/nlp-natural-language-processing.txt</a></li>
-</ul>
-<h2 id="related-projects">Related projects</h2>
-<p>I would love some help with these projects! :)</p>
-<h3 id="examplary"><code>examplary</code></h3>
-<p>Examplary is a Domain Specific Language, or
-set of macros embedded in lisp which
-facilitate the integration of prompts as
-functions into the language, the
-composition of them, the generation of prompts
-via sets of examples.</p>
-<p><a href="https://github.com/semiosis/examplary">https://github.com/semiosis/examplary</a></p>
-<h3 id="lm-complete"><code>lm-complete</code></h3>
-<p><code>lm-complete</code> is a language completer that aims
-to unify a bunch of alternative completion under one umbrella.</p>
-<p><a href="https://github.com/semiosis/lm-complete">https://github.com/semiosis/lm-complete</a></p>
-<h4 id="this-book-by-mark-watson-provides-some-reasonable-blueprints">This book by Mark Watson provides some reasonable blueprints</h4>
-<p><a href="https://leanpub.com/clojureai">https://leanpub.com/clojureai</a></p>
-<h3 id="ink-dot-el-a-dsl-that-encodes-provenance"><code>ink.el</code>: A DSL that encodes provenance</h3>
-<ul>
-<li>Encode into the text the origin of the text</li>
-</ul>
-<p><a href="https://github.com/semiosis/ink.el">https://github.com/semiosis/ink.el</a></p>
-<h3 id="openai-api-dot-el"><code>openai-api.el</code></h3>
-<ul>
-<li>An interface for emacs to the OpenAI API.</li>
-</ul>
-<p><a href="https://github.com/semiosis/openai-api.el">https://github.com/semiosis/openai-api.el</a></p>
-<h2 id="contributing">Contributing</h2>
-<ul>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
 </ul>
 <h2 id="journal">Journal</h2>
 <h3 id="07-dot-07-dot-21">07.07.21</h3>
