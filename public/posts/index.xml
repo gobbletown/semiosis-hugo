@@ -10,6 +10,362 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Demo of GPT-J with Pen.el</title>
+            <link>http://semiosis.github.io/posts/demo-of-gpt-j-with-pen-el/</link>
+            <pubDate>Fri, 06 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/demo-of-gpt-j-with-pen-el/</guid>
+            <description>Summary I give a demo of GPT-J in Pen.el.
+1 2 3 4  Datomic NLG: A database that is built on top of a distributed graph of data and relationships.   Translating languages 1 2 3  distributed graph NLG: A graph that is constructed using a number of different sized nodes and links.   1 2 3  arbre distribué NLG: Un graphe construit avec une grandeur différente de nœuds et de liaisons.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I give a demo of GPT-J in Pen.el.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Datomic
+    NLG: A database that is built on top of a
+    distributed graph of data and
+    relationships.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="translating-languages">Translating languages</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">distributed graph
+    NLG: A graph that is constructed using a
+    number of different sized nodes and links.</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">arbre distribué
+    NLG: Un graphe construit avec
+    une grandeur différente de nœuds et de liaisons.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="doesn-t-seem-to-handle-japanese-too-well">Doesn&rsquo;t seem to handle Japanese too well</h3>
+<p>But, the AIx API only supports one completion
+at a time, for the moment. Usually I could
+cherry-pick from a list.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">こんにちは
+    NLG: エンコードされたグラフ。</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="explaining-an-error">Explaining an error</h2>
+<h3 id="input">input</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">error: failed to run custom build command for `emacs_module v0.10.0`</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="output">output</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">It means that you really wanted to execute the script defined in the emacs_module&#39;s custom build.
+Please click on the link to see more details about this error and how to fix it.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="generating-pick-up-lines">Generating pick-up lines</h2>
+<p>GPT-J has demonstrated its ability to do pick
+up lines in many of my demonstrations.</p>
+<h3 id="rugby">rugby</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Do you play rugby? I love watching you move.
+Do you like rugby? Cuz I like you a snack pack.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="adding-comments-to-code">Adding comments to code</h2>
+<h3 id="a-basic-test">A basic test</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+bn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>With flying colours.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Remember the name of the program</span>
+sn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#75715e"># Save a copy of the original program name</span>
+bn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="slightly-trickier">slightly trickier</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> test <span style="color:#e6db74">&#34;</span>$sn<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> pena; <span style="color:#66d9ef">then</span>
+    sn<span style="color:#f92672">=</span>penf
+    all<span style="color:#f92672">=</span>y
+<span style="color:#66d9ef">fi</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>With flying colours again.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Check for pena setting</span>
+<span style="color:#66d9ef">if</span> test <span style="color:#e6db74">&#34;</span>$sn<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> pena; <span style="color:#66d9ef">then</span>
+    <span style="color:#75715e"># Change the default sn to penf</span>
+    sn<span style="color:#f92672">=</span>penf
+    <span style="color:#75715e"># Set all to y</span>
+    all<span style="color:#f92672">=</span>y
+<span style="color:#66d9ef">fi</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="something-harder">Something harder</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$sn<span style="color:#e6db74">&#34;</span> in
+    penf<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> test <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -eq 0; <span style="color:#66d9ef">then</span>
+            sn<span style="color:#f92672">=</span>penl
+            penl_strip_pf<span style="color:#f92672">=</span>y
+        <span style="color:#66d9ef">elif</span> test <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -eq 1; <span style="color:#66d9ef">then</span>
+            sn<span style="color:#f92672">=</span>penh
+            penl_strip_pf<span style="color:#f92672">=</span>y
+        <span style="color:#66d9ef">fi</span>
+    <span style="color:#f92672">}</span>
+    ;;
+
+    *<span style="color:#f92672">)</span>
+<span style="color:#66d9ef">esac</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>I think the issue with this is that the prompt
+is quite large currently and the AIx API is
+not accepting enough tokens.</p>
+<p>Currently the AIx API is not respecting the
+number of tokens set.</p>
+<dl>
+<dt>prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/annotate-code-with-commentary.prompt">http://github.com/semiosis/prompts/blob/master/prompts/annotate-code-with-commentary.prompt</a></dd>
+</dl>
+<p>The entire snippet of code has to go into the
+prompt in order for it to work well.</p>
+<p>It wasn&rsquo;t fitting.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When the program starts</span>
+<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$sn<span style="color:#e6db74">&#34;</span> in
+    penf<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e"># If no args were passed in</span>
+        <span style="color:#66d9ef">if</span> test <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -eq 0; <span style="color:#66d9ef">then</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Demo up to this point</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/PzFSAxkjaMwj5BJ52nBGmVBlS;" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/PzFSAxkjaMwj5BJ52nBGmVBlS.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/PzFSAxkjaMwj5BJ52nBGmVBlS.js" id="asciicast-PzFSAxkjaMwj5BJ52nBGmVBlS" async></script>
+<h3 id="generate-fizzbuzz">Generate fizzbuzz</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">#!/usr/bin/nodejs
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Write a program that prints the numbers
+</span><span style="color:#75715e">// from 1 to 100.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// But for multiples of three print &#34;Fizz&#34;
+</span><span style="color:#75715e">// instead of the number and for the
+</span><span style="color:#75715e">// multiples of five print &#34;Buzz&#34;.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// For numbers which are multiples of both
+</span><span style="color:#75715e">// three and five print &#34;FizzBuzz&#34;.
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fizzBuzz</span>(<span style="color:#a6e22e">limit</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">str</span>, <span style="color:#a6e22e">mod</span>, <span style="color:#a6e22e">mod3</span>, <span style="color:#a6e22e">mod5</span>;
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">limit</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span>;
+        <span style="color:#a6e22e">mod</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>;
+        <span style="color:#a6e22e">mod3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>;
+        <span style="color:#a6e22e">mod5</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">15</span>;
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">2</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+        }
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod3</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod3</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod3</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">2</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+        }
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mod5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">2</span>) {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>;
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+        }
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span><span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;&#34;</span>) {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">str</span>);
+        }
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>It starts generating towards the end.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/YBMKRGxUrzVe6nrYQ97ZYaFwE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/YBMKRGxUrzVe6nrYQ97ZYaFwE.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/YBMKRGxUrzVe6nrYQ97ZYaFwE.js" id="asciicast-YBMKRGxUrzVe6nrYQ97ZYaFwE" async></script>]]></content>
+        </item>
+        
+        <item>
             <title>Feedback from testing AIx GPT-J API in Pen.el</title>
             <link>http://semiosis.github.io/posts/feedback-from-testing-aix-gpt-j-api-in-pen-el/</link>
             <pubDate>Fri, 06 Aug 2021 00:00:00 +1200</pubDate>

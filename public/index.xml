@@ -9,6 +9,16 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Demo of GPT-J with Pen.el</title>
+      <link>http://semiosis.github.io/posts/demo-of-gpt-j-with-pen-el/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/demo-of-gpt-j-with-pen-el/</guid>
+      <description>Summary I give a demo of GPT-J in Pen.el.
+1 2 3 4  Datomic NLG: A database that is built on top of a distributed graph of data and relationships.   Translating languages 1 2 3  distributed graph NLG: A graph that is constructed using a number of different sized nodes and links.   1 2 3  arbre distribué NLG: Un graphe construit avec une grandeur différente de nœuds et de liaisons.</description>
+    </item>
+    
+    <item>
       <title>Feedback from testing AIx GPT-J API in Pen.el</title>
       <link>http://semiosis.github.io/posts/feedback-from-testing-aix-gpt-j-api-in-pen-el/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +1200</pubDate>
