@@ -19,7 +19,7 @@ The following commands set up =pen.el= for the first time.
 These are the steps to run =Pen= on a linux
 machine. It will use a docker image. See the
 bottom of this document for Windows
-instructions (not supported).
+instructions.
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   mkdir -p ~/.emacs.d
