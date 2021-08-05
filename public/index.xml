@@ -104,9 +104,9 @@ http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tok
       <pubDate>Sun, 11 Jul 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
-      <description>Summary The following commands set up pen.el for the first time.
- Apply for a GPT-3 key https://beta.openai.com/ Free AIx GPT-J-6B key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen. It will use a docker image.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  mkdir -p ~/.emacs.d cd ~/.emacs.d git clone &amp;#34;https://github.</description>
+      <description>Quick Setup using Docker The following commands set up pen.el for the first time.
+ Apply for a GPT-3 key https://beta.openai.com/ Free AIx GPT-J-6B key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen on a linux machine. It will use a docker image. See the bottom of this document for Windows instructions.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  mkdir -p ~/.</description>
     </item>
     
     <item>

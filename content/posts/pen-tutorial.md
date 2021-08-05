@@ -6,10 +6,7 @@ keywords = ["gpt", "emacs", "pen"]
 draft = false
 +++
 
-{{< figure src="/ox-hugo/wizard4.png" >}}
-
-
-## Summary {#summary}
+## Quick Setup using Docker {#quick-setup-using-docker}
 
 The following commands set up `pen.el` for the first time.
 
@@ -20,7 +17,10 @@ Apply for a GPT-3 key
 Free AIx GPT-J-6B key
 : <https://apps.aixsolutionsgroup.com/>
 
-These are the steps to run `Pen`. It will use a docker image.
+These are the steps to run `Pen` on a linux
+machine. It will use a docker image. See the
+bottom of this document for Windows
+instructions.
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
 mkdir -p ~/.emacs.d
@@ -48,22 +48,9 @@ echo "stty stop undef 2>/dev/null; stty start undef 2>/dev/null" | tee -a ~/.zsh
 pen
 {{< /highlight >}}
 
-Or for Windows users:
+{{< figure src="/ox-hugo/wizard4.png" >}}
 
-{{< highlight powershell "linenos=table, linenostart=1" >}}
-cd ~
-git.exe clone "https://github.com/semiosis/pen.el"
-git.exe clone "https://github.com/semiosis/prompts"
-.\pen.el\scripts\pen.ps1
-{{< /highlight >}}
-
-If there are any issues with the powershell
-script, either fix the script and submit a
-patch or invoke the docker command manually.
-
-{{< highlight sh "linenos=table, linenostart=1" >}}
-docker.exe run -ti -v "C:\<path to prompts>:/root/.emacs.d/host/prompts" --entrypoint= semiosis/pen.el:latest ./run.sh
-{{< /highlight >}}
+_A time-traveling wizard who uses a magic book and pen to create worlds._
 
 Video demo
 : [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw)
@@ -709,3 +696,21 @@ Please visit <https://www.booste.io/> to get your key.
 ### `GPT-j` {#gpt-j}
 
 Currently working on a way to integrate this.
+
+
+## Windows users {#windows-users}
+
+{{< highlight powershell "linenos=table, linenostart=1" >}}
+cd ~
+git.exe clone "https://github.com/semiosis/pen.el"
+git.exe clone "https://github.com/semiosis/prompts"
+.\pen.el\scripts\pen.ps1
+{{< /highlight >}}
+
+If there are any issues with the powershell
+script, either fix the script and submit a
+patch or invoke the docker command manually.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+docker.exe run -ti -v "C:\<path to prompts>:/root/.emacs.d/host/prompts" --entrypoint= semiosis/pen.el:latest ./run.sh
+{{< /highlight >}}
