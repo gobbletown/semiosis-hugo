@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Feedback from testing AIx GPT-J API in Pen.el</title>
+      <link>http://semiosis.github.io/posts/feedback-from-testing-aix-gpt-j-api-in-pen-el/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/feedback-from-testing-aix-gpt-j-api-in-pen-el/</guid>
+      <description>Feedback Max tokens not working? I adjust the pen-aix script to print the tokens at the end of the completion.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  #!/usr/bin/python3 from aixapi import AIxResource import os # Get your API Key at apps.aixsolutionsgroup.com # model=os.environ.get(&amp;#34;PEN_ENGINE&amp;#34;), if __name__ == &amp;#34;__main__&amp;#34;: api_key = os.environ.get(&amp;#34;AIX_API_KEY&amp;#34;) aix_resource = AIxResource(api_key) print( str( aix_resource.</description>
+    </item>
+    
     <item>
       <title>Pen.el the first IDE for both EleutherAI and OpenAI</title>
       <link>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</link>
