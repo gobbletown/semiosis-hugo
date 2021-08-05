@@ -1821,6 +1821,14 @@ accessible to the host and will not be erased.</p>
 </thead>
 <tbody>
 <tr>
+<td><code>Alt-a</code></td>
+<td>Change AIx API key</td>
+</tr>
+<tr>
+<td><code>Alt-o</code></td>
+<td>Change OpenAI API key</td>
+</tr>
+<tr>
 <td><code>Alt-p</code></td>
 <td>Open the prompts directory in dired</td>
 </tr>
@@ -1892,6 +1900,16 @@ accessible to the host and will not be erased.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Use <code>M-x</code></td>
+<td><code>pen-add-key-aix</code></td>
+<td>Change / remove the AIx key</td>
+</tr>
+<tr>
+<td>Use <code>M-x</code></td>
+<td><code>pen-add-key-openai</code></td>
+<td>Change / remove the OpenAI key</td>
+</tr>
 <tr>
 <td><code>H-.</code> or <code>H-n</code></td>
 <td><code>global-pen-acolyte-minor-mode</code></td>

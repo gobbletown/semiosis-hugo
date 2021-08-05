@@ -114,6 +114,8 @@ These are enabled by default with the docker image.
 
 | kb                       |                                                                                 |
 |--------------------------|---------------------------------------------------------------------------------|
+| `Alt-a`                  | Change AIx API key                                                              |
+| `Alt-o`                  | Change OpenAI API key                                                           |
 | `Alt-p`                  | Open the prompts directory in dired                                             |
 | `Alt-t`                  | Start writing in an empty file                                                  |
 | `Alt-s`                  | Save file                                                                       |
@@ -135,6 +137,8 @@ These are enabled by default with the docker image.
 
 | kb             | f                                 |                                                                                    |
 |----------------|-----------------------------------|------------------------------------------------------------------------------------|
+| Use `M-x`      | `pen-add-key-aix`                 | Change / remove the AIx key                                                        |
+| Use `M-x`      | `pen-add-key-openai`              | Change / remove the OpenAI key                                                     |
 | `H-.` or `H-n` | `global-pen-acolyte-minor-mode`   | This toggles Acolyte mode.                                                         |
 | `H-TAB g`      | `pen-generate-prompt-functions`   | This reloads the prompt functions.                                                 |
 | `H-TAB r`      | `pen-run-prompt-function`         | Running a prompt function like this will not insert text or replace it.            |
