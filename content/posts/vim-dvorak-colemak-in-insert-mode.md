@@ -52,9 +52,26 @@ command! K call ToggleKeymap() " This is the one I should use
 
 ## Cheat sheet {#cheat-sheet}
 
+
+### dvorak {#dvorak}
+
 {{< highlight text "linenos=table, linenostart=1" >}}
-q w e r t y u i o p [ ]
-q w f p g j l u y ; [ ]
+q w e r t y u i o p [ ] \
+' , . p y f g c r l / = \
+
+a s d f g h j k l ; '
+a o e u i d h t n s -
+
+z x c v b n m , . /
+; q j k x b m w v z
+{{< /highlight >}}
+
+
+### colemak {#colemak}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+q w e r t y u i o p [ ] \
+q w f p g j l u y ; [ ] \
                   : { }
 a s d f g h j k l ; '
 a r s t d h n e i o '
