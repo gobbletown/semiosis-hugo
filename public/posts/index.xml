@@ -1321,6 +1321,929 @@ _ *
         </item>
         
         <item>
+            <title>Having fun with Pen.el</title>
+            <link>http://semiosis.github.io/posts/having-fun-with-pen-el/</link>
+            <pubDate>Thu, 05 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/having-fun-with-pen-el/</guid>
+            <description>Translating from Disney into English  Uses bash, which connects to the Pen.el server. Uses the world translation prompt   --  Rugby pick up lines  --   Good ones:  I&amp;rsquo;m a total scrumptious hunk of man meat. I like your tackles. I&amp;rsquo;m just trying to tackle your heart. I think you would be a good scrum half. You can tackle me anytime.    Tomato pick up lines 1 2 3  #+BEGIN_SRC text -n :async :results verbatim code :f &amp;#34;pena pf-very-witty-pick-up-lines-for-a-topic&amp;#34; tomato #+END_SRC   Are you a slice of juicy sweetness?</description>
+            <content type="html"><![CDATA[<h2 id="translating-from-disney-into-english">Translating from Disney into English</h2>
+<ul>
+<li>Uses bash, which connects to the Pen.el server.</li>
+<li>Uses the world translation prompt</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/stejgRht31Z5Kop6sUV5rbJIq" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/stejgRht31Z5Kop6sUV5rbJIq.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/stejgRht31Z5Kop6sUV5rbJIq.js" id="asciicast-stejgRht31Z5Kop6sUV5rbJIq" async></script>
+<h2 id="rugby-pick-up-lines">Rugby pick up lines</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/mGoP7TY7Wd3YLA8A1hTtSsYzK" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mGoP7TY7Wd3YLA8A1hTtSsYzK.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/mGoP7TY7Wd3YLA8A1hTtSsYzK.js" id="asciicast-mGoP7TY7Wd3YLA8A1hTtSsYzK" async></script>
+<ul>
+<li>Good ones:
+<ul>
+<li>I&rsquo;m a total scrumptious hunk of man meat.</li>
+<li>I like your tackles.</li>
+<li>I&rsquo;m just trying to tackle your heart.</li>
+<li>I think you would be a good scrum half.</li>
+<li>You can tackle me anytime.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tomato-pick-up-lines">Tomato pick up lines</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#+BEGIN_SRC text -n :async :results verbatim code :f &#34;pena pf-very-witty-pick-up-lines-for-a-topic&#34;
+  tomato
+#+END_SRC</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Are you a slice of juicy sweetness?
+I think you&#39;re sweet enough to be a Cherry Tomato.
+Are you a good tomato, or are you bad tomato?
+You look like an edible fruit.
+I&#39;m a little red, ripe, and sweet for you.
+You look like a juicy ripened tomato.
+Do you like tomatoes? Cuz I&#39;d like to be a vegetable to you.
+I don&#39;t know if you&#39;re a good tomato or a bad tomato.
+I like your tom-attitude.
+If I could grow a tomato, I&#39;d grow one for you.
+You look ripe and ready for picking.
+You look like you&#39;re ripe.
+You must be a tomato because you&#39;re hot, juicy, and you make my mouth water.
+You look like a juicy tomato.
+I like you because you&#39;re red hot.
+You look like a tasty piece of tomato.
+I&#39;ve been waiting all year for you to be in season.
+I&#39;d love to be your fruit basket.
+You look like a good tomato to grow, a tasty one.
+Are you a hot tomato or a cool cucumber?
+How do you like your tomatoes? In a salad, or inside a sandwich?
+You look like a beefsteak to me.
+You&#39;re red hot babe.
+I&#39;d like to be your cherry topper.
+You look like a delicious tomato.
+I think you&#39;re sweet.
+If you were a tomato, I would keep you in my garden.
+I want to be your fresh tomato.
+If I were a tomato, I&#39;d want to be your ketchup.
+</code></pre></div><!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/CPBPgmxBBYq2ddUztU2hD2axW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/CPBPgmxBBYq2ddUztU2hD2axW.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/CPBPgmxBBYq2ddUztU2hD2axW.js" id="asciicast-CPBPgmxBBYq2ddUztU2hD2axW" async></script>
+<h2 id="gpt-j-pick-up-lines">GPT-J pick up lines</h2>
+<p>It&rsquo;s not really a fair contest vs GPT-3
+because the OpenAI API has support for
+n-completions, where the Aix API does not,
+currently, so It&rsquo;s harder to cherry pick.</p>
+<p>They are quite good though.</p>
+<ul>
+<li>
+<p>Cooking:</p>
+<ul>
+<li>I&rsquo;m as good as the food I cook.</li>
+<li>I think you&rsquo;d taste delicious with a healthy dose of salt.</li>
+</ul>
+</li>
+<li>
+<p>Programming:</p>
+<ul>
+<li>I wonder if you&rsquo;d be a good maintenance guy.</li>
+<li>I think we&rsquo;re made for each other.</li>
+</ul>
+</li>
+<li>
+<p>Space:</p>
+<ul>
+<li>You look safe, and I&rsquo;d like to explore the stars.</li>
+<li>You&rsquo;re my ride into infinity.</li>
+</ul>
+</li>
+<li>
+<p>Music:</p>
+<ul>
+<li>I like your hair. It&rsquo;s the color of the ocean in summer.</li>
+<li>You look like the kind of music that I would listen to when I&rsquo;m alone.</li>
+</ul>
+</li>
+</ul>
+<h2 id="micro-horror-stories-with-gpt-j">Micro horror stories with GPT-j</h2>
+<ul>
+<li>And I think my AIx key may have run out!</li>
+</ul>
+<h3 id="shower">Shower</h3>
+<p>He always leaves the shower running while he&rsquo;s
+in the tub. I have to remember not to let him
+see his face on the shower curtain.</p>
+<h3 id="demo">Demo</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/MNlkAaddyTFbEkkTYRRZXZaB0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/MNlkAaddyTFbEkkTYRRZXZaB0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/MNlkAaddyTFbEkkTYRRZXZaB0.js" id="asciicast-MNlkAaddyTFbEkkTYRRZXZaB0" async></script>
+<h2 id="lists-of-interesting-things">Lists of interesting things</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;flying pokemon&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Dragonair
+Dratini
+Drifblim
+Dragonite
+Drapion
+Drifloon
+Pidgeot
+Pidgeotto
+Pidgey
+Zubat
+Fearow
+Farfetch<span style="color:#960050;background-color:#1e0010">&#39;</span>d
+Pidgeott
+Tauros
+Hoothoot
+Swellow
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;pokemon abilities&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Speed Boost
+Shield Dust
+Dry Skin
+Inner Focus
+Illuminate
+Pixilate
+Pressure
+Stench
+Blizzard
+Wonder Skin
+Intimidate
+Flash Fire
+Chlorophyll
+Unnerve
+Magma Armor
+Multitype
+Wonder Guard
+Gale Wings
+Magic Guard
+Sap Sipper
+Water Absorb
+Defiant
+Swarm
+Flame Body
+Run Away
+Cute Charm
+Own Tempo
+Guts
+Overgrow
+Clear Body
+Marvel Scale
+Super Luck
+Pickup
+Adaptability
+Limber
+Swift Swim
+Synchronize
+Water Veil
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;fictional languages&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Tolkien<span style="color:#e6db74">&#39;s Elvish languages
+</span><span style="color:#e6db74">Klingon
+</span><span style="color:#e6db74">Dothraki
+</span><span style="color:#e6db74">High Valyrian
+</span><span style="color:#e6db74">Tholian
+</span><span style="color:#e6db74">Gamorrean
+</span><span style="color:#e6db74">Elvish
+</span><span style="color:#e6db74">Huttese
+</span><span style="color:#e6db74">Weyoun 4
+</span><span style="color:#e6db74">Ewokese
+</span><span style="color:#e6db74">Galactic Basic
+</span><span style="color:#e6db74">Gobbledegook
+</span><span style="color:#e6db74">Hobbit
+</span><span style="color:#e6db74">Phoenician
+</span><span style="color:#e6db74">Wookiee
+</span><span style="color:#e6db74">Navajo
+</span><span style="color:#e6db74">Tolkien&#39;</span>s Gnomish language
+Esperanto
+Elven
+Klingonese
+Na<span style="color:#960050;background-color:#1e0010">&#39;</span>vi
+Romulan
+Basic
+Romanian
+Kabyle
+Pirate
+Vulcan.
+Lingo
+Elcor
+Kigali
+Gargleblaster
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena -u list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;natural disasters&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Earthquakes
+Cyclones
+Floods
+Tornadoes
+Volcanic eruptions
+Hurricanes
+Tsunamis
+Tidal waves
+Forest fires
+Heatwaves
+Hurricane
+Earthquake
+Tornado
+Volcano
+Landslide
+Flood
+Forest fire
+Tsunami
+Thunderstorm
+Sandstorm
+Epidemic
+Fire
+Meteorite
+Plague
+Stinging Insect
+Cyclone
+Storm
+Tidal Wave
+Avalanche
+Typhoon
+Volcanic Eruption
+Wildfire
+Blizzard
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena -u list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;dangerous animals&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Crocodile
+Snakes
+Tiger
+Eagle
+Shark
+Elephant
+Polar Bear
+Hippopotamus
+Asp
+Elephant Seal
+Polar Bears
+Tiger Sharks
+Box Jelly Fish
+Great White Sharks
+Crocodiles
+Elephants
+Eagles
+Manta Rays
+Sharks
+Inland Taipan
+Blue Ringed Octopus
+Black Mamba
+Great White Shark
+Cape Cobra
+Mako Shark
+Saltwater Crocodile
+Cape Hunting Dog
+Camel Spider
+Lemon Shark
+Moth
+Scorpion
+Rhinoceros
+Lion
+Jaguar
+Spider
+Bear
+Biting louse
+Boomslang
+Black mamba
+Blacktip shark
+Box jellyfish
+Brown recluse spider
+Stonefish
+Taipan
+Tsetse fly
+Whip snake
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Binturong
+Budgerigar
+Baby Hippo
+Baby Elephant
+Baby Giraffe
+Baby Seal
+Baby Elephant Seal
+Baby Orangutan
+Baby Sea Otter
+Baby Walrus
+Baby Dolphin
+Baby Owl
+Baby Koala
+Baby Penguin
+Baby Sloth
+Baby Puffin
+Baby Hedgehog
+Baby Pigeon
+Alpaca
+Armadillo
+Alpine Dachsbracke
+Axolotl
+Elephant
+American Alligator
+Badger
+Bat-eared Fox
+Capybara
+Kitten
+Kangaroo
+Koala
+Kiwi
+Kinkajou
+Kakapo
+Koalas
+Kookaburra
+Eskimo Curlew
+Emu
+Echidna
+Elk
+Eland
+Elephant Seal
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena -u list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;military operations&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Operation Overlord
+Operation Sea Lion
+Operation Downfall
+Operation Barbarossa
+Operation Market Garden
+Operation Overload
+Operation Cobra
+Operation Bagration
+Operation Dragoon
+Operation Mincemeat
+Operation Overlord
+Operation Desert Storm
+Operation Downfall
+Operation Starvation
+Operation Sealion
+Operation Dragoon
+Operation Overlord
+Operation Barbarossa
+Operation Swift Sword
+Operation Chastise
+Operation Iraqi Freedom
+Operation Enduring Freedom
+Operation Allied Force
+Operation Allied Protector
+Operation Desert Storm
+Operation Desert Shield
+Operation Desert Fox
+Operation Desert Sabre
+Operation Desert Shield
+Operation Granby
+Operation Intruder
+Operation Cobra
+Operation Desert Fox
+Operation Desert Shield
+Operation Desert Storm
+Operation Desert Sabre
+Operation Desert Strike
+Operation Enduring Freedom
+Operation Iraqi Freedom
+Operation Junction City
+Operation Starvation
+Operation Deliverance
+Operation Enduring Freedom
+Operation Overlord
+Operation Foxley
+Operation Chromite
+Operation Iron Falcon
+Operation Crossbow
+Operation Chastise
+Operation Dynamo
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena -u list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;nazi battalions&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Nederland
+Norwegen
+Nordland
+Norwegisches
+Niederländische
+Niederlande
+Niederländischen
+Niedersachsen
+Niedersächsische
+Nordost
+Neltume Battalion
+Nordland Regiment
+Nachtigall Battalion
+Nederland Brigade
+Nachtjager Reconnaissance Battalion
+Nordland SS-Panzer Battalion
+Neuhammer Company
+Nordland Supply Battalion
+Norwegische Militärbefeh
+Legion Niepce
+Afrika Korps
+Leibstandarte SS Adolf Hitler
+Totenkopf
+Das Reich
+Polizei
+Wiking
+Leibstandarte SS Adolf Hitler
+Leibstandarte SS Adolf Hitler
+Leibstandarte SS
+Schutzstaffel
+Leibstandarte SS Adolf Hitler
+SS-Totenkopfverbände
+SS-Polizei Division
+SS-Führungshauptamt
+SS-Wirtschafts-Verwaltungshaupt
+1st SS Division Leibstandarte SS Adolf Hitler
+3rd SS Division Totenkopf
+10th SS Panzer Division Frundsberg
+12th SS Panzer Division Hitlerjugend
+1st SS Division Das Reich
+2nd SS Division Das Reich
+3rd SS
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;fictional continents&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">The Americas
+Atlantis
+Pangea
+Midgard
+Mundus
+Tamriel
+Korriban
+Narnia
+Svartalfheim
+Lemuria
+Arda
+Atlantis
+Avalon
+Arabia
+Antarctica
+Antipodea
+Amazonia
+Atlantica
+Eden
+Xanadu
+Zarkandar
+Xanadul
+Sollasia
+Gondwanaland
+Kubo-Gakai
+Pangaea
+Lemuria
+Atlantis
+Terraria
+Avalon
+R<span style="color:#960050;background-color:#1e0010">&#39;</span>lyeh
+Xanthu
+The Lone
+Anarres
+Amazonia
+Atlantis
+Pangaea
+Lemuria
+Pangea
+Avalon
+Avalon
+Atlas
+Atlantis
+Avalon
+Atlas
+Agartha
+Antarctica
+Xanadu
+Zanadu
+Xanadon
+Xanadana
+Zanadana
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;sci-fi novels&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Brave New World
+The Hitchhiker<span style="color:#e6db74">&#39;s Guide to the Galaxy
+</span><span style="color:#e6db74">Stranger in a Strange Land
+</span><span style="color:#e6db74">1984
+</span><span style="color:#e6db74">Ender&#39;</span>s Game
+The Moon Is a Harsh Mistress
+The Forever War
+Fahrenheit <span style="color:#ae81ff">451</span>
+Starship Troopers
+Logan<span style="color:#e6db74">&#39;s Run
+</span><span style="color:#e6db74">The order changed when
+</span><span style="color:#e6db74">Foundation
+</span><span style="color:#e6db74">Gödel
+</span><span style="color:#e6db74">Escher
+</span><span style="color:#e6db74">Bach
+</span><span style="color:#e6db74">Pascal
+</span><span style="color:#e6db74">Spacetime Emergence
+</span><span style="color:#e6db74">Bastard
+</span><span style="color:#e6db74">Miles
+</span><span style="color:#e6db74">The Martian
+</span><span style="color:#e6db74">The Wizardry Compiled
+</span><span style="color:#e6db74">The Mote in God&#39;</span>s Eye
+Eon
+Eleanor Rigby
+The End of Eternity
+Einstein<span style="color:#960050;background-color:#1e0010">&#39;</span>s Bridge
+Assemblers of Infinity
+The Eternal Flame
+The Scarab in the Sand
+Fuzzy Sapiens
+The Stars My Destination
+Earth Abides
+Rendezvous with Rama
+The Fifth Element
+The Diving Bell and the Butterfly
+The Dispossessed
+Ishmael
+The Hitchhiker
+Earth is Room Enough
+The War of the Worlds
+The Demolished Man
+The Caves of Steel
+The Stars in Their Courses
+The Shrinking Man
+The Time Machine
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;ugliest animals&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Elephant Seal
+New Zealand Fur Seal
+Bearded Pig
+Porpoise
+Rhinoceros
+Walrus
+Orangutan
+Platypus
+Armadillo
+Pangolin
+Goblin Shark
+Bushbaby
+Capybara
+Coypu
+Coelacanth
+Coati
+Cephalopod
+Aardvark
+Ankole-Watusi
+Anteater
+Armadillidium
+Aye-aye
+Naked mole-rat
+Star-nosed mole
+Siamang
+Pig-nosed turtle
+Marabou stork
+Mola mola
+Miyazaki Turtle
+Mediterranean mussel
+Mole cricket
+Mudskipper
+Echidna
+Eland
+Emu
+Ermine
+Eye-ringed Parakeet
+Exocet Missile
+Eyelash Viper
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;most disgusting foods&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Raw Liver
+Raw Horseflesh
+Jujube
+Muktuk
+The Black Pudding
+Haggis
+Bubble and Squeak
+Fugu
+Balut
+Hakarl
+Fugu Fish
+Bamboo Worms
+Horsemeat
+Hákarl
+Stingray
+Mopane Worms
+Fried Tarantula
+Beef Heart
+Canned dog
+Escargot
+Coca-Cola®
+Bubble tea
+Beer
+Burger King®
+H. Pylori
+Haggis Pizza
+Haggis Pop Tart®
+Kopi Luwak
+Scorpion
+Casu Marzu
+Artisanal Haggis
+Stinkheads
+Tuna Eyeball
+Surströmming
+Stinky Tofu
+Eel
+Fermented shark
+Goose liver
+Gut soup
+Head cheese
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;fictional appliances&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">DangerMouse
+DarthVader
+Doug
+Dinosaure
+Doraemon
+Dalek
+Dexter
+Doc Brown
+Daffy Duck
+Darth Maul
+Astro-Fruit-Juicer
+Daffy-Donut-Oven
+Fruit-Blender
+Can-Oven
+Jam-O-Matic
+Soda-Machine
+Donut-Oven
+Fruit-Bl
+Deep Fryer
+Microwave
+Toaster
+Vacuum Cleaner
+Washing Machine
+Air Conditioner
+Fire Extinguisher
+Floor Polisher
+Refrigerator
+Clothes Dryer
+Smeg Fridge
+Mr.Bean<span style="color:#e6db74">&#39;s Washing Machine
+</span><span style="color:#e6db74">Star Trek&#39;</span>s Replicators
+Back to the Future<span style="color:#e6db74">&#39;s Delorean
+</span><span style="color:#e6db74">The Jetsons&#39;</span> Hovercraft
+Homer<span style="color:#e6db74">&#39;s Toaster
+</span><span style="color:#e6db74">Homer Simpson&#39;</span>s Beer-can-telephone
+Willy Wonka<span style="color:#960050;background-color:#1e0010">&#39;</span>s Chocolate Factory
+Nanobot
+G-Machine
+Doombot
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;fictional objects&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">The One Ring
+The Philosopher<span style="color:#e6db74">&#39;s Stone
+</span><span style="color:#e6db74">The Flying Dutchman
+</span><span style="color:#e6db74">Babel Fish
+</span><span style="color:#e6db74">Death Star
+</span><span style="color:#e6db74">The Forbidden Fruit
+</span><span style="color:#e6db74">The Spear of Longinus
+</span><span style="color:#e6db74">The Ark of the Covenant
+</span><span style="color:#e6db74">The Ark
+</span><span style="color:#e6db74">The Holy Grail
+</span><span style="color:#e6db74">Kryptonite
+</span><span style="color:#e6db74">Red October
+</span><span style="color:#e6db74">Beetle
+</span><span style="color:#e6db74">Blimp
+</span><span style="color:#e6db74">X-Wing
+</span><span style="color:#e6db74">Stormtrooper uniform
+</span><span style="color:#e6db74">Flux Capacitor
+</span><span style="color:#e6db74">Flying car
+</span><span style="color:#e6db74">Spaceship
+</span><span style="color:#e6db74">Longinus Spear
+</span><span style="color:#e6db74">Dark Crystal
+</span><span style="color:#e6db74">Doomsday machine
+</span><span style="color:#e6db74">Morty&#39;</span>s helmet
+Disney<span style="color:#e6db74">&#39;s Aladdin
+</span><span style="color:#e6db74">Sonic Screwdriver
+</span><span style="color:#e6db74">Doctor Who&#39;</span>s TARDIS
+Red Dwarf
+God<span style="color:#e6db74">&#39;s Hammer
+</span><span style="color:#e6db74">The L.A. Guns
+</span><span style="color:#e6db74">Battlestar Galactica
+</span><span style="color:#e6db74">Light saber
+</span><span style="color:#e6db74">Tardis
+</span><span style="color:#e6db74">Time Machine
+</span><span style="color:#e6db74">Locket
+</span><span style="color:#e6db74">Ring
+</span><span style="color:#e6db74">Portal
+</span><span style="color:#e6db74">Ship
+</span><span style="color:#e6db74">Goblet of Fire
+</span><span style="color:#e6db74">Hoverboard
+</span><span style="color:#e6db74">Wand
+</span><span style="color:#e6db74">Arkenstone
+</span><span style="color:#e6db74">Obsidian Goblet
+</span><span style="color:#e6db74">Ring of Power
+</span><span style="color:#e6db74">Palantír
+</span><span style="color:#e6db74">Sting
+</span><span style="color:#e6db74">Hobbit Crossbow
+</span><span style="color:#e6db74">Galadriel&#39;</span>s Mirror
+Hobbit-hole
+Ent Draught
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;magic powers&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Healing
+Levitation
+Necromancy
+Invulnerability
+Invisibility
+Resistance to Magic
+Super Strength
+Precognition
+Control of the Weather
+Master of All Elemental Magic
+resurrection
+stealth
+invisibility
+telepathy
+flying
+super speed
+levitation
+telekinesis
+super strength
+clairvoyance
+Control Fire
+Control Water
+Walking through walls
+Teleportation
+Flying
+Telekinesis
+Pyrokinesis
+Conjuring
+mind reading
+predicting the future
+teleportation
+time travel
+healing
+matter transformation
+nephalem power
+Magic
+Flight
+Absorption
+Intangibility
+Ability to Control the Element of Fire
+Transmutation
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena list-of <span style="color:#ae81ff">30</span> <span style="color:#e6db74">&#34;onomatopoeia&#34;</span> | uniqnosort</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Tap
+Slap
+Smack
+Crunch
+Chomp
+Shhh
+Ouch
+Bzzzz
+Boom
+Crash
+Quack
+Splash
+Sizzle
+Hiss
+Zip
+Zap
+Buzz
+Growl
+Screech
+Burp
+R
+Bling
+Biff
+Blurt
+Bark
+Bla-Bla
+Bing
+Bam
+Bang
+Blort
+Biss
+Kerplop
+Kreef
+Klick
+Klong
+Klunk
+Klopp
+Klok
+Kloo
+Klonk
+Klop
+K
+Klingon
+Ee-aw
+Brrrrrrrr
+Tarrah
+Zing
+Dink
+Boing
+Sproing
+Zork
+Dum-dum
+Ding
+Wallop
+Thud
+Jab
+Ker-thunk
+Gleeble-glurk
+Plop
+Ahem
+Flump
+Plank
+Rattle
+Fshhhh
+Crunnch
+Sputter
+Flub
+Splort
+Grarr
+Aaaaaah
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
             <title>Pen.el the first IDE for both EleutherAI and OpenAI</title>
             <link>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</link>
             <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>

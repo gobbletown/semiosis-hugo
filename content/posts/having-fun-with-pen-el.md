@@ -1,49 +1,46 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Having fun with Pen.el"
+author = ["Shane Mulligan"]
+date = 2021-08-05T00:00:00+12:00
+keywords = ["gpt", "pen", "games", "openai", "eleutherai", "gpt-j", "gpt"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+## Translating from Disney into English {#translating-from-disney-into-english}
 
-#+TITLE: Having fun with Pen.el
-#+DATE: <2021-08-05>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt pen games openai eleutherai gpt-j gpt
+-   Uses bash, which connects to the Pen.el server.
+-   Uses the world translation prompt
 
-** Translating from Disney into English
-- Uses bash, which connects to the Pen.el server.
-- Uses the world translation prompt
-
-#+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/stejgRht31Z5Kop6sUV5rbJIq" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/stejgRht31Z5Kop6sUV5rbJIq.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/stejgRht31Z5Kop6sUV5rbJIq.js" id="asciicast-stejgRht31Z5Kop6sUV5rbJIq" async></script>
-#+END_EXPORT
 
-** Rugby pick up lines
-#+BEGIN_EXPORT html
+
+## Rugby pick up lines {#rugby-pick-up-lines}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/mGoP7TY7Wd3YLA8A1hTtSsYzK" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mGoP7TY7Wd3YLA8A1hTtSsYzK.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/mGoP7TY7Wd3YLA8A1hTtSsYzK.js" id="asciicast-mGoP7TY7Wd3YLA8A1hTtSsYzK" async></script>
-#+END_EXPORT
 
-+ Good ones:
-  - I'm a total scrumptious hunk of man meat.
-  - I like your tackles.
-  - I'm just trying to tackle your heart.
-  - I think you would be a good scrum half.
-  - You can tackle me anytime.
+-   Good ones:
+    -   I'm a total scrumptious hunk of man meat.
+    -   I like your tackles.
+    -   I'm just trying to tackle your heart.
+    -   I think you would be a good scrum half.
+    -   You can tackle me anytime.
 
-** Tomato pick up lines
-#+BEGIN_SRC text -n :async :results verbatim code
-  ,#+BEGIN_SRC text -n :async :results verbatim code :f "pena pf-very-witty-pick-up-lines-for-a-topic"
-    tomato
-  ,#+END_SRC
+
+## Tomato pick up lines {#tomato-pick-up-lines}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+#+BEGIN_SRC text -n :async :results verbatim code :f "pena pf-very-witty-pick-up-lines-for-a-topic"
+  tomato
 #+END_SRC
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src text
+```text
 Are you a slice of juicy sweetness?
 I think you're sweet enough to be a Cherry Tomato.
 Are you a good tomato, or are you bad tomato?
@@ -73,16 +70,16 @@ I think you're sweet.
 If you were a tomato, I would keep you in my garden.
 I want to be your fresh tomato.
 If I were a tomato, I'd want to be your ketchup.
-#+end_src
+```
 
-#+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/CPBPgmxBBYq2ddUztU2hD2axW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/CPBPgmxBBYq2ddUztU2hD2axW.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/CPBPgmxBBYq2ddUztU2hD2axW.js" id="asciicast-CPBPgmxBBYq2ddUztU2hD2axW" async></script>
-#+END_EXPORT
 
-** GPT-J pick up lines
+
+## GPT-J pick up lines {#gpt-j-pick-up-lines}
+
 It's not really a fair contest vs GPT-3
 because the OpenAI API has support for
 n-completions, where the Aix API does not,
@@ -90,45 +87,50 @@ currently, so It's harder to cherry pick.
 
 They are quite good though.
 
-+ Cooking:
-  - I'm as good as the food I cook.
-  - I think you'd taste delicious with a healthy dose of salt.
+-   Cooking:
+    -   I'm as good as the food I cook.
+    -   I think you'd taste delicious with a healthy dose of salt.
 
-+ Programming:
-  - I wonder if you'd be a good maintenance guy.
-  - I think we're made for each other.
+-   Programming:
+    -   I wonder if you'd be a good maintenance guy.
+    -   I think we're made for each other.
 
-+ Space:
-  - You look safe, and I'd like to explore the stars.
-  - You're my ride into infinity.
+-   Space:
+    -   You look safe, and I'd like to explore the stars.
+    -   You're my ride into infinity.
 
-+ Music:
-  - I like your hair. It's the color of the ocean in summer.
-  - You look like the kind of music that I would listen to when I'm alone.
+-   Music:
+    -   I like your hair. It's the color of the ocean in summer.
+    -   You look like the kind of music that I would listen to when I'm alone.
 
-** Micro horror stories with GPT-j
-- And I think my AIx key may have run out!
 
-*** Shower
+## Micro horror stories with GPT-j {#micro-horror-stories-with-gpt-j}
+
+-   And I think my AIx key may have run out!
+
+
+### Shower {#shower}
+
 He always leaves the shower running while he's
 in the tub. I have to remember not to let him
 see his face on the shower curtain.
 
-*** Demo
-#+BEGIN_EXPORT html
+
+### Demo {#demo}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/MNlkAaddyTFbEkkTYRRZXZaB0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/MNlkAaddyTFbEkkTYRRZXZaB0.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/MNlkAaddyTFbEkkTYRRZXZaB0.js" id="asciicast-MNlkAaddyTFbEkkTYRRZXZaB0" async></script>
-#+END_EXPORT
 
-** Lists of interesting things
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "flying pokemon" | uniqnosort
-#+END_SRC
 
-#+RESULTS:
-#+begin_src bash
+## Lists of interesting things {#lists-of-interesting-things}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "flying pokemon" | uniqnosort
+{{< /highlight >}}
+
+```bash
 Dragonair
 Dratini
 Drifblim
@@ -145,14 +147,13 @@ Pidgeott
 Tauros
 Hoothoot
 Swellow
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "pokemon abilities" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "pokemon abilities" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Speed Boost
 Shield Dust
 Dry Skin
@@ -191,14 +192,13 @@ Limber
 Swift Swim
 Synchronize
 Water Veil
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "fictional languages" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "fictional languages" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Tolkien's Elvish languages
 Klingon
 Dothraki
@@ -230,14 +230,13 @@ Lingo
 Elcor
 Kigali
 Gargleblaster
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena -u list-of 10 "natural disasters" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena -u list-of 10 "natural disasters" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Earthquakes
 Cyclones
 Floods
@@ -271,14 +270,13 @@ Typhoon
 Volcanic Eruption
 Wildfire
 Blizzard
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena -u list-of 10 "dangerous animals" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena -u list-of 10 "dangerous animals" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Crocodile
 Snakes
 Tiger
@@ -325,10 +323,9 @@ Stonefish
 Taipan
 Tsetse fly
 Whip snake
-#+end_src
+```
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Binturong
 Budgerigar
 Baby Hippo
@@ -370,14 +367,13 @@ Echidna
 Elk
 Eland
 Elephant Seal
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena -u list-of 10 "military operations"
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena -u list-of 10 "military operations"
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Operation Overlord
 Operation Sea Lion
 Operation Downfall
@@ -428,14 +424,13 @@ Operation Iron Falcon
 Operation Crossbow
 Operation Chastise
 Operation Dynamo
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena -u list-of 10 "nazi battalions"
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena -u list-of 10 "nazi battalions"
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Nederland
 Norwegen
 Nordland
@@ -478,14 +473,13 @@ SS-Wirtschafts-Verwaltungshaupt
 1st SS Division Das Reich
 2nd SS Division Das Reich
 3rd SS
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "fictional continents"
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "fictional continents"
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 The Americas
 Atlantis
 Pangea
@@ -538,14 +532,13 @@ Zanadu
 Xanadon
 Xanadana
 Zanadana
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "sci-fi novels" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "sci-fi novels" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Brave New World
 The Hitchhiker's Guide to the Galaxy
 Stranger in a Strange Land
@@ -591,14 +584,13 @@ The Caves of Steel
 The Stars in Their Courses
 The Shrinking Man
 The Time Machine
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "ugliest animals" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "ugliest animals" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Elephant Seal
 New Zealand Fur Seal
 Bearded Pig
@@ -638,14 +630,13 @@ Ermine
 Eye-ringed Parakeet
 Exocet Missile
 Eyelash Viper
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "most disgusting foods" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "most disgusting foods" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Raw Liver
 Raw Horseflesh
 Jujube
@@ -686,14 +677,13 @@ Fermented shark
 Goose liver
 Gut soup
 Head cheese
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "fictional appliances" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "fictional appliances" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 DangerMouse
 DarthVader
 Doug
@@ -733,14 +723,13 @@ Willy Wonka's Chocolate Factory
 Nanobot
 G-Machine
 Doombot
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "fictional objects" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "fictional objects" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 The One Ring
 The Philosopher's Stone
 The Flying Dutchman
@@ -790,14 +779,13 @@ Hobbit Crossbow
 Galadriel's Mirror
 Hobbit-hole
 Ent Draught
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 10 "magic powers" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 10 "magic powers" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Healing
 Levitation
 Necromancy
@@ -839,14 +827,13 @@ Absorption
 Intangibility
 Ability to Control the Element of Fire
 Transmutation
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena list-of 30 "onomatopoeia" | uniqnosort
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena list-of 30 "onomatopoeia" | uniqnosort
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 Tap
 Slap
 Smack
@@ -917,5 +904,4 @@ Flub
 Splort
 Grarr
 Aaaaaah
-#+end_src
-
+```

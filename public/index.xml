@@ -65,6 +65,15 @@ Code vimrc
     </item>
     
     <item>
+      <title>Having fun with Pen.el</title>
+      <link>http://semiosis.github.io/posts/having-fun-with-pen-el/</link>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/having-fun-with-pen-el/</guid>
+      <description>Translating from Disney into English  Uses bash, which connects to the Pen.el server. Uses the world translation prompt   --  Rugby pick up lines  --   Good ones:  I&amp;rsquo;m a total scrumptious hunk of man meat. I like your tackles. I&amp;rsquo;m just trying to tackle your heart. I think you would be a good scrum half. You can tackle me anytime.    Tomato pick up lines 1 2 3  #+BEGIN_SRC text -n :async :results verbatim code :f &amp;#34;pena pf-very-witty-pick-up-lines-for-a-topic&amp;#34; tomato #+END_SRC   Are you a slice of juicy sweetness?</description>
+    </item>
+    
+    <item>
       <title>Pen.el the first IDE for both EleutherAI and OpenAI</title>
       <link>http://semiosis.github.io/posts/pen-el-the-first-ide-for-eleutherai-and-openai/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +1200</pubDate>
