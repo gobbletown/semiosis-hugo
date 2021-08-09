@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://semiosis.github.io/posts/</loc>
+    <lastmod>2021-08-09T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-08-09T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/yasnippet-combined-with-pen-el-controllable-prompt-generation/</loc>
+    <lastmod>2021-08-09T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/porting-the-glossary-system-to-pen-el/</loc>
+    <lastmod>2021-08-07T00:00:00+12:00</lastmod>
+  </url><url>
     <loc>http://semiosis.github.io/posts/demo-of-gpt-j-with-pen-el/</loc>
     <lastmod>2021-08-06T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/feedback-from-testing-aix-gpt-j-api-in-pen-el/</loc>
-    <lastmod>2021-08-06T00:00:00+12:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/posts/</loc>
-    <lastmod>2021-08-06T00:00:00+12:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/</loc>
     <lastmod>2021-08-06T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/vim-dvorak-colemak-in-insert-mode/</loc>
