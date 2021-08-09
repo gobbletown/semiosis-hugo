@@ -1,36 +1,34 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Using Pen.el on the CLI to generate code snippets"
+author = ["Shane Mulligan"]
+date = 2021-08-10T00:00:00+12:00
+keywords = ["gpt", "pen", "emacs", "babel"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+## Summary {#summary}
 
-#+TITLE: Using Pen.el on the CLI to generate code snippets
-#+DATE: <2021-08-10>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt pen emacs babel
-
-** Summary
 I wanted to demo some of the code gen commands
 using the cli interface with org-babel.
 
-** Demos
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  penf -u pf-python-how-to "split a string"
-#+END_SRC
 
-#+RESULTS:
-#+begin_src bash
+## Demos {#demos}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+penf -u pf-python-how-to "split a string"
+{{< /highlight >}}
+
+```bash
 s = "hello world"
 print s.split()
 # ['hello', 'world']
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena -u code-question bash "save an array into a variable"
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena -u code-question bash "save an array into a variable"
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 declare -a arr=([1]=1 [2]=2 [3]=3 [4]=4)
 declare -a arr=(1 2 3 4 5)
 declare -a array=(a b c d e f g)
@@ -43,27 +41,25 @@ arr=($(uname -r -m))
 echo "$arr" > /home/user/benchmarks/benchmark
 # extract it
 cat /home/user/benchmarks/benchmark | grep -Po '
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena generate-vim-command "increment numbers on selected lines"
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena generate-vim-command "increment numbers on selected lines"
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 :%s/^\d+/\1+/g
 :%s/\d\+/\1+/g
 :%s/\d/\1+/g
 :%s/\d\+/\=line(".")+1/g
 :%s/^\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena bash-one-liner-generator-from-natural-language "add a daily cron job to sync home directory to google cloud"
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena bash-one-liner-generator-from-natural-language "add a daily cron job to sync home directory to google cloud"
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 crontab -e
 2 0 * * * rsync -ahz --delete -e "ssh -i ~/.ssh/google_compute_engine"
 $HOME/ gs://my-bucket/
@@ -83,14 +79,13 @@ $ * * * * * rsync -a ~ / /backup/backup.tar.gz
 $ * * * * * rsync -a ~ / /backup/home.tar.gz
 $ crontab -l
 $ cr
-#+end_src
+```
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena bash-one-liner-generator-on-os-from-natural-language "arch linux" "delete all packages"
-#+END_SRC
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena bash-one-liner-generator-on-os-from-natural-language "arch linux" "delete all packages"
+{{< /highlight >}}
 
-#+RESULTS:
-#+begin_src bash
+```bash
 pacman -Rns
 pacman -Qq | awk '{print "pacman -Rs " $1 }' | sh
 pacman -Qq | pacman -Ql | xargs sudo pacman -Rns
@@ -98,9 +93,11 @@ pacman -Q
 # Delete all files
 pacman -Qq | pacman -Rs
 pacman -Qqen *
-#+end_src
+```
 
-** TODO parameterize the mode-sensitive prompts for the CLI
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  pena -u code-generator-from-description quicksort
-#+END_SRC
+
+## <span class="org-todo todo TODO">TODO</span> parameterize the mode-sensitive prompts for the CLI {#parameterize-the-mode-sensitive-prompts-for-the-cli}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+pena -u code-generator-from-description quicksort
+{{< /highlight >}}

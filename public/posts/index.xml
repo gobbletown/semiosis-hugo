@@ -156,6 +156,116 @@ don&rsquo;t think it worked too well anyway.</p>
         </item>
         
         <item>
+            <title>Using Pen.el on the CLI to generate code snippets</title>
+            <link>http://semiosis.github.io/posts/using-pen-el-on-the-cli-to-generate-code-snippets/</link>
+            <pubDate>Tue, 10 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/using-pen-el-on-the-cli-to-generate-code-snippets/</guid>
+            <description>Summary I wanted to demo some of the code gen commands using the cli interface with org-babel.
+Demos 1  penf -u pf-python-how-to &amp;#34;split a string&amp;#34;   s = &amp;#34;hello world&amp;#34; print s.split() # [&amp;#39;hello&amp;#39;, &amp;#39;world&amp;#39;] 1  pena -u code-question bash &amp;#34;save an array into a variable&amp;#34;   declare -a arr=([1]=1 [2]=2 [3]=3 [4]=4) declare -a arr=(1 2 3 4 5) declare -a array=(a b c d e f g) save_array=(${!</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I wanted to demo some of the code gen commands
+using the cli interface with org-babel.</p>
+<h2 id="demos">Demos</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">penf -u pf-python-how-to <span style="color:#e6db74">&#34;split a string&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello world&#34;</span>
+print s.split<span style="color:#f92672">()</span>
+<span style="color:#75715e"># [&#39;hello&#39;, &#39;world&#39;]</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena -u code-question bash <span style="color:#e6db74">&#34;save an array into a variable&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">declare -a arr<span style="color:#f92672">=([</span>1<span style="color:#f92672">]=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">[</span>3<span style="color:#f92672">]=</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">[</span>4<span style="color:#f92672">]=</span>4<span style="color:#f92672">)</span>
+declare -a arr<span style="color:#f92672">=(</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> 5<span style="color:#f92672">)</span>
+declare -a array<span style="color:#f92672">=(</span>a b c d e f g<span style="color:#f92672">)</span>
+save_array<span style="color:#f92672">=(</span><span style="color:#e6db74">${</span>!array[@]<span style="color:#e6db74">}</span>
+a<span style="color:#f92672">=(</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> 5<span style="color:#f92672">)</span>;
+b<span style="color:#f92672">=</span>$a;
+c<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>b#*#<span style="color:#e6db74">}</span>;
+<span style="color:#75715e"># add the array to the end of somefile</span>
+arr<span style="color:#f92672">=(</span><span style="color:#66d9ef">$(</span>uname -r -m<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
+echo <span style="color:#e6db74">&#34;</span>$arr<span style="color:#e6db74">&#34;</span> &gt; /home/user/benchmarks/benchmark
+<span style="color:#75715e"># extract it</span>
+cat /home/user/benchmarks/benchmark | grep -Po <span style="color:#960050;background-color:#1e0010">&#39;</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena generate-vim-command <span style="color:#e6db74">&#34;increment numbers on selected lines&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:%s/^<span style="color:#ae81ff">\d</span>+/<span style="color:#ae81ff">\1</span>+/g
+:%s/<span style="color:#ae81ff">\d\+</span>/<span style="color:#ae81ff">\1</span>+/g
+:%s/<span style="color:#ae81ff">\d</span>/<span style="color:#ae81ff">\1</span>+/g
+:%s/<span style="color:#ae81ff">\d\+</span>/<span style="color:#ae81ff">\=</span>line<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;.&#34;</span><span style="color:#f92672">)</span>+1/g
+:%s/^<span style="color:#ae81ff">\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s\d\+\s</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena bash-one-liner-generator-from-natural-language <span style="color:#e6db74">&#34;add a daily cron job to sync home directory to google cloud&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -e
+<span style="color:#ae81ff">2</span> <span style="color:#ae81ff">0</span> * * * rsync -ahz --delete -e <span style="color:#e6db74">&#34;ssh -i ~/.ssh/google_compute_engine&#34;</span>
+$HOME/ gs://my-bucket/
+&lt;/nowiki&gt;
+<span style="color:#75715e"># Find all files in current directory that</span>
+crontab -e
+<span style="color:#ae81ff">0</span> */12 * * * rsync -a --delete ~/ /cloud/
+crontab -l | <span style="color:#f92672">{</span> cat; echo <span style="color:#e6db74">&#34;@daily google-drive sync ~/ s3://mybucket&#34;</span>; <span style="color:#f92672">}</span>
+<span style="color:#75715e"># delete a file and receive output by email</span>
+$ echo <span style="color:#e6db74">&#34;foo&#34;</span> &gt; /root/backup.txt <span style="color:#f92672">&amp;&amp;</span> mail -s <span style="color:#e6db74">&#34;Backup&#34;</span> backup@example
+crontab -e
+<span style="color:#75715e"># */5 * * * * rclone sync /home/ &lt;yourusername&gt; @drive.google.com: /home/ &lt;yourusername&gt; --quiet</span>
+$ crontab -e 
+<span style="color:#75715e"># at 23:50 (11:50pm)</span>
+crontab -e
+$ * * * * * rsync -a ~ / /backup/backup.tar.gz
+$ * * * * * rsync -a ~ / /backup/home.tar.gz
+$ crontab -l
+$ cr
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena bash-one-liner-generator-on-os-from-natural-language <span style="color:#e6db74">&#34;arch linux&#34;</span> <span style="color:#e6db74">&#34;delete all packages&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Rns
+pacman -Qq | awk <span style="color:#e6db74">&#39;{print &#34;pacman -Rs &#34; $1 }&#39;</span> | sh
+pacman -Qq | pacman -Ql | xargs sudo pacman -Rns
+pacman -Q
+<span style="color:#75715e"># Delete all files</span>
+pacman -Qq | pacman -Rs
+pacman -Qqen *
+</code></pre></div><h2 id="parameterize-the-mode-sensitive-prompts-for-the-cli"><span class="org-todo todo TODO">TODO</span> parameterize the mode-sensitive prompts for the CLI</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena -u code-generator-from-description quicksort</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>YASnippet combined with Pen.el - Controllable prompt generation</title>
             <link>http://semiosis.github.io/posts/yasnippet-combined-with-pen-el-controllable-prompt-generation/</link>
             <pubDate>Mon, 09 Aug 2021 00:00:00 +1200</pubDate>

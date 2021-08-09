@@ -20,6 +20,16 @@ Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  
     </item>
     
     <item>
+      <title>Using Pen.el on the CLI to generate code snippets</title>
+      <link>http://semiosis.github.io/posts/using-pen-el-on-the-cli-to-generate-code-snippets/</link>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/using-pen-el-on-the-cli-to-generate-code-snippets/</guid>
+      <description>Summary I wanted to demo some of the code gen commands using the cli interface with org-babel.
+Demos 1  penf -u pf-python-how-to &amp;#34;split a string&amp;#34;   s = &amp;#34;hello world&amp;#34; print s.split() # [&amp;#39;hello&amp;#39;, &amp;#39;world&amp;#39;] 1  pena -u code-question bash &amp;#34;save an array into a variable&amp;#34;   declare -a arr=([1]=1 [2]=2 [3]=3 [4]=4) declare -a arr=(1 2 3 4 5) declare -a array=(a b c d e f g) save_array=(${!</description>
+    </item>
+    
+    <item>
       <title>YASnippet combined with Pen.el - Controllable prompt generation</title>
       <link>http://semiosis.github.io/posts/yasnippet-combined-with-pen-el-controllable-prompt-generation/</link>
       <pubDate>Mon, 09 Aug 2021 00:00:00 +1200</pubDate>
