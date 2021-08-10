@@ -58,8 +58,7 @@ major mode (i.e. language) before the prompt
 is run and then when the prompt template
 expands, an interactive function =comment-
 line= is run to put the correct comment syntax
-into the prompt. =emacs= functions on the
-prompt.
+into the prompt.
 
 *** Why it's important
 Custom tailorded comments are important for
@@ -69,6 +68,10 @@ no such comment yet exists.
 
 ** The dynamic prompt
 - http://github.com/semiosis/prompts/blob/master/prompts/generate-regex.prompt
+- =end-yas: on= means that the YASnippet will
+  expand the prompt just before it is evaluated.
+  - If =start-yas= was used, this would happen towards the start of prompt generation.
+- =`(comment-line 1)`= is an elisp function embedded in the prompt via YASnippet.
 
 #+BEGIN_SRC yaml -n :async :results verbatim code
   title: gpt-j generate regex
