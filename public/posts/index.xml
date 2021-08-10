@@ -16,12 +16,38 @@
             
             <guid>http://semiosis.github.io/posts/gui-spacemacs-support-for-dockerized-pen-el/</guid>
             <description>Summary I add support for Spacemacs in the Pen.el docker image.
-Demo This is me doing some code-generation in Spacemacs.
+         Pen.el on GitHub https://github.com/semiosis/pen.el/   Prompts on GitHub http://github.com/semiosis/prompts/   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Discord channel invite https://discord.gg/6wP4MwCM    Demo This is me doing some code-generation in Spacemacs.
   And below is having inserted the code.
   And below, running in Google Chrome.
   </description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I add support for Spacemacs in the Pen.el docker image.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen.el on GitHub</td>
+<td><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></td>
+</tr>
+<tr>
+<td>Prompts on GitHub</td>
+<td><a href="http://github.com/semiosis/prompts/">http://github.com/semiosis/prompts/</a></td>
+</tr>
+<tr>
+<td>Tutorial</td>
+<td><a href="https://semiosis.github.io/posts/pen-tutorial/">https://semiosis.github.io/posts/pen-tutorial/</a></td>
+</tr>
+<tr>
+<td>Discord channel invite</td>
+<td><a href="https://discord.gg/6wP4MwCM">https://discord.gg/6wP4MwCM</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="demo">Demo</h2>
 <p>This is me doing some code-generation in Spacemacs.</p>
 <figure>

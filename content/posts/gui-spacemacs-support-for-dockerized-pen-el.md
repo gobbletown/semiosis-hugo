@@ -10,6 +10,13 @@ draft = false
 
 I add support for Spacemacs in the Pen.el docker image.
 
+|                        |                                                  |
+|------------------------|--------------------------------------------------|
+| Pen.el on GitHub       | <https://github.com/semiosis/pen.el/>            |
+| Prompts on GitHub      | <http://github.com/semiosis/prompts/>            |
+| Tutorial               | <https://semiosis.github.io/posts/pen-tutorial/> |
+| Discord channel invite | <https://discord.gg/6wP4MwCM>                    |
+
 
 ## Demo {#demo}
 
