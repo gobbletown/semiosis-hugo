@@ -56,8 +56,7 @@ generate more powerful, dynamic prompting.
 In this example, =emacs= detects the current
 major mode (i.e. language) before the prompt
 is run and then when the prompt template
-expands, an interactive function =comment-
-line= is run to put the correct comment syntax
+expands, an interactive function =comment-line= is run to put the correct comment syntax
 into the prompt.
 
 *** Why it's important
