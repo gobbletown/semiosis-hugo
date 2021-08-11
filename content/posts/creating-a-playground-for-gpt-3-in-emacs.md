@@ -2,16 +2,16 @@
 title = "Creating a playground for GPT-3 in emacs"
 author = ["Shane Mulligan"]
 date = 2021-02-18T00:00:00+13:00
-keywords = ["gpt", "codecraft", "emacs", "openai", "prompt-engineering"]
+keywords = ["gpt", "codecraft", "emacs", "openai", "prompt-engineering", "pen"]
 draft = false
 +++
 
 Code
-: <https://github.com/mullikine/pen.el>
+: <https://github.com/semiosis/pen.el>
 
 
 Prompts
-: <https://github.com/mullikine/prompts>
+: <https://github.com/semiosis/prompts>
 
 
 `meetup.com` event
@@ -21,10 +21,22 @@ Prompts
 Slides
 : <http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf>
 
+| Latest docs (12.08.21)          |                                                                                                      |
+|---------------------------------|------------------------------------------------------------------------------------------------------|
+| GitHub project                  | <https://github.com/semiosis/pen.el/>                                                                |
+| Project timeline and objectives | <https://github.com/semiosis/pen.el/tree/master/docs>                                                |
+| Prompts README                  | <http://github.com/semiosis/prompts/blob/master/README.org>                                          |
+| Tutorial                        | <https://semiosis.github.io/posts/pen-tutorial/>                                                     |
+| Video demo of `Pen.el`          | [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw) |
+| Bash prompting README           | <http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org>              |
+
 
 ### Demonstration {#demonstration}
 
-<a title="asciinema recording" href="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.svg" /></a>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.js" id="asciicast-t7ATnFpnfzBp0yicIlGCt6eXi" async></script>
 
 
 ## **Prompt-Engineering Part 1:** Building an environment {#prompt-engineering-part-1-building-an-environment}
@@ -94,55 +106,17 @@ creation, development, discovery and usage of prompts in your emacs.
 ### Defining a `YAML` format {#defining-a-yaml-format}
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
-# lines are wrapped, but not in actual prompt
-
 title: "complicated explanation of how to X"
 prompt: |+
-  The human asks the AI to make a simple
-      description more complicated. The AI
-      responds by writing a verbose response full
-      of jargon to explain a simple concept.
+  The human asks the AI to make a simple description more complicated. The AI responds by writing a verbose response full of jargon to explain a simple concept.
 
-  Human: explain how to use a drinking
-      fountain.
+  Human: explain how to use a drinking fountain.
 
-  AI: To activate the mechanized dihydrogen
-      monoxide dispensary service station, use the
-      flanges to provide a downward force to the
-      simple circular activation console and
-      continue to apply force until the pneumatic
-      system begins operating as intended, which
-      can be surmised at a time when the
-      dihydrogen monoxide travels in a parabolic
-      arc which at is greatest exceeds three
-      inches from the rounded excess liquid
-      receptacle. Once hydration is completed,
-      cease applying force to the console and
-      regard whether or not the dispensary has
-      ceased expelling contents as expected.
+  AI: To activate the mechanized dihydrogen monoxide dispensary service station, use the flanges to provide a downward force to the simple circular activation console and continue to apply force until the pneumatic system begins operating as intended, which can be surmised at a time when the dihydrogen monoxide travels in a parabolic arc which at is greatest exceeds three inches from the rounded excess liquid receptacle. Once hydration is completed, cease applying force to the console and regard whether or not the dispensary has ceased expelling contents as expected.
 
   Human: explain how to play with a dog
 
-  AI: Being a typical domesticated animal,
-      having been genetically selected for
-      controllability, trainability, and general
-      anthropomorphic features and functions, the
-      typical dog possesses highly specialized and
-      developed feeding behavior. The typical
-      feeding behavior involves routine sustenance
-      intake which can be observed by monitoring
-      changes in animal size. Routine sustenance
-      intake involves active and passive feeding
-      habits, and one can gauge animal health by
-      observing the relative levels of hydration.
-      During training, reward conditioned
-      reinforcement is applied. This involves the
-      practice of rewarding targeted behaviors
-      through the application of reinforcers, with
-      the provision that the targeted behavior is
-      observed. Relevant to the discussion at hand
-      is the typical active and passive behavior
-      exhibited by a typical dog.
+  AI: Being a typical domesticated animal, having been genetically selected for controllability, trainability, and general anthropomorphic features and functions, the typical dog possesses highly specialized and developed feeding behavior. The typical feeding behavior involves routine sustenance intake which can be observed by monitoring changes in animal size. Routine sustenance intake involves active and passive feeding habits, and one can gauge animal health by observing the relative levels of hydration. During training, reward conditioned reinforcement is applied. This involves the practice of rewarding targeted behaviors through the application of reinforcers, with the provision that the targeted behavior is observed. Relevant to the discussion at hand is the typical active and passive behavior exhibited by a typical dog.
 
   Human: explain how to <1>
 
@@ -205,104 +179,6 @@ vars:
                                                                    (list 'q (str2sym vs))))))))))))
                (message (concat "pen-mode: Loaded prompt function " func-name))))))
 {{< /highlight >}}
-
-
-### Appendix {#appendix}
-
-[Prompt Engineering](https://www.google.com/search?q=prompt+engineering+gpt)
-
-
-### Examples {#examples}
-
-
-#### Create analogy {#create-analogy}
-
-<!--list-separator-->
-
--  earth is like the universe
-
-    they are both governed by the laws of physics.
-
-<!--list-separator-->
-
--  vim is like emacs
-
-    both are computer text editors.
-
-<!--list-separator-->
-
--  Cars are like trains
-
-    both travel on tracks.
-
-<!--list-separator-->
-
--  dolphins are like people
-
-    They are both members of the class Mammalia.
-
-
-#### abstractive summarization {#abstractive-summarization}
-
-<!--list-separator-->
-
--  computers
-
-    {{< highlight text "linenos=table, linenostart=1" >}}
-    Early computers were only conceived as
-    calculating devices. Since ancient times,
-    simple manual devices like the abacus aided
-    people in doing calculations. Early in the
-    Industrial Revolution, some mechanical devices
-    were built to automate long tedious tasks,
-    such as guiding patterns for looms. More
-    sophisticated electrical machines did
-    specialized analog calculations in the early
-    20th century. The first digital electronic
-    calculating machines were developed during
-    World War II. The first semiconductor
-    transistors in the late 1940s were followed by
-    the silicon-based MOSFET (MOS transistor) and
-    monolithic integrated circuit (IC) chip
-    technologies in the late 1950s, leading to the
-    microprocessor and the microcomputer
-    revolution in the 1970s. The speed, power and
-    versatility of computers have been increasing
-    dramatically ever since then, with transistor
-    counts increasing at a rapid pace (as
-    predicted by Moore's law), leading to the
-    Digital Revolution during the late 20th to
-    early 21st centuries.
-    {{< /highlight >}}
-
-    <!--list-separator-->
-
-    -  Simplification 1
-
-        {{< highlight text "linenos=table, linenostart=1" >}}
-        Computers were invented to do math. Before
-        computers, people used a tool called a slide
-        rule to do math. Slide rules were hard to use,
-        so people invented a new tool called a
-        calculator. Calculators were hard to use, so
-        people invented a new tool called a computer.
-        Computers were hard to use, so people invented
-        a new tool called a computer with a screen.
-        Computers with screens were hard to use, so
-        people invented a new tool called a computer
-        you can touch
-        {{< /highlight >}}
-
-    <!--list-separator-->
-
-    -  Simplification 2 -- I like this one
-
-        {{< highlight text "linenos=table, linenostart=1" >}}
-        Computers were invented to help people do math.
-        People have been using simple machines like the abacus to help them do math for a long time.
-        More complicated machines helped people do math faster.
-        Now people can do math faster with computers.
-        {{< /highlight >}}
 
 
 ### Back-end {#back-end}

@@ -5,10 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Code https://github.com/mullikine/pen.el Prompts https://github.com/mullikine/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf  Demonstration 
-Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday.
-I had applied around 5 to 10 times in the last year and I had finally been given a key.
-I decided since the hour is late I would work on productivity tools that anyone can use, to facilitate programming in the new paradigm." />
+<meta name="description" content="Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf     Latest docs (12.08.21)      GitHub project https://github.com/semiosis/pen.el/   Project timeline and objectives https://github.com/semiosis/pen.el/tree/master/docs   Prompts README http://github.com/semiosis/prompts/blob/master/README.org   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Video demo of Pen.el Augment Minds 2021: Demo of Loom and Pen.el - YouTube   Bash prompting README http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org    Demonstration  --  Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -36,30 +33,21 @@ I decided since the hour is late I would work on productivity tools that anyone 
 
 
 <meta itemprop="name" content="Creating a playground for GPT-3 in emacs">
-<meta itemprop="description" content="Code https://github.com/mullikine/pen.el Prompts https://github.com/mullikine/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf  Demonstration 
-Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday.
-I had applied around 5 to 10 times in the last year and I had finally been given a key.
-I decided since the hour is late I would work on productivity tools that anyone can use, to facilitate programming in the new paradigm."><meta itemprop="datePublished" content="2021-02-18T00:00:00&#43;13:00" />
+<meta itemprop="description" content="Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf     Latest docs (12.08.21)      GitHub project https://github.com/semiosis/pen.el/   Project timeline and objectives https://github.com/semiosis/pen.el/tree/master/docs   Prompts README http://github.com/semiosis/prompts/blob/master/README.org   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Video demo of Pen.el Augment Minds 2021: Demo of Loom and Pen.el - YouTube   Bash prompting README http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org    Demonstration  --  Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday."><meta itemprop="datePublished" content="2021-02-18T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-02-18T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="1527"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1140"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Creating a playground for GPT-3 in emacs"/>
-<meta name="twitter:description" content="Code https://github.com/mullikine/pen.el Prompts https://github.com/mullikine/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf  Demonstration 
-Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday.
-I had applied around 5 to 10 times in the last year and I had finally been given a key.
-I decided since the hour is late I would work on productivity tools that anyone can use, to facilitate programming in the new paradigm."/>
+<meta name="twitter:description" content="Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf     Latest docs (12.08.21)      GitHub project https://github.com/semiosis/pen.el/   Project timeline and objectives https://github.com/semiosis/pen.el/tree/master/docs   Prompts README http://github.com/semiosis/prompts/blob/master/README.org   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Video demo of Pen.el Augment Minds 2021: Demo of Loom and Pen.el - YouTube   Bash prompting README http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org    Demonstration  --  Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday."/>
 
 
 
 
     <meta property="og:title" content="Creating a playground for GPT-3 in emacs" />
-<meta property="og:description" content="Code https://github.com/mullikine/pen.el Prompts https://github.com/mullikine/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf  Demonstration 
-Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday.
-I had applied around 5 to 10 times in the last year and I had finally been given a key.
-I decided since the hour is late I would work on productivity tools that anyone can use, to facilitate programming in the new paradigm." />
+<meta property="og:description" content="Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf     Latest docs (12.08.21)      GitHub project https://github.com/semiosis/pen.el/   Project timeline and objectives https://github.com/semiosis/pen.el/tree/master/docs   Prompts README http://github.com/semiosis/prompts/blob/master/README.org   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Video demo of Pen.el Augment Minds 2021: Demo of Loom and Pen.el - YouTube   Bash prompting README http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org    Demonstration  --  Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-18T00:00:00&#43;13:00" />
@@ -148,7 +136,7 @@ I decided since the hour is late I would work on productivity tools that anyone 
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        8 minutes
+        6 minutes
 
         
       </p>
@@ -166,16 +154,53 @@ I decided since the hour is late I would work on productivity tools that anyone 
       <div class="post-content">
         <dl>
 <dt>Code</dt>
-<dd><a href="https://github.com/mullikine/pen.el">https://github.com/mullikine/pen.el</a></dd>
+<dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a></dd>
 <dt>Prompts</dt>
-<dd><a href="https://github.com/mullikine/prompts">https://github.com/mullikine/prompts</a></dd>
+<dd><a href="https://github.com/semiosis/prompts">https://github.com/semiosis/prompts</a></dd>
 <dt><code>meetup.com</code> event</dt>
 <dd><a href="https://www.meetup.com/Code-Craft-Dunedin/events/276407816/">https://www.meetup.com/Code-Craft-Dunedin/events/276407816/</a></dd>
 <dt>Slides</dt>
 <dd><a href="http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf">http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf</a></dd>
 </dl>
+<table>
+<thead>
+<tr>
+<th>Latest docs (12.08.21)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub project</td>
+<td><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></td>
+</tr>
+<tr>
+<td>Project timeline and objectives</td>
+<td><a href="https://github.com/semiosis/pen.el/tree/master/docs">https://github.com/semiosis/pen.el/tree/master/docs</a></td>
+</tr>
+<tr>
+<td>Prompts README</td>
+<td><a href="http://github.com/semiosis/prompts/blob/master/README.org">http://github.com/semiosis/prompts/blob/master/README.org</a></td>
+</tr>
+<tr>
+<td>Tutorial</td>
+<td><a href="https://semiosis.github.io/posts/pen-tutorial/">https://semiosis.github.io/posts/pen-tutorial/</a></td>
+</tr>
+<tr>
+<td>Video demo of <code>Pen.el</code></td>
+<td><a href="https://www.youtube.com/watch?v=J9BnZjWV1jw">Augment Minds 2021: Demo of Loom and Pen.el - YouTube</a></td>
+</tr>
+<tr>
+<td>Bash prompting README</td>
+<td><a href="http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org">http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="demonstration">Demonstration</h3>
-<p><a title="asciinema recording" href="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.svg" /></a></p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.js" id="asciicast-t7ATnFpnfzBp0yicIlGCt6eXi" async></script>
 <h2 id="prompt-engineering-part-1-building-an-environment"><strong>Prompt-Engineering Part 1:</strong> Building an environment</h2>
 <h3 id="summary-of-talk">Summary of talk</h3>
 <p>I received a key for the <code>OpenAI</code> API 2 weeks ago, just a couple
@@ -282,95 +307,19 @@ creation, development, discovery and usage of prompts in your emacs.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># lines are wrapped, but not in actual prompt</span>
-
-<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;complicated explanation of how to X&#34;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;complicated explanation of how to X&#34;</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
-</span><span style="color:#e6db74">  The human asks the AI to make a simple
-</span><span style="color:#e6db74">      description more complicated. The AI
-</span><span style="color:#e6db74">      responds by writing a verbose response full
-</span><span style="color:#e6db74">      of jargon to explain a simple concept.
+</span><span style="color:#e6db74">  The human asks the AI to make a simple description more complicated. The AI responds by writing a verbose response full of jargon to explain a simple concept.
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  Human: explain how to use a drinking
-</span><span style="color:#e6db74">      fountain.
+</span><span style="color:#e6db74">  Human: explain how to use a drinking fountain.
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  AI: To activate the mechanized dihydrogen
-</span><span style="color:#e6db74">      monoxide dispensary service station, use the
-</span><span style="color:#e6db74">      flanges to provide a downward force to the
-</span><span style="color:#e6db74">      simple circular activation console and
-</span><span style="color:#e6db74">      continue to apply force until the pneumatic
-</span><span style="color:#e6db74">      system begins operating as intended, which
-</span><span style="color:#e6db74">      can be surmised at a time when the
-</span><span style="color:#e6db74">      dihydrogen monoxide travels in a parabolic
-</span><span style="color:#e6db74">      arc which at is greatest exceeds three
-</span><span style="color:#e6db74">      inches from the rounded excess liquid
-</span><span style="color:#e6db74">      receptacle. Once hydration is completed,
-</span><span style="color:#e6db74">      cease applying force to the console and
-</span><span style="color:#e6db74">      regard whether or not the dispensary has
-</span><span style="color:#e6db74">      ceased expelling contents as expected.
+</span><span style="color:#e6db74">  AI: To activate the mechanized dihydrogen monoxide dispensary service station, use the flanges to provide a downward force to the simple circular activation console and continue to apply force until the pneumatic system begins operating as intended, which can be surmised at a time when the dihydrogen monoxide travels in a parabolic arc which at is greatest exceeds three inches from the rounded excess liquid receptacle. Once hydration is completed, cease applying force to the console and regard whether or not the dispensary has ceased expelling contents as expected.
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">  Human: explain how to play with a dog
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  AI: Being a typical domesticated animal,
-</span><span style="color:#e6db74">      having been genetically selected for
-</span><span style="color:#e6db74">      controllability, trainability, and general
-</span><span style="color:#e6db74">      anthropomorphic features and functions, the
-</span><span style="color:#e6db74">      typical dog possesses highly specialized and
-</span><span style="color:#e6db74">      developed feeding behavior. The typical
-</span><span style="color:#e6db74">      feeding behavior involves routine sustenance
-</span><span style="color:#e6db74">      intake which can be observed by monitoring
-</span><span style="color:#e6db74">      changes in animal size. Routine sustenance
-</span><span style="color:#e6db74">      intake involves active and passive feeding
-</span><span style="color:#e6db74">      habits, and one can gauge animal health by
-</span><span style="color:#e6db74">      observing the relative levels of hydration.
-</span><span style="color:#e6db74">      During training, reward conditioned
-</span><span style="color:#e6db74">      reinforcement is applied. This involves the
-</span><span style="color:#e6db74">      practice of rewarding targeted behaviors
-</span><span style="color:#e6db74">      through the application of reinforcers, with
-</span><span style="color:#e6db74">      the provision that the targeted behavior is
-</span><span style="color:#e6db74">      observed. Relevant to the discussion at hand
-</span><span style="color:#e6db74">      is the typical active and passive behavior
-</span><span style="color:#e6db74">      exhibited by a typical dog.
+</span><span style="color:#e6db74">  AI: Being a typical domesticated animal, having been genetically selected for controllability, trainability, and general anthropomorphic features and functions, the typical dog possesses highly specialized and developed feeding behavior. The typical feeding behavior involves routine sustenance intake which can be observed by monitoring changes in animal size. Routine sustenance intake involves active and passive feeding habits, and one can gauge animal health by observing the relative levels of hydration. During training, reward conditioned reinforcement is applied. This involves the practice of rewarding targeted behaviors through the application of reinforcers, with the provision that the targeted behavior is observed. Relevant to the discussion at hand is the typical active and passive behavior exhibited by a typical dog.
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">  Human: explain how to &lt;1&gt;
 </span><span style="color:#e6db74">
@@ -472,159 +421,6 @@ creation, development, discovery and usage of prompts in your emacs.</p>
                (<span style="color:#a6e22e">message</span> (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;pen-mode: Loaded prompt function &#34;</span> func-name))))))</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="appendix">Appendix</h3>
-<p><a href="https://www.google.com/search?q=prompt+engineering+gpt">Prompt Engineering</a></p>
-<h3 id="examples">Examples</h3>
-<h4 id="create-analogy">Create analogy</h4>
-<!--list-separator-->
-<ul>
-<li>
-<p>earth is like the universe</p>
-<p>they are both governed by the laws of physics.</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>vim is like emacs</p>
-<p>both are computer text editors.</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Cars are like trains</p>
-<p>both travel on tracks.</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>dolphins are like people</p>
-<p>They are both members of the class Mammalia.</p>
-</li>
-</ul>
-<h4 id="abstractive-summarization">abstractive summarization</h4>
-<!--list-separator-->
-<ul>
-<li>
-<p>computers</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">    Early computers were only conceived as
-    calculating devices. Since ancient times,
-    simple manual devices like the abacus aided
-    people in doing calculations. Early in the
-    Industrial Revolution, some mechanical devices
-    were built to automate long tedious tasks,
-    such as guiding patterns for looms. More
-    sophisticated electrical machines did
-    specialized analog calculations in the early
-    20th century. The first digital electronic
-    calculating machines were developed during
-    World War II. The first semiconductor
-    transistors in the late 1940s were followed by
-    the silicon-based MOSFET (MOS transistor) and
-    monolithic integrated circuit (IC) chip
-    technologies in the late 1950s, leading to the
-    microprocessor and the microcomputer
-    revolution in the 1970s. The speed, power and
-    versatility of computers have been increasing
-    dramatically ever since then, with transistor
-    counts increasing at a rapid pace (as
-    predicted by Moore&#39;s law), leading to the
-    Digital Revolution during the late 20th to
-    early 21st centuries.
-    </code></pre></td></tr></table>
-</div>
-</div>
- <!--list-separator-->
-<ul>
-<li>
-<p>Simplification 1</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">        Computers were invented to do math. Before
-        computers, people used a tool called a slide
-        rule to do math. Slide rules were hard to use,
-        so people invented a new tool called a
-        calculator. Calculators were hard to use, so
-        people invented a new tool called a computer.
-        Computers were hard to use, so people invented
-        a new tool called a computer with a screen.
-        Computers with screens were hard to use, so
-        people invented a new tool called a computer
-        you can touch
-        </code></pre></td></tr></table>
-</div>
-</div>
-</li>
-</ul>
- <!--list-separator-->
-<ul>
-<li>
-<p>Simplification 2 &ndash; I like this one</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">        Computers were invented to help people do math.
-        People have been using simple machines like the abacus to help them do math for a long time.
-        More complicated machines helped people do math faster.
-        Now people can do math faster with computers.
-        </code></pre></td></tr></table>
-</div>
-</div>
-</li>
-</ul>
-</li>
-</ul>
 <h3 id="back-end">Back-end</h3>
 <h4 id="shell">shell</h4>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -823,7 +619,7 @@ tail -c +<span style="color:#66d9ef">$((</span>prompt_bytes <span style="color:#
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1527 Words
+        1140 Words
       </p>
 
       <p>

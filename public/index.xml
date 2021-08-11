@@ -681,10 +681,7 @@ I then build a GPT-3 prompt which does exactly the same thing without crontab.gu
       <pubDate>Thu, 18 Feb 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/posts/creating-a-playground-for-gpt-3-in-emacs/</guid>
-      <description>Code https://github.com/mullikine/pen.el Prompts https://github.com/mullikine/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf  Demonstration 
-Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday.
-I had applied around 5 to 10 times in the last year and I had finally been given a key.
-I decided since the hour is late I would work on productivity tools that anyone can use, to facilitate programming in the new paradigm.</description>
+      <description>Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts meetup.com event https://www.meetup.com/Code-Craft-Dunedin/events/276407816/ Slides http://github.com/mullikine/presentation-prompt-engineering-in-emacs/blob/master/presentation.pdf     Latest docs (12.08.21)      GitHub project https://github.com/semiosis/pen.el/   Project timeline and objectives https://github.com/semiosis/pen.el/tree/master/docs   Prompts README http://github.com/semiosis/prompts/blob/master/README.org   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Video demo of Pen.el Augment Minds 2021: Demo of Loom and Pen.el - YouTube   Bash prompting README http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org    Demonstration  --  Prompt-Engineering Part 1: Building an environment Summary of talk I received a key for the OpenAI API 2 weeks ago, just a couple of days before my birthday.</description>
     </item>
     
     <item>
