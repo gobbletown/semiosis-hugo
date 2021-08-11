@@ -6,6 +6,8 @@ keywords = ["gpt", "codecraft", "emacs", "openai", "prompt-engineering", "pen"]
 draft = false
 +++
 
+_This is outdated._
+
 Code
 : <https://github.com/semiosis/pen.el>
 
@@ -26,12 +28,12 @@ Slides
 | GitHub project                  | <https://github.com/semiosis/pen.el/>                                                                |
 | Project timeline and objectives | <https://github.com/semiosis/pen.el/tree/master/docs>                                                |
 | Prompts README                  | <http://github.com/semiosis/prompts/blob/master/README.org>                                          |
-| Tutorial                        | <https://semiosis.github.io/posts/pen-tutorial/>                                                     |
+| ★ Tutorial                      | <https://semiosis.github.io/posts/pen-tutorial/>                                                     |
 | Video demo of `Pen.el`          | [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw) |
 | Bash prompting README           | <http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org>              |
 
 
-### Demonstration {#demonstration}
+### Demonstration (2021-02-18) {#demonstration--2021-02-18}
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.svg" /></a> -->
