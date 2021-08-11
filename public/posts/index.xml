@@ -4333,8 +4333,7 @@ Writing was.
             <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
             <description>Quick Setup using Docker   A time-traveling wizard who uses a magic book and pen to create worlds.
 The following commands set up pen.el for the first time.
- Apply for a GPT-3 key https://beta.openai.com/ Free AIx GPT-J-6B key https://apps.aixsolutionsgroup.com/  These are the steps to run Pen on a linux machine. It will use a docker image. See the bottom of this document for Windows instructions.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  mkdir -p ~/.</description>
+ Apply for a GPT-3 key https://beta.openai.com/ Free AIx GPT-J-6B key https://apps.aixsolutionsgroup.com/ The AIx API is under heavy development. Multiple completions is currently being emulated by making several calls. Therefore, Pen.el will seem less responsive with GPT-J, currently.  These are the steps to run Pen on a linux machine.</description>
             <content type="html"><![CDATA[<h2 id="quick-setup-using-docker">Quick Setup using Docker</h2>
 <figure>
     <img src="/ox-hugo/wizard4.png"/> 
@@ -4346,7 +4345,9 @@ The following commands set up pen.el for the first time.
 <dt>Apply for a GPT-3 key</dt>
 <dd><a href="https://beta.openai.com/">https://beta.openai.com/</a></dd>
 <dt>Free AIx GPT-J-6B key</dt>
-<dd><a href="https://apps.aixsolutionsgroup.com/">https://apps.aixsolutionsgroup.com/</a></dd>
+<dd><a href="https://apps.aixsolutionsgroup.com/">https://apps.aixsolutionsgroup.com/</a>
+The AIx API is under heavy development. Multiple completions is currently being emulated by making several calls.
+Therefore, <code>Pen.el</code> will seem less responsive with GPT-J, currently.</dd>
 </dl>
 <p>These are the steps to run <code>Pen</code> on a linux
 machine. It will use a docker image. See the
@@ -4377,9 +4378,16 @@ instructions.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.emacs.d
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Firstly, ensure Docker is properly installed and your user is added to the docker group</span>
+<span style="color:#75715e"># https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user</span>
+
+mkdir -p ~/.emacs.d
 cd ~/.emacs.d
 
 git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
@@ -4388,8 +4396,9 @@ git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#
 mkdir -p ~/.pen
 
 <span style="color:#75715e"># Put in your keys, or do not, it&#39;s up to you!</span>
-echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key
-echo <span style="color:#e6db74">&#34;&lt;aix key here&gt;&#34;</span> &gt; ~/.pen/aix_api_key
+echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key <span style="color:#75715e"># https://openai.com/</span>
+echo <span style="color:#e6db74">&#34;&lt;aix key here&gt;&#34;</span> &gt; ~/.pen/aix_api_key          <span style="color:#75715e"># https://aixsolutionsgroup.com/</span>
+echo <span style="color:#e6db74">&#34;&lt;hf key here&gt;&#34;</span> &gt; ~/.pen/hf_api_key            <span style="color:#75715e"># https://huggingface.co/</span>
 
 <span style="color:#75715e"># Add the scripts to the PATH</span>
 echo export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath .<span style="color:#66d9ef">)</span><span style="color:#e6db74">/pen.el/scripts:\$PATH&#34;</span> &gt;&gt; ~/.profile
@@ -4397,7 +4406,7 @@ echo export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">
 <span style="color:#75715e"># Add this to prevent C-s from freezing the terminal</span>
 echo <span style="color:#e6db74">&#34;stty stop undef 2&gt;/dev/null; stty start undef 2&gt;/dev/null&#34;</span> | tee -a ~/.zshrc &gt;&gt; ~/.bashrc
 
-<span style="color:#75715e"># Source your .profile</span>
+<span style="color:#75715e"># Source your ~/.profile if you didn&#39;t log out and back in</span>
 . ~/.profile
 
 <span style="color:#75715e"># Run pen</span>

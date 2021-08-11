@@ -20,6 +20,8 @@ Apply for a GPT-3 key
 
 Free AIx GPT-J-6B key
 : <https://apps.aixsolutionsgroup.com/>
+    The AIx API is under heavy development. Multiple completions is currently being emulated by making several calls.
+    Therefore, `Pen.el` will seem less responsive with GPT-J, currently.
 
 These are the steps to run `Pen` on a linux
 machine. It will use a docker image. See the
@@ -27,6 +29,9 @@ bottom of this document for Windows
 instructions.
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
+# Firstly, ensure Docker is properly installed and your user is added to the docker group
+# https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+
 mkdir -p ~/.emacs.d
 cd ~/.emacs.d
 
@@ -36,8 +41,9 @@ git clone "https://github.com/semiosis/prompts"
 mkdir -p ~/.pen
 
 # Put in your keys, or do not, it's up to you!
-echo "sk-<openai key here>" > ~/.pen/openai_api_key
-echo "<aix key here>" > ~/.pen/aix_api_key
+echo "sk-<openai key here>" > ~/.pen/openai_api_key # https://openai.com/
+echo "<aix key here>" > ~/.pen/aix_api_key          # https://aixsolutionsgroup.com/
+echo "<hf key here>" > ~/.pen/hf_api_key            # https://huggingface.co/
 
 # Add the scripts to the PATH
 echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
@@ -45,7 +51,7 @@ echo export PATH="$(realpath .)/pen.el/scripts:\$PATH" >> ~/.profile
 # Add this to prevent C-s from freezing the terminal
 echo "stty stop undef 2>/dev/null; stty start undef 2>/dev/null" | tee -a ~/.zshrc >> ~/.bashrc
 
-# Source your .profile
+# Source your ~/.profile if you didn't log out and back in
 . ~/.profile
 
 # Run pen
