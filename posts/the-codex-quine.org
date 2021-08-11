@@ -146,3 +146,430 @@ the transpilation when it sees two 'EOD's.
   external-related:
   - "https://www.youtube.com/watch?v=Iq3rDFZOorw"
 #+END_SRC
+
+*** The interactive function
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  pf-transpile is an interactive function without a source file.
+  
+  Signature
+  (pf-transpile &optional CODE FROM-LANGUAGE TO-LANGUAGE &key NO-SELECT-RESULT)
+  
+  Documentation
+  transpile
+  Given some code and a target language, transpile into that language
+  
+  path:
+  - /home/shane/source/git/spacemacs/prompts/prompts/transpile.prompt
+  
+  external-related
+  :- https://www.youtube.com/watch?v=Iq3rDFZOorw
+  
+  examples:
+  - print("Hello world with empathy")
+  - Python
+  - Ruby
+  
+  var-defaults:
+  - (pen-selected-text)
+  - (pen-detect-language-ask)
+  
+  Key Bindings
+  This command is not in any keymaps.
+  
+  References
+  Could not find source file.
+  
+  Find all references Functions used by pf-transpile
+  
+  Debugging
+  Enable tracing
+  Disassemble Forget
+  
+  ;; Could not find source code, showing raw function object.
+  (lambda
+    (&optional code from-language to-language &rest --cl-rest--)
+    "transpile\nGiven some code and a target language, transpile into that language\n\npath:\n- /home/shane/source/git/spacemacs/prompts/prompts/transpile.prompt\n\nexternal-related\n:- https://www.youtube.com/watch?v=Iq3rDFZOorw\n\nexamples:\n- print(\"Hello world with empathy\")\n- Python\n- Ruby\n\nvar-defaults:\n- (pen-selected-text)\n- (pen-detect-language-ask)\n\n(fn &optional CODE FROM-LANGUAGE TO-LANGUAGE &key NO-SELECT-RESULT)"
+    (interactive
+     (list
+      (if "(pen-selected-text)"
+          (eval-string "(pen-selected-text)")
+        (read-string-hist "code: " "print(\"Hello world with empathy\")"))
+      (if "(pen-detect-language-ask)"
+          (eval-string "(pen-detect-language-ask)")
+        (read-string-hist "from language: " "Python"))
+      (if nil
+          (eval-string "")
+        (read-string-hist "to language: " "Ruby"))))
+    (let*
+        ((no-select-result
+          (car
+           (cdr
+            (plist-member --cl-rest-- ':no-select-result)))))
+      (progn
+        (let
+            ((--cl-keys-- --cl-rest--))
+          (while --cl-keys--
+            (cond
+             ((memq
+               (car --cl-keys--)
+               '(:no-select-result :allow-other-keys))
+              (setq --cl-keys--
+                    (cdr
+                     (cdr --cl-keys--))))
+             ((car
+               (cdr
+                (memq ':allow-other-keys --cl-rest--)))
+              (setq --cl-keys-- nil))
+             (t
+              (error "Keyword argument %s not one of (:no-select-result)"
+                     (car --cl-keys--))))))
+        (cl-block pf-transpile
+          (let
+              ((is-interactive
+                (interactive-p)))
+            (pen-force-custom
+             (cl-macrolet
+                 ((expand-template
+                   (string-sym)
+                   `(--> ,string-sym
+                      (pen-onelineify it)
+                      (pen-expand-template-keyvals it subprompts)
+                      (pen-expand-template it vals)
+                      (pen-expand-template-keyvals it var-keyvals-slugged)
+                      (pen-expand-template-keyvals it var-keyvals)
+                      (pen-unonelineify it))))
+               (let*
+                   ((do-pen-update
+                     (pen-var-value-maybe 'do-pen-update))
+                    (pen-sh-update
+                     (or
+                      (>=
+                       (prefix-numeric-value current-global-prefix-arg)
+                       4)
+                      (pen-var-value-maybe 'pen-sh-update)
+                      do-pen-update))
+                    (cache
+                     (and
+                      (not do-pen-update)
+                      (pen-var-value-maybe 'cache)))
+                    (final-flags
+                     (or
+                      (pen-var-value-maybe 'flags)
+                      nil))
+                    (final-flags
+                     (if final-flags
+                         (mapconcat
+                          (lambda
+                            (s)
+                            (concat "<" s ">"))
+                          (vector2list final-flags)
+                          " ")))
+                    (final-is-info
+                     (or
+                      (pen-var-value-maybe 'do-etv)
+                      (pen-var-value-maybe 'is-info)
+                      nil))
+                    (final-start-yas
+                     (or
+                      (pen-var-value-maybe 'start-yas)
+                      nil))
+                    (final-end-yas
+                     (or
+                      (pen-var-value-maybe 'yas)
+                      (pen-var-value-maybe 'end-yas)
+                      nil nil))
+                    (subprompts nil)
+                    (subprompts
+                     (if subprompts
+                         (ht->alist
+                          (-reduce 'ht-merge
+                                   (vector2list subprompts)))))
+                    (final-prompt "## The program in <from language>\n\ncat program_in_<language> <<EOD\n<code>\nEOD\n\n## The exact same program in <to-language>\n\n")
+                    (final-prompt
+                     (if final-start-yas
+                         (pen-yas-expand-string final-prompt)
+                       final-prompt))
+                    (vals
+                     (mapcar 'str
+                             (if
+                                 (not is-interactive)
+                                 (progn
+                                   (cl-loop for sym in
+                                            '(code from-language to-language)
+                                            for iarg in
+                                            '((if "(pen-selected-text)"
+                                                  (eval-string "(pen-selected-text)")
+                                                (read-string-hist "code: " "print(\"Hello world with empathy\")"))
+                                              (if "(pen-detect-language-ask)"
+                                                  (eval-string "(pen-detect-language-ask)")
+                                                (read-string-hist "from language: " "Python"))
+                                              (if nil
+                                                  (eval-string "")
+                                                (read-string-hist "to language: " "Ruby")))
+                                            collect
+                                            (let*
+                                                ((initval
+                                                  (eval sym)))
+                                              (if
+                                                  (and
+                                                   (not initval)
+                                                   iarg)
+                                                  (eval iarg)
+                                                initval))))
+                               (cl-loop for v in
+                                        '(code from-language to-language)
+                                        until
+                                        (eq v '&key)
+                                        collect
+                                        (eval v)))))
+                    (vals
+                     (cl-loop for tp in
+                              (-zip-fill nil vals 'nil)
+                              collect
+                              (let*
+                                  ((v
+                                    (car tp))
+                                   (pp
+                                    (cdr tp)))
+                                (if pp
+                                    (pen-sn pp v)
+                                  v))))
+                    (final-prompt
+                     (if nil
+                         (if
+                             (< 0
+                                (length vals))
+                             (concat
+                              (pen-awk1 final-prompt)
+                              (string-replace "{}"
+                                              (str
+                                               (car
+                                                (last vals)))
+                                              nil))
+                           (concat
+                            (pen-awk1 final-prompt)
+                            nil))
+                       final-prompt))
+                    (var-keyvals
+                     (-zip
+                      '("code" "from language" "to language")
+                      vals))
+                    (var-keyvals-slugged
+                     (-zip
+                      '("code" "from-language" "to-language")
+                      vals))
+                    (final-n-collate
+                     (or
+                      (pen-var-value-maybe 'n-collate)
+                      1))
+                    (final-n-completions
+                     (expand-template
+                      (str
+                       (or
+                        (pen-var-value-maybe 'n-completions)
+                        10))))
+                    (final-max-tokens
+                     (expand-template
+                      (str
+                       (or
+                        (pen-var-value-maybe 'max-tokens)
+                        1000))))
+                    (final-temperature
+                     (expand-template
+                      (str
+                       (or
+                        (pen-var-value-maybe 'temperature)
+                        0))))
+                    (final-mode
+                     (expand-template
+                      (str
+                       (or
+                        (pen-var-value-maybe 'mode)
+                        nil))))
+                    (final-top-p
+                     (expand-template
+                      (str
+                       (or
+                        (pen-var-value-maybe 'top-p)
+                        1.0))))
+                    (final-top-k
+                     (expand-template
+                      (str
+                       (or
+                        (pen-var-value-maybe 'top-k)
+                        nil))))
+                    (final-stop-sequences
+                     (cl-loop for stsq in
+                              (or
+                               (pen-var-value-maybe 'stop-sequences)
+                               '("###<long>###"))
+                              collect
+                              (expand-template stsq)))
+                    (final-stop-patterns
+                     (or
+                      (pen-var-value-maybe 'stop-patterns)
+                      '("^Input:")))
+                    (final-stop-sequence
+                     (expand-template
+                      (str
+                       (or
+                        (pen-var-value-maybe 'stop-sequence)
+                        "###<long>###"))))
+                    (final-prompt
+                     (expand-template final-prompt))
+                    (final-prompt
+                     (pen-log-final-prompt
+                      (if nil
+                          (sor
+                           (pen-snc nil final-prompt)
+                           (concat "prompt-filter " nil " failed."))
+                        final-prompt)))
+                    (final-prompt
+                     (if final-end-yas
+                         (pen-yas-expand-string final-prompt)
+                       final-prompt))
+                    (final-prompt
+                     (chomp final-prompt))
+                    (prompt-end-pos
+                     (or
+                      (byte-string-search "<:pp>" final-prompt)
+                      (string-bytes final-prompt)))
+                    (final-prompt
+                     (string-replace "<:pp>" "" final-prompt))
+                    (final-prompt
+                     (chomp final-prompt))
+                    (shcmd
+                     (pen-log
+                      (s-join " "
+                              (list
+                               (sh-construct-envs
+                                `(("PEN_PROMPT" ,(pen-encode-string final-prompt))
+                                  ("PEN_LM_COMMAND" ,"openai-complete.sh")
+                                  ("PEN_MODEL" ,nil)
+                                  ("PEN_MAX_TOKENS" ,final-max-tokens)
+                                  ("PEN_TEMPERATURE" ,final-temperature)
+                                  ("PEN_MODE" ,final-mode)
+                                  ("PEN_STOP_SEQUENCE" ,(pen-encode-string final-stop-sequence))
+                                  ("PEN_TOP_P" ,final-top-p)
+                                  ("PEN_TOP_K" ,final-top-k)
+                                  ("PEN_FLAGS" ,final-flags)
+                                  ("PEN_CACHE" ,cache)
+                                  ("PEN_N_COMPLETIONS" ,final-n-completions)
+                                  ("PEN_END_POS" ,prompt-end-pos)))
+                               "lm-complete"))))
+                    (resultsdirs
+                     (cl-loop for i in
+                              (number-sequence 1 final-n-collate)
+                              collect
+                              (progn
+                                (message
+                                 (concat "pf-transpile" " query "
+                                         (int-to-string i)
+                                         "..."))
+                                (let
+                                    ((ret
+                                      (pen-prompt-snc shcmd i)))
+                                  (message
+                                   (concat "pf-transpile" " done "
+                                           (int-to-string i)))
+                                  ret))))
+                    (results
+                     (-uniq
+                      (flatten-once
+                       (cl-loop for rd in resultsdirs collect
+                                (if
+                                    (sor rd)
+                                    (->>
+                                        (glob
+                                         (concat rd "/*"))
+                                      (mapcar 'e/cat)
+                                      (mapcar
+                                       (lambda
+                                         (r)
+                                         (cl-loop for stsq in final-stop-sequences do
+                                                  (let
+                                                      ((matchpos
+                                                        (pen-string-search stsq r)))
+                                                    (if matchpos
+                                                        (setq r
+                                                              (s-truncate matchpos r "")))))
+                                         r))
+                                      (mapcar
+                                       (lambda
+                                         (r)
+                                         (cl-loop for stpat in final-stop-patterns do
+                                                  (let
+                                                      ((matchpos
+                                                        (re-match-p stpat r)))
+                                                    (if matchpos
+                                                        (setq r
+                                                              (s-truncate matchpos r "")))))
+                                         r))
+                                      (mapcar
+                                       (lambda
+                                         (r)
+                                         (if
+                                             (and nil
+                                                  (sor nil))
+                                             (pen-sn nil r)
+                                           r)))
+                                      (mapcar
+                                       (lambda
+                                         (r)
+                                         (if
+                                             (and
+                                              (variable-p 'prettify)
+                                              prettify nil
+                                              (sor nil))
+                                             (pen-sn nil r)
+                                           r)))
+                                      (mapcar
+                                       (lambda
+                                         (r)
+                                         (if
+                                             (not nil)
+                                             (s-trim-left r)
+                                           r)))
+                                      (mapcar
+                                       (lambda
+                                         (r)
+                                         (if
+                                             (not nil)
+                                             (s-trim-right r)
+                                           r))))
+                                  (list
+                                   (message "Try UPDATE=y or debugging")))))))
+                    (result
+                     (if no-select-result
+                         (length results)
+                       (cl-fz results :prompt
+                              (concat "pf-transpile" ": ")
+                              :select-only-match t))))
+                 (if no-select-result results
+                   (if is-interactive
+                       (cond
+                        ((or final-is-info
+                             (>=
+                              (prefix-numeric-value current-prefix-arg)
+                              4))
+                         (etv result))
+                        ((and nil mark-active)
+                         (if
+                             (sor result)
+                             (replace-region result)
+                           (error "pen filter returned empty string")))
+                        ((or nil nil)
+                         (insert result))
+                        (t
+                         (etv result)))
+                     result))))))))))
+  
+  Symbol Properties
+  event-symbol-element-mask
+    (pf-transpile 0)
+  event-symbol-elements
+    (pf-transpile)
+  modifier-cache
+    ((0 . pf-transpile))
+#+END_SRC
