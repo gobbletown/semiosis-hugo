@@ -9,6 +9,8 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: gpt codecraft emacs openai prompt-engineering pen
 
+/This is outdated./
+
 + Code :: https://github.com/semiosis/pen.el
 
 + Prompts :: https://github.com/semiosis/prompts
@@ -22,11 +24,11 @@
 | GitHub project                  | https://github.com/semiosis/pen.el/                                                   |
 | Project timeline and objectives | https://github.com/semiosis/pen.el/tree/master/docs                                   |
 | Prompts README                  | http://github.com/semiosis/prompts/blob/master/README.org                             |
-| Tutorial                        | https://semiosis.github.io/posts/pen-tutorial/                                        |
+| ★ Tutorial                        | https://semiosis.github.io/posts/pen-tutorial/                                        |
 | Video demo of =Pen.el=          | [[https://www.youtube.com/watch?v=J9BnZjWV1jw][Augment Minds 2021: Demo of Loom and Pen.el - YouTube]]                                 |
 | Bash prompting README           | http://github.com/semiosis/pen.el/blob/master/docs/using-prompt-functions-in-bash.org |
 
-** Demonstration
+** Demonstration (2021-02-18)
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/t7ATnFpnfzBp0yicIlGCt6eXi.svg" /></a> -->
