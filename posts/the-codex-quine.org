@@ -1,0 +1,148 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: The Codex Quine
+#+DATE: <2021-08-12>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: codex openai
+
++ OpenAI Demo :: [[https://www.youtube.com/watch?v=Iq3rDFZOorw][Converting Python to Ruby with OpenAI Codex - YouTube]]
+
++ Pen.el Engine :: http://github.com/semiosis/engines/blob/master/engines/openai-codex.engine
+
++ Pen.el Prompt :: http://github.com/semiosis/prompts/blob/master/prompts/transpile.prompt
+
+** Summary
+I convert the OpenAI quine into some imaginary code (=WIP=).
+
+** The Quine: Initial Python source
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  #!/usr/bin/env python
+  #
+  # A program which calls OpenAI with its own source code.
+  #
+  # Implemented in two languages:
+  #
+  # In Python, uses the "http.client" and "subprocess" libraries and uses Python 3 semantics. In Ruby, uses httparty and system (does NOT use open3).
+  
+  import http.client
+  import json
+  import subprocess
+  
+  here = __file__
+  
+  api_key = open('openai_api_key.txt').read().strip()
+  source = open(here).read() # Read our own source code
+  
+  my_language = "python"
+  next_Language = "ruby"
+  
+  # Print with trailing newline.
+  print("Hello from " + my_language + ". I'm going to rewrite myself in " next_language + ". Stand by...")
+  
+  E_O_D = "E" + "O" + "D"  # Avoid the string literal here
+  
+  # Make request to OpenAI to translate to next language
+  
+  prompt = "## The program in " + my_language + "\n\ncat > program_in_" + my_language + " <<" + E_O_D + "\n" + source + "\n" + E_O_D "\n\n## The exact same program in " + next_language + "\n\ncat > program_in_" + next_language + " <<" + E_O_D + "\n"
+  
+  authorization = "Bearer " + api_key
+  
+  # Create the payload
+  payload = {
+      "stop": E_O_D,
+      "max_tokens": 1000,
+      "temperature": 0,
+      "prompt": prompt
+  }
+  
+  # Dump payload to JSON
+  payload = json.dumps(payload)
+  
+  conn = http.client.HTTPSConnection("api.openai.com")
+  conn.request("POST", "/v1/engines/davinci-codex/completions", payload, {
+      "Content-type": "application/json",
+      "Authorization": authorization
+  })
+  
+  response = conn.getresponse()
+  translated = json.loads(response.read())['choices'][0]['text']
+  
+  path = "program_in_" next_language + ".rb"
+  f = open(path, "w")
+  f.write(translated.strip())
+  f.write("\n")
+  f.close()
+  
+  subprocess.call(["pygmentize", path])
+  
+  # Now launch next iteration
+  subprocess.call([next_language, path])
+#+END_SRC
+
+*** Interesting features
+#+BEGIN_SRC python -n :i mypython :async :results verbatim code
+  E_O_D = "E" + "O" + "D"  # Avoid the string literal here
+#+END_SRC
+
+The string literal is most likely avoided to
+prevent Codex from becoming disoriented during
+the transpilation when it sees two 'EOD's.
+
+** Pen.el
+*** Codex Engine
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  title: OpenAI Codex
+  lm-command: "openai-complete.sh"
+  model: davinci-codex
+  modes:
+  - search
+  - classification
+  specialities:
+  - code
+  min-tokens: 64
+  max-tokens: 1000
+#+END_SRC
+
+*** Codex Transpilation Prompt
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  title: "transpile"
+  doc: "Given some code and a target language, transpile into that language"
+  prompt-version: 1
+  engine: openai-codex
+  prompt: |+
+      ## The program in <from language>
+  
+      cat program_in_<language> <<EOD
+      <code>
+      EOD
+  
+      ## The exact same program in <to-language>
+  
+  n-generate: 5
+  temperature: 0
+  max-tokens: 1000
+  top-p: 1.0
+  best-of: 1
+  cache: on
+  vars:
+  - code
+  - "from language"
+  - "to language"
+  var-defaults:
+  - "(pen-selected-text)"
+  - "(pen-detect-language-ask)"
+  examples:
+  - "print(\"Hello world with empathy\")"
+  - "Python"
+  - "Ruby"
+  n-test-runs: 5
+  n-collate: 1
+  n-completions: 10
+  new-document: yes
+  external-related:
+  - "https://www.youtube.com/watch?v=Iq3rDFZOorw"
+#+END_SRC
