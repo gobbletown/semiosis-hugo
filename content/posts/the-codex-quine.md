@@ -25,7 +25,7 @@ I convert the OpenAI quine into some imaginary code (`WIP`).
 
 ## The Quine: Initial Python source {#the-quine-initial-python-source}
 
-{{< highlight yaml "linenos=table, linenostart=1" >}}
+{{< highlight python "linenos=table, linenostart=1" >}}
 #!/usr/bin/env python
 #
 # A program which calls OpenAI with its own source code.

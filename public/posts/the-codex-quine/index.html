@@ -232,7 +232,7 @@ The Quine: Initial Python source 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#!/usr/bin/env python</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
 <span style="color:#75715e">#</span>
 <span style="color:#75715e"># A program which calls OpenAI with its own source code.</span>
 <span style="color:#75715e">#</span>
@@ -240,59 +240,59 @@ The Quine: Initial Python source 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
 <span style="color:#75715e">#</span>
 <span style="color:#75715e"># In Python, uses the &#34;http.client&#34; and &#34;subprocess&#34; libraries and uses Python 3 semantics. In Ruby, uses httparty and system (does NOT use open3).</span>
 
-<span style="color:#ae81ff">import http.client</span>
-<span style="color:#ae81ff">import json</span>
-<span style="color:#ae81ff">import subprocess</span>
+<span style="color:#f92672">import</span> http.client
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> subprocess
 
-<span style="color:#ae81ff">here = __file__</span>
+here <span style="color:#f92672">=</span> __file__
 
-<span style="color:#ae81ff">api_key = open(&#39;openai_api_key.txt&#39;).read().strip()</span>
-<span style="color:#ae81ff">source = open(here).read()</span> <span style="color:#75715e"># Read our own source code</span>
+api_key <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;openai_api_key.txt&#39;</span>)<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>strip()
+source <span style="color:#f92672">=</span> open(here)<span style="color:#f92672">.</span>read() <span style="color:#75715e"># Read our own source code</span>
 
-<span style="color:#ae81ff">my_language = &#34;python&#34;</span>
-<span style="color:#ae81ff">next_Language = &#34;ruby&#34;</span>
+my_language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;python&#34;</span>
+next_Language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ruby&#34;</span>
 
 <span style="color:#75715e"># Print with trailing newline.</span>
-<span style="color:#ae81ff">print(&#34;Hello from &#34; + my_language + &#34;. I&#39;m going to rewrite myself in &#34; next_language + &#34;. Stand by...&#34;)</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Hello from &#34;</span> <span style="color:#f92672">+</span> my_language <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;. I&#39;m going to rewrite myself in &#34;</span> next_language <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;. Stand by...&#34;</span>)
 
-<span style="color:#ae81ff">E_O_D = &#34;E&#34; + &#34;O&#34; + &#34;D&#34; </span> <span style="color:#75715e"># Avoid the string literal here</span>
+E_O_D <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;D&#34;</span>  <span style="color:#75715e"># Avoid the string literal here</span>
 
 <span style="color:#75715e"># Make request to OpenAI to translate to next language</span>
 
-<span style="color:#ae81ff">prompt = &#34;## The program in &#34; + my_language + &#34;\n\ncat &gt; program_in_&#34; + my_language + &#34; &lt;&lt;&#34; + E_O_D + &#34;\n&#34; + source + &#34;\n&#34; + E_O_D &#34;\n\n## The exact same program in &#34; + next_language + &#34;\n\ncat &gt; program_in_&#34; + next_language + &#34; &lt;&lt;&#34; + E_O_D + &#34;\n&#34;</span>
+prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;## The program in &#34;</span> <span style="color:#f92672">+</span> my_language <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">cat &gt; program_in_&#34;</span> <span style="color:#f92672">+</span> my_language <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &lt;&lt;&#34;</span> <span style="color:#f92672">+</span> E_O_D <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> source <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> E_O_D <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">## The exact same program in &#34;</span> <span style="color:#f92672">+</span> next_language <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">cat &gt; program_in_&#34;</span> <span style="color:#f92672">+</span> next_language <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &lt;&lt;&#34;</span> <span style="color:#f92672">+</span> E_O_D <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
 
-<span style="color:#ae81ff">authorization = &#34;Bearer &#34; + api_key</span>
+authorization <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bearer &#34;</span> <span style="color:#f92672">+</span> api_key
 
 <span style="color:#75715e"># Create the payload</span>
-<span style="color:#ae81ff">payload = {</span>
-    <span style="color:#f92672">&#34;stop&#34;: </span><span style="color:#ae81ff">E_O_D,</span>
-    <span style="color:#f92672">&#34;max_tokens&#34;: </span><span style="color:#ae81ff">1000</span>,
-    <span style="color:#f92672">&#34;temperature&#34;: </span><span style="color:#ae81ff">0</span>,
-    <span style="color:#f92672">&#34;prompt&#34;: </span><span style="color:#ae81ff">prompt</span>
+payload <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#34;stop&#34;</span>: E_O_D,
+    <span style="color:#e6db74">&#34;max_tokens&#34;</span>: <span style="color:#ae81ff">1000</span>,
+    <span style="color:#e6db74">&#34;temperature&#34;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#e6db74">&#34;prompt&#34;</span>: prompt
 }
 
 <span style="color:#75715e"># Dump payload to JSON</span>
-<span style="color:#ae81ff">payload = json.dumps(payload)</span>
+payload <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(payload)
 
-<span style="color:#ae81ff">conn = http.client.HTTPSConnection(&#34;api.openai.com&#34;)</span>
-<span style="color:#ae81ff">conn.request(&#34;POST&#34;, &#34;/v1/engines/davinci-codex/completions&#34;, payload, {</span>
-    <span style="color:#f92672">&#34;Content-type&#34;: </span><span style="color:#e6db74">&#34;application/json&#34;</span>,
-    <span style="color:#f92672">&#34;Authorization&#34;: </span><span style="color:#ae81ff">authorization</span>
-}<span style="color:#ae81ff">)</span>
+conn <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>HTTPSConnection(<span style="color:#e6db74">&#34;api.openai.com&#34;</span>)
+conn<span style="color:#f92672">.</span>request(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;/v1/engines/davinci-codex/completions&#34;</span>, payload, {
+    <span style="color:#e6db74">&#34;Content-type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>,
+    <span style="color:#e6db74">&#34;Authorization&#34;</span>: authorization
+})
 
-<span style="color:#ae81ff">response = conn.getresponse()</span>
-<span style="color:#ae81ff">translated = json.loads(response.read())[&#39;choices&#39;][0][&#39;text&#39;]</span>
+response <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>getresponse()
+translated <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(response<span style="color:#f92672">.</span>read())[<span style="color:#e6db74">&#39;choices&#39;</span>][<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;text&#39;</span>]
 
-<span style="color:#ae81ff">path = &#34;program_in_&#34; next_language + &#34;.rb&#34;</span>
-<span style="color:#ae81ff">f = open(path, &#34;w&#34;)</span>
-<span style="color:#ae81ff">f.write(translated.strip())</span>
-<span style="color:#ae81ff">f.write(&#34;\n&#34;)</span>
-<span style="color:#ae81ff">f.close()</span>
+path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;program_in_&#34;</span> next_language <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.rb&#34;</span>
+f <span style="color:#f92672">=</span> open(path, <span style="color:#e6db74">&#34;w&#34;</span>)
+f<span style="color:#f92672">.</span>write(translated<span style="color:#f92672">.</span>strip())
+f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+f<span style="color:#f92672">.</span>close()
 
-<span style="color:#ae81ff">subprocess.call([&#34;pygmentize&#34;, path])</span>
+subprocess<span style="color:#f92672">.</span>call([<span style="color:#e6db74">&#34;pygmentize&#34;</span>, path])
 
 <span style="color:#75715e"># Now launch next iteration</span>
-<span style="color:#ae81ff">subprocess.call([next_language, path])</span></code></pre></td></tr></table>
+subprocess<span style="color:#f92672">.</span>call([next_language, path])</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="interesting-features">Interesting features</h3>
