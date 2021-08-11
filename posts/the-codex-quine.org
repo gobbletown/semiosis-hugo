@@ -116,7 +116,7 @@ the transpilation when it sees two 'EOD's.
   prompt: |+
       ## The program in <from language>
 
-      cat program_in_<language> <<EOD
+      cat program_in_<from language> <<EOD
       <code>
       EOD
 
