@@ -19,7 +19,7 @@
 I convert the OpenAI quine into some imaginary code (=WIP=).
 
 ** The Quine: Initial Python source
-#+BEGIN_SRC yaml -n :async :results verbatim code
+#+BEGIN_SRC python -n :i mypython :async :results verbatim code
   #!/usr/bin/env python
   #
   # A program which calls OpenAI with its own source code.
@@ -27,30 +27,30 @@ I convert the OpenAI quine into some imaginary code (=WIP=).
   # Implemented in two languages:
   #
   # In Python, uses the "http.client" and "subprocess" libraries and uses Python 3 semantics. In Ruby, uses httparty and system (does NOT use open3).
-
+  
   import http.client
   import json
   import subprocess
-
+  
   here = __file__
-
+  
   api_key = open('openai_api_key.txt').read().strip()
   source = open(here).read() # Read our own source code
-
+  
   my_language = "python"
   next_Language = "ruby"
-
+  
   # Print with trailing newline.
   print("Hello from " + my_language + ". I'm going to rewrite myself in " next_language + ". Stand by...")
-
+  
   E_O_D = "E" + "O" + "D"  # Avoid the string literal here
-
+  
   # Make request to OpenAI to translate to next language
-
+  
   prompt = "## The program in " + my_language + "\n\ncat > program_in_" + my_language + " <<" + E_O_D + "\n" + source + "\n" + E_O_D "\n\n## The exact same program in " + next_language + "\n\ncat > program_in_" + next_language + " <<" + E_O_D + "\n"
-
+  
   authorization = "Bearer " + api_key
-
+  
   # Create the payload
   payload = {
       "stop": E_O_D,
@@ -58,27 +58,27 @@ I convert the OpenAI quine into some imaginary code (=WIP=).
       "temperature": 0,
       "prompt": prompt
   }
-
+  
   # Dump payload to JSON
   payload = json.dumps(payload)
-
+  
   conn = http.client.HTTPSConnection("api.openai.com")
   conn.request("POST", "/v1/engines/davinci-codex/completions", payload, {
       "Content-type": "application/json",
       "Authorization": authorization
   })
-
+  
   response = conn.getresponse()
   translated = json.loads(response.read())['choices'][0]['text']
-
+  
   path = "program_in_" next_language + ".rb"
   f = open(path, "w")
   f.write(translated.strip())
   f.write("\n")
   f.close()
-
+  
   subprocess.call(["pygmentize", path])
-
+  
   # Now launch next iteration
   subprocess.call([next_language, path])
 #+END_SRC
