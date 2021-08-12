@@ -12,6 +12,9 @@ I demonstrate the construction of an
 interactive prompt function in `Pen.el` from
 an initial prompt.
 
+Prompts
+: <http://github.com/semiosis/prompts>
+
 
 ## Demo {#demo}
 

@@ -16,13 +16,17 @@
             
             <guid>http://semiosis.github.io/posts/prompt-design-with-yasnippet/</guid>
             <description>Summary I demonstrate the construction of an interactive prompt function in Pen.el from an initial prompt.
-Demo  --  Explanation In the demo, a .prompt file was created from the selection of a raw prompt.
+ Prompts http://github.com/semiosis/prompts  Demo  --  Explanation In the demo, a .prompt file was created from the selection of a raw prompt.
 Towards the end, it was seen that some starting whitespace was preserved. This is because the prompt thought that it was an insertion.
 Prompt functions may be given various modes. Insertion is used to prefer the insertion of the result of the generation to a document over other modes.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I demonstrate the construction of an
 interactive prompt function in <code>Pen.el</code> from
 an initial prompt.</p>
+<dl>
+<dt>Prompts</dt>
+<dd><a href="http://github.com/semiosis/prompts">http://github.com/semiosis/prompts</a></dd>
+</dl>
 <h2 id="demo">Demo</h2>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE.svg" /></a> -->
