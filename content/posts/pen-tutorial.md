@@ -70,6 +70,9 @@ Join discord
 : <https://discord.gg/6wP4MwCM>
 
 
+Prompt tutorial <https://mullikine.github.io/posts/prompt-design-with-yasnippet/>
+
+
 ## Invoking `Pen.el`: Client and server {#invoking-pen-dot-el-client-and-server}
 
 Please glance over this to learn how to invoke.

@@ -5727,6 +5727,7 @@ pen</code></pre></td></tr></table>
 <dt>Join discord</dt>
 <dd><a href="https://discord.gg/6wP4MwCM">https://discord.gg/6wP4MwCM</a></dd>
 </dl>
+<p>Prompt tutorial <a href="https://mullikine.github.io/posts/prompt-design-with-yasnippet/">https://mullikine.github.io/posts/prompt-design-with-yasnippet/</a></p>
 <h2 id="invoking-pen-dot-el-client-and-server">Invoking <code>Pen.el</code>: Client and server</h2>
 <p>Please glance over this to learn how to invoke.</p>
 <p>It&rsquo;ll get you going with <code>Pen.el</code> very quickly.</p>
