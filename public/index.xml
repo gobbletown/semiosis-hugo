@@ -9,6 +9,18 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Prompt design with YASnippet</title>
+      <link>http://semiosis.github.io/posts/prompt-design-with-yasnippet/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/prompt-design-with-yasnippet/</guid>
+      <description>Summary I demonstrate the construction of an interactive prompt function in Pen.el from an initial prompt.
+Demo  --  Explanation In the demo, a .prompt file was created from the selection of a raw prompt.
+Towards the end, it was seen that some starting whitespace was preserved. This is because the prompt thought that it was an insertion.
+Prompt functions may be given various modes. Insertion is used to prefer the insertion of the result of the generation to a document over other modes.</description>
+    </item>
+    
+    <item>
       <title>The Codex Quine</title>
       <link>http://semiosis.github.io/posts/the-codex-quine/</link>
       <pubDate>Thu, 12 Aug 2021 00:00:00 +1200</pubDate>

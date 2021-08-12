@@ -1,0 +1,142 @@
++++
+title = "Prompt design with YASnippet"
+author = ["Shane Mulligan"]
+date = 2021-08-12T00:00:00+12:00
+keywords = ["pen", "emacs", "gpt"]
+draft = false
++++
+
+## Summary {#summary}
+
+I demonstrate the construction of an
+interactive prompt function in `Pen.el` from
+an initial prompt.
+
+
+## Demo {#demo}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE.js" id="asciicast-nTEblQMV3SvYDT6v4gz6q7JpE" async></script>
+
+
+### Explanation {#explanation}
+
+In the demo, a `.prompt` file was created from the selection of a raw prompt.
+
+Towards the end, it was seen that some
+starting whitespace was preserved. This is
+because the prompt thought that it was an
+`insertion`.
+
+Prompt functions may be given various modes.
+Insertion is used to prefer the insertion of
+the result of the generation to a document
+over other modes.
+
+`filter` was the intended mode as the prompt
+should correct/translate the selection
+according to the NLP task.
+
+To make the prompt more robust, the
+onelineify/unonelineify design pattern is used
+with the following keys. This keeps the text
+to the right of the Jargon/Simple subprompts.
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+filter: yes
+preprocessors:
+- pen-s onelineify
+postprocessor: pen-s unonelineify
+{{< /highlight >}}
+
+
+## Final prompt {#final-prompt}
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+title: "Dejaragonizer"
+doc: "Clarifies jargon. Select some text and run the dejargonizer"
+prompt-version: 2
+prompt: |+
+    The following sentences contain business jargon. Rewrite them using simple words.
+
+    Jargon: The fund managers hope to increase yields by taking on leverage.
+    Simple: The fund managers hope to get more return on their investments by borrowing money.
+
+    Jargon: I need to finish due diligence on this company before I can decide.
+    Simple: I need to finish background research on this company before I can decide.
+
+    Jargon: Can you please get this document over the wall?
+    Simple: Can you please send this document?
+
+    Jargon: <jargon>
+    Simple:
+lm-command: "openai-complete.sh"
+model: "davinci"
+temperature: 0.8
+max-tokens: 200
+top-p: 1.0
+best-of: 1
+cache: on
+stop-sequences:
+- "\n"
+post-processor: "sed -z 's/^\\s*//'"
+vars:
+- "jargon"
+examples:
+- "Their legal team would like us to open our kimono regarding last year's deals."
+n-collate: 1
+n-completions: 10
+filter: yes
+preprocessors:
+- pen-s onelineify
+postprocessor: pen-s unonelineify
+{{< /highlight >}}
+
+
+## Snippet {#snippet}
+
+{{< highlight snippet "linenos=table, linenostart=1" >}}
+# -*- mode: snippet -*-
+# name: prompt
+# group: pen
+# key: pr
+# expand-env: ((yas-indent-line 'fixed))
+# --
+in-development: yes
+title: "${1:title}"
+doc: "Given ... ${1:title}"
+prompt-version: 1
+prompt: |+
+${2:`(pen-snc "pen-indent 4" yas-selected-text)`$0}
+lm-command: "openai-complete.sh"
+model: "davinci"
+temperature: 0.8
+max-tokens: 60
+top-p: 1.0
+best-of: 1
+no-trim-start: off
+no-trim-end: off
+cache: on
+vars:
+- "former"
+- "latter"
+var-defaults:
+- "(detect-language)"
+- "(pen-preceding-text)"
+examples:
+- "boysenberries"
+- "strawberries"
+preprocessors:
+- "sed 's/^/- /"
+- "cat"
+n-collate: 1
+n-completions: 10
+filter: no
+completion: on
+insertion: on
+design-patterns:
+external-related:
+- "https://paraphrasing-tool.com/"
+{{< /highlight >}}

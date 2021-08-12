@@ -10,6 +10,182 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Prompt design with YASnippet</title>
+            <link>http://semiosis.github.io/posts/prompt-design-with-yasnippet/</link>
+            <pubDate>Thu, 12 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/prompt-design-with-yasnippet/</guid>
+            <description>Summary I demonstrate the construction of an interactive prompt function in Pen.el from an initial prompt.
+Demo  --  Explanation In the demo, a .prompt file was created from the selection of a raw prompt.
+Towards the end, it was seen that some starting whitespace was preserved. This is because the prompt thought that it was an insertion.
+Prompt functions may be given various modes. Insertion is used to prefer the insertion of the result of the generation to a document over other modes.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I demonstrate the construction of an
+interactive prompt function in <code>Pen.el</code> from
+an initial prompt.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/nTEblQMV3SvYDT6v4gz6q7JpE.js" id="asciicast-nTEblQMV3SvYDT6v4gz6q7JpE" async></script>
+<h3 id="explanation">Explanation</h3>
+<p>In the demo, a <code>.prompt</code> file was created from the selection of a raw prompt.</p>
+<p>Towards the end, it was seen that some
+starting whitespace was preserved. This is
+because the prompt thought that it was an
+<code>insertion</code>.</p>
+<p>Prompt functions may be given various modes.
+Insertion is used to prefer the insertion of
+the result of the generation to a document
+over other modes.</p>
+<p><code>filter</code> was the intended mode as the prompt
+should correct/translate the selection
+according to the NLP task.</p>
+<p>To make the prompt more robust, the
+onelineify/unonelineify design pattern is used
+with the following keys. This keeps the text
+to the right of the Jargon/Simple subprompts.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">filter</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">pen-s onelineify</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pen-s unonelineify</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="final-prompt">Final prompt</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Dejaragonizer&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Clarifies jargon. Select some text and run the dejargonizer&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    The following sentences contain business jargon. Rewrite them using simple words.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Jargon: The fund managers hope to increase yields by taking on leverage.
+</span><span style="color:#e6db74">    Simple: The fund managers hope to get more return on their investments by borrowing money.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Jargon: I need to finish due diligence on this company before I can decide.
+</span><span style="color:#e6db74">    Simple: I need to finish background research on this company before I can decide.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Jargon: Can you please get this document over the wall?
+</span><span style="color:#e6db74">    Simple: Can you please send this document?
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Jargon: &lt;jargon&gt;
+</span><span style="color:#e6db74">    Simple:</span>    
+<span style="color:#f92672">lm-command</span>: <span style="color:#e6db74">&#34;openai-complete.sh&#34;</span>
+<span style="color:#f92672">model</span>: <span style="color:#e6db74">&#34;davinci&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.8</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">200</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#f92672">post-processor</span>: <span style="color:#e6db74">&#34;sed -z &#39;s/^\\s*//&#39;&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;jargon&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;Their legal team would like us to open our kimono regarding last year&#39;s deals.&#34;</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">pen-s onelineify</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pen-s unonelineify</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="snippet">Snippet</h2>
+<pre><code class="language-snippet" data-lang="snippet"># -*- mode: snippet -*-
+# name: prompt
+# group: pen
+# key: pr
+# expand-env: ((yas-indent-line &#39;fixed))
+# --
+in-development: yes
+title: &#34;${1:title}&#34;
+doc: &#34;Given ... ${1:title}&#34;
+prompt-version: 1
+prompt: |+
+${2:`(pen-snc &#34;pen-indent 4&#34; yas-selected-text)`$0}
+lm-command: &#34;openai-complete.sh&#34;
+model: &#34;davinci&#34;
+temperature: 0.8
+max-tokens: 60
+top-p: 1.0
+best-of: 1
+no-trim-start: off
+no-trim-end: off
+cache: on
+vars:
+- &#34;former&#34;
+- &#34;latter&#34;
+var-defaults:
+- &#34;(detect-language)&#34;
+- &#34;(pen-preceding-text)&#34;
+examples:
+- &#34;boysenberries&#34;
+- &#34;strawberries&#34;
+preprocessors:
+- &#34;sed &#39;s/^/- /&#34;
+- &#34;cat&#34;
+n-collate: 1
+n-completions: 10
+filter: no
+completion: on
+insertion: on
+design-patterns:
+external-related:
+- &#34;https://paraphrasing-tool.com/&#34;</code></pre>
+]]></content>
+        </item>
+        
+        <item>
             <title>The Codex Quine</title>
             <link>http://semiosis.github.io/posts/the-codex-quine/</link>
             <pubDate>Thu, 12 Aug 2021 00:00:00 +1200</pubDate>
