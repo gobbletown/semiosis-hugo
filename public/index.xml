@@ -10,6 +10,17 @@
     <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ink.el - A file format to encode provenance for intelligibility</title>
+      <link>http://semiosis.github.io/ink/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/ink/</guid>
+      <description>Pen.el https://github.com/semiosis/pen.el Ink.el https://github.com/semiosis/ink.el prompts https://github.com/semiosis/prompts engines https://github.com/semiosis/engines  Introducing Ink.el The purpose of Ink.el is to encode within its text properties information about its own provenance.
+It was created for Pen.el. It is generated when you generate text with Pen.el in order to encode how the text was generated.
+Ink.el is used by Pen.el when interpretation of the meaning of text is required. Knowledge of which LM has generated a given text snippet, the language of the text (understood by said model) and the context within that language are all important when interpreting the meaning of that text, and it is for that reason that tasks and metaprompts may employ the ink format.</description>
+    </item>
+    
+    <item>
+      <title>Ink.el - A file format to encode provenance for intelligibility</title>
       <link>http://semiosis.github.io/posts/ink-el-a-file-format-to-encode-provenance-for-intelligibility/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +1200</pubDate>
       
