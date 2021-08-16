@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+#+HUGO_SECTION: ./
 
 #+TITLE: Ink.el - A file format to encode provenance for intelligibility
 #+DATE: <2021-08-16>
