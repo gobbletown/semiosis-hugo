@@ -18,6 +18,9 @@ prompts
 engines
 : <https://github.com/semiosis/engines>
 
+Moire's blog on Quantifying Curation
+: <https://generative.ink/posts/quantifying-curation/>
+
 
 ## Introducing Ink.el {#introducing-ink-dot-el}
 
@@ -82,16 +85,53 @@ task: #("Translate Haskell to Clojure" 0 27 (engine "OpenAI Davinci" language "E
 -   YASnippet compatibility (may be used as snippets).
 
 
-## Provenance {#provenance}
+## Example prompt {#example-prompt}
 
-<https://generative.ink/posts/quantifying-curation/>
+Here, the task is encoded in _Ink_.
 
+If (in future) the prompt disappears, the task
+will remain and it will be important to associate the task with
+a LM so the user knows what the task means.
 
-## Evaluation {#evaluation}
-
--   It allows for re-evaluation.
-
-
-## Future {#future}
-
-Racket compiler.
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+task: '*("Transpile from programming language X to Y" 0 41 (engine "OpenAI Davinci" language "English" topic "Programming"))'
+prompt-version: 6
+prompt: |+
+    ###
+    Haskell: zip (map show [1,5,9]) ["a","b","c"]
+    Clojure: (println (map vector '(1 2 3) '(4 5 6)))
+    ###
+    Clojure: (clojure.string/upper-case "MiXeD cAsE")
+    Haskell: map toUpper "MiXeD cAsE"
+    ###
+    <2>: <1>
+    <3>:
+engine: OpenAI Davinci
+temperature: 0.3
+max-tokens: 400
+top-p: 1
+stop-sequences:
+- "###"
+stop-patterns:
+- "^[a-zA-Z]+:"
+vars:
+- code
+- from language
+- to language
+preprocessors:
+- pen-s onelineify
+- cat
+- cat
+# Use s-preserve-trailing-whitespace within pen.el
+# Chomp is needed because of stop-patterns
+postprocessor: pen-s unonelineify | chomp
+examples:
+- min 1 2
+- Haskell
+- Clojure
+var-defaults:
+- "(pen-selected-text)"
+- "(pen-detect-language-ask)"
+- "(read-string-hist \"Pen to programming language: \")"
+filter: on
+{{< /highlight >}}
