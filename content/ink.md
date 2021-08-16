@@ -72,7 +72,7 @@ language and topic required to interpret the
 meaning of the task.
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
-task: #("Translate Haskell to Clojure" 0 27 (engine "OpenAI Davinci" language "English" topic "programming"))
+task: '*("Translate Haskell to Clojure" 0 27 (engine "OpenAI Davinci" language "English" topic "programming"))'
 {{< /highlight >}}
 
 
