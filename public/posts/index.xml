@@ -6,8 +6,97 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Ink.el - A file format to encode provenance for intelligibility</title>
+            <link>http://semiosis.github.io/posts/ink-el-a-file-format-to-encode-provenance-for-intelligibility/</link>
+            <pubDate>Mon, 16 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/ink-el-a-file-format-to-encode-provenance-for-intelligibility/</guid>
+            <description>Pen.el https://github.com/semiosis/pen.el Ink.el https://github.com/semiosis/ink.el prompts https://github.com/semiosis/prompts engines https://github.com/semiosis/engines  Introducing Ink.el The purpose of Ink.el is to encode within its text properties information about its own provenance.
+It was created for Pen.el. It is generated when you generate text with Pen.el in order to encode how the text was generated.
+Ink.el is used by Pen.el when interpretation of the meaning of text is required. Knowledge of which LM has generated a given text snippet, the language of the text (understood by said model) and the context within that language are all important when interpreting the meaning of that text, and it is for that reason that tasks and metaprompts may employ the ink format.</description>
+            <content type="html"><![CDATA[<dl>
+<dt>Pen.el</dt>
+<dd><a href="https://github.com/semiosis/pen.el">https://github.com/semiosis/pen.el</a></dd>
+<dt>Ink.el</dt>
+<dd><a href="https://github.com/semiosis/ink.el">https://github.com/semiosis/ink.el</a></dd>
+<dt>prompts</dt>
+<dd><a href="https://github.com/semiosis/prompts">https://github.com/semiosis/prompts</a></dd>
+<dt>engines</dt>
+<dd><a href="https://github.com/semiosis/engines">https://github.com/semiosis/engines</a></dd>
+</dl>
+<h2 id="introducing-ink-dot-el">Introducing Ink.el</h2>
+<p>The purpose of <code>Ink.el</code> is to encode within
+its text properties information about its own
+provenance.</p>
+<p>It was created for <code>Pen.el</code>. It is generated
+when you generate text with <code>Pen.el</code> in order
+to encode how the text was generated.</p>
+<p><code>Ink.el</code> is used by <code>Pen.el</code> when
+interpretation of the meaning of text is
+required. Knowledge of which LM has generated
+a given text snippet, the language of the text
+(understood by said model) and the context
+within that language are all important when
+interpreting the meaning of that text, and it
+is for that reason that tasks and metaprompts
+may employ the <code>ink</code> format.</p>
+<p>Quantifying curation is also important. After
+using many different LMs to assist in creating a
+document, the text may be analysed by reading
+information contained in the <code>ink</code> format.</p>
+<p>This is a text format that is designed for
+easy editing via emacs, like normal text.</p>
+<p>It is loaded and emacs text properties encode
+the state of the buffer, plus functions for
+regenerating text.</p>
+<p>The prototype will be in emacs lisp using text properties.</p>
+<ul>
+<li>This is a document format that contains and evaluates to the document as it is meant to be viewed.</li>
+<li>It also contains annotations for the transformations, inputs and outputs of those transformations.</li>
+</ul>
+<figure>
+    <img src="./pen-gehn.png"/> 
+</figure>
+
+<h2 id="example">Example</h2>
+<p>Here is some <em>ink</em> text as the value for the
+<code>task:</code> key in a yaml file.</p>
+<p>The text contains information on the engine,
+language and topic required to interpret the
+meaning of the task.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#75715e">#(&#34;Translate Haskell to Clojure&#34; 0 27 (engine &#34;OpenAI Davinci&#34; language &#34;English&#34; topic &#34;programming&#34;))</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="goals">Goals</h2>
+<ul>
+<li>Encode state as well as metadata about what model generated the text.</li>
+<li>Retain information on the completion functions used to generate the document so parts can be re-evaluated at will.</li>
+<li>Become a file format for encoding meta-documents.
+<ul>
+<li>A meta-document is like a template.</li>
+</ul>
+</li>
+<li>YASnippet compatibility (may be used as snippets).</li>
+</ul>
+<h2 id="provenance">Provenance</h2>
+<p><a href="https://generative.ink/posts/quantifying-curation/">https://generative.ink/posts/quantifying-curation/</a></p>
+<h2 id="evaluation">Evaluation</h2>
+<ul>
+<li>It allows for re-evaluation.</li>
+</ul>
+<h2 id="future">Future</h2>
+<p>Racket compiler.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Prompt design with YASnippet</title>
