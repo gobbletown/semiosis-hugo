@@ -13,6 +13,7 @@
 + Ink.el :: https://github.com/semiosis/ink.el
 + prompts :: https://github.com/semiosis/prompts
 + engines :: https://github.com/semiosis/engines
++ Moire's blog on Quantifying Curation :: https://generative.ink/posts/quantifying-curation/
 
 ** Introducing Ink.el
 The purpose of =Ink.el= is to encode within
@@ -71,14 +72,8 @@ meaning of the task.
   - A meta-document is like a template.
 - YASnippet compatibility (may be used as snippets).
 
-** Provenance
-https://generative.ink/posts/quantifying-curation/
-
 ** Evaluation
 - It allows for re-evaluation.
-
-** Future
-Racket compiler.
 
 ** Example prompt
 Here, the task is encoded in /Ink/.
