@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./stories
+#+HUGO_SECTION: ./posts
 
 #+TITLE: tmux-integrated GPT-3, stack-exchange and google code help
 #+DATE: <2021-05-01>
