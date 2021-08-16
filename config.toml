@@ -78,6 +78,11 @@ unsafe= true
     url        = "/pen/"
 
   [[menu.main]]
+    identifier = "ink"
+    name       = "Ink.el"
+    url        = "/ink/"
+
+  [[menu.main]]
     identifier = "examplary"
     name       = "Examplary"
     url        = "/examplary/"
