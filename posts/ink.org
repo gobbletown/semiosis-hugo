@@ -83,6 +83,10 @@ Racket compiler.
 ** Example prompt
 Here, the task is encoded in /Ink/.
 
+If (in future) the prompt disappears, the task
+will remain and it will be important to associate the task with
+a LM so the user knows what the task means.
+
 #+BEGIN_SRC yaml -n :async :results verbatim code
   task: '*("Transpile from programming language X to Y" 0 41 (engine "OpenAI Davinci" language "English" topic "Programming"))'
   prompt-version: 6
