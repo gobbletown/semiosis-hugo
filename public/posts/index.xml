@@ -9639,6 +9639,142 @@ cat <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span
         </item>
         
         <item>
+            <title>tmux-integrated GPT-3, stack-exchange and google code help</title>
+            <link>http://semiosis.github.io/posts/tmux-integrated-gpt-3-stack-exchange-and-google-code-help/</link>
+            <pubDate>Sat, 01 May 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/tmux-integrated-gpt-3-stack-exchange-and-google-code-help/</guid>
+            <description>Summary When I have a question about code, I don&amp;rsquo;t want to forget about the multiple avenues for looking for help.
+I just make a convenience script to look for help.
+Demo  --  Make scripts tcq
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  #!/bin/bash export TTY ( hs &amp;#34;$(basename &amp;#34;$0&amp;#34;)&amp;#34; &amp;#34;$@&amp;#34; &amp;#34;#&amp;#34; &amp;#34;&amp;lt;==&amp;#34; &amp;#34;$(ps -o comm= $PPID)&amp;#34; 0&amp;lt;/dev/null ) &amp;amp;&amp;gt;/dev/null lang=&amp;#34;$1&amp;#34; question=&amp;#34;$@&amp;#34; slug=&amp;#34;$(printf -- &amp;#34;%s\n&amp;#34; &amp;#34;$@&amp;#34; | tr &amp;#39;\n&amp;#39; &amp;#39; &amp;#39; | sed &amp;#39;s/ $//&amp;#39; | slugify | cut -c -20)&amp;#34; session_id=&amp;#34;$(tm ss -n zsh -s cq -c ~ | cut -d : -f 1)&amp;#34; pcq=&amp;#34;$(tm -d -te nw -P -n &amp;#34;cq-$slug&amp;#34; -d -t &amp;#34;$session_id&amp;#34; -args cq &amp;#34;$@&amp;#34;)&amp;#34; tm -d -te nw -n &amp;#34;egr-$slug&amp;#34; -d -t &amp;#34;$session_id&amp;#34; -args egr &amp;#34;$@&amp;#34; ( sleep 5 psx=&amp;#34;$(tm -d -te nw -P -n &amp;#34;sx-$slug&amp;#34; -d -t &amp;#34;$session_id&amp;#34; -args sx &amp;#34;$@&amp;#34;)&amp;#34; tmux select-window -t &amp;#34;$psx&amp;#34; ) &amp;amp; tmux select-window -t &amp;#34;$pcq&amp;#34; TMUX= tmux attach -t &amp;#34;$session_id&amp;#34;   cq</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>When I have a question about code, I don&rsquo;t
+want to forget about the multiple avenues for
+looking for help.</p>
+<p>I just make a convenience script to look for
+help.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/6ejs3ZKmJCDT4VhsI65xfAPWu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/6ejs3ZKmJCDT4VhsI65xfAPWu.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/6ejs3ZKmJCDT4VhsI65xfAPWu.js" id="asciicast-6ejs3ZKmJCDT4VhsI65xfAPWu" async></script>
+<h2 id="make-scripts">Make scripts</h2>
+<p><code>tcq</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#f92672">(</span> hs <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;&lt;==&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -o comm<span style="color:#f92672">=</span> $PPID<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> 0&lt;/dev/null <span style="color:#f92672">)</span> &amp;&gt;/dev/null
+
+lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+question<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+
+slug<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>printf -- <span style="color:#e6db74">&#34;%s\n&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> | tr <span style="color:#e6db74">&#39;\n&#39;</span> <span style="color:#e6db74">&#39; &#39;</span> | sed <span style="color:#e6db74">&#39;s/ $//&#39;</span> | slugify | cut -c -20<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+session_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tm ss -n zsh -s cq -c ~ | cut -d : -f 1<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+pcq<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tm -d -te nw -P -n <span style="color:#e6db74">&#34;cq-</span>$slug<span style="color:#e6db74">&#34;</span> -d -t <span style="color:#e6db74">&#34;</span>$session_id<span style="color:#e6db74">&#34;</span> -args cq <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+tm -d -te nw -n <span style="color:#e6db74">&#34;egr-</span>$slug<span style="color:#e6db74">&#34;</span> -d -t <span style="color:#e6db74">&#34;</span>$session_id<span style="color:#e6db74">&#34;</span> -args egr <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">(</span>
+sleep <span style="color:#ae81ff">5</span>
+psx<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>tm -d -te nw -P -n <span style="color:#e6db74">&#34;sx-</span>$slug<span style="color:#e6db74">&#34;</span> -d -t <span style="color:#e6db74">&#34;</span>$session_id<span style="color:#e6db74">&#34;</span> -args sx <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+tmux <span style="color:#66d9ef">select</span>-window -t <span style="color:#e6db74">&#34;</span>$psx<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">)</span> &amp;
+tmux <span style="color:#66d9ef">select</span>-window -t <span style="color:#e6db74">&#34;</span>$pcq<span style="color:#e6db74">&#34;</span>
+TMUX<span style="color:#f92672">=</span> tmux attach -t <span style="color:#e6db74">&#34;</span>$session_id<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>cq</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#f92672">(</span> hs <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;&lt;==&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -o comm<span style="color:#f92672">=</span> $PPID<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> 0&lt;/dev/null <span style="color:#f92672">)</span> &amp;&gt;/dev/null
+
+topic<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+test -n <span style="color:#e6db74">&#34;</span>$topic<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> exit <span style="color:#ae81ff">1</span>
+shift
+
+task<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+test -n <span style="color:#e6db74">&#34;</span>$task<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> exit <span style="color:#ae81ff">1</span>
+
+openai-complete code-snippet-from-natural-language.prompt <span style="color:#e6db74">&#34;</span>$topic<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$task<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>sx</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#f92672">(</span> hs <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;&lt;==&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -o comm<span style="color:#f92672">=</span> $PPID<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> 0&lt;/dev/null <span style="color:#f92672">)</span> &amp;&gt;/dev/null
+
+CMD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cmd <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+: <span style="color:#e6db74">${</span>CMD:=<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cmd <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span>
+
+query<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+sx-search-immediately <span style="color:#e6db74">&#34;</span>$query<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Auto-suggest tooling to handle ports on a network</title>
             <link>http://semiosis.github.io/posts/auto-suggest-tooling-to-handle-ports-on-a-network/</link>
             <pubDate>Fri, 30 Apr 2021 00:00:00 +1200</pubDate>
