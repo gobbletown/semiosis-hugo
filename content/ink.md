@@ -1,5 +1,5 @@
 +++
-title = "Ink.el - A file format to encode provenance for intelligibility"
+title = "Ink.el - Provenance for intelligibility"
 author = ["Shane Mulligan"]
 date = 2021-08-16T00:00:00+12:00
 keywords = ["pen", "ink", "openai", "gpt", "emacs"]
@@ -56,7 +56,7 @@ The prototype will be in emacs lisp using text properties.
 -   This is a document format that contains and evaluates to the document as it is meant to be viewed.
 -   It also contains annotations for the transformations, inputs and outputs of those transformations.
 
-{{< figure src="./pen-gehn.png" >}}
+{{< figure src="/ox-hugo/pen-gehn.png" >}}
 
 
 ## Example {#example}
