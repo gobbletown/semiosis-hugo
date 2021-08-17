@@ -42,6 +42,23 @@ interpreting the meaning of that text, and it
 is for that reason that tasks and metaprompts
 may employ the `ink` format.
 
+
+## Demo {#demo}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.js" id="asciicast-TV11bEJ8bO80CYABYjmtZApBb" async></script>
+
+You can see the text highlighted if it has
+been generated, and the text contains metadata
+on how it was generated. You can right click
+the text to go to the prompt that generated
+it, for example.
+
+
+## Further explanations {#further-explanations}
+
 Quantifying curation is also important. After
 using many different LMs to assist in creating a
 document, the text may be analysed by reading
