@@ -24,6 +24,8 @@ Moire's blog on Quantifying Curation
 
 ## Introducing Ink.el {#introducing-ink-dot-el}
 
+{{< figure src="/ox-hugo/ink.png" >}}
+
 The purpose of `Ink.el` is to encode within
 its text properties information about its own
 provenance.
