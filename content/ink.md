@@ -46,15 +46,22 @@ may employ the `ink` format.
 ## Demo {#demo}
 
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/mLqcUaTCVADNF7Pkk238MGIvf" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mLqcUaTCVADNF7Pkk238MGIvf.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.js" id="asciicast-TV11bEJ8bO80CYABYjmtZApBb" async></script>
+<script src="https://asciinema.org/a/mLqcUaTCVADNF7Pkk238MGIvf.js" id="asciicast-mLqcUaTCVADNF7Pkk238MGIvf" async></script>
 
 You can see the text highlighted if it has
 been generated, and the text contains metadata
 on how it was generated. You can right click
 the text to go to the prompt that generated
 it, for example.
+
+The file format `.ink` automatically generates
+a _view_ buffer running `ink-source-mode`.
+`ink-mode` and `ink-source-mode` work in
+tandem and try to remain in sync with each
+other when either is saved. Saving a `.ink`
+file will record all of its metadata.
 
 
 ## Further explanations {#further-explanations}
@@ -152,3 +159,11 @@ var-defaults:
 - "(read-string-hist \"Pen to programming language: \")"
 filter: on
 {{< /highlight >}}
+
+
+## Another demo {#another-demo}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.js" id="asciicast-TV11bEJ8bO80CYABYjmtZApBb" async></script>

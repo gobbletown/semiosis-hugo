@@ -39,7 +39,7 @@ Ink.el is used by Pen.el when interpretation of the meaning of text is required.
 It was created for Pen.el. It is generated when you generate text with Pen.el in order to encode how the text was generated.
 Ink.el is used by Pen.el when interpretation of the meaning of text is required."><meta itemprop="datePublished" content="2021-08-16T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-08-16T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="568"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="611"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -181,14 +181,20 @@ is for that reason that tasks and metaprompts
 may employ the <code>ink</code> format.</p>
 <h2 id="demo">Demo</h2>
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/mLqcUaTCVADNF7Pkk238MGIvf" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mLqcUaTCVADNF7Pkk238MGIvf.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.js" id="asciicast-TV11bEJ8bO80CYABYjmtZApBb" async></script>
+<script src="https://asciinema.org/a/mLqcUaTCVADNF7Pkk238MGIvf.js" id="asciicast-mLqcUaTCVADNF7Pkk238MGIvf" async></script>
 <p>You can see the text highlighted if it has
 been generated, and the text contains metadata
 on how it was generated. You can right click
 the text to go to the prompt that generated
 it, for example.</p>
+<p>The file format <code>.ink</code> automatically generates
+a <em>view</em> buffer running <code>ink-source-mode</code>.
+<code>ink-mode</code> and <code>ink-source-mode</code> work in
+tandem and try to remain in sync with each
+other when either is saved. Saving a <code>.ink</code>
+file will record all of its metadata.</p>
 <h2 id="further-explanations">Further explanations</h2>
 <p>Quantifying curation is also important. After
 using many different LMs to assist in creating a
@@ -324,7 +330,11 @@ a LM so the user knows what the task means.</p>
 <span style="color:#f92672">filter</span>: <span style="color:#66d9ef">on</span></code></pre></td></tr></table>
 </div>
 </div>
-
+<h2 id="another-demo">Another demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TV11bEJ8bO80CYABYjmtZApBb.js" id="asciicast-TV11bEJ8bO80CYABYjmtZApBb" async></script>
             </div>
         </article>
 
