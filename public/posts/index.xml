@@ -175,6 +175,25 @@ perl -e <span style="color:#e6db74">&#39;$_=reverse&#39;</span>
 perl -e <span style="color:#e6db74">&#39;$_=reverse; s/\d+/1+$_/ge&#39;</span></code></pre></td></tr></table>
 </div>
 </div>
+<figure>
+    <img src="/ox-hugo/pen-validator.png"/> 
+</figure>
+
+<p>Much better:</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/xvKVmNG7nH1ZnzW7zYbpWJz09" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/xvKVmNG7nH1ZnzW7zYbpWJz09.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/xvKVmNG7nH1ZnzW7zYbpWJz09.js" id="asciicast-xvKVmNG7nH1ZnzW7zYbpWJz09" async></script>
+<p>However, none of the one-liners did the
+desired thing.</p>
+<p>There is at least one URL I can see at the top
+which should be found.</p>
+<p><code>https://openaiapi-site.azureedge.net/public-assets/d/19ff159b15/favicon.svg</code></p>
+<p>Codex, however, could accomplish this with
+mere descriptions. It&rsquo;s still very important
+to design, encode, share and curate these
+&lsquo;descriptions&rsquo;. GPT-3 is still very useful
+practice.</p>
 ]]></content>
         </item>
         
