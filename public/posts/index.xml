@@ -6,8 +6,177 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Generating perl one-liners using GPT-3 and Pen.el</title>
+            <link>http://semiosis.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/</link>
+            <pubDate>Wed, 18 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/</guid>
+            <description>Summary I demonstrate generating perl one-liners in emacs using a prompt function and explain parts of the prompt.
+&amp;lt;:pp&amp;gt;perl - This enables you to specify the first part of the output. &amp;lt;:pp&amp;gt; is a placed where you want to include the rest of the prompt in the beginning of the output.
+split-patterns  README http://github.com/semiosis/prompts/  split-patterns is a field for describing patterns to separate multiple prompt results from one output if the LM multiplexed the results intentionally or unintentionally.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I demonstrate generating perl one-liners in
+emacs using a prompt function and explain
+parts of the prompt.</p>
+<h3 id="pp-perl"><em>&lt;:pp&gt;perl -</em></h3>
+<p>This enables you to specify the first part of
+the output. <code>&lt;:pp&gt;</code> is a placed where you want
+to include the rest of the prompt in the
+beginning of the output.</p>
+<h3 id="split-patterns"><em>split-patterns</em></h3>
+<dl>
+<dt>README</dt>
+<dd><a href="http://github.com/semiosis/prompts/">http://github.com/semiosis/prompts/</a></dd>
+</dl>
+<p><code>split-patterns</code> is a field for describing
+patterns to separate multiple prompt results
+from one output if the LM multiplexed the
+results intentionally or unintentionally.</p>
+<h3 id="engine-openai-davinci"><em>engine: OpenAI Davinci</em></h3>
+<dl>
+<dt>README</dt>
+<dd><a href="http://github.com/semiosis/engines">http://github.com/semiosis/engines</a></dd>
+</dl>
+<p>This specifies the engine which specifies both the model and
+the shell command that calls the API.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/OVwCp9NF9YENgOHwuAu55iqxq" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/OVwCp9NF9YENgOHwuAu55iqxq.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/OVwCp9NF9YENgOHwuAu55iqxq.js" id="asciicast-OVwCp9NF9YENgOHwuAu55iqxq" async></script>
+<h2 id="prompt">Prompt</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">Generate perl command</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">prompt</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">  perl
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Sort by line length
+</span><span style="color:#e6db74">  perl -e &#39;print sort { length($b) &lt;=&gt; length($a) } &lt;&gt;&#39;
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Increment all numbers by one
+</span><span style="color:#e6db74">  perl -pe &#39;s/(\d+)/ 1 + $1 /ge&#39;
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Reverses paragraphs
+</span><span style="color:#e6db74">  perl -00 -e &#39;print reverse &lt;&gt;&#39;
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Look for duplicated words in a line
+</span><span style="color:#e6db74">  perl -0777 -ne &#39;print &#34;$.: doubled $_\n&#34; while /\b(\w+)\b\s+\b\1\b/gi&#39;
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  &lt;1&gt;
+</span><span style="color:#e6db74">  &lt;:pp&gt;perl -</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">OpenAI Davinci</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">60</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;###&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">description</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">split-patterns</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#ae81ff">Make all occurrences of Steve lowercase</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="example-outputs">Example outputs</h2>
+<h3 id="these-outputs-appear-to-not-all-be-complete">These outputs appear to not all be complete</h3>
+<p><em>Extract URLs</em>.</p>
+<p>Close, but not perfect.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">perl -0777 -e <span style="color:#e6db74">&#39;print &#34;$.: $_&#34; while /&lt;a href=&#34;\S+&#34;&gt;\S+&lt;\/a&gt;/gi&#39;</span>
+<span style="color:#75715e"># perl -0777 -ne &#39;print &#34;$.: $_&#34; while /\b(http|https|ftp|gopher):\/\/[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/</span>
+<span style="color:#75715e"># perl -0777 -ne &#39;print &#34;$.: $_&#34; while /\b(https?|ftp|file):\/\/[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/%=~</span>
+<span style="color:#75715e"># perl -0777 -ne &#39;print &#34;$.: $_&#34; while /\b(https?|ftp|file)://[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/%=~</span>
+perl -0777 -ne <span style="color:#e6db74">&#39;print &#34;$.: $_&#34; while /&lt;a href=&#34;(.+?)&#34;&gt;/gi&#39;</span>
+perl -0777 -ne <span style="color:#e6db74">&#39;print &#34;$.: $_&#34; while /&lt;a href=&#34;(.*?)&#34;&gt;(.*?)&lt;\/a&gt;/gi&#39;</span>
+<span style="color:#75715e"># perl -0777 -ne &#39;print &#34;$.: $_&#34; while /&lt;a href=&#34;(.*?)&#34;&gt;(.*?)&lt;\/a</span>
+perl -0777 -ne <span style="color:#e6db74">&#39;print &#34;$.: $_&#34; while /\b(http|https|ftp|gopher|file|news|nntp):\b/gi&#39;</span>
+perl -0777 -ne <span style="color:#e6db74">&#39;print &#34;$.: $_\n&#34; while /&lt;a href=&#34;(.*?)&#34;&gt;(.*?)&lt;\/a&gt;/gi&#39;</span>
+<span style="color:#75715e"># perl -0777 -ne &#39;print &#34;$.: $_\n&#34; while /&lt;a href=&#34;(.*?)&#34;&gt;(.*</span>
+perl -0777 -ne <span style="color:#e6db74">&#39;print &#34;$.: $_&#34; while /&lt;a href=&#34;(.*?)&#34;/gi&#39;</span>
+perl -0777 -e <span style="color:#e6db74">&#39;print &#34;$.: $_&#34; while /&lt;a href=&#34;(.*?)&#34;&gt;(.*?)&lt;\/a&gt;/gi&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><em>increment the first number</em></p>
+<p>I will need to also have a validation filter for prompt outputs.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">perl -pe <span style="color:#e6db74">&#39;s/(\d+)/ 1 + $1 /ge&#39;</span>
+perl -0777 -ne <span style="color:#e6db74">&#39;print &#34;$.: doubled $_\n&#34; while /\b(\d+)\b/gi&#39;</span>
+perl -pe <span style="color:#e6db74">&#39;$_ = $. + 1&#39;</span>
+perl -0777 -ne <span style="color:#e6db74">&#39;print &#34;$.: doubled $_\n&#34; while /\b(\d+)\b\s+\b\1\b/gi&#39;</span>
+<span style="color:#75715e"># perl -0777 -ne &#39;print &#34;$.: doubled $_\n&#34; while /\b(\d+)\b</span>
+perl -e <span style="color:#e6db74">&#39;$_=reverse&#39;</span>
+perl -e <span style="color:#e6db74">&#39;$_=reverse; s/\d+/1+$_/ge&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Prompt design with YASnippet</title>

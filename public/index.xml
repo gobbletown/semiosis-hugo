@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generating perl one-liners using GPT-3 and Pen.el</title>
+      <link>http://semiosis.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/</link>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/</guid>
+      <description>Summary I demonstrate generating perl one-liners in emacs using a prompt function and explain parts of the prompt.
+&amp;lt;:pp&amp;gt;perl - This enables you to specify the first part of the output. &amp;lt;:pp&amp;gt; is a placed where you want to include the rest of the prompt in the beginning of the output.
+split-patterns  README http://github.com/semiosis/prompts/  split-patterns is a field for describing patterns to separate multiple prompt results from one output if the LM multiplexed the results intentionally or unintentionally.</description>
+    </item>
+    
     <item>
       <title>Ink.el - Provenance for intelligibility</title>
       <link>http://semiosis.github.io/ink/</link>
