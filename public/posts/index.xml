@@ -6,8 +6,303 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Translating prompts (i.e. NLP tasks) with GPT-3 and Pen.el</title>
+            <link>http://semiosis.github.io/posts/translating-prompts-i-e-nlp-tasks-with-gpt-3-and-pen-el/</link>
+            <pubDate>Thu, 19 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/translating-prompts-i-e-nlp-tasks-with-gpt-3-and-pen-el/</guid>
+            <description>Summary I demonstrate how to encode into your prompts information on how to translate it, so that it then becomes a straight-forward process to translate prompts/NLP tasks designed in different languages and sub-languages (topics) into your own language. This is important for people to be able to collaborate on prompts.
+Translator example The translator takes stdin and templates into the command two arguments, from-language and to-language. The output is the prompt designed for a different language.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I demonstrate how to encode into your prompts
+information on how to translate it, so that it
+then becomes a straight-forward process to
+translate prompts/NLP tasks designed in
+different languages and sub-languages (topics)
+into your own language. This is important for
+people to be able to collaborate on prompts.</p>
+<h2 id="translator-example">Translator example</h2>
+<p>The translator takes stdin and templates into the command two arguments, from-language and to-language.
+The output is the prompt designed for a different language. For example,
+Turn an <em>&ldquo;anything-&gt;English dictionary&rdquo;</em> into an <em>&ldquo;anything-&gt;YourLanguage dictionary&rdquo;</em>.</p>
+<p>4 default parameters: <code>stdin(prompt)</code>, <code>&lt;from-language&gt;</code>, <code>&lt;to-language&gt;</code>, and <code>&lt;topic&gt;</code>.</p>
+<p>If the prompt specifies the <code>language</code> and/or
+<code>topic</code> keys, they will substituted in to
+their respective positions. Otherwise, those
+parameters are detected.</p>
+<p>The following translator specification is a
+template for a shell command. The substituted
+variables are automatically quoted.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">translator</span>: <span style="color:#e6db74">&#34;wrlp pf-translate-from-world-language-x-to-y/3 &lt;from language&gt; &lt;to language&gt;&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Here, <code>wrlp</code> is a script that reads each line
+of the prompt one at a time and pipes that
+line into the prompt function for translating
+one world language into another.</p>
+<p>It may also be specified in emacs lisp.
+The arguments are provided through lexical scope.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">translator</span>: <span style="color:#e6db74">&#34;(wrlp prompt (pf-translate-from-world-language-x-to-y/3 from-language to-language))&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="the-prompt-to-be-translated">The prompt to be translated</h2>
+<p>The prompt definition includes <code>language</code>,
+<code>topic</code> and <code>translator</code> as hints to how it is
+supposed to be translated.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">define word for glossary</span>
+<span style="color:#f92672">aliases</span>:
+- <span style="color:#ae81ff">define word</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">doc</span>: <span style="color:#ae81ff">Get a short definition of a term for the glossary system.</span>
+<span style="color:#f92672">language</span>: <span style="color:#ae81ff">English</span>
+<span style="color:#f92672">topic</span>: <span style="color:#ae81ff">Dictionary</span>
+<span style="color:#f92672">translator</span>: <span style="color:#e6db74">&#34;(wrlp prompt (pf-translate-from-world-language-x-to-y/3 from-language to-language))&#34;</span>
+<span style="color:#f92672">prompt</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">  Glossary of terms.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ossified
+</span><span style="color:#e6db74">  Definition: Turn into bone or bony tissue.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;1&gt;
+</span><span style="color:#e6db74">  Definition:</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">OpenAI Davinci</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.5</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">200</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">word</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#ae81ff">boysenberry</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">sed &#39;s/\s\+/ /g&#39; | pen-s join &#39; &#39; | sed &#39;s/^ *//&#39;</span>
+<span style="color:#f92672">prettifier</span>: <span style="color:#ae81ff">pen-pretty-paragraph</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-thing-at-point-ask \&#34;word\&#34; t)&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="exposition-of-internal-translation">Exposition of internal translation</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&#34;</span>$PROMPTS<span style="color:#e6db74">/define-word-for-glossary.prompt&#34;</span> | yq -r .prompt | wrlp penf pf-translate-from-world-language-x-to-y/3 English French</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Glossaire.
+
+ossifié
+Définition : devenir osseux ou os.
+
+&lt;1&gt;
+Définition:
+
+</code></pre></div><h2 id="emacs-lisp">Emacs lisp</h2>
+<h3 id="default-translators">Default translators</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defvar pen-translators
+  <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;(wrlp prompt (pf-translate-from-world-language-x-to-y/3 from-language to-language))&#34;</span>)
+  <span style="color:#e6db74">&#34;A list of translators that can be used to translate prompts.
+</span><span style="color:#e6db74">These may be string representations of emacs lisp if beginning with &#39;(&#39;.
+</span><span style="color:#e6db74">Otherwise, it will be a shell expression template&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="translating-a-loaded-prompt">Translating a loaded prompt</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-translate-prompt ()
+  <span style="color:#e6db74">&#34;Select a prompt file and translate it.&#34;</span>
+  (interactive)
+  (let* ((fname (fz pen-prompt-functions <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;pen translate prompt: &#34;</span>))
+         (yaml (ht-get pen-prompts fname))
+         (prompt (ht-get yaml <span style="color:#e6db74">&#34;prompt&#34;</span>))
+         (topic (ht-get yaml <span style="color:#e6db74">&#34;topic&#34;</span>))
+         (from-lang (ht-get yaml <span style="color:#e6db74">&#34;language&#34;</span>))
+         (from-lang (or from-lang (read-string-hist <span style="color:#e6db74">&#34;.prompt Origin Language: &#34;</span>)))
+         (to-lang (read-string-hist <span style="color:#e6db74">&#34;.prompt Destination Language: &#34;</span>))
+         (translator (let ((tlr (ht-get yaml <span style="color:#e6db74">&#34;translator&#34;</span>)))
+                       (if (and
+                            (sor tlr)
+                            (not (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;^(&#34;</span> tlr)))
+                           <span style="color:#75715e">;; if it&#39;s a shell script, convert it to elisp</span>
+                           (setq tlr
+                                 (<span style="color:#a6e22e">format</span>
+                                  <span style="color:#e6db74">&#34;(pen-sn %s prompt)&#34;</span>
+                                  (pen-q
+                                   (pen-expand-template-keyvals
+                                    tlr
+                                    <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;from-language&#34;</span> <span style="color:#f92672">.</span> (pen-q from-lang))
+                                      (<span style="color:#e6db74">&#34;from language&#34;</span> <span style="color:#f92672">.</span> (pen-q from-lang))
+                                      (<span style="color:#e6db74">&#34;to-language&#34;</span> <span style="color:#f92672">.</span> (pen-q to-lang))
+                                      (<span style="color:#e6db74">&#34;to language&#34;</span> <span style="color:#f92672">.</span> (pen-q to-lang))
+                                      (<span style="color:#e6db74">&#34;topic&#34;</span> <span style="color:#f92672">.</span> (pen-q topic))
+                                      (<span style="color:#e6db74">&#34;prompt&#34;</span> <span style="color:#f92672">.</span> (pen-q prompt))))))))
+                       tlr))
+         (translator (or translator
+                         (fz pen-translators <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;Select a prompt translator: &#34;</span>)))
+         (translator (pen-eval-string
+                      (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> translator)))
+         (newprompt
+          (if translator
+              (<span style="color:#a6e22e">eval</span>
+               <span style="color:#f92672">`</span>(let ((from-language <span style="color:#f92672">,</span>from-lang)
+                      (to-language <span style="color:#f92672">,</span>to-lang)
+                      (topic <span style="color:#f92672">,</span>topic)
+                      (prompt <span style="color:#f92672">,</span>prompt))
+                  (pen-single-generation <span style="color:#f92672">,</span>translator))))))
+    (etv newprompt)))</code></pre></td></tr></table>
+</div>
+</div>
+<p>Original, in English:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Glossary of terms.
+
+ossified
+Definition: Turn into bone or bony tissue.
+
+&lt;1&gt;
+Definition:</code></pre></td></tr></table>
+</div>
+</div>
+<p>New, in French:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Glossaire.
+
+ossifié
+Définition: se changer en os ou en tissu osseux.
+
+&lt;1&gt;
+Définition:</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV.js" id="asciicast-vzo0q750cUC7KVSGrDSZ7s3dV" async></script>]]></content>
+        </item>
         
         <item>
             <title>Generating perl one-liners using GPT-3 and Pen.el</title>

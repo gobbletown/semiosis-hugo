@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Translating prompts (i.e. NLP tasks) with GPT-3 and Pen.el</title>
+      <link>http://semiosis.github.io/posts/translating-prompts-i-e-nlp-tasks-with-gpt-3-and-pen-el/</link>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/translating-prompts-i-e-nlp-tasks-with-gpt-3-and-pen-el/</guid>
+      <description>Summary I demonstrate how to encode into your prompts information on how to translate it, so that it then becomes a straight-forward process to translate prompts/NLP tasks designed in different languages and sub-languages (topics) into your own language. This is important for people to be able to collaborate on prompts.
+Translator example The translator takes stdin and templates into the command two arguments, from-language and to-language. The output is the prompt designed for a different language.</description>
+    </item>
+    
     <item>
       <title>Generating perl one-liners using GPT-3 and Pen.el</title>
       <link>http://semiosis.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/</link>
