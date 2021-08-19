@@ -20,7 +20,31 @@ Pen.el Prompt
 
 ## Summary {#summary}
 
-I convert the OpenAI quine into some imaginary code (`WIP`).
+I convert the OpenAI biquine into some
+imaginary code (`WIP`).
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+multiquine
+biquine
+    A multiquine consisting of 2 languages (or
+    biquine) would be a program which:
+
+    - When run, is a quine in language X.
+    - When supplied with a user-defined
+      command line argument, would print a
+      second program in language Y.
+    - Given the second program in language Y,
+      when run normally, would also be a quine
+      in language Y.
+    - Given the second program in language Y,
+      and supplied with a user-defined command
+      line argument, would produce the
+      original program in language X.
+    - A biquine could then be seen as a set of
+      two programs, both of which are able to
+      print either of the two, depending on
+      the command line argument supplied.
+{{< /highlight >}}
 
 
 ## The Quine: Initial Python source {#the-quine-initial-python-source}

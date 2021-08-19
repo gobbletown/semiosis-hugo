@@ -58,8 +58,8 @@ Prompt functions may be given various modes. Insertion is used to prefer the ins
       <pubDate>Thu, 12 Aug 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/posts/the-codex-quine/</guid>
-      <description>OpenAI Demo Converting Python to Ruby with OpenAI Codex - YouTube Pen.el Engine http://github.com/semiosis/engines/blob/master/engines/openai-codex.engine Pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/transpile.prompt  Summary I convert the OpenAI quine into some imaginary code (WIP).
-The Quine: Initial Python source 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61  #!</description>
+      <description>OpenAI Demo Converting Python to Ruby with OpenAI Codex - YouTube Pen.el Engine http://github.com/semiosis/engines/blob/master/engines/openai-codex.engine Pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/transpile.prompt  Summary I convert the OpenAI biquine into some imaginary code (WIP).
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  multiquine biquine A multiquine consisting of 2 languages (or biquine) would be a program which: - When run, is a quine in language X.</description>
     </item>
     
     <item>
