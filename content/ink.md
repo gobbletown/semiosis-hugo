@@ -1,5 +1,5 @@
 +++
-title = "Ink.el - Provenance for intelligibility"
+title = "Ink.el (Intermediate knowledge in emacs)"
 author = ["Shane Mulligan"]
 date = 2021-08-16T00:00:00+12:00
 keywords = ["pen", "ink", "openai", "gpt", "emacs"]
@@ -28,7 +28,11 @@ Moire's blog on Quantifying Curation
 
 The purpose of `Ink.el` is to encode within
 its text properties information about its own
-provenance.
+provenance. What was the intended meaning
+behind parts of the text? Annotations made by
+the writer are encoded in Ink. Where did the
+text originate? Data of a LM's influence is
+also included.
 
 It was created for `Pen.el`. It is generated
 when you generate text with `Pen.el` in order
