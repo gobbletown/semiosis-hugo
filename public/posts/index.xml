@@ -1852,7 +1852,7 @@ modifier-cache
             
             <guid>http://semiosis.github.io/posts/gui-spacemacs-support-for-dockerized-pen-el/</guid>
             <description>Summary I add support for Spacemacs in the Pen.el docker image.
-         Pen.el on GitHub https://github.com/semiosis/pen.el/   Prompts on GitHub http://github.com/semiosis/prompts/   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Discord channel invite https://discord.gg/6wP4MwCM    Demo This is me doing some code-generation in Spacemacs.
+         Pen.el on GitHub https://github.com/semiosis/pen.el/   Prompts on GitHub http://github.com/semiosis/prompts/   Tutorial https://semiosis.github.io/posts/pen-tutorial/   Discord channel invite https://discord.gg/JwKGbAdNHR    Demo This is me doing some code-generation in Spacemacs.
   And below is having inserted the code.
   And below, running in Google Chrome.
   </description>
@@ -1880,7 +1880,7 @@ modifier-cache
 </tr>
 <tr>
 <td>Discord channel invite</td>
-<td><a href="https://discord.gg/6wP4MwCM">https://discord.gg/6wP4MwCM</a></td>
+<td><a href="https://discord.gg/JwKGbAdNHR">https://discord.gg/JwKGbAdNHR</a></td>
 </tr>
 </tbody>
 </table>
@@ -6255,7 +6255,7 @@ pen</code></pre></td></tr></table>
 <dt>Project code</dt>
 <dd><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></dd>
 <dt>Join discord</dt>
-<dd><a href="https://discord.gg/6wP4MwCM">https://discord.gg/6wP4MwCM</a></dd>
+<dd><a href="https://discord.gg/JwKGbAdNHR">https://discord.gg/JwKGbAdNHR</a></dd>
 </dl>
 <p>Prompt tutorial <a href="https://mullikine.github.io/posts/prompt-design-with-yasnippet/">https://mullikine.github.io/posts/prompt-design-with-yasnippet/</a></p>
 <h2 id="invoking-pen-dot-el-client-and-server">Invoking <code>Pen.el</code>: Client and server</h2>

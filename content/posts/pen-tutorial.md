@@ -67,7 +67,7 @@ Project code
 
 
 Join discord
-: <https://discord.gg/6wP4MwCM>
+: <https://discord.gg/JwKGbAdNHR>
 
 
 Prompt tutorial <https://mullikine.github.io/posts/prompt-design-with-yasnippet/>

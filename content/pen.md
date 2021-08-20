@@ -29,7 +29,7 @@ It's completely free, libre and open-source.
 | Prompts on GitHub                 | <http://github.com/semiosis/prompts/>                                                                |
 | Tutorial                          | <https://semiosis.github.io/posts/pen-tutorial/>                                                     |
 | Demo video                        | [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw) |
-| Discord channel invite            | <https://discord.gg/6wP4MwCM>                                                                        |
+| Discord channel invite            | <https://discord.gg/JwKGbAdNHR>                                                                      |
 | Thesis                            | <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>                    |
 | Glossary of imaginary programming | <http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>                     |
 
