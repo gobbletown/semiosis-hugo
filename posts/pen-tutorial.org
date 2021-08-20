@@ -61,7 +61,7 @@ instructions.
 
 + Project code :: https://github.com/semiosis/pen.el/
 
-+ Join discord :: https://discord.gg/6wP4MwCM
++ Join discord :: https://discord.gg/JwKGbAdNHR
 
 + Prompt tutorial https://mullikine.github.io/posts/prompt-design-with-yasnippet/
 
