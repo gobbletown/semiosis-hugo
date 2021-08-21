@@ -128,46 +128,94 @@ Otherwise, it will be a shell expression template")
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defun pen-translate-prompt ()
-  "Select a prompt file and translate it."
+  "Select a prompt file and translate it.
+Reconstruct the entire yaml-ht for a different language."
   (interactive)
-  (let* ((fname (fz pen-prompt-functions nil nil "pen translate prompt: "))
-         (yaml (ht-get pen-prompts fname))
-         (prompt (ht-get yaml "prompt"))
-         (topic (ht-get yaml "topic"))
-         (from-lang (ht-get yaml "language"))
-         (from-lang (or from-lang (read-string-hist ".prompt Origin Language: ")))
-         (to-lang (read-string-hist ".prompt Destination Language: "))
-         (translator (let ((tlr (ht-get yaml "translator")))
-                       (if (and
-                            (sor tlr)
-                            (not (string-match "^(" tlr)))
-                           ;; if it's a shell script, convert it to elisp
-                           (setq tlr
-                                 (format
-                                  "(pen-sn %s prompt)"
-                                  (pen-q
-                                   (pen-expand-template-keyvals
-                                    tlr
-                                    '(("from-language" . (pen-q from-lang))
-                                      ("from language" . (pen-q from-lang))
-                                      ("to-language" . (pen-q to-lang))
-                                      ("to language" . (pen-q to-lang))
-                                      ("topic" . (pen-q topic))
-                                      ("prompt" . (pen-q prompt))))))))
-                       tlr))
-         (translator (or translator
-                         (fz pen-translators nil nil "Select a prompt translator: ")))
-         (translator (pen-eval-string
-                      (concat "'" translator)))
-         (newprompt
-          (if translator
-              (eval
-               `(let ((from-language ,from-lang)
-                      (to-language ,to-lang)
-                      (topic ,topic)
-                      (prompt ,prompt))
-                  (pen-single-generation ,translator))))))
-    (etv newprompt)))
+
+  (cl-macrolet ((translate
+                 (input)
+                 `(eval
+                   `(let ((from-language ,from-lang)
+                          (to-language ,to-lang)
+                          (topic ,topic)
+                          (input ,,input))
+                      (if input
+                          (pen-single-generation ,translator))))))
+    (let* ((fname (fz pen-prompt-functions nil nil "pen translate prompt: "))
+           (yaml-ht (ht-get pen-prompts fname))
+           (prompt (ht-get yaml-ht "prompt"))
+           (title (ht-get yaml-ht "title"))
+           (task (ht-get yaml-ht "task"))
+           (doc (ht-get yaml-ht "doc"))
+           (topic (ht-get yaml-ht "topic"))
+           (vars (vector2list (ht-get yaml-ht "vars")))
+           (var-slugs (mapcar 'slugify vars))
+           (examples-list (vector2list (ht-get yaml-ht "examples")))
+           (from-lang (ht-get yaml-ht "language"))
+           (from-lang (or from-lang (read-string-hist ".prompt Origin Language: ")))
+           (to-lang (read-string-hist ".prompt Destination Language: "))
+           (translator (let ((tlr (ht-get yaml-ht "translator")))
+                         (if (and
+                              (sor tlr)
+                              (not (string-match "^(" tlr)))
+                             ;; if it's a shell script, convert it to elisp
+                             (setq tlr
+                                   (format
+                                    "(pen-sn %s prompt)"
+                                    (pen-q
+                                     (pen-expand-template-keyvals
+                                      tlr
+                                      '(("from-language" . (pen-q from-lang))
+                                        ("from language" . (pen-q from-lang))
+                                        ("to-language" . (pen-q to-lang))
+                                        ("to language" . (pen-q to-lang))
+                                        ("topic" . (pen-q topic))
+                                        ;; It's called 'input' and not 'prompt' because
+                                        ;; we could translate other fields, such as variable names
+                                        ("input" . (pen-q prompt))))))))
+                         tlr))
+           (translator (or translator
+                           (fz pen-translators nil nil "Select a prompt translator: ")))
+           (translator (pen-eval-string
+                        (concat "'" translator))))
+
+      (if translator
+          (let* ((new-prompt (translate prompt))
+                 (new-title (translate title))
+                 (new-task (translate task))
+                 (new-topic (translate topic))
+                 (new-doc (translate doc))
+                 ;; is there a mapcar for macros?
+                 (new-vars (loop for v in vars collect
+                                 (translate v)))
+                 ;; (new-var-slugs (mapcar 'slugify new-vars))
+                 (new-examples
+                  (if (vectorp (car examples-list))
+                      (mapcar
+                       (lambda (v)
+                         (loop for e in (vector2list v) collect
+                               (translate e)))
+                       examples-list)
+                    (loop for e in examples-list collect
+                          (translate e))))
+                 (new-prompt
+                  (pen-expand-template-keyvals
+                   new-prompt
+                   (-zip vars (mapcar (lambda (s) (format "<%s>" s)) new-vars))))
+                 (newht (let ((h (make-hash-table :test 'equal)))
+                          (ht-set h "prompt" new-prompt)
+                          (ht-set h "title" new-title)
+                          (ht-set h "task" new-task)
+                          (ht-set h "doc" new-doc)
+                          (ht-set h "examples" new-examples)
+                          (ht-set h "topic" new-topic)
+                          (ht-set h "vars" new-vars)
+                          (ht-merge yaml-ht h)))
+                 (newyaml (plist2yaml (ht->plist newht))))
+            (pen-etv newyaml)))
+      ;; (ht-get pen-prompts "pf-define-word/1")
+      ;; (ht-get pen-prompts 'pf-define-word-for-glossary/1)
+      )))
 {{< /highlight >}}
 
 Original, in English:
@@ -197,7 +245,12 @@ Définition:
 
 ## Demo {#demo}
 
+In this demo, an entire prompt description
+including documentation, variable names and
+examples is translated from one language into
+another.
+
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/IKOJHd2Y7NxJJ47massvb7VM3" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/IKOJHd2Y7NxJJ47massvb7VM3.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV.js" id="asciicast-vzo0q750cUC7KVSGrDSZ7s3dV" async></script>
+<script src="https://asciinema.org/a/IKOJHd2Y7NxJJ47massvb7VM3.js" id="asciicast-IKOJHd2Y7NxJJ47massvb7VM3" async></script>

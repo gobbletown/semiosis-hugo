@@ -210,49 +210,145 @@ Définition:
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-translate-prompt ()
-  <span style="color:#e6db74">&#34;Select a prompt file and translate it.&#34;</span>
+  <span style="color:#e6db74">&#34;Select a prompt file and translate it.
+</span><span style="color:#e6db74">Reconstruct the entire yaml-ht for a different language.&#34;</span>
   (interactive)
-  (let* ((fname (fz pen-prompt-functions <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;pen translate prompt: &#34;</span>))
-         (yaml (ht-get pen-prompts fname))
-         (prompt (ht-get yaml <span style="color:#e6db74">&#34;prompt&#34;</span>))
-         (topic (ht-get yaml <span style="color:#e6db74">&#34;topic&#34;</span>))
-         (from-lang (ht-get yaml <span style="color:#e6db74">&#34;language&#34;</span>))
-         (from-lang (or from-lang (read-string-hist <span style="color:#e6db74">&#34;.prompt Origin Language: &#34;</span>)))
-         (to-lang (read-string-hist <span style="color:#e6db74">&#34;.prompt Destination Language: &#34;</span>))
-         (translator (let ((tlr (ht-get yaml <span style="color:#e6db74">&#34;translator&#34;</span>)))
-                       (if (and
-                            (sor tlr)
-                            (not (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;^(&#34;</span> tlr)))
-                           <span style="color:#75715e">;; if it&#39;s a shell script, convert it to elisp</span>
-                           (setq tlr
-                                 (<span style="color:#a6e22e">format</span>
-                                  <span style="color:#e6db74">&#34;(pen-sn %s prompt)&#34;</span>
-                                  (pen-q
-                                   (pen-expand-template-keyvals
-                                    tlr
-                                    <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;from-language&#34;</span> <span style="color:#f92672">.</span> (pen-q from-lang))
-                                      (<span style="color:#e6db74">&#34;from language&#34;</span> <span style="color:#f92672">.</span> (pen-q from-lang))
-                                      (<span style="color:#e6db74">&#34;to-language&#34;</span> <span style="color:#f92672">.</span> (pen-q to-lang))
-                                      (<span style="color:#e6db74">&#34;to language&#34;</span> <span style="color:#f92672">.</span> (pen-q to-lang))
-                                      (<span style="color:#e6db74">&#34;topic&#34;</span> <span style="color:#f92672">.</span> (pen-q topic))
-                                      (<span style="color:#e6db74">&#34;prompt&#34;</span> <span style="color:#f92672">.</span> (pen-q prompt))))))))
-                       tlr))
-         (translator (or translator
-                         (fz pen-translators <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;Select a prompt translator: &#34;</span>)))
-         (translator (pen-eval-string
-                      (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> translator)))
-         (newprompt
-          (if translator
-              (<span style="color:#a6e22e">eval</span>
-               <span style="color:#f92672">`</span>(let ((from-language <span style="color:#f92672">,</span>from-lang)
-                      (to-language <span style="color:#f92672">,</span>to-lang)
-                      (topic <span style="color:#f92672">,</span>topic)
-                      (prompt <span style="color:#f92672">,</span>prompt))
-                  (pen-single-generation <span style="color:#f92672">,</span>translator))))))
-    (etv newprompt)))</code></pre></td></tr></table>
+
+  (cl-macrolet ((translate
+                 (input)
+                 <span style="color:#f92672">`</span>(<span style="color:#a6e22e">eval</span>
+                   <span style="color:#f92672">`</span>(let ((from-language <span style="color:#f92672">,</span>from-lang)
+                          (to-language <span style="color:#f92672">,</span>to-lang)
+                          (topic <span style="color:#f92672">,</span>topic)
+                          (input <span style="color:#f92672">,,</span>input))
+                      (if input
+                          (pen-single-generation <span style="color:#f92672">,</span>translator))))))
+    (let* ((fname (fz pen-prompt-functions <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;pen translate prompt: &#34;</span>))
+           (yaml-ht (ht-get pen-prompts fname))
+           (prompt (ht-get yaml-ht <span style="color:#e6db74">&#34;prompt&#34;</span>))
+           (title (ht-get yaml-ht <span style="color:#e6db74">&#34;title&#34;</span>))
+           (task (ht-get yaml-ht <span style="color:#e6db74">&#34;task&#34;</span>))
+           (doc (ht-get yaml-ht <span style="color:#e6db74">&#34;doc&#34;</span>))
+           (topic (ht-get yaml-ht <span style="color:#e6db74">&#34;topic&#34;</span>))
+           (vars (vector2list (ht-get yaml-ht <span style="color:#e6db74">&#34;vars&#34;</span>)))
+           (var-slugs (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;slugify</span> vars))
+           (examples-list (vector2list (ht-get yaml-ht <span style="color:#e6db74">&#34;examples&#34;</span>)))
+           (from-lang (ht-get yaml-ht <span style="color:#e6db74">&#34;language&#34;</span>))
+           (from-lang (or from-lang (read-string-hist <span style="color:#e6db74">&#34;.prompt Origin Language: &#34;</span>)))
+           (to-lang (read-string-hist <span style="color:#e6db74">&#34;.prompt Destination Language: &#34;</span>))
+           (translator (let ((tlr (ht-get yaml-ht <span style="color:#e6db74">&#34;translator&#34;</span>)))
+                         (if (and
+                              (sor tlr)
+                              (not (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;^(&#34;</span> tlr)))
+                             <span style="color:#75715e">;; if it&#39;s a shell script, convert it to elisp</span>
+                             (setq tlr
+                                   (<span style="color:#a6e22e">format</span>
+                                    <span style="color:#e6db74">&#34;(pen-sn %s prompt)&#34;</span>
+                                    (pen-q
+                                     (pen-expand-template-keyvals
+                                      tlr
+                                      <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;from-language&#34;</span> <span style="color:#f92672">.</span> (pen-q from-lang))
+                                        (<span style="color:#e6db74">&#34;from language&#34;</span> <span style="color:#f92672">.</span> (pen-q from-lang))
+                                        (<span style="color:#e6db74">&#34;to-language&#34;</span> <span style="color:#f92672">.</span> (pen-q to-lang))
+                                        (<span style="color:#e6db74">&#34;to language&#34;</span> <span style="color:#f92672">.</span> (pen-q to-lang))
+                                        (<span style="color:#e6db74">&#34;topic&#34;</span> <span style="color:#f92672">.</span> (pen-q topic))
+                                        <span style="color:#75715e">;; It&#39;s called &#39;input&#39; and not &#39;prompt&#39; because</span>
+                                        <span style="color:#75715e">;; we could translate other fields, such as variable names</span>
+                                        (<span style="color:#e6db74">&#34;input&#34;</span> <span style="color:#f92672">.</span> (pen-q prompt))))))))
+                         tlr))
+           (translator (or translator
+                           (fz pen-translators <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;Select a prompt translator: &#34;</span>)))
+           (translator (pen-eval-string
+                        (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> translator))))
+
+      (if translator
+          (let* ((new-prompt (translate prompt))
+                 (new-title (translate title))
+                 (new-task (translate task))
+                 (new-topic (translate topic))
+                 (new-doc (translate doc))
+                 <span style="color:#75715e">;; is there a mapcar for macros?</span>
+                 (new-vars (loop for v in vars collect
+                                 (translate v)))
+                 <span style="color:#75715e">;; (new-var-slugs (mapcar &#39;slugify new-vars))</span>
+                 (new-examples
+                  (if (<span style="color:#a6e22e">vectorp</span> (<span style="color:#a6e22e">car</span> examples-list))
+                      (<span style="color:#a6e22e">mapcar</span>
+                       (lambda (v)
+                         (loop for e in (vector2list v) collect
+                               (translate e)))
+                       examples-list)
+                    (loop for e in examples-list collect
+                          (translate e))))
+                 (new-prompt
+                  (pen-expand-template-keyvals
+                   new-prompt
+                   (-zip vars (<span style="color:#a6e22e">mapcar</span> (lambda (s) (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;&lt;%s&gt;&#34;</span> s)) new-vars))))
+                 (newht (let ((h (<span style="color:#a6e22e">make-hash-table</span> :test <span style="color:#e6db74">&#39;equal</span>)))
+                          (ht-set h <span style="color:#e6db74">&#34;prompt&#34;</span> new-prompt)
+                          (ht-set h <span style="color:#e6db74">&#34;title&#34;</span> new-title)
+                          (ht-set h <span style="color:#e6db74">&#34;task&#34;</span> new-task)
+                          (ht-set h <span style="color:#e6db74">&#34;doc&#34;</span> new-doc)
+                          (ht-set h <span style="color:#e6db74">&#34;examples&#34;</span> new-examples)
+                          (ht-set h <span style="color:#e6db74">&#34;topic&#34;</span> new-topic)
+                          (ht-set h <span style="color:#e6db74">&#34;vars&#34;</span> new-vars)
+                          (ht-merge yaml-ht h)))
+                 (newyaml (plist2yaml (ht-&gt;plist newht))))
+            (pen-etv newyaml)))
+      <span style="color:#75715e">;; (ht-get pen-prompts &#34;pf-define-word/1&#34;)</span>
+      <span style="color:#75715e">;; (ht-get pen-prompts &#39;pf-define-word-for-glossary/1)</span>
+      )))</code></pre></td></tr></table>
 </div>
 </div>
 <p>Original, in English:</p>
@@ -298,10 +394,14 @@ Définition:</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="demo">Demo</h2>
+<p>In this demo, an entire prompt description
+including documentation, variable names and
+examples is translated from one language into
+another.</p>
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/IKOJHd2Y7NxJJ47massvb7VM3" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/IKOJHd2Y7NxJJ47massvb7VM3.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/vzo0q750cUC7KVSGrDSZ7s3dV.js" id="asciicast-vzo0q750cUC7KVSGrDSZ7s3dV" async></script>]]></content>
+<script src="https://asciinema.org/a/IKOJHd2Y7NxJJ47massvb7VM3.js" id="asciicast-IKOJHd2Y7NxJJ47massvb7VM3" async></script>]]></content>
         </item>
         
         <item>
