@@ -1,5 +1,5 @@
 +++
-title = "An exposition of Pen.el's imaginary interpreter"
+title = "ii (Imaginary Interpreter)"
 author = ["Shane Mulligan"]
 date = 2021-08-22T00:00:00+12:00
 keywords = ["gpt", "pen", "openai"]
@@ -8,8 +8,8 @@ draft = false
 
 ## Summary {#summary}
 
-I describe parts of the design of the
-imaginary interpreter.
+This is an introduction to the imaginary
+interpreter built into `Pen.el`.
 
 The reason I am building REPLs and emacs modes
 based around imaginary interpreters (which are

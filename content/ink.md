@@ -1,5 +1,5 @@
 +++
-title = "Ink.el (Intermediate knowledge in emacs)"
+title = "Ink.el (Intermediate Knowledge in emacs)"
 author = ["Shane Mulligan"]
 date = 2021-08-16T00:00:00+12:00
 keywords = ["pen", "ink", "openai", "gpt", "emacs"]

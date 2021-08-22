@@ -7,14 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>An exposition of Pen.el&#39;s imaginary interpreter</title>
-      <link>http://semiosis.github.io/posts/an-exposition-of-pen-el-s-imaginary-interpreter/</link>
+      <title>ii (Imaginary Interpreter)</title>
+      <link>http://semiosis.github.io/an-exposition-of-pen-el-s-imaginary-interpreter/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +1200</pubDate>
       
-      <guid>http://semiosis.github.io/posts/an-exposition-of-pen-el-s-imaginary-interpreter/</guid>
-      <description>Summary I describe parts of the design of the imaginary interpreter.
+      <guid>http://semiosis.github.io/an-exposition-of-pen-el-s-imaginary-interpreter/</guid>
+      <description>Summary This is an introduction to the imaginary interpreter built into Pen.el.
+The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
+It&amp;rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.
+Solving the problems of utilising current LMs will make it easier down the line to utilise more advanced ones.</description>
+    </item>
+    
+    <item>
+      <title>ii (Imaginary Interpreter)</title>
+      <link>http://semiosis.github.io/ii/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/ii/</guid>
+      <description>Summary This is an introduction to the imaginary interpreter built into Pen.el.
 The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
 It&amp;rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.
 Solving the problems of utilising current LMs will make it easier down the line to utilise more advanced ones.</description>
@@ -42,7 +54,7 @@ split-patterns  README http://github.com/semiosis/prompts/  split-patterns is a 
     </item>
     
     <item>
-      <title>Ink.el (Intermediate knowledge in emacs)</title>
+      <title>Ink.el (Intermediate Knowledge in emacs)</title>
       <link>http://semiosis.github.io/ink/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +1200</pubDate>
       
