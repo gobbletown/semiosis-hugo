@@ -189,6 +189,8 @@ Out[3]: 10
 
 ### Demo {#demo}
 
+On the right, an imaginary interpreter.
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/PNjJsIwB5NVEE1LLqn2YWrein" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/PNjJsIwB5NVEE1LLqn2YWrein.svg" /></a> -->
 <!-- Play on the blog -->
