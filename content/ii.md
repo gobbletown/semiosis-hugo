@@ -276,7 +276,47 @@ to know what the prompt for Ruby looks like.
 prompt
 : <http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-ruby-interpreter-2.prompt>
 
-This prompt requires additional features. `WIP`.
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/7iKlwaDoT7PDy2r4MO1J3G4wA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/7iKlwaDoT7PDy2r4MO1J3G4wA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/7iKlwaDoT7PDy2r4MO1J3G4wA.js" id="asciicast-7iKlwaDoT7PDy2r4MO1J3G4wA" async></script>
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+include: Generic Interpreter/3
+task: Imagine a <language> interpreter
+language: ruby
+subprompts:
+- kickstarter: |+
+    $ ruby -v
+    ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
+    $ irb
+    2.7.0 :001 > RUBY_VERSION
+    => "2.7.0"
+    2.7.0 :002 >
+# Because the prompt generates from at the end of the user expression
+# The generation will contain a starting newline.
+# Want to trim that with =ii=, but not in the prompt function because a better harness could be made.
+prompt: |+
+    <history><expression>
+user-prompt: "^2.7.0 :[0-9]* > "
+# Unfortunately, we can't generate the next In
+# prompt because we need to match on it with stop-sequences.
+# So the user prompt must be reconstructed manually.
+stop-sequences:
+# This isn't ideal but ruby-gen-next-user-prompt needs to see a full prompt
+# So it can generate the next user prompt.
+- " > "
+postpostprocessor: pen-str ruby-gen-next-user-prompt
+vars:
+- history
+- expression
+var-defaults:
+- kickstarter
+n-completions: 10
+examples:
+- "2.7.0 :002 > "
+- "puts \"Hi\""
+{{< /highlight >}}
 
 
 ## Support scripts {#support-scripts}

@@ -41,7 +41,7 @@ The reason I am building REPLs and emacs modes based around imaginary interprete
 It&rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.
 Solving the problems of utilising current LMs will make it easier down the line to utilise more advanced ones."><meta itemprop="datePublished" content="2021-08-22T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-08-22T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1078"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1265"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -502,7 +502,84 @@ to know what the prompt for Ruby looks like.</p>
 <dt>prompt</dt>
 <dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-ruby-interpreter-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-ruby-interpreter-2.prompt</a></dd>
 </dl>
-<p>This prompt requires additional features. <code>WIP</code>.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/7iKlwaDoT7PDy2r4MO1J3G4wA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/7iKlwaDoT7PDy2r4MO1J3G4wA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/7iKlwaDoT7PDy2r4MO1J3G4wA.js" id="asciicast-7iKlwaDoT7PDy2r4MO1J3G4wA" async></script>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">include</span>: <span style="color:#ae81ff">Generic Interpreter/3</span>
+<span style="color:#f92672">task</span>: <span style="color:#ae81ff">Imagine a &lt;language&gt; interpreter</span>
+<span style="color:#f92672">language</span>: <span style="color:#ae81ff">ruby</span>
+<span style="color:#f92672">subprompts</span>:
+- <span style="color:#f92672">kickstarter</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    $ ruby -v
+</span><span style="color:#e6db74">    ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
+</span><span style="color:#e6db74">    $ irb
+</span><span style="color:#e6db74">    2.7.0 :001 &gt; RUBY_VERSION
+</span><span style="color:#e6db74">    =&gt; &#34;2.7.0&#34;
+</span><span style="color:#e6db74">    2.7.0 :002 &gt;</span>    
+<span style="color:#75715e"># Because the prompt generates from at the end of the user expression</span>
+<span style="color:#75715e"># The generation will contain a starting newline.</span>
+<span style="color:#75715e"># Want to trim that with =ii=, but not in the prompt function because a better harness could be made.</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    </span>    <span style="color:#ae81ff">&lt;history&gt;&lt;expression&gt;</span>
+<span style="color:#f92672">user-prompt</span>: <span style="color:#e6db74">&#34;^2.7.0 :[0-9]* &gt; &#34;</span>
+<span style="color:#75715e"># Unfortunately, we can&#39;t generate the next In</span>
+<span style="color:#75715e"># prompt because we need to match on it with stop-sequences.</span>
+<span style="color:#75715e"># So the user prompt must be reconstructed manually.</span>
+<span style="color:#f92672">stop-sequences</span>:
+<span style="color:#75715e"># This isn&#39;t ideal but ruby-gen-next-user-prompt needs to see a full prompt</span>
+<span style="color:#75715e"># So it can generate the next user prompt.</span>
+- <span style="color:#e6db74">&#34; &gt; &#34;</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">pen-str ruby-gen-next-user-prompt</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">history</span>
+- <span style="color:#ae81ff">expression</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#ae81ff">kickstarter</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;2.7.0 :002 &gt; &#34;</span>
+- <span style="color:#e6db74">&#34;puts \&#34;Hi\&#34;&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="support-scripts">Support scripts</h2>
 <p>These are used as post-processors in the prompt and in <code>ii</code>.</p>
 <h3 id="string-utilities--pen-s">String utilities (<code>pen-s</code>)</h3>
