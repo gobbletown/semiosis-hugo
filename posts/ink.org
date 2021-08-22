@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: Ink.el (Intermediate knowledge in emacs)
+#+TITLE: Ink.el (Intermediate Knowledge in emacs)
 #+DATE: <2021-08-16>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: pen ink openai gpt emacs

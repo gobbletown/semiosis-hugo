@@ -10,8 +10,8 @@
 #+KEYWORDS: gpt pen openai
 
 ** Summary
-I describe parts of the design of the
-imaginary interpreter.
+This is an introduction to the imaginary
+interpreter built into =Pen.el=.
 
 The reason I am building REPLs and emacs modes
 based around imaginary interpreters (which are
