@@ -79,7 +79,7 @@ unsafe= true
 
   [[menu.main]]
     identifier = "ii"
-    name       = "imaginary interpreter"
+    name       = "Imaginary Interpreter"
     url        = "/ii/"
 
   [[menu.main]]
