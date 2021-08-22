@@ -79,7 +79,7 @@ unsafe= true
 
   [[menu.main]]
     identifier = "ii"
-    name       = "ii"
+    name       = "[ i i ]"
     url        = "/ii/"
 
   [[menu.main]]
