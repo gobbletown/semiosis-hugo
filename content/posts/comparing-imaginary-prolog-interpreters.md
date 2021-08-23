@@ -11,7 +11,7 @@ draft = false
 I compare 3 different imaginary interpreters
 for Prolog with the GPT-3 language model.
 
-The winnder definitely goes to gprolog as the
+The winner definitely goes to gprolog as the
 most reliable of the prolog imaginary
 interpreters.
 

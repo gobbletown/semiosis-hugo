@@ -218,13 +218,13 @@ One day, the baby giraffe was sleeping on the ground. But <span style="color:#66
             
             <guid>http://semiosis.github.io/posts/comparing-imaginary-prolog-interpreters/</guid>
             <description>Summary I compare 3 different imaginary interpreters for Prolog with the GPT-3 language model.
-The winnder definitely goes to gprolog as the most reliable of the prolog imaginary interpreters.
+The winner definitely goes to gprolog as the most reliable of the prolog imaginary interpreters.
 Imaginary gprolog in GPT-3  Prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-prolog-db-interpreter-2.prompt  --  The imagined gprolog interpreter, in this instance, performed quite well. It was fairly accurate in querying this make-believe database.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34  include: Generic Interpreter/3 task: Imagine a &amp;lt;language&amp;gt; interpreter language: prolog subprompts: - kickstarter: |+Welcome to SWI-Prolog (threaded, 64 bits, version 8.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I compare 3 different imaginary interpreters
 for Prolog with the GPT-3 language model.</p>
-<p>The winnder definitely goes to gprolog as the
+<p>The winner definitely goes to gprolog as the
 most reliable of the prolog imaginary
 interpreters.</p>
 <h2 id="imaginary-gprolog-in-gpt-3">Imaginary gprolog in GPT-3</h2>
