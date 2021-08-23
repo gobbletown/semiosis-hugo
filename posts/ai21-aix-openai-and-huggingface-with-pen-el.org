@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./
+#+HUGO_SECTION: ./posts
 
 #+TITLE: AI21, AIx, OpenAI and HuggingFace with Pen.el
 #+DATE: <2021-08-23>
