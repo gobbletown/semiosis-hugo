@@ -212,6 +212,310 @@ One day, the baby giraffe was sleeping on the ground. But <span style="color:#66
         </item>
         
         <item>
+            <title>Comparing imaginary Prolog interpreters</title>
+            <link>http://semiosis.github.io/posts/comparing-imaginary-prolog-interpreters/</link>
+            <pubDate>Mon, 23 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/comparing-imaginary-prolog-interpreters/</guid>
+            <description>Summary I compare 3 different imaginary interpreters for Prolog with the GPT-3 language model.
+The winnder definitely goes to gprolog as the most reliable of the prolog imaginary interpreters.
+Imaginary gprolog in GPT-3  Prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-prolog-db-interpreter-2.prompt  --  The imagined gprolog interpreter, in this instance, performed quite well. It was fairly accurate in querying this make-believe database.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34  include: Generic Interpreter/3 task: Imagine a &amp;lt;language&amp;gt; interpreter language: prolog subprompts: - kickstarter: |+Welcome to SWI-Prolog (threaded, 64 bits, version 8.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I compare 3 different imaginary interpreters
+for Prolog with the GPT-3 language model.</p>
+<p>The winnder definitely goes to gprolog as the
+most reliable of the prolog imaginary
+interpreters.</p>
+<h2 id="imaginary-gprolog-in-gpt-3">Imaginary gprolog in GPT-3</h2>
+<dl>
+<dt>Prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-prolog-db-interpreter-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-prolog-db-interpreter-2.prompt</a></dd>
+</dl>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/baxTgPI3Jjh6Y0e0eVBLbNdwS" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/baxTgPI3Jjh6Y0e0eVBLbNdwS.svg" /></a>-->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/baxTgPI3Jjh6Y0e0eVBLbNdwS.js" id="asciicast-baxTgPI3Jjh6Y0e0eVBLbNdwS" async></script>
+<p>The imagined gprolog interpreter, in this
+instance, performed quite well. It was fairly
+accurate in querying this make-believe
+database.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">include</span>: <span style="color:#ae81ff">Generic Interpreter/3</span>
+<span style="color:#f92672">task</span>: <span style="color:#ae81ff">Imagine a &lt;language&gt; interpreter</span>
+<span style="color:#f92672">language</span>: <span style="color:#ae81ff">prolog</span>
+<span style="color:#f92672">subprompts</span>:
+- <span style="color:#f92672">kickstarter</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    Welcome to SWI-Prolog (threaded, 64 bits, version 8.2.4)
+</span><span style="color:#e6db74">    SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+</span><span style="color:#e6db74">    Please run ?- license. for legal details.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    For online help and background, visit https://www.swi-prolog.org
+</span><span style="color:#e6db74">    For built-in help, use ?- help(Topic). or ?- apropos(Word).
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    ?-</span>    
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    </span>    <span style="color:#ae81ff">&lt;history&gt;&lt;expression&gt;</span>
+<span style="color:#75715e"># Double newline is a better default stop sequence</span>
+<span style="color:#75715e"># Because 200 tokens will take a long time to generate.</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+- <span style="color:#e6db74">&#34;?- &#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">history</span>
+- <span style="color:#ae81ff">expression</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#ae81ff">kickstarter</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">200</span>
+<span style="color:#75715e"># sed wont even run if its input is empty so</span>
+<span style="color:#75715e"># the postpostprocessor: cant ensure a prompt.</span>
+<span style="color:#75715e"># But we cant force it.</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">pen-str newline-if-empty | sed -z &#39;s/\(?-\)\?$/\n?- /&#39;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;?- &#34;</span>
+- <span style="color:#e6db74">&#34;write(&#39;Hello World&#39;).&#34;</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="imaginary-swipl-in-gpt-3">Imaginary swipl in GPT-3</h2>
+<dl>
+<dt>Prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-prolog-db-swipl-interpreter-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-prolog-db-swipl-interpreter-2.prompt</a></dd>
+</dl>
+<!-- Play on asciinema.com -->
+<!--<a title="asciinema recording" href="https://asciinema.org/a/1fBGRViY1KaBLsneJ2sbGyMr8" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/1fBGRViY1KaBLsneJ2sbGyMr8.svg" /></a>-->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/1fBGRViY1KaBLsneJ2sbGyMr8.js" id="asciicast-1fBGRViY1KaBLsneJ2sbGyMr8" async></script>
+<p>On the several times in which I started the
+imaginary swipl interpreter, I have found it
+less reliable than the gprolog one.</p>
+<p>I have had a thought and that I would like to
+be able to pick from many different
+generations in the imaginary interpreter.</p>
+<p>That will come when I add <code>comint</code> support.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">include</span>: <span style="color:#ae81ff">Generic Interpreter/3</span>
+<span style="color:#f92672">task</span>: <span style="color:#ae81ff">Imagine a &lt;language&gt;-db-swipl interpreter</span>
+<span style="color:#f92672">language</span>: <span style="color:#ae81ff">prolog</span>
+<span style="color:#f92672">subprompts</span>:
+- <span style="color:#f92672">kickstarter</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    $ cat &gt; db.pl &lt;&lt;HEREDOC
+</span><span style="color:#e6db74">    food(burger).
+</span><span style="color:#e6db74">    food(sandwich).
+</span><span style="color:#e6db74">    food(pizza).
+</span><span style="color:#e6db74">    lunch(sandwich).
+</span><span style="color:#e6db74">    dinner(pizza).
+</span><span style="color:#e6db74">    meal(X) :- food(X).
+</span><span style="color:#e6db74">    HEREDOC
+</span><span style="color:#e6db74">    $ swipl
+</span><span style="color:#e6db74">    Welcome to SWI-Prolog (threaded, 64 bits, version 8.2.4)
+</span><span style="color:#e6db74">    SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+</span><span style="color:#e6db74">    Please run ?- license. for legal details.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    For online help and background, visit https://www.swi-prolog.org
+</span><span style="color:#e6db74">    For built-in help, use ?- help(Topic). or ?- apropos(Word).
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    ?- consult(db).
+</span><span style="color:#e6db74">    true.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    ?-</span>    
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    </span>    <span style="color:#ae81ff">&lt;history&gt;&lt;expression&gt;</span>
+<span style="color:#75715e"># Double newline is a better default stop sequence</span>
+<span style="color:#75715e"># Because 200 tokens will take a long time to generate.</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+- <span style="color:#e6db74">&#34;?- &#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">history</span>
+- <span style="color:#ae81ff">expression</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#ae81ff">kickstarter</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">200</span>
+<span style="color:#75715e"># sed wont even run if its input is empty so</span>
+<span style="color:#75715e"># the postpostprocessor: cant ensure a prompt.</span>
+<span style="color:#75715e"># But we cant force it.</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">pen-str newline-if-empty | sed -z &#39;s/\(?-\)\?$/\n?- /&#39;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;?- &#34;</span>
+- <span style="color:#e6db74">&#34;write(&#39;Hello World&#39;).&#34;</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="imaginary-prolog-pseudocode-repl-in-gpt-3">Imaginary prolog pseudocode REPL in GPT-3</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/7ta7D1FAmI3S6mlrWay9fHpWj" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/7ta7D1FAmI3S6mlrWay9fHpWj.svg" /></a>-->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/7ta7D1FAmI3S6mlrWay9fHpWj.js" id="asciicast-7ta7D1FAmI3S6mlrWay9fHpWj" async></script>
+<p>The imaginary pseudocode REPL performed terribly.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">include</span>: <span style="color:#ae81ff">Generic Interpreter/3</span>
+<span style="color:#f92672">task</span>: <span style="color:#ae81ff">Imagine a &lt;language&gt;-pseudocode interpreter</span>
+<span style="color:#f92672">language</span>: <span style="color:#ae81ff">prolog</span>
+<span style="color:#f92672">subprompts</span>:
+- <span style="color:#f92672">kickstarter</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    % prolog
+</span><span style="color:#e6db74">    food(burger).
+</span><span style="color:#e6db74">    food(sandwich).
+</span><span style="color:#e6db74">    food(pizza).
+</span><span style="color:#e6db74">    lunch(sandwich).
+</span><span style="color:#e6db74">    dinner(pizza).
+</span><span style="color:#e6db74">    meal(X) :- food(X).
+</span><span style="color:#e6db74">    ?- consult(db).
+</span><span style="color:#e6db74">    true.
+</span><span style="color:#e6db74">    ?-</span>    
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    </span>    <span style="color:#ae81ff">&lt;history&gt;&lt;expression&gt;</span>
+<span style="color:#75715e"># Double newline is a better default stop sequence</span>
+<span style="color:#75715e"># Because 200 tokens will take a long time to generate.</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+- <span style="color:#e6db74">&#34;?- &#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">history</span>
+- <span style="color:#ae81ff">expression</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#ae81ff">kickstarter</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">200</span>
+<span style="color:#75715e"># sed wont even run if its input is empty so</span>
+<span style="color:#75715e"># the postpostprocessor: cant ensure a prompt.</span>
+<span style="color:#75715e"># But we cant force it.</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">pen-str newline-if-empty | sed -z &#39;s/\(?-\)\?$/\n?- /&#39;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;?- &#34;</span>
+- <span style="color:#e6db74">&#34;write(&#39;Hello World&#39;).&#34;</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Translating prompts (i.e. NLP tasks) with GPT-3 and Pen.el</title>
             <link>http://semiosis.github.io/posts/translating-prompts-i-e-nlp-tasks-with-gpt-3-and-pen-el/</link>
             <pubDate>Thu, 19 Aug 2021 00:00:00 +1200</pubDate>

@@ -35,6 +35,18 @@ AI21 1 2 3 4 5  title: j1-jumbo include: Generic completion 50 tokens/1 prompt-v
     </item>
     
     <item>
+      <title>Comparing imaginary Prolog interpreters</title>
+      <link>http://semiosis.github.io/posts/comparing-imaginary-prolog-interpreters/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/comparing-imaginary-prolog-interpreters/</guid>
+      <description>Summary I compare 3 different imaginary interpreters for Prolog with the GPT-3 language model.
+The winnder definitely goes to gprolog as the most reliable of the prolog imaginary interpreters.
+Imaginary gprolog in GPT-3  Prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-prolog-db-interpreter-2.prompt  --  The imagined gprolog interpreter, in this instance, performed quite well. It was fairly accurate in querying this make-believe database.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34  include: Generic Interpreter/3 task: Imagine a &amp;lt;language&amp;gt; interpreter language: prolog subprompts: - kickstarter: |+Welcome to SWI-Prolog (threaded, 64 bits, version 8.</description>
+    </item>
+    
+    <item>
       <title>ii (Imaginary Interpreter)</title>
       <link>http://semiosis.github.io/an-exposition-of-pen-el-s-imaginary-interpreter/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +1200</pubDate>
