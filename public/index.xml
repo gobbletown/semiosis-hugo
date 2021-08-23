@@ -7,13 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI21, AIx, OpenAI and HuggingFace with Pen.el</title>
       <link>http://semiosis.github.io/ai21-aix-openai-and-huggingface-with-pen-el/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/ai21-aix-openai-and-huggingface-with-pen-el/</guid>
+      <description>Summary I benchmark using several different LM engines in Pen.el.
+Benchmark 100 tokens AI21 vs AIx vs OpenAI
+AI21&amp;rsquo;s service is about as fast as OpenAI&amp;rsquo;s at about 6 seconds for 100 tokens, but AIx is significantly slower.
+You may speed up AIx&amp;rsquo;s generations by subscribing to the GPU plan.
+AI21 1 2 3 4 5  title: j1-jumbo include: Generic completion 50 tokens/1 prompt-version: 1 engine: AI21 J1-Jumbo max-tokens: 100   1 2 3 4 5 6 7  engine-title: AI21 J1-Jumbo lm-command: &amp;#34;ai21-complete.</description>
+    </item>
+    
+    <item>
+      <title>AI21, AIx, OpenAI and HuggingFace with Pen.el</title>
+      <link>http://semiosis.github.io/posts/ai21-aix-openai-and-huggingface-with-pen-el/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/ai21-aix-openai-and-huggingface-with-pen-el/</guid>
       <description>Summary I benchmark using several different LM engines in Pen.el.
 Benchmark 100 tokens AI21 vs AIx vs OpenAI
 AI21&amp;rsquo;s service is about as fast as OpenAI&amp;rsquo;s at about 6 seconds for 100 tokens, but AIx is significantly slower.
