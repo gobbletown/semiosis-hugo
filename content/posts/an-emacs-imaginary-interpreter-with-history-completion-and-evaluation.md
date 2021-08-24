@@ -17,4 +17,7 @@ and an imaginary tutor.
 
 ## Demo {#demo}
 
-<https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO.js" id="asciicast-gaJrptK8y0OGIY81qrqoenhEO" async></script>

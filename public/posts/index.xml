@@ -16,7 +16,7 @@
             
             <guid>http://semiosis.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/</guid>
             <description>Summary This is a demonstration of an imaginary interpreter in emacs along with multiple modes of forward completion (word, 5 words, line, longform), imaginary memory, a real history and an imaginary tutor.
-Demo https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO</description>
+Demo  -- </description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a demonstration of an imaginary
 interpreter in emacs along with multiple modes
@@ -24,8 +24,10 @@ of forward completion (word, 5 words, line,
 longform), imaginary memory, a real history
 and an imaginary tutor.</p>
 <h2 id="demo">Demo</h2>
-<p><a href="https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO">https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO</a></p>
-]]></content>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO.js" id="asciicast-gaJrptK8y0OGIY81qrqoenhEO" async></script>]]></content>
         </item>
         
         <item>
