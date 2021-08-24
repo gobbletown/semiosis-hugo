@@ -21,3 +21,8 @@ and an imaginary tutor.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/6EKIiUqvOSKetO6Fz439xZitE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/6EKIiUqvOSKetO6Fz439xZitE.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/6EKIiUqvOSKetO6Fz439xZitE.js" id="asciicast-6EKIiUqvOSKetO6Fz439xZitE" async></script>
+
+Utilising many different prompt functions to
+provide an imaginary python interpreter -- All
+in GPT-3. This is not even codex! Just imagine
+what could be done with Pen.el and codex!
