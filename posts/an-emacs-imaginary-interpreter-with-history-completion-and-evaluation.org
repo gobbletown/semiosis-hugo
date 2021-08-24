@@ -7,7 +7,7 @@
 #+TITLE: An emacs Imaginary Interpreter with history, completion and evaluation
 #+DATE: <2021-08-25>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt openai
+#+KEYWORDS: gpt openai ii imaginary-programming pen
 
 ** Summary
 This is a demonstration of an imaginary
