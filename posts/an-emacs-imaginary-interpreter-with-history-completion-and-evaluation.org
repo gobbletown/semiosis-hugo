@@ -1,0 +1,20 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: An emacs Imaginary Interpreter with history, completion and evaluation
+#+DATE: <2021-08-25>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: gpt openai
+
+** Summary
+This is a demonstration of an imaginary
+interpreter in emacs along with multiple modes
+of forward completion (word, 5 words, line,
+longform), imaginary memory, a real history
+and an imaginary tutor.
+
+** Demo
+https://asciinema.org/a/gaJrptK8y0OGIY81qrqoenhEO
