@@ -2,7 +2,7 @@
 title = "An emacs Imaginary Interpreter with history, completion and evaluation"
 author = ["Shane Mulligan"]
 date = 2021-08-25T00:00:00+12:00
-keywords = ["gpt", "openai"]
+keywords = ["gpt", "openai", "ii", "imaginary-programming", "pen"]
 draft = false
 +++
 
