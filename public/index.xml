@@ -20,6 +20,17 @@ Demo  --  Prompts  use case http://github.com/semiosis/prompts/blob/master/promp
     </item>
     
     <item>
+      <title>Transforming prose and code, in a generic way</title>
+      <link>http://semiosis.github.io/posts/transforming-prose-and-code-in-a-generic-way/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/transforming-prose-and-code-in-a-generic-way/</guid>
+      <description>Summary I demonstrate two prompts I have made. The first is based on OpenAI&amp;rsquo;s Davinci and I use it to transform prose. The other is based on OpenAI&amp;rsquo;s Davinci-Codex and I use it to transform code.
+The prompts are parameterised to accept a NL description of a transformation to make. Rather than creating individual prompts for specific transformations or types of transformations, I simply have 2 generic transformation prompts.
+Davinci appears to be more adept at transforming prose due to not to have had any fine-tuning which distracts it from its world- language oriented tasks.</description>
+    </item>
+    
+    <item>
       <title>An emacs Imaginary Interpreter with history, completion and evaluation</title>
       <link>http://semiosis.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/</link>
       <pubDate>Wed, 25 Aug 2021 00:00:00 +1200</pubDate>

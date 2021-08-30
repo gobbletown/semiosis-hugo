@@ -714,6 +714,1071 @@ timeoutAll <span style="color:#f92672">(</span>ms: number<span style="color:#f92
         </item>
         
         <item>
+            <title>Transforming prose and code, in a generic way</title>
+            <link>http://semiosis.github.io/posts/transforming-prose-and-code-in-a-generic-way/</link>
+            <pubDate>Sun, 29 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/transforming-prose-and-code-in-a-generic-way/</guid>
+            <description>Summary I demonstrate two prompts I have made. The first is based on OpenAI&amp;rsquo;s Davinci and I use it to transform prose. The other is based on OpenAI&amp;rsquo;s Davinci-Codex and I use it to transform code.
+The prompts are parameterised to accept a NL description of a transformation to make. Rather than creating individual prompts for specific transformations or types of transformations, I simply have 2 generic transformation prompts.
+Davinci appears to be more adept at transforming prose due to not to have had any fine-tuning which distracts it from its world- language oriented tasks.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I demonstrate two prompts I have made. The
+first is based on OpenAI&rsquo;s Davinci and I use
+it to transform prose. The other is based on
+OpenAI&rsquo;s Davinci-Codex and I use it to
+transform code.</p>
+<p>The prompts are parameterised to accept a NL
+description of a transformation to make.
+Rather than creating individual prompts for
+specific transformations or types of
+transformations, I simply have 2 generic
+transformation prompts.</p>
+<p>Davinci appears to be more adept at
+transforming prose due to not to have had any
+fine-tuning which distracts it from its world-
+language oriented tasks.</p>
+<p>Davinci-Codex, on the other hand, while being
+able to employ other languages as a means of
+controlling the generation of text, appears to
+be less reliable at transforming prose
+correctly, but more controllable in terms of
+controlling the structure of its output.</p>
+<p>Davinci-Codex also does a much better job at
+transforming code with NL. That much should be
+obvious.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/tVapsgBsvs1Ri7M39oLiPZfWv" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tVapsgBsvs1Ri7M39oLiPZfWv.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/tVapsgBsvs1Ri7M39oLiPZfWv.js" id="asciicast-tVapsgBsvs1Ri7M39oLiPZfWv" async></script>
+<h2 id="prompts">Prompts</h2>
+<h3 id="transform-prose-2-dot-prompt"><code>transform-prose-2.prompt</code></h3>
+<dl>
+<dt>prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/transform-prose-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/transform-prose-2.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Transform prose&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Transform some prose given a transformation description&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">OpenAI Davinci</span>
+<span style="color:#f92672">issues</span>:
+- |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  This is ok and I&#39;m not sure if there is a
+</span><span style="color:#e6db74">  better way, but the LM could be better.</span>  
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    The following exam has correct answers.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    In the following quotes is a passage:
+</span><span style="color:#e6db74">    &#34;&lt;document&gt;&#34;.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Take the above passage and &#34;&lt;transformation&gt;&#34; whilst retaining the original meaning.
+</span><span style="color:#e6db74">    Answer:
+</span><span style="color:#e6db74">    &#34;</span>    
+<span style="color:#f92672">xlr-n-generate</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.7</span>
+<span style="color:#75715e"># On each collated generation, rotate the temperature upwards by 0.1</span>
+<span style="color:#f92672">collation-temperature-stepper</span>: <span style="color:#e6db74">&#34;(mod* (+ &lt;temperature&gt; 0.1) 1)&#34;</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\&#34;&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">document</span>
+- <span style="color:#ae81ff">transformation</span>
+<span style="color:#f92672">preprocessors</span>:
+<span style="color:#75715e"># - pen-str join &#39; &#39;</span>
+- <span style="color:#ae81ff">pen-str tidy-prose-input | sed &#34;s/\\.\$//&#34; | pen-qne</span>
+- <span style="color:#ae81ff">pen-str tidy-prose-input | sed &#34;s/\\.\$//&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span>
+<span style="color:#75715e"># Consider stripping code by correcting with GPT-3</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pen-pretty-paragraph</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;I want to ride my bicycle&#34;</span>
+- <span style="color:#e6db74">&#34;with empathy&#34;</span>
+<span style="color:#f92672">n-test-runs</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">new-document</span>: <span style="color:#66d9ef">yes</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="transform-code-3-dot-prompt"><code>transform-code-3.prompt</code></h3>
+<dl>
+<dt>prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/transform-code-3.prompt">http://github.com/semiosis/prompts/blob/master/prompts/transform-code-3.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Transform code&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Transform some code given the language and a transformation description&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">4</span>
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">OpenAI Codex</span>
+<span style="color:#f92672">subprompts</span>:
+- <span style="color:#f92672">original-program</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    # The original &lt;language&gt; program
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    cat original_program &lt;&lt;EOD
+</span><span style="color:#e6db74">    &lt;code&gt;
+</span><span style="color:#e6db74">    EOD</span>    
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;original-program&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    # The exact same program but &lt;transformation&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    cat edited_program &lt;&lt;EOD</span>    
+<span style="color:#f92672">xlr-n-generate</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.0</span>
+<span style="color:#75715e"># On each collated generation, rotate the temperature upwards by 0.1</span>
+<span style="color:#f92672">collation-temperature-stepper</span>: <span style="color:#e6db74">&#34;(mod* (+ &lt;temperature&gt; 0.1) 1)&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">best-of</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#75715e"># To short-circuit overly long generations</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;EOD&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">code</span>
+- <span style="color:#e6db74">&#34;language&#34;</span>
+- <span style="color:#ae81ff">transformation</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">cat</span>
+- <span style="color:#ae81ff">slugify</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-detect-language-ask)&#34;</span>
+<span style="color:#f92672">postprocessors</span>:
+- <span style="color:#ae81ff">sed &#39;$d&#39;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;print(\&#34;Hello world with empathy\&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;Python&#34;</span>
+- <span style="color:#e6db74">&#34;using numpy&#34;</span>
+<span style="color:#f92672">n-test-runs</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">new-document</span>: <span style="color:#66d9ef">yes</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="transform-prose">Transform prose</h2>
+<ul>
+<li>Prose is still difficult to control.</li>
+<li>I&rsquo;ve cherry picked these generations which came from the same batch.</li>
+</ul>
+<h3 id="original">Original</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">No matter what you are looking at in the terminal, generate from it at the
+cursor position with previous text as context, and fuzzy search within that.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="generated">Generated</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">adorn it with flowery and figurative language</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">No matter what you are looking at in the
+terminal, a mouse click away is its previous
+context and a fuzzy search within that</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">No matter what you are looking at in the
+terminal, generate from it at the cursor
+position with previous text as context, and
+fuzzy search within that</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Everywhere we look, whether we are using the
+command line or some sort of graphical user
+interface, we should always be able to
+generate that information at the cursor
+position with previous information as context.</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">No matter what you are looking at in the
+terminal, generate from it at the cursor
+position with previous text as context, and
+fuzzy search within that for the pre-existing
+text of a self-quoted command</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="transform-code">Transform code</h2>
+<p>Code transformation with Codex is beyond belief; It&rsquo;s very powerful and accurate.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+<span style="color:#66d9ef">for</span> ($red <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $red <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $red<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> ($green <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $green <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $green<span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">for</span> ($blue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $blue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $blue<span style="color:#f92672">++</span>) {
+  	  $code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> $blue;
+  	  printf($line1, $code);
+  	  printf($line2, $code);
+  	  printf($line3,
+  		 ($red ? ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+  		 ($green ? ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+  		 ($blue ? ($blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>));
+  }
+    }
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>Transformation command: <em>Use alpha channel</em></p>
+<p>3 different results.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># Attempt 1: Alpha channel appears to exist</span>
+<span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+<span style="color:#66d9ef">for</span> ($red <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $red <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $red<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> ($green <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $green <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $green<span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">for</span> ($blue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $blue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $blue<span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">for</span> ($alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $alpha <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $alpha<span style="color:#f92672">++</span>) {
+    $code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> $blue;
+    printf($line1, $code);
+    printf($line2, $code);
+    printf($line3,
+           ($red ? ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+           ($green ? ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+           ($blue ? ($blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+           ($alpha ? ($alpha <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>));
+      }
+  }
+    }
+}
+
+<span style="color:#75715e"># Attempt 2: Appears to be no difference with the original</span>
+<span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+<span style="color:#66d9ef">for</span> ($red <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $red <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $red<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> ($green <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $green <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $green<span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">for</span> ($blue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $blue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $blue<span style="color:#f92672">++</span>) {
+      $code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> $blue;
+      printf($line1, $code);
+      printf($line2, $code);
+      printf($line3,
+       ($red ? ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+       ($green ? ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+       ($blue ? ($blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+       ($red <span style="color:#f92672">*</span> $green <span style="color:#f92672">*</span> $blue));
+  }
+    }
+}
+
+<span style="color:#75715e"># Attempt 3</span>
+<span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+<span style="color:#66d9ef">for</span> ($red <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $red <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $red<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> ($green <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $green <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $green<span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">for</span> ($blue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $blue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $blue<span style="color:#f92672">++</span>) {
+      $code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> $blue;
+      printf($line1, $code);
+      printf($line2, $code);
+      printf($line3,
+       ($red ? ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+       ($green ? ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+       ($blue ? ($blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+
+       <span style="color:#75715e"># This part here appears duplicated</span>
+       ($red ? ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+       ($green ? ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+       ($blue ? ($blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>));
+  }
+    }
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="translate">Translate</h3>
+<p>The original file.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#! /usr/bin/perl</span>
+
+<span style="color:#75715e"># Construct a header file defining default resources for the 256-color model</span>
+<span style="color:#75715e"># of xterm.  This is modeled after the 256colors2.pl script.</span>
+
+<span style="color:#75715e"># use the resources for colors 0-15 - usually more-or-less a</span>
+<span style="color:#75715e"># reproduction of the standard ANSI colors, but possibly more</span>
+<span style="color:#75715e"># pleasing shades</span>
+
+<span style="color:#66d9ef">use</span> strict;
+
+<span style="color:#66d9ef">our</span> ( $line1, $line2, $line3 );
+<span style="color:#66d9ef">our</span> ( $red, $green, $blue, $gray );
+<span style="color:#66d9ef">our</span> ( $level, $code, @steps );
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&lt;&lt;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">;
+</span><span style="color:#e6db74">/*
+</span><span style="color:#e6db74"> * This header file was generated by $0
+</span><span style="color:#e6db74"> */
+</span><span style="color:#e6db74">/* \$XTermId\$ */
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">#ifndef included_256colres_h
+</span><span style="color:#e6db74">#define included_256colres_h
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>
+
+$line1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;COLOR_RES(\&#34;%d\&#34;,&#34;</span>;
+$line2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\tscreen.Acolors[%d],&#34;</span>;
+$line3<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\tDFT_COLOR(\&#34;rgb:%2.2x/%2.2x/%2.2x\&#34;)),\n&#34;</span>;
+
+<span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+<span style="color:#66d9ef">for</span> ($red <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $red <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $red<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> ($green <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $green <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $green<span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">for</span> ($blue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $blue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; $blue<span style="color:#f92672">++</span>) {
+  	  $code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> $blue;
+  	  printf($line1, $code);
+  	  printf($line2, $code);
+  	  printf($line3,
+  		 ($red ? ($red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+  		 ($green ? ($green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>),
+  		 ($blue ? ($blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) : <span style="color:#ae81ff">0</span>));
+  }
+    }
+}
+
+<span style="color:#75715e"># colors 232-255 are a grayscale ramp, intentionally leaving out</span>
+<span style="color:#75715e"># black and white</span>
+$code<span style="color:#f92672">=</span><span style="color:#ae81ff">232</span>;
+<span style="color:#66d9ef">for</span> ($gray <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $gray <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">24</span>; $gray<span style="color:#f92672">++</span>) {
+    $level <span style="color:#f92672">=</span> ($gray <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>;
+    $code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span> <span style="color:#f92672">+</span> $gray;
+    printf($line1, $code);
+    printf($line2, $code);
+    printf($line3,
+  	 $level, $level, $level);
+}
+
+<span style="color:#66d9ef">print</span> <span style="color:#f92672">&lt;&lt;</span>EOF;
+
+<span style="color:#75715e">#endif /* included_256colres_h */</span>
+EOF</code></pre></td></tr></table>
+</div>
+</div>
+<p>Transformation command: <em>in python</em></p>
+<p>Translation to Python attempt 1.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#! /usr/bin/python</span>
+
+<span style="color:#75715e"># Construct a header file defining default resources for the 256-color model</span>
+<span style="color:#75715e"># of xterm.  This is modeled after the 256colors2.pl script.</span>
+
+<span style="color:#75715e"># use the resources for colors 0-15 - usually more-or-less a</span>
+<span style="color:#75715e"># reproduction of the standard ANSI colors, but possibly more</span>
+<span style="color:#75715e"># pleasing shades</span>
+
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_header</span>():
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/*&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; * This header file was generated by </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">0</span>]
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; */&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/* \$XTermId\$ */&#39;</span>
+    <span style="color:#66d9ef">print</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#ifndef included_256colres_h&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#define included_256colres_h&#39;</span>
+    <span style="color:#66d9ef">print</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_footer</span>():
+    <span style="color:#66d9ef">print</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#endif /* included_256colres_h */&#39;</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_color</span>(code, red, green, blue):
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;COLOR_RES(&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;,&#39;</span> <span style="color:#f92672">%</span> code,
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;screen.Acolors[</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">],&#39;</span> <span style="color:#f92672">%</span> code,
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;DFT_COLOR(&#34;rgb:</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">&#34;))),&#39;</span> <span style="color:#f92672">%</span> (red, green, blue)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_colors</span>():
+    <span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+    <span style="color:#66d9ef">for</span> red <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+        <span style="color:#66d9ef">for</span> green <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+            <span style="color:#66d9ef">for</span> blue <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+                code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> (red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> (green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> blue
+                print_color(code, red, green, blue)
+
+    <span style="color:#75715e"># colors 232-255 are a grayscale ramp, intentionally leaving out</span>
+    <span style="color:#75715e"># black and white</span>
+    <span style="color:#66d9ef">for</span> gray <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">24</span>):
+        level <span style="color:#f92672">=</span> (gray <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>
+        code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span> <span style="color:#f92672">+</span> gray
+        print_color(code, level, level, level)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    print_header()
+    print_colors()
+    print_footer()
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    main()</code></pre></td></tr></table>
+</div>
+</div>
+<p>Attempt 2:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#! /usr/bin/python</span>
+
+<span style="color:#75715e"># Construct a header file defining default resources for the 256-color model</span>
+<span style="color:#75715e"># of xterm.  This is modeled after the 256colors2.pl script.</span>
+
+<span style="color:#75715e"># use the resources for colors 0-15 - usually more-or-less a</span>
+<span style="color:#75715e"># reproduction of the standard ANSI colors, but possibly more</span>
+<span style="color:#75715e"># pleasing shades</span>
+
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/*&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; * This header file was generated by </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">0</span>]
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; */&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/* \$XTermId\$ */&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#ifndef included_256colres_h&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#define included_256colres_h&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+    line1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;COLOR_RES(</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,&#34;</span>
+    line2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">screen.Acolors[</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">],&#34;</span>
+    line3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">DFT_COLOR(</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">rgb:</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">)),</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+
+    <span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+    <span style="color:#66d9ef">for</span> red <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+        <span style="color:#66d9ef">for</span> green <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+            <span style="color:#66d9ef">for</span> blue <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+                code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> (red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> (green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> blue
+                <span style="color:#66d9ef">print</span> line1 <span style="color:#f92672">%</span> code
+                <span style="color:#66d9ef">print</span> line2 <span style="color:#f92672">%</span> code
+                <span style="color:#66d9ef">print</span> line3 <span style="color:#f92672">%</span> (
+                    (red <span style="color:#f92672">and</span> (red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>)) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>,
+                    (green <span style="color:#f92672">and</span> (green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>)) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>,
+                    (blue <span style="color:#f92672">and</span> (blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>)) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>)
+
+    <span style="color:#75715e"># colors 232-255 are a grayscale ramp, intentionally leaving out</span>
+    <span style="color:#75715e"># black and white</span>
+    code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span>
+    <span style="color:#66d9ef">for</span> gray <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">24</span>):
+        level <span style="color:#f92672">=</span> (gray <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>
+        code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span> <span style="color:#f92672">+</span> gray
+        <span style="color:#66d9ef">print</span> line1 <span style="color:#f92672">%</span> code
+        <span style="color:#66d9ef">print</span> line2 <span style="color:#f92672">%</span> code
+        <span style="color:#66d9ef">print</span> line3 <span style="color:#f92672">%</span> (level, level, level)
+
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#endif /* included_256colres_h */&#39;</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    main()</code></pre></td></tr></table>
+</div>
+</div>
+<p>Attempt 3:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#! /usr/bin/python</span>
+
+<span style="color:#75715e"># Construct a header file defining default resources for the 256-color model</span>
+<span style="color:#75715e"># of xterm.  This is modeled after the 256colors2.pl script.</span>
+
+<span style="color:#75715e"># use the resources for colors 0-15 - usually more-or-less a</span>
+<span style="color:#75715e"># reproduction of the standard ANSI colors, but possibly more</span>
+<span style="color:#75715e"># pleasing shades</span>
+
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/*&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; * This header file was generated by </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">0</span>]
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; */&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/* \$XTermId\$ */&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#ifndef included_256colres_h&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#define included_256colres_h&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+    line1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;COLOR_RES(</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">,&#34;</span>
+    line2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">screen.Acolors[</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">],&#34;</span>
+    line3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">DFT_COLOR(</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">rgb:</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">)),</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+
+    <span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+    <span style="color:#66d9ef">for</span> red <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+        <span style="color:#66d9ef">for</span> green <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+            <span style="color:#66d9ef">for</span> blue <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+                code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> (red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> (green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> blue
+                <span style="color:#66d9ef">print</span> line1 <span style="color:#f92672">%</span> code
+                <span style="color:#66d9ef">print</span> line2 <span style="color:#f92672">%</span> code
+                <span style="color:#66d9ef">print</span> line3 <span style="color:#f92672">%</span> ((red <span style="color:#f92672">and</span> (red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>)) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>,
+                               (green <span style="color:#f92672">and</span> (green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>)) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>,
+                               (blue <span style="color:#f92672">and</span> (blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>)) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>)
+
+    <span style="color:#75715e"># colors 232-255 are a grayscale ramp, intentionally leaving out</span>
+    <span style="color:#75715e"># black and white</span>
+    code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span>
+    <span style="color:#66d9ef">for</span> gray <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">24</span>):
+        level <span style="color:#f92672">=</span> (gray <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>
+        code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span> <span style="color:#f92672">+</span> gray
+        <span style="color:#66d9ef">print</span> line1 <span style="color:#f92672">%</span> code
+        <span style="color:#66d9ef">print</span> line2 <span style="color:#f92672">%</span> code
+        <span style="color:#66d9ef">print</span> line3 <span style="color:#f92672">%</span> (level, level, level)
+
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#endif /* included_256colres_h */&#39;</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    main()</code></pre></td></tr></table>
+</div>
+</div>
+<p>Attempt 4:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#! /usr/bin/python</span>
+
+<span style="color:#75715e"># Construct a header file defining default resources for the 256-color model</span>
+<span style="color:#75715e"># of xterm.  This is modeled after the 256colors2.pl script.</span>
+
+<span style="color:#75715e"># use the resources for colors 0-15 - usually more-or-less a</span>
+<span style="color:#75715e"># reproduction of the standard ANSI colors, but possibly more</span>
+<span style="color:#75715e"># pleasing shades</span>
+
+<span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> os
+
+sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>append(os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;HOME&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/bin&#39;</span>)
+
+<span style="color:#f92672">from</span> xtermcolor <span style="color:#f92672">import</span> colorize
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/*&#39;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; * This header file was generated by &#39;</span> <span style="color:#f92672">+</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">0</span>]
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39; */&#39;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;/* \$XTermId\$ */&#39;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#ifndef included_256colres_h&#39;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#define included_256colres_h&#39;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+line1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;COLOR_RES(&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;,&#39;</span>
+line2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">screen.Acolors[</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">],&#39;</span>
+line3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">DFT_COLOR(&#34;rgb:</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%2.2x</span><span style="color:#e6db74">&#34;)),&#39;</span>
+
+<span style="color:#75715e"># colors 16-231 are a 6x6x6 color cube</span>
+<span style="color:#66d9ef">for</span> red <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+    <span style="color:#66d9ef">for</span> green <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+        <span style="color:#66d9ef">for</span> blue <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+            code <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> (red <span style="color:#f92672">*</span> <span style="color:#ae81ff">36</span>) <span style="color:#f92672">+</span> (green <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> blue
+            <span style="color:#66d9ef">print</span> line1 <span style="color:#f92672">%</span> code
+            <span style="color:#66d9ef">print</span> line2 <span style="color:#f92672">%</span> code
+            <span style="color:#66d9ef">print</span> line3 <span style="color:#f92672">%</span> (
+                (red <span style="color:#f92672">and</span> (red <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>),
+                (green <span style="color:#f92672">and</span> (green <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>),
+                (blue <span style="color:#f92672">and</span> (blue <span style="color:#f92672">*</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">55</span>) <span style="color:#f92672">or</span> <span style="color:#ae81ff">0</span>))
+
+<span style="color:#75715e"># colors 232-255 are a grayscale ramp, intentionally leaving out</span>
+<span style="color:#75715e"># black and white</span>
+code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span>
+<span style="color:#66d9ef">for</span> gray <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">24</span>):
+    level <span style="color:#f92672">=</span> (gray <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>
+    code <span style="color:#f92672">=</span> <span style="color:#ae81ff">232</span> <span style="color:#f92672">+</span> gray
+    <span style="color:#66d9ef">print</span> line1 <span style="color:#f92672">%</span> code
+    <span style="color:#66d9ef">print</span> line2 <span style="color:#f92672">%</span> code
+    <span style="color:#66d9ef">print</span> line3 <span style="color:#f92672">%</span> (level, level, level)
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;#endif /* included_256colres_h */&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>An emacs Imaginary Interpreter with history, completion and evaluation</title>
             <link>http://semiosis.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/</link>
             <pubDate>Wed, 25 Aug 2021 00:00:00 +1200</pubDate>
