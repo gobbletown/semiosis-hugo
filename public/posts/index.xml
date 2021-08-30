@@ -6,8 +6,279 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 30 Aug 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Tue, 31 Aug 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Select function (with signature help) from NL using Codex</title>
+            <link>http://semiosis.github.io/posts/select-function-with-signature-help-from-nl-using-codex/</link>
+            <pubDate>Tue, 31 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/select-function-with-signature-help-from-nl-using-codex/</guid>
+            <description>Summary I create a handy function to suggest functions along with signature help, using Codex.
+elisp 1 2 3 4 5 6 7  (defun pen-select-function-from-nl (use-case) (interactive (list (read-string &amp;#34;pen-select-function-from-nl use-case: &amp;#34;))) (let* ((lang ;; (pen-detect-language-ask) (read-string-hist &amp;#34;pen-select-function-from-nl lang: &amp;#34;)) (funs (pf-find-a-function-given-a-use-case/2 lang use-case :no-select-result t)) (sigs (pf-get-the-signatures-for-a-list-of-functions/2 lang (list2str funs) :no-select-result t))) (xc (fz (-zip-lists funs sigs) nil nil &amp;#34;pen-select-function-from-nl: &amp;#34;))))   Demos Concurrency with ipython and codex  --  Bash process management 1 2 3 4 5 6 7 8 9 10 11 12  kill # kill PID ps # ps -ef wait # wait $PID exec # exec $SHELL trap # trap &amp;#39;commands&amp;#39; SIGINT bg # bg %1 fg # fg %1 disown # disown %1 jobs # jobs killall # killall command killall5 # killall5 -9 command pkill # pkill -9 command   Haskell process management 1 2 3 4 5 6 7 8  forkIO # forkIO :: IO () kill # kill :: ProcessId -&amp;gt; IO () killProcess # killProcess :: ProcessId -&amp;gt; IO () killThread # killThread :: ThreadId -&amp;gt; IO () nice # nice :: Int -&amp;gt; IO () openProcess # openProcess :: ProcessId -&amp;gt; IO () openProcessIO # openProcessIO :: ProcessId -&amp;gt; IO (ProcessIO) openProcessPID # openProcessPID :: ProcessId -&amp;gt; IO (ProcessId)   While in the interpreter:</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I create a handy function to suggest functions along with signature help, using Codex.</p>
+<h2 id="elisp">elisp</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-select-function-from-nl (use-case)
+  (interactive (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">read-string</span> <span style="color:#e6db74">&#34;pen-select-function-from-nl use-case: &#34;</span>)))
+  (let* ((lang <span style="color:#75715e">;; (pen-detect-language-ask)</span>
+          (read-string-hist <span style="color:#e6db74">&#34;pen-select-function-from-nl lang: &#34;</span>))
+         (funs (pf-find-a-function-given-a-use-case/2 lang use-case :no-select-result <span style="color:#66d9ef">t</span>))
+         (sigs (pf-get-the-signatures-for-a-list-of-functions/2 lang (list2str funs) :no-select-result <span style="color:#66d9ef">t</span>)))
+    (xc (fz (-zip-lists funs sigs) <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;pen-select-function-from-nl: &#34;</span>))))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demos">Demos</h2>
+<h3 id="concurrency-with-ipython-and-codex">Concurrency with ipython and codex</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/RQTehM9JsRnlQFBqdjbeiSi0T" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/RQTehM9JsRnlQFBqdjbeiSi0T.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/RQTehM9JsRnlQFBqdjbeiSi0T.js" id="asciicast-RQTehM9JsRnlQFBqdjbeiSi0T" async></script>
+<h3 id="bash-process-management">Bash process management</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">kill # kill PID
+ps # ps -ef
+wait # wait $PID
+exec # exec $SHELL
+trap # trap &#39;commands&#39; SIGINT
+bg # bg %1
+fg # fg %1
+disown # disown %1
+jobs # jobs
+killall # killall command
+killall5 # killall5 -9 command
+pkill # pkill -9 command</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="haskell-process-management">Haskell process management</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">forkIO # forkIO :: IO ()
+kill # kill :: ProcessId -&gt; IO ()
+killProcess # killProcess :: ProcessId -&gt; IO ()
+killThread # killThread :: ThreadId -&gt; IO ()
+nice # nice :: Int -&gt; IO ()
+openProcess # openProcess :: ProcessId -&gt; IO ()
+openProcessIO # openProcessIO :: ProcessId -&gt; IO (ProcessIO)
+openProcessPID # openProcessPID :: ProcessId -&gt; IO (ProcessId)</code></pre></td></tr></table>
+</div>
+</div>
+<p>While in the interpreter:</p>
+<p><em>lenses and prisms</em></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Prism # prism :: Prism s a
+Lens # lens :: Lens s a
+Iso # iso :: Iso s a
+Traversal # traversal :: Traversal s a
+Getter # getter :: Getter s a
+Setter # setter :: Setter s a
+Review # review :: Review s a
+Lenses # lenses :: Lenses s a
+PPrism # pPrism :: PPrism s a</code></pre></td></tr></table>
+</div>
+</div>
+<p><em>parsec</em></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">parsec.string # parsec.string &#34;a&#34;
+parsec.letter # parsec.letter
+parsec.digit # parsec.digit
+parsec.space # parsec.space
+parsec.eof # parsec.eof
+parsec.many # parsec.many</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ask-the-tutor-some-questions">Ask the tutor some questions</h3>
+<p><em>How do I parse a date?</em></p>
+<dl>
+<dt>An aside</dt>
+<dd>With Davinci the topic+subtopic tutor does well, but not with Codex.</dd>
+</dl>
+<p>You can parse a date using the format
+function, but you should not use the default
+RecordParser, you need to use the FieldParser
+When given a format string, such as &lsquo;yyyy-MM-
+dd&rsquo; (year, month, day), you should use the
+&lsquo;parseDateFromString&rsquo; function.</p>
+<p>And you can read about it here: <a href="http://www.has">http://www.has</a>
+kell.org/haskellwiki/Parsec#Format_strings ##
+So to parse &ldquo;2010-01-10&rdquo; you would use:
+<em>What is a monad?</em></p>
+<p>Monads are a type of algebraic structure used
+to create a category of actions, where each
+action is an object in the category.</p>
+<p>Monads are a very useful concept in functional
+programming.</p>
+<p>A monad is a functor in the category of
+endofunctors, or a category in which every
+endofunctor is a functor.</p>
+<p>Monads also allow for the abstraction of the
+&ldquo;state&rdquo; of a program at a given time.</p>
+<p>Different variants of monads include
+conceptually &ldquo;state&rdquo; monads, continuation
+monads, Reader monads, Writer monads, and
+various others.</p>
+<h3 id="ask-the-tutor-abiout-python">Ask the tutor abiout python</h3>
+<p><em>How do I manage a pool of threads?</em></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Well, there are a few ways to manage a pool
+of threads.
+
+I can explain them to you.
+
+AI: The first way to manage a pool of threads
+is to use a ThreadPoolExecutor.
+
+This is a special kind of an ExecutorService
+that is meant to be used for executing threads
+in a pool.
+
+You can configure a ThreadPoolExecutor with a
+corePoolSize and a maximumPoolSize.
+
+The corePoolSize is the thread pool size that
+is kept even if the pool is empty and the
+queue is full.
+
+The maximumPoolSize is the maximum number of
+threads that can be in the pool.
+
+The initialPoolSize is the number of threads
+that are created when the thread pool is
+created.
+
+If the initialPoolSize is greater than zero,
+then that many threads are created.
+
+If the initialPoolSize is zero, the number of
+threads is the sum of the values of the
+corePoolSize and the maximumPoolSize.
+
+The keepAliveTime is the amount of time that
+threads in the pool stay alive if there are no
+tasks to do (or time-out).
+
+The maxQueueSize is the max number of tasks
+that can wait in the queue.
+
+The constantPoolSize is an upper bound on the
+number of threads that will ever be in the
+pool.
+
+If there are more threads in the pool than the
+constantPoolSize, then the pool has a larger
+constantPoolSize.</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Prompts to search for functions in Pen.el</title>

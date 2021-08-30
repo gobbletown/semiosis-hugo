@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://semiosis.github.io/posts/</loc>
-    <lastmod>2021-08-30T00:00:00+12:00</lastmod>
+    <lastmod>2021-08-31T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/posts/prompts-to-search-for-functions-in-pen-el/</loc>
-    <lastmod>2021-08-30T00:00:00+12:00</lastmod>
+    <loc>http://semiosis.github.io/posts/select-function-with-signature-help-from-nl-using-codex/</loc>
+    <lastmod>2021-08-31T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-08-31T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/prompts-to-search-for-functions-in-pen-el/</loc>
     <lastmod>2021-08-30T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/transforming-prose-and-code-in-a-generic-way/</loc>
