@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Aug 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prompts to search for functions in Pen.el</title>
+      <link>http://semiosis.github.io/posts/prompts-to-search-for-functions-in-pen-el/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/prompts-to-search-for-functions-in-pen-el/</guid>
+      <description>Summary Here are some prompts for generating functions and signatures from NL. What functions do you need? What are their signatures?
+Demo  --  Prompts  use case http://github.com/semiosis/prompts/blob/master/prompts/find-a-function-given-a-use-case-2.prompt signature http://github.com/semiosis/prompts/blob/master/prompts/get-the-signatures-for-a-list-of-functions-2.prompt  find-a-function-given-a-use-case-2.prompt
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &amp;#34;Find a function given a use-case&amp;#34; doc: &amp;#34;Given a language and a use-case, find a function for that use-case&amp;#34; prompt-version: 1 prompt: |+This is a list of the names of standard functions for &amp;lt;use case&amp;gt; in &amp;lt;language&amp;gt;: - engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+    </item>
+    
     <item>
       <title>An emacs Imaginary Interpreter with history, completion and evaluation</title>
       <link>http://semiosis.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/</link>
@@ -16,6 +27,17 @@
       <guid>http://semiosis.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/</guid>
       <description>Summary This is a demonstration of an imaginary interpreter in emacs along with multiple modes of forward completion (word, 5 words, line, longform), imaginary memory, a real history and an imaginary tutor.
 Demo  --  Utilising many different prompt functions to provide an imaginary python interpreter &amp;ndash; All in GPT-3. This is not even codex! Just imagine what could be done with Pen.el and codex!</description>
+    </item>
+    
+    <item>
+      <title>Codex for anything: Imaginary &#43; Real (with a bit of Codex) = Complex</title>
+      <link>http://semiosis.github.io/posts/imaginary-real-codex-complex/</link>
+      <pubDate>Wed, 25 Aug 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/imaginary-real-codex-complex/</guid>
+      <description>Summary I add an imaginary dimension to the emacs terminal.
+Integrating real interpreters with imaginary ones creates something new that is greater than the sum of their parts; A complex terminal.
+The complex terminal utilises the Codex LM to perform its underlying prompt functions. A complex terminal uses imaginary functions to enable the user to see what may happen upon running a command, to see what may follow after writing some code, and see what people usually do within a terminal context, no matter how deeply nested within interpreters or files.</description>
     </item>
     
     <item>

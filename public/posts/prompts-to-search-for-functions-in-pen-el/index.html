@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[Shane Mulligan]">
+<meta name="description" content="Summary Here are some prompts for generating functions and signatures from NL. What functions do you need? What are their signatures?
+Demo  --  Prompts  use case http://github.com/semiosis/prompts/blob/master/prompts/find-a-function-given-a-use-case-2.prompt signature http://github.com/semiosis/prompts/blob/master/prompts/get-the-signatures-for-a-list-of-functions-2.prompt  find-a-function-given-a-use-case-2.prompt
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &amp;#34;Find a function given a use-case&amp;#34; doc: &amp;#34;Given a language and a use-case, find a function for that use-case&amp;#34; prompt-version: 1 prompt: |&#43;This is a list of the names of standard functions for &amp;lt;use case&amp;gt; in &amp;lt;language&amp;gt;: - engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0." />
+<meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://semiosis.github.io/posts/prompts-to-search-for-functions-in-pen-el/" />
+
+
+    <title>
+        
+            Prompts to search for functions in Pen.el :: semiosis  — Signs, Natural Language and Coding
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.ebb2d41f4f981e6a191383b9d4768b2253e55fdec34d0f795512c7c543136c37.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Prompts to search for functions in Pen.el">
+<meta itemprop="description" content="Summary Here are some prompts for generating functions and signatures from NL. What functions do you need? What are their signatures?
+Demo  --  Prompts  use case http://github.com/semiosis/prompts/blob/master/prompts/find-a-function-given-a-use-case-2.prompt signature http://github.com/semiosis/prompts/blob/master/prompts/get-the-signatures-for-a-list-of-functions-2.prompt  find-a-function-given-a-use-case-2.prompt
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &#34;Find a function given a use-case&#34; doc: &#34;Given a language and a use-case, find a function for that use-case&#34; prompt-version: 1 prompt: |&#43;This is a list of the names of standard functions for &lt;use case&gt; in &lt;language&gt;: - engine: &#34;OpenAI Codex&#34; temperature: 0."><meta itemprop="datePublished" content="2021-08-30T00:00:00&#43;12:00" />
+<meta itemprop="dateModified" content="2021-08-30T00:00:00&#43;12:00" />
+<meta itemprop="wordCount" content="1844"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://semiosis.github.io/"/>
+
+<meta name="twitter:title" content="Prompts to search for functions in Pen.el"/>
+<meta name="twitter:description" content="Summary Here are some prompts for generating functions and signatures from NL. What functions do you need? What are their signatures?
+Demo  --  Prompts  use case http://github.com/semiosis/prompts/blob/master/prompts/find-a-function-given-a-use-case-2.prompt signature http://github.com/semiosis/prompts/blob/master/prompts/get-the-signatures-for-a-list-of-functions-2.prompt  find-a-function-given-a-use-case-2.prompt
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &#34;Find a function given a use-case&#34; doc: &#34;Given a language and a use-case, find a function for that use-case&#34; prompt-version: 1 prompt: |&#43;This is a list of the names of standard functions for &lt;use case&gt; in &lt;language&gt;: - engine: &#34;OpenAI Codex&#34; temperature: 0."/>
+
+
+
+
+    <meta property="og:title" content="Prompts to search for functions in Pen.el" />
+<meta property="og:description" content="Summary Here are some prompts for generating functions and signatures from NL. What functions do you need? What are their signatures?
+Demo  --  Prompts  use case http://github.com/semiosis/prompts/blob/master/prompts/find-a-function-given-a-use-case-2.prompt signature http://github.com/semiosis/prompts/blob/master/prompts/get-the-signatures-for-a-list-of-functions-2.prompt  find-a-function-given-a-use-case-2.prompt
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &#34;Find a function given a use-case&#34; doc: &#34;Given a language and a use-case, find a function for that use-case&#34; prompt-version: 1 prompt: |&#43;This is a list of the names of standard functions for &lt;use case&gt; in &lt;language&gt;: - engine: &#34;OpenAI Codex&#34; temperature: 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://semiosis.github.io/posts/prompts-to-search-for-functions-in-pen-el/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-30T00:00:00&#43;12:00" />
+<meta property="article:modified_time" content="2021-08-30T00:00:00&#43;12:00" /><meta property="og:site_name" content="semiosis" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-08-30 00:00:00 &#43;1200 NZST" />
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+ var _paq = window._paq = window._paq || [];
+  
+ _paq.push(['trackPageView']);
+ _paq.push(['enableLinkTracking']);
+ (function() {
+     var u="https://mullikine.matomo.cloud/";
+     _paq.push(['setTrackerUrl', u+'matomo.php']);
+     _paq.push(['setSiteId', '2']);
+     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+     g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/mullikine.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+ })();
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">semiosis</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/examplary/">Examplary</a></li><li><a href="/ii/">Imaginary Interpreter</a></li><li><a href="/ink/">Ink.el</a></li><li><a href="/pen/">Pen.el</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/stories/">Stories</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        9 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="http://semiosis.github.io/posts/prompts-to-search-for-functions-in-pen-el/">Prompts to search for functions in Pen.el</a>
+      </h1>
+
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="summary">Summary</h2>
+<p>Here are some prompts for generating functions and signatures from NL.
+What functions do you need?
+What are their signatures?</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/hHYVidJpuEhqBu8PLcc6UBH7E" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/hHYVidJpuEhqBu8PLcc6UBH7E.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/hHYVidJpuEhqBu8PLcc6UBH7E.js" id="asciicast-hHYVidJpuEhqBu8PLcc6UBH7E" async></script>
+<h2 id="prompts">Prompts</h2>
+<dl>
+<dt>use case</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/find-a-function-given-a-use-case-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/find-a-function-given-a-use-case-2.prompt</a></dd>
+<dt>signature</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/get-the-signatures-for-a-list-of-functions-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/get-the-signatures-for-a-list-of-functions-2.prompt</a></dd>
+</dl>
+<p><code>find-a-function-given-a-use-case-2.prompt</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Find a function given a use-case&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given a language and a use-case, find a function for that use-case&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  This is a list of the names of standard functions for &lt;use case&gt; in &lt;language&gt;:
+</span><span style="color:#e6db74">  -</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.1</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">50</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;A list&#34;</span>
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;language&#34;</span>
+- <span style="color:#e6db74">&#34;use case&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-detect-language-ask)&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;haskell&#34;</span>
+- <span style="color:#e6db74">&#34;convert from int to double&#34;</span>
+<span style="color:#75715e"># delete the last</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">sed -e &#39;s/^- //&#39; -e &#39;$d&#39; | uniqnosort | grep -oP &#34;^[a-zA-Z_-]+$&#34;</span>
+<span style="color:#75715e"># The &#39;end&#39; split patterns are used because</span>
+<span style="color:#75715e"># we want it to run &#39;after&#39; teh postprocessor</span>
+<span style="color:#f92672">end-split-patterns</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">on</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>get-the-signatures-for-a-list-of-functions-2.prompt</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Get the signatures for a list of functions&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given a list of functions, get their signatures&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  This is a table of standard functions and their full signatures (including argument types) in &lt;language&gt;:
+</span><span style="color:#e6db74">  | Functions: | &lt;function list&gt;
+</span><span style="color:#e6db74">  | Full signature: |</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.1</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;language&#34;</span>
+- <span style="color:#e6db74">&#34;function list&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-detect-language-ask)&#34;</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">cat</span>
+- <span style="color:#ae81ff">pen-str join &#34; | &#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;haskell&#34;</span>
+- <span style="color:#e6db74">&#34;fromIntegral\nfromRational\nfromReal\nfromRealFrac&#34;</span>
+<span style="color:#75715e"># delete the last</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">sed &#34;s/ | /\\n/g&#34; | sed &#34;s/^\s*//&#34;</span>
+<span style="color:#75715e"># The &#39;end&#39; split patterns are used because</span>
+<span style="color:#75715e"># we want it to run &#39;after&#39; teh postprocessor</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">on</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="example">Example</h2>
+<h3 id="haskell">Haskell</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-get-the-signatures-for-a-list-of-functions/2 haskell <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 haskell <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fromIntegral :: Integral a <span style="color:#f92672">=</span>&gt; a -&gt; Integer
+fromRational :: Rational a <span style="color:#f92672">=</span>&gt; a -&gt; Integer
+fromInteger :: Integer -&gt; a
+fromReal :: Real a <span style="color:#f92672">=</span>&gt; a -&gt; a
+fromFloating :: Floating a <span style="color:#f92672">=</span>&gt; a -&gt; a
+fromDouble :: Double -&gt; a
+fromRealFrac :: RealFrac a <span style="color:#f92672">=</span>&gt; a -&gt; a
+fromIntegralFloat :: IntegralFloat a <span style="color:#f92672">=</span>&gt; a -&gt; a
+fromFloatingFloat :: Floating a <span style="color:#f92672">=</span>&gt; a -&gt; a
+</code></pre></div><h3 id="python">Python</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;Python&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;Python&#34;</span> <span style="color:#e6db74">&#34;convert int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+float<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+str<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+bool<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="typed-python">Typed Python</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;Typed Python&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int_to_float
+int_to_double
+int_to_long_double
+int_to_float_complex
+int_to_double_complex
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;Typed Python&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;Typed Python&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int -&gt; float
+int -&gt; double
+int -&gt; long double
+int -&gt; float complex
+int -&gt; double complex
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;Typed Python&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;Typed Python&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int_to_float<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span> -&gt; float
+int_to_double<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span> -&gt; double
+int_to_long_double<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span> -&gt; long double
+int_to_float_complex<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span> -&gt; float complex
+int_to_double_complex<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span> -&gt; double complex
+</code></pre></div><h3 id="typescript">TypeScript</h3>
+<p>To get TypeScript to work, I had to add &lsquo;.&rsquo; to the filter <code>grep -oP &quot;^[a-z.A-Z_-]+$&quot;</code> in <code>find-a-function-given-a-use-case-2.prompt</code>.</p>
+<p>The particular query <em>&ldquo;convert from int to
+double&rdquo;</em> definitely has some kind of afinity
+for coming up with math functions, but the prompt is generally fine, I think..</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;TypeScript&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;TypeScript&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Math.abs<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+Math.acos<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+Math.asin<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+Math.atan<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+Math.atan2<span style="color:#f92672">(</span>y: number, x: number<span style="color:#f92672">)</span>: number
+Math.ceil<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+Math.cos<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+Math.exp<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+Math.floor<span style="color:#f92672">(</span>x: number<span style="color:#f92672">)</span>: number
+</code></pre></div><p>I&rsquo;m still unsure about the suggested
+functions. Well, I have fixed the &lsquo;Math&rsquo; issue
+for most languages.</p>
+<h3 id="julia">Julia</h3>
+<p>Interestingly, Julia continually returned function names in backticks.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;Julia&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;Julia&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sqrt<span style="color:#f92672">(</span>x::Float64<span style="color:#f92672">)</span>
+exp<span style="color:#f92672">(</span>x::Float64<span style="color:#f92672">)</span>
+log<span style="color:#f92672">(</span>x::Float64<span style="color:#f92672">)</span>
+floor<span style="color:#f92672">(</span>x::Float64<span style="color:#f92672">)</span>
+ceil<span style="color:#f92672">(</span>x::Float64<span style="color:#f92672">)</span>
+round<span style="color:#f92672">(</span>x::Float64<span style="color:#f92672">)</span>
+trunc<span style="color:#f92672">(</span>x::Float64<span style="color:#f92672">)</span>
+</code></pre></div><p>Not the best results for Julia, but it may be
+a bad question for Julia because what I&rsquo;m
+asking for may not exist.</p>
+<h3 id="c-plus-plus">C++</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;C++&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;C++&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int atoi<span style="color:#f92672">(</span>const char *str<span style="color:#f92672">)</span>
+long atol<span style="color:#f92672">(</span>const char *str<span style="color:#f92672">)</span>
+long long atoll<span style="color:#f92672">(</span>const char *str<span style="color:#f92672">)</span>
+double strtod<span style="color:#f92672">(</span>const char *str, char **endptr<span style="color:#f92672">)</span>
+float strtof<span style="color:#f92672">(</span>const char *str, char **endptr<span style="color:#f92672">)</span>
+long double strtold<span style="color:#f92672">(</span>const char *str, char **endptr<span style="color:#f92672">)</span>
+long int strtol<span style="color:#f92672">(</span>const char *str, char **endptr, int base<span style="color:#f92672">)</span>
+long long int strtoll<span style="color:#f92672">(</span>const char *str, char **endptr, int base<span style="color:#f92672">)</span>
+unsigned long strtoul<span style="color:#f92672">(</span>const char *str, char **endptr, int base<span style="color:#f92672">)</span>
+unsigned long long strtoull<span style="color:#f92672">(</span>const char *str, char **endptr, int base<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="c">C</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;standard C&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;standard C&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int atoi<span style="color:#f92672">(</span>const char *nptr<span style="color:#f92672">)</span>
+long atol<span style="color:#f92672">(</span>const char *nptr<span style="color:#f92672">)</span>
+long long atoll<span style="color:#f92672">(</span>const char *nptr<span style="color:#f92672">)</span>
+double strtod<span style="color:#f92672">(</span>const char *nptr, char **endptr<span style="color:#f92672">)</span>
+float strtof<span style="color:#f92672">(</span>const char *nptr, char **endptr<span style="color:#f92672">)</span>
+long double strtold<span style="color:#f92672">(</span>const char *nptr, char **endptr<span style="color:#f92672">)</span>
+long int strtol<span style="color:#f92672">(</span>const char *nptr, char **endptr, int base<span style="color:#f92672">)</span>
+long long int strtoll<span style="color:#f92672">(</span>const char *nptr, char **endptr, int base<span style="color:#f92672">)</span>
+unsigned long int strtoul<span style="color:#f92672">(</span>const char *nptr, char **endptr, int base<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;standard C&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;standard C&#34;</span> <span style="color:#e6db74">&#34;transform strings&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strcpy<span style="color:#f92672">(</span>char *dest, const char *src<span style="color:#f92672">)</span>
+strcat<span style="color:#f92672">(</span>char *dest, const char *src<span style="color:#f92672">)</span>
+strlen<span style="color:#f92672">(</span>const char *str<span style="color:#f92672">)</span>
+strcmp<span style="color:#f92672">(</span>const char *str1, const char *str2<span style="color:#f92672">)</span>
+strncpy<span style="color:#f92672">(</span>char *dest, const char *src, size_t n<span style="color:#f92672">)</span>
+strncmp<span style="color:#f92672">(</span>const char *str1, const char *str2, size_t n<span style="color:#f92672">)</span>
+strncat<span style="color:#f92672">(</span>char *dest, const char *src, size_t n<span style="color:#f92672">)</span>
+strstr<span style="color:#f92672">(</span>const char *haystack, const char *needle<span style="color:#f92672">)</span>
+strchr<span style="color:#f92672">(</span>const char *str, int c<span style="color:#f92672">)</span>
+strrchr<span style="color:#f92672">(</span>const char *str, int c<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="c">C#</h3>
+<p>It is peculiar that results continue to come
+from the <code>Math</code> pool of functions.</p>
+<p>Ahh, that&rsquo;s better. I had to surround the use-case in quotes.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;C#&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int.TryParse
+double.Parse
+double.TryParse
+Convert.ToDouble
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;C#&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;C#&#34;</span> <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int TryParse<span style="color:#f92672">(</span>string s, out int result<span style="color:#f92672">)</span>
+double Parse<span style="color:#f92672">(</span>string s<span style="color:#f92672">)</span>
+double TryParse<span style="color:#f92672">(</span>string s, out double result<span style="color:#f92672">)</span>
+object Convert.ToDouble<span style="color:#f92672">(</span>object value, IFormatProvider provider<span style="color:#f92672">)</span>
+object Convert.ToInt32<span style="color:#f92672">(</span>object value, IFormatProvider provider<span style="color:#f92672">)</span>
+object Convert.ToInt64<span style="color:#f92672">(</span>object value, IFormatProvider provider<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="purescript">PureScript</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-get-the-signatures-for-a-list-of-functions/2 PureScript <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 PureScript <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">double :: Double -&gt; Double
+realToFrac :: Double -&gt; Double
+truncate :: Double -&gt; Double
+round :: Double -&gt; Double
+ceiling :: Double -&gt; Double
+floor :: Double -&gt; Double
+isInteger :: Double -&gt; Bool
+isRational :: Double -&gt; Bool
+isNaN :: Double -&gt; Bool
+isInfinite :: Double -&gt; Bool
+</code></pre></div><h3 id="applescript">AppleScript</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-get-the-signatures-for-a-list-of-functions/2 AppleScript <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 AppleScript <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">intToFloat<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+intToString<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+intToUnsigned<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+intToLong<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+intToLongLong<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+intToShort<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+intToUnsignedLong<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="ruby">Ruby</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-get-the-signatures-for-a-list-of-functions/2 ruby <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 ruby <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Integer<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+Float<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+Rational<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+Complex<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span>
+x.to_i
+x.to_f
+x.to_r
+x.to_c
+x.to_d
+x.to_s
+x.to_sym
+x.to_str
+x.to_int
+x.to_num
+</code></pre></div><h2 id="java">Java</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 Java <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 Java <span style="color:#e6db74">&#34;convert int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">longValue<span style="color:#f92672">(</span>long<span style="color:#f92672">)</span>
+floatValue<span style="color:#f92672">(</span>float<span style="color:#f92672">)</span>
+doubleValue<span style="color:#f92672">(</span>double<span style="color:#f92672">)</span>
+byteValue<span style="color:#f92672">(</span>byte<span style="color:#f92672">)</span>
+shortValue<span style="color:#f92672">(</span>short<span style="color:#f92672">)</span>
+charValue<span style="color:#f92672">(</span>char<span style="color:#f92672">)</span>
+intValueExact<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span>
+longValueExact<span style="color:#f92672">(</span>long<span style="color:#f92672">)</span>
+floatValueExact<span style="color:#f92672">(</span>float<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-get-the-signatures-for-a-list-of-functions/2 Java <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 Java <span style="color:#e6db74">&#34;transform a string&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">String toUpperCase<span style="color:#f92672">()</span>
+String trim<span style="color:#f92672">()</span>
+String startsWith<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>
+String endsWith<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>
+String contains<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>
+int indexOf<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>
+int lastIndexOf<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>
+String replace<span style="color:#f92672">(</span>String, String<span style="color:#f92672">)</span>
+String<span style="color:#f92672">[]</span> split<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>
+String substring<span style="color:#f92672">(</span>int<span style="color:#f92672">)</span> |
+</code></pre></div><h2 id="kotlin">Kotlin</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 Kotlin <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 Kotlin <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">toFloat<span style="color:#f92672">(</span>x: Double<span style="color:#f92672">)</span>
+toLong<span style="color:#f92672">(</span>x: Double<span style="color:#f92672">)</span>
+toInt<span style="color:#f92672">(</span>x: Double<span style="color:#f92672">)</span>
+toShort<span style="color:#f92672">(</span>x: Double<span style="color:#f92672">)</span>
+toByte<span style="color:#f92672">(</span>x: Double<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 Kotlin <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 Kotlin <span style="color:#e6db74">&#34;transform a string&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">String.toLowerCase<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>: String
+String.capitalize<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>: String
+String.decapitalize<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>: String
+String.plus<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>: String
+String.plusAssign<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>: Unit
+String.Companion.valueOf<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>: String
+String.repeat<span style="color:#f92672">(</span>Int<span style="color:#f92672">)</span>: String
+String.trimMargin<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>: String
+String.trimIndent<span style="color:#f92672">()</span>: String
+String.replace<span style="color:#f92672">(</span>Regex, String<span style="color:#f92672">)</span>: String
+</code></pre></div><h2 id="hack">Hack</h2>
+<p>Hack uses <code>2</code> inside of its function names for specifying conversion.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 Hack <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 Hack <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">int2float<span style="color:#f92672">(</span>int $x<span style="color:#f92672">)</span>
+int2char<span style="color:#f92672">(</span>int $x<span style="color:#f92672">)</span>
+int2string<span style="color:#f92672">(</span>int $x<span style="color:#f92672">)</span>
+</code></pre></div><p>Hack also specified docstrings in the results lists sometimes.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 Hack <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 Hack <span style="color:#e6db74">&#34;transform strings&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strcat<span style="color:#f92672">(</span>char *, char *<span style="color:#f92672">)</span>
+strcmp<span style="color:#f92672">(</span>char *, char *<span style="color:#f92672">)</span>
+strcpy<span style="color:#f92672">(</span>char *, char *<span style="color:#f92672">)</span>
+</code></pre></div><h2 id="ocaml">OCaml</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 OCaml <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 OCaml <span style="color:#e6db74">&#34;convert from int to double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">float_of_int <span style="color:#f92672">(</span>int<span style="color:#f92672">)</span> -&gt; float
+int_of_float <span style="color:#f92672">(</span>float<span style="color:#f92672">)</span> -&gt; int
+int_of_char <span style="color:#f92672">(</span>char<span style="color:#f92672">)</span> -&gt; int
+int_of_string <span style="color:#f92672">(</span>string<span style="color:#f92672">)</span> -&gt; int
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen pf-get-the-signatures-for-a-list-of-functions/2 OCaml <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 OCaml <span style="color:#e6db74">&#34;transform strings&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">String.concat : string -&gt; string -&gt; string
+String.sub : string -&gt; int -&gt; string
+String.substring : string -&gt; int -&gt; int -&gt; string
+String.of_char : char -&gt; string
+String.of_int : int -&gt; string
+String.of_float : float -&gt; string
+</code></pre></div><h2 id="f">F#</h2>
+<p>This took a while to divulge.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;F#&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;F#&#34;</span> <span style="color:#e6db74">&#34;convert an int into a double&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">System.Int32.ToDouble<span style="color:#f92672">(</span>System.Int32<span style="color:#f92672">)</span>
+</code></pre></div><h2 id="cryptographic-functions">Cryptographic functions</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;haskell&#34;</span> <span style="color:#e6db74">&#34;cryptography&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crypto-md5
+crypto-md5-unpack
+crypto-sha1
+crypto-sha1-unpack
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;haskell&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;haskell&#34;</span> <span style="color:#e6db74">&#34;cryptography&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crypto-md5 :: String -&gt; String
+crypto-md5-unpack :: String -&gt; <span style="color:#f92672">[</span>Word8<span style="color:#f92672">]</span>
+crypto-sha1 :: String -&gt; String
+crypto-sha1-unpack :: String -&gt; <span style="color:#f92672">[</span>Word8<span style="color:#f92672">]</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;haskell&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;haskell&#34;</span> <span style="color:#e6db74">&#34;hash functions&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hash :: String -&gt; String -&gt; String
+hashWithSalt :: String -&gt; String -&gt; String -&gt; String
+hashWithSalt1 :: String -&gt; String -&gt; String -&gt; String -&gt; String
+hashWithSalt2 :: String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String
+hashWithSalt3 :: String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String
+hashWithSalt4 :: String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String
+hashWithSalt5 :: String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String
+hashWithSalt6 :: String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String
+hashWithSalt7 :: String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String -&gt; String
+</code></pre></div><h2 id="concurrency">Concurrency</h2>
+<h3 id="haskell">Haskell</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;haskell&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;haskell&#34;</span> <span style="color:#e6db74">&#34;concurrency&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">forkIO :: IO a -&gt; IO a
+forkOn :: Fork -&gt; IO a -&gt; IO a
+threadDelay :: Int -&gt; IO <span style="color:#f92672">()</span>
+threadId :: IO ThreadId
+threadIO :: IO <span style="color:#f92672">()</span> -&gt; IO <span style="color:#f92672">()</span>
+threadInterrupt :: ThreadId -&gt; IO <span style="color:#f92672">()</span>
+threadKill :: ThreadId -&gt; IO <span style="color:#f92672">()</span>
+threadWait :: ThreadId -&gt; IO <span style="color:#f92672">()</span>
+</code></pre></div><h3 id="erlang">Erlang</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;erlang&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;erlang&#34;</span> <span style="color:#e6db74">&#34;concurrency&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spawn<span style="color:#f92672">(</span>Fun, Args<span style="color:#f92672">)</span> -&gt; Pid
+spawn_link<span style="color:#f92672">(</span>Fun, Args<span style="color:#f92672">)</span> -&gt; Pid
+spawn_monitor<span style="color:#f92672">(</span>Fun, Args<span style="color:#f92672">)</span> -&gt; Pid
+spawn_opt<span style="color:#f92672">(</span>Fun, Args, Options<span style="color:#f92672">)</span> -&gt; Pid
+self<span style="color:#f92672">()</span> -&gt; Pid
+whereis<span style="color:#f92672">(</span>RegName<span style="color:#f92672">)</span> -&gt; Pid
+register<span style="color:#f92672">(</span>RegName, Pid<span style="color:#f92672">)</span>
+unregister<span style="color:#f92672">(</span>RegName<span style="color:#f92672">)</span>
+link<span style="color:#f92672">(</span>Pid<span style="color:#f92672">)</span>
+unlink<span style="color:#f92672">(</span>Pid<span style="color:#f92672">)</span>
+monitor_node<span style="color:#f92672">(</span>Node<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="python">Python</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;python&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;python&#34;</span> <span style="color:#e6db74">&#34;concurrency&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">threading.Thread<span style="color:#f92672">(</span>group<span style="color:#f92672">=</span>None, target<span style="color:#f92672">=</span>None, name<span style="color:#f92672">=</span>None, args<span style="color:#f92672">=()</span>, kwargs<span style="color:#f92672">={}</span>, *, daemon<span style="color:#f92672">=</span>None<span style="color:#f92672">)</span>
+multiprocessing.Process<span style="color:#f92672">(</span>group<span style="color:#f92672">=</span>None, target<span style="color:#f92672">=</span>None, name<span style="color:#f92672">=</span>None, args<span style="color:#f92672">=()</span>, kwargs<span style="color:#f92672">={}</span>, *, daemon<span style="color:#f92672">=</span>None<span style="color:#f92672">)</span>
+asyncio.create_task<span style="color:#f92672">(</span>coro, *, name<span style="color:#f92672">=</span>None<span style="color:#f92672">)</span>
+gevent.spawn<span style="color:#f92672">(</span>func, *args, **kwargs<span style="color:#f92672">)</span>
+twisted.internet.threads.deferToThread<span style="color:#f92672">(</span>func, *args, **kwargs<span style="color:#f92672">)</span>
+tornado.concurrent.run_on_executor<span style="color:#f92672">(</span>executor, func, *args, **kwargs<span style="color:#f92672">)</span>
+concurrent.futures.ThreadPoolExecutor<span style="color:#f92672">(</span>max_workers<span style="color:#f92672">=</span>None, thread_name_prefix<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">)</span>.submit<span style="color:#f92672">(</span>func, *args, **kwargs<span style="color:#f92672">)</span>
+subprocess.Popen<span style="color:#f92672">(</span>args, bufsize<span style="color:#f92672">=</span>0, executable<span style="color:#f92672">=</span>None, stdin<span style="color:#f92672">=</span>None, stdout<span style="color:#f92672">=</span>None, stderr<span style="color:#f92672">=</span>None, preexec_fn<span style="color:#f92672">=</span>None, close_fds<span style="color:#f92672">=</span>False, shell<span style="color:#f92672">=</span>False, cwd<span style="color:#f92672">=</span>None, env<span style="color:#f92672">=</span>None, universal_newlines<span style="color:#f92672">=</span>False, startupinfo<span style="color:#f92672">=</span>None, creationflags<span style="color:#f92672">=</span>0, restore_signals<span style="color:#f92672">=</span>True, start_new_session<span style="color:#f92672">=</span>False, pass_fds<span style="color:#f92672">=()</span>, *, encoding<span style="color:#f92672">=</span>None, errors<span style="color:#f92672">=</span>None<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="javascript">JavaScript</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;javascript&#34;</span> <span style="color:#e6db74">&#34;concurrency&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">setTimeout<span style="color:#f92672">(</span>callback, delay<span style="color:#f92672">)</span>
+setInterval<span style="color:#f92672">(</span>callback, delay<span style="color:#f92672">)</span>
+clearTimeout<span style="color:#f92672">(</span>timeoutId<span style="color:#f92672">)</span>
+clearInterval<span style="color:#f92672">(</span>intervalId<span style="color:#f92672">)</span>
+setImmediate<span style="color:#f92672">(</span>callback<span style="color:#f92672">)</span>
+process.nextTick<span style="color:#f92672">(</span>callback<span style="color:#f92672">)</span>
+new MessageChannel<span style="color:#f92672">()</span>
+new MessagePort<span style="color:#f92672">()</span>
+new WebWorker<span style="color:#f92672">()</span>
+new XMLHttpRequest<span style="color:#f92672">()</span>
+</code></pre></div><h3 id="typescript">TypeScript</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pen -u pf-get-the-signatures-for-a-list-of-functions/2 <span style="color:#e6db74">&#34;typescript&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pen -u pf-find-a-function-given-a-use-case/2 <span style="color:#e6db74">&#34;typescript&#34;</span> <span style="color:#e6db74">&#34;concurrency&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">async <span style="color:#f92672">(</span>fn: <span style="color:#f92672">()</span> <span style="color:#f92672">=</span>&gt; Promise&lt;any&gt;<span style="color:#f92672">)</span>: Promise&lt;any&gt;
+await <span style="color:#f92672">(</span>promise: Promise&lt;any&gt;<span style="color:#f92672">)</span>: any
+awaitAll <span style="color:#f92672">(</span>promises: Promise&lt;any&gt;<span style="color:#f92672">[])</span>: Promise&lt;any<span style="color:#f92672">[]</span>&gt;
+awaitAny <span style="color:#f92672">(</span>promises: Promise&lt;any&gt;<span style="color:#f92672">[])</span>: Promise&lt;any&gt;
+delay <span style="color:#f92672">(</span>ms: number<span style="color:#f92672">)</span>: Promise&lt;void&gt;
+fork <span style="color:#f92672">(</span>fn: <span style="color:#f92672">()</span> <span style="color:#f92672">=</span>&gt; Promise&lt;any&gt;<span style="color:#f92672">)</span>: Promise&lt;any&gt;
+join <span style="color:#f92672">(</span>promises: Promise&lt;any&gt;<span style="color:#f92672">[])</span>: Promise&lt;any<span style="color:#f92672">[]</span>&gt;
+race <span style="color:#f92672">(</span>promises: Promise&lt;any&gt;<span style="color:#f92672">[])</span>: Promise&lt;any&gt;
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">(</span>cases: <span style="color:#f92672">{</span>| <span style="color:#66d9ef">case</span>&lt;T&gt;<span style="color:#f92672">(</span>promise: Promise&lt;T&gt;<span style="color:#f92672">)</span>: Promise&lt;T&gt; |<span style="color:#f92672">})</span>: Promise&lt;any&gt;
+spawn <span style="color:#f92672">(</span>fn: <span style="color:#f92672">()</span> <span style="color:#f92672">=</span>&gt; Promise&lt;any&gt;<span style="color:#f92672">)</span>: Promise&lt;any&gt;
+spawnAll <span style="color:#f92672">(</span>fns: <span style="color:#f92672">()</span> <span style="color:#f92672">=</span>&gt; Promise&lt;any&gt;<span style="color:#f92672">[])</span>: Promise&lt;any<span style="color:#f92672">[]</span>&gt;
+spawnAny <span style="color:#f92672">(</span>fns: <span style="color:#f92672">()</span> <span style="color:#f92672">=</span>&gt; Promise&lt;any&gt;<span style="color:#f92672">[])</span>: Promise&lt;any&gt;
+timeout <span style="color:#f92672">(</span>ms: number<span style="color:#f92672">)</span>: Promise&lt;void&gt;
+timeoutAll <span style="color:#f92672">(</span>ms: number<span style="color:#f92672">)</span>: Promise&lt;void&gt;
+</code></pre></div>
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1844 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-08-30 00:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Prompts%20to%20search%20for%20functions%20in%20Pen.el&amp;caption=Prompts%20to%20search%20for%20functions%20in%20Pen.el&amp;canonicalUrl=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Prompts%20to%20search%20for%20functions%20in%20Pen.el&amp;body=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f&amp;media=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f;description=Prompts%20to%20search%20for%20functions%20in%20Pen.el" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f&amp;title=Prompts%20to%20search%20for%20functions%20in%20Pen.el&amp;summary=Prompts%20to%20search%20for%20functions%20in%20Pen.el&amp;source=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f&amp;resubmit=true&amp;title=Prompts%20to%20search%20for%20functions%20in%20Pen.el" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f;title=Prompts%20to%20search%20for%20functions%20in%20Pen.el" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Prompts%20to%20search%20for%20functions%20in%20Pen.el%20http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f&amp;t=Prompts%20to%20search%20for%20functions%20in%20Pen.el" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Prompts%20to%20search%20for%20functions%20in%20Pen.el&amp;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fprompts-to-search-for-functions-in-pen-el%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+
+          
+            <span class="button next">
+              <a href="http://semiosis.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/">
+                <span class="button__text">An emacs Imaginary Interpreter with history, completion and evaluation</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span>Visit <a href="https://github.com/semiosis"><image src="/New_Zealand_Simplified.svg" style="display:inline-block; line-height:2em; vertical-align:middle; height: 2em;" /> semiosis on GitHub</a></span>
+
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+
+
+
+    </body>
+</html>
