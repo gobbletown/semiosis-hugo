@@ -46,7 +46,7 @@ Demo  --  Utilising many different prompt functions to provide an imaginary pyth
       <pubDate>Wed, 25 Aug 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/posts/imaginary-real-codex-complex/</guid>
-      <description>Summary I add an imaginary dimension to the emacs terminal.
+      <description>Summary tltr; I add an imaginary dimension to the emacs terminal using OpenAI-Codex.
 Integrating real interpreters with imaginary ones creates something new that is greater than the sum of their parts; A complex terminal.
 The complex terminal utilises the Codex LM to perform its underlying prompt functions. A complex terminal uses imaginary functions to enable the user to see what may happen upon running a command, to see what may follow after writing some code, and see what people usually do within a terminal context, no matter how deeply nested within interpreters or files.</description>
     </item>

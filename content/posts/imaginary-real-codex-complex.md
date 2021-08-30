@@ -8,8 +8,7 @@ draft = false
 
 ## Summary {#summary}
 
-I add an imaginary dimension to the emacs
-terminal.
+tltr; I add an imaginary dimension to the emacs terminal using OpenAI-Codex.
 
 Integrating real interpreters with imaginary
 ones creates something new that is greater than
@@ -82,6 +81,47 @@ this as robust as possible and it's too exciting.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/52413ZGnS7T1tLKHgeBC2sPYg" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/52413ZGnS7T1tLKHgeBC2sPYg.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/52413ZGnS7T1tLKHgeBC2sPYg.js" id="asciicast-52413ZGnS7T1tLKHgeBC2sPYg" async></script>
+
+
+### cterm and ptpython {#cterm-and-ptpython}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/76VOZusLLl8fNedeAnaOKIrdv" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/76VOZusLLl8fNedeAnaOKIrdv.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/76VOZusLLl8fNedeAnaOKIrdv.js" id="asciicast-76VOZusLLl8fNedeAnaOKIrdv" async></script>
+
+Use `pen-complete-lines` to look ahead while
+using an interpreter such as ptpython to see
+what would follow if you were to run the current line.
+
+I have bound it to `M-4`.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun pen-complete-lines (preceding-text &optional tv)
+  "Lines-form completion. This will generate lots of text.
+May use to generate code from comments."
+  (interactive (list (pen-preceding-text) nil))
+  (let ((response
+         (pen-lines-complete
+          (pen-complete-function preceding-text))))
+    (if tv
+        (pen-etv (ink-propertise response))
+      (pen-complete-insert (ink-propertise response)))))
+
+(defmacro pen-lines-complete (&rest body)
+  "This wraps around pen function calls to make them complete line only"
+  `(eval
+    `(let ((is-completion t)
+           (max-tokens 50)
+           (n-completions 2)
+           (n-collate 1)
+           (inject-gen-start "\n")
+           (stop-sequence "##long complete##")
+           (stop-sequences '("##long complete##"))
+           ;; Delete the last line. But only if more than 1?
+           (postprocessor "pen-str maybe-delete-last-line"))
+       ,',@body)))
+{{< /highlight >}}
 
 
 ### OK, what about automating emacs with Codex? {#ok-what-about-automating-emacs-with-codex}
