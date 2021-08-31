@@ -151,31 +151,78 @@ parsec.many # parsec.many</code></pre></td></tr></table>
 <dt>An aside</dt>
 <dd>With Davinci the topic+subtopic tutor does well, but not with Codex.</dd>
 </dl>
-<p>You can parse a date using the format
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">You can parse a date using the format
 function, but you should not use the default
 RecordParser, you need to use the FieldParser
-When given a format string, such as &lsquo;yyyy-MM-
-dd&rsquo; (year, month, day), you should use the
-&lsquo;parseDateFromString&rsquo; function.</p>
-<p>And you can read about it here: <a href="http://www.has">http://www.has</a>
+When given a format string, such as &#39;yyyy-MM-
+dd&#39; (year, month, day), you should use the
+&#39;parseDateFromString&#39; function.
+
+And you can read about it here: http://www.has
 kell.org/haskellwiki/Parsec#Format_strings ##
-So to parse &ldquo;2010-01-10&rdquo; you would use:
-<em>What is a monad?</em></p>
-<p>Monads are a type of algebraic structure used
+So to parse &#34;2010-01-10&#34; you would use:</code></pre></td></tr></table>
+</div>
+</div>
+<p><em>What is a monad?</em></p>
+<p>The tutor gives the meme description of a monad (functor in the category of endofunctors)!</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Monads are a type of algebraic structure used
 to create a category of actions, where each
-action is an object in the category.</p>
-<p>Monads are a very useful concept in functional
-programming.</p>
-<p>A monad is a functor in the category of
+action is an object in the category.
+
+Monads are a very useful concept in functional
+programming.
+
+A monad is a functor in the category of
 endofunctors, or a category in which every
-endofunctor is a functor.</p>
-<p>Monads also allow for the abstraction of the
-&ldquo;state&rdquo; of a program at a given time.</p>
-<p>Different variants of monads include
-conceptually &ldquo;state&rdquo; monads, continuation
+endofunctor is a functor.
+
+Monads also allow for the abstraction of the
+&#34;state&#34; of a program at a given time.
+
+Different variants of monads include
+conceptually &#34;state&#34; monads, continuation
 monads, Reader monads, Writer monads, and
-various others.</p>
-<h3 id="ask-the-tutor-abiout-python">Ask the tutor abiout python</h3>
+various others.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ask-the-tutor-about-python">Ask the tutor about python</h3>
 <p><em>How do I manage a pool of threads?</em></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

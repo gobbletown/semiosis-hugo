@@ -101,6 +101,9 @@ _How do I parse a date?_
 An aside
 : With Davinci the topic+subtopic tutor does well, but not with Codex.
 
+<!--listend-->
+
+{{< highlight text "linenos=table, linenostart=1" >}}
 You can parse a date using the format
 function, but you should not use the default
 RecordParser, you need to use the FieldParser
@@ -108,11 +111,16 @@ When given a format string, such as 'yyyy-MM-
 dd' (year, month, day), you should use the
 'parseDateFromString' function.
 
-And you can read about it here: <http://www.has>
-kell.org/haskellwiki/Parsec#Format\_strings ##
+And you can read about it here: http://www.has
+kell.org/haskellwiki/Parsec#Format_strings ##
 So to parse "2010-01-10" you would use:
+{{< /highlight >}}
+
 _What is a monad?_
 
+The tutor gives the meme description of a monad (functor in the category of endofunctors)!
+
+{{< highlight text "linenos=table, linenostart=1" >}}
 Monads are a type of algebraic structure used
 to create a category of actions, where each
 action is an object in the category.
@@ -131,9 +139,10 @@ Different variants of monads include
 conceptually "state" monads, continuation
 monads, Reader monads, Writer monads, and
 various others.
+{{< /highlight >}}
 
 
-### Ask the tutor abiout python {#ask-the-tutor-abiout-python}
+### Ask the tutor about python {#ask-the-tutor-about-python}
 
 _How do I manage a pool of threads?_
 
