@@ -25,8 +25,9 @@ Demo  --  Bad awk code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  if NR &a
       
       <guid>http://semiosis.github.io/posts/an-imaginary-linter-with-codex/</guid>
       <description>Summary I demonstrate an imaginary linter with Codex. This predicts an error message for a line of awk code. However, it also infers when the code is correct, so it&amp;rsquo;s useful.
-The accuracy is good enough to make a reliable imaginary linter.
-Demo Correctly identifies syntax error 7 times out of 20  --  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  6: } 5: ^ syntax error 6: } 5: ^ syntax error 5: ^ syntax error 5: ^ 6: } 5: ^ syntax error 6: } 6: } 6: } 6: } 6: } 6: } 6: } 5: ^ syntax error 6: } 5: ^ syntax error 6: } 5: ^ syntax error   Correctly identifies correct code 19 times out of 20  --  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 5: ^ syntax error   Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  task: &amp;#34;Imagine an awk linter&amp;#34; doc: &amp;#34;Given a line of awk code, check it for errors&amp;#34; prompt-version: 1 prompt: |+awk -f program.</description>
+The accuracy is not really good enough to make a reliable imaginary linter, but should work better with more popular languages such as Python.
+In any case, I will build the tooling around prompts to perform linting.
+Demo Correctly identifies syntax error 7 times out of 20  --  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  6: } 5: ^ syntax error 6: } 5: ^ syntax error 5: ^ syntax error 5: ^ 6: } 5: ^ syntax error 6: } 6: } 6: } 6: } 6: } 6: } 6: } 5: ^ syntax error 6: } 5: ^ syntax error 6: } 5: ^ syntax error   Correctly identifies correct code 19 times out of 20  --  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 6: } 5: ^ syntax error   Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &amp;#34;Imagine an awk linter&amp;#34; doc: &amp;#34;Given a line of awk code, check it for errors&amp;#34; issues: - This doesn&amp;#39;t work very well at all.</description>
     </item>
     
     <item>
