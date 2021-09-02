@@ -10,6 +10,241 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>A git commit message generator with Codex</title>
+            <link>http://semiosis.github.io/posts/a-git-commit-message-generator-with-codex/</link>
+            <pubDate>Thu, 02 Sep 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/a-git-commit-message-generator-with-codex/</guid>
+            <description>Summary I make a git commit message generator in Pen.el with OpenAI&amp;rsquo;s Codex.
+Demo  --  Example diff  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37  diff --git a/scripts/pen-ai21 b/scripts/pen-ai21 index 4859e4a..dbcbc7c 100755 --- a/scripts/pen-ai21 +++ b/scripts/pen-ai21 @@ -42,13 +42,15 @@ pen_ai21() { # cmd-nice-jq is very slow.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I make a git commit message generator in
+<code>Pen.el</code> with OpenAI&rsquo;s Codex.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/az2uRwBuuS3PyF0mLRBTYCckm" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/az2uRwBuuS3PyF0mLRBTYCckm.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/az2uRwBuuS3PyF0mLRBTYCckm.js" id="asciicast-az2uRwBuuS3PyF0mLRBTYCckm" async></script>
+<h3 id="example-diff">Example diff</h3>
+<p><a id="code-snippet--diff"></a>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">diff --git a/scripts/pen-ai21 b/scripts/pen-ai21
+index 4859e4a..dbcbc7c 100755
+--- a/scripts/pen-ai21
++++ b/scripts/pen-ai21
+@@ -42,13 +42,15 @@ pen_ai21() {
+     # cmd-nice-jq is very slow. Find a faster, reliable solution.
+     # Or use python
+
++    # \&#34;maxTokens\&#34;: $PEN_ENGINE_MAX_GENERATED_TOKENS,
++
+     curl &#34;https://api.ai21.com/studio/v1/$PEN_MODEL/complete&#34; \
+          -H &#39;Content-Type: application/json&#39; \
+          -H &#34;Authorization: Bearer $AI21_API_KEY&#34; \
+          -X POST \
+          -d &#34;{\&#34;prompt\&#34;: $(cmd-nice-jq &#34;$PEN_PROMPT&#34;),
+               \&#34;numResults\&#34;: $PEN_N_COMPLETIONS,
+-              \&#34;maxTokens\&#34;: $PEN_ENGINE_MAX_GENERATED_TOKENS,
++              \&#34;maxTokens\&#34;: $PEN_MAX_TOKENS,
+               \&#34;stopSequences\&#34;: [$(cmd-nice-jq &#34;$PEN_STOP_SEQUENCE&#34;)],
+               \&#34;topKReturn\&#34;: $PEN_TOP_K,
+               \&#34;temperature\&#34;: $PEN_TEMPERATURE
+diff --git a/src/pen.el b/src/pen.el
+index 800a7d1..7c88475 100644
+--- a/src/pen.el
++++ b/src/pen.el
+@@ -1497,10 +1497,12 @@ Function names are prefixed with pf- for easy searching&#34;
+                         (model (ht-get yaml-ht &#34;model&#34;))
+
+                         ;; min-tokens and max-tokens include the prompt
++                        ;; These values may also be inferred from max-generated-tokens + an approximation of the prompt size.
+                         (min-tokens (ht-get yaml-ht &#34;min-tokens&#34;))
+                         (max-tokens (ht-get yaml-ht &#34;max-tokens&#34;))
+
+                         ;; min-generated-tokens and max-generated-tokens do not include the prompt
++                        ;; These values may also be inferred from max-tokens - an approximation of the prompt size.
+                         (min-generated-tokens (ht-get yaml-ht &#34;min-generated-tokens&#34;))
+                         (max-generated-tokens (ht-get yaml-ht &#34;max-generated-tokens&#34;))</code></pre></td></tr></table>
+</div>
+</div></p>
+<h3 id="suggestions-from-first-query">Suggestions from first query</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">pf-api: update AI21 model
+pen-ai21: extract AI21 to separate project
+Add pen-ai21 as a more elaborate pen
+pen-ai21: better alignment of generated completions
+Ship AI21 Studio API key in a central place
+pen-ai21: Add additional fields and sanitize
+big-commit-with-diff
+Add more bash completion
+Use curl for AI21 completion requests
+Revert &#34;Do not include prompt in tokens to pen-ai21&#34;</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompt">Prompt</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Commit message from diff&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Generate a commit message from a diff&#34;</span>
+<span style="color:#f92672">is-info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    cat git-diff.txt &lt;&lt;EOD
+</span><span style="color:#e6db74">    git diff HEAD\^!
+</span><span style="color:#e6db74">    &lt;diff&gt;
+</span><span style="color:#e6db74">    EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    git log HEAD\^! --oneline
+</span><span style="color:#e6db74">    5ebcee4 (HEAD -&gt; master)</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.8</span>
+<span style="color:#f92672">max-tokens</span>: <span style="color:#ae81ff">60</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;diff&#34;</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#e6db74">&#34;sed &#39;s/^/&gt; /&#39;&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-selected-text)&#34;</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#75715e"># validator: &#34;wc -l | grep -qP &#39;^1$&#39;&#34;</span>
+<span style="color:#f92672">examples</span>:
+- |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    diff --git a/prompts/randomize-private-info.prompt b/prompts/randomize-private-info.prompt
+</span><span style="color:#e6db74">    index d4a21d1..4a4cc74 100644
+</span><span style="color:#e6db74">    --- a/prompts/randomize-private-info.prompt
+</span><span style="color:#e6db74">    +++ b/prompts/randomize-private-info.prompt
+</span><span style="color:#e6db74">    @@ -21,10 +21,10 @@ prompt: |+
+</span><span style="color:#e6db74">         Date:   Sun Apr 4 13:26:51 2021 +0200
+</span><span style="color:#e6db74">         EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    -    # The exact same data file but with different private details
+</span><span style="color:#e6db74">    -    cat data-fake.txt &lt;&lt;EOD
+</span><span style="color:#e6db74">    +    # The exact same data file but with different and fake private details
+</span><span style="color:#e6db74">    +    cat fake-data.txt &lt;&lt;EOD
+</span><span style="color:#e6db74">     engine: &#34;OpenAI Codex&#34;
+</span><span style="color:#e6db74">    -temperature: 0.8
+</span><span style="color:#e6db74">    +temperature: 0.9
+</span><span style="color:#e6db74">     max-tokens: &#34;(* 2 prompt-length)&#34;
+</span><span style="color:#e6db74">     stop-sequences:
+</span><span style="color:#e6db74">     - &#34;EOD&#34;</span>    
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Hiding personal information with OpenAI Codex</title>
             <link>http://semiosis.github.io/posts/hiding-personal-information-with-openai-codex/</link>
             <pubDate>Thu, 02 Sep 2021 00:00:00 +1200</pubDate>

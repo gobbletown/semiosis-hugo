@@ -9,6 +9,16 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 02 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A git commit message generator with Codex</title>
+      <link>http://semiosis.github.io/posts/a-git-commit-message-generator-with-codex/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/a-git-commit-message-generator-with-codex/</guid>
+      <description>Summary I make a git commit message generator in Pen.el with OpenAI&amp;rsquo;s Codex.
+Demo  --  Example diff  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37  diff --git a/scripts/pen-ai21 b/scripts/pen-ai21 index 4859e4a..dbcbc7c 100755 --- a/scripts/pen-ai21 +++ b/scripts/pen-ai21 @@ -42,13 +42,15 @@ pen_ai21() { # cmd-nice-jq is very slow.</description>
+    </item>
+    
+    <item>
       <title>Hiding personal information with OpenAI Codex</title>
       <link>http://semiosis.github.io/posts/hiding-personal-information-with-openai-codex/</link>
       <pubDate>Thu, 02 Sep 2021 00:00:00 +1200</pubDate>
