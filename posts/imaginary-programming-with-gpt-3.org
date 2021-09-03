@@ -17,6 +17,8 @@
 
 + Glossary :: http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
 
++ Thesis :: https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org
+
 ** Summary
 This is a demonstration of an imaginary
 programming environment. There may be nothing
