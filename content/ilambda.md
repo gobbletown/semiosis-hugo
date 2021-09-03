@@ -6,7 +6,10 @@ keywords = ["emacs", "openai", "pen", "gpt", "imaginary-programming"]
 draft = false
 +++
 
-## Summary {#summary}
+## `iλ` (Imaginary Programming Functions) {#iλ--imaginary-programming-functions}
+
+
+### Summary {#summary}
 
 I design an imaginary programming (`IP`) library
 (`iλ.el`) for emacs. Think of it a bit like a
@@ -31,7 +34,7 @@ IP glossary
 : <https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
 
 
-### The objective with `iλ.el` {#the-objective-with-iλ-dot-el}
+#### The objective with `iλ.el` {#the-objective-with-iλ-dot-el}
 
 The objective here is to create `IP` functions
 for programming in emacs lisp exclusively.
@@ -42,19 +45,20 @@ programming languages, but I intend to make
 in emacs lisp without bloat or over-complication.
 
 
-## Syntax forms {#syntax-forms}
+### Syntax forms {#syntax-forms}
 
-| name             | basic idea                                                                                                     |
-|------------------|----------------------------------------------------------------------------------------------------------------|
-| `idefun`         | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
-| `imacro`         | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                    |
-| `ilist`          | Generate a list of things. Return a real list.                                                                 |
-| `ilambda` / `iλ` | Imaginarily run an expression on the given arguments and return an imagined result.                            |
-| `ifilter`        | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
-| `ieval`          | `ieval` will imagine the evaluation of some code without any other context.                                    |
+| name             | type     | basic idea                                                                                                     |
+|------------------|----------|----------------------------------------------------------------------------------------------------------------|
+| `idefun`         | function | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
+| `imacro`         | function | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                    |
+| `ilist`          | function | Generate a list of things. Return a real list.                                                                 |
+| `ilambda` / `iλ` | function | Imaginarily run an expression on the given arguments and return an imagined result.                            |
+| `ifilter`        | function | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
+| `ieval`          | function | `ieval` will imagine the evaluation of some code without any other context.                                    |
+| `iparse`         | macro    | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.         |
 
 
-### `idefun` {#idefun}
+#### `idefun` {#idefun}
 
 The `idefun` is mostly simply a call to a
 function without necessarily specifying its
@@ -62,7 +66,7 @@ implementation. The LM will then imagine the
 evaluation of the function.
 
 
-### `imacro` {#imacro}
+#### `imacro` {#imacro}
 
 Components of the `imacro` should be inferred.
 An `imacro` with only a function name should
@@ -73,7 +77,7 @@ macro. This means, that expanding the `imacro`
 will infer/generate underlying code.
 
 
-### `ilist` {#ilist}
+#### `ilist` {#ilist}
 
 The easiest of the list of syntax forms I
 aimed to implement, `ilist` simply takes a the
@@ -94,16 +98,16 @@ of such things.
 {{< /highlight >}}
 
 
-### `imacro` {#imacro}
+#### `imacro` {#imacro}
 
 
-### `ilambda` {#ilambda}
+#### `ilambda` {#ilambda}
 
 Imaginarily run an expression on the given
 arguments and return an imagined result.
 
 
-### `ifilter` {#ifilter}
+#### `ifilter` {#ifilter}
 
 Example:
 
@@ -112,12 +116,12 @@ Example:
 {{< /highlight >}}
 
 
-### Derived functions {#derived-functions}
+#### Derived functions {#derived-functions}
 
 -   _get-backstory_
 
 
-### `ieval` {#ieval}
+#### `ieval` {#ieval}
 
 `ieval` will simply evaluate the provided
 string as emacs lisp code.
@@ -129,7 +133,10 @@ string as emacs lisp code.
 `ieval` is used by `idefun` and `ilambda`.
 
 
-### `itransform` {#itransform}
+#### `iparse` {#iparse}
+
+
+#### `itransform` {#itransform}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defun get-backstory ()

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
+<meta name="description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -33,21 +33,21 @@
 
 
 <meta itemprop="name" content="Designing an imaginary programming library iλ for emacs">
-<meta itemprop="description" content="Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
+<meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="457"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="488"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Designing an imaginary programming library iλ for emacs"/>
-<meta name="twitter:description" content="Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."/>
+<meta name="twitter:description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."/>
 
 
 
 
     <meta property="og:title" content="Designing an imaginary programming library iλ for emacs" />
-<meta property="og:description" content="Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
+<meta property="og:description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/ilambda/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="" />
 <meta property="article:published_time" content="2021-09-03T00:00:00&#43;12:00" />
@@ -143,7 +143,8 @@
             
 
             <div class="post-content">
-                <h2 id="summary">Summary</h2>
+                <h2 id="iλ--imaginary-programming-functions"><code>iλ</code> (Imaginary Programming Functions)</h2>
+<h3 id="summary">Summary</h3>
 <p>I design an imaginary programming (<code>IP</code>) library
 (<code>iλ.el</code>) for emacs. Think of it a bit like a
 functional programming library in that you
@@ -164,61 +165,73 @@ straight into my thesis.</p>
 <dt>IP glossary</dt>
 <dd><a href="https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt">https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt</a></dd>
 </dl>
-<h3 id="the-objective-with-iλ-dot-el">The objective with <code>iλ.el</code></h3>
+<h4 id="the-objective-with-iλ-dot-el">The objective with <code>iλ.el</code></h4>
 <p>The objective here is to create <code>IP</code> functions
 for programming in emacs lisp exclusively.</p>
 <p>It will be extended in the future to do all
 programming languages, but I intend to make
 <code>iλ.el</code> simple and effective for programming
 in emacs lisp without bloat or over-complication.</p>
-<h2 id="syntax-forms">Syntax forms</h2>
+<h3 id="syntax-forms">Syntax forms</h3>
 <table>
 <thead>
 <tr>
 <th>name</th>
+<th>type</th>
 <th>basic idea</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>idefun</code></td>
+<td>function</td>
 <td>Run an expression on the given arguments and return an imagined result, but create a binding for the function.</td>
 </tr>
 <tr>
 <td><code>imacro</code></td>
+<td>function</td>
 <td><code>imacro</code> does not evaluate. It merely generates code, but is like <code>idefun</code>.</td>
 </tr>
 <tr>
 <td><code>ilist</code></td>
+<td>function</td>
 <td>Generate a list of things. Return a real list.</td>
 </tr>
 <tr>
 <td><code>ilambda</code> / <code>iλ</code></td>
+<td>function</td>
 <td>Imaginarily run an expression on the given arguments and return an imagined result.</td>
 </tr>
 <tr>
 <td><code>ifilter</code></td>
+<td>function</td>
 <td>Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.</td>
 </tr>
 <tr>
 <td><code>ieval</code></td>
+<td>function</td>
 <td><code>ieval</code> will imagine the evaluation of some code without any other context.</td>
+</tr>
+<tr>
+<td><code>iparse</code></td>
+<td>macro</td>
+<td>Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="idefun"><code>idefun</code></h3>
+<h4 id="idefun"><code>idefun</code></h4>
 <p>The <code>idefun</code> is mostly simply a call to a
 function without necessarily specifying its
 implementation. The LM will then imagine the
 evaluation of the function.</p>
-<h3 id="imacro"><code>imacro</code></h3>
+<h4 id="imacro"><code>imacro</code></h4>
 <p>Components of the <code>imacro</code> should be inferred.
 An <code>imacro</code> with only a function name should
 work.</p>
 <p>Also, an <code>imacro</code> is under the hood a regular
 macro. This means, that expanding the <code>imacro</code>
 will infer/generate underlying code.</p>
-<h3 id="ilist"><code>ilist</code></h3>
+<h4 id="ilist"><code>ilist</code></h4>
 <p>The easiest of the list of syntax forms I
 aimed to implement, <code>ilist</code> simply takes a the
 number of items to generate (<code>n</code>) and a string
@@ -247,11 +260,11 @@ of such things.</p>
   (etv (pps (ilist <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;tennis players&#34;</span>))))</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="imacro"><code>imacro</code></h3>
-<h3 id="ilambda"><code>ilambda</code></h3>
+<h4 id="imacro"><code>imacro</code></h4>
+<h4 id="ilambda"><code>ilambda</code></h4>
 <p>Imaginarily run an expression on the given
 arguments and return an imagined result.</p>
-<h3 id="ifilter"><code>ifilter</code></h3>
+<h4 id="ifilter"><code>ifilter</code></h4>
 <p>Example:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -261,11 +274,11 @@ arguments and return an imagined result.</p>
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(pps (ifilter (ilist <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;tennis players&#34;</span>) <span style="color:#e6db74">&#34;is male&#34;</span>))</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="derived-functions">Derived functions</h3>
+<h4 id="derived-functions">Derived functions</h4>
 <ul>
 <li><em>get-backstory</em></li>
 </ul>
-<h3 id="ieval"><code>ieval</code></h3>
+<h4 id="ieval"><code>ieval</code></h4>
 <p><code>ieval</code> will simply evaluate the provided
 string as emacs lisp code.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -277,7 +290,8 @@ string as emacs lisp code.</p>
 </div>
 </div>
 <p><code>ieval</code> is used by <code>idefun</code> and <code>ilambda</code>.</p>
-<h3 id="itransform"><code>itransform</code></h3>
+<h4 id="iparse"><code>iparse</code></h4>
+<h4 id="itransform"><code>itransform</code></h4>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
