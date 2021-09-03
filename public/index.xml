@@ -9,6 +9,15 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 02 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Designing an imaginary programming library iλ for emacs</title>
+      <link>http://semiosis.github.io/ilambda/</link>
+      <pubDate>Fri, 03 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/ilambda/</guid>
+      <description>Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language.</description>
+    </item>
+    
+    <item>
       <title>A git commit message generator with Codex</title>
       <link>http://semiosis.github.io/posts/a-git-commit-message-generator-with-codex/</link>
       <pubDate>Thu, 02 Sep 2021 00:00:00 +1200</pubDate>

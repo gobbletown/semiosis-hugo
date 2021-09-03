@@ -78,6 +78,11 @@ unsafe= true
     url        = "/pen/"
 
   [[menu.main]]
+    identifier = "ilambda"
+    name       = "iλ"
+    url        = "/ilambda/"
+
+  [[menu.main]]
     identifier = "ii"
     name       = "Imaginary Interpreter"
     url        = "/ii/"
