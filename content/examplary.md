@@ -1,8 +1,8 @@
 +++
-title = "Examplary"
+title = "Examplary (a example-oriented programming language)"
 author = ["Shane Mulligan"]
 date = 2021-03-17T00:00:00+13:00
-keywords = ["nlp", "openai"]
+keywords = ["nlp", "openai", "pen", "gpt"]
 draft = false
 +++
 
@@ -73,7 +73,7 @@ Leave out `:task` to have it inferred.
 {{< /highlight >}}
 
 Even leave out `:gen` to have it inferred from
-the variable name.
+tthe variable name.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defprompt ("short lines of code" regex) :filter "grex")

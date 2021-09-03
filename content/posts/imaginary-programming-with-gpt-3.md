@@ -277,3 +277,34 @@ Conjugation is comprised of melding and a sliding window.
 
 -   <http://github.com/semiosis/prompts/blob/master/prompts/meld-two-passages-2.prompt>
 -   <http://github.com/semiosis/pen.el/blob/master/scripts/pen-sliding-window>
+
+
+## `iλ`, a family of imaginary programming libraries {#iλ-a-family-of-imaginary-programming-libraries}
+
+-   <https://semiosis.github.io/ilambda/>
+-   Interop with language models in your code.
+
+<!--listend-->
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(ifilter (ilist 10 "tennis players") "is male")
+{{< /highlight >}}
+
+
+## Examplary (a example-oriented programming language) {#examplary--a-example-oriented-programming-language}
+
+-   <https://semiosis.github.io/examplary/>
+-   Generate prompts.
+
+<!--listend-->
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defprompt ("lines of code" regex)
+  :task "Convert lines to regex"
+  :gen "examplary-edit-generator shane"
+  :filter "grex"
+  :examples '(("example 1\nexample2")
+              ("example 2\nexample3" "^example [23]$")
+              ("pi4\npi5" "^pi[45]$" "pi4\npi5"))
+  :lm-command "openai-complete.sh")
+{{< /highlight >}}
