@@ -9,6 +9,8 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs openai pen gpt imaginary-programming
 
+* =iλ= (Imaginary Programming Functions)
+
 ** Summary
 I design an imaginary programming (=IP=) library
 (=iλ.el=) for emacs. Think of it a bit like a
@@ -37,14 +39,15 @@ programming languages, but I intend to make
 in emacs lisp without bloat or over-complication.
 
 ** Syntax forms
-| name             | basic idea                                                                                                     |
-|------------------+----------------------------------------------------------------------------------------------------------------|
-| =idefun=         | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
-| =imacro=         | =imacro= does not evaluate. It merely generates code, but is like =idefun=.                                    |
-| =ilist=          | Generate a list of things. Return a real list.                                                                 |
-| =ilambda= / =iλ= | Imaginarily run an expression on the given arguments and return an imagined result.                            |
-| =ifilter=        | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
-| =ieval=          | =ieval= will imagine the evaluation of some code without any other context.                                    |
+| name             | type     | basic idea                                                                                                     |
+|------------------+----------+----------------------------------------------------------------------------------------------------------------|
+| =idefun=         | function | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
+| =imacro=         | function | =imacro= does not evaluate. It merely generates code, but is like =idefun=.                                    |
+| =ilist=          | function | Generate a list of things. Return a real list.                                                                 |
+| =ilambda= / =iλ= | function | Imaginarily run an expression on the given arguments and return an imagined result.                            |
+| =ifilter=        | function | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
+| =ieval=          | function | =ieval= will imagine the evaluation of some code without any other context.                                    |
+| =iparse=         | macro    | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.         |
 
 *** =idefun=
 The =idefun= is mostly simply a call to a
@@ -106,6 +109,8 @@ string as emacs lisp code.
 #+END_SRC
 
 =ieval= is used by =idefun= and =ilambda=.
+
+*** =iparse=
 
 *** =itransform=
 
