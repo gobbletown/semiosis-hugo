@@ -1,5 +1,5 @@
 +++
-title = "Designing an imaginary programming library iλ for emacs"
+title = "iλ, an imaginary programming library for emacs"
 author = ["Shane Mulligan"]
 date = 2021-09-03T00:00:00+12:00
 keywords = ["emacs", "openai", "pen", "gpt", "imaginary-programming"]
@@ -11,7 +11,7 @@ draft = false
 
 ### Summary {#summary}
 
-I design an imaginary programming (`IP`) library
+I design and build an imaginary programming (`IP`) library
 (`iλ.el`) for emacs. Think of it a bit like a
 functional programming library in that you
 will find a set of functions and macros for

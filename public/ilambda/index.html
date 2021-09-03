@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
+<meta name="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -14,7 +14,7 @@
 
     <title>
         
-            Designing an imaginary programming library iλ for emacs :: semiosis  — Signs, Natural Language and Coding
+            iλ, an imaginary programming library for emacs :: semiosis  — Signs, Natural Language and Coding
         
     </title>
 
@@ -32,22 +32,22 @@
 
 
 
-<meta itemprop="name" content="Designing an imaginary programming library iλ for emacs">
-<meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
+<meta itemprop="name" content="iλ, an imaginary programming library for emacs">
+<meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="488"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="490"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
-<meta name="twitter:title" content="Designing an imaginary programming library iλ for emacs"/>
-<meta name="twitter:description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."/>
+<meta name="twitter:title" content="iλ, an imaginary programming library for emacs"/>
+<meta name="twitter:description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."/>
 
 
 
 
-    <meta property="og:title" content="Designing an imaginary programming library iλ for emacs" />
-<meta property="og:description" content="iλ (Imaginary Programming Functions) Summary I design an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
+    <meta property="og:title" content="iλ, an imaginary programming library for emacs" />
+<meta property="og:description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/ilambda/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="" />
 <meta property="article:published_time" content="2021-09-03T00:00:00&#43;12:00" />
@@ -136,7 +136,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="http://semiosis.github.io/ilambda/">Designing an imaginary programming library iλ for emacs</a></h2>
+            <h2 class="post-title"><a href="http://semiosis.github.io/ilambda/">iλ, an imaginary programming library for emacs</a></h2>
 
             
             
@@ -145,7 +145,7 @@
             <div class="post-content">
                 <h2 id="iλ--imaginary-programming-functions"><code>iλ</code> (Imaginary Programming Functions)</h2>
 <h3 id="summary">Summary</h3>
-<p>I design an imaginary programming (<code>IP</code>) library
+<p>I design and build an imaginary programming (<code>IP</code>) library
 (<code>iλ.el</code>) for emacs. Think of it a bit like a
 functional programming library in that you
 will find a set of functions and macros for
