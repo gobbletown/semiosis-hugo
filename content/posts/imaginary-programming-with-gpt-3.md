@@ -22,6 +22,10 @@ Glossary
 : <http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
 
 
+Thesis
+: <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>
+
+
 ## Summary {#summary}
 
 This is a demonstration of an imaginary
@@ -52,12 +56,19 @@ Several of the components of a normal
 programming environment are replaced by
 functions that infer rather than evaluate.
 
-These components are replaced by GPT-3 prompts.
+These components are replaced by GPT-3 and Codex prompts.
 
--   linter,
--   indenter/reformatter,
--   code completion,
--   interpreter
+-   linter, (<https://mullikine.github.io/posts/an-imaginary-linter-with-codex/>)
+-   indenter/reformatter (<https://mullikine.github.io/posts/a-syntax-corrector-with-codex/>)
+-   code completion (<https://mullikine.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/>)
+-   interpreter (<https://mullikine.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/>)
+-   function lookup (<https://mullikine.github.io/posts/select-function-with-signature-help-from-nl-using-codex/>)
+-   commit message generator (<https://mullikine.github.io/posts/a-git-commit-message-generator-with-codex/>)
+-   refactoring (codex playground style) (<https://mullikine.github.io/posts/transforming-prose-and-code-in-a-generic-way/>)
+-   recommendation (<https://mullikine.github.io/posts/imaginary-real-codex-complex/>)
+-   code generation
+    -   functions by NL (<https://mullikine.github.io/posts/language-agnostic-code-generator-in-pen-el/>)
+    -   purposeful one liner generation (<https://mullikine.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/>)
 
 Imaginary seems to be a good word because:
 

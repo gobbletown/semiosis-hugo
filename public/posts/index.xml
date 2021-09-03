@@ -17538,7 +17538,7 @@ nome, a year lasts as long as ten years does to a human.</code></pre></td></tr><
             <pubDate>Thu, 08 Apr 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/imaginary-programming-with-gpt-3/</guid>
-            <description>Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts/ Disclaimer Please contribute as this is an open source project! It&amp;rsquo;s very hard to find free prompts online currently and that&amp;rsquo;s because everyone is out for themselves. Please support open source. Thank you. Glossary http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt  Summary This is a demonstration of an imaginary programming environment. There may be nothing else like it in the world today.
+            <description>Code https://github.com/semiosis/pen.el Prompts https://github.com/semiosis/prompts/ Disclaimer Please contribute as this is an open source project! It&amp;rsquo;s very hard to find free prompts online currently and that&amp;rsquo;s because everyone is out for themselves. Please support open source. Thank you. Glossary http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt Thesis https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org  Summary This is a demonstration of an imaginary programming environment. There may be nothing else like it in the world today.
 The world needs to get ready for the next generations of Large LMs, such as GPT-4.</description>
             <content type="html"><![CDATA[<dl>
 <dt>Code</dt>
@@ -17549,6 +17549,8 @@ The world needs to get ready for the next generations of Large LMs, such as GPT-
 <dd>Please contribute as this is an open source project! It&rsquo;s very hard to find free prompts online currently and that&rsquo;s because everyone is out for themselves. Please support open source. Thank you.</dd>
 <dt>Glossary</dt>
 <dd><a href="http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt">http://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt</a></dd>
+<dt>Thesis</dt>
+<dd><a href="https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org">https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org</a></dd>
 </dl>
 <h2 id="summary">Summary</h2>
 <p>This is a demonstration of an imaginary
@@ -17571,12 +17573,22 @@ prompt tuning.</p>
 <p>Several of the components of a normal
 programming environment are replaced by
 functions that infer rather than evaluate.</p>
-<p>These components are replaced by GPT-3 prompts.</p>
+<p>These components are replaced by GPT-3 and Codex prompts.</p>
 <ul>
-<li>linter,</li>
-<li>indenter/reformatter,</li>
-<li>code completion,</li>
-<li>interpreter</li>
+<li>linter, (<a href="https://mullikine.github.io/posts/an-imaginary-linter-with-codex/">https://mullikine.github.io/posts/an-imaginary-linter-with-codex/</a>)</li>
+<li>indenter/reformatter (<a href="https://mullikine.github.io/posts/a-syntax-corrector-with-codex/">https://mullikine.github.io/posts/a-syntax-corrector-with-codex/</a>)</li>
+<li>code completion (<a href="https://mullikine.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/">https://mullikine.github.io/posts/how-to-use-pen-el-to-autocomplete-your-code/</a>)</li>
+<li>interpreter (<a href="https://mullikine.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/">https://mullikine.github.io/posts/an-emacs-imaginary-interpreter-with-history-completion-and-evaluation/</a>)</li>
+<li>function lookup (<a href="https://mullikine.github.io/posts/select-function-with-signature-help-from-nl-using-codex/">https://mullikine.github.io/posts/select-function-with-signature-help-from-nl-using-codex/</a>)</li>
+<li>commit message generator (<a href="https://mullikine.github.io/posts/a-git-commit-message-generator-with-codex/">https://mullikine.github.io/posts/a-git-commit-message-generator-with-codex/</a>)</li>
+<li>refactoring (codex playground style) (<a href="https://mullikine.github.io/posts/transforming-prose-and-code-in-a-generic-way/">https://mullikine.github.io/posts/transforming-prose-and-code-in-a-generic-way/</a>)</li>
+<li>recommendation (<a href="https://mullikine.github.io/posts/imaginary-real-codex-complex/">https://mullikine.github.io/posts/imaginary-real-codex-complex/</a>)</li>
+<li>code generation
+<ul>
+<li>functions by NL (<a href="https://mullikine.github.io/posts/language-agnostic-code-generator-in-pen-el/">https://mullikine.github.io/posts/language-agnostic-code-generator-in-pen-el/</a>)</li>
+<li>purposeful one liner generation (<a href="https://mullikine.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/">https://mullikine.github.io/posts/generating-perl-one-liners-using-gpt-3-and-pen-el/</a>)</li>
+</ul>
+</li>
 </ul>
 <p>Imaginary seems to be a good word because:</p>
 <ul>
