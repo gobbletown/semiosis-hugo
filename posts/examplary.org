@@ -4,10 +4,10 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: Examplary
+#+TITLE: Examplary (a example-oriented programming language)
 #+DATE: <2021-03-17>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: nlp openai
+#+KEYWORDS: nlp openai pen gpt
 
 =Examplary= is an example-oriented DSL that can be used to construct and
 compose functions based on prompts and external =String->String= commands.
