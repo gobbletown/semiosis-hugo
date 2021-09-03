@@ -3161,6 +3161,30 @@ what would follow if you were to run the current line.</p>
        <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,@body</span>)))</code></pre></td></tr></table>
 </div>
 </div>
+<dl>
+<dt>Simple vs complex</dt>
+<dd><a href="https://youtu.be/SxdOUGdseq4?t=190">https://youtu.be/SxdOUGdseq4?t=190</a></dd>
+</dl>
+<figure>
+    <img src="/ox-hugo/imaginary-real-simple.png"/> 
+</figure>
+
+<p>The etymology of complex means multiple braids.</p>
+<figure>
+    <img src="/ox-hugo/imaginary-real-complex.png"/> 
+</figure>
+
+<p>A <em>complex terminal</em> has braided imaginary
+programming with real programming. The word
+<em>complex</em> is suitable because it describes
+this braiding along with the mathematical
+connotations of complex numbers.</p>
+<p>We could further extend this terminology to
+include <em>complex programming</em> in the realm of
+<em>imaginary programming</em> to describe a
+programming style that combines both real
+programming with imaginary programming.</p>
+<p>But that is the topic of another blog article.</p>
 <h3 id="ok-what-about-automating-emacs-with-codex">OK, what about automating emacs with Codex?</h3>
 <ul>
 <li>I can&rsquo;t generate the emacs chrome from <code>emacs -nw -Q</code>, at least from an initial attempt</li>

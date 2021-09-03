@@ -123,6 +123,29 @@ May use to generate code from comments."
        ,',@body)))
 {{< /highlight >}}
 
+Simple vs complex
+: <https://youtu.be/SxdOUGdseq4?t=190>
+
+{{< figure src="/ox-hugo/imaginary-real-simple.png" >}}
+
+The etymology of complex means multiple braids.
+
+{{< figure src="/ox-hugo/imaginary-real-complex.png" >}}
+
+A _complex terminal_ has braided imaginary
+programming with real programming. The word
+_complex_ is suitable because it describes
+this braiding along with the mathematical
+connotations of complex numbers.
+
+We could further extend this terminology to
+include _complex programming_ in the realm of
+_imaginary programming_ to describe a
+programming style that combines both real
+programming with imaginary programming.
+
+But that is the topic of another blog article.
+
 
 ### OK, what about automating emacs with Codex? {#ok-what-about-automating-emacs-with-codex}
 
