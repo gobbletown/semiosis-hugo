@@ -121,6 +121,27 @@ I have bound it to =M-4=.
          ,',@body)))
 #+END_SRC
 
++ Simple vs complex :: https://youtu.be/SxdOUGdseq4?t=190
+
+[[./imaginary-real-simple.png]]
+
+The etymology of complex means multiple braids.
+
+[[./imaginary-real-complex.png]]
+
+A /complex terminal/ has braided imaginary
+programming with real programming. The word
+/complex/ is suitable because it describes
+this braiding along with the mathematical
+connotations of complex numbers.
+
+We could further extend this terminology to
+include /complex programming/ in the realm of
+/imaginary programming/ to describe a
+programming style that combines both real
+programming with imaginary programming.
+
+But that is the topic of another blog article.
 
 *** OK, what about automating emacs with Codex?
 - I can't generate the emacs chrome from =emacs -nw -Q=, at least from an initial attempt
