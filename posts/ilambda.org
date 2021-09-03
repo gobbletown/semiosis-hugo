@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./
+#+HUGO_SECTION: ./posts
 
 #+TITLE: iλ, an imaginary programming library for emacs
 #+DATE: <2021-09-03>
@@ -39,23 +39,108 @@ programming languages, but I intend to make
 in emacs lisp without bloat or over-complication.
 
 ** Syntax forms
-| name             | type     | basic idea                                                                                                     |
-|------------------+----------+----------------------------------------------------------------------------------------------------------------|
-| =idefun=         | function | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
-| =imacro=         | function | =imacro= does not evaluate. It merely generates code, but is like =idefun=.                                    |
-| =ilist=          | function | Generate a list of things. Return a real list.                                                                 |
-| =ilambda= / =iλ= | function | Imaginarily run an expression on the given arguments and return an imagined result.                            |
-| =ifilter=        | function | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
-| =ieval=          | function | =ieval= will imagine the evaluation of some code without any other context.                                    |
-| =iparse=         | macro    | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.         |
+| name             | type     | depends on           | basic idea                                                                                                     |
+|------------------+----------+----------------------+----------------------------------------------------------------------------------------------------------------|
+| =ieval=          | MACRO    |                      | =ieval= will imagine the evaluation of some code without any other context.                                    |
+| =imacro=         | MACRO    |                      | =imacro= does not evaluate. It merely generates code, but is like =idefun=.                                    |
+| =idefun=         | FUNCTION | =ieval= and =imacro= | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
+| =ilist=          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                 |
+| =ilambda= / =iλ= | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                            |
+| =ifilter=        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
+| =iparse=         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.         |
+
+*** =ieval=
+=ieval= will simply evaluate the provided
+string as emacs lisp code.
+
+=ieval= is used by =idefun= and =ilambda=.
+
+_/prompt function/_ for running the eval.
+
++ =pf-imagine-evaluating-emacs-lisp/2= :: http://github.com/semiosis/prompts/blob/master/prompts/imagine-evaluating-emacs-lisp-2.prompt
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  task: "imagine evaluating emacs lisp"
+  doc: "Given some elisp return the imagined result"
+  prompt-version: 1
+  prompt: |+
+    <code>
+    (message (eval <expression>))
+    --> 
+  engine: "OpenAI Codex"
+  temperature: 0.2
+  max-generated-tokens: 60
+  top-p: 1.0
+  cache: on
+  stop-sequences:
+  - "\n"
+  vars:
+  - "code"
+  - "expression"
+  validator: "grep -v '(:return'"
+  examples:
+  - |-
+      (defun double-number (x)
+        (x * x))
+  - "(double-number 5)"
+  filter: on
+  completion: off
+  insertion: off
+#+END_SRC
+
+The following is the implementation of =ieval=.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defmacro ieval (expression &optional code)
+    (let* ((code-str (pps code))
+           (result (car
+                    (pen-single-generation
+                     (pf-imagine-evaluating-emacs-lisp/2
+                      code-str expression
+                      :no-select-result t :select-only-match t)))))
+      (eval-string result)))
+  
+  (defun test-ieval ()
+    (ieval
+     (double-number 5)
+     (defun double-number (x)
+       (x * x))))
+#+END_SRC
+
+=ieval= not only evaluates correctly despite
+the deliberately incorrect naming of the
+function (it multiplies rather than doubles),
+but it returns the value as the correct data type.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim raw
+  (let ((result
+         (ieval
+          (defun double-number (x)
+            (x * x))
+          (double-number 5))))
+    (list2str (list result
+                    (type result))))
+#+END_SRC
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  25
+  integer
+#+END_SRC
 
 *** =idefun=
-The =idefun= is mostly simply a call to a
+The =idefun= creates a binding to an imaginary
+function. The implementation of the =idefun=
+need not be specified in order for code to
+run.
+
 function without necessarily specifying its
 implementation. The LM will then imagine the
 evaluation of the function.
 
 *** =imacro=
+An =imacro= actually imagines the
+implementation of a function.
+
 Components of the =imacro= should be inferred.
 An =imacro= with only a function name should
 work.
@@ -63,6 +148,41 @@ work.
 Also, an =imacro= is under the hood a regular
 macro. This means, that expanding the =imacro=
 will infer/generate underlying code.
+
++ =pf-imagine-an-emacs-lisp-function-given-name-arguments-and-docstring/3= :: http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-lisp-function-given-name-arguments-and-docstring-3.prompt
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  task: "imagine an emacs lisp function given name, arguments and docstring"
+  doc: "Given a function name, arguments and docstring, return the imagined body of the function"
+  prompt-version: 1
+  prompt: |+
+    ;;my-emacs-library.el
+  
+    (defun <name> (<arguments>)
+      "<docstring>"
+  engine: "OpenAI Codex"
+  temperature: 0.2
+  max-generated-tokens: 1000
+  top-p: 1.0
+  cache: on
+  stop-sequences:
+  - "\n\n"
+  vars:
+  - "name"
+  - "arguments"
+  - "docstring"
+  validator: "chomp | sed -z 's/.*\\(.\\)$/\\1/' | grep -q ')'"
+  examples:
+  - "times"
+  - "x y"
+  - "multiply two numbers and return a number"
+  preprocessors:
+  - "slugify"
+  postprocessor: chomp
+  filter: on
+  completion: off
+  insertion: off
+#+END_SRC
 
 *** =ilist=
 The easiest of the list of syntax forms I
@@ -83,8 +203,6 @@ of such things.
     (etv (pps (ilist 10 "tennis players"))))
 #+END_SRC
 
-*** =imacro=
-
 *** =ilambda=
 Imaginarily run an expression on the given
 arguments and return an imagined result.
@@ -99,16 +217,6 @@ Example:
 
 *** Derived functions
 - /get-backstory/
-
-*** =ieval=
-=ieval= will simply evaluate the provided
-string as emacs lisp code.
-
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  (ieval "(+ 2 2)")
-#+END_SRC
-
-=ieval= is used by =idefun= and =ilambda=.
 
 *** =iparse=
 
