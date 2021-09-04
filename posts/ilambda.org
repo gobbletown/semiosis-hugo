@@ -322,6 +322,90 @@ of the function as opposed to generate code.
 =idefun= returns a binding to a new prompt
 function.
 
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defmacro idefun (name-sym args code-or-task &optional task-or-code)
+    "Define an imaginary function"
+    `(defalias ',name-sym
+       (function ,(eval
+                   `(ilambda ,args ,code-or-task ,task-or-code)))))
+  
+  (idefun idoubleit (x)
+          "double it")
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (idoubleit 5)
+#+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+"10"
+#+end_src
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (idefun distance-between-planets (x y)
+          "distance between planets in astronomical units (AU)")
+  
+  (concat (str (distance-between-planets "saturn" "jupiter"))
+          "\n"
+          (str (distance-between-planets "mercury" "jupiter")))
+#+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+"\"0.05\\n0.387\""
+#+end_src
+
+I have no idea if this data is correct but it
+seems consistent with itself.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (idefun distance-between-planets (x y)
+          "distance between planets in million miles")
+  
+  (concat (str (distance-between-planets "saturn" "jupiter"))
+          "\n"
+          (str (distance-between-planets "mercury" "jupiter")))
+#+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+"\"1.2\\n5.791\""
+#+end_src
+
+#+RESULTS:
+: "1.2\n5.791"
+
+Sadly, Codex doesn't know too much about Scoville food hotness.
+
+| food           | Scoville scale |
+|----------------+----------------|
+| Pure capsaicin | 16,000,000 SHU |
+| Jalapeño       | 10,000 SHU     |
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (idefun scoville-difference (food-a food-b)
+          "difference between two foods in scoville Heat Units (SHUs)")
+  
+  (concat (str (scoville-difference "Pure capsaicin" "Jalapeño"))
+          "\n"
+          (str (scoville-difference "Chipotle" "Trinidad Scorpion Butch")))
+#+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+"\"0\\n2\""
+#+end_src
+
+/*Demo*/
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop.js" id="asciicast-flwFZOaUnv6UtiLcpqFYkgsop" async></script>
+#+END_EXPORT
+
 *** =imacro=
 An =imacro= actually imagines the
 implementation of a function.
