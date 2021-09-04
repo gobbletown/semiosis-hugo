@@ -58,14 +58,19 @@ in emacs lisp without bloat or over-complication.
 | =imacro/N=       | MACRO    |                      | =imacro= does not evaluate. It merely generates code, but is like =idefun=.                                           |
 | =idefun=         | FUNCTION | =ieval= and =imacro= | Run an imagined function on the given arguments and return an imagined result, but create a binding for the function. |
 | =ilist=          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                        |
-| =ilambda= / =iλ= | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
+| =ilambda= / =iλ= | FUNCTION | =ieval=              | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
 | =ifilter=        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.         |
 | =iparse=         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.                |
 | =defimacro=      | MACRO    | =imacro/N=           | Select the appropriate =imacro/N= form depending on the arity of arguments.                                   |
 
 *** =ieval=
 =ieval= will simply evaluate the provided
-string as emacs lisp code.
+string/sexp as emacs lisp code. Actually you
+must provide the preceding code and the
+evaluated expression. Either argument can
+either be a raw string containing code or a
+sexp, but the expression will be "one-line-ized"
+for the prompt.
 
 =ieval= is used by =idefun= and =ilambda=.
 
@@ -104,16 +109,51 @@ _/prompt function/_ for running the eval.
 
 The following is the implementation of =ieval=.
 
+You may pass either a =sexp= or a raw string containing code.
+
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defmacro ieval (expression &optional code)
-    (let* ((code-str (pps code))
+    "Imaginarily evaluate the expression, given the code and return a real result."
+    (let* ((code-str
+            (cond
+             ((stringp code) code)
+             ((listp code) (pps code))))
+           (expression-str
+            (cond
+             ((stringp expression) expression)
+             ((listp expression) (pp-oneline expression))))
            (result (car
                     (pen-single-generation
                      (pf-imagine-evaluating-emacs-lisp/2
-                      code-str expression
+                      code-str expression-str
                       :no-select-result t :select-only-match t)))))
-      (eval-string result)))
-  
+      (ignore-errors
+        (eval-string result))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun test-ieval-2 ()
+    (ieval
+     (double-number 5)
+     "(defun double-number (x)\n     (x * x))\n;;Test the double-number function"))
+#+END_SRC
+
+Resulting prompt from =test-ieval-2=:
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  (defun double-number (x)
+       (x * x))
+  ;;Test the double-number function
+  (message (eval (double-number 5)))
+  --> <END>
+#+END_SRC
+
+=ieval= not only evaluates correctly despite
+the deliberately incorrect naming of the
+function (it multiplies rather than doubles),
+but it returns the value as the correct data type.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defun test-ieval ()
     (ieval
      (double-number 5)
@@ -121,10 +161,7 @@ The following is the implementation of =ieval=.
        (x * x))))
 #+END_SRC
 
-=ieval= not only evaluates correctly despite
-the deliberately incorrect naming of the
-function (it multiplies rather than doubles),
-but it returns the value as the correct data type.
+Expansion of =test-ieval=.
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim raw
   (let ((result
@@ -141,15 +178,33 @@ but it returns the value as the correct data type.
   integer
 #+END_SRC
 
+*** =ilambda= / =iλ=
+Imaginarily run an expression on the given
+arguments and return an imagined result.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (mapcar (iλ (x y) "divide x by y") (number-sequence 10 20))
+#+END_SRC
+
 *** =idefun=
 The =idefun= creates a binding to an imaginary
 function. The implementation of the =idefun=
 need not be specified in order for code to
 run.
 
-function without necessarily specifying its
-implementation. The LM will then imagine the
-evaluation of the function.
+The new prompt function returned by =idefun= is provided with arguments and the
+values of those arguments are taken and placed
+into a prompt. An implementation may be
+provided to =idefun= when defining the prompt function or optionally left out.
+Unlike an =imacro=, when the prompt function
+is evaluated the code is not returned. Rather,
+the code is evaluted in imaginary space.
+
+In short, the LM will imagine the evaluation
+of the function as opposed to generate code.
+
+=idefun= returns a binding to a new prompt
+function.
 
 *** =imacro=
 An =imacro= actually imagines the
@@ -370,10 +425,6 @@ of such things.
     (interactive)
     (etv (pps (ilist 10 "tennis players"))))
 #+END_SRC
-
-*** =ilambda=
-Imaginarily run an expression on the given
-arguments and return an imagined result.
 
 *** =ifilter=
 
