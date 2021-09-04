@@ -24,11 +24,14 @@ transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.
 
+iλ project
+: <http://github.com/semiosis/ilambda/>
+
 IP thesis
 : <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>
 
-IP libary
-: <http://github.com/semiosis/pen.el/blob/master/src/pen-imaginary-library.el>
+IP library
+: <http://github.com/semiosis/pen.el/blob/master/src/pen-ilambda.el>
 
 IP glossary
 : <https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
@@ -47,15 +50,15 @@ in emacs lisp without bloat or over-complication.
 
 ### Syntax forms {#syntax-forms}
 
-| name             | type     | depends on           | basic idea                                                                                                     |
-|------------------|----------|----------------------|----------------------------------------------------------------------------------------------------------------|
-| `ieval`          | MACRO    |                      | `ieval` will imagine the evaluation of some code without any other context.                                    |
-| `imacro`         | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                    |
-| `idefun`         | FUNCTION | `ieval` and `imacro` | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
-| `ilist`          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                 |
-| `ilambda` / `iλ` | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                            |
-| `ifilter`        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
-| `iparse`         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.         |
+| name             | type     | depends on           | basic idea                                                                                                            |
+|------------------|----------|----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| `ieval`          | MACRO    |                      | `ieval` will imagine the evaluation of some code without any other context.                                           |
+| `imacro`         | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                           |
+| `idefun`         | FUNCTION | `ieval` and `imacro` | Run an imagined function on the given arguments and return an imagined result, but create a binding for the function. |
+| `ilist`          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                        |
+| `ilambda` / `iλ` | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
+| `ifilter`        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.         |
+| `iparse`         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.                |
 
 
 #### `ieval` {#ieval}
@@ -90,7 +93,7 @@ stop-sequences:
 vars:
 - "code"
 - "expression"
-validator: "grep -v '(:return'"
+validator: "grep -qv '(:return'"
 examples:
 - |-
     (defun double-number (x)
@@ -166,12 +169,15 @@ Also, an `imacro` is under the hood a regular
 macro. This means, that expanding the `imacro`
 will infer/generate underlying code.
 
-`pf-imagine-an-emacs-lisp-function-given-name-arguments-and-docstring/3`
-: <http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-lisp-function-given-name-arguments-and-docstring-3.prompt>
+{{< figure src="/ox-hugo/macro-expand-codex.gif" >}}
+
+`pf-imagine-an-emacs-function/3`
+: <http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-function-3.prompt>
 
 <!--listend-->
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
+title: imagine an emacs function
 task: "imagine an emacs lisp function given name, arguments and docstring"
 doc: "Given a function name, arguments and docstring, return the imagined body of the function"
 prompt-version: 1
@@ -199,9 +205,120 @@ examples:
 preprocessors:
 - "slugify"
 postprocessor: chomp
+postpostprocessor: "sed -z \"s/^;;my-emacs-library.el\\\\n\\\\n//\""
 filter: on
 completion: off
 insertion: off
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(car
+ (pen-single-generation
+  (pf-imagine-an-emacs-function/3
+   "times"
+   "x y"
+   "multiply two numbers and return a number"
+   :include-prompt t
+   :no-select-result t)))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun times (x y)
+  "multiply two numbers and return a number"
+  (* x y))
+{{< /highlight >}}
+
+There are 3 different versions of `imacro`
+depending on how many arguments are supplied to
+it.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defmacro imacro/3 (name args docstr)
+  "Does not evaluate. It merely generates code."
+  (let* ((argstr (apply 'cmd (mapcar 'slugify (mapcar 'str args))))
+         (bodystr
+          (car
+           (pen-single-generation
+            (pf-imagine-an-emacs-function/3
+             name
+             argstr
+             docstr
+             :include-prompt t
+             :no-select-result t))))
+         (body (eval-string (concat "'" bodystr))))
+    `(progn ,body)))
+
+(defmacro imacro/2 (name args)
+  "Does not evaluate. It merely generates code."
+  (let* ((argstr (apply 'cmd (mapcar 'slugify (mapcar 'str args))))
+         (bodystr
+          (car
+           (pen-single-generation
+            (pf-imagine-an-emacs-function/2
+             name
+             argstr
+             :include-prompt t
+             :no-select-result t))))
+         (body (eval-string (concat "'" bodystr))))
+    `(progn ,body)))
+
+(defmacro imacro/1 (name)
+  "Does not evaluate. It merely generates code."
+  (let* ((bodystr
+          (car
+           (pen-single-generation
+            (pf-imagine-an-emacs-function/1
+             name
+             :include-prompt t
+             :no-select-result t))))
+         (body (eval-string (concat "'" bodystr))))
+    `(progn ,body)))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(imacro/3 my/itimes (a b c) "multiply three complex numbers")
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(progn
+  (defun my-times
+      (x y z)
+    "multiply three numbers and return a number"
+    (* x y z)))
+{{< /highlight >}}
+
+_`imacro` expansion demo_
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5.js" id="asciicast-TFjZGxMf0zhT59T7U3tO8uwY5" async></script>
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(imacro/2 my/subtract (a b c))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(progn
+  (defun my-subtract
+      (a b c)
+    "Subtract B from A and return the result."
+    (setq result
+          (+ a
+             (- b c)))
+    result))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(imacro/1 my/subtract)
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(progn
+  (defun my-subtract
+      (a b)
+    "Subtract A - B."
+    (- a b)))
 {{< /highlight >}}
 
 

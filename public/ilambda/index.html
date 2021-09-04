@@ -35,7 +35,7 @@
 <meta itemprop="name" content="iλ, an imaginary programming library for emacs">
 <meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="839"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1147"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -158,10 +158,12 @@ transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.</p>
 <dl>
+<dt>iλ project</dt>
+<dd><a href="http://github.com/semiosis/ilambda/">http://github.com/semiosis/ilambda/</a></dd>
 <dt>IP thesis</dt>
 <dd><a href="https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org">https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org</a></dd>
-<dt>IP libary</dt>
-<dd><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-imaginary-library.el">http://github.com/semiosis/pen.el/blob/master/src/pen-imaginary-library.el</a></dd>
+<dt>IP library</dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-ilambda.el">http://github.com/semiosis/pen.el/blob/master/src/pen-ilambda.el</a></dd>
 <dt>IP glossary</dt>
 <dd><a href="https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt">https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt</a></dd>
 </dl>
@@ -199,7 +201,7 @@ in emacs lisp without bloat or over-complication.</p>
 <td><code>idefun</code></td>
 <td>FUNCTION</td>
 <td><code>ieval</code> and <code>imacro</code></td>
-<td>Run an expression on the given arguments and return an imagined result, but create a binding for the function.</td>
+<td>Run an imagined function on the given arguments and return an imagined result, but create a binding for the function.</td>
 </tr>
 <tr>
 <td><code>ilist</code></td>
@@ -284,7 +286,7 @@ string as emacs lisp code.</p>
 <span style="color:#f92672">vars</span>:
 - <span style="color:#e6db74">&#34;code&#34;</span>
 - <span style="color:#e6db74">&#34;expression&#34;</span>
-<span style="color:#f92672">validator</span>: <span style="color:#e6db74">&#34;grep -v &#39;(:return&#39;&#34;</span>
+<span style="color:#f92672">validator</span>: <span style="color:#e6db74">&#34;grep -qv &#39;(:return&#39;&#34;</span>
 <span style="color:#f92672">examples</span>:
 - |-<span style="color:#e6db74">
 </span><span style="color:#e6db74">    (defun double-number (x)
@@ -381,9 +383,13 @@ work.</p>
 <p>Also, an <code>imacro</code> is under the hood a regular
 macro. This means, that expanding the <code>imacro</code>
 will infer/generate underlying code.</p>
+<figure>
+    <img src="/ox-hugo/macro-expand-codex.gif"/> 
+</figure>
+
 <dl>
-<dt><code>pf-imagine-an-emacs-lisp-function-given-name-arguments-and-docstring/3</code></dt>
-<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-lisp-function-given-name-arguments-and-docstring-3.prompt">http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-lisp-function-given-name-arguments-and-docstring-3.prompt</a></dd>
+<dt><code>pf-imagine-an-emacs-function/3</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-function-3.prompt">http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-function-3.prompt</a></dd>
 </dl>
 <!--listend-->
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -418,9 +424,12 @@ will infer/generate underlying code.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;imagine an emacs lisp function given name, arguments and docstring&#34;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">imagine an emacs function</span>
+<span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;imagine an emacs lisp function given name, arguments and docstring&#34;</span>
 <span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given a function name, arguments and docstring, return the imagined body of the function&#34;</span>
 <span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
@@ -447,9 +456,216 @@ will infer/generate underlying code.</p>
 <span style="color:#f92672">preprocessors</span>:
 - <span style="color:#e6db74">&#34;slugify&#34;</span>
 <span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">chomp</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#e6db74">&#34;sed -z \&#34;s/^;;my-emacs-library.el\\\\n\\\\n//\&#34;&#34;</span>
 <span style="color:#f92672">filter</span>: <span style="color:#66d9ef">on</span>
 <span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">car</span>
+ (pen-single-generation
+  (pf-imagine-an-emacs-function/3
+   <span style="color:#e6db74">&#34;times&#34;</span>
+   <span style="color:#e6db74">&#34;x y&#34;</span>
+   <span style="color:#e6db74">&#34;multiply two numbers and return a number&#34;</span>
+   :include-prompt <span style="color:#66d9ef">t</span>
+   :no-select-result <span style="color:#66d9ef">t</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun times (x y)
+  <span style="color:#e6db74">&#34;multiply two numbers and return a number&#34;</span>
+  (<span style="color:#a6e22e">*</span> x y))</code></pre></td></tr></table>
+</div>
+</div>
+<p>There are 3 different versions of <code>imacro</code>
+depending on how many arguments are supplied to
+it.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro imacro/3 (name args docstr)
+  <span style="color:#e6db74">&#34;Does not evaluate. It merely generates code.&#34;</span>
+  (let* ((argstr (<span style="color:#a6e22e">apply</span> <span style="color:#e6db74">&#39;cmd</span> (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;slugify</span> (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;str</span> args))))
+         (bodystr
+          (<span style="color:#a6e22e">car</span>
+           (pen-single-generation
+            (pf-imagine-an-emacs-function/3
+             name
+             argstr
+             docstr
+             :include-prompt <span style="color:#66d9ef">t</span>
+             :no-select-result <span style="color:#66d9ef">t</span>))))
+         (body (eval-string (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> bodystr))))
+    <span style="color:#f92672">`</span>(progn <span style="color:#f92672">,</span>body)))
+
+(defmacro imacro/2 (name args)
+  <span style="color:#e6db74">&#34;Does not evaluate. It merely generates code.&#34;</span>
+  (let* ((argstr (<span style="color:#a6e22e">apply</span> <span style="color:#e6db74">&#39;cmd</span> (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;slugify</span> (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;str</span> args))))
+         (bodystr
+          (<span style="color:#a6e22e">car</span>
+           (pen-single-generation
+            (pf-imagine-an-emacs-function/2
+             name
+             argstr
+             :include-prompt <span style="color:#66d9ef">t</span>
+             :no-select-result <span style="color:#66d9ef">t</span>))))
+         (body (eval-string (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> bodystr))))
+    <span style="color:#f92672">`</span>(progn <span style="color:#f92672">,</span>body)))
+
+(defmacro imacro/1 (name)
+  <span style="color:#e6db74">&#34;Does not evaluate. It merely generates code.&#34;</span>
+  (let* ((bodystr
+          (<span style="color:#a6e22e">car</span>
+           (pen-single-generation
+            (pf-imagine-an-emacs-function/1
+             name
+             :include-prompt <span style="color:#66d9ef">t</span>
+             :no-select-result <span style="color:#66d9ef">t</span>))))
+         (body (eval-string (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> bodystr))))
+    <span style="color:#f92672">`</span>(progn <span style="color:#f92672">,</span>body)))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(imacro/3 my/itimes (a b c) <span style="color:#e6db74">&#34;multiply three complex numbers&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(progn
+  (defun my-times
+      (x y z)
+    <span style="color:#e6db74">&#34;multiply three numbers and return a number&#34;</span>
+    (<span style="color:#a6e22e">*</span> x y z)))</code></pre></td></tr></table>
+</div>
+</div>
+<p><em><code>imacro</code> expansion demo</em></p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5.js" id="asciicast-TFjZGxMf0zhT59T7U3tO8uwY5" async></script>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(imacro/2 my/subtract (a b c))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(progn
+  (defun my-subtract
+      (a b c)
+    <span style="color:#e6db74">&#34;Subtract B from A and return the result.&#34;</span>
+    (setq result
+          (<span style="color:#a6e22e">+</span> a
+             (<span style="color:#a6e22e">-</span> b c)))
+    result))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(imacro/1 my/subtract)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(progn
+  (defun my-subtract
+      (a b)
+    <span style="color:#e6db74">&#34;Subtract A - B.&#34;</span>
+    (<span style="color:#a6e22e">-</span> a b)))</code></pre></td></tr></table>
 </div>
 </div>
 <h4 id="ilist"><code>ilist</code></h4>
