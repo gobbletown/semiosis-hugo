@@ -323,6 +323,26 @@ of the function as opposed to generate code.
 function.
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (idefun generate-fib-sequence (n))
+  
+  (pp-to-string (generate-fib-sequence 5))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (1 1 2 3 5)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim raw
+  (idefun sha-hash-string (s))
+  
+  (sha-hash-string "sugar shane")
+#+END_SRC
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  f1d3ff8ec24e91b957c9e55adec407f47b55e3ae
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defmacro idefun (name-sym args code-or-task &optional task-or-code)
     "Define an imaginary function"
     `(defalias ',name-sym
@@ -395,6 +415,28 @@ Sadly, Codex doesn't know too much about Scoville food hotness.
 #+RESULTS:
 #+begin_src emacs-lisp
 "\"0\\n2\""
+#+end_src
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (idefun hex-for-colour (colour))
+  
+  (hex-for-colour "watermelon")
+#+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+"\"0x6f3d9c\""
+#+end_src
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (idefun hex-for-colour (colour))
+  
+  (hex-for-colour "snow")
+#+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+"\"ffffff\""
 #+end_src
 
 /*Demo*/
