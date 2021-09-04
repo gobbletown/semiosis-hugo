@@ -338,6 +338,26 @@ of the function as opposed to generate code.
 function.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun generate-fib-sequence (n))
+
+(pp-to-string (generate-fib-sequence 5))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(1 1 2 3 5)
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun sha-hash-string (s))
+
+(sha-hash-string "sugar shane")
+{{< /highlight >}}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+f1d3ff8ec24e91b957c9e55adec407f47b55e3ae
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defmacro idefun (name-sym args code-or-task &optional task-or-code)
   "Define an imaginary function"
   `(defalias ',name-sym
@@ -407,6 +427,26 @@ Sadly, Codex doesn't know too much about Scoville food hotness.
 
 ```emacs-lisp
 "\"0\\n2\""
+```
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun hex-for-colour (colour))
+
+(hex-for-colour "watermelon")
+{{< /highlight >}}
+
+```emacs-lisp
+"\"0x6f3d9c\""
+```
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun hex-for-colour (colour))
+
+(hex-for-colour "snow")
+{{< /highlight >}}
+
+```emacs-lisp
+"\"ffffff\""
 ```
 
 _**Demo**_
