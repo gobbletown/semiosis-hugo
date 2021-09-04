@@ -68,7 +68,7 @@ in emacs lisp without bloat or over-complication.
 | `imacro/N`       | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                           |
 | `idefun`         | FUNCTION | `ieval` and `imacro` | Run an imagined function on the given arguments and return an imagined result, but create a binding for the function. |
 | `ilist`          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                        |
-| `ilambda` / `iλ` | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
+| `ilambda` / `iλ` | FUNCTION | `ieval`              | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
 | `ifilter`        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.         |
 | `iparse`         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.                |
 | `defimacro`      | MACRO    | `imacro/N`           | Select the appropriate `imacro/N` form depending on the arity of arguments.                                           |
@@ -77,7 +77,12 @@ in emacs lisp without bloat or over-complication.
 #### `ieval` {#ieval}
 
 `ieval` will simply evaluate the provided
-string as emacs lisp code.
+string/sexp as emacs lisp code. Actually you
+must provide the preceding code and the
+evaluated expression. Either argument can
+either be a raw string containing code or a
+sexp, but the expression will be "one-line-ized"
+for the prompt.
 
 `ieval` is used by `idefun` and `ilambda`.
 
@@ -119,16 +124,51 @@ insertion: off
 
 The following is the implementation of `ieval`.
 
+You may pass either a `sexp` or a raw string containing code.
+
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defmacro ieval (expression &optional code)
-  (let* ((code-str (pps code))
+  "Imaginarily evaluate the expression, given the code and return a real result."
+  (let* ((code-str
+          (cond
+           ((stringp code) code)
+           ((listp code) (pps code))))
+         (expression-str
+          (cond
+           ((stringp expression) expression)
+           ((listp expression) (pp-oneline expression))))
          (result (car
                   (pen-single-generation
                    (pf-imagine-evaluating-emacs-lisp/2
-                    code-str expression
+                    code-str expression-str
                     :no-select-result t :select-only-match t)))))
-    (eval-string result)))
+    (ignore-errors
+      (eval-string result))))
+{{< /highlight >}}
 
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun test-ieval-2 ()
+  (ieval
+   (double-number 5)
+   "(defun double-number (x)\n     (x * x))\n;;Test the double-number function"))
+{{< /highlight >}}
+
+Resulting prompt from `test-ieval-2`:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+(defun double-number (x)
+     (x * x))
+;;Test the double-number function
+(message (eval (double-number 5)))
+--> <END>
+{{< /highlight >}}
+
+`ieval` not only evaluates correctly despite
+the deliberately incorrect naming of the
+function (it multiplies rather than doubles),
+but it returns the value as the correct data type.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defun test-ieval ()
   (ieval
    (double-number 5)
@@ -136,10 +176,7 @@ The following is the implementation of `ieval`.
      (x * x))))
 {{< /highlight >}}
 
-`ieval` not only evaluates correctly despite
-the deliberately incorrect naming of the
-function (it multiplies rather than doubles),
-but it returns the value as the correct data type.
+Expansion of `test-ieval`.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (let ((result
@@ -157,6 +194,16 @@ integer
 {{< /highlight >}}
 
 
+#### `ilambda` / `iλ` {#ilambda-iλ}
+
+Imaginarily run an expression on the given
+arguments and return an imagined result.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(mapcar (iλ (x y) "divide x by y") (number-sequence 10 20))
+{{< /highlight >}}
+
+
 #### `idefun` {#idefun}
 
 The `idefun` creates a binding to an imaginary
@@ -164,9 +211,19 @@ function. The implementation of the `idefun`
 need not be specified in order for code to
 run.
 
-function without necessarily specifying its
-implementation. The LM will then imagine the
-evaluation of the function.
+The new prompt function returned by `idefun` is provided with arguments and the
+values of those arguments are taken and placed
+into a prompt. An implementation may be
+provided to `idefun` when defining the prompt function or optionally left out.
+Unlike an `imacro`, when the prompt function
+is evaluated the code is not returned. Rather,
+the code is evaluted in imaginary space.
+
+In short, the LM will imagine the evaluation
+of the function as opposed to generate code.
+
+`idefun` returns a binding to a new prompt
+function.
 
 
 #### `imacro` {#imacro}
@@ -390,12 +447,6 @@ of such things.
   (interactive)
   (etv (pps (ilist 10 "tennis players"))))
 {{< /highlight >}}
-
-
-#### `ilambda` {#ilambda}
-
-Imaginarily run an expression on the given
-arguments and return an imagined result.
 
 
 #### `ifilter` {#ifilter}

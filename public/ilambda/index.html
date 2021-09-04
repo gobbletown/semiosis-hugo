@@ -35,7 +35,7 @@
 <meta itemprop="name" content="iλ, an imaginary programming library for emacs">
 <meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1314"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1528"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -222,7 +222,7 @@ in emacs lisp without bloat or over-complication.</p>
 <tr>
 <td><code>ilambda</code> / <code>iλ</code></td>
 <td>FUNCTION</td>
-<td></td>
+<td><code>ieval</code></td>
 <td>Imaginarily run an expression on the given arguments and return an imagined result.</td>
 </tr>
 <tr>
@@ -247,7 +247,12 @@ in emacs lisp without bloat or over-complication.</p>
 </table>
 <h4 id="ieval"><code>ieval</code></h4>
 <p><code>ieval</code> will simply evaluate the provided
-string as emacs lisp code.</p>
+string/sexp as emacs lisp code. Actually you
+must provide the preceding code and the
+evaluated expression. Either argument can
+either be a raw string containing code or a
+sexp, but the expression will be &ldquo;one-line-ized&rdquo;
+for the prompt.</p>
 <p><code>ieval</code> is used by <code>idefun</code> and <code>ilambda</code>.</p>
 <p><span class="underline"><em>prompt function</em></span> for running the eval.</p>
 <dl>
@@ -314,6 +319,7 @@ string as emacs lisp code.</p>
 </div>
 </div>
 <p>The following is the implementation of <code>ieval</code>.</p>
+<p>You may pass either a <code>sexp</code> or a raw string containing code.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -330,28 +336,82 @@ string as emacs lisp code.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro ieval (expression <span style="color:#66d9ef">&amp;optional</span> code)
-  (let* ((code-str (pps code))
+  <span style="color:#e6db74">&#34;Imaginarily evaluate the expression, given the code and return a real result.&#34;</span>
+  (let* ((code-str
+          (cond
+           ((<span style="color:#a6e22e">stringp</span> code) code)
+           ((<span style="color:#a6e22e">listp</span> code) (pps code))))
+         (expression-str
+          (cond
+           ((<span style="color:#a6e22e">stringp</span> expression) expression)
+           ((<span style="color:#a6e22e">listp</span> expression) (pp-oneline expression))))
          (result (<span style="color:#a6e22e">car</span>
                   (pen-single-generation
                    (pf-imagine-evaluating-emacs-lisp/2
-                    code-str expression
+                    code-str expression-str
                     :no-select-result <span style="color:#66d9ef">t</span> :select-only-match <span style="color:#66d9ef">t</span>)))))
-    (eval-string result)))
-
-(defun test-ieval ()
+    (ignore-errors
+      (eval-string result))))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun test-ieval-2 ()
   (ieval
    (double-number <span style="color:#ae81ff">5</span>)
-   (defun double-number (x)
-     (x <span style="color:#a6e22e">*</span> x))))</code></pre></td></tr></table>
+   <span style="color:#e6db74">&#34;(defun double-number (x)\n     (x * x))\n;;Test the double-number function&#34;</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<p>Resulting prompt from <code>test-ieval-2</code>:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">(defun double-number (x)
+     (x * x))
+;;Test the double-number function
+(message (eval (double-number 5)))
+--&gt; &lt;END&gt;</code></pre></td></tr></table>
 </div>
 </div>
 <p><code>ieval</code> not only evaluates correctly despite
 the deliberately incorrect naming of the
 function (it multiplies rather than doubles),
 but it returns the value as the correct data type.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun test-ieval ()
+  (ieval
+   (double-number <span style="color:#ae81ff">5</span>)
+   (defun double-number (x)
+     (x <span style="color:#a6e22e">*</span> x))))</code></pre></td></tr></table>
+</div>
+</div>
+<p>Expansion of <code>test-ieval</code>.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -382,14 +442,33 @@ but it returns the value as the correct data type.</p>
 integer</code></pre></td></tr></table>
 </div>
 </div>
+<h4 id="ilambda-iλ"><code>ilambda</code> / <code>iλ</code></h4>
+<p>Imaginarily run an expression on the given
+arguments and return an imagined result.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">mapcar</span> (iλ (x y) <span style="color:#e6db74">&#34;divide x by y&#34;</span>) (number-sequence <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">20</span>))</code></pre></td></tr></table>
+</div>
+</div>
 <h4 id="idefun"><code>idefun</code></h4>
 <p>The <code>idefun</code> creates a binding to an imaginary
 function. The implementation of the <code>idefun</code>
 need not be specified in order for code to
 run.</p>
-<p>function without necessarily specifying its
-implementation. The LM will then imagine the
-evaluation of the function.</p>
+<p>The new prompt function returned by <code>idefun</code> is provided with arguments and the
+values of those arguments are taken and placed
+into a prompt. An implementation may be
+provided to <code>idefun</code> when defining the prompt function or optionally left out.
+Unlike an <code>imacro</code>, when the prompt function
+is evaluated the code is not returned. Rather,
+the code is evaluted in imaginary space.</p>
+<p>In short, the LM will imagine the evaluation
+of the function as opposed to generate code.</p>
+<p><code>idefun</code> returns a binding to a new prompt
+function.</p>
 <h4 id="imacro"><code>imacro</code></h4>
 <p>An <code>imacro</code> actually imagines the
 implementation of a function.</p>
@@ -770,9 +849,6 @@ of such things.</p>
   (etv (pps (ilist <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;tennis players&#34;</span>))))</code></pre></td></tr></table>
 </div>
 </div>
-<h4 id="ilambda"><code>ilambda</code></h4>
-<p>Imaginarily run an expression on the given
-arguments and return an imagined result.</p>
 <h4 id="ifilter"><code>ifilter</code></h4>
 <p>Example:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
