@@ -36,6 +36,18 @@ IP library
 IP glossary
 : <https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
 
+`imacro` (like regular macros) are for
+generating code. `idefun`, however, doesnt
+generate the code but attempts to run a
+function without code.
+
+It's kinda crazy that Im-macros run faster
+than Im-functions, where the opposite is true
+in regular programming. That's because they
+generate the code which can be reused, where
+an Im-function will typically have to query
+the LM every time.
+
 
 #### The objective with `iλ.el` {#the-objective-with-iλ-dot-el}
 

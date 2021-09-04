@@ -35,7 +35,7 @@
 <meta itemprop="name" content="iλ, an imaginary programming library for emacs">
 <meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1147"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1208"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -167,6 +167,16 @@ straight into my thesis.</p>
 <dt>IP glossary</dt>
 <dd><a href="https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt">https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt</a></dd>
 </dl>
+<p><code>imacro</code> (like regular macros) are for
+generating code. <code>idefun</code>, however, doesnt
+generate the code but attempts to run a
+function without code.</p>
+<p>It&rsquo;s kinda crazy that Im-macros run faster
+than Im-functions, where the opposite is true
+in regular programming. That&rsquo;s because they
+generate the code which can be reused, where
+an Im-function will typically have to query
+the LM every time.</p>
 <h4 id="the-objective-with-iλ-dot-el">The objective with <code>iλ.el</code></h4>
 <p>The objective here is to create <code>IP</code> functions
 for programming in emacs lisp exclusively.</p>
