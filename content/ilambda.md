@@ -65,12 +65,13 @@ in emacs lisp without bloat or over-complication.
 | name             | type     | depends on           | basic idea                                                                                                            |
 |------------------|----------|----------------------|-----------------------------------------------------------------------------------------------------------------------|
 | `ieval`          | MACRO    |                      | `ieval` will imagine the evaluation of some code without any other context.                                           |
-| `imacro`         | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                           |
+| `imacro/N`       | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                           |
 | `idefun`         | FUNCTION | `ieval` and `imacro` | Run an imagined function on the given arguments and return an imagined result, but create a binding for the function. |
 | `ilist`          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                        |
 | `ilambda` / `iλ` | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
 | `ifilter`        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.         |
 | `iparse`         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.                |
+| `defimacro`      | MACRO    | `imacro/N`           | Select the appropriate `imacro/N` form depending on the arity of arguments.                                           |
 
 
 #### `ieval` {#ieval}
@@ -332,6 +333,42 @@ _`imacro` expansion demo_
     "Subtract A - B."
     (- a b)))
 {{< /highlight >}}
+
+`defimacro`
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defmacro defimacro (name &rest body)
+  "Define imacro"
+  (cond
+   ((= 0 (length body))
+    `(imacro/1
+      ,name))
+   ((= 1 (length body))
+    `(imacro/2
+      ,name
+      ,(car body)))
+   ((= 2 (length body))
+    `(imacro/3
+      ,name
+      ,(car body)
+      ,(cadr body)))))
+{{< /highlight >}}
+
+All of the following are valid ways to invoke `defimacro`.
+
+`defimacro` selects the right `imacro/N` function depending on the arity of the arguments.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defimacro my/subtract)
+(defimacro my/subtract (a b c))
+(defimacro my/itimes (a b c)
+   "multiply three complex numbers")
+{{< /highlight >}}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/19czBa4Qyncgtg1JFi5JQLmfi" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/19czBa4Qyncgtg1JFi5JQLmfi.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/19czBa4Qyncgtg1JFi5JQLmfi.js" id="asciicast-19czBa4Qyncgtg1JFi5JQLmfi" async></script>
 
 
 #### `ilist` {#ilist}
