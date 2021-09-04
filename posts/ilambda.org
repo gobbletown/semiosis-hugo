@@ -25,8 +25,9 @@ transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.
 
++ iλ project :: http://github.com/semiosis/ilambda/
 + IP thesis ::  https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org
-+ IP libary :: http://github.com/semiosis/pen.el/blob/master/src/pen-imaginary-library.el
++ IP library :: http://github.com/semiosis/pen.el/blob/master/src/pen-ilambda.el
 + IP glossary :: https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
 
 *** The objective with =iλ.el=
@@ -39,15 +40,15 @@ programming languages, but I intend to make
 in emacs lisp without bloat or over-complication.
 
 ** Syntax forms
-| name             | type     | depends on           | basic idea                                                                                                     |
-|------------------+----------+----------------------+----------------------------------------------------------------------------------------------------------------|
-| =ieval=          | MACRO    |                      | =ieval= will imagine the evaluation of some code without any other context.                                    |
-| =imacro=         | MACRO    |                      | =imacro= does not evaluate. It merely generates code, but is like =idefun=.                                    |
-| =idefun=         | FUNCTION | =ieval= and =imacro= | Run an expression on the given arguments and return an imagined result, but create a binding for the function. |
-| =ilist=          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                 |
-| =ilambda= / =iλ= | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                            |
-| =ifilter=        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.  |
-| =iparse=         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.         |
+| name             | type     | depends on           | basic idea                                                                                                            |
+|------------------+----------+----------------------+-----------------------------------------------------------------------------------------------------------------------|
+| =ieval=          | MACRO    |                      | =ieval= will imagine the evaluation of some code without any other context.                                           |
+| =imacro=         | MACRO    |                      | =imacro= does not evaluate. It merely generates code, but is like =idefun=.                                           |
+| =idefun=         | FUNCTION | =ieval= and =imacro= | Run an imagined function on the given arguments and return an imagined result, but create a binding for the function. |
+| =ilist=          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                        |
+| =ilambda= / =iλ= | FUNCTION |                      | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
+| =ifilter=        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.         |
+| =iparse=         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.                |
 
 *** =ieval=
 =ieval= will simply evaluate the provided
@@ -77,7 +78,7 @@ _/prompt function/_ for running the eval.
   vars:
   - "code"
   - "expression"
-  validator: "grep -v '(:return'"
+  validator: "grep -qv '(:return'"
   examples:
   - |-
       (defun double-number (x)
@@ -149,9 +150,12 @@ Also, an =imacro= is under the hood a regular
 macro. This means, that expanding the =imacro=
 will infer/generate underlying code.
 
-+ =pf-imagine-an-emacs-lisp-function-given-name-arguments-and-docstring/3= :: http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-lisp-function-given-name-arguments-and-docstring-3.prompt
+[[./macro-expand-codex.gif]]
+
++ =pf-imagine-an-emacs-function/3= :: http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-function-3.prompt
 
 #+BEGIN_SRC yaml -n :async :results verbatim code
+  title: imagine an emacs function
   task: "imagine an emacs lisp function given name, arguments and docstring"
   doc: "Given a function name, arguments and docstring, return the imagined body of the function"
   prompt-version: 1
@@ -179,9 +183,122 @@ will infer/generate underlying code.
   preprocessors:
   - "slugify"
   postprocessor: chomp
+  postpostprocessor: "sed -z \"s/^;;my-emacs-library.el\\\\n\\\\n//\""
   filter: on
   completion: off
   insertion: off
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim raw
+  (car
+   (pen-single-generation
+    (pf-imagine-an-emacs-function/3
+     "times"
+     "x y"
+     "multiply two numbers and return a number"
+     :include-prompt t
+     :no-select-result t)))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun times (x y)
+    "multiply two numbers and return a number"
+    (* x y))
+#+END_SRC
+
+There are 3 different versions of =imacro=
+depending on how many arguments are supplied to
+it.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defmacro imacro/3 (name args docstr)
+    "Does not evaluate. It merely generates code."
+    (let* ((argstr (apply 'cmd (mapcar 'slugify (mapcar 'str args))))
+           (bodystr
+            (car
+             (pen-single-generation
+              (pf-imagine-an-emacs-function/3
+               name
+               argstr
+               docstr
+               :include-prompt t
+               :no-select-result t))))
+           (body (eval-string (concat "'" bodystr))))
+      `(progn ,body)))
+  
+  (defmacro imacro/2 (name args)
+    "Does not evaluate. It merely generates code."
+    (let* ((argstr (apply 'cmd (mapcar 'slugify (mapcar 'str args))))
+           (bodystr
+            (car
+             (pen-single-generation
+              (pf-imagine-an-emacs-function/2
+               name
+               argstr
+               :include-prompt t
+               :no-select-result t))))
+           (body (eval-string (concat "'" bodystr))))
+      `(progn ,body)))
+  
+  (defmacro imacro/1 (name)
+    "Does not evaluate. It merely generates code."
+    (let* ((bodystr
+            (car
+             (pen-single-generation
+              (pf-imagine-an-emacs-function/1
+               name
+               :include-prompt t
+               :no-select-result t))))
+           (body (eval-string (concat "'" bodystr))))
+      `(progn ,body)))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (imacro/3 my/itimes (a b c) "multiply three complex numbers")
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (progn
+    (defun my-times
+        (x y z)
+      "multiply three numbers and return a number"
+      (* x y z)))
+#+END_SRC
+
+/=imacro= expansion demo/
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TFjZGxMf0zhT59T7U3tO8uwY5.js" id="asciicast-TFjZGxMf0zhT59T7U3tO8uwY5" async></script>
+#+END_EXPORT
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (imacro/2 my/subtract (a b c))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (progn
+    (defun my-subtract
+        (a b c)
+      "Subtract B from A and return the result."
+      (setq result
+            (+ a
+               (- b c)))
+      result))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (imacro/1 my/subtract)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (progn
+    (defun my-subtract
+        (a b)
+      "Subtract A - B."
+      (- a b)))
 #+END_SRC
 
 *** =ilist=
