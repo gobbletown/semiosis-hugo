@@ -38,15 +38,19 @@ IP glossary
 
 `imacro` (like regular macros) are for
 generating code. `idefun`, however, doesnt
-generate the code but attempts to run a
-function without code.
+generate the code but attempts to evaluate a
+function _without_ code, or **if** code is supplied
+then _imagine_ evaluating that code rather than
+actually evaluating it.
 
-It's kinda crazy that Im-macros run faster
-than Im-functions, where the opposite is true
-in regular programming. That's because they
-generate the code which can be reused, where
-an Im-function will typically have to query
-the LM every time.
+It's kinda crazy that `Im`-macros run faster
+and are more reliable than `Im`-functions,
+where the opposite is true in regular
+programming. That's because they generate the
+code which can be <span class="underline">reused</span>, adjusted and
+interactively regenerated, where an
+`Im`-function will typically have to query the
+LM every time you call it.
 
 
 #### The objective with `iλ.el` {#the-objective-with-iλ-dot-el}
@@ -65,7 +69,7 @@ in emacs lisp without bloat or over-complication.
 | name             | type     | depends on           | basic idea                                                                                                            |
 |------------------|----------|----------------------|-----------------------------------------------------------------------------------------------------------------------|
 | `ieval`          | MACRO    |                      | `ieval` will imagine the evaluation of some code without any other context.                                           |
-| `imacro/N`       | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but is like `idefun`.                                           |
+| `imacro/N`       | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but that code is imagined. Like `idefun` it is variadic.        |
 | `idefun`         | FUNCTION | `ieval` and `imacro` | Run an imagined function on the given arguments and return an imagined result, but create a binding for the function. |
 | `ilist`          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                        |
 | `ilambda` / `iλ` | FUNCTION | `ieval`              | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
@@ -77,12 +81,14 @@ in emacs lisp without bloat or over-complication.
 #### `ieval` {#ieval}
 
 `ieval` will simply evaluate the provided
-string/sexp as emacs lisp code. Actually you
-must provide the preceding code and the
-evaluated expression. Either argument can
-either be a raw string containing code or a
-sexp, but the expression will be "one-line-ized"
-for the prompt.
+string/sexp as emacs lisp code. You
+must provide `ieval` with, firstly, the preceding
+code, which may be, for example, a function
+definition or package requires, etc. and,
+secondly, evaluated expression. Either
+argument can either be a raw string containing
+code or a sexp, but the expression will be
+"one-line-ized" for the prompt.
 
 `ieval` is used by `idefun` and `ilambda`.
 

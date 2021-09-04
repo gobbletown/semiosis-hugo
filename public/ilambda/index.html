@@ -35,7 +35,7 @@
 <meta itemprop="name" content="iλ, an imaginary programming library for emacs">
 <meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1528"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1574"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -169,14 +169,18 @@ straight into my thesis.</p>
 </dl>
 <p><code>imacro</code> (like regular macros) are for
 generating code. <code>idefun</code>, however, doesnt
-generate the code but attempts to run a
-function without code.</p>
-<p>It&rsquo;s kinda crazy that Im-macros run faster
-than Im-functions, where the opposite is true
-in regular programming. That&rsquo;s because they
-generate the code which can be reused, where
-an Im-function will typically have to query
-the LM every time.</p>
+generate the code but attempts to evaluate a
+function <em>without</em> code, or <strong>if</strong> code is supplied
+then <em>imagine</em> evaluating that code rather than
+actually evaluating it.</p>
+<p>It&rsquo;s kinda crazy that <code>Im</code>-macros run faster
+and are more reliable than <code>Im</code>-functions,
+where the opposite is true in regular
+programming. That&rsquo;s because they generate the
+code which can be <span class="underline">reused</span>, adjusted and
+interactively regenerated, where an
+<code>Im</code>-function will typically have to query the
+LM every time you call it.</p>
 <h4 id="the-objective-with-iλ-dot-el">The objective with <code>iλ.el</code></h4>
 <p>The objective here is to create <code>IP</code> functions
 for programming in emacs lisp exclusively.</p>
@@ -205,7 +209,7 @@ in emacs lisp without bloat or over-complication.</p>
 <td><code>imacro/N</code></td>
 <td>MACRO</td>
 <td></td>
-<td><code>imacro</code> does not evaluate. It merely generates code, but is like <code>idefun</code>.</td>
+<td><code>imacro</code> does not evaluate. It merely generates code, but that code is imagined. Like <code>idefun</code> it is variadic.</td>
 </tr>
 <tr>
 <td><code>idefun</code></td>
@@ -247,12 +251,14 @@ in emacs lisp without bloat or over-complication.</p>
 </table>
 <h4 id="ieval"><code>ieval</code></h4>
 <p><code>ieval</code> will simply evaluate the provided
-string/sexp as emacs lisp code. Actually you
-must provide the preceding code and the
-evaluated expression. Either argument can
-either be a raw string containing code or a
-sexp, but the expression will be &ldquo;one-line-ized&rdquo;
-for the prompt.</p>
+string/sexp as emacs lisp code. You
+must provide <code>ieval</code> with, firstly, the preceding
+code, which may be, for example, a function
+definition or package requires, etc. and,
+secondly, evaluated expression. Either
+argument can either be a raw string containing
+code or a sexp, but the expression will be
+&ldquo;one-line-ized&rdquo; for the prompt.</p>
 <p><code>ieval</code> is used by <code>idefun</code> and <code>ilambda</code>.</p>
 <p><span class="underline"><em>prompt function</em></span> for running the eval.</p>
 <dl>
