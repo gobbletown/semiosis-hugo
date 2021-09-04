@@ -205,9 +205,115 @@ integer
 Imaginarily run an expression on the given
 arguments and return an imagined result.
 
+Here are three `ilambda` subforms which take different arguments.
+
+`ilambda/task` is the most terse. Only a NL
+task description is given.
+
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(mapcar (iλ (x y) "divide x by y") (number-sequence 10 20))
+(defmacro ilambda/task (args task)
+  (let* ((slug (slugify (eval task)))
+         (fsym (intern slug)))
+    `(lambda ,args
+       (let ((vals (mapcar 'eval ',args)))
+         (eval
+          ;; imagined by an LM
+          `(ieval
+            ;; An function and a function call
+            (,',fsym ,@vals)
+            ,,(concat ";; " task)))))))
+
+(defmacro ilambda/task-code (args task code)
+  (let* ((slug (slugify (eval task)))
+         (fsym (intern slug)))
+    `(lambda ,args
+       (let ((vals (mapcar 'eval ',args)))
+         (eval
+          ;; imagined by an LM
+          `(ieval
+            ;; An function and a function call
+            (,',fsym ,@vals)
+            (defun ,',fsym ,',args
+              ,,task
+              ,',code)))))))
+
+(defmacro ilambda/code (args code)
+  `(lambda ,args
+     (let ((vals (mapcar 'eval ',args)))
+       (eval
+        ;; imagined by an LM
+        `(ieval
+          ;; An function and a function call
+          (main ,@vals)
+          (defun main (,',@args)
+            ,',code))))))
 {{< /highlight >}}
+
+_**Demonstrations**_
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(mapcar (ilambda/task (x) "double it")
+        '(12 4))
+{{< /highlight >}}
+
+```emacs-lisp
+"(24 8)
+"
+```
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(mapcar (ilambda/code (x)
+                      (+ x 5))
+        '(4))
+{{< /highlight >}}
+
+```emacs-lisp
+"(9)
+"
+```
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(mapcar (ilambda/task-code (x)
+                           "add five"
+                           (+ x 5))
+        '(8))
+{{< /highlight >}}
+
+```emacs-lisp
+"(13)
+"
+```
+
+The _**ilambda**_ macro.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defmacro ilambda (args code-or-task &optional task-or-code)
+  "define ilambda"
+  (let ((task (if (stringp code-or-task)
+                  code-or-task
+                task-or-code))
+        (code (if (listp code-or-task)
+                  code-or-task
+                task-or-code)))
+    (cond
+     ((and code
+           (sor task))
+      `(ilambda/task-code ,args ,task ,code))
+     ((sor task)
+      `(ilambda/task ,args ,task))
+     ((listp code-or-task)
+      `(ilambda/code ,args ,code)))))
+
+(defalias 'iλ 'ilambda)
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(-reduce (iλ (x y) "add x to y") (number-sequence 1 3))
+{{< /highlight >}}
+
+```emacs-lisp
+"6"
+```
 
 
 #### `idefun` {#idefun}

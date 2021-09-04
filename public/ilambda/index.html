@@ -35,7 +35,7 @@
 <meta itemprop="name" content="iλ, an imaginary programming library for emacs">
 <meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1574"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1847"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -451,15 +451,183 @@ integer</code></pre></td></tr></table>
 <h4 id="ilambda-iλ"><code>ilambda</code> / <code>iλ</code></h4>
 <p>Imaginarily run an expression on the given
 arguments and return an imagined result.</p>
+<p>Here are three <code>ilambda</code> subforms which take different arguments.</p>
+<p><code>ilambda/task</code> is the most terse. Only a NL
+task description is given.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro ilambda/task (args task)
+  (let* ((slug (slugify (<span style="color:#a6e22e">eval</span> task)))
+         (fsym (<span style="color:#a6e22e">intern</span> slug)))
+    <span style="color:#f92672">`</span>(lambda <span style="color:#f92672">,</span>args
+       (let ((vals (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;eval</span> <span style="color:#e6db74">&#39;,args</span>)))
+         (<span style="color:#a6e22e">eval</span>
+          <span style="color:#75715e">;; imagined by an LM</span>
+          <span style="color:#f92672">`</span>(ieval
+            <span style="color:#75715e">;; An function and a function call</span>
+            (<span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,fsym</span> <span style="color:#f92672">,@</span>vals)
+            <span style="color:#f92672">,,</span>(<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;;; &#34;</span> task)))))))
+
+(defmacro ilambda/task-code (args task code)
+  (let* ((slug (slugify (<span style="color:#a6e22e">eval</span> task)))
+         (fsym (<span style="color:#a6e22e">intern</span> slug)))
+    <span style="color:#f92672">`</span>(lambda <span style="color:#f92672">,</span>args
+       (let ((vals (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;eval</span> <span style="color:#e6db74">&#39;,args</span>)))
+         (<span style="color:#a6e22e">eval</span>
+          <span style="color:#75715e">;; imagined by an LM</span>
+          <span style="color:#f92672">`</span>(ieval
+            <span style="color:#75715e">;; An function and a function call</span>
+            (<span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,fsym</span> <span style="color:#f92672">,@</span>vals)
+            (defun <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,fsym</span> <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,args</span>
+              <span style="color:#f92672">,,</span>task
+              <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,code</span>)))))))
+
+(defmacro ilambda/code (args code)
+  <span style="color:#f92672">`</span>(lambda <span style="color:#f92672">,</span>args
+     (let ((vals (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;eval</span> <span style="color:#e6db74">&#39;,args</span>)))
+       (<span style="color:#a6e22e">eval</span>
+        <span style="color:#75715e">;; imagined by an LM</span>
+        <span style="color:#f92672">`</span>(ieval
+          <span style="color:#75715e">;; An function and a function call</span>
+          (main <span style="color:#f92672">,@</span>vals)
+          (defun main (<span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,@args</span>)
+            <span style="color:#f92672">,</span><span style="color:#e6db74">&#39;,code</span>))))))</code></pre></td></tr></table>
+</div>
+</div>
+<p><em><strong>Demonstrations</strong></em></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">mapcar</span> (ilambda/task (x) <span style="color:#e6db74">&#34;double it&#34;</span>)
+        <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">12</span> <span style="color:#ae81ff">4</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;(24 8)
+</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">mapcar</span> (ilambda/code (x)
+                      (<span style="color:#a6e22e">+</span> x <span style="color:#ae81ff">5</span>))
+        <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">4</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;(9)
+</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">mapcar</span> (ilambda/task-code (x)
+                           <span style="color:#e6db74">&#34;add five&#34;</span>
+                           (<span style="color:#a6e22e">+</span> x <span style="color:#ae81ff">5</span>))
+        <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">8</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;(13)
+</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>The <em><strong>ilambda</strong></em> macro.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro ilambda (args code-or-task <span style="color:#66d9ef">&amp;optional</span> task-or-code)
+  <span style="color:#e6db74">&#34;define ilambda&#34;</span>
+  (let ((task (if (<span style="color:#a6e22e">stringp</span> code-or-task)
+                  code-or-task
+                task-or-code))
+        (code (if (<span style="color:#a6e22e">listp</span> code-or-task)
+                  code-or-task
+                task-or-code)))
+    (cond
+     ((and code
+           (sor task))
+      <span style="color:#f92672">`</span>(ilambda/task-code <span style="color:#f92672">,</span>args <span style="color:#f92672">,</span>task <span style="color:#f92672">,</span>code))
+     ((sor task)
+      <span style="color:#f92672">`</span>(ilambda/task <span style="color:#f92672">,</span>args <span style="color:#f92672">,</span>task))
+     ((<span style="color:#a6e22e">listp</span> code-or-task)
+      <span style="color:#f92672">`</span>(ilambda/code <span style="color:#f92672">,</span>args <span style="color:#f92672">,</span>code)))))
+
+(defalias <span style="color:#e6db74">&#39;iλ</span> <span style="color:#e6db74">&#39;ilambda</span>)</code></pre></td></tr></table>
+</div>
+</div>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">mapcar</span> (iλ (x y) <span style="color:#e6db74">&#34;divide x by y&#34;</span>) (number-sequence <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">20</span>))</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(-reduce (iλ (x y) <span style="color:#e6db74">&#34;add x to y&#34;</span>) (number-sequence <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">3</span>))</code></pre></td></tr></table>
 </div>
 </div>
-<h4 id="idefun"><code>idefun</code></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;6&#34;</span>
+</code></pre></div><h4 id="idefun"><code>idefun</code></h4>
 <p>The <code>idefun</code> creates a binding to an imaginary
 function. The implementation of the <code>idefun</code>
 need not be specified in order for code to
