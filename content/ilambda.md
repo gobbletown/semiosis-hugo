@@ -337,6 +337,85 @@ of the function as opposed to generate code.
 `idefun` returns a binding to a new prompt
 function.
 
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defmacro idefun (name-sym args code-or-task &optional task-or-code)
+  "Define an imaginary function"
+  `(defalias ',name-sym
+     (function ,(eval
+                 `(ilambda ,args ,code-or-task ,task-or-code)))))
+
+(idefun idoubleit (x)
+        "double it")
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idoubleit 5)
+{{< /highlight >}}
+
+```emacs-lisp
+"10"
+```
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun distance-between-planets (x y)
+        "distance between planets in astronomical units (AU)")
+
+(concat (str (distance-between-planets "saturn" "jupiter"))
+        "\n"
+        (str (distance-between-planets "mercury" "jupiter")))
+{{< /highlight >}}
+
+```emacs-lisp
+"\"0.05\\n0.387\""
+```
+
+I have no idea if this data is correct but it
+seems consistent with itself.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun distance-between-planets (x y)
+        "distance between planets in million miles")
+
+(concat (str (distance-between-planets "saturn" "jupiter"))
+        "\n"
+        (str (distance-between-planets "mercury" "jupiter")))
+{{< /highlight >}}
+
+```emacs-lisp
+"\"1.2\\n5.791\""
+```
+
+```text
+"1.2\n5.791"
+```
+
+Sadly, Codex doesn't know too much about Scoville food hotness.
+
+| food           | Scoville scale |
+|----------------|----------------|
+| Pure capsaicin | 16,000,000 SHU |
+| Jalapeño       | 10,000 SHU     |
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun scoville-difference (food-a food-b)
+        "difference between two foods in scoville Heat Units (SHUs)")
+
+(concat (str (scoville-difference "Pure capsaicin" "Jalapeño"))
+        "\n"
+        (str (scoville-difference "Chipotle" "Trinidad Scorpion Butch")))
+{{< /highlight >}}
+
+```emacs-lisp
+"\"0\\n2\""
+```
+
+_**Demo**_
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop.js" id="asciicast-flwFZOaUnv6UtiLcpqFYkgsop" async></script>
+
 
 #### `imacro` {#imacro}
 

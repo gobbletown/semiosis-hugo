@@ -35,7 +35,7 @@
 <meta itemprop="name" content="iλ, an imaginary programming library for emacs">
 <meta itemprop="description" content="iλ (Imaginary Programming Functions) Summary I design and build an imaginary programming (IP) library (iλ.el) for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm. The objective here is to create some functions for doing IP in emacs lisp, since emacs lisp has the expressive power to prototype such things, but the ideas contained here can easily be transferred to any other programming language."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1847"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2009"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -643,6 +643,121 @@ the code is evaluted in imaginary space.</p>
 of the function as opposed to generate code.</p>
 <p><code>idefun</code> returns a binding to a new prompt
 function.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro idefun (name-sym args code-or-task <span style="color:#66d9ef">&amp;optional</span> task-or-code)
+  <span style="color:#e6db74">&#34;Define an imaginary function&#34;</span>
+  <span style="color:#f92672">`</span>(defalias <span style="color:#e6db74">&#39;,name-sym</span>
+     (function <span style="color:#f92672">,</span>(<span style="color:#a6e22e">eval</span>
+                 <span style="color:#f92672">`</span>(ilambda <span style="color:#f92672">,</span>args <span style="color:#f92672">,</span>code-or-task <span style="color:#f92672">,</span>task-or-code)))))
+
+(idefun idoubleit (x)
+        <span style="color:#e6db74">&#34;double it&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(idoubleit <span style="color:#ae81ff">5</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;10&#34;</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(idefun distance-between-planets (x y)
+        <span style="color:#e6db74">&#34;distance between planets in astronomical units (AU)&#34;</span>)
+
+(<span style="color:#a6e22e">concat</span> (str (distance-between-planets <span style="color:#e6db74">&#34;saturn&#34;</span> <span style="color:#e6db74">&#34;jupiter&#34;</span>))
+        <span style="color:#e6db74">&#34;\n&#34;</span>
+        (str (distance-between-planets <span style="color:#e6db74">&#34;mercury&#34;</span> <span style="color:#e6db74">&#34;jupiter&#34;</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;\&#34;0.05\\n0.387\&#34;&#34;</span>
+</code></pre></div><p>I have no idea if this data is correct but it
+seems consistent with itself.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(idefun distance-between-planets (x y)
+        <span style="color:#e6db74">&#34;distance between planets in million miles&#34;</span>)
+
+(<span style="color:#a6e22e">concat</span> (str (distance-between-planets <span style="color:#e6db74">&#34;saturn&#34;</span> <span style="color:#e6db74">&#34;jupiter&#34;</span>))
+        <span style="color:#e6db74">&#34;\n&#34;</span>
+        (str (distance-between-planets <span style="color:#e6db74">&#34;mercury&#34;</span> <span style="color:#e6db74">&#34;jupiter&#34;</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;\&#34;1.2\\n5.791\&#34;&#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#34;1.2\n5.791&#34;
+</code></pre></div><p>Sadly, Codex doesn&rsquo;t know too much about Scoville food hotness.</p>
+<table>
+<thead>
+<tr>
+<th>food</th>
+<th>Scoville scale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pure capsaicin</td>
+<td>16,000,000 SHU</td>
+</tr>
+<tr>
+<td>Jalapeño</td>
+<td>10,000 SHU</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(idefun scoville-difference (food-a food-b)
+        <span style="color:#e6db74">&#34;difference between two foods in scoville Heat Units (SHUs)&#34;</span>)
+
+(<span style="color:#a6e22e">concat</span> (str (scoville-difference <span style="color:#e6db74">&#34;Pure capsaicin&#34;</span> <span style="color:#e6db74">&#34;Jalapeño&#34;</span>))
+        <span style="color:#e6db74">&#34;\n&#34;</span>
+        (str (scoville-difference <span style="color:#e6db74">&#34;Chipotle&#34;</span> <span style="color:#e6db74">&#34;Trinidad Scorpion Butch&#34;</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;\&#34;0\\n2\&#34;&#34;</span>
+</code></pre></div><p><em><strong>Demo</strong></em></p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/flwFZOaUnv6UtiLcpqFYkgsop.js" id="asciicast-flwFZOaUnv6UtiLcpqFYkgsop" async></script>
 <h4 id="imacro"><code>imacro</code></h4>
 <p>An <code>imacro</code> actually imagines the
 implementation of a function.</p>
