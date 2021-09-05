@@ -6,8 +6,100 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 03 Sep 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>EmacsConf 2021 - Imaginary Programming</title>
+            <link>http://semiosis.github.io/posts/emacsconf-2021-imaginary-programming/</link>
+            <pubDate>Sun, 05 Sep 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/emacsconf-2021-imaginary-programming/</guid>
+            <description>Talk: Imaginary Programming Abstract: Imaginary Programming (IP) is both methodology and paradigm. It is an extension of literate programming and a way of creating software without the use of imperative, functional or even declarative code. Yet IP employs all disciplines to achieve the miraculous. The only contingency is on one or more language models, known by Standford AI as foundation models. The real value of IP is not found by abandoning sound logic altogether, but in weaving the real with the imaginary.</description>
+            <content type="html"><![CDATA[<h2 id="talk">Talk: <span class="underline">Imaginary Programming</span></h2>
+<h3 id="abstract">Abstract:</h3>
+<p>Imaginary Programming (IP) is both methodology and paradigm. It is an extension
+of literate programming and a way of creating software without the use of
+imperative, functional or even declarative code. Yet IP employs all disciplines
+to achieve the miraculous. The only contingency is on one or more language
+models, known by Standford AI as foundation models. The real value of IP is not
+found by abandoning sound logic altogether, but in weaving the real with the
+imaginary. The future of imaginary programming is one in which almost all of
+computing is inferred. I have built a suite of tools based on emacs for
+interfacing real programming languages with imaginary ones; All of this in
+order to demonstrate what I mean. A &lsquo;complex&rsquo; terminal that lets you imagine
+what happens no matter how nested you are interpreters, an example-oriented
+language, a file format that encodes the provenance of text and a library for
+imaginary functional programming primitives called iLambda. It is important to
+recognise IP because, for lack of a better term, it has great implications for
+intellectual property and the GPL. Please keep an open mind.</p>
+<h3 id="outlines">Outlines:</h3>
+<ul>
+<li>
+<p>5-10 minutes:
+Unfortunately, IP has to be seen and experienced to be understood. 5-10 minutes
+would never be enough.</p>
+<p>But in this timeframe I would give:</p>
+<ul>
+<li>a 5 minute introduction to imaginary programming, followed by</li>
+<li>a demonstraction of iLambda.
+<ul>
+<li><a href="https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/">iλ, a family of imaginary programming libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>20 minutes: (brief description/outline)
+20 minutes wont be enough to explain the full suite of tools.</p>
+<p>In the timeframe I would give:</p>
+<ul>
+<li>a 5 minute introduction to imaginary programming, followed by</li>
+<li>a 5 minute introduction and demonstraction of Pen.el.
+<a href="https://semiosis.github.io/pen/">https://semiosis.github.io/pen/</a></li>
+<li>a 5 minute org-babel and emacs lisp demonstraction of iLambda.
+<ul>
+<li><a href="https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/">iλ, a family of imaginary programming libraries</a></li>
+</ul>
+</li>
+<li>a 5 minute demonstration of &lsquo;cterm&rsquo; (complex term) and &lsquo;ii&rsquo; (imaginary interpreter).
+<ul>
+<li><a href="https://mullikine.github.io/posts/imaginary-real-codex-complex/">https://mullikine.github.io/posts/imaginary-real-codex-complex/</a></li>
+<li><a href="https://semiosis.github.io/ii/">https://semiosis.github.io/ii/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>40 minutes: (brief description/outline)</p>
+<ul>
+<li>A 10 minute introduction to language models, their capabilities and imaginary programming.</li>
+<li>A 10 minute introduction to creating prompts with Pen.el.</li>
+<li>a 5 minute org-babel and emacs lisp demonstraction of iLambda.
+<ul>
+<li><a href="https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/">iλ, a family of imaginary programming libraries</a></li>
+</ul>
+</li>
+<li>a 5 minute demonstration of &lsquo;cterm&rsquo; (complex term) and &lsquo;ii&rsquo; (imaginary interpreter).
+<a href="https://mullikine.github.io/posts/imaginary-real-codex-complex/">https://mullikine.github.io/posts/imaginary-real-codex-complex/</a>
+<a href="https://semiosis.github.io/ii/">https://semiosis.github.io/ii/</a></li>
+<li>A 5 minute brief on examplary and advanced prompt programming.
+<a href="https://semiosis.github.io/examplary/">https://semiosis.github.io/examplary/</a></li>
+<li>5 minutes for Prompting Requests and Q&amp;A</li>
+</ul>
+</li>
+</ul>
+<h3 id="availability">Availability</h3>
+<p>(during the conference days (Nov 27 and 28))</p>
+<p>All hours.</p>
+<h3 id="how-you-d-like-to-handle-questions">How you&rsquo;d like to handle questions</h3>
+<h4 id="live-web-conference">Live web conference</h4>
+<dl>
+<dt>IRC</dt>
+<dd><code>libertyprime</code> at <code>#emacs</code> on <code>libera</code></dd>
+</dl>
+]]></content>
+        </item>
         
         <item>
             <title>iλ, an imaginary programming library for emacs</title>

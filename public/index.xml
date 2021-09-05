@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 03 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EmacsConf 2021 - Imaginary Programming</title>
+      <link>http://semiosis.github.io/posts/emacsconf-2021-imaginary-programming/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/emacsconf-2021-imaginary-programming/</guid>
+      <description>Talk: Imaginary Programming Abstract: Imaginary Programming (IP) is both methodology and paradigm. It is an extension of literate programming and a way of creating software without the use of imperative, functional or even declarative code. Yet IP employs all disciplines to achieve the miraculous. The only contingency is on one or more language models, known by Standford AI as foundation models. The real value of IP is not found by abandoning sound logic altogether, but in weaving the real with the imaginary.</description>
+    </item>
+    
     <item>
       <title>iλ, a family of imaginary programming libraries</title>
       <link>http://semiosis.github.io/ilambda/</link>
