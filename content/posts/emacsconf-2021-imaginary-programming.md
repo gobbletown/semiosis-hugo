@@ -19,8 +19,8 @@ models, known as foundation models. The real value of IP is not
 found by abandoning sound logic altogether, but in weaving the real with the
 imaginary. The future of imaginary programming is one in which almost all of
 computing is inferred. I have built a suite of tools based on emacs for
-interfacing real programming languages with imaginary ones; All of this in
-order to demonstrate what I mean. A 'complex' terminal that lets you imagine
+interfacing real programming languages with imaginary ones; all of this in
+order to demonstrate what I mean; a 'complex' terminal that lets you imagine
 what happens no matter how nested you are within interpreters, an example-oriented
 language, a file format that encodes the provenance of text and a library for
 imaginary functional programming primitives called iLambda. It is important to
