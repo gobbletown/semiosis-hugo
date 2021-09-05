@@ -31,7 +31,7 @@ IP thesis
 : <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>
 
 IP library
-: <http://github.com/semiosis/pen.el/blob/master/src/pen-ilambda.el>
+: <http://github.com/semiosis/pen.el/blob/master/src/ilambda.el>
 
 IP glossary
 : <https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
@@ -211,42 +211,47 @@ Here are three `ilambda` subforms which take different arguments.
 task description is given.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(defmacro ilambda/task (args task)
-  (let* ((slug (slugify (eval task)))
-         (fsym (intern slug)))
+(defmacro ilambda/task (args task &optional name-sym)
+  (let* ((slug (s-replace-regexp "-$" "" (slugify (eval task))))
+         (fsym (or name-sym
+                   (intern slug))))
     `(lambda ,args
-       (let ((vals (mapcar 'eval ',args)))
-         (eval
-          ;; imagined by an LM
-          `(ieval
-            ;; An function and a function call
-            (,',fsym ,@vals)
-            ,,(concat ";; " task)))))))
-
-(defmacro ilambda/task-code (args task code)
-  (let* ((slug (slugify (eval task)))
-         (fsym (intern slug)))
-    `(lambda ,args
-       (let ((vals (mapcar 'eval ',args)))
-         (eval
-          ;; imagined by an LM
-          `(ieval
-            ;; An function and a function call
-            (,',fsym ,@vals)
-            (defun ,',fsym ,',args
-              ,,task
-              ,',code)))))))
-
-(defmacro ilambda/code (args code)
-  `(lambda ,args
-     (let ((vals (mapcar 'eval ',args)))
        (eval
         ;; imagined by an LM
         `(ieval
           ;; An function and a function call
-          (main ,@vals)
-          (defun main (,',@args)
+          (,',fsym ,,@args)
+          ,,(concat ";; " task))))))
+(defalias 'iλ/task 'ilambda/task)
+
+(defmacro ilambda/task-code (args task code &optional name-sym)
+  (let* ((slug (s-replace-regexp "-$" "" (slugify (eval task))))
+         (fsym (or
+                name-sym
+                (intern slug))))
+    `(lambda ,args
+       (eval
+        ;; imagined by an LM
+        `(ieval
+          ;; An function and a function call
+          (,',fsym ,,@args)
+          (defun ,',fsym ,',args
+            ,,task
             ,',code))))))
+(defalias 'iλ/task-code 'ilambda/task-code)
+
+(defmacro ilambda/code (args code &optional name-sym)
+  (let ((fsym (or name-sym
+                  'main)))
+    `(lambda ,args
+       (eval
+        ;; imagined by an LM
+        `(ieval
+          ;; An function and a function call
+          (,',fsym ,,@args)
+          (defun ,',fsym (,',@args)
+            ,',code))))))
+(defalias 'iλ/code 'ilambda/code)
 {{< /highlight >}}
 
 _**Demonstrations**_
@@ -287,8 +292,8 @@ _**Demonstrations**_
 The _**ilambda**_ macro.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(defmacro ilambda (args code-or-task &optional task-or-code)
-  "define ilambda"
+(defmacro ilambda (args code-or-task &optional task-or-code name-sym)
+  "Define an imaginary lambda (iλ)"
   (let ((task (if (stringp code-or-task)
                   code-or-task
                 task-or-code))
@@ -298,11 +303,11 @@ The _**ilambda**_ macro.
     (cond
      ((and code
            (sor task))
-      `(ilambda/task-code ,args ,task ,code))
+      `(ilambda/task-code ,args ,task ,code ,name-sym))
      ((sor task)
-      `(ilambda/task ,args ,task))
+      `(ilambda/task ,args ,task ,name-sym))
      ((listp code-or-task)
-      `(ilambda/code ,args ,code)))))
+      `(ilambda/code ,args ,code ,name-sym)))))
 
 (defalias 'iλ 'ilambda)
 {{< /highlight >}}
@@ -347,10 +352,17 @@ function.
 (1 1 2 3 5)
 {{< /highlight >}}
 
+With a temperature of `0.0`, this will hash to
+the same thing every time!
+
+Strangely, we can't call it a 'neural hash' though.
+
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (idefun sha-hash-string (s))
 
-(sha-hash-string "sugar shane")
+(pen-force
+ ((temperature 0.0))
+ (sha-hash-string "sugar shane"))
 {{< /highlight >}}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
@@ -358,11 +370,31 @@ f1d3ff8ec24e91b957c9e55adec407f47b55e3ae
 {{< /highlight >}}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(defmacro idefun (name-sym args code-or-task &optional task-or-code)
+(idefun neural-hash-string (s)
+  "This calculates a neural hash of the string.")
+
+(pen-force
+ ((temperature 0.0))
+ (neural-hash-string "sugar shane"))
+{{< /highlight >}}
+
+"0x7f8b8f8e"
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defmacro idefun (name-sym args &optional code-or-task task-or-code)
   "Define an imaginary function"
+  (cond
+   ((and (stringp name-sym)
+         (not code-or-task))
+    (progn
+      (setq code-or-task name-sym)
+      (setq name-sym (intern (s-replace-regexp "-$" "" (slugify (str name-sym)))))))
+   ((and (symbolp name-sym)
+         (not code-or-task))
+    (setq code-or-task (pen-snc "unsnakecase" (sym2str name-sym)))))
   `(defalias ',name-sym
      (function ,(eval
-                 `(ilambda ,args ,code-or-task ,task-or-code)))))
+                 `(ilambda ,args ,code-or-task ,task-or-code ,name-sym)))))
 
 (idefun idoubleit (x)
         "double it")
