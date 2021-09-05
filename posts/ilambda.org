@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: iλ, an imaginary programming library for emacs
+#+TITLE: iλ, a family of imaginary programming libraries
 #+DATE: <2021-09-03>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs openai pen gpt imaginary-programming
