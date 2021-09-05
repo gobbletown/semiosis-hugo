@@ -130,8 +130,8 @@ existence, but also for her encouragement and help!
 ## Documentation {#documentation}
 
 -   [Documentation directory](./docs)
-    -   [OpenAI Playground Settings]({{< relref "playground-settings" >}})
-    -   [Project timeline and design]({{< relref "README" >}})
+    -   [OpenAI Playground Settings](playground-settings)
+    -   [Project timeline and design](README)
 
 
 ## Journal {#journal}
