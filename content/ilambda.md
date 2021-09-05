@@ -1,5 +1,5 @@
 +++
-title = "iλ, an imaginary programming library for emacs"
+title = "iλ, a family of imaginary programming libraries"
 author = ["Shane Mulligan"]
 date = 2021-09-03T00:00:00+12:00
 keywords = ["emacs", "openai", "pen", "gpt", "imaginary-programming"]
