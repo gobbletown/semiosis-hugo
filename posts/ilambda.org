@@ -12,7 +12,7 @@
 * =iλ= (Imaginary Programming Functions)
 
 ** Summary
-tl;dr: Imaginary Programming (=IP=) is where
+_tl;dr:_ Imaginary Programming (=IP=) is where
 data and knowledge has been substituted for
 inference by a LM. Therefore, the
 implementation of an =iλ= library will be
