@@ -31,8 +31,6 @@ intellectual property and the GPL. Please keep an open mind.
 ### Outlines: {#outlines}
 
 -   5-10 minutes:
-    Unfortunately, IP has to be seen and experienced to be understood. 5-10 minutes
-    would never be enough.
 
     But in this timeframe I would give:
 
@@ -40,8 +38,7 @@ intellectual property and the GPL. Please keep an open mind.
     -   a demonstraction of iLambda.
         -   [iλ, a family of imaginary programming libraries](https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/)
 
--   20 minutes: (brief description/outline)
-    20 minutes wont be enough to explain the full suite of tools.
+-   20 minutes:
 
     In the timeframe I would give:
 
@@ -54,7 +51,7 @@ intellectual property and the GPL. Please keep an open mind.
         -   <https://mullikine.github.io/posts/imaginary-real-codex-complex/>
         -   <https://semiosis.github.io/ii/>
 
--   40 minutes: (brief description/outline)
+-   40 minutes:
     -   A 10 minute introduction to language models, their capabilities and imaginary programming.
     -   A 10 minute introduction to creating prompts with Pen.el.
     -   a 5 minute org-babel and emacs lisp demonstraction of iLambda.

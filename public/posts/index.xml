@@ -36,9 +36,7 @@ intellectual property and the GPL. Please keep an open mind.</p>
 <h3 id="outlines">Outlines:</h3>
 <ul>
 <li>
-<p>5-10 minutes:
-Unfortunately, IP has to be seen and experienced to be understood. 5-10 minutes
-would never be enough.</p>
+<p>5-10 minutes:</p>
 <p>But in this timeframe I would give:</p>
 <ul>
 <li>a 5 minute introduction to imaginary programming, followed by</li>
@@ -50,8 +48,7 @@ would never be enough.</p>
 </ul>
 </li>
 <li>
-<p>20 minutes: (brief description/outline)
-20 minutes wont be enough to explain the full suite of tools.</p>
+<p>20 minutes:</p>
 <p>In the timeframe I would give:</p>
 <ul>
 <li>a 5 minute introduction to imaginary programming, followed by</li>
@@ -71,7 +68,7 @@ would never be enough.</p>
 </ul>
 </li>
 <li>
-<p>40 minutes: (brief description/outline)</p>
+<p>40 minutes:</p>
 <ul>
 <li>A 10 minute introduction to language models, their capabilities and imaginary programming.</li>
 <li>A 10 minute introduction to creating prompts with Pen.el.</li>
