@@ -31,17 +31,11 @@ intellectual property and the GPL. Please keep an open mind.
 ### Outlines: {#outlines}
 
 -   5-10 minutes:
-
-    But in this timeframe I would give:
-
     -   a 5 minute introduction to imaginary programming, followed by
     -   a demonstraction of iLambda.
         -   [iλ, a family of imaginary programming libraries](https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/)
 
 -   20 minutes:
-
-    In the timeframe I would give:
-
     -   a 5 minute introduction to imaginary programming, followed by
     -   a 5 minute introduction and demonstraction of Pen.el.
         -   <https://semiosis.github.io/pen/>
