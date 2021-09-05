@@ -32,14 +32,14 @@ intellectual property and the GPL. Please keep an open mind.
 
 -   5-10 minutes:
     -   a 5 minute introduction to imaginary programming, followed by
-    -   a demonstraction of iLambda.
+    -   a demonstration of iLambda.
         -   [iλ, a family of imaginary programming libraries](https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/)
 
 -   20 minutes:
     -   a 5 minute introduction to imaginary programming, followed by
-    -   a 5 minute introduction and demonstraction of Pen.el.
+    -   a 5 minute introduction and demonstration of Pen.el.
         -   <https://semiosis.github.io/pen/>
-    -   a 5 minute org-babel and emacs lisp demonstraction of iLambda.
+    -   a 5 minute org-babel and emacs lisp demonstration of iLambda.
         -   [iλ, a family of imaginary programming libraries](https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/)
     -   a 5 minute demonstration of 'cterm' (complex term) and 'ii' (imaginary interpreter).
         -   <https://mullikine.github.io/posts/imaginary-real-codex-complex/>
@@ -48,7 +48,7 @@ intellectual property and the GPL. Please keep an open mind.
 -   40 minutes:
     -   A 10 minute introduction to language models, their capabilities and imaginary programming.
     -   A 10 minute introduction to creating prompts with Pen.el.
-    -   a 5 minute org-babel and emacs lisp demonstraction of iLambda.
+    -   a 5 minute org-babel and emacs lisp demonstration of iLambda.
         -   [iλ, a family of imaginary programming libraries](https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/)
     -   a 5 minute demonstration of 'cterm' (complex term) and 'ii' (imaginary interpreter).
         -   <https://mullikine.github.io/posts/imaginary-real-codex-complex/>
