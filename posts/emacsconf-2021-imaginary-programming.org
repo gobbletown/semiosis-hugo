@@ -16,7 +16,7 @@ Imaginary Programming (IP) is both methodology and paradigm. It is an extension
 of literate programming and a way of creating software without the use of
 imperative, functional or even declarative code. Yet IP employs all disciplines
 to achieve the miraculous. The only contingency is on one or more language
-models, known by Standford AI as foundation models. The real value of IP is not
+models, known as foundation models. The real value of IP is not
 found by abandoning sound logic altogether, but in weaving the real with the
 imaginary. The future of imaginary programming is one in which almost all of
 computing is inferred. I have built a suite of tools based on emacs for
