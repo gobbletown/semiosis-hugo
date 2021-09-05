@@ -46,8 +46,8 @@ intellectual property and the GPL. Please keep an open mind.
         -   <https://semiosis.github.io/ii/>
 
 -   40 minutes:
-    -   A 10 minute introduction to language models, their capabilities and imaginary programming.
-    -   A 10 minute introduction to creating prompts with Pen.el.
+    -   a 10 minute introduction to language models, their capabilities and imaginary programming.
+    -   a 10 minute introduction to creating prompts with Pen.el.
     -   a 5 minute org-babel and emacs lisp demonstration of iLambda.
         -   [iλ, a family of imaginary programming libraries](https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/)
     -   a 5 minute demonstration of 'cterm' (complex term) and 'ii' (imaginary interpreter).

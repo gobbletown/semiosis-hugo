@@ -71,8 +71,8 @@ intellectual property and the GPL. Please keep an open mind.</p>
 <li>
 <p>40 minutes:</p>
 <ul>
-<li>A 10 minute introduction to language models, their capabilities and imaginary programming.</li>
-<li>A 10 minute introduction to creating prompts with Pen.el.</li>
+<li>a 10 minute introduction to language models, their capabilities and imaginary programming.</li>
+<li>a 10 minute introduction to creating prompts with Pen.el.</li>
 <li>a 5 minute org-babel and emacs lisp demonstration of iLambda.
 <ul>
 <li><a href="https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/">iλ, a family of imaginary programming libraries</a></li>
