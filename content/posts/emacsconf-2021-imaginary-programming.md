@@ -57,8 +57,8 @@ intellectual property and the GPL. Please keep an open mind.
     -   a 5 minute org-babel and emacs lisp demonstraction of iLambda.
         -   [iλ, a family of imaginary programming libraries](https://mullikine.github.io/posts/designing-an-imaginary-programming-ip-library-for-emacs/)
     -   a 5 minute demonstration of 'cterm' (complex term) and 'ii' (imaginary interpreter).
-        <https://mullikine.github.io/posts/imaginary-real-codex-complex/>
-        <https://semiosis.github.io/ii/>
+        -   <https://mullikine.github.io/posts/imaginary-real-codex-complex/>
+        -   <https://semiosis.github.io/ii/>
     -   A 5 minute brief on examplary and advanced prompt programming.
         <https://semiosis.github.io/examplary/>
     -   5 minutes for Prompting Requests and Q&A
