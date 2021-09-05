@@ -22,10 +22,10 @@ imaginary. The future of imaginary programming is one in which almost all of
 computing is inferred. I have built a suite of tools based on emacs for
 interfacing real programming languages with imaginary ones; All of this in
 order to demonstrate what I mean. A 'complex' terminal that lets you imagine
-what happens no matter how nested you are interpreters, an example-oriented
+what happens no matter how nested you are within interpreters, an example-oriented
 language, a file format that encodes the provenance of text and a library for
 imaginary functional programming primitives called iLambda. It is important to
-recognise IP because, for lack of a better term, it has great implications for
+recognise IP because, for lack of a better term, it has far-reaching implications for
 intellectual property and the GPL. Please keep an open mind.
 
 ** Outlines:
