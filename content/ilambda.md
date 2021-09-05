@@ -11,8 +11,14 @@ draft = false
 
 ### Summary {#summary}
 
-I design and build an imaginary programming (`IP`) library
-(`iλ.el`) for emacs. Think of it a bit like a
+<span class="underline">tl;dr:</span> Imaginary Programming (`IP`) is where
+data and knowledge has been substituted for
+inference by a LM. Therefore, the
+implementation of an `iλ` library will be
+uniquely tailored to each language.
+
+I design and build an `IP` library named
+`iλ.el` for emacs. Think of it a bit like a
 functional programming library in that you
 will find a set of functions and macros for
 working in the programming paradigm. The
