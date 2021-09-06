@@ -43,7 +43,7 @@ File contents:
 
 <https://asciinema.org/a/wIcdDZP0iI36G8B09PcGEMO8t>
 
-{{< figure src="./chimera-scheme-bash.gif" >}}
+{{< figure src="/ox-hugo/chimera-scheme-bash.gif" >}}
 
 
 ## Prompt engineering and imaginary chimera languages {#prompt-engineering-and-imaginary-chimera-languages}
