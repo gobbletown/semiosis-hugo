@@ -4,18 +4,18 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
-#+TITLE: Imaginary chimera languages with Codex
+#+TITLE: Imaginary chimeric languages with Codex
 #+DATE: <2021-09-07>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: codex pen gpt imaginary-programming
 
 ** Summary
-I explore some imaginary chimera languages with Codex.
+I explore some imaginary chimeric languages with Codex.
 
 ** scheme + bash
 The expressions in this list are all imagined
 by Codex. Codex thinks that this is a useful
-language. A chimera language can be made with
+language. A chimeric language can be made with
 any 2 languages or more languages.
 
 #+BEGIN_SRC text -n :async :results verbatim code
@@ -45,7 +45,7 @@ any 2 languages or more languages.
 
 [[./chimera-scheme-bash.gif]]
 
-** Prompt engineering and imaginary chimera languages
+** Prompt engineering and imaginary chimeric languages
 When designing prompts for Codex ="""= is a
 powerful way to delimit fields while
 explaining to the LM your task via example.
