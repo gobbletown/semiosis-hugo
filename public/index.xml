@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imaginary chimera languages with Codex</title>
+      <link>http://semiosis.github.io/posts/imaginary-chimera-languages-with-codex/</link>
+      <pubDate>Tue, 07 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/imaginary-chimera-languages-with-codex/</guid>
+      <description>Summary I explore some imaginary chimera languages with Codex.
+scheme + bash The expressions in this list are all imagined by Codex. Codex thinks that this is a useful language. A chimera language can be made with any 2 languages or more languages.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  Language: chimera language based on scheme and bash. File contents: ;; String replace is with isnt (apply (sed s/is/isnt/) &amp;#34;My name is Shane&amp;#34;) --&amp;gt; &amp;#34;My name isnt Shane&amp;#34; (split &amp;#34;\n&amp;#34; (ls)) --&amp;gt; &amp;#39;(&amp;#34;chimera&amp;#34; &amp;#34;chimera.</description>
+    </item>
+    
     <item>
       <title>EmacsConf 2021 - Imaginary Programming</title>
       <link>http://semiosis.github.io/posts/emacsconf-2021-imaginary-programming/</link>
