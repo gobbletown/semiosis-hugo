@@ -43,9 +43,6 @@ any 2 languages or more languages.
 <script src="https://asciinema.org/a/wIcdDZP0iI36G8B09PcGEMO8t.js" id="asciicast-wIcdDZP0iI36G8B09PcGEMO8t" async></script>
 #+END_EXPORT
 
-
-https://asciinema.org/a/wIcdDZP0iI36G8B09PcGEMO8t
-
 [[./chimera-scheme-bash.gif]]
 
 ** Prompt engineering and imaginary chimera languages
