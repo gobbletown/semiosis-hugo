@@ -85,20 +85,20 @@ create YouTube via simulation.</p>
         </item>
         
         <item>
-            <title>Imaginary chimera languages with Codex</title>
+            <title>Imaginary chimeric languages with Codex</title>
             <link>http://semiosis.github.io/posts/imaginary-chimera-languages-with-codex/</link>
             <pubDate>Tue, 07 Sep 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/imaginary-chimera-languages-with-codex/</guid>
-            <description>Summary I explore some imaginary chimera languages with Codex.
-scheme + bash The expressions in this list are all imagined by Codex. Codex thinks that this is a useful language. A chimera language can be made with any 2 languages or more languages.
+            <description>Summary I explore some imaginary chimeric languages with Codex.
+scheme + bash The expressions in this list are all imagined by Codex. Codex thinks that this is a useful language. A chimeric language can be made with any 2 languages or more languages.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  Language: chimera language based on scheme and bash. File contents: ;; String replace is with isnt (apply (sed s/is/isnt/) &amp;#34;My name is Shane&amp;#34;) --&amp;gt; &amp;#34;My name isnt Shane&amp;#34; (split &amp;#34;\n&amp;#34; (ls)) --&amp;gt; &amp;#39;(&amp;#34;chimera&amp;#34; &amp;#34;chimera.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
-<p>I explore some imaginary chimera languages with Codex.</p>
+<p>I explore some imaginary chimeric languages with Codex.</p>
 <h2 id="scheme-plus-bash">scheme + bash</h2>
 <p>The expressions in this list are all imagined
 by Codex. Codex thinks that this is a useful
-language. A chimera language can be made with
+language. A chimeric language can be made with
 any 2 languages or more languages.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -144,7 +144,7 @@ File contents:
     <img src="/ox-hugo/chimera-scheme-bash.gif"/> 
 </figure>
 
-<h2 id="prompt-engineering-and-imaginary-chimera-languages">Prompt engineering and imaginary chimera languages</h2>
+<h2 id="prompt-engineering-and-imaginary-chimeric-languages">Prompt engineering and imaginary chimeric languages</h2>
 <p>When designing prompts for Codex <code>&quot;&quot;&quot;</code> is a
 powerful way to delimit fields while
 explaining to the LM your task via example.</p>

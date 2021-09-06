@@ -1,5 +1,5 @@
 +++
-title = "Imaginary chimera languages with Codex"
+title = "Imaginary chimeric languages with Codex"
 author = ["Shane Mulligan"]
 date = 2021-09-07T00:00:00+12:00
 keywords = ["codex", "pen", "gpt", "imaginary-programming"]
@@ -8,14 +8,14 @@ draft = false
 
 ## Summary {#summary}
 
-I explore some imaginary chimera languages with Codex.
+I explore some imaginary chimeric languages with Codex.
 
 
 ## scheme + bash {#scheme-plus-bash}
 
 The expressions in this list are all imagined
 by Codex. Codex thinks that this is a useful
-language. A chimera language can be made with
+language. A chimeric language can be made with
 any 2 languages or more languages.
 
 {{< highlight text "linenos=table, linenostart=1" >}}
@@ -44,7 +44,7 @@ File contents:
 {{< figure src="/ox-hugo/chimera-scheme-bash.gif" >}}
 
 
-## Prompt engineering and imaginary chimera languages {#prompt-engineering-and-imaginary-chimera-languages}
+## Prompt engineering and imaginary chimeric languages {#prompt-engineering-and-imaginary-chimeric-languages}
 
 When designing prompts for Codex `"""` is a
 powerful way to delimit fields while
