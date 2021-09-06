@@ -149,15 +149,19 @@ File contents:
 powerful way to delimit fields while
 explaining to the LM your task via example.</p>
 <p>With the Davinci model, <code>###</code> is preferred.
-I&rsquo;m unsure where <code>###</code> comes from but I have
-some guesses as to why <code>&quot;&quot;&quot;</code> is a great
-delimiter with Codex.</p>
-<p>Python docstrings are make use of triple quote sometimes.</p>
+I&rsquo;m more unsure of where <code>###</code> comes (markdown
+inpart, perhaps), from but I have some guesses
+as to why <code>&quot;&quot;&quot;</code> is a great delimiter with
+Codex.</p>
+<p>Python docstrings make use of triple quote.</p>
 <p>It is my best guess that the reason <code>&quot;&quot;&quot;</code> is
 such an effective delimiter with prompt
 engineering in Codex is that prompts employing
 <code>&quot;&quot;&quot;</code> are effectively chimera languages that
-are in part &lsquo;python docstring&rsquo;.</p>
+are in part &lsquo;python docstring&rsquo; and inspiration
+is taken from python docstrings to nudge GPT
+in the right way for it to expect effective
+delimitation.</p>
 ]]></content>
         </item>
         

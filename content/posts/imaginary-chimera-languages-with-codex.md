@@ -51,14 +51,18 @@ powerful way to delimit fields while
 explaining to the LM your task via example.
 
 With the Davinci model, `###` is preferred.
-I'm unsure where `###` comes from but I have
-some guesses as to why `"""` is a great
-delimiter with Codex.
+I'm more unsure of where `###` comes (markdown
+inpart, perhaps), from but I have some guesses
+as to why `"""` is a great delimiter with
+Codex.
 
-Python docstrings are make use of triple quote sometimes.
+Python docstrings make use of triple quote.
 
 It is my best guess that the reason `"""` is
 such an effective delimiter with prompt
 engineering in Codex is that prompts employing
 `"""` are effectively chimera languages that
-are in part 'python docstring'.
+are in part 'python docstring' and inspiration
+is taken from python docstrings to nudge GPT
+in the right way for it to expect effective
+delimitation.
