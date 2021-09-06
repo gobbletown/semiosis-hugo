@@ -6,17 +6,16 @@ keywords = ["gpt", "blockchain"]
 draft = false
 +++
 
-## Beyond the boundaries of paradigms {#beyond-the-boundaries-of-paradigms}
-
-Questions to ponder:
+## Questions to ponder {#questions-to-ponder}
 
 -   Where do regular programming paradigms end?
 -   How do you connect one language to the next?
+-   What constitutes a new paradigm?
+    Arguably something that is orthogonal to the rest.
+-   May Imaginary Programming (IP) be considered a new programming paradigm?
 
-What constitutes a new paradigm? Arguably something that is orthogonal to the
-rest. May Imaginary Programming (IP) be considered a new programming paradigm?
 
-Hierarchy of languages:
+## Hierarchy of languages {#hierarchy-of-languages}
 
 -   Imaginary languages
     -   World languages
@@ -29,11 +28,20 @@ Hierarchy of languages:
         -   Markdown
         -   C++
 
--   The fundamental theorem of algebra
-    -   Solutions to polynomials only available when adding the imaginary dimension
+
+## Thoughts {#thoughts}
+
+The fundamental theorem of algebra states that
+every non-constant single-variable polynomial
+with complex coefficients has at least one
+complex root.
+
+The fundamental theorem of algebra implies that
+solutions to polynomials are only available
+when adding the imaginary dimension.
 
 Likewise, solutions to problems such as
-translating between world languages requires
+translating between world languages require
 the addition of multiple dimensions.
 
 Historically, words and phrases may be
@@ -53,6 +61,9 @@ concept.
 Large LMs such as GPT-X are a representation
 of a superset of languages, the languages of
 the data they are trained on.
+
+
+## Speculation {#speculation}
 
 They may serve as snapshots of a given time
 period, and may be used to generatively
