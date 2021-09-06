@@ -41,8 +41,6 @@ File contents:
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/wIcdDZP0iI36G8B09PcGEMO8t.js" id="asciicast-wIcdDZP0iI36G8B09PcGEMO8t" async></script>
 
-<https://asciinema.org/a/wIcdDZP0iI36G8B09PcGEMO8t>
-
 {{< figure src="/ox-hugo/chimera-scheme-bash.gif" >}}
 
 
