@@ -6,8 +6,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Wed, 08 Sep 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Imaginary Prolog interpreter with Codex</title>
+            <link>http://semiosis.github.io/posts/imaginary-prolog-interpreter-with-codex/</link>
+            <pubDate>Wed, 08 Sep 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/imaginary-prolog-interpreter-with-codex/</guid>
+            <description>Summary Imaginary Prolog interpreters with Codex are amazing.
+Import imaginary databases, generate databases from queries.
+ Previous GPT-3 experiment Comparing imaginary Prolog interpreters // Bodacious Blog  Demo Imaginary prolog databases  --  Generating databases from queries  -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>Imaginary Prolog interpreters with Codex are amazing.</p>
+<p>Import imaginary databases, generate databases from queries.</p>
+<dl>
+<dt>Previous GPT-3 experiment</dt>
+<dd><a href="https://mullikine.github.io/posts/comparing-imaginary-prolog-interpreters/">Comparing imaginary Prolog interpreters // Bodacious Blog</a></dd>
+</dl>
+<h2 id="demo">Demo</h2>
+<h3 id="imaginary-prolog-databases">Imaginary prolog databases</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/KjbpP6JfrGvZNUWGQRGx5sLKF" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/KjbpP6JfrGvZNUWGQRGx5sLKF.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/KjbpP6JfrGvZNUWGQRGx5sLKF.js" id="asciicast-KjbpP6JfrGvZNUWGQRGx5sLKF" async></script>
+<h3 id="generating-databases-from-queries">Generating databases from queries</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/L1H9M61a4mYFtuYXCuOaB4uPE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/L1H9M61a4mYFtuYXCuOaB4uPE.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/L1H9M61a4mYFtuYXCuOaB4uPE.js" id="asciicast-L1H9M61a4mYFtuYXCuOaB4uPE" async></script>]]></content>
+        </item>
         
         <item>
             <title>Beyond the boundaries of paradigms</title>

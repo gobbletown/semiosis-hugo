@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 07 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imaginary Prolog interpreter with Codex</title>
+      <link>http://semiosis.github.io/posts/imaginary-prolog-interpreter-with-codex/</link>
+      <pubDate>Wed, 08 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/imaginary-prolog-interpreter-with-codex/</guid>
+      <description>Summary Imaginary Prolog interpreters with Codex are amazing.
+Import imaginary databases, generate databases from queries.
+ Previous GPT-3 experiment Comparing imaginary Prolog interpreters // Bodacious Blog  Demo Imaginary prolog databases  --  Generating databases from queries  -- </description>
+    </item>
+    
     <item>
       <title>Beyond the boundaries of paradigms</title>
       <link>http://semiosis.github.io/posts/beyond-the-boundaries-of-paradigms/</link>

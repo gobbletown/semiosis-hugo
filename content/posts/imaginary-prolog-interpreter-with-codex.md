@@ -1,34 +1,35 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Imaginary Prolog interpreter with Codex"
+author = ["Shane Mulligan"]
+date = 2021-09-08T00:00:00+12:00
+keywords = ["gpt", "openai", "codex", "pen"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+## Summary {#summary}
 
-#+TITLE: Imaginary Prolog interpreter with Codex
-#+DATE: <2021-09-08>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt openai codex pen
-
-** Summary
 Imaginary Prolog interpreters with Codex are amazing.
 
 Import imaginary databases, generate databases from queries.
 
-+ Previous GPT-3 experiment :: [[https://mullikine.github.io/posts/comparing-imaginary-prolog-interpreters/][Comparing imaginary Prolog interpreters // Bodacious Blog]]
+Previous GPT-3 experiment
+: [Comparing imaginary Prolog interpreters // Bodacious Blog](https://mullikine.github.io/posts/comparing-imaginary-prolog-interpreters/)
 
-** Demo
-*** Imaginary prolog databases
-#+BEGIN_EXPORT html
+
+## Demo {#demo}
+
+
+### Imaginary prolog databases {#imaginary-prolog-databases}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/KjbpP6JfrGvZNUWGQRGx5sLKF" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/KjbpP6JfrGvZNUWGQRGx5sLKF.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/KjbpP6JfrGvZNUWGQRGx5sLKF.js" id="asciicast-KjbpP6JfrGvZNUWGQRGx5sLKF" async></script>
-#+END_EXPORT
 
-*** Generating databases from queries
-#+BEGIN_EXPORT html
+
+### Generating databases from queries {#generating-databases-from-queries}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/L1H9M61a4mYFtuYXCuOaB4uPE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/L1H9M61a4mYFtuYXCuOaB4uPE.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/L1H9M61a4mYFtuYXCuOaB4uPE.js" id="asciicast-L1H9M61a4mYFtuYXCuOaB4uPE" async></script>
-#+END_EXPORT
