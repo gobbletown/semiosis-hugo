@@ -20,6 +20,19 @@ Import imaginary databases, generate databases from queries.
     </item>
     
     <item>
+      <title>Pen&#39;s nlsh for Codex - Stepping towards an imaginary OS</title>
+      <link>http://semiosis.github.io/posts/pen-s-nlsh-for-codex/</link>
+      <pubDate>Wed, 08 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/pen-s-nlsh-for-codex/</guid>
+      <description>Summary Codex is much more powerful, and so is Pen.el. This demo of nlsh gives me the chills.
+Under the hood, Pen.el is coded using robust imaginary programming and lazy functions.
+An imaginary operating system is being created where most functions are inferred.
+It&amp;rsquo;s still very important to build tools to normalise imaginary code and languages onto the real axis.
+Demo  --  Source A combination of lazy prompting with real emacs lisp, a dockerized Pen.</description>
+    </item>
+    
+    <item>
       <title>Beyond the boundaries of paradigms</title>
       <link>http://semiosis.github.io/posts/beyond-the-boundaries-of-paradigms/</link>
       <pubDate>Tue, 07 Sep 2021 00:00:00 +1200</pubDate>
