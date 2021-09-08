@@ -9,6 +9,18 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 08 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Documentation for anything, anywhere, with Codex</title>
+      <link>http://semiosis.github.io/posts/documentation-for-anything-anywhere-with-codex/</link>
+      <pubDate>Wed, 08 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/documentation-for-anything-anywhere-with-codex/</guid>
+      <description>Summary This is just a quick demo showing that Codex can give you documentation for anything.
+I&amp;rsquo;m actually demonstrating documentation inside the imaginary interpreters, right now.
+Well there you go. Documentation for an imaginary library.
+Demo  --  Documentation for an imaginary library   </description>
+    </item>
+    
+    <item>
       <title>Imaginary Prolog interpreter with Codex</title>
       <link>http://semiosis.github.io/posts/imaginary-prolog-interpreter-with-codex/</link>
       <pubDate>Wed, 08 Sep 2021 00:00:00 +1200</pubDate>

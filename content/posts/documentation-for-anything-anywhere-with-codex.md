@@ -1,15 +1,12 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Documentation for anything, anywhere, with Codex"
+author = ["Shane Mulligan"]
+date = 2021-09-08T00:00:00+12:00
+keywords = ["gpt", "openai", "pen", "codex"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
-
-#+TITLE: Documentation for anything, anywhere, with Codex
-#+DATE: <2021-09-08>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt openai pen codex
-
-** Summary
+## Summary {#summary}
 
 This is just a quick demo showing that Codex
 can give you documentation for anything.
@@ -19,13 +16,15 @@ inside the imaginary interpreters, right now.
 
 Well there you go. Documentation for an imaginary library.
 
-** Demo
-#+BEGIN_EXPORT html
+
+## Demo {#demo}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/i4BGmU1mBqbu6XQPciYj2A3Pp" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/i4BGmU1mBqbu6XQPciYj2A3Pp.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/i4BGmU1mBqbu6XQPciYj2A3Pp.js" id="asciicast-i4BGmU1mBqbu6XQPciYj2A3Pp" async></script>
-#+END_EXPORT
 
-** Documentation for an imaginary library
-[[./im-docs-for-im-lib.png]]
+
+## Documentation for an imaginary library {#documentation-for-an-imaginary-library}
+
+{{< figure src="/ox-hugo/im-docs-for-im-lib.png" >}}
