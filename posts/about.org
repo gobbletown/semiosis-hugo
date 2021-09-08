@@ -20,6 +20,8 @@ It is also a blog on Natural Language Processing and Formal Language Theory.
 - GitHub: https://github.com/mullikine/
 - CV: https://mullikine.github.io/cv/
 
+# [[./me-sydney-linkedin.jpeg]]
+
 *** TakaheAI
 - Website :: http://takaheai.github.io/
 
