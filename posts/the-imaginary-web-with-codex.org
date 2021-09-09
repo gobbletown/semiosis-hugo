@@ -1,0 +1,132 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: Browsing the imaginary web with Codex
+#+DATE: <2021-09-09>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: codex openai emacs
+
+** Summary
+I make an imaginary web browser. This will be
+improved in the future, but it's already
+fairly trivial to browse the imaginary web.
+Let me show you how.
+
+There is no need for the websites returned to
+be perfect as we have a tool =Codex=, which
+can make sense of the imperfect. This works
+fine as it is, just open your mind on the way
+in which people should view and interact with
+the web.
+
+** Related
+- [[https://mullikine.github.io/posts/search-the-web-with-codex/][Search the web with Codex {bye Google} // Bodacious Blog]]
+
+The above prompt for searching and generating
+URLs has been modified to remove the
+constraint that the return URLs must be real.
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  # This contraint is not needed for the imaginary internet
+  # validator: url-exists
+#+END_SRC
+
+** Demo
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu.js" id="asciicast-1ATlUjWVRqgMqb83MsaFMvpeu" async></script>
+#+END_EXPORT
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  http://www.economist.com/blogs/graphicdetail/2012/09/growth
+  http://www.economist.com/printedition/2012-09-13
+  http://graphics8.nytimes.com/newsgraphics/2012/10/30/us-gdp-vs-europe-by-state/us-gdp-vs-europe-by-state.html
+  http://www.economist.com/blogs/graphicdetail/2012/10/growth-or-acceleration
+  http://www.economist.com/news/britain/21583272-many-countries-match-chinas-rapid-rural-migration-chinas-progress
+  http://www.economist.com/news/britain/21582529-how-did-china-manage-stop-its-population-growing-did-its-policies-work
+  http://www.economist.com/node/21583245
+  http://www.economist.com/node/21583254
+  http://www.economist.com/news/britain/21583283-growth-or-acceleration-britains-big-challenge-itself-time-start-year
+  http://www.economist.com/news/science-and-technology/21583624-building-new-ones-or-adding-new-parts-old-ones-big-ones-science-and
+  http://www.economist.com/news/leaders/21583640-governments-should-ditch-their-ambivalent-approach-big-challenges-new-long-way
+  https://www.economist.com/node/21541143
+#+END_SRC
+
+** Prompt
+For the demo, to speed up website generation,
+I have set completions to 1.
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  n-collate: 1
+  n-completions: 1
+#+END_SRC
+
+*** =pf-imagine-a-website-from-a-url/1=
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  task: "Imagine a website from a URL"
+  doc: "Given a URL, imagine the HTML for that page"
+  prompt-version: 2
+  prompt: |+
+    Lynx, an ascii web browser.
+  
+    lynx --dump -nolist "http://google.com" | head -n 30 <<EOD
+    Search Images Maps Play YouTube News Gmail Drive More »
+    Web History | Settings | Sign in
+    To all doctors, nurses, and medical workers, thank you
+    
+    ________________________________________________________    Advanced search
+    [ Google Search ]   [ I'm Feeling Lucky ]
+    
+    Google offered in: Māori
+    Advertising Programs     Business Solutions     About Google     Google.co.nz
+    
+    (c) 2021 - Privacy - Terms
+    EOD
+  
+    lynx --dump -nolist "https://news.ycombinator.com/" | head -n 30 <<EOD
+       #RSS
+    
+       [y18.gif] Hacker News new | past | comments | ask | show | jobs |
+       submit login
+       1.
+    
+       MIT-designed project achieves major advance toward fusion energy
+       (news.mit.edu)
+       521 points by klintcho 9 hours ago | hide | 211 comments
+       2.
+    
+       No One Ever Saw the Snow Cruiser Again (orangebeanindiana.com)
+       31 points by mortenjorck 2 hours ago | hide | 5 comments
+       3.
+    
+       How to Replace Docker with Podman on a Mac (redhat.com)
+       246 points by molecule 8 hours ago | hide | 60 comments
+       4.
+    
+       Event Horizon Telescope Traces Magnetic Fields Around a Black Hole
+       (aasnova.org)
+       11 points by ofou 1 hour ago | hide | discuss
+       5.
+      EOD
+  
+    lynx --dump -nolist "<q:url>" | head -n 30 <<EOD
+  engine: "OpenAI Codex"
+  temperature: 0.2
+  max-generated-tokens: "(* 2 prompt-length)"
+  top-p: 1.0
+  stop-sequences:
+  - EOD
+  cache: on
+  vars:
+  - "url"
+  examples:
+  - "http://www.gprolog.org/"
+  info: on
+  completion: off
+  insertion: off
+#+END_SRC
