@@ -11,6 +11,40 @@ draft = false
 I explore some imaginary chimeric languages with Codex.
 
 
+### Definition of `chimeric` {#definition-of-chimeric}
+
+A chimeric language in the context of
+"imaginary programming" is one which employs
+syntax from 2 or more languages.
+
+`chimerism`, however, is exhibited in other
+parts of GPT generations. For example,
+generated URLs. Generated URLs are usually not
+correct due to chimerism. However, it would be
+interesting to generate _imaginary websites_ using
+`chimeric URLs`.
+
+Given the following prompt, Codex returned the
+following definition:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Glossary of terms.
+
+ossified
+Definition: Turn into bone or bony tissue.
+
+chimeric in the context of imaginary-programming
+Definition:
+{{< /highlight >}}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+chimeric
+    NLG: Program that is not in any way
+    written in a language known to the
+    programmer.
+{{< /highlight >}}
+
+
 ## scheme + bash {#scheme-plus-bash}
 
 The expressions in this list are all imagined

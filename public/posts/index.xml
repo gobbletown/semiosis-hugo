@@ -408,10 +408,57 @@ create YouTube via simulation.</p>
             
             <guid>http://semiosis.github.io/posts/imaginary-chimera-languages-with-codex/</guid>
             <description>Summary I explore some imaginary chimeric languages with Codex.
-scheme + bash The expressions in this list are all imagined by Codex. Codex thinks that this is a useful language. A chimeric language can be made with any 2 languages or more languages.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  Language: chimera language based on scheme and bash. File contents: ;; String replace is with isnt (apply (sed s/is/isnt/) &amp;#34;My name is Shane&amp;#34;) --&amp;gt; &amp;#34;My name isnt Shane&amp;#34; (split &amp;#34;\n&amp;#34; (ls)) --&amp;gt; &amp;#39;(&amp;#34;chimera&amp;#34; &amp;#34;chimera.</description>
+Definition of chimeric A chimeric language in the context of &amp;ldquo;imaginary programming&amp;rdquo; is one which employs syntax from 2 or more languages.
+chimerism, however, is exhibited in other parts of GPT generations. For example, generated URLs. Generated URLs are usually not correct due to chimerism. However, it would be interesting to generate imaginary websites using chimeric URLs.
+Given the following prompt, Codex returned the following definition:</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I explore some imaginary chimeric languages with Codex.</p>
+<h3 id="definition-of-chimeric">Definition of <code>chimeric</code></h3>
+<p>A chimeric language in the context of
+&ldquo;imaginary programming&rdquo; is one which employs
+syntax from 2 or more languages.</p>
+<p><code>chimerism</code>, however, is exhibited in other
+parts of GPT generations. For example,
+generated URLs. Generated URLs are usually not
+correct due to chimerism. However, it would be
+interesting to generate <em>imaginary websites</em> using
+<code>chimeric URLs</code>.</p>
+<p>Given the following prompt, Codex returned the
+following definition:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Glossary of terms.
+
+ossified
+Definition: Turn into bone or bony tissue.
+
+chimeric in the context of imaginary-programming
+Definition:</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">chimeric
+    NLG: Program that is not in any way
+    written in a language known to the
+    programmer.</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="scheme-plus-bash">scheme + bash</h2>
 <p>The expressions in this list are all imagined
 by Codex. Codex thinks that this is a useful
