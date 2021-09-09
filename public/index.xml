@@ -9,6 +9,16 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 09 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Browsing the imaginary web with Codex</title>
+      <link>http://semiosis.github.io/posts/the-imaginary-web-with-codex/</link>
+      <pubDate>Thu, 09 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/the-imaginary-web-with-codex/</guid>
+      <description>Summary I make an imaginary web browser. This will be improved in the future, but it&amp;rsquo;s already fairly trivial to browse the imaginary web. Let me show you how.
+There is no need for the websites returned to be perfect as we have a tool Codex, which can make sense of the imperfect. This works fine as it is, just open your mind on the way in which people should view and interact with the web.</description>
+    </item>
+    
+    <item>
       <title>Search the web with Codex (bye Google)</title>
       <link>http://semiosis.github.io/posts/search-the-web-with-codex/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +1200</pubDate>

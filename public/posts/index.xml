@@ -10,6 +10,222 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Browsing the imaginary web with Codex</title>
+            <link>http://semiosis.github.io/posts/the-imaginary-web-with-codex/</link>
+            <pubDate>Thu, 09 Sep 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/the-imaginary-web-with-codex/</guid>
+            <description>Summary I make an imaginary web browser. This will be improved in the future, but it&amp;rsquo;s already fairly trivial to browse the imaginary web. Let me show you how.
+There is no need for the websites returned to be perfect as we have a tool Codex, which can make sense of the imperfect. This works fine as it is, just open your mind on the way in which people should view and interact with the web.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I make an imaginary web browser. This will be
+improved in the future, but it&rsquo;s already
+fairly trivial to browse the imaginary web.
+Let me show you how.</p>
+<p>There is no need for the websites returned to
+be perfect as we have a tool <code>Codex</code>, which
+can make sense of the imperfect. This works
+fine as it is, just open your mind on the way
+in which people should view and interact with
+the web.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="https://mullikine.github.io/posts/search-the-web-with-codex/">Search the web with Codex {bye Google} // Bodacious Blog</a></li>
+</ul>
+<p>The above prompt for searching and generating
+URLs has been modified to remove the
+constraint that the return URLs must be real.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># This contraint is not needed for the imaginary internet</span>
+<span style="color:#75715e"># validator: url-exists</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu.js" id="asciicast-1ATlUjWVRqgMqb83MsaFMvpeu" async></script>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">http://www.economist.com/blogs/graphicdetail/2012/09/growth
+http://www.economist.com/printedition/2012-09-13
+http://graphics8.nytimes.com/newsgraphics/2012/10/30/us-gdp-vs-europe-by-state/us-gdp-vs-europe-by-state.html
+http://www.economist.com/blogs/graphicdetail/2012/10/growth-or-acceleration
+http://www.economist.com/news/britain/21583272-many-countries-match-chinas-rapid-rural-migration-chinas-progress
+http://www.economist.com/news/britain/21582529-how-did-china-manage-stop-its-population-growing-did-its-policies-work
+http://www.economist.com/node/21583245
+http://www.economist.com/node/21583254
+http://www.economist.com/news/britain/21583283-growth-or-acceleration-britains-big-challenge-itself-time-start-year
+http://www.economist.com/news/science-and-technology/21583624-building-new-ones-or-adding-new-parts-old-ones-big-ones-science-and
+http://www.economist.com/news/leaders/21583640-governments-should-ditch-their-ambivalent-approach-big-challenges-new-long-way
+https://www.economist.com/node/21541143</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompt">Prompt</h2>
+<p>For the demo, to speed up website generation,
+I have set completions to 1.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">1</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="pf-imagine-a-website-from-a-url-1"><code>pf-imagine-a-website-from-a-url/1</code></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Imagine a website from a URL&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given a URL, imagine the HTML for that page&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  Lynx, an ascii web browser.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  lynx --dump -nolist &#34;http://google.com&#34; | head -n 30 &lt;&lt;EOD
+</span><span style="color:#e6db74">  Search Images Maps Play YouTube News Gmail Drive More »
+</span><span style="color:#e6db74">  Web History | Settings | Sign in
+</span><span style="color:#e6db74">  To all doctors, nurses, and medical workers, thank you
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ________________________________________________________    Advanced search
+</span><span style="color:#e6db74">  [ Google Search ]   [ I&#39;m Feeling Lucky ]
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Google offered in: Māori
+</span><span style="color:#e6db74">  Advertising Programs     Business Solutions     About Google     Google.co.nz
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  (c) 2021 - Privacy - Terms
+</span><span style="color:#e6db74">  EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  lynx --dump -nolist &#34;https://news.ycombinator.com/&#34; | head -n 30 &lt;&lt;EOD
+</span><span style="color:#e6db74">     #RSS
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     [y18.gif] Hacker News new | past | comments | ask | show | jobs |
+</span><span style="color:#e6db74">     submit login
+</span><span style="color:#e6db74">     1.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     MIT-designed project achieves major advance toward fusion energy
+</span><span style="color:#e6db74">     (news.mit.edu)
+</span><span style="color:#e6db74">     521 points by klintcho 9 hours ago | hide | 211 comments
+</span><span style="color:#e6db74">     2.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     No One Ever Saw the Snow Cruiser Again (orangebeanindiana.com)
+</span><span style="color:#e6db74">     31 points by mortenjorck 2 hours ago | hide | 5 comments
+</span><span style="color:#e6db74">     3.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     How to Replace Docker with Podman on a Mac (redhat.com)
+</span><span style="color:#e6db74">     246 points by molecule 8 hours ago | hide | 60 comments
+</span><span style="color:#e6db74">     4.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     Event Horizon Telescope Traces Magnetic Fields Around a Black Hole
+</span><span style="color:#e6db74">     (aasnova.org)
+</span><span style="color:#e6db74">     11 points by ofou 1 hour ago | hide | discuss
+</span><span style="color:#e6db74">     5.
+</span><span style="color:#e6db74">    EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  lynx --dump -nolist &#34;&lt;q:url&gt;&#34; | head -n 30 &lt;&lt;EOD</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.2</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#ae81ff">EOD</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;url&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;http://www.gprolog.org/&#34;</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Search the web with Codex (bye Google)</title>
             <link>http://semiosis.github.io/posts/search-the-web-with-codex/</link>
             <pubDate>Thu, 09 Sep 2021 00:00:00 +1200</pubDate>
