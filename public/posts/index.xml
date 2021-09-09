@@ -17,7 +17,7 @@
             <guid>http://semiosis.github.io/posts/search-the-web-with-codex/</guid>
             <description>Summary This is a demonstration of using a LM to search the internet.
 This is a very effective search engine, actually. It pretty much replaces Google Search. The technology has tighter integration with tooling, faster look- up times, can be used offline etc. with (free models).
-Demo  --  Prompt  Source http://github.com/semiosis/prompts/blob/master/prompts/get-urls-for-a-passage-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  task: &amp;#34;Get URLs for a passage&amp;#34; doc: &amp;#34;Given some text return relevant URLs&amp;#34; prompt-version: 2 issues: - DONE URLs are sometimes invalid or outdated.</description>
+Demo  --  Select any text, code or prose or whatever, irrespective of if they have the keywords you would typically search for. Then it generates a bunch of URLs and you filter the results.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a demonstration of using a LM to
 search the internet.</p>
@@ -31,6 +31,21 @@ used offline etc. with (free models).</p>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/o7X9udIBKyBRGLXbdHkV5divh" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/o7X9udIBKyBRGLXbdHkV5divh.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/o7X9udIBKyBRGLXbdHkV5divh.js" id="asciicast-o7X9udIBKyBRGLXbdHkV5divh" async></script>
+<p>Select any text, code or prose or whatever,
+irrespective of if they have the keywords you
+would typically search for. Then it generates
+a bunch of URLs and you filter the results.
+Firstly extracting the urls from the
+generrated text with a tool such as &lsquo;xurls&rsquo;,
+then validating those URLs by pinging the
+server. Then you have a list of valid urls
+that are related to the text you selected.
+It&rsquo;s like the world wide web but without the
+hyperlinks.</p>
+<h3 id="gpt-3-can-do-this-too">GPT-3 can do this too</h3>
+<p>But GPT-3 can be thought of as being too high
+temperature; The urls themselves are chimeric,
+and a chimeric url is usually a wrong url.</p>
 <h2 id="prompt">Prompt</h2>
 <dl>
 <dt>Source</dt>
