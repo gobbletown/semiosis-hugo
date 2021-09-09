@@ -10,21 +10,27 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Search the web with Codex</title>
+            <title>Search the web with Codex (bye Google)</title>
             <link>http://semiosis.github.io/posts/search-the-web-with-codex/</link>
             <pubDate>Thu, 09 Sep 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/search-the-web-with-codex/</guid>
             <description>Summary This is a demonstration of using a LM to search the internet.
-Demo  --  Prompt  Source http://github.com/semiosis/prompts/blob/master/prompts/get-urls-for-a-passage-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &amp;#34;Get URLs for a passage&amp;#34; doc: &amp;#34;Given some text return relevant URLs&amp;#34; prompt-version: 1 prompt: |+&amp;#34;&amp;#34;&amp;#34; &amp;lt;text&amp;gt; &amp;#34;&amp;#34;&amp;#34; Links to read about the above: &amp;#34;&amp;#34;&amp;#34; &amp;lt;:pp&amp;gt;http engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+This is a very effective search engine, actually. It pretty much replaces Google Search. The technology has tighter integration with toolin, faster look- up times, can be used offline etc. with (free models).
+Demo  --  Prompt  Source http://github.com/semiosis/prompts/blob/master/prompts/get-urls-for-a-passage-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  task: &amp;#34;Get URLs for a passage&amp;#34; doc: &amp;#34;Given some text return relevant URLs&amp;#34; prompt-version: 2 issues: - DONE URLs are sometimes invalid or outdated.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is a demonstration of using a LM to
 search the internet.</p>
+<p>This is a very effective search engine,
+actually. It pretty much replaces Google
+Search. The technology has tighter integration
+with toolin, faster look- up times, can be
+used offline etc. with (free models).</p>
 <h2 id="demo">Demo</h2>
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/E2UDqQgfvEGaMOi8q0BZWbJdE" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/E2UDqQgfvEGaMOi8q0BZWbJdE.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/o7X9udIBKyBRGLXbdHkV5divh" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/o7X9udIBKyBRGLXbdHkV5divh.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/E2UDqQgfvEGaMOi8q0BZWbJdE.js" id="asciicast-E2UDqQgfvEGaMOi8q0BZWbJdE" async></script>
+<script src="https://asciinema.org/a/o7X9udIBKyBRGLXbdHkV5divh.js" id="asciicast-o7X9udIBKyBRGLXbdHkV5divh" async></script>
 <h2 id="prompt">Prompt</h2>
 <dl>
 <dt>Source</dt>
@@ -66,11 +72,24 @@ search the internet.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Get URLs for a passage&#34;</span>
 <span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given some text return relevant URLs&#34;</span>
-<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">issues</span>:
+  - <span style="color:#ae81ff">DONE URLs are sometimes invalid or outdated. Add a validator.</span>
+  - <span style="color:#ae81ff">The corrector could literally just be a google search for that url</span>
+  - <span style="color:#ae81ff">It&#39;s a little slow because of the validator (checks results for 404).</span>
+  - <span style="color:#ae81ff">Also, add a URL corrector (syntax checker for urls, with a specific LM)</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
 </span><span style="color:#e6db74">  &#34;&#34;&#34;
 </span><span style="color:#e6db74">  &lt;text&gt;
@@ -82,6 +101,8 @@ search the internet.</p>
 <span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
 <span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 3 prompt-length)&#34;</span>
 <span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">5</span>
 <span style="color:#f92672">stop-sequences</span>:
 - <span style="color:#e6db74">&#34;\&#34;\&#34;\&#34;&#34;</span>
 <span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
@@ -89,6 +110,7 @@ search the internet.</p>
 - <span style="color:#e6db74">&#34;\n&#34;</span>
 <span style="color:#f92672">vars</span>:
 - <span style="color:#ae81ff">text</span>
+<span style="color:#f92672">validator</span>: <span style="color:#ae81ff">url-exists</span>
 <span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">sed &#39;$d&#39; | xurls</span>
 <span style="color:#f92672">var-defaults</span>:
 - <span style="color:#e6db74">&#34;(sor (pen-selected-text t) (pen-preceding-text))&#34;</span>
@@ -101,6 +123,43 @@ search the internet.</p>
 <span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
 <span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="scripts">Scripts</h2>
+<h3 id="url-exists"><code>url-exists</code></h3>
+<p>This is the validator I have chosen to use.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+
+stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    ! <span style="color:#f92672">[</span> -t <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> ! test <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>readlink /proc/$$/fd/0<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> /dev/null
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">if</span> stdin_exists <span style="color:#f92672">&amp;&amp;</span> ! test -n <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+    url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cat<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+curl-firefox -s -I <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span> | grep -q <span style="color:#e6db74">&#34;HTTP.*200&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
 ]]></content>
