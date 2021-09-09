@@ -46,6 +46,17 @@ constraint that the return URLs must be real.</p>
 </div>
 </div>
 <h2 id="demo">Demo</h2>
+<ul>
+<li>Imagine a website from a URL url: <a href="http://ascii-art.com/octopuss">http://ascii-art.com/octopuss</a></li>
+<li>Imagine a website from a URL url: <a href="http://ascii-art.com/octopuss">http://ascii-art.com/octopuss</a></li>
+<li>Imagine a website from a URL url: <a href="http://funny-jokes.com/cat">http://funny-jokes.com/cat</a></li>
+<li>Imagine a website from a URL url: <a href="http://computer-help.com?question=how%20do%20i%20browse%20the%20internet">http://computer-help.com?question=how%20do%20i%20browse%20the%20internet</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Accelerationism">https://en.wikipedia.org/wiki/Accelerationism</a></li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/erGo5858UQgMIPjv0eGzMVBRe" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/erGo5858UQgMIPjv0eGzMVBRe.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/erGo5858UQgMIPjv0eGzMVBRe.js" id="asciicast-erGo5858UQgMIPjv0eGzMVBRe" async></script>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu.svg" /></a> -->
 <!-- Play on the blog -->
@@ -157,6 +168,21 @@ I have set completions to 1.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Imagine a website from a URL&#34;</span>
@@ -164,8 +190,10 @@ I have set completions to 1.</p>
 <span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
 </span><span style="color:#e6db74">  Lynx, an ascii web browser.
-</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &#34;&#34;&#34;
 </span><span style="color:#e6db74">  lynx --dump -nolist &#34;http://google.com&#34; | head -n 30 &lt;&lt;EOD
+</span><span style="color:#e6db74">  http://google.com
+</span><span style="color:#e6db74">
 </span><span style="color:#e6db74">  Search Images Maps Play YouTube News Gmail Drive More »
 </span><span style="color:#e6db74">  Web History | Settings | Sign in
 </span><span style="color:#e6db74">  To all doctors, nurses, and medical workers, thank you
@@ -179,36 +207,49 @@ I have set completions to 1.</p>
 </span><span style="color:#e6db74">  (c) 2021 - Privacy - Terms
 </span><span style="color:#e6db74">  EOD
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  lynx --dump -nolist &#34;https://news.ycombinator.com/&#34; | head -n 30 &lt;&lt;EOD
-</span><span style="color:#e6db74">     #RSS
+</span><span style="color:#e6db74">  lynx --dump -nolist &#34;https://www.apple.com/&#34; | head -n 30 &lt;&lt;EOD
+</span><span style="color:#e6db74">  https://www.apple.com/
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">     [y18.gif] Hacker News new | past | comments | ask | show | jobs |
-</span><span style="color:#e6db74">     submit login
-</span><span style="color:#e6db74">     1.
+</span><span style="color:#e6db74">                                       Apple
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">     MIT-designed project achieves major advance toward fusion energy
-</span><span style="color:#e6db74">     (news.mit.edu)
-</span><span style="color:#e6db74">     521 points by klintcho 9 hours ago | hide | 211 comments
-</span><span style="color:#e6db74">     2.
+</span><span style="color:#e6db74">     We look forward to welcoming you to our stores. Whether you shop in a
+</span><span style="color:#e6db74">     store or shop online, our Specialists can help you buy the products
+</span><span style="color:#e6db74">     you love. Shop with a Specialist, get credit with Apple Trade In,
+</span><span style="color:#e6db74">     choose free delivery or pickup, and more at the Apple Store Online.
+</span><span style="color:#e6db74">     Shop with a Specialist, get credit with Apple Trade In, choose free
+</span><span style="color:#e6db74">     delivery or pickup, and more at the Apple Store Online.
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">     No One Ever Saw the Snow Cruiser Again (orangebeanindiana.com)
-</span><span style="color:#e6db74">     31 points by mortenjorck 2 hours ago | hide | 5 comments
-</span><span style="color:#e6db74">     3.
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">     How to Replace Docker with Podman on a Mac (redhat.com)
-</span><span style="color:#e6db74">     246 points by molecule 8 hours ago | hide | 60 comments
-</span><span style="color:#e6db74">     4.
+</span><span style="color:#e6db74">  iPhone 12
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">     Event Horizon Telescope Traces Magnetic Fields Around a Black Hole
-</span><span style="color:#e6db74">     (aasnova.org)
-</span><span style="color:#e6db74">     11 points by ofou 1 hour ago | hide | discuss
-</span><span style="color:#e6db74">     5.
-</span><span style="color:#e6db74">    EOD
+</span><span style="color:#e6db74">  Blast past fast.
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  lynx --dump -nolist &#34;&lt;q:url&gt;&#34; | head -n 30 &lt;&lt;EOD</span>  
-<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
-<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.2</span>
-<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+</span><span style="color:#e6db74">     From $29.12/mo. for 24 mo. or $699 before trade‑in^1
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     Buy directly from Apple with special carrier offers
+</span><span style="color:#e6db74">     Learn more Learn more Buy
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  iPhone 12 Pro
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  It’s a leap year.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     From $41.62/mo. for 24 mo. or $999 before trade‑in^1
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">     Buy directly from Apple with special carrier offers
+</span><span style="color:#e6db74">     Learn more Learn more Buy
+</span><span style="color:#e6db74">  EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # &#34;&lt;q:url&gt;&#34; rendered in ASCII:
+</span><span style="color:#e6db74">  lynx --dump -nolist &#34;&lt;q:url&gt;&#34; | head -n 30 &lt;&lt;EOD
+</span><span style="color:#e6db74">  &lt;url&gt;</span>  
+
+
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Cushman&#34;</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.5</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(/ prompt-length 2)&#34;</span>
 <span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
 <span style="color:#f92672">stop-sequences</span>:
 - <span style="color:#ae81ff">EOD</span>

@@ -37,6 +37,17 @@ constraint that the return URLs must be real.
 
 ## Demo {#demo}
 
+-   Imagine a website from a URL url: <http://ascii-art.com/octopuss>
+-   Imagine a website from a URL url: <http://ascii-art.com/octopuss>
+-   Imagine a website from a URL url: <http://funny-jokes.com/cat>
+-   Imagine a website from a URL url: <http://computer-help.com?question=how%20do%20i%20browse%20the%20internet>
+-   <https://en.wikipedia.org/wiki/Accelerationism>
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/erGo5858UQgMIPjv0eGzMVBRe" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/erGo5858UQgMIPjv0eGzMVBRe.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/erGo5858UQgMIPjv0eGzMVBRe.js" id="asciicast-erGo5858UQgMIPjv0eGzMVBRe" async></script>
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/1ATlUjWVRqgMqb83MsaFMvpeu.svg" /></a> -->
 <!-- Play on the blog -->
@@ -77,8 +88,10 @@ doc: "Given a URL, imagine the HTML for that page"
 prompt-version: 2
 prompt: |+
   Lynx, an ascii web browser.
-
+  """
   lynx --dump -nolist "http://google.com" | head -n 30 <<EOD
+  http://google.com
+
   Search Images Maps Play YouTube News Gmail Drive More »
   Web History | Settings | Sign in
   To all doctors, nurses, and medical workers, thank you
@@ -92,36 +105,49 @@ prompt: |+
   (c) 2021 - Privacy - Terms
   EOD
 
-  lynx --dump -nolist "https://news.ycombinator.com/" | head -n 30 <<EOD
-     #RSS
+  lynx --dump -nolist "https://www.apple.com/" | head -n 30 <<EOD
+  https://www.apple.com/
 
-     [y18.gif] Hacker News new | past | comments | ask | show | jobs |
-     submit login
-     1.
+                                       Apple
 
-     MIT-designed project achieves major advance toward fusion energy
-     (news.mit.edu)
-     521 points by klintcho 9 hours ago | hide | 211 comments
-     2.
+     We look forward to welcoming you to our stores. Whether you shop in a
+     store or shop online, our Specialists can help you buy the products
+     you love. Shop with a Specialist, get credit with Apple Trade In,
+     choose free delivery or pickup, and more at the Apple Store Online.
+     Shop with a Specialist, get credit with Apple Trade In, choose free
+     delivery or pickup, and more at the Apple Store Online.
 
-     No One Ever Saw the Snow Cruiser Again (orangebeanindiana.com)
-     31 points by mortenjorck 2 hours ago | hide | 5 comments
-     3.
 
-     How to Replace Docker with Podman on a Mac (redhat.com)
-     246 points by molecule 8 hours ago | hide | 60 comments
-     4.
+  iPhone 12
 
-     Event Horizon Telescope Traces Magnetic Fields Around a Black Hole
-     (aasnova.org)
-     11 points by ofou 1 hour ago | hide | discuss
-     5.
-    EOD
+  Blast past fast.
 
+     From $29.12/mo. for 24 mo. or $699 before trade‑in^1
+
+     Buy directly from Apple with special carrier offers
+     Learn more Learn more Buy
+
+
+  iPhone 12 Pro
+
+  It’s a leap year.
+
+     From $41.62/mo. for 24 mo. or $999 before trade‑in^1
+
+     Buy directly from Apple with special carrier offers
+     Learn more Learn more Buy
+  EOD
+
+  # "<q:url>" rendered in ASCII:
   lynx --dump -nolist "<q:url>" | head -n 30 <<EOD
-engine: "OpenAI Codex"
-temperature: 0.2
-max-generated-tokens: "(* 2 prompt-length)"
+  <url>
+
+
+engine: "OpenAI Cushman"
+n-collate: 1
+n-completions: 2
+temperature: 0.5
+max-generated-tokens: "(/ prompt-length 2)"
 top-p: 1.0
 stop-sequences:
 - EOD
