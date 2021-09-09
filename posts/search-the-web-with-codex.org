@@ -27,6 +27,23 @@ used offline etc. with (free models).
 <script src="https://asciinema.org/a/o7X9udIBKyBRGLXbdHkV5divh.js" id="asciicast-o7X9udIBKyBRGLXbdHkV5divh" async></script>
 #+END_EXPORT
 
+Select any text, code or prose or whatever,
+irrespective of if they have the keywords you
+would typically search for. Then it generates
+a bunch of URLs and you filter the results.
+Firstly extracting the urls from the
+generrated text with a tool such as 'xurls',
+then validating those URLs by pinging the
+server. Then you have a list of valid urls
+that are related to the text you selected.
+It's like the world wide web but without the
+hyperlinks.
+
+*** GPT-3 can do this too
+But GPT-3 can be thought of as being too high
+temperature; The urls themselves are chimeric,
+and a chimeric url is usually a wrong url.
+
 ** Prompt
 + Source :: http://github.com/semiosis/prompts/blob/master/prompts/get-urls-for-a-passage-1.prompt
 
