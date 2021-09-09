@@ -14,7 +14,7 @@ search the internet.
 This is a very effective search engine,
 actually. It pretty much replaces Google
 Search. The technology has tighter integration
-with toolin, faster look- up times, can be
+with tooling, faster look- up times, can be
 used offline etc. with (free models).
 
 
