@@ -162,6 +162,21 @@ stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{<
 curl-firefox -s -I <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">&#34;</span> | grep -q <span style="color:#e6db74">&#34;HTTP.*200&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="example-workflows">Example workflows</h2>
+<ul>
+<li>Select arbitrary text and gather URLs on it</li>
+<li>Select any raw text (i.e. code with tricky and unnameable syntax)</li>
+<li>Select large amounts of text and gather URLs on it</li>
+</ul>
+<h3 id="conclusions">Conclusions</h3>
+<ul>
+<li>Much longer queries taking into account more context</li>
+<li>Much more intelligent results</li>
+<li>Much more specified results</li>
+<li>Much more accurate results</li>
+<li>Full control</li>
+<li>No ads</li>
+</ul>
 ]]></content>
         </item>
         

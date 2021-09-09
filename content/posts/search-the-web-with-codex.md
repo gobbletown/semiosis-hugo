@@ -101,3 +101,20 @@ fi
 
 curl-firefox -s -I "$url" | grep -q "HTTP.*200"
 {{< /highlight >}}
+
+
+## Example workflows {#example-workflows}
+
+-   Select arbitrary text and gather URLs on it
+-   Select any raw text (i.e. code with tricky and unnameable syntax)
+-   Select large amounts of text and gather URLs on it
+
+
+### Conclusions {#conclusions}
+
+-   Much longer queries taking into account more context
+-   Much more intelligent results
+-   Much more specified results
+-   Much more accurate results
+-   Full control
+-   No ads
