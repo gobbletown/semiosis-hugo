@@ -36,6 +36,10 @@ constraint that the return URLs must be real.
 
 ** Demo
 - Imagine a website from a URL url: http://ascii-art.com/octopuss
+- Imagine a website from a URL url: http://ascii-art.com/octopuss
+- Imagine a website from a URL url: http://funny-jokes.com/cat
+- Imagine a website from a URL url: http://computer-help.com?question=how%20do%20i%20browse%20the%20internet
+- https://en.wikipedia.org/wiki/Accelerationism
 
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
@@ -43,28 +47,6 @@ constraint that the return URLs must be real.
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/erGo5858UQgMIPjv0eGzMVBRe.js" id="asciicast-erGo5858UQgMIPjv0eGzMVBRe" async></script>
 #+END_EXPORT
-
-#+BEGIN_SRC text -n :async :results verbatim code
-                    _,..__                                                                                                                                        
-                ,-'          ``-.                                                                                                                                 
-              ,'                   `-.                                                                                                                            
-             /                        |                                                                                                                           
-            j                          |                                                                                                                          
-            |        \       /         |                                                                                                                          
-            |         `._____,'        F                                                                                                                          
-            |         //        \                                                                                                                                 
-            F        /j         |                                                                                                                                 
-            \       |L________j                                                                                                                                   
-             L      | |==|  | |                                                                                                                                   
-             |      | |==|  |F                                                                                                                                    
-             |      | |==| ,F                                                                                                                                     
-             |     / ,L__/                                                                                                                                        
-             L     L_/                                                                                                                                            
-              \     \ 
-#+END_SRC
-
-- Imagine a website from a URL url: http://funny-jokes.com/cat
-- Imagine a website from a URL url: http://computer-help.com?question=how%20do%20i%20browse%20the%20internet
 
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
