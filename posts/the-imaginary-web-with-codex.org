@@ -158,3 +158,85 @@ I have set completions to 1.
   completion: off
   insertion: off
 #+END_SRC
+
+** I browsed the imaginary web for Sam Altman's recent interview
+- https://www.lesswrong.com/posts/aihztgJrknBdLHjd2/sam-altman-q-and-a-gpt-and-agi/#_About_GPT4
+
+The first result was baffling.
+
+Speak of messages from the future! GPT-3 was trained in 2019 after all.
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  About GPT-4
+  
+  Sam Altman - Q&A - GPT-4 & AGI
+  
+  I recently published a long Medium post on the
+  potential dangers of AGI. I also promised to
+  do an interview about GPT-4,
+  
+  It's not too late to change your mind.
+  
+  GPT-4 is the name of a new generation of
+  Transformers-based generative models, recently
+  published by researchers at OpenAI.
+  
+  GPT-4 is the first completely self-supervised
+  LM of essentially unlimited size, trained on
+  an effectively unlimited amount of text.
+  
+  GPT-4 is the first model to demonstrate human-
+  level language understanding without any human
+  effort. It is the first model to demonstrate
+  unsupervised learning of high-quality, high-
+  resolution, and long-range text understanding.
+  
+  
+  
+  Sam Altman is the President and Co-Founder of
+  initial seed fund Y Combinator. He writes the
+  Ask a VC column on Hacker News and co-hosts
+  the RSS podcast Hacker News Radio. He is the
+  author of the textbook The VC Handbook.
+  
+  Sam Altman
+  
+  1:12
+  
+  What do you think of this idea?
+  
+  I think AGI is a serious concern and we're
+  making progress on solving it. GPT-4 is an
+  incredibly exciting and interesting new
+  development. 
+  
+  GPT-4 is a product of OpenAI and I’m excited
+  about it because it’s a demonstration of the
+  power of unsupervised learning. This is really
+  exciting. It’s basically a demonstration of
+  the power of unsupervised learning.
+  
+  
+  Sam Altman
+  
+  1:18
+  
+  What
+  
+  Next result:
+  
+  https://www.lesswrong.com/posts/aihztgJrknBdLHjd2/sam-altman-q-and-a-gpt-and-agi/#_About_GPT4
+  
+                                                                                                                   Q and A:
+  
+  How can explain and/or explain why GPT-4 is so
+  much better than GPT-3 at conversational and
+  QA?
+  
+  When can we expect to have GPT-2 and GPT-3 be
+  as good as GPT-4 at conversational and QA?
+  
+  Are there any useful things we can do with
+  GPT-4 that we can't with GPT-3 to increase
+  performance even further?
+#+END_SRC
