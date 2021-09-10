@@ -92,6 +92,14 @@ period, and may be used to generatively
 recreate experiences from the time they were
 created.
 
+{{< highlight text "linenos=table, linenostart=1" >}}
+synchronic
+    Concerned with something, especially a
+    language, as it exists at one point in
+    time.
+    "synchronic linguistics"
+{{< /highlight >}}
+
 These may be recorded on blockchain. Post-
 human ocean marketplace perhaps.
 
@@ -107,3 +115,9 @@ power, or nation states will leverage their
 LMs to create information bubbles which are
 increasingly difficult to escape from, and
 traverse between.
+
+
+## Synchronic links {#synchronic-links}
+
+Messages backwards in time
+: <https://youtu.be/I9y62qoTsic?t=978>
