@@ -86,6 +86,14 @@ period, and may be used to generatively
 recreate experiences from the time they were
 created.
 
+#+BEGIN_SRC text -n :async :results verbatim code
+  synchronic
+      Concerned with something, especially a
+      language, as it exists at one point in
+      time.
+      "synchronic linguistics"
+#+END_SRC
+
 These may be recorded on blockchain. Post-
 human ocean marketplace perhaps.
 
@@ -101,3 +109,6 @@ power, or nation states will leverage their
 LMs to create information bubbles which are
 increasingly difficult to escape from, and
 traverse between.
+
+** Synchronic links
++ Messages backwards in time :: https://youtu.be/I9y62qoTsic?t=978
