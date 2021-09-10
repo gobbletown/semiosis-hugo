@@ -71,7 +71,7 @@ Demo  --  Source A combination of lazy prompting with real emacs lisp, a dockeri
       <pubDate>Tue, 07 Sep 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/posts/beyond-the-boundaries-of-paradigms/</guid>
-      <description>Questions to ponder  Where do regular programming paradigms end? How do you connect one language to the next? What constitutes a new paradigm? Arguably something that is orthogonal to the rest. May Imaginary Programming (IP) be considered a new programming paradigm?  Hierarchy of languages  Imaginary languages  World languages  English Japanese   Natural languages  Sign language Non-verbal body language   Formal languages  Markdown C++      Thoughts The fundamental theorem of algebra states that every non-constant single-variable polynomial with complex coefficients has at least one complex root.</description>
+      <description>Examples of ordinary programming paradigms  Type-Level programming  https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html   Relational Programming  https://github.com/webyrd/dissertation-single-spaced/blob/master/thesis.pdf   Functional programming Object-oriented programming Imperative programming  Questions to ponder  Where do ordinary programming paradigms end and what exists between and beyond them? Do there exist boundaries between physical, imaginary and metaphysical languages? What constitutes a new paradigm in programming? Arguably something that is orthogonal or unique to the rest. May Imaginary Programming (IP) be considered a new programming paradigm?</description>
     </item>
     
     <item>

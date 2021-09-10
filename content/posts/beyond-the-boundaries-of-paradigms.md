@@ -2,34 +2,56 @@
 title = "Beyond the boundaries of paradigms"
 author = ["Shane Mulligan"]
 date = 2021-09-07T00:00:00+12:00
-keywords = ["gpt", "blockchain"]
+keywords = ["gpt", "blockchain", "language"]
 draft = false
 +++
 
+## Examples of ordinary programming paradigms {#examples-of-ordinary-programming-paradigms}
+
+-   Type-Level programming
+    -   <https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html>
+-   Relational Programming
+    -   <https://github.com/webyrd/dissertation-single-spaced/blob/master/thesis.pdf>
+-   Functional programming
+-   Object-oriented programming
+-   Imperative programming
+
+
 ## Questions to ponder {#questions-to-ponder}
 
--   Where do regular programming paradigms end?
--   How do you connect one language to the next?
--   What constitutes a new paradigm?
-    Arguably something that is orthogonal to the rest.
+-   Where do ordinary programming paradigms end and what exists between and beyond them?
+-   Do there exist boundaries between physical, imaginary and metaphysical languages?
+-   What constitutes a new paradigm in programming?
+    Arguably something that is orthogonal or unique to the rest.
 -   May Imaginary Programming (IP) be considered a new programming paradigm?
+    -   I think it can be.
+-   Is the past mutable?
+    -   I think it's possible. If one makes their reality a
+        a simulation of the future then they may
+        change the past.
+    -   But is it far enough to send a message 30+ years?
+    -   Metaphysical language?
 
 
 ## Hierarchy of languages {#hierarchy-of-languages}
 
+-   Physical languages
+    -   Zoösemiosis
 -   Imaginary languages
     -   World languages
         -   English
         -   Japanese
-    -   Natural languages
         -   Sign language
+    -   Natural languages
         -   Non-verbal body language
     -   Formal languages
         -   Markdown
         -   C++
+-   Metaphysical languages
+    -   Intellectual without cognitive materials
 
 
-## Thoughts {#thoughts}
+## Thoughts on Imaginary Programming {#thoughts-on-imaginary-programming}
 
 The fundamental theorem of algebra states that
 every non-constant single-variable polynomial
@@ -63,12 +85,25 @@ of a superset of languages, the languages of
 the data they are trained on.
 
 
-## Speculation {#speculation}
+## Speculation of LMs of the future {#speculation-of-lms-of-the-future}
 
 They may serve as snapshots of a given time
 period, and may be used to generatively
 recreate experiences from the time they were
 created.
 
+These may be recorded on blockchain. Post-
+human ocean marketplace perhaps.
+
 For example, GPT-3 may one day be used to re-
 create YouTube via simulation.
+
+I think it's rather obvious that the world is
+heading for building simulations of the
+internet within LMs.
+
+My worry is that corporations with too much
+power, or nation states will leverage their
+LMs to create information bubbles which are
+increasingly difficult to escape from, and
+traverse between.
