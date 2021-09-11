@@ -25,6 +25,7 @@ the web.
 -   Peer into the future -- read about GPT-5!
 -   Generate relevant URLs (often real, sometimes imaginary) from any text selection
 -   Read an article on anything from your favourite blogger
+-   Also generates HTML to load the page in your fav browser. Pull it all together, and
 -   ... This is the future of the web.
 
 
@@ -196,6 +197,31 @@ Due to its type system, Haskell is great for eliminating runtime
 
    This allows you to avoid all runtime checks by simply knowing the
    structure of a program, and
+{{< /highlight >}}
+
+
+## Rendering HTML {#rendering-html}
+
+Generate HTML from ASCII
+: <http://github.com/semiosis/prompts/blob/master/prompts/generate-html-from-ascii.prompt>
+
+Tighter integration will be made with the eww browser in emacs.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun lg-render (ascii &optional url)
+  (interactive (list (buffer-string)))
+
+  (let* ((firstline (pen-snc "sed -n 1p | xurls" ascii))
+         (rest (pen-snc "sed 1d" ascii))
+         (url (or (sor url)
+                  (sor firstline)))
+         (ascii (if (sor url)
+                    ascii
+                  rest)))
+
+    (new-buffer-from-string
+     (pen-one (pf-generate-html-from-ascii-browser/2 url ascii))
+     nil 'text-mode)))
 {{< /highlight >}}
 
 

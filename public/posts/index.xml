@@ -272,6 +272,7 @@ the web.</p>
 <li>Peer into the future &ndash; read about GPT-5!</li>
 <li>Generate relevant URLs (often real, sometimes imaginary) from any text selection</li>
 <li>Read an article on anything from your favourite blogger</li>
+<li>Also generates HTML to load the page in your fav browser. Pull it all together, and</li>
 <li>&hellip; This is the future of the web.</li>
 </ul>
 <h2 id="the-definitive-demo">The Definitive Demo</h2>
@@ -553,6 +554,46 @@ Tutorial.Data.Maybe</code></pre></td></tr></table>
 
    This allows you to avoid all runtime checks by simply knowing the
    structure of a program, and</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="rendering-html">Rendering HTML</h2>
+<dl>
+<dt>Generate HTML from ASCII</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generate-html-from-ascii.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generate-html-from-ascii.prompt</a></dd>
+</dl>
+<p>Tighter integration will be made with the eww browser in emacs.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun lg-render (ascii <span style="color:#66d9ef">&amp;optional</span> url)
+  (interactive (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">buffer-string</span>)))
+
+  (let* ((firstline (pen-snc <span style="color:#e6db74">&#34;sed -n 1p | xurls&#34;</span> ascii))
+         (rest (pen-snc <span style="color:#e6db74">&#34;sed 1d&#34;</span> ascii))
+         (url (or (sor url)
+                  (sor firstline)))
+         (ascii (if (sor url)
+                    ascii
+                  rest)))
+
+    (new-buffer-from-string
+     (pen-one (pf-generate-html-from-ascii-browser/2 url ascii))
+     <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;text-mode</span>)))</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="demo">Demo</h2>
