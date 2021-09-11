@@ -121,6 +121,7 @@ the web.</p>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD.js" id="asciicast-GD8hBG0GvxCnAoFtuFSygJEtD" async></script>
+<p>Explanation / commentary at the bottom of this article.</p>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="https://mullikine.github.io/posts/search-the-web-with-codex/">Search the web with Codex {bye Google} // Bodacious Blog</a></li>
@@ -766,6 +767,667 @@ as good as GPT-4 at conversational and QA?
 Are there any useful things we can do with
 GPT-4 that we can&#39;t with GPT-3 to increase
 performance even further?</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="explanation-commentary">Explanation / commentary</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">302
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">303
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">304
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">305
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">306
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">307
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">308
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">309
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">310
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">311
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">312
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">313
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">314
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">315
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">316
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">317
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">19:31 &lt; libertyprime&gt;
+    Hi guys and gals. sorry for the self-promotion. If any of you have hacker
+    news accounts, could you please upvote this for me? It&#39;s an imaginary web
+    browser based on emacs: https://news.ycombinator.com/item?id=28489942
+
+19:37 &lt; a&gt;
+    I&#39;m sure people in the psychiatry will love it.
+
+19:38 &lt; libertyprime&gt;&gt;
+    It integrates with any emacs buffer.
+
+19:38 &lt; libertyprime&gt;
+    You can generate both imaginary and real URLs from selected text in emacs,
+    and visit them, even if they are not real.
+
+19:38 &lt; libertyprime&gt;
+    And they&#39;re very coherent.
+
+19:39 &lt; libertyprime&gt;
+    the interactivity of emacs makes it powerful.
+
+19:40 &lt; a&gt;
+    imaginary bufferes in an imaginary emacs...
+
+19:40 &lt; libertyprime&gt;
+    it&#39;s the combination of real and imaginary that makes it powerful. i try to
+    keep a real emacs and imagine the contents.
+
+19:41 &lt; libertyprime&gt;
+    emacs is becoming something like an intelligible scaffolding.
+
+19:41 &lt; a&gt;
+    somehow sounds like selling clowds to windows users.
+
+19:43 &lt; b&gt;
+    I didn&#39;t understand what it is trying to achieve from the first screencast.
+
+19:43 &lt; libertyprime&gt;
+    lets just say this is timely with the release of matrix 4. i have spent a
+    lot of time just thinking of the implications of this technology as its
+    improving. gpt4 is out soon and it may be an order of magnitude more
+    powerful than codex -- whatever that means.
+
+19:44 &lt; libertyprime&gt;
+    the text is so coherent that it appears to be real but it is not. you can
+    imaginae any website you can think of -- even ascii art websites. wikipedia
+    articles, lesswrong articles, about any topic.
+
+19:44 &lt; b&gt;
+    I feed it some text from a web page and it generates more. In this case it
+    is a web page it could just as well be anything else, like we have seen
+    examples of chats.
+
+19:44 &lt; libertyprime&gt;
+    but it&#39;s like an interactive fiction.
+
+19:44 &lt; b&gt;
+    libertyprime: ah, so you&#39;re trying to show how coherent the performance is
+    with url + content?
+
+19:44 &lt; libertyprime&gt;
+    So you can interact with it and if you want to see a counter-argument to
+    what you&#39;re reading, you can tweak the articule as such.
+
+19:45 &lt; libertyprime&gt;
+    c: not just that, but you can generate new URLs, etc. from any
+    text in any emacs buffer, in any context
+
+19:45 &lt; libertyprime&gt;
+    It Replaces google, basically.
+
+19:45 &lt; b&gt;
+    libertyprime: I don&#39;t understand how it replaces google.
+
+19:46 &lt; libertyprime&gt;
+    i demonstrate how it replaces google in the screencasts that follow.
+
+19:46 &lt; b&gt;
+    Say I have this #emacs buffer. Would you mind running a scenario that
+    replaces google for me?
+
+19:46 &lt; libertyprime&gt;
+    yes you are reading some code.
+
+19:46 &lt; b&gt;
+    Okay, second screencast?
+
+19:46 &lt; libertyprime&gt;
+    And you select some text, and imagine some URLs for that text. it will come
+    up with some very nice suggestions. some of which are actually real website.
+
+19:47 &lt; libertyprime&gt;
+    Then you can tweak that list. maybe you want a blog article from your
+    favourite blogger.
+
+19:47 &lt; libertyprime&gt;
+    instead of what it gave you
+
+19:47 &lt; libertyprime&gt;
+    then it imagines the website that follows. its very accurate too
+
+19:48 &lt; libertyprime&gt;
+    You imagine a set of continuations with a small continuation size, if you
+    want, then you can cherrypick the continuation you want and generate more
+    of the website
+
+19:48 &lt; libertyprime&gt;
+    It&#39;s interactive.
+
+19:48 &lt; libertyprime&gt;
+    At any stage you can select any text and generate more urls.
+
+19:48 &lt; b&gt;
+    I&#39;m not sure that&#39;s how I use google. I generally ask google things like.
+
+    &#34;emacs modus-themes org tables alignment&#34;
+
+19:49 &lt; b&gt;
+    It finds out web pages talking about this and I click on them one by one to
+    find relevant info
+
+19:49 &lt; libertyprime&gt;
+    you could generate websites for that too. just generate a url with that
+    query.
+
+19:49 &lt; libertyprime&gt;
+    Or you can also use your query as the input for the selection if you want.
+
+19:49 &lt; libertyprime&gt;
+    It also asks for verification of your input.
+
+19:49 &lt; libertyprime&gt;
+    So you can put whatever query you want in there.
+
+19:50 &lt; b&gt;
+    I see. Since it generates URLs for me for a given text, I could given it a
+    long paragraph instead of these silly keywords and it may generate a URL
+    for me. This URL may then turn out to be accurate.
+
+19:50 &lt; c&gt;
+    I don&#39;t get it, what&#39;s the point?
+
+19:50 &lt; b&gt;
+    Am I getting this right?
+
+19:51 &lt; b&gt;
+    d: you&#39;re asking the same thing as I am, but more directly ;)
+
+19:51 &lt; c&gt;
+    Yes, that&#39;s how I roll.
+
+19:51 &lt; libertyprime&gt;
+    It&#39;s an imaginary world wide web that can create fictional, but often
+    factual websites.
+
+19:51 &lt; b&gt;
+    s/as I am/as am I
+
+19:51 &lt; c&gt;
+    Like, is this supposed to be funny?
+
+19:51 &lt; b&gt;
+    Cannot replace google for me, I want factual things!
+
+19:51 &lt; c&gt;
+    Auto-generated entertainment?
+
+19:52 &lt; libertyprime&gt;
+    c: you literally only need to validate with 404 on the generated
+    URLs
+
+19:52 &lt; libertyprime&gt;
+    And im in the process of truthizing the return URLs.
+
+19:52 &lt; libertyprime&gt;
+    It already returns real websites. you just have to filter them.
+
+19:52 &lt; b&gt;
+    libertyprime: very interesting in some aspects!
+
+19:52 &lt; libertyprime&gt;
+    Its more than very interesting.  Its the future of web browsing.  That or
+    blockchain internet.
+
+19:53 &lt; c&gt;
+    Why would you say that it&#39;s the future of browsing?
+
+19:53 &lt; libertyprime&gt;
+    Because it doesnt restrict you.
+
+19:53 &lt; c&gt;
+    Are you suggesting that in the future we need to do even more judicious
+    filtering to find the actually interesting content?
+
+19:53 &lt; libertyprime&gt;
+    You can not only visit what you want, but you can read it in terms of your
+    favourite blogger for example.
+
+19:53 &lt; b&gt;
+    I agree, in 5-10 years, perhaps OpenAI will come up with newer and newer
+    approaches, directly changing the way we interface with the digital (and by
+    extension of which, the physical) world
+
+19:53 &lt; a&gt;
+    The web is not about intersting content.
+
+19:53 &lt; c&gt;
+    Like, TV reaching lower and lower signal-to-noise ratio and the internet by
+    extension, too?
+
+19:53 &lt; libertyprime&gt;
+    You can also browse an inferred future internet.
+
+19:54 &lt; libertyprime&gt;
+    I used it to read an interview by sam altman about gpt4.
+
+19:54 &lt; libertyprime&gt;
+    And then i tried GPT5.
+
+19:54 &lt; libertyprime&gt;
+    And it&#39;s actually quite precient.
+
+19:54 &lt; c&gt;
+    How would you know?
+
+19:54 &lt; libertyprime&gt;
+    it was interesting how it talked about transformers with infinite context.
+
+19:54 &lt; b&gt;
+    d: what I found promising was that I could feed it a long freaking
+    paragraph and it would give me results. *IF* it was working &#34;well&#34;, it
+    would give me great results. Google cannot do this and they&#39;ve been
+    training us to use fucking keywords for decades
+
+19:55 &lt; libertyprime&gt;
+    A couple days there was an arxiv paper released about
+    infinite-transformers.
+
+19:55 &lt; libertyprime&gt;
+    But the neural net im using was trained in 2019.
+
+19:55 &lt; b&gt;
+    There&#39;s also some work saying you don&#39;t need attention.
+
+19:56 &lt; a&gt;
+    2019 is not in the future.
+
+19:56 &lt; b&gt;
+    The model performed nearly as well as BERT without transformers.
+
+19:56 &lt; libertyprime&gt;
+    b: no but the technology that the imaginary article was talking
+    about it described gpt-4 in terms of future capabilities
+
+19:56 &lt; libertyprime&gt;
+    My point is a 2019 model can infer the future.
+
+19:56 &lt; c&gt;
+    I somehow suspect that the whole GPT craze is some collective mass
+    psychosis.
+
+19:56 &lt; b&gt;
+    b: do you want a neural network trained in future? Like SkyNet?
+
+19:56 &lt; c&gt;
+    Everyone&#39;s thought biases misfiring in the same way.
+
+19:57 &lt; libertyprime&gt;
+    And you are able to browse that future internet. my point that im making is
+    in response to somebody&#39;s question as to the utility of an imaginary web.
+    im describing it.
+
+19:57 &lt; libertyprime&gt;
+    By expressing that it can infer the future. and a person may want to take a
+    probabilistic peek.
+
+19:57 &lt; c&gt;
+    Where people want to see the neural net do good and only look at the good
+    outputs.
+
+19:57 &lt; b&gt;
+    d: these things keep showing us how little we know about _every
+    single thing_ and I love them for it.
+
+19:57 &lt; a&gt;
+    What did the model from 2019 infer about today?
+
+19:57 &lt; c&gt;
+    Then proclaim that they&#39;re good.
+
+19:57 &lt; natter&gt;
+    d: but what if you could talk to a machine that spoke only via ad
+    copy?
+
+19:57 &lt; libertyprime&gt;
+    I just said. that gpt-4 has infinite context. it&#39;s highly likely based on
+    the last thing i said about inifite-former.
+
+19:58 &lt; b&gt;
+    &#34;Well we thought we knew how languages work. But alas, this odd blackbox
+    thing proves that we do not!&#34;
+
+19:58 &lt; b&gt;
+    And so on.
+
+19:58 &lt; b&gt;
+    libertyprime: what does it mean to have infinite context?
+    https://www.youtube.com/watch?v=0JlB9gufTw8&amp;ab_channel=YannicKilcher
+    infinite-memory former
+    It means that it has &#39;sticky memories&#39;.  And very long form coherence.
+
+19:59 &lt; b&gt;
+    Memories that stick forever?!
+
+19:59 &lt; b&gt;
+    huh
+
+19:59 &lt; libertyprime&gt;
+    Infinite long-form coherence. like a person has. That sounds like an
+    advancement
+
+19:59 &lt; b&gt;
+    Did these computers not have solid state drives to store memories long
+    term?
+
+20:00 &lt; libertyprime&gt;
+    Anyway. please upvote because i dont have a marketing team.</code></pre></td></tr></table>
 </div>
 </div>
 ]]></content>
