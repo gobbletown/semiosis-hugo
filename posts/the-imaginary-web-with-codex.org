@@ -24,6 +24,9 @@ the web.
 
 - /Visit any website you can imagine, even the ones that are *not real*!/
 - Edit and re-imagine as you go!
+- Generate relevant URLs (often real, sometimes imaginary) from any text selection
+- Read an article on anything from your favourite blogger
+- ... This is the future of the web.
 
 ** The Definitive Demo
 #+BEGIN_EXPORT html
@@ -718,3 +721,14 @@ Speak of messages from the future! GPT-3 was trained in 2019 after all.
   20:00 < libertyprime>
       Anyway. please upvote because i dont have a marketing team.
 #+END_SRC
+
+- Relevant to note in above:
+  - The imaginary internet allows you to peer into the future
+
+** A word of caution!
+OpenAI is underplaying how transformative this
+is, or simply do not know. They are heading to
+creating an information bubble, and if too
+many tools are made which are LM specific then
+we will have closed societies. The future may
+become a dystopia.
