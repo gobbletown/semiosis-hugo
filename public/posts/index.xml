@@ -770,7 +770,7 @@ for a great imaginary OS.</p>
 Arguably something that is orthogonal or unique to the rest.</li>
 <li>May Imaginary Programming (IP) be considered a new programming paradigm?
 <ul>
-<li>I think it can be.</li>
+<li>I think it can be. It only requires original perspective, useful algorithms and a practical methodology.</li>
 </ul>
 </li>
 <li>Is the past mutable?
@@ -857,24 +857,21 @@ that way.</p>
 <p>The fundamental theorem of algebra states that
 every non-constant single-variable polynomial
 with complex coefficients has at least one
-complex root.</p>
-<p>The fundamental theorem of algebra implies that
-solutions to polynomials are only available
-when adding the imaginary dimension.</p>
-<p>Likewise, solutions to problems such as
-translating between world languages require
-the addition of multiple dimensions.</p>
+complex root. The fundamental theorem of
+algebra implies that solutions to polynomials
+are only available when adding the imaginary
+dimension. Likewise, solutions to problems
+such as translating between world languages
+require the addition of multiple dimensions.</p>
 <p>Historically, words and phrases may be
 modelled by a vector space of 200 dimensions,
-i.e. FastText.</p>
-<p>Nowadays we use tensors which are n-ranked
-matrices that lazily yield their values (i.e.
-sparse matrix optimisation, and TF optimises
-out computation of the values in tensor
-cells).</p>
-<p>However, like the Bohr model of the atom, an
-n-dimensional vector-space is a useful
-concept.</p>
+i.e. FastText. Nowadays we use tensors which
+are n-ranked matrices that lazily yield their
+values (i.e. sparse matrix optimisation, and
+TF optimises out computation of the values in
+tensor cells). However, like the Bohr model
+of the atom, an n-dimensional vector-space is
+a useful concept.</p>
 <p>Large LMs such as GPT-X are a representation
 of a superset of languages, the languages of
 the data they are trained on.</p>
