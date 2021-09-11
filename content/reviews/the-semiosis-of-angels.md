@@ -2,7 +2,7 @@
 title = "The Semiosis of Angels"
 author = ["Shane Mulligan"]
 date = 2021-06-28T00:00:00+12:00
-keywords = ["semiotics"]
+keywords = ["semiotics", "metaphysics"]
 draft = false
 +++
 
@@ -11,7 +11,12 @@ draft = false
     -   Freedom by Daniel Suarez ([PDF](http://library.lol/main/A5CA1EAB4F3331CB1AC1DE3F4665C17D))
 
 
-### `|:ϝ∷¦ϝ` {#ϝ-ϝ}
+## Thoughts {#thoughts}
+
+-   <https://semiosis.github.io/posts/beyond-the-boundaries-of-paradigms/>
+
+
+## `|:ϝ∷¦ϝ` {#ϝ-ϝ}
 
 This excerpt:
 
