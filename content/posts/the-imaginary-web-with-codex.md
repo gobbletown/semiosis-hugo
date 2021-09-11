@@ -20,8 +20,12 @@ fine as it is, just open your mind on the way
 in which people should view and interact with
 the web.
 
--   _Visit any website you can imagine, even the ones that are **not real**!_
--   Edit and re-imagine as you go!
+-   Visit any website you can imagine, _even the ones that are **not real**!_
+-   Edit and re-imagine as you go see alternative website realities -- change the sentiment of the author!
+-   Peer into the future -- read about GPT-5!
+-   Generate relevant URLs (often real, sometimes imaginary) from any text selection
+-   Read an article on anything from your favourite blogger
+-   ... This is the future of the web.
 
 
 ## The Definitive Demo {#the-definitive-demo}
@@ -730,3 +734,16 @@ performance even further?
 20:00 < libertyprime>
     Anyway. please upvote because i dont have a marketing team.
 {{< /highlight >}}
+
+-   Relevant to note in above:
+    -   The imaginary internet allows you to peer into the future
+
+
+## A word of caution! {#a-word-of-caution}
+
+OpenAI is underplaying how transformative this
+is, or simply do not know. They are heading to
+creating an information bubble, and if too
+many tools are made which are LM specific then
+we will have closed societies. The future may
+become a dystopia.

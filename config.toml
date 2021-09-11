@@ -83,6 +83,11 @@ unsafe= true
     url        = "/ilambda/"
 
   [[menu.main]]
+    identifier = "looking-glass"
+    name       = "🔍"
+    url        = "/looking-glass/"
+
+  [[menu.main]]
     identifier = "ii"
     name       = "Imaginary Interpreter"
     url        = "/ii/"
