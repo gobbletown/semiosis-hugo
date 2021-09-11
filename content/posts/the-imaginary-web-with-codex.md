@@ -52,6 +52,9 @@ constraint that the return URLs must be real.
 
 This is a demonstraction of an imaginary/complex web browser named _Looking Glass_.
 
+Code
+: <https://semiosis.github.io/pen/>
+
 The real website
 : <https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html>
 
@@ -692,13 +695,6 @@ performance even further?
 
 19:57 < a>
     What did the model from 2019 infer about today?
-
-19:57 < c>
-    Then proclaim that they're good.
-
-19:57 < natter>
-    d: but what if you could talk to a machine that spoke only via ad
-    copy?
 
 19:57 < libertyprime>
     I just said. that gpt-4 has infinite context. it's highly likely based on

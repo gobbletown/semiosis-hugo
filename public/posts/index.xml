@@ -142,6 +142,8 @@ constraint that the return URLs must be real.</p>
 <h2 id="looking-glass-web-browser">Looking Glass 🔍 web browser</h2>
 <p>This is a demonstraction of an imaginary/complex web browser named <em>Looking Glass</em>.</p>
 <dl>
+<dt>Code</dt>
+<dd><a href="https://semiosis.github.io/pen/">https://semiosis.github.io/pen/</a></dd>
 <dt>The real website</dt>
 <dd><a href="https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html">https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html</a></dd>
 </dl>
@@ -1092,13 +1094,6 @@ performance even further?</code></pre></td></tr></table>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">19:31 &lt; libertyprime&gt;
@@ -1387,13 +1382,6 @@ performance even further?</code></pre></td></tr></table>
 
 19:57 &lt; a&gt;
     What did the model from 2019 infer about today?
-
-19:57 &lt; c&gt;
-    Then proclaim that they&#39;re good.
-
-19:57 &lt; natter&gt;
-    d: but what if you could talk to a machine that spoke only via ad
-    copy?
 
 19:57 &lt; libertyprime&gt;
     I just said. that gpt-4 has infinite context. it&#39;s highly likely based on
