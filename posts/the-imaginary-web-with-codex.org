@@ -22,7 +22,7 @@ fine as it is, just open your mind on the way
 in which people should view and interact with
 the web.
 
-- /Visit any website you can imagine, even the ones that aren't real!/
+- /Visit any website you can imagine, even the ones that are *not real*!/
 - Edit and re-imagine as you go!
 
 ** The Definitive Demo
