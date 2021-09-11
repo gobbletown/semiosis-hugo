@@ -24,7 +24,7 @@
 - What constitutes a new paradigm in programming?
   Arguably something that is orthogonal or unique to the rest.
 - May Imaginary Programming (IP) be considered a new programming paradigm?
-  - I think it can be.
+  - I think it can be. It only requires original perspective, useful algorithms and a practical methodology.
 - Is the past mutable?
   - I think it's possible. If one makes their reality a
     a simulation of the future then they may
@@ -92,29 +92,22 @@ that way.
 The fundamental theorem of algebra states that
 every non-constant single-variable polynomial
 with complex coefficients has at least one
-complex root.
-
-The fundamental theorem of algebra implies that
-solutions to polynomials are only available
-when adding the imaginary dimension.
-
-Likewise, solutions to problems such as
-translating between world languages require
-the addition of multiple dimensions.
+complex root. The fundamental theorem of
+algebra implies that solutions to polynomials
+are only available when adding the imaginary
+dimension. Likewise, solutions to problems
+such as translating between world languages
+require the addition of multiple dimensions.
 
 Historically, words and phrases may be
 modelled by a vector space of 200 dimensions,
-i.e. FastText.
-
-Nowadays we use tensors which are n-ranked
-matrices that lazily yield their values (i.e.
-sparse matrix optimisation, and TF optimises
-out computation of the values in tensor
-cells).
-
-However, like the Bohr model of the atom, an
-n-dimensional vector-space is a useful
-concept.
+i.e. FastText. Nowadays we use tensors which
+are n-ranked matrices that lazily yield their
+values (i.e. sparse matrix optimisation, and
+TF optimises out computation of the values in
+tensor cells). However, like the Bohr model
+of the atom, an n-dimensional vector-space is
+a useful concept.
 
 Large LMs such as GPT-X are a representation
 of a superset of languages, the languages of
