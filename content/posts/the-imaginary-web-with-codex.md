@@ -21,6 +21,14 @@ in which people should view and interact with
 the web.
 
 
+## The Definitive Demo {#the-definitive-demo}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD.js" id="asciicast-GD8hBG0GvxCnAoFtuFSygJEtD" async></script>
+
+
 ## Related {#related}
 
 -   [Search the web with Codex {bye Google} // Bodacious Blog](https://mullikine.github.io/posts/search-the-web-with-codex/)
@@ -32,6 +40,150 @@ constraint that the return URLs must be real.
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 # This contraint is not needed for the imaginary internet
 # validator: url-exists
+{{< /highlight >}}
+
+
+## Looking Glass 🔍 web browser {#looking-glass-web-browser}
+
+This is a demonstraction of an imaginary/complex web browser named _Looking Glass_.
+
+The real website
+: <https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html>
+
+The opening text:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+An Introduction to Type Level Programming
+
+Posted on August 25, 2021 by Rebecca Skinner
+
+Prelude
+
+
+
+This blog post is a long-form article based on a talk I delivered at the
+haskell.love conference on 10 Sept 2021. Keep an eye out here and I will
+update this section with a link to the recording of the talk when it’s
+available.
+
+The original slides for this talk are available on github along with the
+complete source code for the examples used in this article and the talk.
+
+An Introduction to Type-Level Programming
+{{< /highlight >}}
+
+I will now use Pen.el to imagine the same website.
+This will use the Codex engine.
+
+Here are 2 possible continuations.
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html
+
+                Introduction to Type-Level Programming
+
+   Posted by Rebecca Skinner on 25 August 2021
+   4 min read
+
+   Type-level programming is well suited for statically typed languages
+   with pattern matching, like Haskell. It isn’t always the right
+   solution, though…
+
+   Type-level programming is also pretty different from other
+   statically typed languages. It’s not the only paradigm. So, let’s
+   look at some examples. If you’re familiar with Haskell, these
+   examples should look familiar to you.
+{{< /highlight >}}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+https://rebeccaskinner.net/posts/2021-08-25-introduction-to-type-level-programming.html
+
+                                                                                                          Introduction to Type-Level Programming
+    by Rebecca Skinner
+
+This post is also available in two other formats:
+
+    PDF  |  Slides
+
+New to type-level programming?
+
+You might want to check out my post on introduction to type-level
+programming, which includes links to free versions of my textbook,
+Real World Haskell, and my favorite Haskell libraries. Or if you’re
+new to this concept, you might want to read my article on how Haskell
+reduced my software development time by 95%.
+
+Theory of Types
+
+Even if you’re not familiar with type-level programming in general,
+it’s still important to know what it is. What’s more, even if you’re
+familiar with Haskell, there are some concepts in Haskell that make type-level
+programming easier, like type synonyms.
+
+But in case you’re unfamiliar, type-level programming is a style of
+programming that uses types in place of strings or identifiers in
+order to describe the behavior of your program. Here’s an example of
+a simple type-level program:
+
+Tutorial.Data.Maybe
+{{< /highlight >}}
+
+I have selected the first.
+
+I then generate two more possible continuations.
+
+And I select this one:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+If not, hopefully they
+  illustrate the core concepts.
+
+  What is it good for?
+
+  The first thing I want to show you is that type-level programming
+  is great for expressing common programming patterns.
+
+  A perfectly valid question you might ask is “why not just code it
+  that way?” Well…here’s the thing. Type-level programming has the
+  ability to express concepts at multiple levels of abstraction, so
+  whomever’s reading your code can quickly zoom in on the relevant
+  parts.
+
+  To demonstrate this, I’m going to jump right in. We’ll start with
+  pattern matching.
+
+  Pattern Matching
+
+  I’ll show you how you can simulate pattern matching with type-level
+  booleans, just like you can with `case` expressions in Haskell.
+
+  Booleans are just numbers, so you can compare
+{{< /highlight >}}
+
+But I want to change the topic. So I change "What is it good for?" to "What is it not good for?"
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Due to its type system, Haskell is great for eliminating runtime
+   errors.
+
+   This is because the compiler is able to prove that a piece of code
+   will not throw a runtime error, and thus no runtime code is
+   executed. This allows code to be written with no runtime checks.
+
+   This is why Haskell can have a single, undisturbed type hierarchy
+   with no runtime checks. In fact, this is why Haskell is the only
+   fully-featured purely-typed functional language. It’s reference
+   implementation, GHC, is also known for its correctness, if not
+   performance.
+
+   However, runtime checks prevent the compiler from building a
+   completely pure, efficient type system.
+
+   In a purely type-safe language, you can reason about a program by
+   simply knowing its type.
+
+   This allows you to avoid all runtime checks by simply knowing the
+   structure of a program, and
 {{< /highlight >}}
 
 
