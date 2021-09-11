@@ -4,13 +4,16 @@
 #+TITLE: The Semiosis of Angels
 #+DATE: <2021-06-28>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: semiotics
+#+KEYWORDS: semiotics metaphysics
 
 + Books in question:
   - The Semiosis of Angels by John Deely (2004) ([[https://muse.jhu.edu/article/636617/summary][PDF]])
   - Freedom by Daniel Suarez ([[http://library.lol/main/A5CA1EAB4F3331CB1AC1DE3F4665C17D][PDF]])
 
-*** =|:ϝ∷¦ϝ=
+** Thoughts
+- https://semiosis.github.io/posts/beyond-the-boundaries-of-paradigms/
+
+** =|:ϝ∷¦ϝ=
 This excerpt:
 
 #+BEGIN_SRC text -n :async :results verbatim code
