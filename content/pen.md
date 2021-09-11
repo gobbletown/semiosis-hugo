@@ -126,6 +126,27 @@ existence, but also for her encouragement and help!
 
 {{< figure src="/ox-hugo/pen-tower-of-babel.png" >}}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
+6
+And the LORD said, Behold, the people is one,
+and they have all one language; and this they begin
+to do: and now nothing will be restrained from
+them, which they have imagined to do.
+7
+Go to, let us go down, and there confound their
+language, that they may not understand one
+another’s speech.
+8
+So the LORD scattered them abroad from
+thence upon the face of all the earth: and they left
+off to build the city.
+9
+Therefore is the name of it called Babel;
+because the LORD did there confound the language
+of all the earth: and from thence did the LORD
+scatter them abroad upon the face of all the earth.
+{{< /highlight >}}
+
 
 ## Documentation {#documentation}
 
