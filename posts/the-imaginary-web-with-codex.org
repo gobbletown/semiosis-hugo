@@ -33,6 +33,8 @@ the web.
 <script src="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD.js" id="asciicast-GD8hBG0GvxCnAoFtuFSygJEtD" async></script>
 #+END_EXPORT
 
+Explanation / commentary at the bottom of this article.
+
 ** Related
 - [[https://mullikine.github.io/posts/search-the-web-with-codex/][Search the web with Codex {bye Google} // Bodacious Blog]]
 
@@ -390,4 +392,335 @@ Speak of messages from the future! GPT-3 was trained in 2019 after all.
   Are there any useful things we can do with
   GPT-4 that we can't with GPT-3 to increase
   performance even further?
+#+END_SRC
+
+** Explanation / commentary
+#+BEGIN_SRC text -n :async :results verbatim code
+  19:31 < libertyprime>
+      Hi guys and gals. sorry for the self-promotion. If any of you have hacker
+      news accounts, could you please upvote this for me? It's an imaginary web
+      browser based on emacs: https://news.ycombinator.com/item?id=28489942
+  
+  19:37 < a>
+      I'm sure people in the psychiatry will love it.
+  
+  19:38 < libertyprime>>
+      It integrates with any emacs buffer.
+  
+  19:38 < libertyprime>
+      You can generate both imaginary and real URLs from selected text in emacs,
+      and visit them, even if they are not real.
+  
+  19:38 < libertyprime>
+      And they're very coherent.
+  
+  19:39 < libertyprime>
+      the interactivity of emacs makes it powerful.
+  
+  19:40 < a>
+      imaginary bufferes in an imaginary emacs...
+  
+  19:40 < libertyprime>
+      it's the combination of real and imaginary that makes it powerful. i try to
+      keep a real emacs and imagine the contents.
+  
+  19:41 < libertyprime>
+      emacs is becoming something like an intelligible scaffolding.
+  
+  19:41 < a>
+      somehow sounds like selling clowds to windows users.
+  
+  19:43 < b>
+      I didn't understand what it is trying to achieve from the first screencast.
+  
+  19:43 < libertyprime>
+      lets just say this is timely with the release of matrix 4. i have spent a
+      lot of time just thinking of the implications of this technology as its
+      improving. gpt4 is out soon and it may be an order of magnitude more
+      powerful than codex -- whatever that means.
+  
+  19:44 < libertyprime>
+      the text is so coherent that it appears to be real but it is not. you can
+      imaginae any website you can think of -- even ascii art websites. wikipedia
+      articles, lesswrong articles, about any topic.
+  
+  19:44 < b>
+      I feed it some text from a web page and it generates more. In this case it
+      is a web page it could just as well be anything else, like we have seen
+      examples of chats.
+  
+  19:44 < libertyprime>
+      but it's like an interactive fiction.
+  
+  19:44 < b>
+      libertyprime: ah, so you're trying to show how coherent the performance is
+      with url + content?
+  
+  19:44 < libertyprime>
+      So you can interact with it and if you want to see a counter-argument to
+      what you're reading, you can tweak the articule as such.
+  
+  19:45 < libertyprime>
+      c: not just that, but you can generate new URLs, etc. from any
+      text in any emacs buffer, in any context
+  
+  19:45 < libertyprime>
+      It Replaces google, basically.
+  
+  19:45 < b>
+      libertyprime: I don't understand how it replaces google.
+  
+  19:46 < libertyprime>
+      i demonstrate how it replaces google in the screencasts that follow.
+  
+  19:46 < b>
+      Say I have this #emacs buffer. Would you mind running a scenario that
+      replaces google for me?
+  
+  19:46 < libertyprime>
+      yes you are reading some code.
+  
+  19:46 < b>
+      Okay, second screencast?
+  
+  19:46 < libertyprime>
+      And you select some text, and imagine some URLs for that text. it will come
+      up with some very nice suggestions. some of which are actually real website.
+  
+  19:47 < libertyprime>
+      Then you can tweak that list. maybe you want a blog article from your
+      favourite blogger.
+  
+  19:47 < libertyprime>
+      instead of what it gave you
+  
+  19:47 < libertyprime>
+      then it imagines the website that follows. its very accurate too
+  
+  19:48 < libertyprime>
+      You imagine a set of continuations with a small continuation size, if you
+      want, then you can cherrypick the continuation you want and generate more
+      of the website
+  
+  19:48 < libertyprime>
+      It's interactive.
+  
+  19:48 < libertyprime>
+      At any stage you can select any text and generate more urls.
+  
+  19:48 < b>
+      I'm not sure that's how I use google. I generally ask google things like.
+  
+      "emacs modus-themes org tables alignment"
+  
+  19:49 < b>
+      It finds out web pages talking about this and I click on them one by one to
+      find relevant info
+  
+  19:49 < libertyprime>
+      you could generate websites for that too. just generate a url with that
+      query.
+  
+  19:49 < libertyprime>
+      Or you can also use your query as the input for the selection if you want.
+  
+  19:49 < libertyprime>
+      It also asks for verification of your input.
+  
+  19:49 < libertyprime>
+      So you can put whatever query you want in there.
+  
+  19:50 < b>
+      I see. Since it generates URLs for me for a given text, I could given it a
+      long paragraph instead of these silly keywords and it may generate a URL
+      for me. This URL may then turn out to be accurate.
+  
+  19:50 < c>
+      I don't get it, what's the point?
+  
+  19:50 < b>
+      Am I getting this right?
+  
+  19:51 < b>
+      d: you're asking the same thing as I am, but more directly ;)
+  
+  19:51 < c>
+      Yes, that's how I roll.
+  
+  19:51 < libertyprime>
+      It's an imaginary world wide web that can create fictional, but often
+      factual websites.
+  
+  19:51 < b>
+      s/as I am/as am I
+  
+  19:51 < c>
+      Like, is this supposed to be funny?
+  
+  19:51 < b>
+      Cannot replace google for me, I want factual things!
+  
+  19:51 < c>
+      Auto-generated entertainment?
+  
+  19:52 < libertyprime>
+      c: you literally only need to validate with 404 on the generated
+      URLs
+  
+  19:52 < libertyprime>
+      And im in the process of truthizing the return URLs.
+  
+  19:52 < libertyprime>
+      It already returns real websites. you just have to filter them.
+  
+  19:52 < b>
+      libertyprime: very interesting in some aspects!
+  
+  19:52 < libertyprime>
+      Its more than very interesting.  Its the future of web browsing.  That or
+      blockchain internet.
+  
+  19:53 < c>
+      Why would you say that it's the future of browsing?
+  
+  19:53 < libertyprime>
+      Because it doesnt restrict you.
+  
+  19:53 < c>
+      Are you suggesting that in the future we need to do even more judicious
+      filtering to find the actually interesting content?
+  
+  19:53 < libertyprime>
+      You can not only visit what you want, but you can read it in terms of your
+      favourite blogger for example.
+  
+  19:53 < b>
+      I agree, in 5-10 years, perhaps OpenAI will come up with newer and newer
+      approaches, directly changing the way we interface with the digital (and by
+      extension of which, the physical) world
+  
+  19:53 < a>
+      The web is not about intersting content.
+  
+  19:53 < c>
+      Like, TV reaching lower and lower signal-to-noise ratio and the internet by
+      extension, too?
+  
+  19:53 < libertyprime>
+      You can also browse an inferred future internet.
+  
+  19:54 < libertyprime>
+      I used it to read an interview by sam altman about gpt4.
+  
+  19:54 < libertyprime>
+      And then i tried GPT5.
+  
+  19:54 < libertyprime>
+      And it's actually quite precient.
+  
+  19:54 < c>
+      How would you know?
+  
+  19:54 < libertyprime>
+      it was interesting how it talked about transformers with infinite context.
+  
+  19:54 < b>
+      d: what I found promising was that I could feed it a long freaking
+      paragraph and it would give me results. *IF* it was working "well", it
+      would give me great results. Google cannot do this and they've been
+      training us to use fucking keywords for decades
+  
+  19:55 < libertyprime>
+      A couple days there was an arxiv paper released about
+      infinite-transformers.
+  
+  19:55 < libertyprime>
+      But the neural net im using was trained in 2019.
+  
+  19:55 < b>
+      There's also some work saying you don't need attention.
+  
+  19:56 < a>
+      2019 is not in the future.
+  
+  19:56 < b>
+      The model performed nearly as well as BERT without transformers.
+  
+  19:56 < libertyprime>
+      b: no but the technology that the imaginary article was talking
+      about it described gpt-4 in terms of future capabilities
+  
+  19:56 < libertyprime>
+      My point is a 2019 model can infer the future.
+  
+  19:56 < c>
+      I somehow suspect that the whole GPT craze is some collective mass
+      psychosis.
+  
+  19:56 < b>
+      b: do you want a neural network trained in future? Like SkyNet?
+  
+  19:56 < c>
+      Everyone's thought biases misfiring in the same way.
+  
+  19:57 < libertyprime>
+      And you are able to browse that future internet. my point that im making is
+      in response to somebody's question as to the utility of an imaginary web.
+      im describing it.
+  
+  19:57 < libertyprime>
+      By expressing that it can infer the future. and a person may want to take a
+      probabilistic peek.
+  
+  19:57 < c>
+      Where people want to see the neural net do good and only look at the good
+      outputs.
+  
+  19:57 < b>
+      d: these things keep showing us how little we know about _every
+      single thing_ and I love them for it.
+  
+  19:57 < a>
+      What did the model from 2019 infer about today?
+  
+  19:57 < c>
+      Then proclaim that they're good.
+  
+  19:57 < natter>
+      d: but what if you could talk to a machine that spoke only via ad
+      copy?
+  
+  19:57 < libertyprime>
+      I just said. that gpt-4 has infinite context. it's highly likely based on
+      the last thing i said about inifite-former.
+  
+  19:58 < b>
+      "Well we thought we knew how languages work. But alas, this odd blackbox
+      thing proves that we do not!"
+  
+  19:58 < b>
+      And so on.
+  
+  19:58 < b>
+      libertyprime: what does it mean to have infinite context?
+      https://www.youtube.com/watch?v=0JlB9gufTw8&ab_channel=YannicKilcher
+      infinite-memory former
+      It means that it has 'sticky memories'.  And very long form coherence.
+  
+  19:59 < b>
+      Memories that stick forever?!
+  
+  19:59 < b>
+      huh
+  
+  19:59 < libertyprime>
+      Infinite long-form coherence. like a person has. That sounds like an
+      advancement
+  
+  19:59 < b>
+      Did these computers not have solid state drives to store memories long
+      term?
+  
+  20:00 < libertyprime>
+      Anyway. please upvote because i dont have a marketing team.
 #+END_SRC
