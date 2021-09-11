@@ -22,8 +22,9 @@ fine as it is, just open your mind on the way
 in which people should view and interact with
 the web.
 
-- /Visit any website you can imagine, even the ones that are *not real*!/
-- Edit and re-imagine as you go!
+- Visit any website you can imagine, /even the ones that are *not real*!/
+- Edit and re-imagine as you go see alternative website realities -- change the sentiment of the author!
+- Peer into the future -- read about GPT-5!
 - Generate relevant URLs (often real, sometimes imaginary) from any text selection
 - Read an article on anything from your favourite blogger
 - ... This is the future of the web.
