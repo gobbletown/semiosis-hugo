@@ -20,6 +20,9 @@ fine as it is, just open your mind on the way
 in which people should view and interact with
 the web.
 
+-   _Visit any website you can imagine, even the ones that are **not real**!_
+-   Edit and re-imagine as you go!
+
 
 ## The Definitive Demo {#the-definitive-demo}
 
