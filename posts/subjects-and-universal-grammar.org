@@ -1,5 +1,5 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./reviews
+#+HUGO_SECTION: ./philosophy
 
 #+TITLE: Subjects and Universal Grammar
 #+DATE: <2021-05-03>
