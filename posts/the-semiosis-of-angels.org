@@ -1,10 +1,10 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./reviews
+#+HUGO_SECTION: ./philosophy
 
 #+TITLE: The Semiosis of Angels
 #+DATE: <2021-06-28>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: semiotics metaphysics
+#+KEYWORDS: semiotics metaphysics philosophy
 
 + Books in question:
   - The Semiosis of Angels by John Deely (2004) ([[https://muse.jhu.edu/article/636617/summary][PDF]])
