@@ -1,10 +1,10 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./reviews
+#+HUGO_SECTION: ./philosophy
 
 #+TITLE: Impossible Languages
 #+DATE: <2021-05-01>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: linguistics
+#+KEYWORDS: linguistics philosophy
 
 + Books in question:
   - _The Boundaries of Babel_ (The Brain and the Enigma of Impossible Languages) by Andrea Moro (2008) ([[http://library.lol/main/87E592008AEA168E31CA6AD1042ED582][PDF]])
