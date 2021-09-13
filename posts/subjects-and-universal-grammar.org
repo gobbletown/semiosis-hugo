@@ -4,6 +4,6 @@
 #+TITLE: Subjects and Universal Grammar
 #+DATE: <2021-05-03>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: linguistics
+S#+KEYWORDS: linguistics philosophy
 
 [[./subjects-and-universal-grammar.jpg]]
