@@ -16,10 +16,11 @@
             
             <guid>http://semiosis.github.io/posts/imaginary-computing/</guid>
             <description>Summary I talk about the imaginary computing paradigm based on LMs.
- prompting The act of stoking a LM to perform a generation. imagination The extrapolation of a language model&amp;rsquo;s weights via prompting. The returned results of prompting.  Prompting pretrained LMs is a way to build imaginary analogs to most software. It is for this reason, that software may be defined within only the imagination of a LM. Therefore, we have a new computing paradigm that may not be called &amp;lsquo;virtual&amp;rsquo;.</description>
+Definitions  prompting The act of stoking a LM to perform a generation. imagination The extrapolation of a language model&amp;rsquo;s weights via prompting. The returned results of prompting.  Prompting pretrained LMs is a way to build imaginary analogs to most software. It is for this reason, that software may be defined within only the imagination of a LM. Therefore, we have a new computing paradigm that may not be called &amp;lsquo;virtual&amp;rsquo;.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I talk about the imaginary computing paradigm
 based on LMs.</p>
+<h2 id="definitions">Definitions</h2>
 <dl>
 <dt>prompting</dt>
 <dd>The act of stoking a LM to perform a generation.</dd>
@@ -38,21 +39,30 @@ that may not be called &lsquo;virtual&rsquo;.</p>
 similar to or completely different from the real world. Applications of virtual
 reality include entertainment, education and business.</dd>
 </dl>
-<p>As you can see, in the above wiki definition, there is not mention of neural
+<p>As you can see, in the above wiki definition, there is no mention of neural
 networks, privacy and freedom. And there are strong indicators that virtual
 reality is something which is constructed for you. Those are all key
 differentiators to imaginary reality.</p>
 <dl>
 <dt>imaginary reality</dt>
-<dd>The distinction between this and virtual reality is that
-virtual reality isn&rsquo;t really concerned so much with Neural Networks for a
-lazily generated potential reality that is constructed as one&rsquo;s own mind
-prompts another. Also virtual reality is engineered for people to explore
-where imaginary reality is generated at will by a user and does not follow
-rules.  Imaginary reality takes place within a walled garden of a single
-mind / imagination forming around another.  The interpretation of the
-output of one mind/neural net as have been sensed and interpreted by
-another mind / Neural Network, in real time.</dd>
+<dd>One distinction between imaginary and virtual reality is that
+virtual reality isn&rsquo;t really concerned so
+much with NNs for a lazily generated
+potential reality that is constructed as
+one&rsquo;s own mind prompts another through
+will. Also virtual reality is
+distinctively shared by others and
+engineered for agents to explore.
+Imaginary reality, on the other hand, is
+generated at will by a user and does not
+follow rules, nor is typically intended to
+be shared with others. Imaginary reality
+takes place within a walled garden of a
+single mind / imagination forming around
+another. The interpretation of the output
+of one mind/neural net as having been
+sensed and interpreted by another mind /
+NN, in real time.</dd>
 <dt>pure imaginary reality</dt>
 <dd>This is one&rsquo;s personal introspective experience of
 their own imagination.</dd>
@@ -60,23 +70,32 @@ their own imagination.</dd>
 <dd>This is one&rsquo;s experience of another&rsquo;s
 imagination, whether that be another biological mind or a Neural Network.</dd>
 </dl>
+<h2 id="how-does-this-affect-pen-dot-el">How does this affect <code>Pen.el</code>?</h2>
+<p>The imaginary internet and imaginary social
+networks are becoming tangible, explorable and
+interpretable.</p>
+<p><code>Pen.el</code> aims to give humans tools to make
+sense of and interact in the imaginary
+paradigm of computing.</p>
+<p>There is a real distinction between virtual
+and imaginary which must be made very clear,
+to direct the evolution of <code>Pen.el</code> and associated projects.</p>
+<p>Part of working in a new paradigm is the
+necessity to form glossaries and ontologies
+for naming functions and tools. Metaphor
+historically has been a great tool for doing
+this.</p>
+<ul>
+<li>Cases in point:
+<ul>
+<li>Object-oriented programming</li>
+<li>Microsoft Windows</li>
+</ul>
+</li>
+</ul>
 <h2 id="imaginary-analogs">Imaginary analogs</h2>
-<p>It may be necessary to form glossaries and ontologies for the imaginary analogs
-of various fields.</p>
-<p>This is because we need ways to describe such things.</p>
 <h3 id="imaginary-society">Imaginary society</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">frustration bot
-    A conversational agent that is designed to
-    frustrate humans or other bots.</code></pre></td></tr></table>
-</div>
-</div>
+<p>Glossary:</p>
 ]]></content>
         </item>
         

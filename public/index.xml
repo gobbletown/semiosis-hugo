@@ -15,7 +15,7 @@
       
       <guid>http://semiosis.github.io/posts/imaginary-computing/</guid>
       <description>Summary I talk about the imaginary computing paradigm based on LMs.
- prompting The act of stoking a LM to perform a generation. imagination The extrapolation of a language model&amp;rsquo;s weights via prompting. The returned results of prompting.  Prompting pretrained LMs is a way to build imaginary analogs to most software. It is for this reason, that software may be defined within only the imagination of a LM. Therefore, we have a new computing paradigm that may not be called &amp;lsquo;virtual&amp;rsquo;.</description>
+Definitions  prompting The act of stoking a LM to perform a generation. imagination The extrapolation of a language model&amp;rsquo;s weights via prompting. The returned results of prompting.  Prompting pretrained LMs is a way to build imaginary analogs to most software. It is for this reason, that software may be defined within only the imagination of a LM. Therefore, we have a new computing paradigm that may not be called &amp;lsquo;virtual&amp;rsquo;.</description>
     </item>
     
     <item>
