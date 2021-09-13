@@ -2,12 +2,12 @@
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./reviews
+#+HUGO_SECTION: ./philosophy
 
 #+TITLE: Review of '[2006.03511] Unsupervised Translation of Programming Languages'
 #+DATE: <2020-06-10>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: arxiv transpilers facebook
+#+KEYWORDS: arxiv transpilers facebook philosophy
 
 + Original article :: [[https://arxiv.org/abs/2006.03511][ 2006.03511  Unsupervised Translation of Programming Languages]]
 
