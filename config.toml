@@ -63,14 +63,9 @@ unsafe= true
     url        = "/about/"
 
   [[menu.main]]
-    identifier = "reviews"
-    name       = "Reviews"
-    url        = "/reviews/"
-
-  [[menu.main]]
-    identifier = "stories"
-    name       = "Stories"
-    url        = "/stories/"
+    identifier = "philosophy"
+    name       = "PHIL"
+    url        = "/philosophy/"
 
   [[menu.main]]
     identifier = "pen"

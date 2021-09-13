@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[Shane Mulligan]">
+<meta name="description" content="Original article 2006.03511 Unsupervised Translation of Programming Languages News https://venturebeat.com/2020/06/08/facebooks-transcoder-ai-converts-code-from-one-programming-language-into-another/ Research Lample et al. Researcher Guillaume Lample Facebook AI Research glample@fb.com  Fully unsupervised neural transcompiler  Converts languages obtained from GitHub  BigQuery   unsupervised  it looks for previously undetected patterns in data sets without labels and with a minimal amount of human supervision   outperforms rule-based baselines by a “significant” margin.  Model of TransCoder   seq2seq with attention" />
+<meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://semiosis.github.io/philosophy/review-of-2006-03511-unsupervised-translation-of-programming-languages/" />
+
+
+    <title>
+        
+            Review of &#39;[2006.03511] Unsupervised Translation of Programming Languages&#39; :: semiosis  — Signs, Natural Language and Coding
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.b3603d03344d4e4bcadfbe2dec4c1efbecaf70dc3cffcccbcc15669bfb0921dc.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Review of &#39;[2006.03511] Unsupervised Translation of Programming Languages&#39;">
+<meta itemprop="description" content="Original article 2006.03511 Unsupervised Translation of Programming Languages News https://venturebeat.com/2020/06/08/facebooks-transcoder-ai-converts-code-from-one-programming-language-into-another/ Research Lample et al. Researcher Guillaume Lample Facebook AI Research glample@fb.com  Fully unsupervised neural transcompiler  Converts languages obtained from GitHub  BigQuery   unsupervised  it looks for previously undetected patterns in data sets without labels and with a minimal amount of human supervision   outperforms rule-based baselines by a “significant” margin.  Model of TransCoder   seq2seq with attention"><meta itemprop="datePublished" content="2020-06-10T00:00:00&#43;12:00" />
+<meta itemprop="dateModified" content="2020-06-10T00:00:00&#43;12:00" />
+<meta itemprop="wordCount" content="1085"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://semiosis.github.io/"/>
+
+<meta name="twitter:title" content="Review of &#39;[2006.03511] Unsupervised Translation of Programming Languages&#39;"/>
+<meta name="twitter:description" content="Original article 2006.03511 Unsupervised Translation of Programming Languages News https://venturebeat.com/2020/06/08/facebooks-transcoder-ai-converts-code-from-one-programming-language-into-another/ Research Lample et al. Researcher Guillaume Lample Facebook AI Research glample@fb.com  Fully unsupervised neural transcompiler  Converts languages obtained from GitHub  BigQuery   unsupervised  it looks for previously undetected patterns in data sets without labels and with a minimal amount of human supervision   outperforms rule-based baselines by a “significant” margin.  Model of TransCoder   seq2seq with attention"/>
+
+
+
+
+    <meta property="og:title" content="Review of &#39;[2006.03511] Unsupervised Translation of Programming Languages&#39;" />
+<meta property="og:description" content="Original article 2006.03511 Unsupervised Translation of Programming Languages News https://venturebeat.com/2020/06/08/facebooks-transcoder-ai-converts-code-from-one-programming-language-into-another/ Research Lample et al. Researcher Guillaume Lample Facebook AI Research glample@fb.com  Fully unsupervised neural transcompiler  Converts languages obtained from GitHub  BigQuery   unsupervised  it looks for previously undetected patterns in data sets without labels and with a minimal amount of human supervision   outperforms rule-based baselines by a “significant” margin.  Model of TransCoder   seq2seq with attention" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://semiosis.github.io/philosophy/review-of-2006-03511-unsupervised-translation-of-programming-languages/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="philosophy" />
+<meta property="article:published_time" content="2020-06-10T00:00:00&#43;12:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00&#43;12:00" /><meta property="og:site_name" content="semiosis" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-10 00:00:00 &#43;1200 NZST" />
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+ var _paq = window._paq = window._paq || [];
+  
+ _paq.push(['trackPageView']);
+ _paq.push(['enableLinkTracking']);
+ (function() {
+     var u="https://mullikine.matomo.cloud/";
+     _paq.push(['setTrackerUrl', u+'matomo.php']);
+     _paq.push(['setSiteId', '2']);
+     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+     g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/mullikine.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+ })();
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">semiosis</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/examplary/">Examplary</a></li><li><a href="/ii/">Imaginary Interpreter</a></li><li><a href="/ink/">Ink.el</a></li><li><a href="/ilambda/">iλ</a></li><li><a href="/pen/">Pen.el</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/stories/">Stories</a></li><li><a href="/looking-glass/">🔍</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://semiosis.github.io/philosophy/review-of-2006-03511-unsupervised-translation-of-programming-languages/">Review of &lsquo;[2006.03511] Unsupervised Translation of Programming Languages&rsquo;</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <dl>
+<dt>Original article</dt>
+<dd><a href="https://arxiv.org/abs/2006.03511"> 2006.03511  Unsupervised Translation of Programming Languages</a></dd>
+<dt>News</dt>
+<dd><a href="https://venturebeat.com/2020/06/08/facebooks-transcoder-ai-converts-code-from-one-programming-language-into-another/">https://venturebeat.com/2020/06/08/facebooks-transcoder-ai-converts-code-from-one-programming-language-into-another/</a></dd>
+<dt>Research</dt>
+<dd>Lample et al.</dd>
+<dt>Researcher</dt>
+<dd>Guillaume Lample <br />
+Facebook AI Research <br />
+<a href="mailto:glample@fb.com">glample@fb.com</a></dd>
+</dl>
+<h2 id="fully-unsupervised-neural-transcompiler">Fully unsupervised neural transcompiler</h2>
+<ul>
+<li>Converts languages obtained from GitHub
+<ul>
+<li>BigQuery</li>
+</ul>
+</li>
+<li>unsupervised
+<ul>
+<li>it looks for previously undetected patterns in data sets without
+labels and with a minimal amount of human supervision</li>
+</ul>
+</li>
+<li>outperforms rule-based baselines by a “significant” margin.</li>
+</ul>
+<h3 id="model-of-transcoder">Model of <code>TransCoder</code></h3>
+<ul>
+<li>
+<p><code>seq2seq</code> with attention</p>
+<ul>
+<li>composed of
+<ul>
+<li>encoder</li>
+<li>decoder</li>
+<li>transformer architecture</li>
+</ul>
+</li>
+<li>the same model is used for all programming languages.</li>
+</ul>
+</li>
+<li>
+<p>Trained using the three principles of unsupervised machine translation</p>
+<ul>
+<li>initialization,</li>
+<li>LMing, and</li>
+<li>back-translation.</li>
+</ul>
+</li>
+</ul>
+<p>In this section, we summarize these principles
+and detail how we instantiate them to
+translate programming languages.</p>
+<h3 id="cross-programming-language-model-pretraining">Cross Programming Language Model pretraining</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Pretraining
+    A key ingredient of unsupervised machine
+    translation.
+
+    It ensures that sequences with a similar
+    meaning are mapped to the same latent
+    representation, regardless of their
+    languages.</code></pre></td></tr></table>
+</div>
+</div>
+<p>Originally, pretraining was done by
+initializing the model with cross-lingual word
+representations.</p>
+<p>In the context of unsupervised English-French
+translation, the embedding of the word &ldquo;cat&rdquo;
+will be close to the embedding of its French
+translation &ldquo;chat&rdquo;.</p>
+<p>Cross-lingual word embeddings can be obtained
+by training monolingual word embeddings and
+aligning them in an unsupervised manner.</p>
+<p>Subsequent work showed that pretraining
+the entire model (and not only word
+representations) in a cross-lingual way could
+lead to significant improvements in
+unsupervised machine translation.</p>
+<h3 id="the-pretraining-strategy-of-lample-and-conneau">The pretraining strategy of Lample and Conneau</h3>
+<p>In particular, we follow the pretraining
+strategy of Lample and Conneau, where a XLM
+is pretrained with a masked LMing objective on
+monolingual source code datasets.</p>
+<dl>
+<dt>First principle: initialization</dt>
+<dd>The first principle initializes the model with <br />
+cross-lingual masked LM pretraining. <br />
+<p>As a result, pieces of code that express the <br />
+same instructions are mapped to the same <br />
+representation, regardless of the programming <br />
+language.</p>
+</dd>
+<dt>Second principle: denoising</dt>
+<dd>Train the decoder to always generate valid <br />
+sequences, even when fed with noisy data, and <br />
+increases the encoder robustness to input <br />
+noise.</dd>
+<dt>Third (and last) principle: back-translation</dt>
+<dd>Allows the model to generate parallel data <br />
+which can be used for training. <br />
+<p>Whenever the Python C++ model becomes better, <br />
+it generates more accurate data for the C++ <br />
+Python model, and vice versa.</p>
+</dd>
+</dl>
+<blockquote>
+<p>We obtain cross-lingual embeddings after training.</p>
+</blockquote>
+<p>The cross-lingual nature of the resulting
+model comes from the significant number of
+common tokens (anchor points) that exist
+across languages.</p>
+<p>In the context of English-French translation,
+the anchor points consists essentially of
+digits and city and people names.</p>
+<p>In programming languages, these anchor points
+come from common keywords (e.g. for, while,
+if, try), and also digits, mathematical
+operators, and English strings that appear in
+the source code.</p>
+<p>For the masked LMing (MLM) objective, at each
+iteration we consider an input stream of
+source code sequences, randomly mask out some
+of the tokens, and train TransCoder to predict
+the tokens that have been masked out based on
+their contexts.</p>
+<p>We alternate between streams of batches of
+different languages.</p>
+<p>This allows the model to create high quality,
+cross-lingual sequence representations.</p>
+<p><span class="underline"><strong>Denoising auto-encoding</strong></span></p>
+<p>We initialize the encoder and decoder of the
+seq2seq model with the XLM model that was pretrained.</p>
+<p>The initialization is straightforward for the
+encoder, as it has the same architecture as
+the XLM model.</p>
+<p>The transformer decoder, however, has extra
+parameters related to the source attention
+mechanism .</p>
+<p>Following Lample and Conneau, we initialize
+these parameters randomly.</p>
+<dl>
+<dt>XLM pretraining</dt>
+<dd>allows the <code>seq2seq</code> model to <br />
+generate high quality representations of input <br />
+sequences.</dd>
+</dl>
+<p>However, the decoder lacks the capacity to
+translate, as it has never been trained to
+decode a sequence based on a source
+representation.</p>
+<p>To address this issue, we train the model to
+encode and decode sequences with a <code>Denoising Auto-Encoding (DAE)</code> objective .</p>
+<p>The <code>DAE</code> objective operates like a supervised
+machine translation algorithm, where the model
+is trained to predict a sequence of tokens
+given a corrupted version of that sequence.</p>
+<p>To corrupt a sequence, we use the same noise
+model as the one described in Lample et al. .</p>
+<p>Namely, we randomly mask, remove and shuffle
+input tokens.</p>
+<p>In practice, the &ldquo;cross-linguality&rdquo; of the
+model highly depends on the amount of anchor
+points across languages.</p>
+<p>As a result, a XLM model trained on English-
+French will provide better cross-lingual
+representations than a model trained on
+English-Chinese, because of the different
+alphabet which reduces the number of anchor
+points.</p>
+<p>In programming languages, the majority of
+strings are composed of English words, which
+results in a fairly high number of anchor
+points, and the model naturally becomes cross-
+lingual.</p>
+<h2 id="arxiv-summary">Arxiv Summary</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">A transcompiler, also known as source-to-
+source translator, is a system that converts
+source code from a high-level programming
+language (such as C++ or Python) to another.
+
+Transcompilers are primarily used for
+interoperability, and to port codebases
+written in an obsolete or deprecated language
+(e.g. COBOL, Python 2) to a modern one.
+
+They typically rely on handcrafted rewrite
+rules, applied to the source code abstract
+syntax tree.
+
+Unfortunately, the resulting translations
+often lack readability, fail to respect the
+target language conventions, and require
+manual modifications in order to work
+properly.
+
+The overall translation process is
+timeconsuming and requires expertise in both
+the source and target languages, making code-
+translation projects expensive.
+
+Although neural models significantly
+outperform their rule-based counterparts in
+the context of NL translation, their
+applications to transcompilation have been
+limited due to the scarcity of parallel data
+in this domain.
+
+In this paper, we propose to leverage recent
+approaches in unsupervised machine translation
+to train a fully unsupervised neural
+transcompiler.
+
+We train our model on source code from open
+source GitHub projects, and show that it can
+translate functions between C++, Java, and
+Python with high accuracy.
+
+Our method relies exclusively on monolingual
+source code, requires no expertise in the
+source or target languages, and can easily be
+generalized to other programming languages.
+
+We also build and release a test set composed
+of 852 parallel functions, along with unit
+tests to check the correctness of
+translations.
+
+We show that our model outperforms rule-based
+commercial baselines by a significant margin.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="gpt-3-summary-of-arxiv-summary">GPT-3 summary of Arxiv summary</h2>
+<p>We train a neural transcompiler using
+monolingual source code from GitHub, and show
+that it can translate functions between C++,
+Java, and Python with high accuracy.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span>Visit <a href="https://github.com/semiosis"><image src="/New_Zealand_Simplified.svg" style="display:inline-block; line-height:2em; vertical-align:middle; height: 2em;" /> semiosis on GitHub</a></span>
+
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+
+
+
+    </body>
+</html>

@@ -167,16 +167,13 @@
     <loc>http://semiosis.github.io/posts/pen/</loc>
     <lastmod>2021-07-02T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/stories/</loc>
+    <loc>http://semiosis.github.io/philosophy/</loc>
     <lastmod>2021-06-29T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/stories/tomatobear-story/</loc>
+    <loc>http://semiosis.github.io/philosophy/tomatobear-story/</loc>
     <lastmod>2021-06-29T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/reviews/</loc>
-    <lastmod>2021-06-28T00:00:00+12:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/reviews/the-semiosis-of-angels/</loc>
+    <loc>http://semiosis.github.io/philosophy/the-semiosis-of-angels/</loc>
     <lastmod>2021-06-28T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/representing-multiverses-with-datomic/</loc>
@@ -197,13 +194,13 @@
     <loc>http://semiosis.github.io/posts/network-exploration-with-nmap-and-emacs/</loc>
     <lastmod>2021-05-05T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/reviews/subjects-and-universal-grammar/</loc>
+    <loc>http://semiosis.github.io/philosophy/subjects-and-universal-grammar/</loc>
     <lastmod>2021-05-03T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/reviews/the-basics-of-semiotics/</loc>
+    <loc>http://semiosis.github.io/philosophy/the-basics-of-semiotics/</loc>
     <lastmod>2021-05-01T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/reviews/impossible-languages/</loc>
+    <loc>http://semiosis.github.io/philosophy/impossible-languages/</loc>
     <lastmod>2021-05-01T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/tmux-integrated-gpt-3-stack-exchange-and-google-code-help/</loc>
@@ -212,7 +209,7 @@
     <loc>http://semiosis.github.io/posts/auto-suggest-tooling-to-handle-ports-on-a-network/</loc>
     <lastmod>2021-04-30T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/reviews/prolog-and-natural-language-analysis/</loc>
+    <loc>http://semiosis.github.io/philosophy/prolog-and-natural-language-analysis/</loc>
     <lastmod>2021-04-30T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/zero-shot-nlp-in-clojure/</loc>
@@ -293,7 +290,7 @@
     <loc>http://semiosis.github.io/posts/openai-api-for-nlp/</loc>
     <lastmod>2020-06-12T00:00:00+12:00</lastmod>
   </url><url>
-    <loc>http://semiosis.github.io/reviews/review-of-2006-03511-unsupervised-translation-of-programming-languages/</loc>
+    <loc>http://semiosis.github.io/philosophy/review-of-2006-03511-unsupervised-translation-of-programming-languages/</loc>
     <lastmod>2020-06-10T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/setting-up-lsp-with-emacs-attempt-2/</loc>
