@@ -1,10 +1,10 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./reviews
+#+HUGO_SECTION: ./philosophy
 
 #+TITLE: Basics of Semiotics
 #+DATE: <2021-05-01>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: linguistics semiotics
+#+KEYWORDS: linguistics semiotics philosophy
 
 + Books in question:
 - _Basics of Semiotics Advances in Semiotics_ by John N. Deely ([[http://library.lol/main/76679C58CDB995642645E25913B4E93F][PDF]])
