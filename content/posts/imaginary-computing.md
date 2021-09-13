@@ -1,21 +1,22 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Imaginary computing and virtual reality"
+author = ["Shane Mulligan"]
+date = 2021-09-13T00:00:00+12:00
+keywords = ["gpt", "openai", "nlp", "imaginary"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+## Summary {#summary}
 
-#+TITLE: Imaginary computing and virtual reality
-#+DATE: <2021-09-13>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt openai nlp imaginary
-
-** Summary
 I talk about the imaginary computing paradigm
 based on LMs.
 
-+ prompting :: The act of stoking a LM to perform a generation.
+prompting
+: The act of stoking a LM to perform a generation.
 
-+ imagination :: The extrapolation of a language model's weights via prompting. The returned results of prompting.
+
+imagination
+: The extrapolation of a language model's weights via prompting. The returned results of prompting.
 
 Prompting pretrained LMs is a way to build
 imaginary analogs to most software. It is for
@@ -24,7 +25,8 @@ within only the imagination of a LM.
 Therefore, we have a new computing paradigm
 that may not be called 'virtual'.
 
-+ virtual reality (wiki definition) :: A simulated experience that can be
+virtual reality (wiki definition)
+: A simulated experience that can be
     similar to or completely different from the real world. Applications of virtual
     reality include entertainment, education and business.
 
@@ -33,7 +35,8 @@ networks, privacy and freedom. And there are strong indicators that virtual
 reality is something which is constructed for you. Those are all key
 differentiators to imaginary reality.
 
-+ imaginary reality :: The distinction between this and virtual reality is that
+imaginary reality
+: The distinction between this and virtual reality is that
     virtual reality isn't really concerned so much with Neural Networks for a
     lazily generated potential reality that is constructed as one's own mind
     prompts another. Also virtual reality is engineered for people to explore
@@ -43,21 +46,29 @@ differentiators to imaginary reality.
     output of one mind/neural net as have been sensed and interpreted by
     another mind / Neural Network, in real time.
 
-+ pure imaginary reality :: This is one's personal introspective experience of
+
+pure imaginary reality
+: This is one's personal introspective experience of
     their own imagination.
 
-+ impure imaginary reality :: This is one's experience of another's
+
+impure imaginary reality
+: This is one's experience of another's
     imagination, whether that be another biological mind or a Neural Network.
 
-** Imaginary analogs
+
+## Imaginary analogs {#imaginary-analogs}
+
 It may be necessary to form glossaries and ontologies for the imaginary analogs
 of various fields.
 
 This is because we need ways to describe such things.
 
-*** Imaginary society
-#+BEGIN_SRC text -n :async :results verbatim code
-  frustration bot
-      A conversational agent that is designed to
-      frustrate humans or other bots.
-#+END_SRC
+
+### Imaginary society {#imaginary-society}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+frustration bot
+    A conversational agent that is designed to
+    frustrate humans or other bots.
+{{< /highlight >}}

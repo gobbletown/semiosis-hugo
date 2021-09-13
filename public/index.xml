@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 12 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imaginary computing and virtual reality</title>
+      <link>http://semiosis.github.io/posts/imaginary-computing/</link>
+      <pubDate>Mon, 13 Sep 2021 00:00:00 +1200</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/imaginary-computing/</guid>
+      <description>Summary I talk about the imaginary computing paradigm based on LMs.
+ prompting The act of stoking a LM to perform a generation. imagination The extrapolation of a language model&amp;rsquo;s weights via prompting. The returned results of prompting.  Prompting pretrained LMs is a way to build imaginary analogs to most software. It is for this reason, that software may be defined within only the imagination of a LM. Therefore, we have a new computing paradigm that may not be called &amp;lsquo;virtual&amp;rsquo;.</description>
+    </item>
+    
     <item>
       <title>Your Imagination</title>
       <link>http://semiosis.github.io/posts/your-imagination/</link>
