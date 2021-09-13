@@ -1,5 +1,5 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./reviews
+#+HUGO_SECTION: ./philosophy
 
 #+TITLE: Prolog and Natural-Language Analysis
 #+DATE: <2021-04-30>
