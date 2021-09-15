@@ -76,7 +76,7 @@ resurrection and victory.
 {{< figure src="/ox-hugo/sign-earth.jpg" >}}
 
 
-## Opposing converse with line through the middle To mix {#opposing-converse-with-line-through-the-middle-to-mix}
+## Opposing convex arcs with line through the middle - To mix {#opposing-convex-arcs-with-line-through-the-middle-to-mix}
 
 {{< figure src="/ox-hugo/sign-mix.jpg" >}}
 
