@@ -25,6 +25,11 @@ particularly exciting.
       language models.
 #+END_SRC
 
+- ouroboros
+- chimera
+- hydra
+- phoenix
+
 ** ouroboros
 Ouroboros, emblematic serpent of ancient Egypt
 and Greece represented with its tail in its
