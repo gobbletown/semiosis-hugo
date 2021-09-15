@@ -44,6 +44,35 @@ It's the end of a cycle (autumn?) regarding the death
 and resurrection of Christ.
 Earth is in autumn. _Something_ is to mix.
 
+I drew the symbols when i created my blog, but
+i just made them up on the spot.
+
+I was in the library today and it felt good to
+go to the linguistics section, so i pulled out
+some books and found this one.
+
+Then for interest's sake I decided to try to
+interpret the signs from the first book I
+picked out as if they meant something but I
+also believe we are very close to having AGIs
+and our realities will be pushed into the
+imaginations of both ourselves and of AGIs.
+
+The final symbol is a `hapax legomenon`.
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+hapax legomenon
+hapax
+hapaxes
+    A word or an expression that occurs only
+    once within a context: either in the
+    written record of an entire language, in
+    the works of an author, or in a single
+    text.
+
+    Literally, it means "being said once".
+{{< /highlight >}}
+
 
 ## The Solar eclipse - The end of a cycle {#the-solar-eclipse-the-end-of-a-cycle}
 
