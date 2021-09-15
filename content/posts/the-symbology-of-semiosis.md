@@ -25,6 +25,11 @@ IP
     language models.
 {{< /highlight >}}
 
+-   ouroboros
+-   chimera
+-   hydra
+-   phoenix
+
 
 ## ouroboros {#ouroboros}
 
