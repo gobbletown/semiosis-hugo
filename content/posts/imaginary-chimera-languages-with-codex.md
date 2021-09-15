@@ -2,7 +2,7 @@
 title = "Imaginary chimeric languages with Codex"
 author = ["Shane Mulligan"]
 date = 2021-09-07T00:00:00+12:00
-keywords = ["codex", "pen", "gpt", "imaginary-programming"]
+keywords = ["codex", "pen", "gpt", "imaginary-programming", "symbology"]
 draft = false
 +++
 

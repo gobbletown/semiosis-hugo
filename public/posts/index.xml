@@ -27469,6 +27469,265 @@ XLM pretraining
         </item>
         
         <item>
+            <title>Hydra - CI and release management for NixOS</title>
+            <link>http://semiosis.github.io/posts/nix-hydra-ci/</link>
+            <pubDate>Thu, 09 Jan 2020 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/nix-hydra-ci/</guid>
+            <description>Original article https://nixos.org/hydra/manual/   1 2 3 4  big bang integration The phenomenon where components are only tested together near the end of the development process.   Background Continuous Integration An automated system continuously or periodically:
+ check out the source code of a project, build it, run tests, and produce reports for the developers.  CI Tools enable Lenthy tests Many projects have very large test sets (e.</description>
+            <content type="html"><![CDATA[<dl>
+<dt>Original article</dt>
+<dd><a href="https://nixos.org/hydra/manual/">https://nixos.org/hydra/manual/</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">big bang integration
+    The phenomenon where components are only
+    tested together near the end of the
+    development process.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="background">Background</h2>
+<h3 id="continuous-integration">Continuous Integration</h3>
+<p>An automated system continuously or
+periodically:</p>
+<ul>
+<li>check out the source code of a project,</li>
+<li>build it,</li>
+<li>run tests, and</li>
+<li>produce reports for the developers.</li>
+</ul>
+<h3 id="ci-tools-enable">CI Tools enable</h3>
+<h4 id="lenthy-tests">Lenthy tests</h4>
+<p>Many projects have very large test sets (e.g.,
+regression tests in a compiler, or stress
+tests in a DBMS) that can take hours or days
+to run to completion.</p>
+<h4 id="tests-may-include-many-types-of-analysis">Tests may include many types of analysis</h4>
+<p>Many kinds of static and dynamic analyses can
+be performed as part of the tests, such as
+code coverage runs and static analyses.</p>
+<h4 id="build-many-variants">Build many variants</h4>
+<p>It may also be necessary to build many
+different variants of the software.</p>
+<p>For instance, it may be necessary to verify
+that the component builds with various
+versions of a compiler.</p>
+<h4 id="deterministic-incremental-building">Deterministic incremental building</h4>
+<p>Developers typically use incremental building
+to test their changes (since a full build may
+take too long), but this is unreliable with
+many build management tools (such as Make),
+i.e., the result of the incremental build
+might differ from a full build.</p>
+<h4 id="assurance-for-building-from-vcs">Assurance for building from VCS</h4>
+<p>It ensures that the software can be built from
+the sources under revision control.</p>
+<p>Users of version management systems such as
+CVS and Subversion often forget to place
+source files under revision control.</p>
+<h4 id="clean-builds">Clean builds</h4>
+<p>The machines on which the CI system runs
+ideally provides a clean, well-defined build
+environment.</p>
+<p>If this environment is administered through
+proper SCM techniques, then builds produced by
+the system can be reproduced.</p>
+<p>In contrast, developer work environments are
+typically not under any kind of SCM control.</p>
+<h4 id="test-combinations-as-soon-as-possible">Test combinations as soon as possible</h4>
+<p>In large projects, developers often work on a
+particular component of the project, and do
+not build and test the composition of those
+components (again since this is likely to take
+too long).</p>
+<p>To prevent &ldquo;big bang integration&rdquo;, it is
+important to test components together as soon
+as possible (hence CI).</p>
+<h4 id="automatic-software-release">Automatic software release</h4>
+<p>It allows software to be released by
+automatically creating packages that users can
+download and install.</p>
+<p>To do this manually represents an often
+prohibitive amount of work, as one may want to
+produce releases for many different platforms:
+e.g., installers for Windows and Mac OS X, RPM
+or Debian packages for certain Linux
+distributions, and so on.</p>
+<h2 id="limitations-of-traditional-ci-tools">Limitations of traditional CI tools</h2>
+<p>Examples of CI tools include:</p>
+<ul>
+<li>Jenkins,</li>
+<li>CruiseControl Tinderbox,</li>
+<li>Sisyphus,</li>
+<li>Anthill and</li>
+<li>BuildBot.</li>
+</ul>
+<p>These tools have the following limitations.:</p>
+<h3 id="they-do-not-manage-the-build-environment">They do not manage the build environment</h3>
+<p>The build environment consists of the
+dependencies necessary to perform a build
+action, e.g., compilers, libraries, etc.</p>
+<p>Setting up the environment is typically done
+manually, and without proper SCM control (so
+it may be hard to reproduce a build at a later
+time).</p>
+<p>Manual management of the environment scales
+poorly in the number of configurations that
+must be supported.</p>
+<p>For instance, suppose that we want to build a
+component that requires a certain compiler X.</p>
+<p>We then have to go to each machine and install
+X.</p>
+<p>If we later need a newer version of X, the
+process must be repeated all over again.</p>
+<p>An ever worse problem occurs if there are
+conflicting, mutually exclusive versions of
+the dependencies.</p>
+<p>Thus, simply installing the latest version is
+not an option.</p>
+<p>Of course, we can install these components in
+different directories and manually pass the
+appropriate paths to the build processes of
+the various components.</p>
+<p>But this is a rather tiresome and error-prone
+process.</p>
+<h3 id="they-do-not-easily-support-variability-in-software-systems">They do not easily support variability in software systems</h3>
+<p>A system may have a great deal of build-time
+variability: optional functionality, whether
+to build a debug or production version,
+different versions of dependencies, and so on.</p>
+<p>(For instance, the Linux kernel now has over
+2,600 build-time configuration switches.)</p>
+<p>It is therefore important that a CI tool can
+easily select and test different instances
+from the configuration space of the system to
+reveal problems, such as erroneous
+interactions between features.</p>
+<p>In a CI setting, it is also useful to test
+different combinations of versions of
+subsystems, e.g., the head revision of a
+component against stable releases of its
+dependencies, and vice versa, as this can
+reveal various integration problems.</p>
+<h2 id="hydra">Hydra</h2>
+<p>A CI tool that solves the above problems.</p>
+<p>It is built on the <code>Nix</code> <span class="underline"><strong>package manager</strong></span>.</p>
+<ul>
+<li>The build environment for projects is produced automatically and
+deterministically, and</li>
+<li>variability in components to be expressed naturally using functions;
+and as such is an ideal fit for a continuous build system.</li>
+</ul>
+<h2 id="glossary">Glossary</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Portability testing
+    Software may need to be built and tested
+    on many different platforms.
+
+    It is infeasible for each developer to do
+    this before every commit.
+
+Hydra
+    [CI testing and software release tool]
+
+    [#Nix]
+    [#Nix language]
+    [#CI]
+
+    A Nix-based continuous build system,
+    released under the terms of the GNU GPLv3
+    or (at your option) any later version.
+
+    It continuously checks out sources of
+    software projects from version management
+    systems to build, test and release them.
+
+    Uses a purely functional language to
+    describe build jobs and their
+    dependencies.
+
+    The build tasks are described using Nix
+    expressions.
+
+    This allows a Hydra build task to specify
+    all the dependencies needed to build or
+    test a project.
+
+    It supports a number of operating systems,
+    such as various GNU/Linux flavours, Mac OS
+    X, and Windows.
+
+    Example:
+        At Delft University of Technology we
+        run a Hydra-based build farm to build
+        and test the NixOS GNU/Linux
+        distribution, the Nix Packages
+        collection, the Stratego/XT program
+        transformation system, and various
+        other open source projects.</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Setting up LSP with emacs (Go, Java, Python, Rust, C&#43;&#43;, Haskell, JS, TS, Ruby…)</title>
             <link>http://semiosis.github.io/posts/setting-up-lsp-with-emacs-attempt-2/</link>
             <pubDate>Thu, 05 Dec 2019 00:00:00 +1300</pubDate>

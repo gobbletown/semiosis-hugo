@@ -1,45 +1,58 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Hydra - CI and release management for NixOS"
+author = ["Shane Mulligan"]
+date = 2020-01-09T00:00:00+13:00
+keywords = ["nix", "ci", "release", "testing", "hydra"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+Original article
+: <https://nixos.org/hydra/manual/>
 
-#+TITLE: Hydra - CI and release management for NixOS
-#+DATE: <2020-01-09>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: nix ci release testing hydra
+<!--listend-->
 
-+ Original article :: https://nixos.org/hydra/manual/
+{{< highlight text "linenos=table, linenostart=1" >}}
+big bang integration
+    The phenomenon where components are only
+    tested together near the end of the
+    development process.
+{{< /highlight >}}
 
-#+BEGIN_SRC text -n :async :results verbatim code
-  big bang integration
-      The phenomenon where components are only
-      tested together near the end of the
-      development process.
-#+END_SRC
 
-** Background
-*** Continuous Integration
+## Background {#background}
+
+
+### Continuous Integration {#continuous-integration}
+
 An automated system continuously or
 periodically:
-- check out the source code of a project,
-- build it,
-- run tests, and
-- produce reports for the developers.
 
-*** CI Tools enable
-**** Lenthy tests
+-   check out the source code of a project,
+-   build it,
+-   run tests, and
+-   produce reports for the developers.
+
+
+### CI Tools enable {#ci-tools-enable}
+
+
+#### Lenthy tests {#lenthy-tests}
+
 Many projects have very large test sets (e.g.,
 regression tests in a compiler, or stress
 tests in a DBMS) that can take hours or days
 to run to completion.
 
-**** Tests may include many types of analysis
+
+#### Tests may include many types of analysis {#tests-may-include-many-types-of-analysis}
+
 Many kinds of static and dynamic analyses can
 be performed as part of the tests, such as
 code coverage runs and static analyses.
 
-**** Build many variants
+
+#### Build many variants {#build-many-variants}
+
 It may also be necessary to build many
 different variants of the software.
 
@@ -47,7 +60,9 @@ For instance, it may be necessary to verify
 that the component builds with various
 versions of a compiler.
 
-**** Deterministic incremental building
+
+#### Deterministic incremental building {#deterministic-incremental-building}
+
 Developers typically use incremental building
 to test their changes (since a full build may
 take too long), but this is unreliable with
@@ -55,7 +70,9 @@ many build management tools (such as Make),
 i.e., the result of the incremental build
 might differ from a full build.
 
-**** Assurance for building from VCS
+
+#### Assurance for building from VCS {#assurance-for-building-from-vcs}
+
 It ensures that the software can be built from
 the sources under revision control.
 
@@ -63,7 +80,9 @@ Users of version management systems such as
 CVS and Subversion often forget to place
 source files under revision control.
 
-**** Clean builds
+
+#### Clean builds {#clean-builds}
+
 The machines on which the CI system runs
 ideally provides a clean, well-defined build
 environment.
@@ -75,7 +94,9 @@ the system can be reproduced.
 In contrast, developer work environments are
 typically not under any kind of SCM control.
 
-**** Test combinations as soon as possible
+
+#### Test combinations as soon as possible {#test-combinations-as-soon-as-possible}
+
 In large projects, developers often work on a
 particular component of the project, and do
 not build and test the composition of those
@@ -86,7 +107,9 @@ To prevent "big bang integration", it is
 important to test components together as soon
 as possible (hence CI).
 
-**** Automatic software release
+
+#### Automatic software release {#automatic-software-release}
+
 It allows software to be released by
 automatically creating packages that users can
 download and install.
@@ -98,17 +121,22 @@ e.g., installers for Windows and Mac OS X, RPM
 or Debian packages for certain Linux
 distributions, and so on.
 
-** Limitations of traditional CI tools
+
+## Limitations of traditional CI tools {#limitations-of-traditional-ci-tools}
+
 Examples of CI tools include:
-- Jenkins,
-- CruiseControl Tinderbox,
-- Sisyphus,
-- Anthill and
-- BuildBot.
+
+-   Jenkins,
+-   CruiseControl Tinderbox,
+-   Sisyphus,
+-   Anthill and
+-   BuildBot.
 
 These tools have the following limitations.:
 
-*** They do not manage the build environment
+
+### They do not manage the build environment {#they-do-not-manage-the-build-environment}
+
 The build environment consists of the
 dependencies necessary to perform a build
 action, e.g., compilers, libraries, etc.
@@ -144,9 +172,11 @@ appropriate paths to the build processes of
 the various components.
 
 But this is a rather tiresome and error-prone
-process. 
+process.
 
-*** They do not easily support variability in software systems
+
+### They do not easily support variability in software systems {#they-do-not-easily-support-variability-in-software-systems}
+
 A system may have a great deal of build-time
 variability: optional functionality, whether
 to build a debug or production version,
@@ -166,63 +196,67 @@ different combinations of versions of
 subsystems, e.g., the head revision of a
 component against stable releases of its
 dependencies, and vice versa, as this can
-reveal various integration problems. 
+reveal various integration problems.
 
-** Hydra
+
+## Hydra {#hydra}
+
 A CI tool that solves the above problems.
 
-It is built on the =Nix= _*package manager*_.
+It is built on the `Nix` <span class="underline">**package manager**</span>.
 
-- The build environment for projects is produced automatically and
-  deterministically, and
-- variability in components to be expressed naturally using functions;
-  and as such is an ideal fit for a continuous build system. 
+-   The build environment for projects is produced automatically and
+    deterministically, and
+-   variability in components to be expressed naturally using functions;
+    and as such is an ideal fit for a continuous build system.
 
-** Glossary
-#+BEGIN_SRC text -n :async :results verbatim code
-  Portability testing
-      Software may need to be built and tested
-      on many different platforms.
 
-      It is infeasible for each developer to do
-      this before every commit.
+## Glossary {#glossary}
 
-  Hydra
-      [CI testing and software release tool]
+{{< highlight text "linenos=table, linenostart=1" >}}
+Portability testing
+    Software may need to be built and tested
+    on many different platforms.
 
-      [#Nix]
-      [#Nix language]
-      [#CI]
+    It is infeasible for each developer to do
+    this before every commit.
 
-      A Nix-based continuous build system,
-      released under the terms of the GNU GPLv3
-      or (at your option) any later version.
+Hydra
+    [CI testing and software release tool]
 
-      It continuously checks out sources of
-      software projects from version management
-      systems to build, test and release them.
+    [#Nix]
+    [#Nix language]
+    [#CI]
 
-      Uses a purely functional language to
-      describe build jobs and their
-      dependencies.
+    A Nix-based continuous build system,
+    released under the terms of the GNU GPLv3
+    or (at your option) any later version.
 
-      The build tasks are described using Nix
-      expressions.
+    It continuously checks out sources of
+    software projects from version management
+    systems to build, test and release them.
 
-      This allows a Hydra build task to specify
-      all the dependencies needed to build or
-      test a project.
+    Uses a purely functional language to
+    describe build jobs and their
+    dependencies.
 
-      It supports a number of operating systems,
-      such as various GNU/Linux flavours, Mac OS
-      X, and Windows.
+    The build tasks are described using Nix
+    expressions.
 
-      Example:
-          At Delft University of Technology we
-          run a Hydra-based build farm to build
-          and test the NixOS GNU/Linux
-          distribution, the Nix Packages
-          collection, the Stratego/XT program
-          transformation system, and various
-          other open source projects.
-#+END_SRC
+    This allows a Hydra build task to specify
+    all the dependencies needed to build or
+    test a project.
+
+    It supports a number of operating systems,
+    such as various GNU/Linux flavours, Mac OS
+    X, and Windows.
+
+    Example:
+        At Delft University of Technology we
+        run a Hydra-based build farm to build
+        and test the NixOS GNU/Linux
+        distribution, the Nix Packages
+        collection, the Stratego/XT program
+        transformation system, and various
+        other open source projects.
+{{< /highlight >}}

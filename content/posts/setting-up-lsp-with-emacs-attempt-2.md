@@ -2,7 +2,7 @@
 title = "Setting up LSP with emacs (Go, Java, Python, Rust, C++, Haskell, JS, TS, Ruby…)"
 author = ["Shane Mulligan"]
 date = 2019-12-05T00:00:00+13:00
-keywords = ["emacs", "LSP", "cpp", "rust", "Python", "tooling"]
+keywords = ["emacs", "LSP", "cpp", "rust", "python", "tooling", "hydra"]
 draft = false
 +++
 
