@@ -9,7 +9,7 @@
 #+TITLE: Setting up LSP with emacs (Go, Java, Python, Rust, C++, Haskell, JS, TS, Ruby...)
 #+DATE: <2019-12-05>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: emacs LSP cpp rust Python tooling
+#+KEYWORDS: emacs LSP cpp rust python tooling hydra
 
 # #+DATE: <2019-10-30>
 
