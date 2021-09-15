@@ -31,7 +31,7 @@ interesting one at that.
     the death of Jesus while the second cross
     bar represents his resurrection and victory.
 
-    -   Up-down arrow. Time (Germanic)
+    -   Up-down arrow. Autumn
 
     -   `#` with square around it
 
@@ -42,14 +42,21 @@ interesting one at that.
 {{< figure src="/ox-hugo/semiosis-logo.png" >}}
 
 
-## Solar eclipse {#solar-eclipse}
+### Interpretation {#interpretation}
+
+It's the end of a cycle.
+Earth is in Autumn.
+_Something_ is to mix.
+
+
+## The Solar eclipse - The end of a cycle {#the-solar-eclipse-the-end-of-a-cycle}
 
 {{< figure src="/ox-hugo/solar-eclipse.jpg" >}}
 
 The end of a cycle.
 
 
-## Cross of Lorraine {#cross-of-lorraine}
+## The Cross of Lorraine - Death and Resurrection {#the-cross-of-lorraine-death-and-resurrection}
 
 The Cross of Lorraine, known as Cross of Anjou
 in the 16th century, is a heraldic two-barred
@@ -63,19 +70,19 @@ while the second cross bar represents his
 resurrection and victory.
 
 
-## Time {#time}
+## The double vertical arrow - Autumn {#the-double-vertical-arrow-autumn}
 
 {{< figure src="/ox-hugo/sign-time.jpg" >}}
 
 
-## The Earth {#the-earth}
+## Circle with inner cross - The Earth {#circle-with-inner-cross-the-earth}
 
 {{< figure src="/ox-hugo/sign-earth.jpg" >}}
 
 
-## To mix {#to-mix}
+## Opposing converse with line through the middle To mix {#opposing-converse-with-line-through-the-middle-to-mix}
 
 {{< figure src="/ox-hugo/sign-mix.jpg" >}}
 
 
-##  {#}
+## Double crosshatch square - {#double-crosshatch-square}
