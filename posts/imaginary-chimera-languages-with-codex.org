@@ -12,6 +12,29 @@
 ** Summary
 I explore some imaginary chimeric languages with Codex.
 
+#+BEGIN_SRC text -n :async :results verbatim code
+  The Chimera
+  Chimaera
+      According to Greek mythology, was a
+      monstrous fire-breathing hybrid creature
+      of Lycia in Asia Minor, composed of the
+      parts of more than one animal.
+
+      It is usually depicted as a lion, with the
+      head of a goat protruding from its back,
+      and a tail that might end with a snake's
+      head.
+
+      The term "chimera" has come to describe
+      any mythical or fictional creature with
+      parts taken from various animals, to
+      describe anything composed of very
+      disparate parts, or perceived as wildly
+      imaginative, implausible, or dazzling.
+#+END_SRC
+
+[[./harappan-chimaera.jpg]]
+
 *** Definition of =chimeric=
 A chimeric language in the context of
 "imaginary programming" is one which employs
@@ -29,10 +52,10 @@ following definition:
 
 #+BEGIN_SRC text -n :async :results verbatim code
   Glossary of terms.
-  
+
   ossified
   Definition: Turn into bone or bony tissue.
-  
+
   chimeric in the context of imaginary-programming
   Definition:
 #+END_SRC
@@ -56,13 +79,13 @@ any 2 languages or more languages.
   ;; String replace is with isnt
   (apply (sed s/is/isnt/) "My name is Shane")
   --> "My name isnt Shane"
-  
+
   (split "\n" (ls))
   --> '("chimera" "chimera.vim" "chimera.vimrc" "install.sh")
-  
+
   (sed 's/chimera/chameleon/' (split "\n" (ls)))
   --> '("chameleon" "chameleon.vim" "chameleon.vimrc" "install.sh")
-  
+
   ;; Get the first field in each string of list using sed
   (mapcar (lambda (str) (apply (sed s/.* //) [str])) '("a b c" "d e f" "d e f"))
   --> ("a" "d" "d")
