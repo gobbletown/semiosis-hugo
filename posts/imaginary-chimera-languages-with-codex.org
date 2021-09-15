@@ -7,7 +7,7 @@
 #+TITLE: Imaginary chimeric languages with Codex
 #+DATE: <2021-09-07>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: codex pen gpt imaginary-programming
+#+KEYWORDS: codex pen gpt imaginary-programming symbology
 
 ** Summary
 I explore some imaginary chimeric languages with Codex.
