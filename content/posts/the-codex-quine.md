@@ -2,7 +2,7 @@
 title = "The Codex Quine"
 author = ["Shane Mulligan"]
 date = 2021-08-12T00:00:00+12:00
-keywords = ["codex", "openai"]
+keywords = ["codex", "openai", "symbology"]
 draft = false
 +++
 
@@ -15,15 +15,38 @@ Pen.el Engine
 
 
 Pen.el Prompt
-: <http://github.com/semiosis/prompts/blob/master/prompts/transpile.prompt>
+: <http://github.com/semiosis/prompts/blob/master/prompts/transpile-3.prompt>
 
 
 ## Summary {#summary}
 
-I convert the OpenAI biquine into some
+I convert the OpenAI quine relay into some
 imaginary code (`WIP`).
 
+{{< figure src="/ox-hugo/Chrysopoea_of_Cleopatra_1.png" >}}
+
 {{< highlight text "linenos=table, linenostart=1" >}}
+ouroboros
+uroboros
+    An ancient symbol depicting a serpent or
+    dragon eating its own tail.
+
+    Originating in ancient Egyptian
+    iconography, the ouroboros entered Western
+    tradition via Greek magical tradition and
+    was adopted as a symbol in Gnosticism and
+    Hermeticism and most notably in alchemy.
+
+ouroboros program
+uroboros program
+quine-relays
+    The quine concept can be extended to
+    multiple levels of recursion, originating
+    "ouroboros programs", or quine-relays.
+
+    This should not be confused with
+    multiquines.
+
 multiquine
 biquine
     A multiquine consisting of 2 languages (or

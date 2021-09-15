@@ -7421,19 +7421,23 @@ external-related:
             <pubDate>Thu, 12 Aug 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/the-codex-quine/</guid>
-            <description>OpenAI Demo Converting Python to Ruby with OpenAI Codex - YouTube Pen.el Engine http://github.com/semiosis/engines/blob/master/engines/openai-codex.engine Pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/transpile.prompt  Summary I convert the OpenAI biquine into some imaginary code (WIP).
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  multiquine biquine A multiquine consisting of 2 languages (or biquine) would be a program which: - When run, is a quine in language X.</description>
+            <description>OpenAI Demo Converting Python to Ruby with OpenAI Codex - YouTube Pen.el Engine http://github.com/semiosis/engines/blob/master/engines/openai-codex.engine Pen.el Prompt http://github.com/semiosis/prompts/blob/master/prompts/transpile-3.prompt  Summary I convert the OpenAI quine relay into some imaginary code (WIP).
+  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  ouroboros uroboros An ancient symbol depicting a serpent or dragon eating its own tail.</description>
             <content type="html"><![CDATA[<dl>
 <dt>OpenAI Demo</dt>
 <dd><a href="https://www.youtube.com/watch?v=Iq3rDFZOorw">Converting Python to Ruby with OpenAI Codex - YouTube</a></dd>
 <dt>Pen.el Engine</dt>
 <dd><a href="http://github.com/semiosis/engines/blob/master/engines/openai-codex.engine">http://github.com/semiosis/engines/blob/master/engines/openai-codex.engine</a></dd>
 <dt>Pen.el Prompt</dt>
-<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/transpile.prompt">http://github.com/semiosis/prompts/blob/master/prompts/transpile.prompt</a></dd>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/transpile-3.prompt">http://github.com/semiosis/prompts/blob/master/prompts/transpile-3.prompt</a></dd>
 </dl>
 <h2 id="summary">Summary</h2>
-<p>I convert the OpenAI biquine into some
+<p>I convert the OpenAI quine relay into some
 imaginary code (<code>WIP</code>).</p>
+<figure>
+    <img src="/ox-hugo/Chrysopoea_of_Cleopatra_1.png"/> 
+</figure>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -7456,9 +7460,51 @@ imaginary code (<code>WIP</code>).</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">multiquine
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">ouroboros
+uroboros
+    An ancient symbol depicting a serpent or
+    dragon eating its own tail.
+
+    Originating in ancient Egyptian
+    iconography, the ouroboros entered Western
+    tradition via Greek magical tradition and
+    was adopted as a symbol in Gnosticism and
+    Hermeticism and most notably in alchemy.
+
+ouroboros program
+uroboros program
+quine-relays
+    The quine concept can be extended to
+    multiple levels of recursion, originating
+    &#34;ouroboros programs&#34;, or quine-relays.
+
+    This should not be confused with
+    multiquines.
+
+multiquine
 biquine
     A multiquine consisting of 2 languages (or
     biquine) would be a program which:
