@@ -23,7 +23,7 @@ Pen.el Prompt
 I convert the OpenAI quine relay into some
 imaginary code (`WIP`).
 
-{{< figure src="/ox-hugo/Chrysopoea_of_Cleopatra_1.png" >}}
+{{< figure src="/ox-hugo/Serpiente_alquimica.jpg" >}}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 ouroboros
