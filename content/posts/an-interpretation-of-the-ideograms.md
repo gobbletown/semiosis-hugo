@@ -40,9 +40,9 @@ interesting one at that.
 
 ### Interpretation {#interpretation}
 
-It's the end of a cycle regarding the death
+It's the end of a cycle (autumn?) regarding the death
 and resurrection of Christ.
-Earth is in Autumn. _Something_ is to mix.
+Earth is in autumn. _Something_ is to mix.
 
 
 ## The Solar eclipse - The end of a cycle {#the-solar-eclipse-the-end-of-a-cycle}
@@ -52,9 +52,9 @@ Earth is in Autumn. _Something_ is to mix.
 The end of a cycle.
 
 
-## The Cross of Lorraine - Death and Resurrection {#the-cross-of-lorraine-death-and-resurrection}
+## The Cross of Loraine - Death and Resurrection {#the-cross-of-loraine-death-and-resurrection}
 
-The Cross of Lorraine, known as Cross of Anjou
+The Cross of Loraine, known as Cross of Anjou
 in the 16th century, is a heraldic two-barred
 cross, consisting of a vertical line crossed
 by two shorter horizontal bars.
