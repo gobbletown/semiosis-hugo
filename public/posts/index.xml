@@ -6,8 +6,100 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 13 Sep 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>An interpretation of the ideograms</title>
+            <link>http://semiosis.github.io/posts/an-interpretation-of-the-ideograms/</link>
+            <pubDate>Wed, 15 Sep 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/an-interpretation-of-the-ideograms/</guid>
+            <description>Summary Today I felt like I should try to interpret the ideograms that make up the semiosis logo.
+ URL https://semiosis.github.io/  So I found my way to the linguistics section of the library and found a book.
+  I realise that some of these symbols could be attributed in other ways but this the first interpretation I have attempted and an interesting one at that.
+  The eclispe (end of a cycle / the world)</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>Today I felt like I should try to interpret
+the ideograms that make up the semiosis logo.</p>
+<dl>
+<dt>URL</dt>
+<dd><a href="https://semiosis.github.io/">https://semiosis.github.io/</a></dd>
+</dl>
+<p>So I found my way to the linguistics section
+of the library and found a book.</p>
+<figure>
+    <img src="/ox-hugo/encyclopedia-signs-and-symbols.jpg"/> 
+</figure>
+
+<p>I realise that some of these symbols could be
+attributed in other ways but this the first
+interpretation I have attempted and an
+interesting one at that.</p>
+<ul>
+<li>
+<p>The eclispe (end of a cycle / the world)</p>
+<ul>
+<li>Cross of Loraine. The first bar represents</li>
+</ul>
+<p>the death of Jesus while the second cross
+bar represents his resurrection and victory.</p>
+<ul>
+<li>
+<p>Up-down arrow. Time (Germanic)</p>
+</li>
+<li>
+<p><code>#</code> with square around it</p>
+</li>
+<li>
+<p>The planet Earth, variation.</p>
+</li>
+<li>
+<p>To mix (Alchemy)</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure>
+    <img src="/ox-hugo/semiosis-logo.png"/> 
+</figure>
+
+<h2 id="solar-eclipse">Solar eclipse</h2>
+<figure>
+    <img src="/ox-hugo/solar-eclipse.jpg"/> 
+</figure>
+
+<p>The end of a cycle.</p>
+<h2 id="cross-of-lorraine">Cross of Lorraine</h2>
+<p>The Cross of Lorraine, known as Cross of Anjou
+in the 16th century, is a heraldic two-barred
+cross, consisting of a vertical line crossed
+by two shorter horizontal bars.</p>
+<figure>
+    <img src="/ox-hugo/cross-of-lorraine.jpg"/> 
+</figure>
+
+<p>The first bar represents the death of Jesus
+while the second cross bar represents his
+resurrection and victory.</p>
+<h2 id="time">Time</h2>
+<figure>
+    <img src="/ox-hugo/sign-time.jpg"/> 
+</figure>
+
+<h2 id="the-earth">The Earth</h2>
+<figure>
+    <img src="/ox-hugo/sign-earth.jpg"/> 
+</figure>
+
+<h2 id="to-mix">To mix</h2>
+<figure>
+    <img src="/ox-hugo/sign-mix.jpg"/> 
+</figure>
+
+<h2 id=""></h2>
+]]></content>
+        </item>
         
         <item>
             <title>Imaginary computing and virtual reality</title>

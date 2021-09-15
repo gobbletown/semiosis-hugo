@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://semiosis.github.io/posts/imaginary-computing/</loc>
-    <lastmod>2021-09-13T00:00:00+12:00</lastmod>
+    <loc>http://semiosis.github.io/posts/an-interpretation-of-the-ideograms/</loc>
+    <lastmod>2021-09-15T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/</loc>
-    <lastmod>2021-09-13T00:00:00+12:00</lastmod>
+    <lastmod>2021-09-15T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-09-15T00:00:00+12:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/imaginary-computing/</loc>
     <lastmod>2021-09-13T00:00:00+12:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/your-imagination/</loc>
