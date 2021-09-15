@@ -25,11 +25,7 @@ interpretation I have attempted and an
 interesting one at that.
 
 -   The eclispe (end of a cycle / the world)
-
-    -   Cross of Loraine. The first bar represents
-
-    the death of Jesus while the second cross
-    bar represents his resurrection and victory.
+    -   Cross of Loraine. The first bar represents the death of Jesus while the second cross bar represents his resurrection and victory.
 
     -   Up-down arrow. Autumn
 
@@ -44,9 +40,9 @@ interesting one at that.
 
 ### Interpretation {#interpretation}
 
-It's the end of a cycle.
-Earth is in Autumn.
-_Something_ is to mix.
+It's the end of a cycle regarding the death
+and resurrection of Christ.
+Earth is in Autumn. _Something_ is to mix.
 
 
 ## The Solar eclipse - The end of a cycle {#the-solar-eclipse-the-end-of-a-cycle}
