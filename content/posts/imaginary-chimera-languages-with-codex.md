@@ -10,6 +10,29 @@ draft = false
 
 I explore some imaginary chimeric languages with Codex.
 
+{{< highlight text "linenos=table, linenostart=1" >}}
+The Chimera
+Chimaera
+    According to Greek mythology, was a
+    monstrous fire-breathing hybrid creature
+    of Lycia in Asia Minor, composed of the
+    parts of more than one animal.
+
+    It is usually depicted as a lion, with the
+    head of a goat protruding from its back,
+    and a tail that might end with a snake's
+    head.
+
+    The term "chimera" has come to describe
+    any mythical or fictional creature with
+    parts taken from various animals, to
+    describe anything composed of very
+    disparate parts, or perceived as wildly
+    imaginative, implausible, or dazzling.
+{{< /highlight >}}
+
+{{< figure src="/ox-hugo/harappan-chimaera.jpg" >}}
+
 
 ### Definition of `chimeric` {#definition-of-chimeric}
 

@@ -121,9 +121,7 @@ Demo  --  Source A combination of lazy prompting with real emacs lisp, a dockeri
       
       <guid>http://semiosis.github.io/posts/imaginary-chimera-languages-with-codex/</guid>
       <description>Summary I explore some imaginary chimeric languages with Codex.
-Definition of chimeric A chimeric language in the context of &amp;ldquo;imaginary programming&amp;rdquo; is one which employs syntax from 2 or more languages.
-chimerism, however, is exhibited in other parts of GPT generations. For example, generated URLs. Generated URLs are usually not correct due to chimerism. However, it would be interesting to generate imaginary websites using chimeric URLs.
-Given the following prompt, Codex returned the following definition:</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  The Chimera Chimaera According to Greek mythology, was a monstrous fire-breathing hybrid creature of Lycia in Asia Minor, composed of the parts of more than one animal. It is usually depicted as a lion, with the head of a goat protruding from its back, and a tail that might end with a snake&amp;#39;s head.</description>
     </item>
     
     <item>
