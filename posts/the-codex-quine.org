@@ -19,7 +19,7 @@
 I convert the OpenAI quine relay into some
 imaginary code (=WIP=).
 
-[[./Chrysopoea_of_Cleopatra_1.png]]
+[[./Serpiente_alquimica.jpg]]
 
 #+BEGIN_SRC text -n :async :results verbatim code
   ouroboros
