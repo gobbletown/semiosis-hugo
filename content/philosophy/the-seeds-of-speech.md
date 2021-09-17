@@ -36,10 +36,24 @@ PDF
 ---
 
 
-## <span class="underline">social structure</span> and <span class="underline">intimate interaction</span> {#}
+## The requirements for development of language {#the-requirements-for-development-of-language}
+
+
+### <span class="underline">social structure</span> and <span class="underline">intimate interaction</span> {#}
 
 -   <span class="underline">guessing and gossip</span>, not <span class="underline">grooming in groups</span>: _Gossip_ rather than _grooming_ might
     have been promoted by several factors.
+
+    ..language is an intimate type of
+    interaction, better at close quarters than
+    across vast spaces. But group size alone may
+    not be particularly important, and bands of
+    150 may have occurred earlier, with no
+    language development (Hyland 1993). The
+    quality of the interactions matters more
+    than overall numbers: the bleating of sheep
+    might turn into language if herd-size alone
+    was crucial.
 
     Spoken language leaves the hands free for
     other activities, perhaps important in open
@@ -66,7 +80,7 @@ phatic communication
 ---
 
 
-## <span class="underline">man of many wiles</span> / <span class="underline">dogs may dissemble</span> {#}
+### <span class="underline">man of many wiles</span> / <span class="underline">dogs may dissemble</span> {#}
 
 T. H. Huxley
 : A man has no reason to
