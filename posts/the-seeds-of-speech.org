@@ -33,9 +33,21 @@
 
 ---
 
-** _social structure_ and _intimate interaction_
+** The requirements for development of language
+*** _social structure_ and _intimate interaction_
 - _guessing and gossip_, not _grooming in groups_: /Gossip/ rather than /grooming/ might
   have been promoted by several factors.
+
+  ..language is an intimate type of
+  interaction, better at close quarters than
+  across vast spaces. But group size alone may
+  not be particularly important, and bands of
+  150 may have occurred earlier, with no
+  language development (Hyland 1993). The
+  quality of the interactions matters more
+  than overall numbers: the bleating of sheep
+  might turn into language if herd-size alone
+  was crucial.
 
   Spoken language leaves the hands free for
   other activities, perhaps important in open
@@ -59,7 +71,7 @@
 
 ---
 
-** _man of many wiles_ / _dogs may dissemble_
+*** _man of many wiles_ / _dogs may dissemble_
 + T. H. Huxley :: A man has no reason to
     be ashamed of having an ape for his
     grandfather. If there were an ancestor whom
