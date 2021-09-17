@@ -9,8 +9,9 @@ draft = false
 PDF
 : <http://libgen.lc/ads.php?md5=74BBECAE18249BD29CEE9F2FC103DE58>
 
+---
 
-The mind is the <span class="underline">master manufacturer</span>
+-   The mind is the <span class="underline">master manufacturer</span>
     -   who divides the work to be executed into different processes.
     -   modules in the mind
         -   reasoning ability
@@ -18,8 +19,9 @@ The mind is the <span class="underline">master manufacturer</span>
         -   language
         -   etc.
 
+---
 
-The <span class="underline">biological bush</span>
+-   The <span class="underline">biological bush</span>
     -   'As for humans, we are unquestionably a pure product of a certain aridity', it has been
         claimed (Coppens 1994: 69). After the catastrophe, our ape cousins were left in the lush
         and pleasant tree-terrain of the humid west. Our own ancestors were stranded in a
@@ -27,8 +29,9 @@ The <span class="underline">biological bush</span>
         or die. An unfavourable climate forced a deprived species to live on its wits and, in the
         long run, develop language.
 
+---
 
-<span class="underline">social structure</span> and <span class="underline">intimate interaction</span>
+-   <span class="underline">social structure</span> and <span class="underline">intimate interaction</span>
 
     -   <span class="underline">guessing and gossip</span>, not <span class="underline">grooming in groups</span>: _Gossip_ rather than _grooming_ might
 
@@ -55,6 +58,8 @@ phatic communication
     signal willingness to observe conventional
     local expectations for politeness.
 {{< /highlight >}}
+
+---
 
 -   <span class="underline">man of many wiles</span> / <span class="underline">dogs may dissemble</span>
     -   **T. H. Huxley:** A man has no reason to
@@ -136,6 +141,8 @@ mindblindness
     hang of'.
 {{< /highlight >}}
 
+---
+
 -   <span class="underline">ruling the rules</span>
     -   The permitted patterns or rules of all
         languages constantly change, and new words
@@ -198,6 +205,8 @@ absolute linguistic universal
     details from language to language.
 {{< /highlight >}}
 
+---
+
 -   Unweaving the rainbow: <span class="underline">separating the strands</span>
     -   Language has some similarities to the
         rainbow. Both can be partially separated
@@ -211,22 +220,33 @@ absolute linguistic universal
         language, this is a necessity, even if the
         result is unromantic.
 
--   -   My mother ...predicted that
+---
+
+Aeschylus, Prometheus bound (fifth century BC)
+: - My mother ...predicted that
     -   Future rulers would conquer and control
     -   Not by strength, nor by violence,
     -   But by cunning
 
--   The real
-    magicial isn't the bleary-eyed guy who doesn't
+
+Umberto Eco, Foucault's pendulum
+: The real
+    magicician isn't the bleary-eyed guy who doesn't
     understand a thing: it's the scientist who has
     grasped the hidden secrets of the universe.
 
--   -   Let earth unbalanc'd from her orbit fly,
+---
+
+Alexander Pope, Essay on Man
+: - Let earth unbalanc'd from her orbit fly,
     -   Planets and suns run lawless thro' the sky;
     -   Let ruling angels from their spheres be hurl'd,
     -   Being on being wreck'd and world on world.
 
--   -   Lead us, Evolution, lead us
+---
+
+C. S. Lewis, Evolutionary hymn
+: - Lead us, Evolution, lead us
     -   Up the future's endless stair;
     -   Chop us, change us, prod us, weed us.
     -   For stagnation is despair:
