@@ -74,7 +74,7 @@ examples:
 # TODO Add to .prompt optional multiplex preprocessor for inputs
 # If a postprocessor sees pf- then check the function to see if it has
 # multiplex capability
-postprocessor: pf-correct-grammar/1
+postprocessor: pf-correct-english-spelling-and-grammar/1
 filter: on
 completion: off
 insertion: off
