@@ -4,10 +4,10 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
-#+TITLE: Prompt of the day: Spelling correction on OCR results of historical documents
+#+TITLE: Spelling correction on OCR results of historical documents
 #+DATE: <2021-09-17>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt codex
+#+KEYWORDS: gpt codex prompt-of-the-day openai
 
 ** Summary
 My friend Chen sent me a prompt today. It
@@ -33,14 +33,14 @@ inferred.
   Correction: 
 #+END_SRC
 
-** prompt
+** OCR Correction prompt
 =correct-the-results-of-ocr-1.prompt=
 #+BEGIN_SRC yaml -n :async :results verbatim code
   task: "correct the results of OCR"
   doc: "Given OCR results, correct them"
-  prompt-version: 1
+  prompt-version: 2
   prompt: |+
-      This is an example of spelling correction on optical character recognition results of historical documents:
+      These are the results of performing optical character recognition on the historical documents.
       <delim>
       OCR Result:
       <delim>
@@ -70,21 +70,23 @@ inferred.
   - |+
     they continu~e chofep ha~its ~fill in t-he mink .&fen th~at th~e generality of
     Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.
-  preprocessors:
-  - "cat"
+  # TODO Add to .prompt optional multiplex preprocessor for inputs
+  # If a postprocessor sees pf- then check the function to see if it has
+  # multiplex capability
+  postprocessor: pf-correct-grammar/1
   filter: on
   completion: off
   insertion: off
 #+END_SRC
 
-** Input
+*** Input
 #+BEGIN_SRC text -n :async :results verbatim code
   they continu~e chofep ha~its ~fill in t-he mink .&fen th~at th~e generality of
   Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.
 #+END_SRC
 
-** Results
-*** 1
+*** Results
+**** 1
 #+BEGIN_SRC text -n :async :results verbatim code
   they continue the same habits till in the
   midst and even till that the generality of
@@ -92,7 +94,7 @@ inferred.
   superficial knowledge of thing's if.
 #+END_SRC
 
-*** 2
+**** 2
 #+BEGIN_SRC text -n :async :results verbatim code
   they continue in the habits of their
   ancestors; and that the generality of mankind
@@ -100,7 +102,7 @@ inferred.
   knowledge of things in themselves.
 #+END_SRC
 
-*** 3
+**** 3
 #+BEGIN_SRC text -n :async :results verbatim code
   they continue chosen habits till in the midst
   and even that the generality of mankind con-
@@ -109,10 +111,33 @@ inferred.
   of things if.
 #+END_SRC
 
-** Demo
+*** Demo
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.js" id="asciicast-wmgBIVkvfiWVzaRVYrM1ClXWW" async></script>
+<script src="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X.js" id="asciicast-idXGC3F3Ay0OymoyPOm8hLB6X" async></script>
 #+END_EXPORT
+
+** Followed by spelling correction
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  postprocessor: pf-correct-grammar/1
+#+END_SRC
+
+** Results
+#+BEGIN_SRC text -n :async :results verbatim code
+  they continued to choose habits that fill
+  what they suppose are their basic needs and
+  feel that the generality of mankind contains
+  in them virtually the same relationship with
+  just a superficial knowledge of things.
+#+END_SRC
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  They continued to choose
+  habits that fill what they supposed are their
+  basic needs and feel that the generality of
+  mankind contains in them virtually the same
+  relationship with just a superficial
+  knowledge of things.
+#+END_SRC
