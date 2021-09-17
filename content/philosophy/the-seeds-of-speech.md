@@ -69,7 +69,7 @@ phatic communication
         at issue by eloquent digressions and skilled
         appeals to religious prejudice.
 
-    -   <span class="underline">True</span> **deceit** involves '\_tactical\_ **deception**'
+    -   <span class="underline">True</span> **deceit** involves <span class="underline">tactical</span> **deception**
         The extent of animal deception is only now
         becoming clear. But the deceit of dogs
         is not well-planned.: 'Acts from the
@@ -199,16 +199,36 @@ absolute linguistic universal
 {{< /highlight >}}
 
 -   Unweaving the rainbow: <span class="underline">separating the strands</span>
-
     -   Language has some similarities to the
+        rainbow. Both can be partially separated
+        from their surroundings: the rainbow from
+        the clouds, and language from a general
+        ability to think (chapter 4). And both
+        language and the rainbow appear to be made
+        out of various strands. To a poet, chopping
+        it all up might seem like pointless
+        pedantry. But for linguists concerned with
+        language, this is a necessity, even if the
+        result is unromantic.
 
-    rainbow. Both can be partially separated
-    from their surroundings: the rainbow from
-    the clouds, and language from a general
-    ability to think (chapter 4). And both
-    language and the rainbow appear to be made
-    out of various strands. To a poet, chopping
-    it all up might seem like pointless
-    pedantry. But for linguists concerned with
-    language, this is a necessity, even if the
-    result is unromantic.
+-   -   My mother ...predicted that
+    -   Future rulers would conquer and control
+    -   Not by strength, nor by violence,
+    -   But by cunning
+
+-   The real
+    magicial isn't the bleary-eyed guy who doesn't
+    understand a thing: it's the scientist who has
+    grasped the hidden secrets of the universe.
+
+-   -   Let earth unbalanc'd from her orbit fly,
+    -   Planets and suns run lawless thro' the sky;
+    -   Let ruling angels from their spheres be hurl'd,
+    -   Being on being wreck'd and world on world.
+
+-   -   Lead us, Evolution, lead us
+    -   Up the future's endless stair;
+    -   Chop us, change us, prod us, weed us.
+    -   For stagnation is despair:
+    -   Groping, guessing, yet progressing,
+    -   Lead us nobody knows where.
