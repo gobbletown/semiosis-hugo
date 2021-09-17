@@ -11,36 +11,42 @@ PDF
 
 ---
 
--   The mind is the <span class="underline">master manufacturer</span>
-    -   who divides the work to be executed into different processes.
-    -   modules in the mind
-        -   reasoning ability
-        -   spatial skills
-        -   language
-        -   etc.
+
+## The mind is the <span class="underline">master manufacturer</span> {#the-mind-is-the}
+
+-   who divides the work to be executed into different processes.
+-   modules in the mind
+    -   reasoning ability
+    -   spatial skills
+    -   language
+    -   etc.
 
 ---
 
--   The <span class="underline">biological bush</span>
-    -   'As for humans, we are unquestionably a pure product of a certain aridity', it has been
-        claimed (Coppens 1994: 69). After the catastrophe, our ape cousins were left in the lush
-        and pleasant tree-terrain of the humid west. Our own ancestors were stranded in a
-        relatively treeless savannah in the increasingly dry east, where they were forced to adapt,
-        or die. An unfavourable climate forced a deprived species to live on its wits and, in the
-        long run, develop language.
+
+## The <span class="underline">biological bush</span> {#the}
+
+-   'As for humans, we are unquestionably a pure product of a certain aridity', it has been
+    claimed (Coppens 1994: 69). After the catastrophe, our ape cousins were left in the lush
+    and pleasant tree-terrain of the humid west. Our own ancestors were stranded in a
+    relatively treeless savannah in the increasingly dry east, where they were forced to adapt,
+    or die. An unfavourable climate forced a deprived species to live on its wits and, in the
+    long run, develop language.
 
 ---
 
--   <span class="underline">social structure</span> and <span class="underline">intimate interaction</span>
-    -   <span class="underline">guessing and gossip</span>, not <span class="underline">grooming in groups</span>: _Gossip_ rather than _grooming_ might
-        have been promoted by several factors.
 
-        Spoken language leaves the hands free for
-        other activities, perhaps important in open
-        savannah where humans possibly lived at one
-        time (chapter 5). Sounds can be heard in the
-        dark, and messages can be transmitted
-        rapidly.
+## <span class="underline">social structure</span> and <span class="underline">intimate interaction</span> {#}
+
+-   <span class="underline">guessing and gossip</span>, not <span class="underline">grooming in groups</span>: _Gossip_ rather than _grooming_ might
+    have been promoted by several factors.
+
+    Spoken language leaves the hands free for
+    other activities, perhaps important in open
+    savannah where humans possibly lived at one
+    time (chapter 5). Sounds can be heard in the
+    dark, and messages can be transmitted
+    rapidly.
 
 <!--listend-->
 
@@ -59,34 +65,38 @@ phatic communication
 
 ---
 
--   <span class="underline">man of many wiles</span> / <span class="underline">dogs may dissemble</span>
-    -   **T. H. Huxley:** A man has no reason to
-        be ashamed of having an ape for his
-        grandfather. If there were an ancestor whom
-        I should feel shame in recalling it would
-        rather be a man ... who ... plunges into
-        scientific questions with which he has no
-        real acquaintance. <span class="underline">only to obscure</span> them by
-        an aimless rhetoric, and distract the
-        attention of his hearers from the real point
-        at issue by eloquent digressions and skilled
-        appeals to religious prejudice.
 
-    -   <span class="underline">True</span> **deceit** involves <span class="underline">tactical</span> **deception**
-        The extent of animal deception is only now
-        becoming clear. But the deceit of dogs
-        is not well-planned.: 'Acts from the
-        normal repertoire of the agent, deployed
-        such that another individual is likely to
-        misinterpret what the acts signify, to the
-        advantage of the agent' (R. W. Byrne and
-        Whiten 1988, 1992: 612). Humans are very
-        good at it. The ability to deceive is not
-        necessarily a bad thing. This is a
-        powerful skill, which may be used
-        selfishly or unselfishly. To exercise it,
-        it's necessary to mentally 'put oneself
-        into another person's shoes'.
+## <span class="underline">man of many wiles</span> / <span class="underline">dogs may dissemble</span> {#}
+
+T. H. Huxley
+: A man has no reason to
+    be ashamed of having an ape for his
+    grandfather. If there were an ancestor whom
+    I should feel shame in recalling it would
+    rather be a man ... who ... plunges into
+    scientific questions with which he has no
+    real acquaintance. <span class="underline">only to obscure</span> them by
+    an aimless rhetoric, and distract the
+    attention of his hearers from the real point
+    at issue by eloquent digressions and skilled
+    appeals to religious prejudice.
+
+
+<span class="underline">True</span> **deceit** involves <span class="underline">tactical</span> **deception**
+    The extent of animal deception is only now
+    becoming clear. But the deceit of dogs
+    is not well-planned.: 'Acts from the
+    normal repertoire of the agent, deployed
+    such that another individual is likely to
+    misinterpret what the acts signify, to the
+    advantage of the agent' (R. W. Byrne and
+    Whiten 1988, 1992: 612). Humans are very
+    good at it. The ability to deceive is not
+    necessarily a bad thing. This is a
+    powerful skill, which may be used
+    selfishly or unselfishly. To exercise it,
+    it's necessary to mentally 'put oneself
+    into another person's shoes'.
 
 <!--listend-->
 
@@ -141,45 +151,49 @@ mindblindness
 
 ---
 
--   <span class="underline">ruling the rules</span>
-    -   The permitted patterns or rules of all
-        languages constantly change, and new words
-        are continually coming into use. Yet
-        language never collapses: the rules do not
-        spiral out of control. Each new generation
-        of children can cope with learning their
-        language. And, with a bit of effort, all
-        humans can learn any other human language,
-        though they are baffled when faced with the
-        communication systems of other species. It's
-        an odd situation when it's impossible to
-        find more than a few broad language
-        universals. Some principles must rule the
-        rules. Language has 'hidden secrets', reins
-        which keep it in check, and linguists are
-        who try to find out what they are. Let us
-        consider the matter further.
 
-    -   <span class="underline">prohibitions vs preferences</span>
-        -   Broadly speaking, constraints are of two
-            types, filters and preferences. Filters
-            close off certain possibilities
-            absolutely. Such prohibitions are true
-            constraints. Preferences, on the other
-            hand, provide channels which are easy to
-            flow along. They turn attention away from
-            some non-preferred, though possible,
-            routes. Such pseudoconstraints are often
-            difficult to separate from prohibitions.
+## <span class="underline">ruling the rules</span> {#}
 
-        -   To summarize, universals and constraints
-            overlap: they are opposite sides of the
-            same coin. Language contains two types
-            of constraints: filters (real
-            constraints) and preferences
-            (pseudoconstraints). And these may work
-            on at least two levels: that of general
-            human abilities, and that of language.
+-   The permitted patterns or rules of all
+    languages constantly change, and new words
+    are continually coming into use. Yet
+    language never collapses: the rules do not
+    spiral out of control. Each new generation
+    of children can cope with learning their
+    language. And, with a bit of effort, all
+    humans can learn any other human language,
+    though they are baffled when faced with the
+    communication systems of other species. It's
+    an odd situation when it's impossible to
+    find more than a few broad language
+    universals. Some principles must rule the
+    rules. Language has 'hidden secrets', reins
+    which keep it in check, and linguists are
+    who try to find out what they are. Let us
+    consider the matter further.
+
+
+### <span class="underline">prohibitions vs preferences</span> {#}
+
+-   Broadly speaking, constraints are of two
+    types, filters and preferences. Filters
+    close off certain possibilities
+    absolutely. Such prohibitions are true
+    constraints. Preferences, on the other
+    hand, provide channels which are easy to
+    flow along. They turn attention away from
+    some non-preferred, though possible,
+    routes. Such pseudoconstraints are often
+    difficult to separate from prohibitions.
+
+-   To summarize, universals and constraints
+    overlap: they are opposite sides of the
+    same coin. Language contains two types
+    of constraints: filters (real
+    constraints) and preferences
+    (pseudoconstraints). And these may work
+    on at least two levels: that of general
+    human abilities, and that of language.
 
 <!--listend-->
 
@@ -205,18 +219,20 @@ absolute linguistic universal
 
 ---
 
--   Unweaving the rainbow: <span class="underline">separating the strands</span>
-    -   Language has some similarities to the
-        rainbow. Both can be partially separated
-        from their surroundings: the rainbow from
-        the clouds, and language from a general
-        ability to think (chapter 4). And both
-        language and the rainbow appear to be made
-        out of various strands. To a poet, chopping
-        it all up might seem like pointless
-        pedantry. But for linguists concerned with
-        language, this is a necessity, even if the
-        result is unromantic.
+
+## Unweaving the rainbow: <span class="underline">separating the strands</span> {#unweaving-the-rainbow}
+
+-   Language has some similarities to the
+    rainbow. Both can be partially separated
+    from their surroundings: the rainbow from
+    the clouds, and language from a general
+    ability to think (chapter 4). And both
+    language and the rainbow appear to be made
+    out of various strands. To a poet, chopping
+    it all up might seem like pointless
+    pedantry. But for linguists concerned with
+    language, this is a necessity, even if the
+    result is unromantic.
 
 ---
 
