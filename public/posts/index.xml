@@ -6,8 +6,209 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +1200</lastBuildDate>
+        <lastBuildDate>Fri, 17 Sep 2021 00:00:00 +1200</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Prompt of the day: Spelling correction on OCR results of historical documents</title>
+            <link>http://semiosis.github.io/posts/spelling-correction-on-ocr-results-of-historical-documents/</link>
+            <pubDate>Fri, 17 Sep 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/spelling-correction-on-ocr-results-of-historical-documents/</guid>
+            <description>Summary My friend Chen sent me a prompt today. It takes text which has been interpreted by an OCR program and outputs text which is likely inferred.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  This is an example of spelling correction on optical character recognition results of historical documents: OCR Result: r&amp;#39;2Pto flare i~t in the face; for this riea/on they ef~d all tho~-e Books which gave the least ac- of the Heathen Theology to the flames ; Correction: For a to flare it in the face; for this reason they sacrificed all those books which gave the least account of the Heathen Theology to the flames; OCR Result: they continu~e chofep ha~its ~fill in t-he mink .</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>My friend Chen sent me a prompt today. It
+takes text which has been interpreted by an
+OCR program and outputs text which is likely
+inferred.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">This is an example of spelling correction on optical character recognition results of historical
+documents:
+
+OCR Result: r&#39;2Pto flare i~t in the face; for this riea/on they ef~d all tho~-e Books which gave the
+least ac- of the Heathen Theology to the flames ;
+
+Correction: For a to flare it in the face; for this reason they sacrificed all those books which gave
+the least account of the Heathen Theology to the flames;
+
+OCR Result: they continu~e chofep ha~its ~fill in t-he mink .&amp;fen th~at th~e generality of
+Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.
+Correction: they continue the same habits till in the midst and even to the end that the generality
+of Mankind content themselves with a superficial knowledge of things.
+
+Correction:</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompt">prompt</h2>
+<p><code>correct-the-results-of-ocr-1.prompt</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;correct the results of OCR&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given OCR results, correct them&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    This is an example of spelling correction on optical character recognition results of historical documents:
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    OCR Result:
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    r&#39;2Pto flare i~t in the face; for this riea/on they ef~d all tho~-e Books which gave the least ac- of the Heathen Theology to the flames ;
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    Correction:
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    For a to flare it in the face; for this reason they sacrificed all those books which gave the least account of the Heathen Theology to the flames;
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    OCR Result:
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    &lt;OCR text&gt;
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    Correction:
+</span><span style="color:#e6db74">    &lt;delim&gt;</span>    
+
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 2 (pen-approximate-token-length ocr-text final-approximate-token-char-length))&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;&lt;delim&gt;&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;OCR text&#34;</span>
+<span style="color:#f92672">examples</span>:
+- |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  they continu~e chofep ha~its ~fill in t-he mink .&amp;fen th~at th~e generality of
+</span><span style="color:#e6db74">  Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.</span>  
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#e6db74">&#34;cat&#34;</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="input">Input</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">they continu~e chofep ha~its ~fill in t-he mink .&amp;fen th~at th~e generality of
+Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="results">Results</h2>
+<h3 id="1">1</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">they continue the same habits till in the
+midst and even till that the generality of
+mankind con- tinue them selves with a
+superficial knowledge of thing&#39;s if.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="2">2</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">they continue in the habits of their
+ancestors; and that the generality of mankind
+con- template themselves with a superficial
+knowledge of things in themselves.</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="3">3</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">they continue chosen habits till in the midst
+and even that the generality of mankind con-
+t ing er
+selves with a superficial knowledge
+of things if.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.js" id="asciicast-wmgBIVkvfiWVzaRVYrM1ClXWW" async></script>]]></content>
+        </item>
         
         <item>
             <title>An interpretation of the ideograms</title>
