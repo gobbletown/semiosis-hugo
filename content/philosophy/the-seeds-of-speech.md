@@ -9,6 +9,24 @@ draft = false
 PDF
 : <http://libgen.lc/ads.php?md5=74BBECAE18249BD29CEE9F2FC103DE58>
 
+These are excerpts from an interesting book I
+read today by Jean Aitchison, named The Seeds
+of Speech and it is a book about Language
+Origin and Evolution.
+
+The book begins by discussing biological and social factors
+that may have contributed to the human
+language faculty. Then the book moves to discuss the
+search for <span class="underline">language universals</span>, which are
+features common to all languages, followed by
+constraints, which are the other side of the
+coin from <span class="underline">universals</span>.
+
+By understanding these <span class="underline">universals</span>, one
+unlocks the ability to trivially manufacture
+new languages that are compatible with
+learning.
+
 ---
 
 
@@ -96,7 +114,7 @@ T. H. Huxley
     appeals to religious prejudice.
 
 
-<span class="underline">True</span> **deceit** involves <span class="underline">tactical</span> **deception**
+<span class="underline">True</span> **deceit** involves <span class="underline">tactical</span> **deception**.
     The extent of animal deception is only now
     becoming clear. But the deceit of dogs
     is not well-planned.: 'Acts from the
@@ -168,6 +186,21 @@ mindblindness
 
 ## <span class="underline">ruling the rules</span> {#}
 
+As these examples show, constraints overlap
+with universals: if humans are prevented from
+going down alternative paths, they may be
+inevitably pushed in one particular direction,
+resulting in an apparent universal.
+
+Universals and constraints overlap: they are opposite sides of the same
+coin.
+
+Language contains two types of constraints:
+filters (real constraints) and preferences
+(pseudoconstraints). And these may work on at
+least two levels: that of general human
+abilities, and that of language.
+
 -   The permitted patterns or rules of all
     languages constantly change, and new words
     are continually coming into use. Yet
@@ -183,8 +216,7 @@ mindblindness
     universals. Some principles must rule the
     rules. Language has 'hidden secrets', reins
     which keep it in check, and linguists are
-    who try to find out what they are. Let us
-    consider the matter further.
+    who try to find out what they are.
 
 
 ### <span class="underline">prohibitions vs preferences</span> {#}
