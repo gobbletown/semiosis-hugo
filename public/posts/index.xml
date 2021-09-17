@@ -10,7 +10,7 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Prompt of the day: Spelling correction on OCR results of historical documents</title>
+            <title>Spelling correction on OCR results of historical documents</title>
             <link>http://semiosis.github.io/posts/spelling-correction-on-ocr-results-of-historical-documents/</link>
             <pubDate>Fri, 17 Sep 2021 00:00:00 +1200</pubDate>
             
@@ -58,7 +58,7 @@ of Mankind content themselves with a superficial knowledge of things.
 Correction:</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="prompt">prompt</h2>
+<h2 id="ocr-correction-prompt">OCR Correction prompt</h2>
 <p><code>correct-the-results-of-ocr-1.prompt</code></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -101,13 +101,15 @@ Correction:</code></pre></td></tr></table>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;correct the results of OCR&#34;</span>
 <span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given OCR results, correct them&#34;</span>
-<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
-</span><span style="color:#e6db74">    This is an example of spelling correction on optical character recognition results of historical documents:
+</span><span style="color:#e6db74">    These are the results of performing optical character recognition on the historical documents.
 </span><span style="color:#e6db74">    &lt;delim&gt;
 </span><span style="color:#e6db74">    OCR Result:
 </span><span style="color:#e6db74">    &lt;delim&gt;
@@ -137,14 +139,16 @@ Correction:</code></pre></td></tr></table>
 - |+<span style="color:#e6db74">
 </span><span style="color:#e6db74">  they continu~e chofep ha~its ~fill in t-he mink .&amp;fen th~at th~e generality of
 </span><span style="color:#e6db74">  Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.</span>  
-<span style="color:#f92672">preprocessors</span>:
-- <span style="color:#e6db74">&#34;cat&#34;</span>
+<span style="color:#75715e"># TODO Add to .prompt optional multiplex preprocessor for inputs</span>
+<span style="color:#75715e"># If a postprocessor sees pf- then check the function to see if it has</span>
+<span style="color:#75715e"># multiplex capability</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pf-correct-grammar/1</span>
 <span style="color:#f92672">filter</span>: <span style="color:#66d9ef">on</span>
 <span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="input">Input</h2>
+<h3 id="input">Input</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -155,8 +159,8 @@ Correction:</code></pre></td></tr></table>
 Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="results">Results</h2>
-<h3 id="1">1</h3>
+<h3 id="results">Results</h3>
+<h4 id="1">1</h4>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -171,7 +175,7 @@ mankind con- tinue them selves with a
 superficial knowledge of thing&#39;s if.</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="2">2</h3>
+<h4 id="2">2</h4>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -186,7 +190,7 @@ con- template themselves with a superficial
 knowledge of things in themselves.</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="3">3</h3>
+<h4 id="3">3</h4>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -203,11 +207,56 @@ selves with a superficial knowledge
 of things if.</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="demo">Demo</h2>
+<h3 id="demo">Demo</h3>
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.js" id="asciicast-wmgBIVkvfiWVzaRVYrM1ClXWW" async></script>]]></content>
+<script src="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X.js" id="asciicast-idXGC3F3Ay0OymoyPOm8hLB6X" async></script>
+<h2 id="followed-by-spelling-correction">Followed by spelling correction</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pf-correct-grammar/1</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="results">Results</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">they continued to choose habits that fill
+what they suppose are their basic needs and
+feel that the generality of mankind contains
+in them virtually the same relationship with
+just a superficial knowledge of things.</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">They continued to choose
+habits that fill what they supposed are their
+basic needs and feel that the generality of
+mankind contains in them virtually the same
+relationship with just a superficial
+knowledge of things.</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
         </item>
         
         <item>

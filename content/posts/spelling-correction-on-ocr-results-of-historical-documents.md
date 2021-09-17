@@ -1,8 +1,8 @@
 +++
-title = "Prompt of the day: Spelling correction on OCR results of historical documents"
+title = "Spelling correction on OCR results of historical documents"
 author = ["Shane Mulligan"]
 date = 2021-09-17T00:00:00+12:00
-keywords = ["gpt", "codex"]
+keywords = ["gpt", "codex", "prompt-of-the-day", "openai"]
 draft = false
 +++
 
@@ -32,16 +32,16 @@ Correction:
 {{< /highlight >}}
 
 
-## prompt {#prompt}
+## OCR Correction prompt {#ocr-correction-prompt}
 
 `correct-the-results-of-ocr-1.prompt`
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 task: "correct the results of OCR"
 doc: "Given OCR results, correct them"
-prompt-version: 1
+prompt-version: 2
 prompt: |+
-    This is an example of spelling correction on optical character recognition results of historical documents:
+    These are the results of performing optical character recognition on the historical documents.
     <delim>
     OCR Result:
     <delim>
@@ -71,15 +71,17 @@ examples:
 - |+
   they continu~e chofep ha~its ~fill in t-he mink .&fen th~at th~e generality of
   Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.
-preprocessors:
-- "cat"
+# TODO Add to .prompt optional multiplex preprocessor for inputs
+# If a postprocessor sees pf- then check the function to see if it has
+# multiplex capability
+postprocessor: pf-correct-grammar/1
 filter: on
 completion: off
 insertion: off
 {{< /highlight >}}
 
 
-## Input {#input}
+### Input {#input}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 they continu~e chofep ha~its ~fill in t-he mink .&fen th~at th~e generality of
@@ -87,10 +89,10 @@ Mlankiind conts ing~r them~relv~es with a ju~per~fcial knowvledye th-ingfSif.
 {{< /highlight >}}
 
 
-## Results {#results}
+### Results {#results}
 
 
-### 1 {#1}
+#### 1 {#1}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 they continue the same habits till in the
@@ -100,7 +102,7 @@ superficial knowledge of thing's if.
 {{< /highlight >}}
 
 
-### 2 {#2}
+#### 2 {#2}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 they continue in the habits of their
@@ -110,7 +112,7 @@ knowledge of things in themselves.
 {{< /highlight >}}
 
 
-### 3 {#3}
+#### 3 {#3}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 they continue chosen habits till in the midst
@@ -121,9 +123,36 @@ of things if.
 {{< /highlight >}}
 
 
-## Demo {#demo}
+### Demo {#demo}
 
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/wmgBIVkvfiWVzaRVYrM1ClXWW.js" id="asciicast-wmgBIVkvfiWVzaRVYrM1ClXWW" async></script>
+<script src="https://asciinema.org/a/idXGC3F3Ay0OymoyPOm8hLB6X.js" id="asciicast-idXGC3F3Ay0OymoyPOm8hLB6X" async></script>
+
+
+## Followed by spelling correction {#followed-by-spelling-correction}
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+postprocessor: pf-correct-grammar/1
+{{< /highlight >}}
+
+
+## Results {#results}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+they continued to choose habits that fill
+what they suppose are their basic needs and
+feel that the generality of mankind contains
+in them virtually the same relationship with
+just a superficial knowledge of things.
+{{< /highlight >}}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+They continued to choose
+habits that fill what they supposed are their
+basic needs and feel that the generality of
+mankind contains in them virtually the same
+relationship with just a superficial
+knowledge of things.
+{{< /highlight >}}
