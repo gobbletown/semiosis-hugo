@@ -11,6 +11,8 @@
 
 + PDF :: http://libgen.lc/ads.php?md5=74BBECAE18249BD29CEE9F2FC103DE58
 
+---
+
 - The mind is the _master manufacturer_
   - who divides the work to be executed into different processes.
   - modules in the mind
@@ -19,6 +21,8 @@
     - language
     - etc.
 
+---
+
 - The _biological bush_
   - 'As for humans, we are unquestionably a pure product of a certain aridity', it has been
     claimed (Coppens 1994: 69). After the catastrophe, our ape cousins were left in the lush
@@ -26,6 +30,8 @@
     relatively treeless savannah in the increasingly dry east, where they were forced to adapt,
     or die. An unfavourable climate forced a deprived species to live on its wits and, in the
     long run, develop language.
+
+---
 
 - _social structure_ and _intimate interaction_
   - _guessing and gossip_, not _grooming in groups_: /Gossip/ rather than /grooming/ might
@@ -50,6 +56,8 @@
       signal willingness to observe conventional
       local expectations for politeness.
 #+END_SRC
+
+---
 
 + _man of many wiles_ / _dogs may dissemble_
   + T. H. Huxley :: A man has no reason to
@@ -129,6 +137,8 @@
       hang of'.
 #+END_SRC
 
+---
+
 + _ruling the rules_
   - The permitted patterns or rules of all
     languages constantly change, and new words
@@ -189,6 +199,8 @@
       details from language to language.
 #+END_SRC
 
+---
+
 + Unweaving the rainbow: _separating the strands_
   - Language has some similarities to the
     rainbow. Both can be partially separated
@@ -202,25 +214,28 @@
     language, this is a necessity, even if the
     result is unromantic.
 
-+ Aeschylus, Prometheus bound (fifth century BC) ::
-  - My mother ...predicted that
+---
+
++ Aeschylus, Prometheus bound (fifth century BC) :: - My mother ...predicted that
   - Future rulers would conquer and control
   - Not by strength, nor by violence,
   - But by cunning
 
 + Umberto Eco, Foucault's pendulum :: The real
-    magicial isn't the bleary-eyed guy who doesn't
+    magicician isn't the bleary-eyed guy who doesn't
     understand a thing: it's the scientist who has
     grasped the hidden secrets of the universe.
 
-+ Alexander Pope, Essay on Man ::
-  - Let earth unbalanc'd from her orbit fly,
+---
+
++ Alexander Pope, Essay on Man :: - Let earth unbalanc'd from her orbit fly,
   - Planets and suns run lawless thro' the sky;
   - Let ruling angels from their spheres be hurl'd,
   - Being on being wreck'd and world on world.
 
-+ C. S. Lewis, Evolutionary hymn ::
-  - Lead us, Evolution, lead us
+---
+
++ C. S. Lewis, Evolutionary hymn :: - Lead us, Evolution, lead us
   - Up the future's endless stair;
   - Chop us, change us, prod us, weed us.
   - For stagnation is despair:
