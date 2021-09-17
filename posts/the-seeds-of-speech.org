@@ -35,20 +35,20 @@
 
 - _social structure_ and _intimate interaction_
   - _guessing and gossip_, not _grooming in groups_: /Gossip/ rather than /grooming/ might
-  have been promoted by several factors.
+    have been promoted by several factors.
 
-  Spoken language leaves the hands free for
-  other activities, perhaps important in open
-  savannah where humans possibly lived at one
-  time (chapter 5). Sounds can be heard in the
-  dark, and messages can be transmitted
-  rapidly.
+    Spoken language leaves the hands free for
+    other activities, perhaps important in open
+    savannah where humans possibly lived at one
+    time (chapter 5). Sounds can be heard in the
+    dark, and messages can be transmitted
+    rapidly.
 
 #+BEGIN_SRC text -n :async :results verbatim code
   phatic expression
   phatic communication
       [#linguistics]
-  
+
       A phatic expression is communication which
       serves a social function, such as social
       pleasantries that don't seek or offer
@@ -87,51 +87,51 @@
     selfishly or unselfishly. To exercise it,
     it's necessary to mentally 'put oneself
     into another person's shoes'.
-    
+
 #+BEGIN_SRC text -n :async :results verbatim code
   theory of mind
       Humans can do this: they can imagine
       alternative possible worlds, and treat others
       as if they had 'mental states'.
-      
+
       Those who can represent the minds of others in
       their own minds are said to have a theory of
       mind, something possessed by all normal
       humans.
-      
+
       Some can talk, but they have great difficulty
       in fully understanding other people.
-      
+
       Animals who possess a theory of mind are good
       at social manipulation.
-  
+
   wile
       Devious or cunning stratagems employed in
       manipulating or persuading someone to do
       what one wants.
       "she didn't employ any feminine wiles to
       capture his attention"
-  
+
   dissemble
       Conceal or disguise one's true feelings or
       beliefs.
       "an honest, sincere person with no need to
       dissemble"
-  
+
       Disguise or conceal (a feeling or
       intention).
       "she smiled, dissembling her true emotion"
-  
+
   mindblind
   mindblindness
       A few unfortunates suffer from a puzzling
       deficit, an inability to understand
       another's point of view.
-  
+
       This condition is sometimes referred to as
       'mindblindness', and it is a major symptom
       of autism.
-  
+
       To 'mindblind' humans, the world is a
       confusing place which they never 'get the
       hang of'.
@@ -183,18 +183,18 @@
   generativity
       The use of finite resources to produce an
       infinite variety of sentences
-  
+
       Language has the property of generativity.
-  
+
   language universal
       A feature common to all languages.
-  
+
   absolute linguistic universal
       A feature common to all languages.
-  
+
       Rare, unless one takes an over-broad view
       of the word 'universal'.
-      
+
       Even when apparently found, they differ in
       details from language to language.
 #+END_SRC
