@@ -32,17 +32,15 @@ PDF
 ---
 
 -   <span class="underline">social structure</span> and <span class="underline">intimate interaction</span>
-
     -   <span class="underline">guessing and gossip</span>, not <span class="underline">grooming in groups</span>: _Gossip_ rather than _grooming_ might
+        have been promoted by several factors.
 
-    have been promoted by several factors.
-
-    Spoken language leaves the hands free for
-    other activities, perhaps important in open
-    savannah where humans possibly lived at one
-    time (chapter 5). Sounds can be heard in the
-    dark, and messages can be transmitted
-    rapidly.
+        Spoken language leaves the hands free for
+        other activities, perhaps important in open
+        savannah where humans possibly lived at one
+        time (chapter 5). Sounds can be heard in the
+        dark, and messages can be transmitted
+        rapidly.
 
 <!--listend-->
 
