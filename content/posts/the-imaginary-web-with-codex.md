@@ -2,7 +2,7 @@
 title = "Browsing the imaginary web with Codex"
 author = ["Shane Mulligan"]
 date = 2021-09-09T00:00:00+12:00
-keywords = ["codex", "openai", "emacs"]
+keywords = ["codex", "openai", "emacs", "imaginary-internet"]
 draft = false
 +++
 
@@ -27,6 +27,16 @@ the web.
 -   Read an article on anything from your favourite blogger
 -   Also generates HTML to load the page in your fav browser. Pull it all together, and
 -   ... This is the future of the web.
+
+---
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+imaginary internet
+imaginary web
+    An imaginary world-wide-web is an
+    analog of the World-Wide-Web imagined by a
+    language model.
+{{< /highlight >}}
 
 
 ## The Definitive Demo {#the-definitive-demo}

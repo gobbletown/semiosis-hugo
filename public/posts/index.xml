@@ -603,6 +603,23 @@ the web.</p>
 <li>Also generates HTML to load the page in your fav browser. Pull it all together, and</li>
 <li>&hellip; This is the future of the web.</li>
 </ul>
+<hr>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">imaginary internet
+imaginary web
+    An imaginary world-wide-web is an
+    analog of the World-Wide-Web imagined by a
+    language model.</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="the-definitive-demo">The Definitive Demo</h2>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/GD8hBG0GvxCnAoFtuFSygJEtD.svg" /></a> -->
