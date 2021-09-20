@@ -290,16 +290,12 @@ Now you say how did the devil originate? Why
 did God allow the devil? Well, there's a lot
 of uncertainty about that.
 
-The apostle Paul calls evil the mystery of
-iniquity.
-
-There are just some things we don't know.
-
-God did not reveal it to us, and if God did
-not reveal it to us, we shouldn't be delving
-into speculation, but there are some hints in
-the Bible about where the devil originated: in
-Isaiah the 14th chapter.
+The apostle Paul calls evil the `mystery of iniquity`. There are just some things we don't
+know. God did not reveal it to us, and if God
+did not reveal it to us, we shouldn't be
+delving into speculation, but there are some
+hints in the Bible about where the devil
+originated: in Isaiah the 14th chapter.
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 How you have fallen from heaven, O morning
@@ -322,40 +318,29 @@ High."
 {{< /highlight >}}
 
 In other words, there came a time somewhere
-back in eternity when Lucifer, the highest
-and the greatest of all the created beings,
-led a rebellion against God and it seems that
-about a third of the angels joined him in the
-rebellion.
+back in eternity when Lucifer, the highest and
+the greatest of all the created beings, led a
+rebellion against God and it seems that about
+a third of the angels joined him in the
+rebellion. They were cast out of heaven. They
+landed on this earth. And the devil and these
+fallen angels who have now become demons are
+active on this planet. They’re under
+judgment. They’ve been defeated by the cross
+and the resurrection. They are ultimately
+going to be cast into hell, but in the
+meantime, they are active and increasing their
+activity.
 
-They were cast out of heaven. They landed on
-this earth.
-
-And the devil and these fallen angels who
-have now become demons are active on this
-planet.
-
-They’re under judgment.
-
-They’ve been defeated by the cross and the
-resurrection.
-
-They are ultimately going to be cast into
-hell, but in the meantime, they are active
-and increasing their activity.
-
-Now the sin of Lucifer was pride. He wanted
-to be like god. He wanted to be above God.
-He wanted to be the greatest being in all the
-universe. So he led the rebellion.
-
-You say, “Where did he get this idea?” We
-don’t know. We don’t know how the sin entered
-his heart. We don’t know why God allowed it.
-
-We don’t know. This is wrapped up in the
-mystery of God. It’s wrapped up in the
-mystery of iniquity.
+Now the sin of Lucifer was pride. He wanted to
+be like god. He wanted to be above God. He
+wanted to be the greatest being in all the
+universe. So he led the rebellion. You say,
+“Where did he get this idea?” We don’t know.
+We don’t know how the sin entered his heart.
+We don’t know why God allowed it. We don’t
+know. This is wrapped up in the mystery of
+God. It’s wrapped up in the `mystery of iniquity`.
 
 It’s something we don’t understand, and it
 will never be resolved until the battle of
