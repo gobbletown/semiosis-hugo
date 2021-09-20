@@ -785,18 +785,19 @@ troubles come, Satan will not be able to get
 close to you.
 
 You see, Satan uses worry, anxiety, and
-tension to keep us off balance.
+tension to keep us off balance. Are you
+afraid? Do not fear; for I am with you; says
+God. Do not anxiously look about you, for I
+am your God. "I will strengthen you; surely I
+will uphold you with my right hand", says God
+in Isaiah 41.
 
-Are you afraid? Do not fear; for I am with
-you; says God.
-
-Do not anxiously look about you, for I am
-your God.
-
-I will strengthen you; surely I will uphold
-you with my right hand, says God in Isaiah
-
-1.
+{{< highlight text "linenos=table, linenostart=1" >}}
+So do not fear, for I am with you; do not be
+dismayed, for I am your God. I will strengthen
+you and help you; I will uphold you with my
+righteous right hand.
+{{< /highlight >}}
 
 
 ### Shield of Faith {#shield-of-faith}
