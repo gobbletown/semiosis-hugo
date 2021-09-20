@@ -80,11 +80,9 @@ a deceiver."
 California schoolteacher the mother of six
 children was kidnapped sometime ago by five
 drug addicts; she was stabbed twenty times in
-the back.
-
-Her captors told the police that they were
-warlocks (i.e., male witches) that they
-worship the devil.
+the back. Her captors told the police that
+they were warlocks (i.e., male witches) that
+they worship the devil.
 
 In Montana some time ago, a 22-year-old
 social worker picked up a hitchhiker near
@@ -93,7 +91,7 @@ then shot his victim in the head and brutally
 attacked the dead body, telling the police
 that he worshipped the devil.
 
-in Miami Beach a 69-year-old retired woman is
+In Miami Beach a 69-year-old retired woman is
 viciously attacked by a young woman who later
 tells reporters very happily that for the
 last five years she has been worshiping Satan
@@ -101,53 +99,50 @@ and this is her sacrifice to the devil
 
 Story after story after story like that could
 be told tonight if we only had time to tell
-it.
-
-The scripture has a great deal to say about
-the evil and demons, in fact, the whole Bible
-is the story of a conflict between the forces
-of God and the forces of the devil.
-
+it. The scripture has a great deal to say
+about the evil and demons, in fact, the whole
+Bible is the story of a conflict between the
+forces of God and the forces of the devil.
 The scripture I would like for you to turn to
 is Deuteronomy 18:10–11.
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 There shall not be found among you anyone who
-maketh his son or his daughter pass through
-the fire or who uses divination or an observer
-of times on enchanter or a witch or a charmer
-or a consulter of mediums or a wizard.
+makes his son or his daughter pass through the
+fire, one who uses divination, one who
+practices witchcraft, or one who interprets
+omens, or a sorcerer, or one who casts a
+spell, or a medium, or a spiritist, or one who
+calls up the dead.
+{{< /highlight >}}
 
 You remember the story of Saul, who broke the
-law of God; he had lost contact with God.
-
-God had left no more blessings upon Saul, the
+law of God; he had lost contact with God. God
+had left no more blessings upon Saul, the
 great king of Israel, and so he decided that
 he was going to consult a medium and try to
-get a message from Samuel.
-
-He consulted the medium and he was successful
-in talking briefly with Samuel but he was
-killed shortly thereafter as the judgment of
-God fell upon Saul and his family.
+get a message from Samuel. He consulted the
+medium and he was successful in talking
+briefly with Samuel but he was killed shortly
+thereafter as the judgment of God fell upon
+Saul and his family.
 
 Now Americans at this hour are vacillating,
-according to the latest polls.
+according to the latest polls. Some deny the
+existence of the devil altogether, but others
+have an unnatural fascination with the devil
+and with demons and with exorcism and other
+things in the occult, and because of the
+success of the Exorcist in many new films
+being made on the subject of the devil and
+evil right now, a pastor who saw one of these
+films said recently, “It was obnoxious,
+repulsive, and disgusting. Pornographic and
+obscene.”
 
-Some deny the existence of the devil
-altogether, but others have an unnatural
-fascination with the devil and with demons
-and with exorcism and other things in the
-occult, and because of the success of the
-Exorcist in many new films being made on the
-subject of the devil and evil right now, a
-pastor who saw one of these films said
-recently, “It was obnoxious, repulsive, and
-disgusting. Pornographic and obscene.”
-
-I myself have not seen any of these films.
-
-I don't intend to expose myself to this type
-of thing, but a Jesuit priest who saw one of
+I myself have not seen any of these films. I
+don't intend to expose myself to this type of
+thing, but a Jesuit priest who saw one of
 these films said in his survey among
 university students that most students that
 have seen the films wish they had never seen
@@ -171,33 +166,27 @@ devil will intensify.
 
 The kidnapping, violence, and terror all over
 the world, I believe, is a part of demonic
-activity.
-
-One authority says that witchcraft is growing
-faster than any other religion in the Western
-world, and one reason I think that young
-people get involved is because it does get
-them involved.
-
-It's a return to nature, in a sense, of
-worship of the natural gods, finding some
-power within themselves or broadening their
-minds.
+activity. One authority says that witchcraft
+is growing faster than any other religion in
+the Western world, and one reason I think that
+young people get involved is because it does
+get them involved. It's a return to nature,
+in a sense, of worship of the natural gods,
+finding some power within themselves or
+broadening their minds.
 
 Some of them through drugs and some without
 drugs, but thousands of young and old alike
 are dabbling in their cult at this moment.
-
 Shops in our cities are selling all types of
 things that go along with their cult; one
 university professor said some time ago that
 there were dozens of covens on their campus.
-
-Now, coven as you know is a circle of witches
-and warlocks and warlocks on male witches
-numbering 13; they're always number 13 and
-they have their rights and their rituals and
-their literature and their witchcraft.
+Now, a coven as you know is a circle of
+witches and warlocks and warlocks on male
+witches numbering 13; they always number 13
+and they have their rights and their rituals
+and their literature and their witchcraft.
 
 
 ### The father of fakery (the deceiver) {#the-father-of-fakery--the-deceiver}
