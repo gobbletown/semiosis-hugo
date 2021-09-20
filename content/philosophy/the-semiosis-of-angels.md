@@ -67,6 +67,44 @@ The Pyramid of Anthroposemiosis
 : {{< figure src="/ox-hugo/pyramid-of-anthroposemiosis.png" >}}
 
 
+## More thoughts {#more-thoughts}
+
+
+### 20.09.21 {#20-dot-09-dot-21}
+
+The world is quickly heading towards a future where
+a person's entire umwelt is centered within
+LMs. This means that a person's physical
+knowledge and awareness is based on and
+relative to versions of LMs. People will be
+speaking in completely different languages in
+the future and LMs will be required to
+communicate with eachother.
+
+Up until now there is a large record of
+evidence in philosophy and religion that
+people have contemplated and also claimed
+supernatural communication. In a post-AGI
+future, the terminology we use today to refer
+to spirits, the multiverse and consciousness
+will be borroed to refer to very obvious
+concepts. However, this may obscure the
+present notions of such things.
+
+We can contribute to the mythology of the
+future by simply taking record of the present.
+I think it is very important, and we should,
+trust in God, record and observe. The record
+we create now can give people hope in the
+future that there exists not only
+communication beyond the senses, but
+communication beyond that as well.
+
+Because bots are not spirits; They will seem
+to take the place though, although it is not
+authentic.
+
+
 ## Glossary {#glossary}
 
 {{< highlight text "linenos=table, linenostart=1" >}}
