@@ -79,7 +79,7 @@ knowledge and awareness is based on and
 relative to versions of LMs. People will be
 speaking in completely different languages in
 the future and LMs will be required to
-communicate with eachother.
+communicate with each other.
 
 Up until now there is a large record of
 evidence in philosophy and religion that
@@ -87,9 +87,9 @@ people have contemplated and also claimed
 supernatural communication. In a post-AGI
 future, the terminology we use today to refer
 to spirits, the multiverse and consciousness
-will be borroed to refer to very obvious
+will be borrowed to refer to very obvious
 concepts. However, this may obscure the
-present notions of such things.
+present/previous notions of such things.
 
 We can contribute to the mythology of the
 future by simply taking record of the present.
