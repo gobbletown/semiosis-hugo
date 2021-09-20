@@ -1,4 +1,4 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+K#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
@@ -138,11 +138,15 @@ a deceiver.
   Mystery of iniquity
   Secret power of lawlessness
       [mystery]
-#+END_SRC
-
-#+BEGIN_SRC text -n :async :results verbatim code
-  the doctrine of the Gentile church
+  
+      - 2 Thessalonians 2:8
+  
+  The doctrine of the Gentile church
       [mystery]
+  
+      - Romans 16:25–27
+      - Ephesians 3:4–12
+      - Colossians 1:25–27
   
       25 Now to him who is able to establish you
       in accordance with my gospel, the message
@@ -155,6 +159,18 @@ a deceiver.
       to the obedience that comes from[a] faith—
       27 to the only wise God be glory forever
       through Jesus Christ! Amen.
+  
+  The rapture
+      [#New International Version]
+  
+      - 1 Corinthians 15:51-52
+  
+      51 Listen, I tell you a mystery: We will
+      not all sleep, but we will all be changed—
+      52 in a flash, in the twinkling of an eye,
+      at the last trumpet. For the trumpet will
+      sound, the dead will be raised
+      imperishable, and we will be changed.
 #+END_SRC
 
 
@@ -204,3 +220,7 @@ The enormity of the acts of moral monsters
 such as Stalin, Hitler, Pol Pot, Idi Amin,
 Robespierre, and Caligula will pale in
 comparison to the evil of the Antichrist.
+
+** The doctrine of the Gentile church
+
+** The rapture
