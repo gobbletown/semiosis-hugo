@@ -1,4 +1,4 @@
-K#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
@@ -13,6 +13,22 @@ K#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 + YouTube vid :: [[https://www.youtube.com/watch?v=0X6xFMRrLGY][Spiritual Warfare by Billy Graham Crusade Phoenix, AZ 1974 - YouTube]]
 
 + Subtitles :: [[./billy-graham-subs.txt]]
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  whakapapa
+  genealogy
+      A fundamental principle in Māori culture.
+  
+      A person reciting their whakapapa
+      proclaims their Māori identity, places
+      oneself in a wider context, and links
+      oneself to land and tribal groupings and
+      the mana of those.
+  
+      The inverse of a telos.
+      The whakapapa of a picnic table is the
+      tree from which it was made.
+#+END_SRC
 
 ** Summary
 In recent times I have been confronted with a
