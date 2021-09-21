@@ -6,6 +6,31 @@ keywords = ["faith"]
 draft = false
 +++
 
+## Preamble {#preamble}
+
+I think that, in the near future, the
+intensification of AI technology in the hands
+of individual people will lead to mass
+confusion, as we transition away from social
+rules as a moral compass.
+
+Trusting the Holy Spirit is more important now
+than ever for making decisions that will
+impact the future.
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+The Holy Spirit
+    Given to us so as to teach and show us all
+    the things necessary for life and
+    godliness. He particularly fits in this
+    role because He is the One who inspired
+    the Word of God. He is also the one who
+    illuminates our hearts with the truth. He
+    is the mind and the wisdom of God in the
+    life of the believer
+{{< /highlight >}}
+
+
 ## Summary {#summary}
 
 In recent times I have been confronted with a
@@ -68,6 +93,10 @@ a deceiver."
 
 
 ## Transcribing from Billy Graham {#transcribing-from-billy-graham}
+
+The following is the transcript from Billy
+Graham's sermon on Spiritual Warfare,
+including an explanation of the Armour of God.
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/x3vG6CHpfnDj55GlYAIymdBmh" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/x3vG6CHpfnDj55GlYAIymdBmh.svg" /></a> -->
@@ -1002,36 +1031,69 @@ natural gods finding some power within
 themselves or broadening their minds."
 {{< /highlight >}}
 
+Just a bit of speculation, but it seems to be progressing towards:
+
 -   The father of fakery:
     -   false miracles
-        -   Artificial intelligence
-        -   Medical technology
+        -   Artificial intelligence and medical technology
     -   false spiritual experiences
-        -   Drugs
+        -   Drugs I guess?
+        -   Brain-computer interface
+        -   Interpretation of dreams
+        -   ... IDK
     -   false tongues
         -   <https://mullikine.github.io/posts/imaginary-chimera-languages-with-codex/>
+        -   I did some research on mixing languages
+            with LMs. This is merely AI, but then you
+            have to wonder what is the spiritual significance of AGI.
     -   false church
-        -   Social and cultural rules
+        -   Social and cultural rules taking precedence of the Holy Spirit
+        -   Maybe like actually worshipping the Antichrist or something
     -   false gospel
     -   false plan of salvation
         -   Immortality through technology
     -   false trinity
     -   false preachers
     -   false prophets
+    -   ...
 
 He promises freedom liberty and life but he
 produces only sorrow, slavery and death. He's
 a deceiver.
 
 {{< highlight text "linenos=table, linenostart=1" >}}
+mystery
+    The word mystery denotes something hidden
+    for a time before God chooses to reveal
+    it.
+
 Mystery of iniquity
 Secret power of lawlessness
     [mystery]
-{{< /highlight >}}
 
-{{< highlight text "linenos=table, linenostart=1" >}}
-the doctrine of the Gentile church
+    (2 Thessalonians 2:)
+
+    The working of lawlessness in the world,
+    leading to a worldwide rebellion against
+    God.
+
+    It is a mystery that is being restrained
+    from being revealed.
+
+    The revelation of this lawlessness will
+    coincide with the revelation of the
+    Antichrist.
+
+Antichrist
     [mystery]
+
+    (2 Thessalonians 2:8)
+
+Doctrine of the Gentile church
+    [mystery]
+
+    (Romans 16:25–27; Ephesians 3:4–12;
+    Colossians 1:25–27)
 
     25 Now to him who is able to establish you
     in accordance with my gospel, the message
@@ -1044,35 +1106,34 @@ the doctrine of the Gentile church
     to the obedience that comes from[a] faith—
     27 to the only wise God be glory forever
     through Jesus Christ! Amen.
+
+Rapture
+    [mystery]
+
+    (1 Corinthians 15:51–52)
 {{< /highlight >}}
+
+
+## Doctrine of the Gentile church {#doctrine-of-the-gentile-church}
+
+The mystery revealed to Paul "that the
+Gentiles should be fellowheirs and of the same
+body and partakers of his promise in Christ by
+the Gospel" (Ephesians 3:3-6).
+
+That the saved Gentiles became fellowheirs
+with saved Jews, and were united then in
+Christ through the Gospel is the obvious
+teaching of Paul in Ephesians 3, a proposition
+upon which all will agree
+
+<https://www.etsjets.org/files/JETS-PDFs/8/8-2/BETS%5F8%5F2%5F77-84%5FMare.pdf>
 
 
 ## The mystery of iniquity {#the-mystery-of-iniquity}
 
-What exactly is the mystery of iniquity (`KJV`)
-or the secret power of lawlessness (`NIV`) that
-is being restrained by the Holy Spirit?
-
-The word mystery denotes something hidden for
-a time before God chooses to reveal it.
-
-Some “mysteries” revealed in the New Testament
-include the doctrine of the Gentile church
-(Romans 16:25–27; Ephesians 3:4–12; Colossians
-1:25–27) and the rapture (1 Corinthians
-15:51–52).
-
-This particular “mystery” in 2 Thessalonians
-2:7 concerns the working of lawlessness in the
-world, leading to a worldwide rebellion
-against God.
-
 It works in secret right now, but it is
 working.
-
-The revelation of this lawlessness will
-coincide with the revelation of the
-Antichrist, mentioned in <span class="underline">2 Thessalonians 2:8</span>.
 
 The man of sin’s rise to power will represent
 a climax of lawlessness, a satanic movement
