@@ -44,5 +44,6 @@ I try to demonstrate /imaginary reflection/.
 #+END_SRC
 
 ** The way a program's source code is used within itself
+- Generate test functions
 
 ** The way a program's source code is used in the real world
