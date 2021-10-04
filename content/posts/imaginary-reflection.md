@@ -130,3 +130,6 @@ Demo of prompting the above:
 
 
 ## The way a program's source code is used in the real world {#the-way-a-program-s-source-code-is-used-in-the-real-world}
+
+-   This can be used to:
+    -   optimise a software by statically or dynamically prioritising functions which are used more often

@@ -216,6 +216,13 @@ valuable for inspiration.</p>
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT.js" id="asciicast-lhVDv6T1j9Q8NVb8XFyuP4CsT" async></script>
 <h2 id="the-way-a-program-s-source-code-is-used-in-the-real-world">The way a program&rsquo;s source code is used in the real world</h2>
+<ul>
+<li>This can be used to:
+<ul>
+<li>optimise a software by statically or dynamically prioritising functions which are used more often</li>
+</ul>
+</li>
+</ul>
 ]]></content>
         </item>
         
