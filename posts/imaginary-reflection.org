@@ -44,7 +44,10 @@ I try to demonstrate /imaginary reflection/.
 #+END_SRC
 
 ** The way a program's source code is used within itself
-This can be used to optimise a software program if .
+
+This can be used to:
+- optimise a software by statically or dynamically prioritising functions which are used more often
+- generating test cases for functions that the libary provides
 
 *** Generate test functions
 #+BEGIN_SRC yaml -n :async :results verbatim code
