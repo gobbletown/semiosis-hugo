@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +1200</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Symbol in context</title>
+      <link>http://semiosis.github.io/posts/symbol-in-context/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/symbol-in-context/</guid>
+      <description>Summary I make a couple of prompts for showing usages of words and syntax forms for code.
+ External related: https://wordincontext.com/en  Demo  --  Word retribution
+1 2  &amp;#34;Who knows if he will die for your retributions?&amp;#34; said Conan.   rescinded
+1 2  I was upset that the court rescinded the judgement.   Function prolog format
+1 2 3 4 5 6 7 8  format(&amp;#34;~w~n&amp;#34;, [1]) format(&amp;#34;~w&amp;#34;, [Hello, world!</description>
+    </item>
+    
     <item>
       <title>Spiritual Mysteries</title>
       <link>http://semiosis.github.io/posts/spiritual-warfare/</link>
