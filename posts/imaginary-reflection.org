@@ -46,4 +46,10 @@ I try to demonstrate /imaginary reflection/.
 ** The way a program's source code is used within itself
 - Generate test functions
 
+In the future, when the LMs are updated
+frequently enough, software projects may
+employ the LM (for example, the LM that is
+trained on GitHub source code) to generate its
+test cases.
+
 ** The way a program's source code is used in the real world
