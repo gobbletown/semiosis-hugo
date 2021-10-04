@@ -54,8 +54,20 @@ test cases.
 
 + Firstly, pick out a project :: https://github.com/trending/python
 
-I have chosen =youtube-dl=.
+I have chosen =OSlash=.
 
-https://github.com/ytdl-org/youtube-dl
+OSlash is a library which provides Functors,
+Applicatives, And Monads in Python.
+
+https://github.com/dbrattli/OSlash
+
+I selected this one because there should be
+examples of usage of the functions which it provides.
+
+test_do.py
+
+# I have chosen =youtube-dl=.
+
+# https://github.com/ytdl-org/youtube-dl
 
 ** The way a program's source code is used in the real world
