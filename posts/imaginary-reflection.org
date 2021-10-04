@@ -64,8 +64,6 @@ https://github.com/dbrattli/OSlash
 I selected this one because there should be
 examples of usage of the functions which it provides.
 
-test_do.py
-
 # I have chosen =youtube-dl=.
 
 # https://github.com/ytdl-org/youtube-dl
