@@ -44,28 +44,81 @@ I try to demonstrate /imaginary reflection/.
 #+END_SRC
 
 ** The way a program's source code is used within itself
-- Generate test functions
+This can be used to optimise a software program if .
 
-In the future, when the LMs are updated
-frequently enough, software projects may
-employ the LM (for example, the LM that is
-trained on GitHub source code) to generate its
-test cases.
+*** Generate test functions
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  task: "create a test case for a function, given the repository url"
+  doc: "Given a function name and a repository URL, generate a test case"
+  todo:
+  - Make this work for more languages
+  prompt-version: 1
+  prompt: |+
+    git clone "<url>"
+    cd `(insert (pen-snc "sed 's/.*github.com\\/[^/]*\\///'" "<url>"))`
+    cd tests
+    # Functions for testing <function name>
+    cat test_<function name>.py <<EOD
+    
+  engine: "OpenAI Codex"
+  temperature: 0.3
+  
+  # This works, but the approximation of the max bound sometimes isn't good enough
+  # max-generated-tokens: "final-engine-max-generated-tokens"
+  
+  # max-generated-tokens: "(- final-engine-max-generated-tokens 200)"
+  
+  # Only start it off
+  max-generated-tokens: 150
+  
+  top-p: 1.0
+  n-completions: 5
+  stop-sequences:
+  - "EOD"
+  cache: on
+  yas: on
+  vars:
+  - "url"
+  - "function name"
+  examples:
+  - "https://github.com/dbrattli/OSlash"
+  - "monad"
+  filter: off
+  completion: off
+  insertion: on
+#+END_SRC
 
-+ Firstly, pick out a project :: https://github.com/trending/python
++ Real source code :: https://github.com/dbrattli/OSlash/blob/master/tests/test_monad.py
 
-I have chosen =OSlash=.
+Fictional:
 
-OSlash is a library which provides Functors,
-Applicatives, And Monads in Python.
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  import unittest
+  import oslash
+  
+  # Monads
+  
+  class TestMonads(unittest.TestCase):
+  
+      def test_reader_monad(self):
+          def ask(name):
+              return ("Hello, %s" % name, lambda: "Pleased to meet you, %s." % name)
+  
+          # Reader Monad
+          self.assertEqual(oslash.Reader.unit("World"), (lambda r: ("Hello, %s" % r, None)), "Reader monad unit failed")
+          self.assertEqual(oslash.Reader.curry(ask, "World"), (lambda r: (lambda _: ("
+#+END_SRC
 
-https://github.com/dbrattli/OSlash
+This is obviously incorrect, but perhaps
+valuable for inspiration.
 
-I selected this one because there should be
-examples of usage of the functions which it provides.
+Demo of prompting the above:
 
-# I have chosen =youtube-dl=.
-
-# https://github.com/ytdl-org/youtube-dl
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT.js" id="asciicast-lhVDv6T1j9Q8NVb8XFyuP4CsT" async></script>
+#+END_EXPORT
 
 ** The way a program's source code is used in the real world
