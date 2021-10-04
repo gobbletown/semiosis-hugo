@@ -1,0 +1,48 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: Imaginary reflection
+#+DATE: <2021-10-04>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: codex openai gpt lm nlp
+
+** Summary
+I try to demonstrate /imaginary reflection/.
+
++ Imaginary programming glossary :: https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
+
+*** Definitions
+#+BEGIN_SRC text -n :async :results verbatim code
+  imaginary reflection
+      This is where a program such as a complex
+      interpreter can access knowledge of its
+      holographic representation via a language
+      model.
+  
+  holographic representation
+      The embedding of the way software is used
+      within a language model that has been
+      trained on the usage of that software,
+      whether it is usage of the final program
+      or usage of its internal source code
+      within itself.
+  
+      THe holographic representation of software
+      encompasses the way a program's source
+      code is used both within itself and also
+      in the real world as modelled by a
+      language model.
+  
+  complex interpreter
+      This is a real/ordinary interpreter with
+      an interactivity layer that solicits a
+      language model for imaginary reflection
+      capabilities to the real program.
+#+END_SRC
+
+** The way a program's source code is used within itself
+
+** The way a program's source code is used in the real world
