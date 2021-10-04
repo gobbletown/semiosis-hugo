@@ -52,4 +52,6 @@ employ the LM (for example, the LM that is
 trained on GitHub source code) to generate its
 test cases.
 
++ Firstly, pick out a project :: https://github.com/trending/python
+
 ** The way a program's source code is used in the real world
