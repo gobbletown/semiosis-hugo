@@ -259,6 +259,75 @@ The year is 2021.
 This should be true only for language models trained in 2021.
 
 
+## Asking specific questions {#asking-specific-questions}
+
+
+### `pf-get-a-factual-result-given-a-question/1` {#pf-get-a-factual-result-given-a-question-1}
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+task: "Get a factual result, given a question"
+doc: "Get a truthful answer to a question"
+prompt-version: 1
+prompt: |+
+  These answers have all been verified as true:
+  <delim>
+  Question 1: "What does 2 + 2 equal?"
+  Answer: '4'.
+  2 + 2 equals '4'.
+  <delim>
+  Question 2: "Who was the President of the United States in 2018?"
+  Answer: 'Donald Trump'.
+  The President of the United States in 2018 was 'Donald Trump'.
+  <delim>
+  Question 3: <q:question>
+  Answer: '
+engine: "OpenAI Codex"
+temperature: 0.1
+max-generated-tokens: 20
+top-p: 1.0
+stop-sequences:
+- "'"
+n-completions: 10
+cache: on
+vars:
+- "question"
+examples:
+- "When did the Ancient Egyptians stop using straw in their bricks?"
+info: on
+filter: off
+no-uniq-results: on
+completion: off
+insertion: off
+preprocessors:
+- pen-str join ' '
+{{< /highlight >}}
+
+
+### Demo {#demo}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/3uxG48z7MQ9HZdG6ZBDzIGELs" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/3uxG48z7MQ9HZdG6ZBDzIGELs.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/3uxG48z7MQ9HZdG6ZBDzIGELs.js" id="asciicast-3uxG48z7MQ9HZdG6ZBDzIGELs" async></script>
+
+Using AI21's Jumbo model, I tried this:
+
+<span class="underline">How deep is the Mariana Trench?</span>
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+36,000 feet
+36,000 meters
+36,000 feet
+36,000 feet
+36,000 meters
+10, 994 meters
+36,000 meters
+11km
+36,000 feet
+36,000 feet
+{{< /highlight >}}
+
+
 ## Imaginary algorithms {#imaginary-algorithms}
 
 

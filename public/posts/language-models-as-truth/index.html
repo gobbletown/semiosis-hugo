@@ -41,7 +41,7 @@ This uses a language model as base truth.
 Hypothesis LMs themselves should be used as the source of truth for other LMs.
 One problem with GPT-3 and other LMs is that they can produce completions that may appear fictitious or false, or it may be difficult to determine why (if there was any sound reason) that a completion came out the way that it did."><meta itemprop="datePublished" content="2021-10-05T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-10-05T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="1179"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1387"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -148,7 +148,7 @@ One problem with GPT-3 and other LMs is that they can produce completions that m
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        6 minutes
+        7 minutes
 
         
       </p>
@@ -508,6 +508,117 @@ Answer:</code></pre></td></tr></table>
 </div>
 </div>
 <p>This should be true only for language models trained in 2021.</p>
+<h2 id="asking-specific-questions">Asking specific questions</h2>
+<h3 id="pf-get-a-factual-result-given-a-question-1"><code>pf-get-a-factual-result-given-a-question/1</code></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Get a factual result, given a question&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Get a truthful answer to a question&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  These answers have all been verified as true:
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  Question 1: &#34;What does 2 + 2 equal?&#34;
+</span><span style="color:#e6db74">  Answer: &#39;4&#39;.
+</span><span style="color:#e6db74">  2 + 2 equals &#39;4&#39;.
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  Question 2: &#34;Who was the President of the United States in 2018?&#34;
+</span><span style="color:#e6db74">  Answer: &#39;Donald Trump&#39;.
+</span><span style="color:#e6db74">  The President of the United States in 2018 was &#39;Donald Trump&#39;.
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  Question 3: &lt;q:question&gt;
+</span><span style="color:#e6db74">  Answer: &#39;</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.1</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">20</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;&#39;&#34;</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;question&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;When did the Ancient Egyptians stop using straw in their bricks?&#34;</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">no-uniq-results</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">pen-str join &#39; &#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="demo">Demo</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/3uxG48z7MQ9HZdG6ZBDzIGELs" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/3uxG48z7MQ9HZdG6ZBDzIGELs.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/3uxG48z7MQ9HZdG6ZBDzIGELs.js" id="asciicast-3uxG48z7MQ9HZdG6ZBDzIGELs" async></script>
+<p>Using AI21&rsquo;s Jumbo model, I tried this:</p>
+<p><span class="underline">How deep is the Mariana Trench?</span></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">36,000 feet
+36,000 meters
+36,000 feet
+36,000 feet
+36,000 meters
+10, 994 meters
+36,000 meters
+11km
+36,000 feet
+36,000 feet</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="imaginary-algorithms">Imaginary algorithms</h2>
 <h3 id="find-the-model-s-training-year">Find the model&rsquo;s training year</h3>
 <h3 id="compare-language-perspectives-using-kl-divergence">Compare language perspectives using KL-divergence</h3>
@@ -547,7 +658,7 @@ tuned to lie.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1179 Words
+        1387 Words
       </p>
 
       <p>
