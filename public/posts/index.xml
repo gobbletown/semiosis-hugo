@@ -537,6 +537,12 @@ sense
 - <span style="color:#ae81ff">pen-str join &#39; &#39;</span></code></pre></td></tr></table>
 </div>
 </div>
+<p>By also asking the LM to explain its answers, we have a means of
+understanding how it arrived at its conclusions
+and thus insight on how to further craft the
+prompt to avoid nonsense, but also it improves
+few-shot learning because explanations
+reinforce the coherence of proceeding answers.</p>
 <h2 id="demo">Demo</h2>
 <h3 id="clearly-codex-believes-the-current-year-is-2018">Clearly, Codex believes the current year is 2018</h3>
 <!-- Play on asciinema.com -->

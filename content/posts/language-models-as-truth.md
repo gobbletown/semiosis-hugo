@@ -88,6 +88,13 @@ preprocessors:
 - pen-str join ' '
 {{< /highlight >}}
 
+By also asking the LM to explain its answers, we have a means of
+understanding how it arrived at its conclusions
+and thus insight on how to further craft the
+prompt to avoid nonsense, but also it improves
+few-shot learning because explanations
+reinforce the coherence of proceeding answers.
+
 
 ## Demo {#demo}
 
