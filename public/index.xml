@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Equations with Codex</title>
+      <link>http://semiosis.github.io/posts/equations-with-codex/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/equations-with-codex/</guid>
+      <description>Summary It&amp;rsquo;s a real frustration searching for or even writing latex equations.
+It&amp;rsquo;s very easy to generate the required latex snippets with Codex, however.
+ External links https://quicklatex.com/  Demo  --  Two possibilities for the perplexity equation 1  perplexity \propto \cfrac{\prod p(w_{i})}{\prod p(w_{i})}     1  \log{\displaystyle=\frac{1}{n}(log(p(w_1,\dots,w_n))\prod\limits_{i=1}^{n}p(w_i|\mathcal{W}))}     </description>
+    </item>
+    
     <item>
       <title>Imaginary reflection</title>
       <link>http://semiosis.github.io/posts/imaginary-reflection/</link>

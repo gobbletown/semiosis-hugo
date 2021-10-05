@@ -6,8 +6,57 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Equations with Codex</title>
+            <link>http://semiosis.github.io/posts/equations-with-codex/</link>
+            <pubDate>Tue, 05 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/equations-with-codex/</guid>
+            <description>Summary It&amp;rsquo;s a real frustration searching for or even writing latex equations.
+It&amp;rsquo;s very easy to generate the required latex snippets with Codex, however.
+ External links https://quicklatex.com/  Demo  --  Two possibilities for the perplexity equation 1  perplexity \propto \cfrac{\prod p(w_{i})}{\prod p(w_{i})}     1  \log{\displaystyle=\frac{1}{n}(log(p(w_1,\dots,w_n))\prod\limits_{i=1}^{n}p(w_i|\mathcal{W}))}     </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>It&rsquo;s a real frustration searching for or even writing latex equations.</p>
+<p>It&rsquo;s very easy to generate the required latex snippets with Codex, however.</p>
+<dl>
+<dt>External links</dt>
+<dd><a href="https://quicklatex.com/">https://quicklatex.com/</a></dd>
+</dl>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/KFWqLaaBfjYZsVqFeKvURoVCT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/KFWqLaaBfjYZsVqFeKvURoVCT.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/KFWqLaaBfjYZsVqFeKvURoVCT.js" id="asciicast-KFWqLaaBfjYZsVqFeKvURoVCT" async></script>
+<h3 id="two-possibilities-for-the-perplexity-equation">Two possibilities for the perplexity equation</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">perplexity <span style="color:#66d9ef">\propto</span> <span style="color:#66d9ef">\cfrac</span>{<span style="color:#66d9ef">\prod</span> p(w_{i})}{<span style="color:#66d9ef">\prod</span> p(w_{i})}</code></pre></td></tr></table>
+</div>
+</div>
+<figure>
+    <img src="/ox-hugo/perplexity1.png"/> 
+</figure>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\log</span>{<span style="color:#66d9ef">\displaystyle</span>=<span style="color:#66d9ef">\frac</span>{1}{n}(log(p(w_1,<span style="color:#66d9ef">\dots</span>,w_n))<span style="color:#66d9ef">\prod\limits</span>_{i=1}^{n}p(w_i|<span style="color:#66d9ef">\mathcal</span>{W}))}</code></pre></td></tr></table>
+</div>
+</div>
+<figure>
+    <img src="/ox-hugo/perplexity2.png"/> 
+</figure>
+
+]]></content>
+        </item>
         
         <item>
             <title>Imaginary reflection</title>
