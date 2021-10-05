@@ -6,8 +6,320 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Wed, 06 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Babel and Pen - Generating Snippets</title>
+            <link>http://semiosis.github.io/posts/babel-and-pen-generating-snippets/</link>
+            <pubDate>Wed, 06 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/babel-and-pen-generating-snippets/</guid>
+            <description>Summary Objectives  Automate the generation of snippets using babel and the pen docker.   1  Logistic map   1 2 3 4 5 6 7  import numpy as np import matplotlib.pyplot as plt def logistic(r, x): return r * x * (1 - x) def plot_system(r, x0, n, ax=None):   1  kl divergence of samples   1 2 3 4 5 6 7  import random import math def kl_divergence(p, q): return sum(p[i] * math.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<h3 id="objectives">Objectives</h3>
+<ul>
+<li>Automate the generation of snippets using babel and the pen docker.</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Logistic map</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logistic</span>(r, x):
+  <span style="color:#66d9ef">return</span> r <span style="color:#f92672">*</span> x <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> x)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_system</span>(r, x0, n, ax<span style="color:#f92672">=</span>None):</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">kl divergence of samples</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> random
+<span style="color:#f92672">import</span> math
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">kl_divergence</span>(p, q):
+  <span style="color:#66d9ef">return</span> sum(p[i] <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>log(p[i]<span style="color:#f92672">/</span>q[i], <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(p)))
+
+p <span style="color:#f92672">=</span> [</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cross entropy of samples</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cross_entropy</span>(p, q):
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>sum([p[i]<span style="color:#f92672">*</span>np<span style="color:#f92672">.</span>log2(q[i]) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(p))])</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">R-squared (R2)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> r2_score
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">r2</span>(x, y):
+  <span style="color:#66d9ef">return</span> r2_score(x, y)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="template">Template</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">code-snippet<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    echo <span style="color:#e6db74">&#34;#+BEGIN_SRC text -n :f penf -u code-snippet-from-natural-language/2 python :async :results verbatim code&#34;</span>
+    cat <span style="color:#e6db74">&#34;</span>$input_fp<span style="color:#e6db74">&#34;</span> | postprocess
+    echo -n <span style="color:#e6db74">&#34;#+END_SRC&#34;</span>
+<span style="color:#f92672">}</span>
+;;</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompt-used">Prompt used</h2>
+<h3 id="pf-code-snippet-from-natural-language-2"><code>pf-code-snippet-from-natural-language/2</code></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#ae81ff">code snippet from natural language</span>
+<span style="color:#f92672">future-titles</span>:
+- <span style="color:#ae81ff">Get code snippet</span>
+- <span style="color:#ae81ff">Get snippet</span>
+<span style="color:#f92672">next-version</span>: <span style="color:#ae81ff">get-code-snippet.prompt</span>
+<span style="color:#f92672">doc</span>: <span style="color:#ae81ff">Get a bash one liner from natural langauge</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    Language: Ruby
+</span><span style="color:#e6db74">    Task: Reverse lines from stdout
+</span><span style="color:#e6db74">    Code: while s = gets; puts s.chop.reverse; end
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    Language: Haskell
+</span><span style="color:#e6db74">    Task: Multiple Each Item in a List by 2
+</span><span style="color:#e6db74">    Code:
+</span><span style="color:#e6db74">    map (*2) [1..10]
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    Language: bash
+</span><span style="color:#e6db74">    Task: Recursively remove all &#34;node_modules&#34; folders
+</span><span style="color:#e6db74">    Code:
+</span><span style="color:#e6db74">    find . -name &#34;node_modules&#34; -exec rm -rf &#39;{}&#39; +
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    Language: Haskell
+</span><span style="color:#e6db74">    Task: Apply a function to both bits of a tuple:
+</span><span style="color:#e6db74">    Code:
+</span><span style="color:#e6db74">    both :: (a -&gt; b) -&gt; (a, a) -&gt; (b, b)
+</span><span style="color:#e6db74">    both = join (***)
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    Language: Python
+</span><span style="color:#e6db74">    Task: Palindrome Python One-Liner
+</span><span style="color:#e6db74">    Code: phrase.find(phrase[::-1])
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">    Language: &lt;1&gt;
+</span><span style="color:#e6db74">    Task: &lt;2&gt;
+</span><span style="color:#e6db74">    Code:</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#ae81ff">OpenAI Davinci</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.8</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">60</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;&lt;delim&gt;&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">language</span>
+- <span style="color:#ae81ff">task</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#ae81ff">bash</span>
+- <span style="color:#ae81ff">suspend laptop</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/mH6B4MkGtXYJJYiWpwWN956F1" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/mH6B4MkGtXYJJYiWpwWN956F1.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/mH6B4MkGtXYJJYiWpwWN956F1.js" id="asciicast-mH6B4MkGtXYJJYiWpwWN956F1" async></script>
+<h2 id="some-more-demos">Some more demos</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">N choose K</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nCk</span>(n,k):
+  <span style="color:#66d9ef">return</span> int( reduce(mul, (Fraction(n<span style="color:#f92672">-</span>i, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k)), <span style="color:#ae81ff">1</span>) )</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">inverse laplace transform</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sympy <span style="color:#f92672">as</span> sp
+sp<span style="color:#f92672">.</span>init_printing()
+t <span style="color:#f92672">=</span> sp<span style="color:#f92672">.</span>symbols(<span style="color:#e6db74">&#39;t&#39;</span>)
+f <span style="color:#f92672">=</span> sp<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>t)
+sp<span style="color:#f92672">.</span>inverse_laplace_transform(f, t, s)</code></pre></td></tr></table>
+</div>
+</div>
+<p>Ruby?</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">inverse laplace transform</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;mathn&#39;</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inverse_laplace_transform</span>(expr, s, t)
+expr<span style="color:#f92672">.</span>subs(s, <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>subs(t, <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>simplify<span style="color:#f92672">.</span>expand<span style="color:#f92672">.</span>collect { <span style="color:#f92672">|</span>x<span style="color:#f92672">|</span> x<span style="color:#f92672">.</span>subs(t,</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Equations with Codex</title>
@@ -1052,7 +1364,10 @@ complex interpreter
     capabilities to the real program.</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="the-way-a-program-s-source-code-is-used-within-itself">The way a program&rsquo;s source code is used within itself</h2>
+<h2 id="internal-imaginary-reflection">Internal imaginary reflection</h2>
+<p>This is reflection but where the program
+consults a LM for information on its own
+source.</p>
 <p>This can be used to:</p>
 <ul>
 <li>optimise a software by statically or dynamically prioritising functions which are used more often</li>
@@ -1145,7 +1460,7 @@ complex interpreter
 <dt>Real source code</dt>
 <dd><a href="https://github.com/dbrattli/OSlash/blob/master/tests/test%5Fmonad.py">https://github.com/dbrattli/OSlash/blob/master/tests/test%5Fmonad.py</a></dd>
 </dl>
-<p>Fictional:</p>
+<p>A fictional/generated unit test:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1180,18 +1495,29 @@ complex interpreter
         <span style="color:#ae81ff">self.assertEqual(oslash.Reader.curry(ask, &#34;World&#34;), (lambda r: (lambda _: (&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>This is obviously incorrect, but perhaps
-valuable for inspiration.</p>
-<p>Demo of prompting the above:</p>
+<p>The assumption with the generated test cases
+is that the LM should be capable of catering
+generated test cases to an exact repository.</p>
+<p>The resulting test isn&rsquo;t accurate enough to
+make that claim, but perhaps the technique is
+still valuable for inspiration in writing new
+test cases, even if the test cases will not
+run as generated.</p>
+<p>The demo of prompting the above test case:</p>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT.js" id="asciicast-lhVDv6T1j9Q8NVb8XFyuP4CsT" async></script>
-<h2 id="the-way-a-program-s-source-code-is-used-in-the-real-world">The way a program&rsquo;s source code is used in the real world</h2>
+<h2 id="external-imaginary-reflection">External imaginary reflection</h2>
+<p>This is reflection but where the program
+consults a LM for information on the way the
+program is used in the real world.</p>
 <ul>
 <li>This can be used to:
 <ul>
-<li>optimise a software by statically or dynamically prioritising functions which are used more often</li>
+<li>optimise a software by statically or
+dynamically prioritising functions which are
+used more often.</li>
 </ul>
 </li>
 </ul>

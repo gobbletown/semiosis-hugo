@@ -45,7 +45,11 @@ complex interpreter
 {{< /highlight >}}
 
 
-## The way a program's source code is used within itself {#the-way-a-program-s-source-code-is-used-within-itself}
+## Internal imaginary reflection {#internal-imaginary-reflection}
+
+This is reflection but where the program
+consults a LM for information on its own
+source.
 
 This can be used to:
 
@@ -99,7 +103,7 @@ insertion: on
 Real source code
 : <https://github.com/dbrattli/OSlash/blob/master/tests/test%5Fmonad.py>
 
-Fictional:
+A fictional/generated unit test:
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 import unittest
@@ -118,10 +122,17 @@ class TestMonads(unittest.TestCase):
         self.assertEqual(oslash.Reader.curry(ask, "World"), (lambda r: (lambda _: ("
 {{< /highlight >}}
 
-This is obviously incorrect, but perhaps
-valuable for inspiration.
+The assumption with the generated test cases
+is that the LM should be capable of catering
+generated test cases to an exact repository.
 
-Demo of prompting the above:
+The resulting test isn't accurate enough to
+make that claim, but perhaps the technique is
+still valuable for inspiration in writing new
+test cases, even if the test cases will not
+run as generated.
+
+The demo of prompting the above test case:
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT.svg" /></a> -->
@@ -129,7 +140,13 @@ Demo of prompting the above:
 <script src="https://asciinema.org/a/lhVDv6T1j9Q8NVb8XFyuP4CsT.js" id="asciicast-lhVDv6T1j9Q8NVb8XFyuP4CsT" async></script>
 
 
-## The way a program's source code is used in the real world {#the-way-a-program-s-source-code-is-used-in-the-real-world}
+## External imaginary reflection {#external-imaginary-reflection}
+
+This is reflection but where the program
+consults a LM for information on the way the
+program is used in the real world.
 
 -   This can be used to:
-    -   optimise a software by statically or dynamically prioritising functions which are used more often
+    -   optimise a software by statically or
+        dynamically prioritising functions which are
+        used more often.
