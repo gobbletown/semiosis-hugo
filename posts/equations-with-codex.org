@@ -16,6 +16,10 @@ It's very easy to generate the required latex snippets with Codex, however.
 
 + External links :: https://quicklatex.com/
 
++ Snippet generator prompt :: http://github.com/semiosis/prompts/blob/master/prompts/code-snippet-from-natural-language-2.prompt
+
++ ascii2latex prompt :: http://github.com/semiosis/prompts/blob/master/prompts/convert-ascii-to-latex-equation-1.prompt
+
 ** Demo
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
@@ -36,3 +40,86 @@ It's very easy to generate the required latex snippets with Codex, however.
 #+END_SRC
 
 [[./perplexity2.svg]]
+
+** Euler's identity
+#+BEGIN_SRC latex -n :f "math2svg eulers-identity" :async :results raw drawer
+  e^(i*pi)+1=0
+#+END_SRC
+
+[[file:eulers-identity.svg]]
+
+** Quadratic equation
+#+BEGIN_SRC latex -n :f "math2svg quadratic-equation" :async :results raw drawer
+  a x^2 + b x + c = 0\\
+  x = \frac{-b \pm \sqrt{b^2-4 ac}}{2 a}
+#+END_SRC
+
+[[file:quadratic-equation.svg]]
+
+Demonstration of above:
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/kfanOXb16b3YGDnle0IUmC8iz" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/kfanOXb16b3YGDnle0IUmC8iz.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/kfanOXb16b3YGDnle0IUmC8iz.js" id="asciicast-kfanOXb16b3YGDnle0IUmC8iz" async></script>
+#+END_EXPORT
+
+** Extra special equation generator
+=convert-ascii-to-latex-equation-1.prompt=
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  task: "Convert ascii to latex equation"
+  doc: "Given some ascii text, convert to a latex equation"
+  notes:
+  - generate latex math mode from ascii representation
+  prompt-version: 1
+  prompt: |+
+    How to write latex math equations:
+    P(W) = P(w_1, w_2,...,w_N)
+    <delim>
+    Equation: sqrt(x^2 + 1)
+    Latex: \sqrt{x^2+1}
+    <delim>
+    Equation: quadratic formula
+    Latex: x = \frac{-b \pm \sqrt{b^2-4 ac}}{2 a}
+    <delim>
+    Equation: <equation>
+    Latex: 
+  engine: "OpenAI Codex"
+  temperature: 0.3
+  max-generated-tokens: "(* 2 prompt-length)"
+  top-p: 1.0
+  stop-sequences:
+  - "<delim>"
+  cache: on
+  vars:
+  - "equation"
+  examples:
+  - "quadratic formula"
+  filter: on
+  completion: off
+  insertion: off
+#+END_SRC
+
+*** Generate anything
+#+BEGIN_SRC text -n :async :results verbatim code
+  sqrt(infinity - 1)
+#+END_SRC
+
+#+BEGIN_SRC latex -n :f "math2svg sqrt-infinity-minus-one" :async :results raw drawer
+  \sqrt{\infty - 1}
+#+END_SRC
+
+[[file:sqrt-infinity-minus-one.svg]]
+
+*** Demo of any equation generation
+- From NL
+- From ascii pseudocode
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/5tnGoZQjJF5onp2FT7QaDVAIg" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/5tnGoZQjJF5onp2FT7QaDVAIg.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/5tnGoZQjJF5onp2FT7QaDVAIg.js" id="asciicast-5tnGoZQjJF5onp2FT7QaDVAIg" async></script>
+#+END_EXPORT
