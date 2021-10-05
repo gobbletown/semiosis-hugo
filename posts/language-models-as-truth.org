@@ -82,6 +82,13 @@ This depends on =sense= of the model for this particular task.
   - pen-str join ' '
 #+END_SRC
 
+By also asking the LM to explain its answers, we have a means of
+understanding how it arrived at its conclusions
+and thus insight on how to further craft the
+prompt to avoid nonsense, but also it improves
+few-shot learning because explanations
+reinforce the coherence of proceeding answers.
+
 ** Demo
 *** Clearly, Codex believes the current year is 2018
 #+BEGIN_EXPORT html
