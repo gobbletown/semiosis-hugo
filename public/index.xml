@@ -39,8 +39,8 @@ basic Example of a generation.
       <guid>http://semiosis.github.io/posts/language-models-as-truth/</guid>
       <description>Summary I demonstrate the imaginary algorithm for testing a statement&amp;rsquo;s truth.
 This uses a language model as base truth.
-Theory What constitutes as untrue? This depends on sense of the model for this particular task.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  ground truth A term used in various fields to refer to information that is known to be real or true, provided by direct observation and measurement (i.</description>
+Hypothesis LMs themselves should be used as the source of truth for other LMs.
+One problem with GPT-3 and other LMs is that they can produce completions that may appear fictitious or false, or it may be difficult to determine why (if there was any sound reason) that a completion came out the way that it did.</description>
     </item>
     
     <item>
