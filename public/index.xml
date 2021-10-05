@@ -44,6 +44,17 @@ One problem with GPT-3 and other LMs is that they can produce completions that m
     </item>
     
     <item>
+      <title>Simply Complete to Completion the Selection</title>
+      <link>http://semiosis.github.io/posts/simply-complete-selection/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/simply-complete-selection/</guid>
+      <description>Summary This is not your stereotypical unbounded completion mechanism. This prompt generates until it considers the completion truly complete (i.e. completed).
+Your average completion will be unbounded, and this simple prompt is a bounded completion.
+Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  task: &amp;#34;Prompt until the language model believes it has hit the end&amp;#34; prompt-version: 1 todo: - Consider including the EOD in the output as a sentinel, so the user knows prompt: |+cat file &amp;lt;&amp;lt;EOD &amp;lt;:pp&amp;gt;&amp;lt;contents&amp;gt; engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+    </item>
+    
+    <item>
       <title>Imaginary reflection</title>
       <link>http://semiosis.github.io/posts/imaginary-reflection/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +1300</pubDate>
