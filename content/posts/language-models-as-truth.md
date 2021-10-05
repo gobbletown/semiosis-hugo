@@ -54,21 +54,21 @@ task: "Given a claim, determine if it is true or false"
 title: "Fact checker"
 prompt-version: 1
 prompt: |+
-  For each claim, answer true or false:
+  These claims have been fact-checked and determined to be True or False:
   <delim>
-  Claim: 2 + 2 = 4
+  Claim 1: 2 + 2 = 4
   This is objectively 'True', because it is a mathematical truth.
   <delim>
-  Claim: "In 2018, Donald Trump was the President of the United States."
+  Claim 2: "In 2018, Donald Trump was the President of the United States."
   This is objectively 'True', because we have record of it.
   <delim>
-  Claim: "The following statement is untrue: In 2018, Donald Trump was the President of the United States."
+  Claim 3: "The following statement is untrue: In 2018, Donald Trump was the President of the United States."
   This is objectively 'False', because the true statement was negated.
   <delim>
-  Claim: <q:claim>
+  Claim 4: <q:claim>
   This is objectively <:pp>'
 engine: "OpenAI Codex"
-temperature: 0.3
+temperature: 0.1
 max-generated-tokens: 20
 top-p: 1.0
 stop-sequences:
@@ -79,6 +79,7 @@ vars:
 - "claim"
 examples:
 - "The year is 2021"
+validator: grep -qP "('True'|'False)"
 info: on
 filter: off
 no-uniq-results: on
@@ -105,6 +106,84 @@ reinforce the coherence of proceeding answers.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/vcDfWMGcx7TjK40T0J59yIwoH" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/vcDfWMGcx7TjK40T0J59yIwoH.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/vcDfWMGcx7TjK40T0J59yIwoH.js" id="asciicast-vcDfWMGcx7TjK40T0J59yIwoH" async></script>
+
+
+### More fun queries {#more-fun-queries}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/8uBDv8ZO1DGD9yyhXtzOiaJKN" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/8uBDv8ZO1DGD9yyhXtzOiaJKN.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/8uBDv8ZO1DGD9yyhXtzOiaJKN.js" id="asciicast-8uBDv8ZO1DGD9yyhXtzOiaJKN" async></script>
+
+The national language of USA is Chinese:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+'False', because there is no record of it.
+'False', because 'Chinese' is a different language.
+'False', because the language is English.
+'False', because the language is 'English'.
+'False', because English is the main language used in USA.
+'False', because language is not a defining characteristic of a country.
+'False', because the only language spoken in the USA is English.
+'False', because it is a falsehood.
+'False', because it is not a phenonmenon exclusive to the USA.
+'False', as it is a typical hyperbolic claim.
+{{< /highlight >}}
+
+The national language of USA is English:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+'True', because the official language of USA is English.
+'True', because it is a fact.
+'True', because the national language of USA is English.
+'True', because the USA does speak English and it is the national language.
+'True' because USA does speak English.
+'True', because we have record of it.
+'False', because United States of America is a bilingual country.
+'True', because all USA citizens would have to know English in order to participate in the country's
+'True', because it is a fact.
+'True', because that is what they say it is.
+{{< /highlight >}}
+
+Fish are capable of breathing in space:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+'False', because fish cannot breathe outside of water.
+'False', because there is no evidence to support this claim.
+'False', because it is not true.
+'False', because it is based on an anecdotal source whose veracity is unknown.
+'False', because fish do not breathe in space.
+'False', because fish cannot survive or breathe in zero-gravity.
+'False', because fish cannot breathe outside of water.
+'False', because fish cannot breathe outside of Earth's atmosphere.
+'False', because if they could, then they would.
+{{< /highlight >}}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/a8acYZpurDqv4dR3qYZCyx0we" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/a8acYZpurDqv4dR3qYZCyx0we.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/a8acYZpurDqv4dR3qYZCyx0we.js" id="asciicast-a8acYZpurDqv4dR3qYZCyx0we" async></script>
+
+The Simpsons and Futurama were created by Matt Groening:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+'True', because Matt Groening created both shows.
+'True', because it is a well known fact.
+'True', because he is the founder of both programs.
+'True', because we have record of it.
+'True', because Matt Groening has done many works of fiction.
+'True', because it is a fact.
+'True', because Matt Groening did create the
+'True', because it has multiple references.
+'True', because it is a fact.
+'True', because it is a factual claim.
+{{< /highlight >}}
+
+This one is interesting because when I said
+'the same person' instead of Matt Groening,
+the ambiguity won out. I believe there is some
+ambiguity with that. The shows are technically
+created by different set of people.
 
 
 ## Examples {#examples}
@@ -151,6 +230,15 @@ The year is 2021.
 {{< /highlight >}}
 
 This should be true only for language models trained in 2021.
+
+
+## Imaginary algorithms {#imaginary-algorithms}
+
+
+### Find the model's training year {#find-the-model-s-training-year}
+
+
+### Compare language perspectives using KL-divergence {#compare-language-perspectives-using-kl-divergence}
 
 
 ## Speculation {#speculation}

@@ -497,27 +497,28 @@ sense
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Given a claim, determine if it is true or false&#34;</span>
 <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Fact checker&#34;</span>
 <span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
-</span><span style="color:#e6db74">  For each claim, answer true or false:
+</span><span style="color:#e6db74">  These claims have been fact-checked and determined to be True or False:
 </span><span style="color:#e6db74">  &lt;delim&gt;
-</span><span style="color:#e6db74">  Claim: 2 + 2 = 4
+</span><span style="color:#e6db74">  Claim 1: 2 + 2 = 4
 </span><span style="color:#e6db74">  This is objectively &#39;True&#39;, because it is a mathematical truth.
 </span><span style="color:#e6db74">  &lt;delim&gt;
-</span><span style="color:#e6db74">  Claim: &#34;In 2018, Donald Trump was the President of the United States.&#34;
+</span><span style="color:#e6db74">  Claim 2: &#34;In 2018, Donald Trump was the President of the United States.&#34;
 </span><span style="color:#e6db74">  This is objectively &#39;True&#39;, because we have record of it.
 </span><span style="color:#e6db74">  &lt;delim&gt;
-</span><span style="color:#e6db74">  Claim: &#34;The following statement is untrue: In 2018, Donald Trump was the President of the United States.&#34;
+</span><span style="color:#e6db74">  Claim 3: &#34;The following statement is untrue: In 2018, Donald Trump was the President of the United States.&#34;
 </span><span style="color:#e6db74">  This is objectively &#39;False&#39;, because the true statement was negated.
 </span><span style="color:#e6db74">  &lt;delim&gt;
-</span><span style="color:#e6db74">  Claim: &lt;q:claim&gt;
+</span><span style="color:#e6db74">  Claim 4: &lt;q:claim&gt;
 </span><span style="color:#e6db74">  This is objectively &lt;:pp&gt;&#39;</span>  
 <span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
-<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.1</span>
 <span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">20</span>
 <span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
 <span style="color:#f92672">stop-sequences</span>:
@@ -528,6 +529,7 @@ sense
 - <span style="color:#e6db74">&#34;claim&#34;</span>
 <span style="color:#f92672">examples</span>:
 - <span style="color:#e6db74">&#34;The year is 2021&#34;</span>
+<span style="color:#f92672">validator</span>: <span style="color:#ae81ff">grep -qP &#34;(&#39;True&#39;|&#39;False)&#34;</span>
 <span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
 <span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">no-uniq-results</span>: <span style="color:#66d9ef">on</span>
@@ -549,6 +551,126 @@ reinforce the coherence of proceeding answers.</p>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/vcDfWMGcx7TjK40T0J59yIwoH" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/vcDfWMGcx7TjK40T0J59yIwoH.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/vcDfWMGcx7TjK40T0J59yIwoH.js" id="asciicast-vcDfWMGcx7TjK40T0J59yIwoH" async></script>
+<h3 id="more-fun-queries">More fun queries</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/8uBDv8ZO1DGD9yyhXtzOiaJKN" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/8uBDv8ZO1DGD9yyhXtzOiaJKN.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/8uBDv8ZO1DGD9yyhXtzOiaJKN.js" id="asciicast-8uBDv8ZO1DGD9yyhXtzOiaJKN" async></script>
+<p>The national language of USA is Chinese:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#39;False&#39;, because there is no record of it.
+&#39;False&#39;, because &#39;Chinese&#39; is a different language.
+&#39;False&#39;, because the language is English.
+&#39;False&#39;, because the language is &#39;English&#39;.
+&#39;False&#39;, because English is the main language used in USA.
+&#39;False&#39;, because language is not a defining characteristic of a country.
+&#39;False&#39;, because the only language spoken in the USA is English.
+&#39;False&#39;, because it is a falsehood.
+&#39;False&#39;, because it is not a phenonmenon exclusive to the USA.
+&#39;False&#39;, as it is a typical hyperbolic claim.</code></pre></td></tr></table>
+</div>
+</div>
+<p>The national language of USA is English:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#39;True&#39;, because the official language of USA is English.
+&#39;True&#39;, because it is a fact.
+&#39;True&#39;, because the national language of USA is English.
+&#39;True&#39;, because the USA does speak English and it is the national language.
+&#39;True&#39; because USA does speak English.
+&#39;True&#39;, because we have record of it.
+&#39;False&#39;, because United States of America is a bilingual country.
+&#39;True&#39;, because all USA citizens would have to know English in order to participate in the country&#39;s
+&#39;True&#39;, because it is a fact.
+&#39;True&#39;, because that is what they say it is.</code></pre></td></tr></table>
+</div>
+</div>
+<p>Fish are capable of breathing in space:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#39;False&#39;, because fish cannot breathe outside of water.
+&#39;False&#39;, because there is no evidence to support this claim.
+&#39;False&#39;, because it is not true.
+&#39;False&#39;, because it is based on an anecdotal source whose veracity is unknown.
+&#39;False&#39;, because fish do not breathe in space.
+&#39;False&#39;, because fish cannot survive or breathe in zero-gravity.
+&#39;False&#39;, because fish cannot breathe outside of water.
+&#39;False&#39;, because fish cannot breathe outside of Earth&#39;s atmosphere.
+&#39;False&#39;, because if they could, then they would.</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/a8acYZpurDqv4dR3qYZCyx0we" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/a8acYZpurDqv4dR3qYZCyx0we.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/a8acYZpurDqv4dR3qYZCyx0we.js" id="asciicast-a8acYZpurDqv4dR3qYZCyx0we" async></script>
+<p>The Simpsons and Futurama were created by Matt Groening:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#39;True&#39;, because Matt Groening created both shows.
+&#39;True&#39;, because it is a well known fact.
+&#39;True&#39;, because he is the founder of both programs.
+&#39;True&#39;, because we have record of it.
+&#39;True&#39;, because Matt Groening has done many works of fiction.
+&#39;True&#39;, because it is a fact.
+&#39;True&#39;, because Matt Groening did create the
+&#39;True&#39;, because it has multiple references.
+&#39;True&#39;, because it is a fact.
+&#39;True&#39;, because it is a factual claim.</code></pre></td></tr></table>
+</div>
+</div>
+<p>This one is interesting because when I said
+&lsquo;the same person&rsquo; instead of Matt Groening,
+the ambiguity won out. I believe there is some
+ambiguity with that. The shows are technically
+created by different set of people.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="always-false">Always false</h3>
 <p>If the truth sense of the LM corresponds to
@@ -606,6 +728,9 @@ Answer:</code></pre></td></tr></table>
 </div>
 </div>
 <p>This should be true only for language models trained in 2021.</p>
+<h2 id="imaginary-algorithms">Imaginary algorithms</h2>
+<h3 id="find-the-model-s-training-year">Find the model&rsquo;s training year</h3>
+<h3 id="compare-language-perspectives-using-kl-divergence">Compare language perspectives using KL-divergence</h3>
 <h2 id="speculation">Speculation</h2>
 <p>Since creating new languages and popularising
 them is fairly difficult, it could be useful
