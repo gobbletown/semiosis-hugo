@@ -40,7 +40,7 @@ It&amp;rsquo;s very easy to generate the required latex snippets with Codex, how
 </div>
 </div>
 <figure>
-    <img src="/ox-hugo/perplexity1.png"/> 
+    <img src="/ox-hugo/perplexity1.svg"/> 
 </figure>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -52,7 +52,7 @@ It&amp;rsquo;s very easy to generate the required latex snippets with Codex, how
 </div>
 </div>
 <figure>
-    <img src="/ox-hugo/perplexity2.png"/> 
+    <img src="/ox-hugo/perplexity2.svg"/> 
 </figure>
 
 ]]></content>

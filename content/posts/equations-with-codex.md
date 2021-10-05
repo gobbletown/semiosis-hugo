@@ -30,10 +30,10 @@ External links
 perplexity \propto \cfrac{\prod p(w_{i})}{\prod p(w_{i})}
 {{< /highlight >}}
 
-{{< figure src="/ox-hugo/perplexity1.png" >}}
+{{< figure src="/ox-hugo/perplexity1.svg" >}}
 
 {{< highlight latex "linenos=table, linenostart=1" >}}
 \log{\displaystyle=\frac{1}{n}(log(p(w_1,\dots,w_n))\prod\limits_{i=1}^{n}p(w_i|\mathcal{W}))}
 {{< /highlight >}}
 
-{{< figure src="/ox-hugo/perplexity2.png" >}}
+{{< figure src="/ox-hugo/perplexity2.svg" >}}
