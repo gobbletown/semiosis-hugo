@@ -1,0 +1,38 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: Equations with Codex
+#+DATE: <2021-10-05>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: openai codex
+
+** Summary
+It's a real frustration searching for or even writing latex equations.
+
+It's very easy to generate the required latex snippets with Codex, however.
+
++ External links :: https://quicklatex.com/
+
+** Demo
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/KFWqLaaBfjYZsVqFeKvURoVCT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/KFWqLaaBfjYZsVqFeKvURoVCT.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/KFWqLaaBfjYZsVqFeKvURoVCT.js" id="asciicast-KFWqLaaBfjYZsVqFeKvURoVCT" async></script>
+#+END_EXPORT
+
+*** Two possibilities for the perplexity equation
+#+BEGIN_SRC latex -n :f "math2png perplexity1" :async :results raw drawer
+  perplexity \propto \cfrac{\prod p(w_{i})}{\prod p(w_{i})}
+#+END_SRC
+
+[[file:perplexity1.png]]
+
+#+BEGIN_SRC latex -n :f "math2png perplexity2" :async :results raw drawer
+  \log{\displaystyle=\frac{1}{n}(log(p(w_1,\dots,w_n))\prod\limits_{i=1}^{n}p(w_i|\mathcal{W}))}
+#+END_SRC
+
+[[file:perplexity2.png]]
