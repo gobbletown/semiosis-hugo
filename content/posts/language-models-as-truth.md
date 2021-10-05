@@ -144,3 +144,18 @@ The year is 2021.
 {{< /highlight >}}
 
 This should be true only for language models trained in 2021.
+
+
+## Speculation {#speculation}
+
+Since creating new languages and popularising
+them is fairly difficult, it could be useful
+to make queries with them. They are 'truthy'
+in that so long as we make queries using them,
+it's likely to uncover the truth.
+
+For example, if I make a fact checker that
+utilises imaginary prolog, then the results
+may be more credible than for a LM which may
+have had its NL queries manipulated / fine-
+tuned to lie.

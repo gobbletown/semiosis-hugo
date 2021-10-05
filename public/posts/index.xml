@@ -600,6 +600,17 @@ Answer:</code></pre></td></tr></table>
 </div>
 </div>
 <p>This should be true only for language models trained in 2021.</p>
+<h2 id="speculation">Speculation</h2>
+<p>Since creating new languages and popularising
+them is fairly difficult, it could be useful
+to make queries with them. They are &lsquo;truthy&rsquo;
+in that so long as we make queries using them,
+it&rsquo;s likely to uncover the truth.</p>
+<p>For example, if I make a fact checker that
+utilises imaginary prolog, then the results
+may be more credible than for a LM which may
+have had its NL queries manipulated / fine-
+tuned to lie.</p>
 ]]></content>
         </item>
         
