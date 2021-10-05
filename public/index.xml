@@ -16,7 +16,7 @@
       <guid>http://semiosis.github.io/posts/equations-with-codex/</guid>
       <description>Summary It&amp;rsquo;s a real frustration searching for or even writing latex equations.
 It&amp;rsquo;s very easy to generate the required latex snippets with Codex, however.
- External links https://quicklatex.com/  Demo  --  Two possibilities for the perplexity equation 1  perplexity \propto \cfrac{\prod p(w_{i})}{\prod p(w_{i})}     1  \log{\displaystyle=\frac{1}{n}(log(p(w_1,\dots,w_n))\prod\limits_{i=1}^{n}p(w_i|\mathcal{W}))}     </description>
+ External links https://quicklatex.com/ Snippet generator prompt http://github.com/semiosis/prompts/blob/master/prompts/code-snippet-from-natural-language-2.prompt ascii2latex prompt http://github.com/semiosis/prompts/blob/master/prompts/convert-ascii-to-latex-equation-1.prompt  Demo  --  Two possibilities for the perplexity equation 1  perplexity \propto \cfrac{\prod p(w_{i})}{\prod p(w_{i})}     1  \log{\displaystyle=\frac{1}{n}(log(p(w_1,\dots,w_n))\prod\limits_{i=1}^{n}p(w_i|\mathcal{W}))}     Euler&amp;rsquo;s identity 1  e^(i*pi)+1=0     Quadratic equation 1 2  a x^2 + b x + c = 0\\ x = \frac{-b \pm \sqrt{b^2-4 ac}}{2 a}     Demonstration of above:</description>
     </item>
     
     <item>
