@@ -15,6 +15,30 @@ testing a statement's truth.
 
 This uses a language model as base truth.
 
+** Hypothesis
+LMs themselves should be used as the source of
+truth for other LMs.
+
+One problem with GPT-3 and other LMs is that
+they can produce completions that may appear
+fictitious or false, or it may be difficult to
+determine why (if there was any sound reason)
+that a completion came out the way that it
+did.
+
+It may just turn out that the way to get
+better resolution on what is true is it
+increase the resolution of its training and
+the size of these LMs.
+
+My hypothesis is that LMs themselves will
+become a source of truth, but *may* also be
+coupled with blockchain. For example, the
+Posthuman AI Market, where versioned LMs are
+stored on the blockchain.
+
++ Posthuman AI Market :: https://port.oceanprotocol.com/t/posthuman-ai-market-v1-1-luci-integration/675
+
 ** Theory
 *** What constitutes as untrue?
 This depends on =sense= of the model for this particular task.
