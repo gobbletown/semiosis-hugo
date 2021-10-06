@@ -40,8 +40,9 @@ stored on the blockchain.
 Posthuman AI Market
 : <https://port.oceanprotocol.com/t/posthuman-ai-market-v1-1-luci-integration/675>
 
+---
 
-Types of truth:
+-   Types of truth <code>[4/4]</code>:
     -   [X] _Coherence_ is innate
         -   By virtue of the LM's training on a large corpus
     -   [X] _Pragmatic_ is achievable

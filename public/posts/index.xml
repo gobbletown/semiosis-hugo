@@ -744,16 +744,34 @@ stored on the blockchain.</p>
 <dt>Posthuman AI Market</dt>
 <dd><a href="https://port.oceanprotocol.com/t/posthuman-ai-market-v1-1-luci-integration/675">https://port.oceanprotocol.com/t/posthuman-ai-market-v1-1-luci-integration/675</a></dd>
 </dl>
-<p>Types of truth:
--   [X] <em>Coherence</em> is innate
--   By virtue of the LM&rsquo;s training on a large corpus
--   [X] <em>Pragmatic</em> is achievable
--   By interactively crafting prompts
--   [X] <em>Consensus</em> is achievable
--   By placing LMs on the blockchain
--   [X] <em>Constructivist</em> is a customizable factor
--   By adjusting the scope and resolution of the dataset
--   This will be an important customization parameter for language model truth</p>
+<hr>
+<ul>
+<li>Types of truth <code>[4/4]</code>:
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <em>Coherence</em> is innate
+<ul>
+<li>By virtue of the LM&rsquo;s training on a large corpus</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <em>Pragmatic</em> is achievable
+<ul>
+<li>By interactively crafting prompts</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <em>Consensus</em> is achievable
+<ul>
+<li>By placing LMs on the blockchain</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <em>Constructivist</em> is a customizable factor
+<ul>
+<li>By adjusting the scope and resolution of the dataset</li>
+<li>This will be an important customization parameter for language model truth</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="theory">Theory</h2>
 <h3 id="what-constitutes-as-untrue">What constitutes as untrue?</h3>
 <p>This depends on <code>sense</code> of the model for this particular task.</p>
