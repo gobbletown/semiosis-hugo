@@ -41,6 +41,18 @@ Posthuman AI Market
 : <https://port.oceanprotocol.com/t/posthuman-ai-market-v1-1-luci-integration/675>
 
 
+Types of truth:
+    -   [X] _Coherence_ is innate
+        -   By virtue of the LM's training on a large corpus
+    -   [X] _Pragmatic_ is achievable
+        -   By interactively crafting prompts
+    -   [X] _Consensus_ is achievable
+        -   By placing LMs on the blockchain
+    -   [X] _Constructivist_ is a customizable factor
+        -   By adjusting the scope and resolution of the dataset
+        -   This will be an important customization parameter for language model truth
+
+
 ## Theory {#theory}
 
 
@@ -68,6 +80,48 @@ sense
     The sense is the truth orientation, in a
     similar way to the way the word sense is
     used in the definition of a vector.
+{{< /highlight >}}
+
+
+### Language models are already coherent {#language-models-are-already-coherent}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+coherence
+coherence theory of truth
+    For coherence theories in general, truth
+    requires a proper fit of elements within a
+    whole system.
+
+    Very often, though, coherence is taken to
+    imply something more than simple logical
+    consistency; often there is a demand that
+    the propositions in a coherent system lend
+    mutual inferential support to each other.
+
+    So, for example, the completeness and
+    comprehensiveness of the underlying set of
+    concepts is a critical factor in judging
+    the validity and usefulness of a coherent
+    system.
+
+    A pervasive tenet of coherence theories is
+    the idea that truth is primarily a
+    property of whole systems of propositions,
+    and can be ascribed to individual
+    propositions only according to their
+    coherence with the whole.
+
+    Among the assortment of perspectives
+    commonly regarded as coherence theory,
+    theorists differ on the question of
+    whether coherence entails many possible
+    true systems of thought or only a single
+    absolute system.
+
+    Some variants of coherence theory are
+    claimed to describe the essential and
+    intrinsic properties of formal systems in
+    logic and mathematics.
 {{< /highlight >}}
 
 
@@ -121,7 +175,36 @@ understanding how it arrived at its conclusions
 and thus insight on how to further craft the
 prompt to avoid nonsense, but also it improves
 few-shot learning because explanations
-reinforce the coherence of proceeding answers.
+reinforce the coherence of proceeding answers (potential exists to craft the prompt towards <span class="underline">pragmatic truth</span>).
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+pragmatic
+pragmatic theory of truth
+    The three most influential forms of the
+    pragmatic theory of truth were introduced
+    around the turn of the 20th century by
+    Charles Sanders Peirce, William James, and
+    John Dewey.
+
+    Although there are wide differences in
+    viewpoint among these and other proponents
+    of pragmatic theory, they hold in common
+    that truth is verified and confirmed by
+    the results of putting one's concepts into
+    practice.
+
+    Peirce defines truth as follows:
+        Truth is that concordance of an
+        abstract statement with the ideal
+        limit towards which endless
+        investigation would tend to bring
+        scientific belief, which concordance
+        the abstract statement may possess by
+        virtue of the confession of its
+        inaccuracy and one-sidedness, and this
+        confession is an essential ingredient
+        of truth.
+{{< /highlight >}}
 
 
 ## Demo {#demo}
