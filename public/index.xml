@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 06 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Complexify any tmux window</title>
+      <link>http://semiosis.github.io/posts/complexify-any-tmux-window/</link>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/complexify-any-tmux-window/</guid>
+      <description>Summary I create a tmux binding for opening the current tmux window in a Pen.el enabled eterm, thus allowing for codex completion within the interpreter you are looking at.
+I figure it is better to work with the complex terminal in this manner, rather than doing everything inside the emacs terminal.
+This makes it more robust.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  complex programming A complex terminal has braided imaginary programming with real programming.</description>
+    </item>
+    
     <item>
       <title>Babel and Pen - Generating Snippets</title>
       <link>http://semiosis.github.io/posts/babel-and-pen-generating-snippets/</link>

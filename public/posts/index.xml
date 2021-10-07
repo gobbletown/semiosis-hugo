@@ -6,8 +6,238 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 06 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Thu, 07 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Complexify any tmux window</title>
+            <link>http://semiosis.github.io/posts/complexify-any-tmux-window/</link>
+            <pubDate>Thu, 07 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/complexify-any-tmux-window/</guid>
+            <description>Summary I create a tmux binding for opening the current tmux window in a Pen.el enabled eterm, thus allowing for codex completion within the interpreter you are looking at.
+I figure it is better to work with the complex terminal in this manner, rather than doing everything inside the emacs terminal.
+This makes it more robust.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  complex programming A complex terminal has braided imaginary programming with real programming.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I create a tmux binding for opening the
+current tmux window in a <code>Pen.el</code> enabled
+<code>eterm</code>, thus allowing for codex completion
+within the interpreter you are looking at.</p>
+<p>I figure it is better to work with the complex
+terminal in this manner, rather than doing
+<strong>everything</strong> inside the emacs terminal.</p>
+<p>This makes it more robust.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">complex programming
+    A complex terminal has braided imaginary
+    programming with real programming.
+
+    The word complex is suitable because it
+    describes this braiding along with the
+    mathematical connotations of complex
+    numbers.
+
+    We could further extend this terminology
+    to include complex programming in the
+    realm of imaginary programming to describe
+    a programming style that combines both
+    real programming with imaginary
+    programming.</code></pre></td></tr></table>
+</div>
+</div>
+<dl>
+<dt>IP Glossary</dt>
+<dd><a href="https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt">https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt</a></dd>
+</dl>
+<h2 id="procedure">Procedure</h2>
+<h3 id="add-a-binding">Add a binding</h3>
+<pre><code class="language-conf-space" data-lang="conf-space">bind Q run -b &#34;tm -d -t sps \&#34;sh-pane \$(tpn)\&#34;&#34;</code></pre>
+<h3 id="add-a-handler-for-my-sh-pane-script">Add a handler for my <code>sh-pane</code> script</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">e  tm-window-etermify $window_id</code></pre></td></tr></table>
+</div>
+</div>
+<p><code>sh-pane</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>pane_id:=<span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>pane_id:=<span style="color:#e6db74">&#34;</span>$TMUX_PANE<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>pane_id:=<span style="color:#e6db74">&#34;</span>$CALLER_TARGET<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>window_id:=<span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>window_id:=<span style="color:#66d9ef">$(</span>tmux display-message -p <span style="color:#e6db74">&#39;#{window_id}&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># for i in sh-*; do sed -i &#39;s/read -n1 d/&amp;; test &#34;$d&#34; = &#34;&#34; \&amp;\&amp; read -n1 d/&#39; &#34;$i&#34; ; done</span>
+
+clear
+<span style="color:#75715e"># exec 1&gt; &gt;(mnm)</span>
+
+<span style="color:#75715e"># I should turn this entire script into an elisp hydra.</span>
+<span style="color:#75715e"># Although that would require that emacs has been started already.</span>
+
+read -r -d <span style="color:#e6db74">&#39;&#39;</span> options <span style="color:#e6db74">&lt;&lt;HEREDOC
+</span><span style="color:#e6db74">.  EDIT
+</span><span style="color:#e6db74">o  tm-pane-open-file $pane_id
+</span><span style="color:#e6db74">i  tm-copy-pane-cmd $pane_id
+</span><span style="color:#e6db74">m  tm-pane-open-file $pane_id media
+</span><span style="color:#e6db74">F  tm-pane-open-file $pane_id feh
+</span><span style="color:#e6db74">V  tm-pane-open-file $pane_id vlc
+</span><span style="color:#e6db74">e  tm-window-etermify $window_id
+</span><span style="color:#e6db74">HEREDOC</span>
+
+echo <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span> | udl
+echo <span style="color:#e6db74">&#34;</span>$options<span style="color:#e6db74">&#34;</span> | mnm
+
+IFS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> read -n1 d; test <span style="color:#e6db74">&#34;</span>$d<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">&amp;&amp;</span> read -n1 d
+<span style="color:#75715e"># clear</span>
+
+<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$d<span style="color:#e6db74">&#34;</span> in
+    .<span style="color:#f92672">)</span> cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;v </span>$0<span style="color:#e6db74">&#34;</span> ;;
+    o<span style="color:#f92672">)</span> cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tm-pane-open-file </span>$pane_id<span style="color:#e6db74">&#34;</span> ;;
+    i<span style="color:#f92672">)</span> cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tm-copy-pane-cmd </span>$pane_id<span style="color:#e6db74">&#34;</span> ;;
+    m<span style="color:#f92672">)</span> cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tm-pane-open-file </span>$pane_id<span style="color:#e6db74"> media&#34;</span> ;;
+    F<span style="color:#f92672">)</span> cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tm-pane-open-file </span>$pane_id<span style="color:#e6db74"> feh&#34;</span> ;;
+    V<span style="color:#f92672">)</span> cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tm-pane-open-file </span>$pane_id<span style="color:#e6db74"> vlc&#34;</span> ;;
+    e<span style="color:#f92672">)</span> cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tm-window-etermify </span>$window_id<span style="color:#e6db74">&#34;</span> ;;
+<span style="color:#66d9ef">esac</span>
+echo
+echo <span style="color:#e6db74">&#34;</span>$cmd<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># exec &lt;`tm-tty`</span>
+<span style="color:#75715e"># exec 1&gt; /dev/tty</span>
+eval <span style="color:#e6db74">&#34;</span>$cmd<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>tm-window-etermify</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#f92672">(</span> hs <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;&lt;==&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -o comm<span style="color:#f92672">=</span> $PPID<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> 0&lt;/dev/null <span style="color:#f92672">)</span> &amp;&gt;/dev/null
+
+: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>window_id:=<span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>window_id:=<span style="color:#66d9ef">$(</span>tmux display-message -p <span style="color:#e6db74">&#39;#{window_id}&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># This should</span>
+
+<span style="color:#75715e"># - firstly need a command which wraps a pane in a tmux inside a new window?</span>
+<span style="color:#75715e"># Yeah, I probably need to do that.</span>
+<span style="color:#75715e"># - do it inside a new tmux session? I need to, I think.</span>
+<span style="color:#75715e"># - but I still have to rely on linking the pane. I can&#39;t link a pane with tmux, sadly.</span>
+<span style="color:#75715e"># - I have to link the entire window</span>
+
+TMUX<span style="color:#f92672">=</span> tmux new-window <span style="color:#e6db74">&#34;eterm tmux-attach-window </span>$window_id<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>My humble eterm script will run whatever
+command proceeds inside of an emacs eterm.</p>
+<h2 id="demo">Demo</h2>
+<p>Wow, my Haskell is awful, but this is the
+idea. You don&rsquo;t know what you are doing inside
+of a terminal, so you wrap it inside of a
+terminal that can perform LM operations on it (a complex terminal).</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/btDEL1F7gHAxvvSGhysBTLwJZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/btDEL1F7gHAxvvSGhysBTLwJZ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/btDEL1F7gHAxvvSGhysBTLwJZ.js" id="asciicast-btDEL1F7gHAxvvSGhysBTLwJZ" async></script>]]></content>
+        </item>
         
         <item>
             <title>Babel and Pen - Generating Snippets</title>
