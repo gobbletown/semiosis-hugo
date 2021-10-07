@@ -21,22 +21,61 @@ terminal in this manner, rather than doing
 
 This makes it more robust.
 
+This turns a real terminal into a holographic
+one, as per the definition below.
+
 #+BEGIN_SRC text -n :async :results verbatim code
+  complex terminal
+  holographic terminal
+      A holographic terminal has a layer of
+      interactivity that queries a language
+      model, given the current state of the
+      terminal.
+  
+      A complex terminal is slightly more
+      general definition, where there may not be
+      a clear boundary between the hologram
+      interactivity layer. Complex implies that
+      base operations may be part imaginary and
+      part real.
+  
+  complex
   complex programming
-      A complex terminal has braided imaginary
-      programming with real programming.
+      Complex programming is where real
+      instructions (completely independent of
+      language models) are intermixed with
+      imaginary (ones that are based on LM
+      output).
   
       The word complex is suitable because it
       describes this braiding along with the
       mathematical connotations of complex
       numbers.
   
-      We could further extend this terminology
-      to include complex programming in the
-      realm of imaginary programming to describe
-      a programming style that combines both
-      real programming with imaginary
-      programming.
+      It's just a programming style that
+      combines both real programming with
+      imaginary programming.
+  
+  holographic programming
+      [type of imaginary programming]
+  
+      This is like imaginary programming but
+      where the language models are trained on
+      software.
+  
+      Holographic code, therefore, may employ
+      associations made between elements of the
+      original code, how that code is used and
+      how it is described, to build
+      applications.
+  
+      Holographic programming lets you use the
+      latent space of a language model as a kind
+      of hyperspace to enable things like:
+      - bridge the usage of an application with
+        the application's code
+      - imaginary reflection
+      - inference in place of computation
 #+END_SRC
 
 + IP Glossary :: https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
