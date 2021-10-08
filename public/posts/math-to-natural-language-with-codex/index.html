@@ -5,17 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Summary I am building an LSP server for Pen.el and I would like to intercept and provide a NL translation for LSP provisions, such as function signatures by the hover facility.
-Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  task: &amp;#34;Describe a Haskell function signature&amp;#34; doc: &amp;#34;Given a Haskell function signature, describe it&amp;#34; prompt-version: 1 prompt: |&#43;Haskell type explanations: &amp;lt;delim&amp;gt; Signature: String -&amp;gt; Maybe [String] Description: This function takes a String and Maybe will return a list of Strings." />
+<meta name="description" content="Summary I make a prompt which translates math into NL, and states what area of math it comes from.
+Prompt pf-translate-math-into-natural-language/1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42  task: &amp;#34;Translate math into natural language&amp;#34; doc: &amp;#34;Translate math into natural language&amp;#34; prompt-version: 1 prompt: |&#43;Math equations below: &amp;lt;delim&amp;gt; Math: ∀x ∈ D, P(x) Description: For all x in the domain, P(x) is true Topic: Predicate calculus &amp;lt;delim&amp;gt; Math: sqrt(x^2 &#43; 1) Description: Take the square-root of (x to the power of 2 plus 1)." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="http://semiosis.github.io/posts/describe-haskell-types-with-codex/" />
+<link rel="canonical" href="http://semiosis.github.io/posts/math-to-natural-language-with-codex/" />
 
 
     <title>
         
-            Describe Haskell types with Codex :: semiosis  — Signs, Natural Language and Coding
+            Math to natural language with Codex :: semiosis  — Signs, Natural Language and Coding
         
     </title>
 
@@ -33,27 +34,30 @@ Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 2
 
 
 
-<meta itemprop="name" content="Describe Haskell types with Codex">
-<meta itemprop="description" content="Summary I am building an LSP server for Pen.el and I would like to intercept and provide a NL translation for LSP provisions, such as function signatures by the hover facility.
-Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  task: &#34;Describe a Haskell function signature&#34; doc: &#34;Given a Haskell function signature, describe it&#34; prompt-version: 1 prompt: |&#43;Haskell type explanations: &lt;delim&gt; Signature: String -&gt; Maybe [String] Description: This function takes a String and Maybe will return a list of Strings."><meta itemprop="datePublished" content="2021-10-08T00:00:00&#43;13:00" />
+<meta itemprop="name" content="Math to natural language with Codex">
+<meta itemprop="description" content="Summary I make a prompt which translates math into NL, and states what area of math it comes from.
+Prompt pf-translate-math-into-natural-language/1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42  task: &#34;Translate math into natural language&#34; doc: &#34;Translate math into natural language&#34; prompt-version: 1 prompt: |&#43;Math equations below: &lt;delim&gt; Math: ∀x ∈ D, P(x) Description: For all x in the domain, P(x) is true Topic: Predicate calculus &lt;delim&gt; Math: sqrt(x^2 &#43; 1) Description: Take the square-root of (x to the power of 2 plus 1)."><meta itemprop="datePublished" content="2021-10-08T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-10-08T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="198"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="349"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
-<meta name="twitter:title" content="Describe Haskell types with Codex"/>
-<meta name="twitter:description" content="Summary I am building an LSP server for Pen.el and I would like to intercept and provide a NL translation for LSP provisions, such as function signatures by the hover facility.
-Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  task: &#34;Describe a Haskell function signature&#34; doc: &#34;Given a Haskell function signature, describe it&#34; prompt-version: 1 prompt: |&#43;Haskell type explanations: &lt;delim&gt; Signature: String -&gt; Maybe [String] Description: This function takes a String and Maybe will return a list of Strings."/>
+<meta name="twitter:title" content="Math to natural language with Codex"/>
+<meta name="twitter:description" content="Summary I make a prompt which translates math into NL, and states what area of math it comes from.
+Prompt pf-translate-math-into-natural-language/1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42  task: &#34;Translate math into natural language&#34; doc: &#34;Translate math into natural language&#34; prompt-version: 1 prompt: |&#43;Math equations below: &lt;delim&gt; Math: ∀x ∈ D, P(x) Description: For all x in the domain, P(x) is true Topic: Predicate calculus &lt;delim&gt; Math: sqrt(x^2 &#43; 1) Description: Take the square-root of (x to the power of 2 plus 1)."/>
 
 
 
 
-    <meta property="og:title" content="Describe Haskell types with Codex" />
-<meta property="og:description" content="Summary I am building an LSP server for Pen.el and I would like to intercept and provide a NL translation for LSP provisions, such as function signatures by the hover facility.
-Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  task: &#34;Describe a Haskell function signature&#34; doc: &#34;Given a Haskell function signature, describe it&#34; prompt-version: 1 prompt: |&#43;Haskell type explanations: &lt;delim&gt; Signature: String -&gt; Maybe [String] Description: This function takes a String and Maybe will return a list of Strings." />
+    <meta property="og:title" content="Math to natural language with Codex" />
+<meta property="og:description" content="Summary I make a prompt which translates math into NL, and states what area of math it comes from.
+Prompt pf-translate-math-into-natural-language/1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42  task: &#34;Translate math into natural language&#34; doc: &#34;Translate math into natural language&#34; prompt-version: 1 prompt: |&#43;Math equations below: &lt;delim&gt; Math: ∀x ∈ D, P(x) Description: For all x in the domain, P(x) is true Topic: Predicate calculus &lt;delim&gt; Math: sqrt(x^2 &#43; 1) Description: Take the square-root of (x to the power of 2 plus 1)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://semiosis.github.io/posts/describe-haskell-types-with-codex/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://semiosis.github.io/posts/math-to-natural-language-with-codex/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-10-08T00:00:00&#43;13:00" />
 <meta property="article:modified_time" content="2021-10-08T00:00:00&#43;13:00" /><meta property="og:site_name" content="semiosis" />
 
@@ -140,7 +144,7 @@ Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 2
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        One minute
+        2 minutes
 
         
       </p>
@@ -148,7 +152,7 @@ Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 2
 
     <article>
       <h1 class="post-title">
-        <a href="http://semiosis.github.io/posts/describe-haskell-types-with-codex/">Describe Haskell types with Codex</a>
+        <a href="http://semiosis.github.io/posts/math-to-natural-language-with-codex/">Math to natural language with Codex</a>
       </h1>
 
       
@@ -157,11 +161,10 @@ Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 2
 
       <div class="post-content">
         <h2 id="summary">Summary</h2>
-<p>I am building an LSP server for Pen.el and I
-would like to intercept and provide a NL translation for LSP
-provisions, such as function signatures by the
-hover facility.</p>
+<p>I make a prompt which translates math into NL,
+and states what area of math it comes from.</p>
 <h2 id="prompt">Prompt</h2>
+<p><code>pf-translate-math-into-natural-language/1</code></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -193,50 +196,71 @@ hover facility.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Describe a Haskell function signature&#34;</span>
-<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given a Haskell function signature, describe it&#34;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Translate math into natural language&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Translate math into natural language&#34;</span>
 <span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
-</span><span style="color:#e6db74">  Haskell type explanations:
+</span><span style="color:#e6db74">  Math equations below:
 </span><span style="color:#e6db74">  &lt;delim&gt;
-</span><span style="color:#e6db74">  Signature: String -&gt; Maybe [String]
-</span><span style="color:#e6db74">  Description: This function takes a String and Maybe will return a list of Strings.
+</span><span style="color:#e6db74">  Math: ∀x ∈ D, P(x)
+</span><span style="color:#e6db74">  Description: For all x in the domain, P(x) is true
+</span><span style="color:#e6db74">  Topic: Predicate calculus
 </span><span style="color:#e6db74">  &lt;delim&gt;
-</span><span style="color:#e6db74">  Signature: String -&gt; IO String
-</span><span style="color:#e6db74">  Description: This function takes a String and performs some I/O before returning a String.
+</span><span style="color:#e6db74">  Math: sqrt(x^2 + 1)
+</span><span style="color:#e6db74">  Description: Take the square-root of (x to the power of 2 plus 1).
+</span><span style="color:#e6db74">  Topic: Algebra
 </span><span style="color:#e6db74">  &lt;delim&gt;
-</span><span style="color:#e6db74">  Signature: &lt;signature&gt;
+</span><span style="color:#e6db74">  Math: ∃𝑥 ∈ D, P(x)
+</span><span style="color:#e6db74">  Description: There exists x in the domain, such that P(x) is true
+</span><span style="color:#e6db74">  Topic: Predicate calculus
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  Math: &lt;equation&gt;
 </span><span style="color:#e6db74">  Description:</span>  
 <span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
-<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.2</span>
-<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">100</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
 <span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">5</span>
 <span style="color:#f92672">stop-sequences</span>:
 - <span style="color:#e6db74">&#34;&lt;delim&gt;&#34;</span>
-<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
 <span style="color:#f92672">vars</span>:
-- <span style="color:#e6db74">&#34;signature&#34;</span>
+- <span style="color:#e6db74">&#34;equation&#34;</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">pen-str onelineify</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#e6db74">&#34;sed -z &#39;s/\\nTopic: \\(.*\\)\\n.*/ (\\1/&#39; | sed &#39;s/$/)/&#39;&#34;</span>
 <span style="color:#f92672">examples</span>:
-- <span style="color:#e6db74">&#34;FilePath -&gt; [String] -&gt; String -&gt; IO String&#34;</span>
+  - |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    P: &#34;Roofus is a mammal&#34;
+</span><span style="color:#e6db74">    P(x): &#34;x is amammal&#34;
+</span><span style="color:#e6db74">    Q: ∀x ∈ D, P(x): &#34;every dog is a mammal&#34;</span>    
 <span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
-<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
-<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
-<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">on</span></code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="example">Example</h2>
-<p><code>signature</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">FilePath -&gt; [String] -&gt; String -&gt; IO String</code></pre></td></tr></table>
-</div>
-</div>
-<p><code>natural language</code></p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/N40PvJiRtBEXrJBa6hEEBWDj0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/N40PvJiRtBEXrJBa6hEEBWDj0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/N40PvJiRtBEXrJBa6hEEBWDj0.js" id="asciicast-N40PvJiRtBEXrJBa6hEEBWDj0" async></script>
+<p>Input:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -244,16 +268,35 @@ hover facility.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">This function takes a FilePath, a list of
-Strings and a String and performs some I/O
-before returning a String.</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">P: &#34;Roofus is a mammal&#34;
+P(x): &#34;x is amammal&#34;
+Q: ∀x ∈ D, P(x): &#34;every dog is a mammal&#34;</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="demo">Demo</h2>
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/lnuKRT7GI6JUyc2bcnLGcsUxU" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/lnuKRT7GI6JUyc2bcnLGcsUxU.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/lnuKRT7GI6JUyc2bcnLGcsUxU.js" id="asciicast-lnuKRT7GI6JUyc2bcnLGcsUxU" async></script>
+<p>Output (4 answers):</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">P is a proposition that Roofus is a mammal. P(x) is a proposition that x is a mammal. Q is a proposition that every dog is a mammal. (Predicate calculus)
+P is a sentence that defines a property, P(x) is a sentence that defines a property of x (Predicate calculus)
+P is a statement, P(x) is a predicate, and Q is a statement that is true for every x in the domain (Predicate calculus)
+P is a sentence that is true for all x in the domain, Q is a sentence that is true for all x in the domain, such that P(x) is true (Predicate calculus)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sqrt(x^2 + 1)</code></pre></td></tr></table>
+</div>
+</div>
+
       </div>
     </article>
 
@@ -278,7 +321,7 @@ before returning a String.</code></pre></td></tr></table>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        198 Words
+        349 Words
       </p>
 
       <p>
@@ -300,7 +343,7 @@ before returning a String.</code></pre></td></tr></table>
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -308,7 +351,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
   <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
       <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
@@ -317,7 +360,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Describe%20Haskell%20types%20with%20Codex&amp;caption=Describe%20Haskell%20types%20with%20Codex&amp;canonicalUrl=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Math%20to%20natural%20language%20with%20Codex&amp;caption=Math%20to%20natural%20language%20with%20Codex&amp;canonicalUrl=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
   <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
     <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
@@ -326,7 +369,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Describe%20Haskell%20types%20with%20Codex&amp;body=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Math%20to%20natural%20language%20with%20Codex&amp;body=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -334,7 +377,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f&amp;media=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f;description=Describe%20Haskell%20types%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f&amp;media=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f;description=Math%20to%20natural%20language%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
   <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
     </div>
@@ -342,7 +385,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f&amp;title=Describe%20Haskell%20types%20with%20Codex&amp;summary=Describe%20Haskell%20types%20with%20Codex&amp;source=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f&amp;title=Math%20to%20natural%20language%20with%20Codex&amp;summary=Math%20to%20natural%20language%20with%20Codex&amp;source=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -350,7 +393,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f&amp;resubmit=true&amp;title=Describe%20Haskell%20types%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f&amp;resubmit=true&amp;title=Math%20to%20natural%20language%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
   <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
     </div>
@@ -358,7 +401,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f;title=Describe%20Haskell%20types%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f;title=Math%20to%20natural%20language%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on xing">
   <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
     </div>
@@ -366,7 +409,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="whatsapp://send?text=Describe%20Haskell%20types%20with%20Codex%20http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Math%20to%20natural%20language%20with%20Codex%20http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
   <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </div>
@@ -374,7 +417,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f&amp;t=Describe%20Haskell%20types%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f&amp;t=Math%20to%20natural%20language%20with%20Codex" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
   <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
     </div>
@@ -382,7 +425,7 @@ before returning a String.</code></pre></td></tr></table>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Describe%20Haskell%20types%20with%20Codex&amp;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fdescribe-haskell-types-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Math%20to%20natural%20language%20with%20Codex&amp;url=http%3a%2f%2fsemiosis.github.io%2fposts%2fmath-to-natural-language-with-codex%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
   <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
     </div>
@@ -400,11 +443,18 @@ before returning a String.</code></pre></td></tr></table>
 
         <div class="pagination__buttons">
           
+            <span class="button previous">
+              <a href="http://semiosis.github.io/posts/describe-haskell-types-with-codex/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Describe Haskell types with Codex</span>
+              </a>
+            </span>
+          
 
           
             <span class="button next">
-              <a href="http://semiosis.github.io/posts/math-to-natural-language-with-codex/">
-                <span class="button__text">Math to natural language with Codex</span>
+              <a href="http://semiosis.github.io/posts/complexify-any-tmux-window/">
+                <span class="button__text">Complexify any tmux window</span>
                 <span class="button__icon">→</span>
               </a>
             </span>
