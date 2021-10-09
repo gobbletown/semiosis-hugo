@@ -6,8 +6,319 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Autofix code with Codex and LSP</title>
+            <link>http://semiosis.github.io/posts/autofix-code-with-codex/</link>
+            <pubDate>Sun, 10 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/autofix-code-with-codex/</guid>
+            <description>Summary I make a prompt to autocorrect code based on LSP linter output.
+Setup Firstly, lets get a list of algorithms.
+1  (pps (ilist 10 &amp;#34;voting algorithms&amp;#34;))   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  (&amp;#34;Plurality&amp;#34; &amp;#34;Borda&amp;#34; &amp;#34;Coombs&amp;#34; &amp;#34;Black&amp;#34; &amp;#34;Nanson&amp;#34; &amp;#34;Maxim&amp;#34; &amp;#34;Minimax&amp;#34; &amp;#34;Baldwin&amp;#34; &amp;#34;Copeland&amp;#34; &amp;#34;Instant-runoff&amp;#34; &amp;#34;Approval&amp;#34; &amp;#34;Kemeny-Young&amp;#34; &amp;#34;Instant-Runoff&amp;#34; &amp;#34;Maximin&amp;#34; &amp;#34;Maximizer&amp;#34;)   Demo  --  Generate first some code with errors/warnings Codex is quite good at generating code, so it may take some attempts.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I make a prompt to autocorrect code based on
+LSP linter output.</p>
+<h2 id="setup">Setup</h2>
+<p>Firstly, lets get a list of algorithms.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(pps (ilist <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;voting algorithms&#34;</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#e6db74">&#34;Plurality&#34;</span>
+ <span style="color:#e6db74">&#34;Borda&#34;</span>
+ <span style="color:#e6db74">&#34;Coombs&#34;</span>
+ <span style="color:#e6db74">&#34;Black&#34;</span>
+ <span style="color:#e6db74">&#34;Nanson&#34;</span>
+ <span style="color:#e6db74">&#34;Maxim&#34;</span>
+ <span style="color:#e6db74">&#34;Minimax&#34;</span>
+ <span style="color:#e6db74">&#34;Baldwin&#34;</span>
+ <span style="color:#e6db74">&#34;Copeland&#34;</span>
+ <span style="color:#e6db74">&#34;Instant-runoff&#34;</span>
+ <span style="color:#e6db74">&#34;Approval&#34;</span>
+ <span style="color:#e6db74">&#34;Kemeny-Young&#34;</span>
+ <span style="color:#e6db74">&#34;Instant-Runoff&#34;</span>
+ <span style="color:#e6db74">&#34;Maximin&#34;</span>
+ <span style="color:#e6db74">&#34;Maximizer&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/FDnoqe5MgQ3ctjVylKSEbVm3U" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/FDnoqe5MgQ3ctjVylKSEbVm3U.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/FDnoqe5MgQ3ctjVylKSEbVm3U.js" id="asciicast-FDnoqe5MgQ3ctjVylKSEbVm3U" async></script>
+<h3 id="generate-first-some-code-with-errors-warnings">Generate first some code with errors/warnings</h3>
+<p>Codex is quite good at generating code, so it
+may take some attempts.</p>
+<p>I generated the <code>Instant-Runoff voting algorithm</code> using Codex.</p>
+<p>I&rsquo;ll just force break the code.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Broken</span>
+<span style="color:#f92672">def irv(ballots)</span>:
+    <span style="color:#ae81ff">candidates =</span>
+    <span style="color:#f92672">for ballot in ballots</span>:
+        <span style="color:#ae81ff">candidates |= set(ballot)</span>
+    <span style="color:#f92672">while len(candidates) &gt; 1</span>:
+        <span style="color:#ae81ff">totals = dict((c, 0) for c in candidates)</span>
+        <span style="color:#f92672">for ballot in ballots</span>:
+            <span style="color:#f92672">for i, c in enumerate(ballot, sdjaf)</span>:
+                <span style="color:#ae81ff">totals[c] += 10 ** i</span>
+        <span style="color:#ae81ff">min_total = min(totals.values())</span>
+        <span style="color:#ae81ff">min_candidates = [c for c in candidates if totals[c] == min_total]</span>
+        <span style="color:#ae81ff">candidates -= set(min_candidates)</span>
+        <span style="color:#ae81ff">ballots = [ballot for ballot in ballots if ballot[0] not in min_candidates]</span>
+    <span style="color:#ae81ff">return candidates.pop()</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Linter output:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">2: pyflakes: invalid syntax
+2: pycodestyle: W291 trailing whitespace
+13: pycodestyle: E501 line too long (83 &gt; 79 characters)</code></pre></td></tr></table>
+</div>
+</div>
+<p>It will be good enough for a demo.</p>
+<h2 id="fixed-code-first-2-results">Fixed code &ndash; First 2 results</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">def irv(ballots)</span>:
+    <span style="color:#ae81ff">candidates = set()</span>
+    <span style="color:#f92672">for ballot in ballots</span>:
+        <span style="color:#ae81ff">candidates |= set(ballot)</span>
+    <span style="color:#f92672">while len(candidates) &gt; 1</span>:
+        <span style="color:#ae81ff">totals = dict((c, 0) for c in candidates)</span>
+        <span style="color:#f92672">for ballot in ballots</span>:
+            <span style="color:#f92672">for i, c in enumerate(ballot, 1)</span>:
+                <span style="color:#ae81ff">totals[c] += 10 ** i</span>
+        <span style="color:#ae81ff">min_total = min(totals.values())</span>
+        <span style="color:#ae81ff">min_candidates = [c for c in candidates if totals[c] == min_total]</span>
+        <span style="color:#ae81ff">candidates -= set(min_candidates)</span>
+        <span style="color:#ae81ff">ballots = [ballot for ballot in ballots if ballot[0] not in min_candidates]</span>
+    <span style="color:#ae81ff">return candidates.pop()</span>
+
+
+<span style="color:#75715e"># Fixed?</span>
+<span style="color:#f92672">def irv(ballots)</span>:
+    <span style="color:#ae81ff">candidates = set()</span>
+    <span style="color:#f92672">for ballot in ballots</span>:
+        <span style="color:#ae81ff">candidates |= set(ballot)</span>
+    <span style="color:#f92672">while len(candidates) &gt; 1</span>:
+        <span style="color:#ae81ff">totals = dict((c, 0) for c in candidates)</span>
+        <span style="color:#f92672">for ballot in ballots</span>:
+            <span style="color:#f92672">for i, c in enumerate(ballot)</span>:
+                <span style="color:#ae81ff">totals[c] += 10 ** i</span>
+        <span style="color:#ae81ff">min_total = min(totals.values())</span>
+        <span style="color:#ae81ff">min_candidates = [c for c in candidates if totals[c] == min_total]</span>
+        <span style="color:#ae81ff">candidates -= set(min_candidates)</span>
+        <span style="color:#ae81ff">ballots = [ballot for ballot in ballots if ballot[0] not in min_candidates]</span>
+    <span style="color:#ae81ff">return candidates.pop()</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompt">Prompt</h2>
+<ul>
+<li><a href="http://github.com/semiosis/prompts/blob/master/prompts/autofix-code-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/autofix-code-2.prompt</a></li>
+</ul>
+<p><code>pf-autofix-code/2</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Given the current error and the code snippet, fix the code snippet&#34;</span>
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;autofix code&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  Questions (&lt;language&gt;)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Help, my code is not compiling.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  This is the error I get:
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  &lt;compiler/linter output&gt;
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # Code which is causing the error:
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  &lt;code segment&gt;
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  1 Answer
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Your code should look like the following:
+</span><span style="color:#e6db74">  &lt;delim&gt;</span>  
+
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+<span style="color:#f92672">delimiter</span>: <span style="color:#e6db74">&#34;```&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;&lt;delim&gt;&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;compiler/linter output&#34;</span>
+- <span style="color:#e6db74">&#34;code segment&#34;</span>
+<span style="color:#f92672">defs</span>:
+- <span style="color:#f92672">language</span>: <span style="color:#e6db74">&#34;(pen-detect-language)&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-list2str (pen-lsp-error-list))&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-selection)&#34;</span>
+<span style="color:#f92672">examples</span>:
+- |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    2: compile: Pattern match(es) are non-exhaustive
+</span><span style="color:#e6db74">    2: typecheck: • Couldn&#39;t match expected type ‘[a]’ with actual type ‘[a] -&gt; [a]’
+</span><span style="color:#e6db74">    4: typecheck: • Occurs check: cannot construct the infinite type: a ~ [a]</span>    
+- |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    mergesort :: Ord a =&gt; [a] -&gt; [a]
+</span><span style="color:#e6db74">    mergesort [] ys = ys
+</span><span style="color:#e6db74">    mergesort xs [] = xs
+</span><span style="color:#e6db74">    mergesort (x:xs) (y:ys) | x &lt;= y  = x : mergesort x</span>    
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">external-related</span>:
+- <span style="color:#e6db74">&#34;https://stackoverflow.com/&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Guess the function name with Codex</title>

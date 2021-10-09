@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autofix code with Codex and LSP</title>
+      <link>http://semiosis.github.io/posts/autofix-code-with-codex/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/autofix-code-with-codex/</guid>
+      <description>Summary I make a prompt to autocorrect code based on LSP linter output.
+Setup Firstly, lets get a list of algorithms.
+1  (pps (ilist 10 &amp;#34;voting algorithms&amp;#34;))   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  (&amp;#34;Plurality&amp;#34; &amp;#34;Borda&amp;#34; &amp;#34;Coombs&amp;#34; &amp;#34;Black&amp;#34; &amp;#34;Nanson&amp;#34; &amp;#34;Maxim&amp;#34; &amp;#34;Minimax&amp;#34; &amp;#34;Baldwin&amp;#34; &amp;#34;Copeland&amp;#34; &amp;#34;Instant-runoff&amp;#34; &amp;#34;Approval&amp;#34; &amp;#34;Kemeny-Young&amp;#34; &amp;#34;Instant-Runoff&amp;#34; &amp;#34;Maximin&amp;#34; &amp;#34;Maximizer&amp;#34;)   Demo  --  Generate first some code with errors/warnings Codex is quite good at generating code, so it may take some attempts.</description>
+    </item>
+    
     <item>
       <title>Guess the function name with Codex</title>
       <link>http://semiosis.github.io/posts/guess-the-function-name-with-codex/</link>
