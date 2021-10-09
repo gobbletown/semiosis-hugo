@@ -39,7 +39,7 @@ Setup Firstly, lets get a list of algorithms.
 Setup Firstly, lets get a list of algorithms.
 1  (pps (ilist 10 &#34;voting algorithms&#34;))   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  (&#34;Plurality&#34; &#34;Borda&#34; &#34;Coombs&#34; &#34;Black&#34; &#34;Nanson&#34; &#34;Maxim&#34; &#34;Minimax&#34; &#34;Baldwin&#34; &#34;Copeland&#34; &#34;Instant-runoff&#34; &#34;Approval&#34; &#34;Kemeny-Young&#34; &#34;Instant-Runoff&#34; &#34;Maximin&#34; &#34;Maximizer&#34;)   Demo  --  Generate first some code with errors/warnings Codex is quite good at generating code, so it may take some attempts."><meta itemprop="datePublished" content="2021-10-10T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-10-10T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="616"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="726"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -144,7 +144,7 @@ Setup Firstly, lets get a list of algorithms.
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        4 minutes
 
         
       </p>
@@ -459,6 +459,56 @@ may take some attempts.</p>
 - <span style="color:#e6db74">&#34;https://stackoverflow.com/&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="emacs-lisp">Emacs lisp</h2>
+<h3 id="collect-the-error-list-from-lsp">Collect the error list from LSP</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-lsp-error-list (<span style="color:#66d9ef">&amp;optional</span> path)
+  (if (not path)
+      (setq path (get-path)))
+  (let ((l))
+    (<span style="color:#a6e22e">maphash</span> (lambda (file diagnostic)
+               (if (<span style="color:#a6e22e">string-equal</span> path file)
+                   (dolist (diag diagnostic)
+                     (-let* (((&amp;Diagnostic :message :severity? :source?
+                                           :range (&amp;Range :start (&amp;Position :line start-line))) diag)
+                             (formatted-message (or (if source? (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;%s: %s&#34;</span> source? <span style="color:#a6e22e">message</span>) <span style="color:#a6e22e">message</span>) <span style="color:#e6db74">&#34;???&#34;</span>))
+                             (severity (or severity? <span style="color:#ae81ff">1</span>))
+                             (line (<span style="color:#a6e22e">1+</span> start-line))
+                             (face (cond ((<span style="color:#a6e22e">=</span> severity <span style="color:#ae81ff">1</span>) <span style="color:#e6db74">&#39;error</span>)
+                                         ((<span style="color:#a6e22e">=</span> severity <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#39;warning</span>)
+                                         (<span style="color:#66d9ef">t</span> <span style="color:#e6db74">&#39;success</span>)))
+                             (text (<span style="color:#a6e22e">concat</span> (<span style="color:#a6e22e">number-to-string</span> line)
+                                           <span style="color:#e6db74">&#34;: &#34;</span>
+                                           (<span style="color:#a6e22e">car</span> (split-string formatted-message <span style="color:#e6db74">&#34;\n&#34;</span>)))))
+                       (add-to-list <span style="color:#e6db74">&#39;l</span> text <span style="color:#66d9ef">t</span>)))))
+             (lsp-diagnostics))
+    l))</code></pre></td></tr></table>
+</div>
+</div>
 
       </div>
     </article>
@@ -484,7 +534,7 @@ may take some attempts.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        616 Words
+        726 Words
       </p>
 
       <p>
