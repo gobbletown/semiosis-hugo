@@ -15,14 +15,19 @@
             <pubDate>Sun, 10 Oct 2021 00:00:00 +1300</pubDate>
             
             <guid>http://semiosis.github.io/posts/autofix-code-with-codex/</guid>
-            <description>Summary I make a prompt to autocorrect code based on LSP linter output.
-Setup Firstly, lets get a list of algorithms.
-1  (pps (ilist 10 &amp;#34;voting algorithms&amp;#34;))   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  (&amp;#34;Plurality&amp;#34; &amp;#34;Borda&amp;#34; &amp;#34;Coombs&amp;#34; &amp;#34;Black&amp;#34; &amp;#34;Nanson&amp;#34; &amp;#34;Maxim&amp;#34; &amp;#34;Minimax&amp;#34; &amp;#34;Baldwin&amp;#34; &amp;#34;Copeland&amp;#34; &amp;#34;Instant-runoff&amp;#34; &amp;#34;Approval&amp;#34; &amp;#34;Kemeny-Young&amp;#34; &amp;#34;Instant-Runoff&amp;#34; &amp;#34;Maximin&amp;#34; &amp;#34;Maximizer&amp;#34;)   Demo  --  Generate first some code with errors/warnings Codex is quite good at generating code, so it may take some attempts.</description>
+            <description>Summary I make a prompt to autocorrect code based on LSP linter output. The prompt is written in the style of a StackOverflow question, and the error messages are automatically taken from the running LSP server.
+Setup Firstly, lets get a list of algorithms. I just want to generate some algos until I find a result that produces linter errors/warnings.
+1  (pps (ilist 10 &amp;#34;voting algorithms&amp;#34;))   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  (&amp;#34;Plurality&amp;#34; &amp;#34;Borda&amp;#34; &amp;#34;Coombs&amp;#34; &amp;#34;Black&amp;#34; &amp;#34;Nanson&amp;#34; &amp;#34;Maxim&amp;#34; &amp;#34;Minimax&amp;#34; &amp;#34;Baldwin&amp;#34; &amp;#34;Copeland&amp;#34; &amp;#34;Instant-runoff&amp;#34; &amp;#34;Approval&amp;#34; &amp;#34;Kemeny-Young&amp;#34; &amp;#34;Instant-Runoff&amp;#34; &amp;#34;Maximin&amp;#34; &amp;#34;Maximizer&amp;#34;)   After generating a few, I stuck with Instant-Runoff.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I make a prompt to autocorrect code based on
-LSP linter output.</p>
+LSP linter output. The prompt is written in
+the style of a StackOverflow question, and the
+error messages are automatically taken from
+the running LSP server.</p>
 <h2 id="setup">Setup</h2>
-<p>Firstly, lets get a list of algorithms.</p>
+<p>Firstly, lets get a list of algorithms. I just
+want to generate some algos until I find a
+result that produces linter errors/warnings.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -67,6 +72,7 @@ LSP linter output.</p>
  <span style="color:#e6db74">&#34;Maximizer&#34;</span>)</code></pre></td></tr></table>
 </div>
 </div>
+<p>After generating a few, I stuck with Instant-Runoff.</p>
 <h2 id="demo">Demo</h2>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/FDnoqe5MgQ3ctjVylKSEbVm3U" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/FDnoqe5MgQ3ctjVylKSEbVm3U.svg" /></a> -->

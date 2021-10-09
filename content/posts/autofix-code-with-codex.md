@@ -9,12 +9,17 @@ draft = false
 ## Summary {#summary}
 
 I make a prompt to autocorrect code based on
-LSP linter output.
+LSP linter output. The prompt is written in
+the style of a StackOverflow question, and the
+error messages are automatically taken from
+the running LSP server.
 
 
 ## Setup {#setup}
 
-Firstly, lets get a list of algorithms.
+Firstly, lets get a list of algorithms. I just
+want to generate some algos until I find a
+result that produces linter errors/warnings.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (pps (ilist 10 "voting algorithms"))
@@ -37,6 +42,8 @@ Firstly, lets get a list of algorithms.
  "Maximin"
  "Maximizer")
 {{< /highlight >}}
+
+After generating a few, I stuck with Instant-Runoff.
 
 
 ## Demo {#demo}
