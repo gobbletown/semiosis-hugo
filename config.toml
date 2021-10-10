@@ -74,7 +74,7 @@ unsafe= true
 
   [[menu.main]]
     identifier = "ilambda"
-    name       = "iλ"
+    name       = "𝑖λ"
     url        = "/ilambda/"
 
   [[menu.main]]
