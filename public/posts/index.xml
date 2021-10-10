@@ -6,8 +6,154 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Codex and Pen.el for writing Haskell</title>
+            <link>http://semiosis.github.io/posts/codex-and-pen-el-for-writing-haskell/</link>
+            <pubDate>Mon, 11 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/codex-and-pen-el-for-writing-haskell/</guid>
+            <description>Summary I demonstrate some of the capabilities of Pen.el with Codex for assisting in writing Haskell.
+Some key bindings 1 2 3 4 5 6 7 8 9  (define-key pen-map (kbd &amp;#34;H-^&amp;#34;) &amp;#39;pen-transform) (define-key pen-map (kbd &amp;#34;H-p ^&amp;#34;) &amp;#39;pen-transform) (define-key pen-map (kbd &amp;#34;H-p t&amp;#34;) &amp;#39;pen-transform) (define-key pen-map (kbd &amp;#34;H-p i&amp;#34;) &amp;#39;pen-insert-snippet-from-lm) (define-key pen-map (kbd &amp;#34;H-p l&amp;#34;) &amp;#39;pf-explain-some-code/2) (define-key pen-map (kbd &amp;#34;H-p e&amp;#34;) &amp;#39;pf-get-an-example-of-the-usage-of-a-function/2) (define-key pen-map (kbd &amp;#34;H-p a&amp;#34;) &amp;#39;pf-append-to-code/3) (define-key pen-map (kbd &amp;#34;H-p n&amp;#34;) &amp;#39;pen-select-function-from-nl) (define-key pen-map (kbd &amp;#34;H-p f&amp;#34;) &amp;#39;pen-autofix-lsp-errors)   Append to code with natural language    kb f      H-p a pf-append-to-code/3 pen-map     prompt http://github.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I demonstrate some of the capabilities of
+Pen.el with Codex for assisting in writing
+Haskell.</p>
+<h2 id="some-key-bindings">Some key bindings</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-^&#34;</span>) <span style="color:#e6db74">&#39;pen-transform</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p ^&#34;</span>) <span style="color:#e6db74">&#39;pen-transform</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p t&#34;</span>) <span style="color:#e6db74">&#39;pen-transform</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p i&#34;</span>) <span style="color:#e6db74">&#39;pen-insert-snippet-from-lm</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p l&#34;</span>) <span style="color:#e6db74">&#39;pf-explain-some-code/2</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p e&#34;</span>) <span style="color:#e6db74">&#39;pf-get-an-example-of-the-usage-of-a-function/2</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p a&#34;</span>) <span style="color:#e6db74">&#39;pf-append-to-code/3</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p n&#34;</span>) <span style="color:#e6db74">&#39;pen-select-function-from-nl</span>)
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-p f&#34;</span>) <span style="color:#e6db74">&#39;pen-autofix-lsp-errors</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="append-to-code-with-natural-language">Append to code with natural language</h2>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>H-p a</code></td>
+<td><code>pf-append-to-code/3</code></td>
+<td><code>pen-map</code></td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/append-to-code-3.prompt">http://github.com/semiosis/prompts/blob/master/prompts/append-to-code-3.prompt</a></dd>
+</dl>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/2p0kl78iHcL35TaX27HEqMqNn" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/2p0kl78iHcL35TaX27HEqMqNn.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/2p0kl78iHcL35TaX27HEqMqNn.js" id="asciicast-2p0kl78iHcL35TaX27HEqMqNn" async></script>
+<h2 id="find-a-function-given-a-nl-use-case">Find a function given a NL use-case</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/EYnsb6CD4pWz8u1xD9IBtcSkP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/EYnsb6CD4pWz8u1xD9IBtcSkP.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/EYnsb6CD4pWz8u1xD9IBtcSkP.js" id="asciicast-EYnsb6CD4pWz8u1xD9IBtcSkP" async></script>
+<dl>
+<dt>Get the signature of that funtion</dt>
+<dd><a href="https://asciinema.org/a/dIWvR63X9eKUxvRxuP919LhGy">https://asciinema.org/a/dIWvR63X9eKUxvRxuP919LhGy</a></dd>
+</dl>
+<h2 id="select-function-from-nl">Select function from NL</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/9zSTh51c9VJ7oXGGjSWQZySP5" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/9zSTh51c9VJ7oXGGjSWQZySP5.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/9zSTh51c9VJ7oXGGjSWQZySP5.js" id="asciicast-9zSTh51c9VJ7oXGGjSWQZySP5" async></script>
+<h2 id="transform-code-with-nl">Transform code with NL</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/nkbVnEG7QWKyi7ZjyvswpDwvX" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nkbVnEG7QWKyi7ZjyvswpDwvX.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/nkbVnEG7QWKyi7ZjyvswpDwvX.js" id="asciicast-nkbVnEG7QWKyi7ZjyvswpDwvX" async></script>
+<h3 id="remove-the-do-block-and-make-into-one-line">Remove the <code>do</code> block and make into one line</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/e3ej4K9H0d7lRzQsthLeCWUF1" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/e3ej4K9H0d7lRzQsthLeCWUF1.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/e3ej4K9H0d7lRzQsthLeCWUF1.js" id="asciicast-e3ej4K9H0d7lRzQsthLeCWUF1" async></script>
+<h2 id="working-main">Working <code>main</code></h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#75715e">{-# OPTIONS_GHC -Wno-deferred-type-errors #-}</span>
+<span style="color:#75715e">{-# LANGUAGE OverloadedStrings #-}</span>
+
+<span style="color:#66d9ef">module</span> Main <span style="color:#66d9ef">where</span>
+
+<span style="color:#66d9ef">import</span> System.Process ( <span style="color:#a6e22e">readProcess</span> )
+<span style="color:#66d9ef">import</span> Data.Aeson ( <span style="color:#a6e22e">decode</span> )
+<span style="color:#66d9ef">import</span> <span style="color:#66d9ef">qualified</span> Data.ByteString.Lazy.UTF8 <span style="color:#66d9ef">as</span> BLU
+<span style="color:#66d9ef">import</span> Data.Maybe ( <span style="color:#a6e22e">fromJust</span>, <span style="color:#a6e22e">fromMaybe</span> )
+
+<span style="color:#a6e22e">pickUpLine</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> <span style="color:#66d9ef">String</span>
+<span style="color:#a6e22e">pickUpLine</span> <span style="color:#f92672">=</span> readProcess <span style="color:#e6db74">&#34;/home/shane/scripts/myeval&#34;</span> [<span style="color:#e6db74">&#34;pena&#34;</span>, <span style="color:#e6db74">&#34;very-witty-pick-up-lines-for-a-topic/1&#34;</span>]
+
+<span style="color:#a6e22e">decodeResultsList</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Maybe</span> [<span style="color:#66d9ef">String</span>]
+<span style="color:#a6e22e">decodeResultsList</span> results <span style="color:#f92672">=</span> <span style="color:#66d9ef">Data</span><span style="color:#f92672">.</span><span style="color:#66d9ef">Aeson</span><span style="color:#f92672">.</span>decode (<span style="color:#66d9ef">BLU</span><span style="color:#f92672">.</span>fromString (<span style="color:#66d9ef">Prelude</span><span style="color:#f92672">.</span>take (<span style="color:#66d9ef">Prelude</span><span style="color:#f92672">.</span>length results <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) results <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span>)) <span style="color:#f92672">::</span> <span style="color:#66d9ef">Maybe</span> [<span style="color:#66d9ef">String</span>]
+
+<span style="color:#a6e22e">getResults</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> (<span style="color:#66d9ef">Maybe</span> [<span style="color:#66d9ef">String</span>])
+<span style="color:#a6e22e">getResults</span> product <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+  results <span style="color:#f92672">&lt;-</span> pickUpLine product
+  return (decodeResultsList results)
+
+<span style="color:#a6e22e">main</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">IO</span> ()
+<span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+  output <span style="color:#f92672">&lt;-</span> getResults <span style="color:#e6db74">&#34;Weather&#34;</span>
+  print <span style="color:#f92672">$</span> unlines <span style="color:#f92672">$</span> fromMaybe <span style="color:#66d9ef">[]</span> output</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Autofix code with Codex and LSP</title>

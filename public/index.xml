@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codex and Pen.el for writing Haskell</title>
+      <link>http://semiosis.github.io/posts/codex-and-pen-el-for-writing-haskell/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/codex-and-pen-el-for-writing-haskell/</guid>
+      <description>Summary I demonstrate some of the capabilities of Pen.el with Codex for assisting in writing Haskell.
+Some key bindings 1 2 3 4 5 6 7 8 9  (define-key pen-map (kbd &amp;#34;H-^&amp;#34;) &amp;#39;pen-transform) (define-key pen-map (kbd &amp;#34;H-p ^&amp;#34;) &amp;#39;pen-transform) (define-key pen-map (kbd &amp;#34;H-p t&amp;#34;) &amp;#39;pen-transform) (define-key pen-map (kbd &amp;#34;H-p i&amp;#34;) &amp;#39;pen-insert-snippet-from-lm) (define-key pen-map (kbd &amp;#34;H-p l&amp;#34;) &amp;#39;pf-explain-some-code/2) (define-key pen-map (kbd &amp;#34;H-p e&amp;#34;) &amp;#39;pf-get-an-example-of-the-usage-of-a-function/2) (define-key pen-map (kbd &amp;#34;H-p a&amp;#34;) &amp;#39;pf-append-to-code/3) (define-key pen-map (kbd &amp;#34;H-p n&amp;#34;) &amp;#39;pen-select-function-from-nl) (define-key pen-map (kbd &amp;#34;H-p f&amp;#34;) &amp;#39;pen-autofix-lsp-errors)   Append to code with natural language    kb f      H-p a pf-append-to-code/3 pen-map     prompt http://github.</description>
+    </item>
+    
     <item>
       <title>Autofix code with Codex and LSP</title>
       <link>http://semiosis.github.io/posts/autofix-code-with-codex/</link>
