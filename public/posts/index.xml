@@ -377,6 +377,315 @@ may take some attempts.</p>
         </item>
         
         <item>
+            <title>Codex for generating textual transformations</title>
+            <link>http://semiosis.github.io/posts/codex-for-generating-textual-transformations/</link>
+            <pubDate>Sun, 10 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/codex-for-generating-textual-transformations/</guid>
+            <description>Summary In situations where a LM is used to perform a formatting transformation, it&amp;rsquo;s wasteful to continually prompt for the same transformation.
+It&amp;rsquo;s more efficient to prompt for a regular expression or some code to perform the same transformation later; That&amp;rsquo;s the objective of this exercise.
+I will start by demonstrating the usage of Codex to format text.
+Add a title and indent for each passage: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  Passage: &amp;lt;delim&amp;gt; John Wesley was an English clergyman, theologian, and evangelist, who was a leader of a revival movement within the Church of England known as Methodism.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>In situations where a LM is used to perform a
+formatting transformation, it&rsquo;s wasteful to
+continually prompt for the same
+transformation.</p>
+<p>It&rsquo;s more efficient to prompt for a regular
+expression or some code to perform the same
+transformation later; That&rsquo;s the objective of
+this exercise.</p>
+<p>I will start by demonstrating the usage of Codex to format text.</p>
+<h2 id="add-a-title-and-indent-for-each-passage">Add a title and indent for each passage:</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Passage:
+&lt;delim&gt;
+John Wesley was an English clergyman, theologian, and evangelist, who was a leader of a revival movement within the Church of England known as Methodism. The societies he founded became the dominant form of the independent Methodist movement that continues to this day.
+&lt;delim&gt;
+John Wesley
+     An English clergyman, theologian, and
+     evangelist, who was a leader of a revival
+     movement within the Church of England
+     known as Methodism.
+
+     The societies he founded became the
+     dominant form of the independent
+     Methodist movement that continues to this
+     day.
+&lt;delim&gt;
+Passage:
+&lt;delim&gt;</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="demo">Demo</h3>
+<p>Running <code>pf-format-a-text-passage-for-the-glossary/1</code>:</p>
+<p>With input:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">An epithet is a byname, or a descriptive term,
+accompanying or occurring in place of a name
+and having entered common usage. It has
+various shades of meaning when applied to
+seemingly real or fictitious people,
+divinities, objects, and binomial
+nomenclature.</code></pre></td></tr></table>
+</div>
+</div>
+<p>Produces:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">An epithet
+     A byname, or a descriptive term,
+     accompanying or occurring in place of
+     a name and having entered common usage.
+
+     It has various shades of meaning when
+     applied to seemingly real or fictitious
+     people, divinities, objects, and
+     binomial nomenclature.</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/gC28lfnof1h9bdHJt7JNZrU2F" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gC28lfnof1h9bdHJt7JNZrU2F.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/gC28lfnof1h9bdHJt7JNZrU2F.js" id="asciicast-gC28lfnof1h9bdHJt7JNZrU2F" async></script>
+<h2 id="generate-a-transformation-script-instead">Generate a transformation script instead</h2>
+<p>Generating a transformation script may be
+preferable.</p>
+<p>If you foresee yourself running this
+transformation many times, creating a script
+for it rather than prompting may be worth doing.</p>
+<dl>
+<dt>prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generate-textual-transformation-script-4.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generate-textual-transformation-script-4.prompt</a></dd>
+</dl>
+<p><code>pf-generate-textual-transformation-script/4</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Generate textual transformation script&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given some text input and output, generate a script to mimic the transformation&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  # Input text:
+</span><span style="color:#e6db74">  input.txt &lt;&lt;EOD
+</span><span style="color:#e6db74">  &lt;input&gt;
+</span><span style="color:#e6db74">  EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # Expected output:
+</span><span style="color:#e6db74">  expected_output.txt &lt;&lt;EOD
+</span><span style="color:#e6db74">  &lt;expected output&gt;
+</span><span style="color:#e6db74">  EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # Test the program
+</span><span style="color:#e6db74">  cat input.txt | &lt;sl:scripting language&gt;_program &gt; expected_output.txt
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # Program instructions:
+</span><span style="color:#e6db74">  &lt;instructions&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  cat &lt;sl:scripting language&gt;_program &lt;&lt;EOD</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;EOD&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#75715e"># defs:</span>
+<span style="color:#75715e"># - language: &#34;\&#34;Python\&#34;&#34;</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;input&#34;</span>
+- <span style="color:#e6db74">&#34;expected output&#34;</span>
+- <span style="color:#ae81ff">scripting language</span>
+- <span style="color:#ae81ff">instructions</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">cat</span>
+- <span style="color:#ae81ff">cat</span>
+- <span style="color:#ae81ff">cat</span>
+- <span style="color:#ae81ff">&lt;shell-comment&gt;</span>
+<span style="color:#f92672">pipelines</span>:
+- <span style="color:#f92672">shell-comment</span>: <span style="color:#ae81ff">pen-str shell-commentify</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;John Wesley was an English clergyman, theologian, and evangelist, who was a leader of a revival movement within the Church of England known as Methodism. The societies he founded became the dominant form of the independent Methodist movement that continues to this day.&#34;</span>
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    John Wesley
+</span><span style="color:#e6db74">         An English clergyman, theologian, and
+</span><span style="color:#e6db74">         evangelist, who was a leader of a revival
+</span><span style="color:#e6db74">         movement within the Church of England
+</span><span style="color:#e6db74">         known as Methodism.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">         The societies he founded became the
+</span><span style="color:#e6db74">         dominant form of the independent
+</span><span style="color:#e6db74">         Methodist movement that continues to this
+</span><span style="color:#e6db74">         day.</span>    
+- <span style="color:#ae81ff">Python</span>
+- <span style="color:#e6db74">&#34;Add a title and indent for each passage. The title is removed from the start of the passage.&#34;</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="demo">Demo</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/pURMVyjhzMlkJZOtxOeFKpR5B" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/pURMVyjhzMlkJZOtxOeFKpR5B.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/pURMVyjhzMlkJZOtxOeFKpR5B.js" id="asciicast-pURMVyjhzMlkJZOtxOeFKpR5B" async></script>
+<h2 id="findings">Findings</h2>
+<h3 id="formatted-is-a-dirty-word-for-codex">&ldquo;Formatted&rdquo; is a dirty word for Codex</h3>
+<p>When using Codex, if I put <code>&quot;Formatted Passage 2&quot;</code> rather than <code>&quot;Passage 2 for glossary:&quot;</code>, then I get python codex intermixed, which
+is not what I want.</p>
+<p>Avoid using that word unless you are dealing
+with code (as opposed to prose).</p>
+<p>Example of python interference:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">An epithet
+     is a byname, or a descriptive term,
+     accompanying or occurring in place of a
+     name and having entered common usage.
+     It has various shades of meaning when
+     applied to seemingly real or fictitious
+     people, divinities, objects, and
+     binomial nomenclature.
+&#34;&#34;&#34;
+
+
+def format(passages):
+    formatted_passages = []
+    for passage in passages:
+        title = passage[:passage.index(&#39;\n&#39;)]
+        formatted_passage = &#39;&#39;
+        indented = False
+        for line in passage.split(&#39;\n&#39;):
+            if line.startswith(&#39;</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Guess the function name with Codex</title>
             <link>http://semiosis.github.io/posts/guess-the-function-name-with-codex/</link>
             <pubDate>Sat, 09 Oct 2021 00:00:00 +1300</pubDate>

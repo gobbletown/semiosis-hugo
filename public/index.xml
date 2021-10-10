@@ -20,6 +20,18 @@ Setup Firstly, lets get a list of algorithms. I just want to generate some algos
     </item>
     
     <item>
+      <title>Codex for generating textual transformations</title>
+      <link>http://semiosis.github.io/posts/codex-for-generating-textual-transformations/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/codex-for-generating-textual-transformations/</guid>
+      <description>Summary In situations where a LM is used to perform a formatting transformation, it&amp;rsquo;s wasteful to continually prompt for the same transformation.
+It&amp;rsquo;s more efficient to prompt for a regular expression or some code to perform the same transformation later; That&amp;rsquo;s the objective of this exercise.
+I will start by demonstrating the usage of Codex to format text.
+Add a title and indent for each passage: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  Passage: &amp;lt;delim&amp;gt; John Wesley was an English clergyman, theologian, and evangelist, who was a leader of a revival movement within the Church of England known as Methodism.</description>
+    </item>
+    
+    <item>
       <title>Guess the function name with Codex</title>
       <link>http://semiosis.github.io/posts/guess-the-function-name-with-codex/</link>
       <pubDate>Sat, 09 Oct 2021 00:00:00 +1300</pubDate>
