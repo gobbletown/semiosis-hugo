@@ -1,12 +1,12 @@
 +++
-title = "iλ, a family of imaginary programming libraries"
+title = "𝑖λ, a family of imaginary programming libraries"
 author = ["Shane Mulligan"]
 date = 2021-09-03T00:00:00+12:00
 keywords = ["emacs", "openai", "pen", "gpt", "imaginary-programming"]
 draft = false
 +++
 
-## `iλ` (Imaginary Programming Functions) {#iλ--imaginary-programming-functions}
+## `𝑖λ` (Imaginary Programming Functions) {#𝑖λ--imaginary-programming-functions}
 
 
 ### Summary {#summary}
@@ -14,11 +14,11 @@ draft = false
 <span class="underline">tl;dr:</span> Imaginary Programming (`IP`) is where
 data and knowledge has been substituted for
 inference by a LM. Therefore, the
-implementation of an `iλ` library will be
+implementation of an `𝑖λ` library will be
 uniquely tailored to each language.
 
 I design and build an `IP` library named
-`iλ.el` for emacs. Think of it a bit like a
+`𝑖λ.el` for emacs. Think of it a bit like a
 functional programming library in that you
 will find a set of functions and macros for
 working in the programming paradigm. The
@@ -30,7 +30,7 @@ transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.
 
-iλ project
+𝑖λ project
 : <http://github.com/semiosis/ilambda/>
 
 IP thesis
@@ -59,14 +59,14 @@ interactively regenerated, where an
 LM every time you call it.
 
 
-#### The objective with `iλ.el` {#the-objective-with-iλ-dot-el}
+#### The objective with `𝑖λ.el` {#the-objective-with-𝑖λ-dot-el}
 
 The objective here is to create `IP` functions
 for programming in emacs lisp exclusively.
 
 It will be extended in the future to do all
 programming languages, but I intend to make
-`iλ.el` simple and effective for programming
+`𝑖λ.el` simple and effective for programming
 in emacs lisp without bloat or over-complication.
 
 
@@ -78,7 +78,7 @@ in emacs lisp without bloat or over-complication.
 | `imacro/N`       | MACRO    |                      | `imacro` does not evaluate. It merely generates code, but that code is imagined. Like `idefun` it is variadic.        |
 | `idefun`         | FUNCTION | `ieval` and `imacro` | Run an imagined function on the given arguments and return an imagined result, but create a binding for the function. |
 | `ilist`          | FUNCTION |                      | Generate a list of things. Return a real list.                                                                        |
-| `ilambda` / `iλ` | FUNCTION | `ieval`              | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
+| `ilambda` / `𝑖λ` | FUNCTION | `ieval`              | Imaginarily run an expression on the given arguments and return an imagined result.                                   |
 | `ifilter`        | FUNCTION |                      | Imaginarily filter a real list with natural language and return a real list. Optionally, enforce cardinality.         |
 | `iparse`         | MACRO    |                      | Given a syntax form / expression, will parse a syntax form with natural language. Returns the subform.                |
 | `defimacro`      | MACRO    | `imacro/N`           | Select the appropriate `imacro/N` form depending on the arity of arguments.                                           |
@@ -206,7 +206,7 @@ integer
 {{< /highlight >}}
 
 
-#### `ilambda` / `iλ` {#ilambda-iλ}
+#### `ilambda` / `𝑖λ` {#ilambda-𝑖λ}
 
 Imaginarily run an expression on the given
 arguments and return an imagined result.
@@ -228,7 +228,7 @@ task description is given.
           ;; An function and a function call
           (,',fsym ,,@args)
           ,,(concat ";; " task))))))
-(defalias 'iλ/task 'ilambda/task)
+(defalias '𝑖λ/task 'ilambda/task)
 
 (defmacro ilambda/task-code (args task code &optional name-sym)
   (let* ((slug (s-replace-regexp "-$" "" (slugify (eval task))))
@@ -244,7 +244,7 @@ task description is given.
           (defun ,',fsym ,',args
             ,,task
             ,',code))))))
-(defalias 'iλ/task-code 'ilambda/task-code)
+(defalias '𝑖λ/task-code 'ilambda/task-code)
 
 (defmacro ilambda/code (args code &optional name-sym)
   (let ((fsym (or name-sym
@@ -257,7 +257,7 @@ task description is given.
           (,',fsym ,,@args)
           (defun ,',fsym (,',@args)
             ,',code))))))
-(defalias 'iλ/code 'ilambda/code)
+(defalias '𝑖λ/code 'ilambda/code)
 {{< /highlight >}}
 
 _**Demonstrations**_
@@ -299,7 +299,7 @@ The _**ilambda**_ macro.
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (defmacro ilambda (args code-or-task &optional task-or-code name-sym)
-  "Define an imaginary lambda (iλ)"
+  "Define an imaginary lambda (𝑖λ)"
   (let ((task (if (stringp code-or-task)
                   code-or-task
                 task-or-code))
@@ -315,11 +315,11 @@ The _**ilambda**_ macro.
      ((listp code-or-task)
       `(ilambda/code ,args ,code ,name-sym)))))
 
-(defalias 'iλ 'ilambda)
+(defalias '𝑖λ 'ilambda)
 {{< /highlight >}}
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(-reduce (iλ (x y) "add x to y") (number-sequence 1 3))
+(-reduce (𝑖λ (x y) "add x to y") (number-sequence 1 3))
 {{< /highlight >}}
 
 ```emacs-lisp
