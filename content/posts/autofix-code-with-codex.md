@@ -138,25 +138,25 @@ def irv(ballots):
 {{< highlight yaml "linenos=table, linenostart=1" >}}
 task: "Given the current error and the code snippet, fix the code snippet"
 title: "autofix code"
-prompt-version: 2
+prompt-version: 3
 prompt: |+
-  Questions (<language>)
+  https://stackoverflow.com/q/4579226
 
-  Help, my code is not compiling.
+  Tags:      [<language>]
 
-  This is the error I get:
+  My code is getting these errors:
   <delim>
   <compiler/linter output>
   <delim>
 
-  # Code which is causing the error:
+  This is my code:
   <delim>
   <code segment>
   <delim>
 
-  1 Answer
+  Accepted Answer
 
-  Your code should look like the following:
+  Make these changes to fix your code:
   <delim>
 
 engine: "OpenAI Codex"
@@ -173,8 +173,10 @@ vars:
 defs:
 - language: "(pen-detect-language)"
 var-defaults:
+# Leaving the string empty is actually more reliable
+# - "(sor (s-chompall (pen-list2str (pen-lsp-error-list))) \"No errors.\")"
 - "(pen-list2str (pen-lsp-error-list))"
-- "(pen-selection)"
+- "(pen-buffer-string-or-selection t)"
 examples:
 - |+
     2: compile: Pattern match(es) are non-exhaustive
@@ -185,8 +187,8 @@ examples:
     mergesort [] ys = ys
     mergesort xs [] = xs
     mergesort (x:xs) (y:ys) | x <= y  = x : mergesort x
-filter: off
-info: on
+filter: on
+info: off
 completion: off
 insertion: off
 external-related:

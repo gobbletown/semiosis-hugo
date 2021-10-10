@@ -264,29 +264,31 @@ may take some attempts.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Given the current error and the code snippet, fix the code snippet&#34;</span>
 <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;autofix code&#34;</span>
-<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">3</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
-</span><span style="color:#e6db74">  Questions (&lt;language&gt;)
+</span><span style="color:#e6db74">  https://stackoverflow.com/q/4579226
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  Help, my code is not compiling.
+</span><span style="color:#e6db74">  Tags:      [&lt;language&gt;]
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  This is the error I get:
+</span><span style="color:#e6db74">  My code is getting these errors:
 </span><span style="color:#e6db74">  &lt;delim&gt;
 </span><span style="color:#e6db74">  &lt;compiler/linter output&gt;
 </span><span style="color:#e6db74">  &lt;delim&gt;
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  # Code which is causing the error:
+</span><span style="color:#e6db74">  This is my code:
 </span><span style="color:#e6db74">  &lt;delim&gt;
 </span><span style="color:#e6db74">  &lt;code segment&gt;
 </span><span style="color:#e6db74">  &lt;delim&gt;
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  1 Answer
+</span><span style="color:#e6db74">  Accepted Answer
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  Your code should look like the following:
+</span><span style="color:#e6db74">  Make these changes to fix your code:
 </span><span style="color:#e6db74">  &lt;delim&gt;</span>  
 
 <span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
@@ -303,8 +305,10 @@ may take some attempts.</p>
 <span style="color:#f92672">defs</span>:
 - <span style="color:#f92672">language</span>: <span style="color:#e6db74">&#34;(pen-detect-language)&#34;</span>
 <span style="color:#f92672">var-defaults</span>:
+<span style="color:#75715e"># Leaving the string empty is actually more reliable</span>
+<span style="color:#75715e"># - &#34;(sor (s-chompall (pen-list2str (pen-lsp-error-list))) \&#34;No errors.\&#34;)&#34;</span>
 - <span style="color:#e6db74">&#34;(pen-list2str (pen-lsp-error-list))&#34;</span>
-- <span style="color:#e6db74">&#34;(pen-selection)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-buffer-string-or-selection t)&#34;</span>
 <span style="color:#f92672">examples</span>:
 - |+<span style="color:#e6db74">
 </span><span style="color:#e6db74">    2: compile: Pattern match(es) are non-exhaustive
@@ -315,8 +319,8 @@ may take some attempts.</p>
 </span><span style="color:#e6db74">    mergesort [] ys = ys
 </span><span style="color:#e6db74">    mergesort xs [] = xs
 </span><span style="color:#e6db74">    mergesort (x:xs) (y:ys) | x &lt;= y  = x : mergesort x</span>    
-<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
-<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">external-related</span>:
