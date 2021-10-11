@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CLI help - A readme from a program&#39;s name</title>
+      <link>http://semiosis.github.io/posts/cli-help-a-readme-from-a-program-s-name/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/cli-help-a-readme-from-a-program-s-name/</guid>
+      <description>Summary I generate a readme from a program name.
+Initially I used the imaginary web browser (looking glass) to generate a website for asciinema.
+Then I turned the output of that into a prompt.
+Prompt pf-cli-help/1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  task: &amp;#34;CLI Help&amp;#34; doc: &amp;#34;Given a program name, provide CLI help&amp;#34; prompt-version: 1 prompt: |+https://github.</description>
+    </item>
+    
     <item>
       <title>Codex and Pen.el for writing Haskell</title>
       <link>http://semiosis.github.io/posts/codex-and-pen-el-for-writing-haskell/</link>

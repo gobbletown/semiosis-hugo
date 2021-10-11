@@ -1,0 +1,108 @@
++++
+title = "CLI help - A readme from a program's name"
+author = ["Shane Mulligan"]
+date = 2021-10-12T00:00:00+13:00
+keywords = ["Codex"]
+draft = false
++++
+
+## Summary {#summary}
+
+I generate a readme from a program name.
+
+Initially I used the imaginary web browser (looking glass) to
+generate a website for asciinema.
+
+Then I turned the output of that into a prompt.
+
+
+## Prompt {#prompt}
+
+`pf-cli-help/1`
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+task: "CLI Help"
+doc: "Given a program name, provide CLI help"
+prompt-version: 1
+prompt: |+
+    https://github.com/<sl:program name>/<sl:program name>/blob/master/doc/<sl:program name>.md#command-line-interface
+
+    cat doc-<sl:program name>.md <<EOD
+    <:pp>
+    Command line interface
+    ======================
+
+    The command line interface is the most common way to interact with <sl:program name>.
+engine: "OpenAI Codex"
+temperature: 0.3
+max-generated-tokens: "(* 2 prompt-length)"
+top-p: 1.0
+stop-sequences:
+- "EOD"
+cache: on
+vars:
+- "program name"
+examples:
+- "asciinema"
+info: on
+completion: off
+insertion: off
+{{< /highlight >}}
+
+
+## Example output {#example-output}
+
+
+### `tmux` {#tmux}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Command line interface
+======================
+
+The command line interface is the most common way to interact with tmux.
+
+To make a new session named "foo":
+
+    tmux new -s "foo"
+
+To list all the sessions:
+
+    tmux list-sessions
+
+To attach a session:
+
+    tmux attach -t "foo"
+    tmux attach -t "0"
+
+To detach a session:
+
+    Ctrl+b , d
+
+To exit a session:
+
+    Ctrl+b :
+
+To save the current session:
+
+    Ctrl+b :
+
+To kill a session:
+
+    tmux kill-session -t "foo"
+
+To kill the current session:
+
+    Ctrl+d
+
+To lock a session:
+
+    tmux lock
+
+To list all the windows:
+
+    tmux list-windows
+
+To split a window:
+
+    tmux splitw
+{{< /highlight >}}
