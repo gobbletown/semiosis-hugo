@@ -19,6 +19,28 @@ Some key bindings 1 2 3 4 5 6 7 8 9  (define-key pen-map (kbd &amp;#34;H-^&amp;#
     </item>
     
     <item>
+      <title>How to use, with Codex</title>
+      <link>http://semiosis.github.io/posts/how-to-use-with-codex/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/how-to-use-with-codex/</guid>
+      <description>Summary This is a prompt for obtaining examples of how to use something, such as a function or an import.
+Bindings 1  (define-key pen-map (kbd &amp;#34;H-p e&amp;#34;) &amp;#39;pf-get-an-example-of-the-usage-of-a-function/2)      kb f      H-p e pf-get-an-example-of-the-usage-of-a-function/2 pen-map    Prompt pf-get-an-example-of-the-usage-of-a-function/2
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39  task: &amp;#34;Get an example of the usage of a function&amp;#34; doc: &amp;#34;Given a function name, provide an example of its usage&amp;#34; prompt-version: 2 prompt: |+Examples of function usage: &amp;lt;delim&amp;gt; Language: &amp;#34;Haskell&amp;#34; Function: &amp;#34;map&amp;#34; Usage:&amp;lt;delim&amp;gt; map (*2) [1.</description>
+    </item>
+    
+    <item>
+      <title>nlsh upgrades</title>
+      <link>http://semiosis.github.io/posts/nlsh-upgrades/</link>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/nlsh-upgrades/</guid>
+      <description>Summary I just demonstrate my latest nlsh script.
+elisp ilist from ilambda is used.
+ ilambda http://github.com/semiosis/pen.el/blob/master/src/ilambda.el   1 2 3 4 5 6 7 8  (defun sps-nlsc (os) (interactive (list (pen-detect-language-ask))) (sps (cmd &amp;#34;eterm&amp;#34; &amp;#34;nlsc&amp;#34; os))) (defun sps-nlsh (os) (interactive (list (fz (ilist 20 &amp;#34;distinctive linux distributions including nixos&amp;#34;) nil nil &amp;#34;sps-nlsh OS: &amp;#34;))) (sps (cmd &amp;#34;eterm&amp;#34; &amp;#34;nlsh&amp;#34; os)))   1 2  (define-key pen-map (kbd &amp;#34;H-p c&amp;#34;) &amp;#39;sps-nlsc) (define-key pen-map (kbd &amp;#34;H-p s&amp;#34;) &amp;#39;sps-nlsh)   Demo  --  Generate either a command or a script  nlsh Generate a command nlsc Generate a script   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57  #!</description>
+    </item>
+    
+    <item>
       <title>Autofix code with Codex and LSP</title>
       <link>http://semiosis.github.io/posts/autofix-code-with-codex/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +1300</pubDate>
