@@ -260,9 +260,21 @@ through the senses.
 {{< /highlight >}}
 
 
-## A book from 2018 {#a-book-from-2018}
+## Anything is Possible - Elizabeth Strout {#anything-is-possible-elizabeth-strout}
 
 The generated synopses appear to be purely fictional.
+
+I performed some synopses generations on this book from 2018, and copied the
+real synopses here for comparison.
+
+I selected 2018 as the year to select a book because GPT-3, which Codex is
+based on was trained on a dataset from 2018, I believe.
+
+However, it's unlikely that GPT-3 was exposed directly to reviews of this book.
+
+The results are purely fictional synopses.
+
+Coherent, but fictional.
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/pXekqTccDRIj9lqTprfEOveXu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/pXekqTccDRIj9lqTprfEOveXu.svg" /></a> -->
