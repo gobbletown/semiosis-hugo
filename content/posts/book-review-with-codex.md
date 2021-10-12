@@ -252,3 +252,105 @@ knowledge of objects a priori, i.e., for any
 knowledge that is not given solely in and
 through the senses.
 {{< /highlight >}}
+
+
+## A book from 2018 {#a-book-from-2018}
+
+The generated synopses appear to be purely fictional.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/pXekqTccDRIj9lqTprfEOveXu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/pXekqTccDRIj9lqTprfEOveXu.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/pXekqTccDRIj9lqTprfEOveXu.js" id="asciicast-pXekqTccDRIj9lqTprfEOveXu" async></script>
+
+
+### Anything is Possible - Elizabeth Strout {#anything-is-possible-elizabeth-strout}
+
+Real synopsis:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Short story collection Anything Is Possible
+explores the whole range of human emotion
+through the intimate dramas of people
+struggling to understand themselves and
+others.
+
+Here are two sisters: one trades self-respect
+for a wealthy husband while the other finds in
+the pages of a book a kindred spirit who
+changes her life.
+{{< /highlight >}}
+
+Imagined synopses:
+`1`)
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+In her stunningly beautiful début novel,
+Elizabeth Strout takes a truth universally
+acknowledged: a poor young woman's chances of
+making a good life for herself are nearly
+nonexistent.
+
+But in a small town in upstate New York during
+the 1960s, Ann Leckie seems to have more than
+the sum of what most people are given.
+
+Ann is cheerfully beautiful, available, smart,
+and hardworking.
+
+Prettiness, in fact, is her best quality, and
+she knows it.
+
+So when she wins a scholarship to a boarding
+school, she thinks she has a real chance to
+make a better life for herself.
+{{< /highlight >}}
+
+`2`)
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Anything is Possible captures the power of
+possibility -- that is, the idea that nothing
+is certain, and that life always gives us a
+new shot.
+
+It is the story of two young girls -- Lia, a
+scrapper from the Boston projects, and her
+older sister Em, an up-and-coming lawyer whose
+potential is limited -- who find each other
+and form an unlikely friendship.
+
+Lia's father walked out on her family, leaving
+them to survive on social security and their
+wits.
+
+Em's father is in jail, possibly unjustly, and
+she has few opportunities for work.
+
+They are not supposed to be friends.
+
+They are supposed to be kind to each other.
+{{< /highlight >}}
+
+Try by emulating goodreads:
+
+<https://www.goodreads.com/book/show/32080126-anything-is-possible>
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Eighteen-year-old Lydia is no longer able to
+be her own person.
+
+Her father's sudden death has left Lydia with
+her mother, her brother, her grandmother, and
+her own thoughts.
+
+Lydia can't hope for more than a passing
+friendship with Max, who has yet to
+acknowledge her existence.
+
+But when Lydia is given the chance to attend
+the prestigious Emma B.
+
+Schreiber Academy, she sees a world of new
+opportunities.
+{{< /highlight >}}
