@@ -15,8 +15,8 @@
       
       <guid>http://semiosis.github.io/posts/book-review-with-codex/</guid>
       <description>Summary I make a prompt which generates summaries of books, based on what the LM has read.
-Prompt pf-synopsis-of-book/2
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  task: &amp;#34;Synopsis of book&amp;#34; doc: &amp;#34;Given a book title, give a synopsis&amp;#34; prompt-version: 1 prompt: |+http://readersdigest.co.uk/book-reviews/&amp;lt;sl:author&amp;gt;/&amp;lt;sl:title&amp;gt;/ &amp;lt;delim&amp;gt; Book title: &amp;lt;q:title&amp;gt; &amp;lt;delim&amp;gt; Author: &amp;lt;q:author&amp;gt; &amp;lt;delim&amp;gt; Full synopsis: &amp;lt;:pp&amp;gt;&amp;#34; engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+Question How are results weighted roughly you think? If results are weighted hugely popularity like in search engines then it would be hard for openAI to generate or create anything beyond the general consensus?
+Answer when it comes to very popular books, you&amp;rsquo;re probably correct. &amp;lsquo;how&amp;rsquo; is an incredibly difficult question to answer. misinformation can easily sneak into the results.</description>
     </item>
     
     <item>

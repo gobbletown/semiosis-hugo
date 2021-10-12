@@ -12,6 +12,39 @@ I make a prompt which generates summaries of
 books, based on what the LM has read.
 
 
+### Question {#question}
+
+How are results weighted roughly you think? If
+results are weighted hugely popularity like in
+search engines then it would be hard for
+openAI to generate or create anything beyond
+the general consensus?
+
+
+### Answer {#answer}
+
+when it comes to very popular books, you're
+probably correct. 'how' is an incredibly
+difficult question to answer. misinformation
+can easily sneak into the results. the prompt
+is designed to be inspired by book reviews,
+because i placed a url at the top of it that
+looks like it's from a website that contains
+book reviews, so the review will be skewed
+towards popular opinion like you say,
+probably, but inevitably will also factor in
+from other sources, including non-related or
+similarly looking material
+
+Related
+: <https://openai.com/blog/summarizing-books/>
+
+as for the technique that openai used to
+summarize the book, that's very different.
+that actually makes a synopsis based on mostly
+unbias summarization
+
+
 ## Prompt {#prompt}
 
 `pf-synopsis-of-book/2`
