@@ -140,3 +140,82 @@ frightening creature known as Gollum.
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/xe1JYXcKFyFfKvxG0bteYt5tR" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/xe1JYXcKFyFfKvxG0bteYt5tR.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/xe1JYXcKFyFfKvxG0bteYt5tR.js" id="asciicast-xe1JYXcKFyFfKvxG0bteYt5tR" async></script>
+
+
+## Crtique of pure reason - Immanuel Kant {#crtique-of-pure-reason-immanuel-kant}
+
+
+### Result 1 {#result-1}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+A demystifying text on major work of modern
+philosophy.
+
+Written in 1781, but with many later
+additions, it attempts to systematize the main
+argument of the previous century.
+
+Never intended to be published, it was
+intended to guide the German philosophical
+professors of the epoch.
+
+However, its wide citations in the modern
+analytic philosophy of the West have made it
+one of the most famous documents of modern
+philosophy.
+{{< /highlight >}}
+
+
+### Result 2 {#result-2}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Kant presents a transcendental deduction of
+synthetic a priori truths.
+
+The work founded the tradition of critical
+philosophy and paved the way to German
+idealism.
+
+Based on previous philosophical thinking, his
+first major work, The Critique of Pure Reason
+(1781) developed arguments for idealism
+regarding the relationship between the human
+reason and the world.
+
+He argued that the source of all our knowledge
+is the faculty of understanding, that through
+intuition the human mind receives the
+fundamental concepts of space, time,
+causation, and necessity, which are the source
+of all empirical knowledge.
+
+He also explored other parts of his
+philosophy, including his arguments for the
+synthetic a priori nature of geometry, his
+views on the relations between the knowing
+subject
+{{< /highlight >}}
+
+
+### Result 3 {#result-3}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+The Critique of Pure Reason (hereafter
+referred to simply as the Critique) is perhaps
+the most complex, profound, and inaccessible
+work in the history of metaphysical
+philosophy.
+
+The entire work comprises two parts (the first
+of which is treated in this volume).
+
+The first part contains three "dialogues" (or,
+more properly, "questions") in which the
+author seeks to prove the three "fundamental"
+metaphysical ideas (categories of
+understanding, ideas of reason, and synthetic
+a priori truths) that are necessary for any
+knowledge of objects a priori, i.e., for any
+knowledge that is not given solely in and
+through the senses.
+{{< /highlight >}}
