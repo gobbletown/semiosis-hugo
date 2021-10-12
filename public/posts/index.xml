@@ -17,7 +17,8 @@
             <guid>http://semiosis.github.io/posts/book-review-with-codex/</guid>
             <description>Summary I make a prompt which generates summaries of books, based on what the LM has read.
 Question How are results weighted roughly you think? If results are weighted hugely popularity like in search engines then it would be hard for openAI to generate or create anything beyond the general consensus?
-Answer when it comes to very popular books, you&amp;rsquo;re probably correct. &amp;lsquo;how&amp;rsquo; is an incredibly difficult question to answer. misinformation can easily sneak into the results.</description>
+Answer When it comes to very popular books, you&amp;rsquo;re probably correct.
+&amp;lsquo;How&amp;rsquo; is an incredibly difficult question to answer.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I make a prompt which generates summaries of
 books, based on what the LM has read.</p>
@@ -28,26 +29,28 @@ search engines then it would be hard for
 openAI to generate or create anything beyond
 the general consensus?</p>
 <h3 id="answer">Answer</h3>
-<p>when it comes to very popular books, you&rsquo;re
-probably correct. &lsquo;how&rsquo; is an incredibly
-difficult question to answer. misinformation
-can easily sneak into the results. the prompt
-is designed to be inspired by book reviews,
-because i placed a url at the top of it that
-looks like it&rsquo;s from a website that contains
-book reviews, so the review will be skewed
-towards popular opinion like you say,
+<p>When it comes to very popular books, you&rsquo;re
+probably correct.</p>
+<p>&lsquo;How&rsquo; is an incredibly difficult question to
+answer.</p>
+<p>Misinformation can easily sneak into the
+results.</p>
+<p>The prompt is designed to be inspired by book
+reviews, because I placed a URL at the top of
+it that looks like it&rsquo;s from a website that
+contains book reviews, so the review will be
+skewed towards popular opinion like you say,
 probably, but inevitably will also factor in
 from other sources, including non-related or
-similarly looking material</p>
+similarly looking material.</p>
 <dl>
 <dt>Related</dt>
 <dd><a href="https://openai.com/blog/summarizing-books/">https://openai.com/blog/summarizing-books/</a></dd>
 </dl>
-<p>as for the technique that openai used to
-summarize the book, that&rsquo;s very different.
-that actually makes a synopsis based on mostly
-unbias summarization</p>
+<p>As for the technique that openai used to
+summarize the book, that&rsquo;s very different.</p>
+<p>That actually makes a synopsis based on mostly
+unbiased summarization.</p>
 <h2 id="prompt">Prompt</h2>
 <p><code>pf-synopsis-of-book/2</code></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">

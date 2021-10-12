@@ -16,7 +16,8 @@
       <guid>http://semiosis.github.io/posts/book-review-with-codex/</guid>
       <description>Summary I make a prompt which generates summaries of books, based on what the LM has read.
 Question How are results weighted roughly you think? If results are weighted hugely popularity like in search engines then it would be hard for openAI to generate or create anything beyond the general consensus?
-Answer when it comes to very popular books, you&amp;rsquo;re probably correct. &amp;lsquo;how&amp;rsquo; is an incredibly difficult question to answer. misinformation can easily sneak into the results.</description>
+Answer When it comes to very popular books, you&amp;rsquo;re probably correct.
+&amp;lsquo;How&amp;rsquo; is an incredibly difficult question to answer.</description>
     </item>
     
     <item>

@@ -23,26 +23,32 @@ the general consensus?
 
 ### Answer {#answer}
 
-when it comes to very popular books, you're
-probably correct. 'how' is an incredibly
-difficult question to answer. misinformation
-can easily sneak into the results. the prompt
-is designed to be inspired by book reviews,
-because i placed a url at the top of it that
-looks like it's from a website that contains
-book reviews, so the review will be skewed
-towards popular opinion like you say,
+When it comes to very popular books, you're
+probably correct.
+
+'How' is an incredibly difficult question to
+answer.
+
+Misinformation can easily sneak into the
+results.
+
+The prompt is designed to be inspired by book
+reviews, because I placed a URL at the top of
+it that looks like it's from a website that
+contains book reviews, so the review will be
+skewed towards popular opinion like you say,
 probably, but inevitably will also factor in
 from other sources, including non-related or
-similarly looking material
+similarly looking material.
 
 Related
 : <https://openai.com/blog/summarizing-books/>
 
-as for the technique that openai used to
+As for the technique that openai used to
 summarize the book, that's very different.
-that actually makes a synopsis based on mostly
-unbias summarization
+
+That actually makes a synopsis based on mostly
+unbiased summarization.
 
 
 ## Prompt {#prompt}
