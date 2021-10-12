@@ -22,6 +22,16 @@ Prompt pf-cli-help/1
     </item>
     
     <item>
+      <title>Generate YASnippet templates with Codex</title>
+      <link>http://semiosis.github.io/posts/generate-yasnippet-templates-with-codex/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/generate-yasnippet-templates-with-codex/</guid>
+      <description>Summary I demonstate snippet generation using Codex.
+Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  task: &amp;#34;Generate a YASnippet&amp;#34; doc: &amp;#34;Given a language and a feature, generate a snippet&amp;#34; prompt-version: 1 prompt: |+# This is a snippet template example of a &amp;lt;q:name&amp;gt; in &amp;lt;mode&amp;gt;: cd ~/.emacs.d/yasnippet/snippets/&amp;lt;sl:mode&amp;gt; cat &amp;lt;sl:mode&amp;gt;_&amp;lt;sl:name&amp;gt; &amp;lt;&amp;lt;EOD &amp;lt;:pp&amp;gt;# -*- mode: snippet -*- # name: &amp;lt;sl:name&amp;gt; # -- engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+    </item>
+    
+    <item>
       <title>Codex and Pen.el for writing Haskell</title>
       <link>http://semiosis.github.io/posts/codex-and-pen-el-for-writing-haskell/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +1300</pubDate>
