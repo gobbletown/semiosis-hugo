@@ -20,6 +20,19 @@
     </item>
     
     <item>
+      <title>Generate new files with Codex and Pen.el</title>
+      <link>http://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/</guid>
+      <description>Summary I make a prompt for generating the contents of new files.
+This takes into account the file name and file listing.
+This allows you to quickly scaffold any project.
+Simply touch the files you want. You can just start by prompting a .gitignore file. That will help!
+Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &amp;#34;Generate the contents of a new file&amp;#34; doc: &amp;#34;Prompt for the probable contents of a file with this path and sibling files&amp;#34; prompt-version: 1 prompt: |+$ ls | head -n 10 &amp;lt;ls output&amp;gt; $ cat &amp;lt;q:path&amp;gt; &amp;lt;&amp;lt;EOD &amp;lt;preceding text&amp;gt; engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+    </item>
+    
+    <item>
       <title>Book review with Codex</title>
       <link>http://semiosis.github.io/posts/book-review-with-codex/</link>
       <pubDate>Tue, 12 Oct 2021 00:00:00 +1300</pubDate>

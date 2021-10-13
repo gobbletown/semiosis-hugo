@@ -249,6 +249,104 @@ footsteps&#34;</code></pre></td></tr></table>
         </item>
         
         <item>
+            <title>Generate new files with Codex and Pen.el</title>
+            <link>http://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/</link>
+            <pubDate>Wed, 13 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/</guid>
+            <description>Summary I make a prompt for generating the contents of new files.
+This takes into account the file name and file listing.
+This allows you to quickly scaffold any project.
+Simply touch the files you want. You can just start by prompting a .gitignore file. That will help!
+Prompt 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  task: &amp;#34;Generate the contents of a new file&amp;#34; doc: &amp;#34;Prompt for the probable contents of a file with this path and sibling files&amp;#34; prompt-version: 1 prompt: |+$ ls | head -n 10 &amp;lt;ls output&amp;gt; $ cat &amp;lt;q:path&amp;gt; &amp;lt;&amp;lt;EOD &amp;lt;preceding text&amp;gt; engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I make a prompt for generating the contents of new files.</p>
+<p>This takes into account the file name and file listing.</p>
+<p>This allows you to quickly scaffold any project.</p>
+<p>Simply touch the files you want. You can just
+start by prompting a <code>.gitignore</code> file. That
+will help!</p>
+<h2 id="prompt">Prompt</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Generate the contents of a new file&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Prompt for the probable contents of a file with this path and sibling files&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    $ ls | head -n 10
+</span><span style="color:#e6db74">    &lt;ls output&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    $ cat &lt;q:path&gt; &lt;&lt;EOD
+</span><span style="color:#e6db74">    &lt;preceding text&gt;</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">150</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#75715e"># This means that even a long-completion can&#39;t change the stop-sequence</span>
+<span style="color:#f92672">force-stop-sequence</span>: <span style="color:#ae81ff">EOD</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#ae81ff">EOD</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;preceding text&#34;</span>
+- <span style="color:#e6db74">&#34;path&#34;</span>
+- <span style="color:#e6db74">&#34;ls output&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-preceding-text)&#34;</span>
+- <span style="color:#e6db74">&#34;(f-basename (get-path))&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;ls | head -n 10\&#34;)&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;&#34;</span>
+- <span style="color:#e6db74">&#34;.gitignore&#34;</span>
+- <span style="color:#e6db74">&#34;.\nLICENSE.md&#34;</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/LV3TC93BkHRKh0RwfOoM45u83" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/LV3TC93BkHRKh0RwfOoM45u83.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/LV3TC93BkHRKh0RwfOoM45u83.js" id="asciicast-LV3TC93BkHRKh0RwfOoM45u83" async></script>]]></content>
+        </item>
+        
+        <item>
             <title>Book review with Codex</title>
             <link>http://semiosis.github.io/posts/book-review-with-codex/</link>
             <pubDate>Tue, 12 Oct 2021 00:00:00 +1300</pubDate>
