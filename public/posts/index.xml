@@ -839,8 +839,8 @@ scaffolding them.</p>
 </div>
 </div>
 <dl>
-<dt><code>pf-recurse-current-directory/2</code></dt>
-<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-2.prompt</a></dd>
+<dt><code>pf-recurse-current-directory/3</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-3.prompt">http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-3.prompt</a></dd>
 </dl>
 <!--listend-->
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -906,6 +906,11 @@ scaffolding them.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;recurse current directory&#34;</span>
@@ -918,8 +923,11 @@ scaffolding them.</p>
 <span style="color:#75715e"># Don&#39;t include this necessarily</span>
 <span style="color:#f92672">subprompts</span>:
   - <span style="color:#f92672">dirs</span>: |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">        $ ls -d */ # list directories here
+</span><span style="color:#e6db74">        &lt;ls dirs here output&gt;
+</span><span style="color:#e6db74">
 </span><span style="color:#e6db74">        $ find . -type d -maxdepth 1 # list directories here
-</span><span style="color:#e6db74">        &lt;ls dirs here output&gt;</span>        
+</span><span style="color:#e6db74">        &lt;find dirs here output&gt;</span>        
 
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
 </span><span style="color:#e6db74">  &lt;dirs&gt;
@@ -941,8 +949,10 @@ scaffolding them.</p>
 <span style="color:#f92672">vars</span>:
 - <span style="color:#e6db74">&#34;working directory&#34;</span>
 - <span style="color:#e6db74">&#34;ls dirs here output&#34;</span>
+- <span style="color:#e6db74">&#34;find dirs here output&#34;</span>
 <span style="color:#f92672">var-defaults</span>:
 - <span style="color:#e6db74">&#34;(pen-snc \&#34;pwd\&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;ls -d */ | head -n 5\&#34;)&#34;</span>
 - <span style="color:#e6db74">&#34;(pen-snc \&#34;find . -type d -maxdepth 1\&#34;)&#34;</span>
 <span style="color:#f92672">examples</span>:
 - <span style="color:#e6db74">&#34;/home/shane/source/git/mobile-shell/mosh&#34;</span>

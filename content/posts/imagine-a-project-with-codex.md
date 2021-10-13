@@ -147,8 +147,8 @@ return-postprocessor: sed 's/^/<directory name>\//'
 action: pen-find-file
 {{< /highlight >}}
 
-`pf-recurse-current-directory/2`
-: <http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-2.prompt>
+`pf-recurse-current-directory/3`
+: <http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-3.prompt>
 
 <!--listend-->
 
@@ -163,8 +163,11 @@ notes:
 # Don't include this necessarily
 subprompts:
   - dirs: |-
-        $ find . -type d -maxdepth 1 # list directories here
+        $ ls -d */ # list directories here
         <ls dirs here output>
+
+        $ find . -type d -maxdepth 1 # list directories here
+        <find dirs here output>
 
 prompt: |+
   <dirs>
@@ -186,8 +189,10 @@ n-completions: 10
 vars:
 - "working directory"
 - "ls dirs here output"
+- "find dirs here output"
 var-defaults:
 - "(pen-snc \"pwd\")"
+- "(pen-snc \"ls -d */ | head -n 5\")"
 - "(pen-snc \"find . -type d -maxdepth 1\")"
 examples:
 - "/home/shane/source/git/mobile-shell/mosh"
