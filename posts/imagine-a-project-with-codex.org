@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil
 
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./philosophy
+#+HUGO_SECTION: ./posts
 
 #+TITLE: Imagine a project with Codex
 #+DATE: <2021-10-13>
