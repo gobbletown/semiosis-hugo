@@ -20,6 +20,17 @@
     </item>
     
     <item>
+      <title>Explain a file&#39;s contents with Codex</title>
+      <link>http://semiosis.github.io/posts/explain-a-file-s-contents-with-codex/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/explain-a-file-s-contents-with-codex/</guid>
+      <description>Summary This prompt explains a file&amp;rsquo;s contents by imagining a readme for that file.
+It takes into account the file&amp;rsquo;s filesystem context.
+Prompt  http://github.com/semiosis/prompts/blob/master/prompts/explain-a-file-4.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73  task: &amp;#34;explain a file&amp;#34; doc: &amp;#34;Explain a file&amp;#34; prompt-version: 1 prompt: |+$ ls | head -n 10 &amp;lt;ls here output&amp;gt; $ ls .</description>
+    </item>
+    
+    <item>
       <title>Generate new files with Codex and Pen.el</title>
       <link>http://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/</link>
       <pubDate>Wed, 13 Oct 2021 00:00:00 +1300</pubDate>
