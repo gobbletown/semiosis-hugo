@@ -28,6 +28,12 @@ herbs & spices and other secret recipes).
 Codex imagines the file structure and the contents of the files inside of a new, empty project.
 scaffolding them.
 
+_The asciinema demo was too large to upload :'(_
+
+Here is the `.cast` file:
+
+<http://github.com/mullikine/my-asciinema-recs/blob/master/codex-scaffolding-programs.cast>
+
 
 ## elisp {#elisp}
 
@@ -49,14 +55,14 @@ See also
 : <https://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/>
 
 
-`pf-recurse-current-directory/3`
+`pf-recurse-subdirectory/4`
 : <http://github.com/semiosis/prompts/blob/master/prompts/recurse-subdirectory-4.prompt>
 
 <!--listend-->
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
-title: "recurse current directory"
-doc: "imaginarily recurse the current directory"
+title: "recurse subdirectory"
+doc: "imaginarily recurse a subdirectory"
 prompt-version: 3
 todo:
 - Make a more general version of this
@@ -64,6 +70,10 @@ notes:
 - parent was removed because for short listings, it was interfering
 # Don't include this necessarily
 subprompts:
+  - parent: |-
+        $ ls .. | head -n 5
+        <ls parent dir output>
+
   - dirs: |-
         $ ls -d */ # list directories here
         <ls dirs here output>
@@ -72,17 +82,17 @@ subprompts:
         <find dirs here output>
 
 prompt: |+
-  <dirs>
-
   $ pwd
   <working directory>
 
-  # recursively search for files in this directory
-  $ find . -maxdepth 5
-  <:pp>./
+  <dirs>
+
+  $ # look inside directory <directory name>
+  $ find <q:directory name>/ -maxdepth 5
+  <:pp><directory name>/
 engine: "OpenAI Codex"
 temperature: 0.3
-max-generated-tokens: 150
+max-generated-tokens: 200
 top-p: 1.0
 stop-sequences:
 - "\n\n"
@@ -90,36 +100,50 @@ cache: on
 n-completions: 10
 vars:
 - "working directory"
+- "directory name"
 - "ls dirs here output"
 - "find dirs here output"
+# - "ls parent dir output"
 var-defaults:
 - "(pen-snc \"pwd\")"
+# - "(read-string-hist \"imaginary dir name: \")"
+- "(fz (snc \"find . -maxdepth 1 -mindepth 1 -type d | sed 's/^\\\\.\\\\///'\") nil nil \"imagine dir contents: \")"
+# - "(fz (snc \"find . -type d -maxdepth 1"
 - "(pen-snc \"ls -d */ | head -n 5\")"
 - "(pen-snc \"find . -type d -maxdepth 1\")"
+# - "(pen-snc \"ls .. | head -n 5\")"
 examples:
 - "/home/shane/source/git/mobile-shell/mosh"
 - "secret documents"
 - |-
-    drwxrwxr-x   2 shane shane     4096 Oct 13 19:34 contracts
-    -rw-rw-r--   1 shane shane      816 Oct 13 02:59 README.org
-    -rw-rw-r--   1 shane shane 10166273 Oct 13 02:59 tags
-    drwxrwxr-x 271 shane shane    12288 Oct 13 01:08 node_modules
-    -rw-r--r--   1 shane shane   262758 Oct 13 01:08 package-lock.json
+    contracts/
+    migrations/
+    node_modules/
+    src/
+    test/
 - |-
     .
-    ./.git/
-    ./.github
+    ./contracts/
+    ./migrations/
+    ./node_modules/
     ./src/
     ./test/
+# - |-
+#     AIDungeon
+#     alacritty
+#     ALEX
+#     almanac
+#     aokts
 info: on
 completion: off
 insertion: off
-validator: grep -qP "^\\./"
+validator: grep -qP '(<q:directory name>|<directory name>)'
 # must come after validator
-postpostprocessor: sed 's/^\.\///' | sed -e '/^$/d' -e '/^\.$/d'
+postpostprocessor: sed 's/^<directory name>\///' | sed '/^$/d'
 split-patterns:
 - "\n"
 # These are defined after the prompt has executed
+return-postprocessor: sed 's/^/<directory name>\//'
 action: pen-find-file
 {{< /highlight >}}
 

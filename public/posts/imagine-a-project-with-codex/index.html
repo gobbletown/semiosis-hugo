@@ -39,7 +39,7 @@ Generated project  http://github.com/mullikine/codex-scaffolding-demo  Demo Code
 This is useful for scaffolding new projects (or maybe imagining the Colonel&rsquo;s 11 secret herbs &amp; spices and other secret recipes).
 Generated project  http://github.com/mullikine/codex-scaffolding-demo  Demo Codex imagines the file structure and the contents of the files inside of a new, empty project."><meta itemprop="datePublished" content="2021-10-13T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-10-13T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="890"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="968"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -175,6 +175,9 @@ herbs &amp; spices and other secret recipes).</p>
 <h2 id="demo">Demo</h2>
 <p>Codex imagines the file structure and the contents of the files inside of a new, empty project.
 scaffolding them.</p>
+<p><em>The asciinema demo was too large to upload :'(</em></p>
+<p>Here is the <code>.cast</code> file:</p>
+<p><a href="http://github.com/mullikine/my-asciinema-recs/blob/master/codex-scaffolding-programs.cast">http://github.com/mullikine/my-asciinema-recs/blob/master/codex-scaffolding-programs.cast</a></p>
 <h2 id="elisp">elisp</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -202,7 +205,7 @@ scaffolding them.</p>
 <dl>
 <dt>See also</dt>
 <dd><a href="https://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/">https://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/</a></dd>
-<dt><code>pf-recurse-current-directory/3</code></dt>
+<dt><code>pf-recurse-subdirectory/4</code></dt>
 <dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/recurse-subdirectory-4.prompt">http://github.com/semiosis/prompts/blob/master/prompts/recurse-subdirectory-4.prompt</a></dd>
 </dl>
 <!--listend-->
@@ -274,10 +277,28 @@ scaffolding them.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;recurse current directory&#34;</span>
-<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;imaginarily recurse the current directory&#34;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;recurse subdirectory&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;imaginarily recurse a subdirectory&#34;</span>
 <span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">3</span>
 <span style="color:#f92672">todo</span>:
 - <span style="color:#ae81ff">Make a more general version of this</span>
@@ -285,6 +306,10 @@ scaffolding them.</p>
 - <span style="color:#ae81ff">parent was removed because for short listings, it was interfering</span>
 <span style="color:#75715e"># Don&#39;t include this necessarily</span>
 <span style="color:#f92672">subprompts</span>:
+  - <span style="color:#f92672">parent</span>: |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">        $ ls .. | head -n 5
+</span><span style="color:#e6db74">        &lt;ls parent dir output&gt;</span>        
+
   - <span style="color:#f92672">dirs</span>: |-<span style="color:#e6db74">
 </span><span style="color:#e6db74">        $ ls -d */ # list directories here
 </span><span style="color:#e6db74">        &lt;ls dirs here output&gt;
@@ -293,17 +318,17 @@ scaffolding them.</p>
 </span><span style="color:#e6db74">        &lt;find dirs here output&gt;</span>        
 
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
-</span><span style="color:#e6db74">  &lt;dirs&gt;
-</span><span style="color:#e6db74">
 </span><span style="color:#e6db74">  $ pwd
 </span><span style="color:#e6db74">  &lt;working directory&gt;
 </span><span style="color:#e6db74">
-</span><span style="color:#e6db74">  # recursively search for files in this directory
-</span><span style="color:#e6db74">  $ find . -maxdepth 5
-</span><span style="color:#e6db74">  &lt;:pp&gt;./</span>  
+</span><span style="color:#e6db74">  &lt;dirs&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  $ # look inside directory &lt;directory name&gt;
+</span><span style="color:#e6db74">  $ find &lt;q:directory name&gt;/ -maxdepth 5
+</span><span style="color:#e6db74">  &lt;:pp&gt;&lt;directory name&gt;/</span>  
 <span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
 <span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
-<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">150</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">200</span>
 <span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
 <span style="color:#f92672">stop-sequences</span>:
 - <span style="color:#e6db74">&#34;\n\n&#34;</span>
@@ -311,36 +336,50 @@ scaffolding them.</p>
 <span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
 <span style="color:#f92672">vars</span>:
 - <span style="color:#e6db74">&#34;working directory&#34;</span>
+- <span style="color:#e6db74">&#34;directory name&#34;</span>
 - <span style="color:#e6db74">&#34;ls dirs here output&#34;</span>
 - <span style="color:#e6db74">&#34;find dirs here output&#34;</span>
+<span style="color:#75715e"># - &#34;ls parent dir output&#34;</span>
 <span style="color:#f92672">var-defaults</span>:
 - <span style="color:#e6db74">&#34;(pen-snc \&#34;pwd\&#34;)&#34;</span>
+<span style="color:#75715e"># - &#34;(read-string-hist \&#34;imaginary dir name: \&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(fz (snc \&#34;find . -maxdepth 1 -mindepth 1 -type d | sed &#39;s/^\\\\.\\\\///&#39;\&#34;) nil nil \&#34;imagine dir contents: \&#34;)&#34;</span>
+<span style="color:#75715e"># - &#34;(fz (snc \&#34;find . -type d -maxdepth 1&#34;</span>
 - <span style="color:#e6db74">&#34;(pen-snc \&#34;ls -d */ | head -n 5\&#34;)&#34;</span>
 - <span style="color:#e6db74">&#34;(pen-snc \&#34;find . -type d -maxdepth 1\&#34;)&#34;</span>
+<span style="color:#75715e"># - &#34;(pen-snc \&#34;ls .. | head -n 5\&#34;)&#34;</span>
 <span style="color:#f92672">examples</span>:
 - <span style="color:#e6db74">&#34;/home/shane/source/git/mobile-shell/mosh&#34;</span>
 - <span style="color:#e6db74">&#34;secret documents&#34;</span>
 - |-<span style="color:#e6db74">
-</span><span style="color:#e6db74">    drwxrwxr-x   2 shane shane     4096 Oct 13 19:34 contracts
-</span><span style="color:#e6db74">    -rw-rw-r--   1 shane shane      816 Oct 13 02:59 README.org
-</span><span style="color:#e6db74">    -rw-rw-r--   1 shane shane 10166273 Oct 13 02:59 tags
-</span><span style="color:#e6db74">    drwxrwxr-x 271 shane shane    12288 Oct 13 01:08 node_modules
-</span><span style="color:#e6db74">    -rw-r--r--   1 shane shane   262758 Oct 13 01:08 package-lock.json</span>    
+</span><span style="color:#e6db74">    contracts/
+</span><span style="color:#e6db74">    migrations/
+</span><span style="color:#e6db74">    node_modules/
+</span><span style="color:#e6db74">    src/
+</span><span style="color:#e6db74">    test/</span>    
 - |-<span style="color:#e6db74">
 </span><span style="color:#e6db74">    .
-</span><span style="color:#e6db74">    ./.git/
-</span><span style="color:#e6db74">    ./.github
+</span><span style="color:#e6db74">    ./contracts/
+</span><span style="color:#e6db74">    ./migrations/
+</span><span style="color:#e6db74">    ./node_modules/
 </span><span style="color:#e6db74">    ./src/
 </span><span style="color:#e6db74">    ./test/</span>    
+<span style="color:#75715e"># - |-</span>
+<span style="color:#75715e">#     AIDungeon</span>
+<span style="color:#75715e">#     alacritty</span>
+<span style="color:#75715e">#     ALEX</span>
+<span style="color:#75715e">#     almanac</span>
+<span style="color:#75715e">#     aokts</span>
 <span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
 <span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
 <span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
-<span style="color:#f92672">validator</span>: <span style="color:#ae81ff">grep -qP &#34;^\\./&#34;</span>
+<span style="color:#f92672">validator</span>: <span style="color:#ae81ff">grep -qP &#39;(&lt;q:directory name&gt;|&lt;directory name&gt;)&#39;</span>
 <span style="color:#75715e"># must come after validator</span>
-<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">sed &#39;s/^\.\///&#39; | sed -e &#39;/^$/d&#39; -e &#39;/^\.$/d&#39;</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">sed &#39;s/^&lt;directory name&gt;\///&#39; | sed &#39;/^$/d&#39;</span>
 <span style="color:#f92672">split-patterns</span>:
 - <span style="color:#e6db74">&#34;\n&#34;</span>
 <span style="color:#75715e"># These are defined after the prompt has executed</span>
+<span style="color:#f92672">return-postprocessor</span>: <span style="color:#ae81ff">sed &#39;s/^/&lt;directory name&gt;\//&#39;</span>
 <span style="color:#f92672">action</span>: <span style="color:#ae81ff">pen-find-file</span></code></pre></td></tr></table>
 </div>
 </div>
@@ -623,7 +662,7 @@ scaffolding them.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        890 Words
+        968 Words
       </p>
 
       <p>
