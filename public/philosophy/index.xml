@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 11 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imagine a project with Codex</title>
+      <link>http://semiosis.github.io/philosophy/imagine-a-project-with-codex/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/philosophy/imagine-a-project-with-codex/</guid>
+      <description>Summary I work on prompts for imagining what&amp;rsquo;s inside of a directory, and on imagining the contents of those files, while building the functionality tightly into emacs.
+This is useful for scaffolding new projects (or maybe imagining the Colonel&amp;rsquo;s 11 secret herbs &amp;amp; spices and other secret recipes).
+Generated project  http://github.com/mullikine/codex-scaffolding-demo  Demo Codex imagines the file structure and the contents of the files inside of a new, empty project.</description>
+    </item>
+    
     <item>
       <title>Simulacra &amp; Simulation, Baudrillard</title>
       <link>http://semiosis.github.io/philosophy/simulacra-simulation/</link>

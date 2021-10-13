@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[Shane Mulligan]">
+<meta name="description" content="Summary I work on prompts for imagining what&amp;rsquo;s inside of a directory, and on imagining the contents of those files, while building the functionality tightly into emacs.
+This is useful for scaffolding new projects (or maybe imagining the Colonel&amp;rsquo;s 11 secret herbs &amp;amp; spices and other secret recipes).
+Generated project  http://github.com/mullikine/codex-scaffolding-demo  Demo Codex imagines the file structure and the contents of the files inside of a new, empty project." />
+<meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://semiosis.github.io/philosophy/imagine-a-project-with-codex/" />
+
+
+    <title>
+        
+            Imagine a project with Codex :: semiosis  — Signs, Natural Language and Coding
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.713bc4cd4ef93646ff57365d60142398ef6cf6c4d8aec522a4cb40f6ca6c27f1.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Imagine a project with Codex">
+<meta itemprop="description" content="Summary I work on prompts for imagining what&rsquo;s inside of a directory, and on imagining the contents of those files, while building the functionality tightly into emacs.
+This is useful for scaffolding new projects (or maybe imagining the Colonel&rsquo;s 11 secret herbs &amp; spices and other secret recipes).
+Generated project  http://github.com/mullikine/codex-scaffolding-demo  Demo Codex imagines the file structure and the contents of the files inside of a new, empty project."><meta itemprop="datePublished" content="2021-10-13T00:00:00&#43;13:00" />
+<meta itemprop="dateModified" content="2021-10-13T00:00:00&#43;13:00" />
+<meta itemprop="wordCount" content="890"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://semiosis.github.io/"/>
+
+<meta name="twitter:title" content="Imagine a project with Codex"/>
+<meta name="twitter:description" content="Summary I work on prompts for imagining what&rsquo;s inside of a directory, and on imagining the contents of those files, while building the functionality tightly into emacs.
+This is useful for scaffolding new projects (or maybe imagining the Colonel&rsquo;s 11 secret herbs &amp; spices and other secret recipes).
+Generated project  http://github.com/mullikine/codex-scaffolding-demo  Demo Codex imagines the file structure and the contents of the files inside of a new, empty project."/>
+
+
+
+
+    <meta property="og:title" content="Imagine a project with Codex" />
+<meta property="og:description" content="Summary I work on prompts for imagining what&rsquo;s inside of a directory, and on imagining the contents of those files, while building the functionality tightly into emacs.
+This is useful for scaffolding new projects (or maybe imagining the Colonel&rsquo;s 11 secret herbs &amp; spices and other secret recipes).
+Generated project  http://github.com/mullikine/codex-scaffolding-demo  Demo Codex imagines the file structure and the contents of the files inside of a new, empty project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://semiosis.github.io/philosophy/imagine-a-project-with-codex/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="philosophy" />
+<meta property="article:published_time" content="2021-10-13T00:00:00&#43;13:00" />
+<meta property="article:modified_time" content="2021-10-13T00:00:00&#43;13:00" /><meta property="og:site_name" content="semiosis" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-10-13 00:00:00 &#43;1300 NZDT" />
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+ var _paq = window._paq = window._paq || [];
+  
+ _paq.push(['trackPageView']);
+ _paq.push(['enableLinkTracking']);
+ (function() {
+     var u="https://mullikine.matomo.cloud/";
+     _paq.push(['setTrackerUrl', u+'matomo.php']);
+     _paq.push(['setSiteId', '2']);
+     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+     g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/mullikine.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+ })();
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">semiosis</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/examplary/">Examplary</a></li><li><a href="/ii/">Imaginary Interpreter</a></li><li><a href="/ink/">Ink.el</a></li><li><a href="/pen/">Pen.el</a></li><li><a href="/philosophy/">PHIL</a></li><li><a href="/ilambda/">𝑖λ</a></li><li><a href="/looking-glass/">🔍</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://semiosis.github.io/philosophy/imagine-a-project-with-codex/">Imagine a project with Codex</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="summary">Summary</h2>
+<p>I work on prompts for imagining what&rsquo;s inside
+of a directory, and on imagining the contents
+of those files, while building the
+functionality tightly into emacs.</p>
+<p>This is useful for scaffolding new projects
+(or maybe imagining the Colonel&rsquo;s 11 secret
+herbs &amp; spices and other secret recipes).</p>
+<h2 id="generated-project">Generated project</h2>
+<ul>
+<li><a href="http://github.com/mullikine/codex-scaffolding-demo">http://github.com/mullikine/codex-scaffolding-demo</a></li>
+</ul>
+<h2 id="demo">Demo</h2>
+<p>Codex imagines the file structure and the contents of the files inside of a new, empty project.
+scaffolding them.</p>
+<h2 id="elisp">elisp</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-find-file (path)
+  <span style="color:#e6db74">&#34;Create directories and edit file&#34;</span>
+  (pen-snc (cmd <span style="color:#e6db74">&#34;mkdir&#34;</span> <span style="color:#e6db74">&#34;-p&#34;</span> (f-dirname path)))
+  (if (re-match-p <span style="color:#e6db74">&#34;/$&#34;</span> path)
+      (progn
+        (pen-snc (cmd <span style="color:#e6db74">&#34;mkdir&#34;</span> <span style="color:#e6db74">&#34;-p&#34;</span> path))
+        (find-file path))
+    (find-file path)))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompts">Prompts</h2>
+<dl>
+<dt>See also</dt>
+<dd><a href="https://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/">https://semiosis.github.io/posts/generate-new-files-with-codex-and-pen-el/</a></dd>
+<dt><code>pf-recurse-current-directory/3</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/recurse-subdirectory-4.prompt">http://github.com/semiosis/prompts/blob/master/prompts/recurse-subdirectory-4.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;recurse current directory&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;imaginarily recurse the current directory&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">todo</span>:
+- <span style="color:#ae81ff">Make a more general version of this</span>
+<span style="color:#f92672">notes</span>:
+- <span style="color:#ae81ff">parent was removed because for short listings, it was interfering</span>
+<span style="color:#75715e"># Don&#39;t include this necessarily</span>
+<span style="color:#f92672">subprompts</span>:
+  - <span style="color:#f92672">dirs</span>: |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">        $ ls -d */ # list directories here
+</span><span style="color:#e6db74">        &lt;ls dirs here output&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">        $ find . -type d -maxdepth 1 # list directories here
+</span><span style="color:#e6db74">        &lt;find dirs here output&gt;</span>        
+
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;dirs&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  $ pwd
+</span><span style="color:#e6db74">  &lt;working directory&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # recursively search for files in this directory
+</span><span style="color:#e6db74">  $ find . -maxdepth 5
+</span><span style="color:#e6db74">  &lt;:pp&gt;./</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">150</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;working directory&#34;</span>
+- <span style="color:#e6db74">&#34;ls dirs here output&#34;</span>
+- <span style="color:#e6db74">&#34;find dirs here output&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;pwd\&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;ls -d */ | head -n 5\&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;find . -type d -maxdepth 1\&#34;)&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;/home/shane/source/git/mobile-shell/mosh&#34;</span>
+- <span style="color:#e6db74">&#34;secret documents&#34;</span>
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    drwxrwxr-x   2 shane shane     4096 Oct 13 19:34 contracts
+</span><span style="color:#e6db74">    -rw-rw-r--   1 shane shane      816 Oct 13 02:59 README.org
+</span><span style="color:#e6db74">    -rw-rw-r--   1 shane shane 10166273 Oct 13 02:59 tags
+</span><span style="color:#e6db74">    drwxrwxr-x 271 shane shane    12288 Oct 13 01:08 node_modules
+</span><span style="color:#e6db74">    -rw-r--r--   1 shane shane   262758 Oct 13 01:08 package-lock.json</span>    
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    .
+</span><span style="color:#e6db74">    ./.git/
+</span><span style="color:#e6db74">    ./.github
+</span><span style="color:#e6db74">    ./src/
+</span><span style="color:#e6db74">    ./test/</span>    
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">validator</span>: <span style="color:#ae81ff">grep -qP &#34;^\\./&#34;</span>
+<span style="color:#75715e"># must come after validator</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">sed &#39;s/^\.\///&#39; | sed -e &#39;/^$/d&#39; -e &#39;/^\.$/d&#39;</span>
+<span style="color:#f92672">split-patterns</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#75715e"># These are defined after the prompt has executed</span>
+<span style="color:#f92672">action</span>: <span style="color:#ae81ff">pen-find-file</span></code></pre></td></tr></table>
+</div>
+</div>
+<dl>
+<dt><code>pf-recurse-current-directory/2</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/recurse-current-directory-2.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;recurse current directory&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;imaginarily recurse the current directory&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">todo</span>:
+- <span style="color:#ae81ff">Make a more general version of this</span>
+<span style="color:#f92672">notes</span>:
+- <span style="color:#ae81ff">parent was removed because for short listings, it was interfering</span>
+<span style="color:#75715e"># Don&#39;t include this necessarily</span>
+<span style="color:#f92672">subprompts</span>:
+  - <span style="color:#f92672">dirs</span>: |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">        $ find . -type d -maxdepth 1 # list directories here
+</span><span style="color:#e6db74">        &lt;ls dirs here output&gt;</span>        
+
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;dirs&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  $ pwd
+</span><span style="color:#e6db74">  &lt;working directory&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # recursively search for files in this directory
+</span><span style="color:#e6db74">  $ find . -maxdepth 5
+</span><span style="color:#e6db74">  &lt;:pp&gt;./</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">150</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;\n\n&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;working directory&#34;</span>
+- <span style="color:#e6db74">&#34;ls dirs here output&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;pwd\&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;find . -type d -maxdepth 1\&#34;)&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;/home/shane/source/git/mobile-shell/mosh&#34;</span>
+- <span style="color:#e6db74">&#34;secret documents&#34;</span>
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    drwxrwxr-x   2 shane shane     4096 Oct 13 19:34 contracts
+</span><span style="color:#e6db74">    -rw-rw-r--   1 shane shane      816 Oct 13 02:59 README.org
+</span><span style="color:#e6db74">    -rw-rw-r--   1 shane shane 10166273 Oct 13 02:59 tags
+</span><span style="color:#e6db74">    drwxrwxr-x 271 shane shane    12288 Oct 13 01:08 node_modules
+</span><span style="color:#e6db74">    -rw-r--r--   1 shane shane   262758 Oct 13 01:08 package-lock.json</span>    
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    .
+</span><span style="color:#e6db74">    ./.git/
+</span><span style="color:#e6db74">    ./.github
+</span><span style="color:#e6db74">    ./src/
+</span><span style="color:#e6db74">    ./test/</span>    
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">validator</span>: <span style="color:#ae81ff">grep -qP &#34;^\\./&#34;</span>
+<span style="color:#75715e"># must come after validator</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#ae81ff">sed &#39;s/^\.\///&#39; | sed -e &#39;/^$/d&#39; -e &#39;/^\.$/d&#39;</span>
+<span style="color:#f92672">split-patterns</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span>
+<span style="color:#75715e"># These are defined after the prompt has executed</span>
+<span style="color:#f92672">action</span>: <span style="color:#ae81ff">pen-find-file</span></code></pre></td></tr></table>
+</div>
+</div>
+<dl>
+<dt><code>pf-generate-the-contents-of-a-new-file/5</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/generate-the-contents-of-a-new-file-5.prompt">http://github.com/semiosis/prompts/blob/master/prompts/generate-the-contents-of-a-new-file-5.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Generate the contents of a new file&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Prompt for the probable contents of a file with this path and sibling files&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">subprompts</span>:
+  - <span style="color:#f92672">dirs</span>: |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">        $ ls -d */ # list directories here
+</span><span style="color:#e6db74">        &lt;ls dirs here output&gt;</span>        
+
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    $ pwd
+</span><span style="color:#e6db74">    &lt;working directory&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    $ ls -a
+</span><span style="color:#e6db74">    &lt;ls output&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;dirs&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    $ cat &lt;q:filename&gt; &lt;&lt;EOD
+</span><span style="color:#e6db74">    &lt;preceding text&gt;</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">150</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#75715e"># This means that even a long-completion can&#39;t change the stop-sequence</span>
+<span style="color:#f92672">force-stop-sequence</span>: <span style="color:#ae81ff">EOD</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#ae81ff">EOD</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;preceding text&#34;</span>
+- <span style="color:#e6db74">&#34;filename&#34;</span>
+- <span style="color:#e6db74">&#34;working directory&#34;</span>
+- <span style="color:#e6db74">&#34;ls output&#34;</span>
+- <span style="color:#e6db74">&#34;ls dirs here output&#34;</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-preceding-text)&#34;</span>
+- <span style="color:#e6db74">&#34;(f-basename (get-path))&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;pwd\&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;ls -a\&#34;)&#34;</span>
+- <span style="color:#e6db74">&#34;(pen-snc \&#34;ls -d */ | head -n 5\&#34;)&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;&#34;</span>
+- <span style="color:#e6db74">&#34;.gitignore&#34;</span>
+- <span style="color:#e6db74">&#34;/home/mullikine/codex-scaffolding-demo&#34;</span>
+- <span style="color:#e6db74">&#34;.\nLICENSE.md&#34;</span>
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    contracts/
+</span><span style="color:#e6db74">    migrations/
+</span><span style="color:#e6db74">    node_modules/
+</span><span style="color:#e6db74">    src/
+</span><span style="color:#e6db74">    test/</span>    
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">on</span></code></pre></td></tr></table>
+</div>
+</div>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span>Visit <a href="https://github.com/semiosis"><image src="/New_Zealand_Simplified.svg" style="display:inline-block; line-height:2em; vertical-align:middle; height: 2em;" /> semiosis on GitHub</a></span>
+
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+
+
+
+    </body>
+</html>
