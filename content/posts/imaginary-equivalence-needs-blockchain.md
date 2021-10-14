@@ -14,8 +14,7 @@ draft = false
 See
 : [Do Chairs Exist? - YouTube](https://youtu.be/fXW-QjBsruE)
 
-Imaginary hash functions are an attempt of
-making an attempt at finding ontological
+Imaginary hash functions are an attempt at finding ontological
 structure within a LM. Ironically, the
 ontological realist may struggle to accept `IP` (Imaginary
 Programming)'s validity, and the Ontological
