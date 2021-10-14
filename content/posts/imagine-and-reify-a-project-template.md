@@ -1,0 +1,66 @@
++++
+title = "Imagine and reify a project template"
+author = ["Shane Mulligan"]
+date = 2021-10-14T00:00:00+13:00
+keywords = ["codex", "openai", "pen", "emacs"]
+draft = false
++++
+
+## Summary {#summary}
+
+I demonstrate a prompt for imagining and
+reifying a project.
+
+
+## Generated project {#generated-project}
+
+-   <http://github.com/mullikine/my-solidity-practice>
+
+
+## Demo {#demo}
+
+This is how easy it is to imagine and reify an type of project.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK.js" id="asciicast-rtsxu9W2gDck8QvqNYYxuzfHK" async></script>
+
+<https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK>
+
+
+## Prompt {#prompt}
+
+`pf-imagine-a-project-template/1`
+: <http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-project-template-1.prompt>
+
+<!--listend-->
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+task: "imagine a project template"
+doc: "Given the type of project I want to make, generate the file structure"
+prompt-version: 1
+prompt: |+
+    $ # Start a brand new <type> project. Use a template.
+    $ git checkout "https://github.com/templates/<sl:type>-project-template"
+    $ find ./<sl:type>-project-template/ -type f # Show template files <<EOD
+    .
+    <:pp>./
+engine: "OpenAI Codex"
+temperature: 0.3
+max-generated-tokens: "(* 2 prompt-length)"
+top-p: 1.0
+delimiter: "$ "
+stop-sequences:
+- "EOD"
+cache: on
+vars:
+- "type"
+examples:
+- "haskell stack"
+info: on
+completion: off
+insertion: off
+postprocessor: sed 's/^\.\/<sl:type>-project-template\///' | sed -e '/^$/d' -e '/^\.$/d'
+action: pen-find-file
+{{< /highlight >}}
