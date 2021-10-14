@@ -332,14 +332,28 @@ solidity code and would like and explanation
 for it.</p>
 <p>Let&rsquo;s see if I can do that.</p>
 <h2 id="analysis">Analysis</h2>
+<p>Demonstrated here is that some comparisons
+have a very strong mode (<code>TRUE</code> or <code>FALSE</code>),
+where others do not.</p>
+<p>This is enough to demonstrate the existence of imaginary hashes, but the next
+challenges are a) improving the prompt to get collisions that I expect, and b)
+understanding what types of information are
+not too disparate to be correlated via the collision function.</p>
 <h3 id="moses-semerkhet"><em>Moses = Semerkhet</em></h3>
-<dl>
-<dt><strong>A</strong></dt>
-<dd>&ldquo;Semerkhet, the Egyptian king who ruled during the First Dynasty&rdquo;</dd>
-<dt><strong>B</strong></dt>
-<dd>&ldquo;Moses also known as Moshe Rabbenu&rdquo;</dd>
-</dl>
-<!--listend-->
+<table>
+<thead>
+<tr>
+<th><strong>A</strong></th>
+<th>&ldquo;Semerkhet, the Egyptian king who ruled during the First Dynasty&rdquo;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B</strong></td>
+<td>&ldquo;Moses also known as Moshe Rabbenu&rdquo;</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -361,13 +375,20 @@ TRUE</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="8-10"><em>8 = 10</em></h3>
-<dl>
-<dt><strong>A</strong></dt>
-<dd>8</dd>
-<dt><strong>B</strong></dt>
-<dd>10</dd>
-</dl>
-<!--listend-->
+<table>
+<thead>
+<tr>
+<th><strong>A</strong></th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B</strong></td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -412,13 +433,20 @@ FALSE FALSE FALSE TRUE FALSE FALSE FALSE FALSE</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="solidity-mode-ethereum-language"><em>solidity-mode = Ethereum' language</em></h3>
-<dl>
-<dt><strong>A</strong></dt>
-<dd>solidity-mode</dd>
-<dt><strong>B</strong></dt>
-<dd>Ethereum&rsquo;s language</dd>
-</dl>
-<!--listend-->
+<table>
+<thead>
+<tr>
+<th><strong>A</strong></th>
+<th>solidity-mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B</strong></td>
+<td>Ethereum&rsquo;s language</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -441,14 +469,22 @@ TRUE FALSE TRUE TRUE TRUE</code></pre></td></tr></table>
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Confidence: .60</code></pre></td></tr></table>
 </div>
 </div>
+<p>Semantically, they are different, so a weak mode makes sense.</p>
 <h3 id="solidity-ethereum-language-for-writing-smart-contracts"><em>Solidity = Ethereum' language for writing smart contracts</em></h3>
-<dl>
-<dt><strong>A</strong></dt>
-<dd>Solidity</dd>
-<dt><strong>B</strong></dt>
-<dd>Ethereum&rsquo;s language for writing smart contracts</dd>
-</dl>
-<!--listend-->
+<table>
+<thead>
+<tr>
+<th><strong>A</strong></th>
+<th>Solidity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B</strong></td>
+<td>Ethereum&rsquo;s language for writing smart contracts</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -471,6 +507,9 @@ TRUE FALSE FALSE TRUE FALSE</code></pre></td></tr></table>
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Confidence: .63</code></pre></td></tr></table>
 </div>
 </div>
+<p>I&rsquo;m less sure about this. I would&rsquo;ve expected
+it to have a strong mode of TRUE. More
+investigate is required.</p>
 <h2 id="prompt">Prompt</h2>
 <p>This is my prompt (1st attempt). Though, it
 could be vastly improved, it has demonstrated

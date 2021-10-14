@@ -70,16 +70,21 @@ Let's see if I can do that.
 
 ## Analysis {#analysis}
 
+Demonstrated here is that some comparisons
+have a very strong mode (`TRUE` or `FALSE`),
+where others do not.
+
+This is enough to demonstrate the existence of imaginary hashes, but the next
+challenges are a) improving the prompt to get collisions that I expect, and b)
+understanding what types of information are
+not too disparate to be correlated via the collision function.
+
 
 ### _Moses = Semerkhet_ {#moses-semerkhet}
 
-**A**
-: "Semerkhet, the Egyptian king who ruled during the First Dynasty"
-
-**B**
-: "Moses also known as Moshe Rabbenu"
-
-<!--listend-->
+| **A** | "Semerkhet, the Egyptian king who ruled during the First Dynasty" |
+|-------|-------------------------------------------------------------------|
+| **B** | "Moses also known as Moshe Rabbenu"                               |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 TRUE TRUE TRUE TRUE TRUE TRUE TRUE the TRUE TRUE TRUE FALSE TRUE TRUE TRUE
@@ -94,13 +99,9 @@ Confidence: .90
 
 ### _8 = 10_ {#8-10}
 
-**A**
-: 8
-
-**B**
-: 10
-
-<!--listend-->
+| **A** | 8  |
+|-------|----|
+| **B** | 10 |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE TRUE FALSE FALSE FALSE FALSE
@@ -129,13 +130,9 @@ Confidence: .06
 
 ### _solidity-mode = Ethereum' language_ {#solidity-mode-ethereum-language}
 
-**A**
-: solidity-mode
-
-**B**
-: Ethereum's language
-
-<!--listend-->
+| **A** | solidity-mode       |
+|-------|---------------------|
+| **B** | Ethereum's language |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 FALSE TRUE TRUE FALSE TRUE TRUE FALSE FALSE
@@ -148,16 +145,14 @@ TRUE FALSE TRUE TRUE TRUE
 Confidence: .60
 {{< /highlight >}}
 
+Semantically, they are different, so a weak mode makes sense.
+
 
 ### _Solidity = Ethereum' language for writing smart contracts_ {#solidity-ethereum-language-for-writing-smart-contracts}
 
-**A**
-: Solidity
-
-**B**
-: Ethereum's language for writing smart contracts
-
-<!--listend-->
+| **A** | Solidity                                        |
+|-------|-------------------------------------------------|
+| **B** | Ethereum's language for writing smart contracts |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE
@@ -169,6 +164,10 @@ TRUE FALSE FALSE TRUE FALSE
 {{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .63
 {{< /highlight >}}
+
+I'm less sure about this. I would've expected
+it to have a strong mode of TRUE. More
+investigate is required.
 
 
 ## Prompt {#prompt}
