@@ -10,7 +10,7 @@
 #+KEYWORDS: openai codex gpt imaginary-programming
 
 ** Related
-*** _Ontological realists_ vs _Ontological antirealists_
+*** Ontological realists vs Ontological antirealists
 + See :: [[https://youtu.be/fXW-QjBsruE][Do Chairs Exist? - YouTube]]
 
 Imaginary hash functions are an attempt of
