@@ -10,13 +10,280 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Explain solidity code</title>
+            <link>http://semiosis.github.io/posts/explain-solidity-code/</link>
+            <pubDate>Thu, 14 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/explain-solidity-code/</guid>
+            <description>Summary I make a solidity code explainer.
+Example Contract 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  // SPDX-License-Identifier: MIT pragma solidity &amp;gt;= 0.4.22 &amp;lt; 0.8.5; contract Migrations { address public owner = msg.sender; uint public last_completed_migration[&amp;lt;0;29;7M; modifier restricted() { require(msg.sender == owner, &amp;#34;This function is restricted to the contract&amp;#39;s owner&amp;#34;); _; } function setCompleted(uint completed) public restricted { last_completed_migration = completed; } }   Explanation 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  We declare a new contract called Migrations.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I make a solidity code explainer.</p>
+<h2 id="example">Example</h2>
+<h3 id="contract">Contract</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">// SPDX-License-Identifier: MIT
+pragma solidity &gt;= 0.4.22 &lt; 0.8.5;
+
+contract Migrations {
+  address public owner = msg.sender;
+  uint public last_completed_migration[&lt;0;29;7M;
+
+  modifier restricted() {
+    require(msg.sender == owner,
+            &#34;This function is restricted to the contract&#39;s owner&#34;);
+    _;
+  }
+
+  function setCompleted(uint completed) public restricted {
+    last_completed_migration = completed;
+  }
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="explanation">Explanation</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">We declare a new contract called Migrations.
+
+This contract will be an abstract contract
+that we&#39;ll use to store the version number of
+our smart contracts.
+
+We&#39;ll use this contract to keep track of which
+version of our smart contracts we&#39;ve deployed
+to the blockchain.
+
+We declare a state variable called
+last_completed_migration that will store the
+version number of the smart contract that
+we&#39;ve deployed to the blockchain.
+
+We also declare a modifier that will restrict
+access to the setCompleted function to the
+owner of the contract.
+
+This is a way to prevent other people from
+modifying the state variable.
+
+We create a function called setCompleted that
+will set the value of the state variable
+last_completed_migration to the value passed
+in as an argument.
+
+We restrict access to this function by using
+the modifier restricted.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/XwY4kQDEngYsiyhhl4Disohs4" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/XwY4kQDEngYsiyhhl4Disohs4.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/XwY4kQDEngYsiyhhl4Disohs4.js" id="asciicast-XwY4kQDEngYsiyhhl4Disohs4" async></script>
+<h2 id="prompt">Prompt</h2>
+<dl>
+<dt><code>pf-explain-solidity-code/1</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/explain-solidity-code-1.prompt">http://github.com/semiosis/prompts/blob/master/prompts/explain-solidity-code-1.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;explain solidity code&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given some solidity code, explain it&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    Solidity explanations.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;delim&gt;Code example 1
+</span><span style="color:#e6db74">    pragma solidity 0.4.2;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    contract Election {
+</span><span style="color:#e6db74">        // Read/write candidate
+</span><span style="color:#e6db74">        string public candidate;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">        // Constructor
+</span><span style="color:#e6db74">        function Election () public {
+</span><span style="color:#e6db74">            candidate = &#34;Candidate 1&#34;;
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;delim&gt;Explanation of 1
+</span><span style="color:#e6db74">    Let me explain the above code. We start by declaring the solidity version with the pragma solidity statement. Next, we declare the smart contract with the &#34;contract&#34; keyword, followed by the contract name. Next, we declare a state variable that will store the value of the candidate name. State variables allow us to write data to the blockchain. We have declared that this variable will be a string, and we have set its visibility to public.  Because it is public, solidity will give us a getter function for free that will allow us to access this value outside of our contract. We&#39;ll see that in action later in the console!
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Then, we create a constructor function that will get called whenever we deploy the smart contract to the blockchain. This is where we&#39;ll set the value of the candidate state variable that will get stored to the blockchain upon migration. Notice that the constructor function has the same name as the smart contract. This is how Solidity knows that the function is a constructor.
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Here is some new code:
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;delim&gt;Code example 2
+</span><span style="color:#e6db74">    &lt;solidity code&gt;
+</span><span style="color:#e6db74">    &lt;delim&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;delim&gt;Explanation of 2
+</span><span style="color:#e6db74">    Let me also explain this code.</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">prompt-length</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;&lt;delim&gt;&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;solidity code&#34;</span>
+<span style="color:#f92672">examples</span>:
+- |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    // SPDX-License-Identifier: MIT
+</span><span style="color:#e6db74">    pragma solidity &gt;= 0.4.22 &lt; 0.8.5;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    contract Migrations {
+</span><span style="color:#e6db74">      address public owner = msg.sender;
+</span><span style="color:#e6db74">      uint public last_completed_migration;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">      modifier restricted() {
+</span><span style="color:#e6db74">        require(msg.sender == owner,
+</span><span style="color:#e6db74">                &#34;This function is restricted to the contract&#39;s owner&#34;);
+</span><span style="color:#e6db74">        _;
+</span><span style="color:#e6db74">      }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">      function setCompleted(uint completed) public restricted {
+</span><span style="color:#e6db74">        last_completed_migration = completed;
+</span><span style="color:#e6db74">      }
+</span><span style="color:#e6db74">    }</span>    
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">chomp | pen-str remove-starting-and-trailing-whitespace | pen-pretty-paragraph</span>
+<span style="color:#f92672">external-related</span>: <span style="color:#e6db74">&#34;https://www.dappuniversity.com/articles/the-ultimate-ethereum-dapp-tutorial/&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
+        
+        <item>
             <title>Imagine and reify a project template</title>
             <link>http://semiosis.github.io/posts/imagine-and-reify-a-project-template/</link>
             <pubDate>Thu, 14 Oct 2021 00:00:00 +1300</pubDate>
             
             <guid>http://semiosis.github.io/posts/imagine-and-reify-a-project-template/</guid>
             <description>Summary This is an example of using Codex + emacs to imagine a programming project. It imagines what types of files might be useful to have for the project, then it populates the files. Inspiration to the AI is taken from the current environment, so the prompts become more powerful as more files are added.
-Generated project  http://github.com/mullikine/my-solidity-practice  Demo This is how easy it is to imagine and reify an type of project.</description>
+Generated project  http://github.com/mullikine/my-solidity-practice  Demo This is how easy it is to imagine and reify any type of project.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is an example of using Codex + emacs to
 imagine a programming project. It imagines
@@ -30,7 +297,8 @@ more powerful as more files are added.</p>
 <li><a href="http://github.com/mullikine/my-solidity-practice">http://github.com/mullikine/my-solidity-practice</a></li>
 </ul>
 <h2 id="demo">Demo</h2>
-<p>This is how easy it is to imagine and reify an type of project.</p>
+<p>This is how easy it is to imagine and reify any type of project.</p>
+<h3 id="solidity">Solidity</h3>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK.svg" /></a> -->
 <!-- Play on the blog -->

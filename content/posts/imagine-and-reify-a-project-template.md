@@ -24,7 +24,10 @@ more powerful as more files are added.
 
 ## Demo {#demo}
 
-This is how easy it is to imagine and reify an type of project.
+This is how easy it is to imagine and reify any type of project.
+
+
+### Solidity {#solidity}
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK.svg" /></a> -->
