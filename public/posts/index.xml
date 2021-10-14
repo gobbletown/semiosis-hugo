@@ -277,6 +277,365 @@ the modifier restricted.</code></pre></td></tr></table>
         </item>
         
         <item>
+            <title>Imaginary equivalence needs blockchain</title>
+            <link>http://semiosis.github.io/posts/imaginary-equivalence-needs-blockchain/</link>
+            <pubDate>Thu, 14 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/imaginary-equivalence-needs-blockchain/</guid>
+            <description>Summary I create an imaginary function for testing equivalence.
+This may be used for such things as testing semantic equivalence, ontological equivalence, ideological equivalence, mathematical equivalence, you name it.
+I just want to run predicates for prompt functions to determine if they should be made available as functions.
+For example, I want to know if the pf-explain-solidity-code/1 prompt function should be made available in the current context.
+The current emacs mode may be, for example, eww-mode (the web browser), but if I am browsing a website with some solidity in it, a decent predicate may decide that I might actually want the pf-explain-solidity-code/1 function.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I create an imaginary function for testing equivalence.</p>
+<p>This may be used for such things as testing
+semantic equivalence, ontological equivalence,
+ideological equivalence, mathematical
+equivalence, you name it.</p>
+<p>I just want to run predicates for prompt
+functions to determine if they should be made
+available as functions.</p>
+<p>For example, I want to know if the <code>pf-explain-solidity-code/1</code> prompt function
+should be made available in the current
+context.</p>
+<p>The current emacs mode may be, for example,
+<code>eww-mode</code> (the web browser), but if I am browsing a website with some solidity in it,
+a decent predicate may decide that I
+might actually <strong>want</strong> the <code>pf-explain-solidity-code/1</code> function.</p>
+<p>Now if I am using the imaginary web browser
+<code>looking-glass</code>
+(<a href="https://semiosis.github.io/looking-glass/">https://semiosis.github.io/looking-glass/</a>),
+using <code>Pen.el</code>, I may have dreamed up some
+solidity code and would like and explanation
+for it.</p>
+<p>Let&rsquo;s see if I can do that.</p>
+<h2 id="analysis">Analysis</h2>
+<h3 id="moses-semerkhet"><em>Moses = Semerkhet</em></h3>
+<dl>
+<dt><strong>A</strong></dt>
+<dd>&ldquo;Semerkhet, the Egyptian king who ruled during the First Dynasty&rdquo;</dd>
+<dt><strong>B</strong></dt>
+<dd>&ldquo;Moses also known as Moshe Rabbenu&rdquo;</dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TRUE TRUE TRUE TRUE TRUE TRUE TRUE the TRUE TRUE TRUE FALSE TRUE TRUE TRUE
+TRUE TRUE TRUE TRUE TRUE TRUE FALSE TRUE TRUE TRUE TRUE TRUE FALSE TRUE TRUE
+TRUE</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Confidence: .90</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="8-10"><em>8 = 10</em></h3>
+<dl>
+<dt><strong>A</strong></dt>
+<dd>8</dd>
+<dt><strong>B</strong></dt>
+<dd>10</dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE TRUE FALSE FALSE FALSE FALSE
+FALSE TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE
+FALSE TRUE FALSE FALSE</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Confidence: .16</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="morgan-freeman-god"><em>Morgan Freeman = God</em></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+FALSE FALSE FALSE FALSE FALSE FALSE TRUE FALSE
+FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+FALSE FALSE FALSE TRUE FALSE FALSE FALSE FALSE</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Confidence: .06</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="solidity-mode-ethereum-language"><em>solidity-mode = Ethereum' language</em></h3>
+<dl>
+<dt><strong>A</strong></dt>
+<dd>solidity-mode</dd>
+<dt><strong>B</strong></dt>
+<dd>Ethereum&rsquo;s language</dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">FALSE TRUE TRUE FALSE TRUE TRUE FALSE FALSE
+TRUE FALSE FALSE TRUE TRUE FALSE FALSE FALSE
+TRUE TRUE FALSE TRUE TRUE FALSE TRUE TRUE TRUE
+TRUE FALSE TRUE TRUE TRUE</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Confidence: .60</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="solidity-ethereum-language-for-writing-smart-contracts"><em>Solidity = Ethereum' language for writing smart contracts</em></h3>
+<dl>
+<dt><strong>A</strong></dt>
+<dd>Solidity</dd>
+<dt><strong>B</strong></dt>
+<dd>Ethereum&rsquo;s language for writing smart contracts</dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE
+TRUE FALSE TRUE TRUE FALSE TRUE TRUE TRUE TRUE
+TRUE FALSE TRUE TRUE TRUE TRUE FALSE FALSE
+TRUE FALSE FALSE TRUE FALSE</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Confidence: .63</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="prompt">Prompt</h2>
+<p>This is my prompt (1st attempt). Though, it
+could be vastly improved, it has demonstrated
+hash collisions in imaginary space is possible.</p>
+<dl>
+<dt><code>pf-test-imaginary-equivalence/2</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/test-imaginary-equivalence-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/test-imaginary-equivalence-2.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;test imaginary equivalence&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given two strings of arbitrary content, test their imaginary equivalence. This is an imaginary neural hash collision test&#34;</span>
+<span style="color:#f92672">aliases</span>:
+- <span style="color:#ae81ff">imaginary hash collision test</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;delim&gt;1
+</span><span style="color:#e6db74">  1/0
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  is the same as
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  ∞
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  TRUE because 1 divided by 0 diverges to infinity.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;delim&gt;2
+</span><span style="color:#e6db74">  &#34;Language is everywhere.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  It permeates our thoughts mediates our
+</span><span style="color:#e6db74">  relations with others, and even creeps into
+</span><span style="color:#e6db74">  our dreams.&#34; -Ronald Wayne Langacker
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  is the same as
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  FTC Puts Hundreds of Businesses on Notice about Fake Reviews (ftc.gov)
+</span><span style="color:#e6db74">  202 points by walterbell 3 hours ago | flag | hide | 92 comments
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  FALSE because they are very unrelated.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;delim&gt;3
+</span><span style="color:#e6db74">  (map
+</span><span style="color:#e6db74">   (fn [x] (+ x 1))
+</span><span style="color:#e6db74">   (range 1 5))
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  is the same as
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  (map (fn [x] (inc x)) (range 1 5))
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  TRUE because `+ x` is equivalent to `inc`.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;delim&gt;3
+</span><span style="color:#e6db74">  e^{i\pi} + 1 = 0
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  is the same as
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  euler&#39;s identity
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  TRUE because euler&#39;s identity is the name of the equation e^{i\pi} + 1 = 0.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &lt;delim&gt;4
+</span><span style="color:#e6db74">  &lt;a&gt;
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  is the same as
+</span><span style="color:#e6db74">  &lt;delim&gt;
+</span><span style="color:#e6db74">  &lt;b&gt;
+</span><span style="color:#e6db74">  &lt;delim&gt;</span>  
+
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;&lt;delim&gt;&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;A&#34;</span>
+- <span style="color:#e6db74">&#34;B&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;Semerkhet, the Egyptian king who ruled during the First Dynasty&#34;</span>
+- <span style="color:#e6db74">&#34;Moses also known as Moshe Rabbenu&#34;</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">n-collate</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#f92672">n-completions</span>: <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">no-uniq-results</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">results-analyser</span>: <span style="color:#ae81ff">pen-analyse-true-or-false</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">sed &#39;s/^\([a-zA-Z]*\).*/\1/&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Since this is more than just semantic
+similarity, but rather imaginary equivalence,
+such a thing needs a consensus mechanism so
+that people can write useful software with
+large LMs (which is not preventable). Thus
+blockchain&rsquo;s value is also not preventable.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/Cdcvoe32hbXpXSrAg1eIJ1oqW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Cdcvoe32hbXpXSrAg1eIJ1oqW.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/Cdcvoe32hbXpXSrAg1eIJ1oqW.js" id="asciicast-Cdcvoe32hbXpXSrAg1eIJ1oqW" async></script>]]></content>
+        </item>
+        
+        <item>
             <title>Imagine and reify a project template</title>
             <link>http://semiosis.github.io/posts/imagine-and-reify-a-project-template/</link>
             <pubDate>Thu, 14 Oct 2021 00:00:00 +1300</pubDate>
