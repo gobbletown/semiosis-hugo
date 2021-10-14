@@ -282,15 +282,15 @@ the modifier restricted.</code></pre></td></tr></table>
             <pubDate>Thu, 14 Oct 2021 00:00:00 +1300</pubDate>
             
             <guid>http://semiosis.github.io/posts/imaginary-equivalence-needs-blockchain/</guid>
-            <description>Summary I create an imaginary function for testing equivalence.
-This may be used for such things as testing semantic equivalence, ontological equivalence, ideological equivalence, mathematical equivalence, you name it.
-I just want to run predicates for prompt functions to determine if they should be made available as functions.
-For example, I want to know if the pf-explain-solidity-code/1 prompt function should be made available in the current context.
-The current emacs mode may be, for example, eww-mode (the web browser), but if I am browsing a website with some solidity in it, a decent predicate may decide that I might actually want the pf-explain-solidity-code/1 function.</description>
+            <description>Summary I create an imaginary hash function for testing equivalence between arbitrary ontological things within a language model.
+It&amp;rsquo;s less robust than a neural hash but has a larger domain of comparison.
+This may be used for such things as testing semantic equivalence, relational equivalence, ideological equivalence, mathematical equivalence, you name it.
+I just want to run predicates for prompt functions to determine if they should be made available as functions.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
-<p>I create an imaginary function for testing equivalence.</p>
+<p>I create an imaginary hash function for testing equivalence between arbitrary ontological things within a language model.</p>
+<p>It&rsquo;s less robust than a neural hash but has a larger domain of comparison.</p>
 <p>This may be used for such things as testing
-semantic equivalence, ontological equivalence,
+semantic equivalence, relational equivalence,
 ideological equivalence, mathematical
 equivalence, you name it.</p>
 <p>I just want to run predicates for prompt

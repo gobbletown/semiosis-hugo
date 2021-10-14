@@ -8,10 +8,12 @@ draft = false
 
 ## Summary {#summary}
 
-I create an imaginary function for testing equivalence.
+I create an imaginary hash function for testing equivalence between arbitrary ontological things within a language model.
+
+It's less robust than a neural hash but has a larger domain of comparison.
 
 This may be used for such things as testing
-semantic equivalence, ontological equivalence,
+semantic equivalence, relational equivalence,
 ideological equivalence, mathematical
 equivalence, you name it.
 
