@@ -8,8 +8,13 @@ draft = false
 
 ## Summary {#summary}
 
-I demonstrate a prompt for imagining and
-reifying a project.
+This is an example of using Codex + emacs to
+imagine a programming project. It imagines
+what types of files might be useful to have
+for the project, then it populates the files.
+Inspiration to the AI is taken from the
+current environment, so the prompts become
+more powerful as more files are added.
 
 
 ## Generated project {#generated-project}
