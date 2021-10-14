@@ -2,7 +2,7 @@
 title = "Imaginary equivalence needs blockchain"
 author = ["Shane Mulligan"]
 date = 2021-10-14T00:00:00+13:00
-keywords = ["openai", "codex", "gpt"]
+keywords = ["openai", "codex", "gpt", "imaginary-programming"]
 draft = false
 +++
 
