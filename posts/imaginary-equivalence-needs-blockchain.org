@@ -68,8 +68,9 @@ Let's see if I can do that.
 
 ** Analysis
 *** /Moses = Semerkhet/
-+ *A* :: "Semerkhet, the Egyptian king who ruled during the First Dynasty"
-+ *B* :: "Moses also known as Moshe Rabbenu"
+|-----+-------------------------------------------------------------------|
+| *A* | "Semerkhet, the Egyptian king who ruled during the First Dynasty" |
+| *B* | "Moses also known as Moshe Rabbenu"                               |
 
 #+BEGIN_SRC text -n :async :results verbatim code
   TRUE TRUE TRUE TRUE TRUE TRUE TRUE the TRUE TRUE TRUE FALSE TRUE TRUE TRUE
@@ -82,8 +83,9 @@ Let's see if I can do that.
 #+END_SRC
 
 *** /8 = 10/
-+ *A* :: 8
-+ *B* :: 10
+|-----+----|
+| *A* |  8 |
+| *B* | 10 |
 
 #+BEGIN_SRC text -n :async :results verbatim code
   FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE TRUE FALSE FALSE FALSE FALSE
@@ -108,8 +110,9 @@ Confidence: .16
 #+END_SRC
 
 *** /solidity-mode = Ethereum' language/
-+ *A* :: solidity-mode
-+ *B* :: Ethereum's language
+|-----+---------------------|
+| *A* | solidity-mode       |
+| *B* | Ethereum's language |
 
 #+BEGIN_SRC text -n :async :results verbatim code
   FALSE TRUE TRUE FALSE TRUE TRUE FALSE FALSE
@@ -123,8 +126,9 @@ Confidence: .16
 #+END_SRC
 
 *** /Solidity = Ethereum' language for writing smart contracts/
-+ *A* :: Solidity
-+ *B* :: Ethereum's language for writing smart contracts
+|-----+-------------------------------------------------|
+| *A* | Solidity                                        |
+| *B* | Ethereum's language for writing smart contracts |
 
 #+BEGIN_SRC text -n :async :results verbatim code
   TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE
