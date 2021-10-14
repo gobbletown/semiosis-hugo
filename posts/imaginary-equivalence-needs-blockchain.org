@@ -9,6 +9,18 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: openai codex gpt imaginary-programming
 
+** Related
+*** _Ontological realists_ vs _Ontological antirealists_
++ See :: [[https://youtu.be/fXW-QjBsruE][Do Chairs Exist? - YouTube]]
+
+Imaginary hash functions are an attempt of
+making an attempt at finding ontological
+structure within a LM. Ironically, the
+ontological realist may struggle to accept =IP= (Imaginary
+Programming)'s validity, and the Ontological
+antirealist has a flexible enough philosophy
+to allow it.
+
 ** Summary
 I create an Imaginary Hash Function (𝑖HF) for
 testing equivalence between arbitrary
