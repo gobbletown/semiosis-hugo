@@ -82,9 +82,9 @@ not too disparate to be correlated via the collision function.
 
 ### _Moses = Semerkhet_ {#moses-semerkhet}
 
-| **A** | "Semerkhet, the Egyptian king who ruled during the First Dynasty" |
-|-------|-------------------------------------------------------------------|
-| **B** | "Moses also known as Moshe Rabbenu"                               |
+| **A**                               | **B**                                                             |
+|-------------------------------------|-------------------------------------------------------------------|
+| "Moses also known as Moshe Rabbenu" | "Semerkhet, the Egyptian king who ruled during the First Dynasty" |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 TRUE TRUE TRUE TRUE TRUE TRUE TRUE the TRUE TRUE TRUE FALSE TRUE TRUE TRUE
@@ -99,9 +99,9 @@ Confidence: .90
 
 ### _8 = 10_ {#8-10}
 
-| **A** | 8  |
-|-------|----|
-| **B** | 10 |
+| **A** | **B** |
+|-------|-------|
+| 8     | 10    |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE TRUE FALSE FALSE FALSE FALSE
@@ -130,9 +130,9 @@ Confidence: .06
 
 ### _solidity-mode = Ethereum' language_ {#solidity-mode-ethereum-language}
 
-| **A** | solidity-mode       |
-|-------|---------------------|
-| **B** | Ethereum's language |
+| **A**         | **B**               |
+|---------------|---------------------|
+| solidity-mode | Ethereum's language |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 FALSE TRUE TRUE FALSE TRUE TRUE FALSE FALSE
@@ -150,9 +150,9 @@ Semantically, they are different, so a weak mode makes sense.
 
 ### _Solidity = Ethereum' language for writing smart contracts_ {#solidity-ethereum-language-for-writing-smart-contracts}
 
-| **A** | Solidity                                        |
-|-------|-------------------------------------------------|
-| **B** | Ethereum's language for writing smart contracts |
+| **A**    | **B**                                           |
+|----------|-------------------------------------------------|
+| Solidity | Ethereum's language for writing smart contracts |
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE
