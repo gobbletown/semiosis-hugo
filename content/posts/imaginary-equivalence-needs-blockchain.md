@@ -9,7 +9,7 @@ draft = false
 ## Related {#related}
 
 
-### <span class="underline">Ontological realists</span> vs <span class="underline">Ontological antirealists</span> {#}
+### Ontological realists vs Ontological antirealists {#ontological-realists-vs-ontological-antirealists}
 
 See
 : [Do Chairs Exist? - YouTube](https://youtu.be/fXW-QjBsruE)
