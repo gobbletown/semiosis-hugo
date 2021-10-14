@@ -7,7 +7,7 @@
 #+TITLE: Imaginary equivalence needs blockchain
 #+DATE: <2021-10-14>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: openai codex gpt
+#+KEYWORDS: openai codex gpt imaginary-programming
 
 ** Summary
 I create an imaginary hash function for testing equivalence between arbitrary ontological things within a language model.
