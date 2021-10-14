@@ -6,6 +6,23 @@ keywords = ["openai", "codex", "gpt", "imaginary-programming"]
 draft = false
 +++
 
+## Related {#related}
+
+
+### <span class="underline">Ontological realists</span> vs <span class="underline">Ontological antirealists</span> {#}
+
+See
+: [Do Chairs Exist? - YouTube](https://youtu.be/fXW-QjBsruE)
+
+Imaginary hash functions are an attempt of
+making an attempt at finding ontological
+structure within a LM. Ironically, the
+ontological realist may struggle to accept `IP` (Imaginary
+Programming)'s validity, and the Ontological
+antirealist has a flexible enough philosophy
+to allow it.
+
+
 ## Summary {#summary}
 
 I create an Imaginary Hash Function (𝑖HF) for
