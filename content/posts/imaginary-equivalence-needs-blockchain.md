@@ -8,11 +8,22 @@ draft = false
 
 ## Summary {#summary}
 
-I create an imaginary hash function for testing equivalence between arbitrary ontological things within a language model.
+I create an Imaginary Hash Function (𝑖HF) for
+testing equivalence between arbitrary
+ontological things within a LM.
 
-It's less robust than a neural hash but has a larger domain of comparison.
+It's 'less robust' than a neural hash but has
+a larger domain of comparison. Technically speaking, it's not 'less robust'.
+Statistically, the confidence does not vary
+widely, and may converge, but I haven't
+prompted enough to find out. I plan on experimenting with this
+in my thesis on `Imaginary Computing`.
 
-This may be used for such things as testing
+The utility and validity of `Imaginary Programming`, and by extension
+<span class="underline">Imaginary Hash Functions</span> are emergent qualities in increasingly powerful
+language models, and so as the models become stronger, so will the case for `IP`.
+
+An 𝑖HF  may be used for such things as testing
 semantic equivalence, relational equivalence,
 ideological equivalence, mathematical
 equivalence, you name it.

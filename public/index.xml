@@ -24,10 +24,9 @@ Example Contract 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  // SPDX-License-Iden
       <pubDate>Thu, 14 Oct 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/posts/imaginary-equivalence-needs-blockchain/</guid>
-      <description>Summary I create an imaginary hash function for testing equivalence between arbitrary ontological things within a language model.
-It&amp;rsquo;s less robust than a neural hash but has a larger domain of comparison.
-This may be used for such things as testing semantic equivalence, relational equivalence, ideological equivalence, mathematical equivalence, you name it.
-I just want to run predicates for prompt functions to determine if they should be made available as functions.</description>
+      <description>Summary I create an Imaginary Hash Function (𝑖HF) for testing equivalence between arbitrary ontological things within a LM.
+It&amp;rsquo;s &amp;lsquo;less robust&amp;rsquo; than a neural hash but has a larger domain of comparison. Technically speaking, it&amp;rsquo;s not &amp;lsquo;less robust&amp;rsquo;. Statistically, the confidence does not vary widely, and may converge, but I haven&amp;rsquo;t prompted enough to find out. I plan on experimenting with this in my thesis on Imaginary Computing.
+The utility and validity of Imaginary Programming, and by extension Imaginary Hash Functions are emergent qualities in increasingly powerful language models, and so as the models become stronger, so will the case for IP.</description>
     </item>
     
     <item>
