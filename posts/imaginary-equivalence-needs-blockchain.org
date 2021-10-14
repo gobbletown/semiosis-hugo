@@ -67,6 +67,15 @@ for it.
 Let's see if I can do that.
 
 ** Analysis
+Demonstrated here is that some comparisons
+have a very strong mode (=TRUE= or =FALSE=),
+where others do not.
+
+This is enough to demonstrate the existence of imaginary hashes, but the next
+challenges are a) improving the prompt to get collisions that I expect, and b)
+understanding what types of information are
+not too disparate to be correlated via the collision function.
+
 *** /Moses = Semerkhet/
 |-----+-------------------------------------------------------------------|
 | *A* | "Semerkhet, the Egyptian king who ruled during the First Dynasty" |
@@ -125,6 +134,8 @@ Confidence: .16
   Confidence: .60
 #+END_SRC
 
+Semantically, they are different, so a weak mode makes sense.
+
 *** /Solidity = Ethereum' language for writing smart contracts/
 |-----+-------------------------------------------------|
 | *A* | Solidity                                        |
@@ -140,6 +151,10 @@ Confidence: .16
 #+BEGIN_SRC text -n :async :results verbatim code
   Confidence: .63
 #+END_SRC
+
+I'm less sure about this. I would've expected
+it to have a strong mode of TRUE. More
+investigate is required.
 
 ** Prompt
 This is my prompt (1st attempt). Though, it
