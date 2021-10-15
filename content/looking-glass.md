@@ -1,12 +1,12 @@
 +++
-title = "Looking Glass"
+title = "Looking Glass (a browser for the imaginary web)"
 author = ["Shane Mulligan"]
 date = 2021-10-15T00:00:00+13:00
 keywords = ["emacs", "imaginary-internet", "imaginary", "𝑖web"]
 draft = false
 +++
 
-## Looking Glass, a browser for the imaginary web {#looking-glass-a-browser-for-the-imaginary-web}
+## Introducing Looking Glass {#introducing-looking-glass}
 
 Source code
 : <http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el>
