@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: Looking Glass (a browser for the imaginary web)
+#+TITLE: Looking Glass 🔍 (a browser for the imaginary web)
 #+DATE: <2021-10-15>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs imaginary-internet imaginary 𝑖web
