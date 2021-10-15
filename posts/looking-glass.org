@@ -9,7 +9,7 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs imaginary-internet imaginary 𝑖web
 
-** Introducing Looking Glass
+** Introducing Looking Glass 🔍
 
 + Source code :: http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el
 
