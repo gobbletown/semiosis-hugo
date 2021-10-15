@@ -4,12 +4,12 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: Looking Glass
+#+TITLE: Looking Glass (a browser for the imaginary web)
 #+DATE: <2021-10-15>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs imaginary-internet imaginary 𝑖web
 
-** Looking Glass, a browser for the imaginary web
+** Introducing Looking Glass
 
 + Source code :: http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el
 
