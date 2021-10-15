@@ -6,8 +6,83 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 14 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Review of &#39;[2110.06674] Truthful AI: Developing and governing AI that does not lie&#39;</title>
+            <link>http://semiosis.github.io/posts/review-of-2110-06674-truthful-ai-developing-and-governing-ai-that-does-not-lie/</link>
+            <pubDate>Fri, 15 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/review-of-2110-06674-truthful-ai-developing-and-governing-ai-that-does-not-lie/</guid>
+            <description>Summary This is my notebook as I go through this paper.
+ Original article 2110.06674 Truthful AI: Developing and governing AI that does not lie Truth https://en.wikipedia.org/wiki/Truth  I have not yet read the paper, but this page will serve as my notes for it.
+Types of truth This is a work-in-progress.
+   Types Mentioned Other Possible candidates     Correspondence     Coherence  Language model   Pragmatic  Interrogating language model   Constructivist Institution Blockchain for training data accretion   Consensus  Blockchain for trained models   Deflationary     Performative      No mention of blockchain Here are my previous notes on base-truth via language models on the blockchain.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>This is my notebook as I go through this paper.</p>
+<dl>
+<dt>Original article</dt>
+<dd><a href="https://arxiv.org/abs/2110.06674"> 2110.06674  Truthful AI: Developing and governing AI that does not lie</a></dd>
+<dt>Truth</dt>
+<dd><a href="https://en.wikipedia.org/wiki/Truth">https://en.wikipedia.org/wiki/Truth</a></dd>
+</dl>
+<p>I have not yet read the paper, but this page will serve as my notes for it.</p>
+<h2 id="types-of-truth">Types of truth</h2>
+<p>This is a work-in-progress.</p>
+<table>
+<thead>
+<tr>
+<th>Types</th>
+<th>Mentioned</th>
+<th>Other Possible candidates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correspondence</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Coherence</td>
+<td></td>
+<td>Language model</td>
+</tr>
+<tr>
+<td>Pragmatic</td>
+<td></td>
+<td>Interrogating language model</td>
+</tr>
+<tr>
+<td>Constructivist</td>
+<td>Institution</td>
+<td>Blockchain for training data accretion</td>
+</tr>
+<tr>
+<td>Consensus</td>
+<td></td>
+<td>Blockchain for trained models</td>
+</tr>
+<tr>
+<td>Deflationary</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Performative</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="no-mention-of-blockchain">No mention of blockchain</h3>
+<p>Here are my previous notes on base-truth via language models on the blockchain.</p>
+<ul>
+<li><a href="https://mullikine.github.io/posts/language-models-as-truth/">https://mullikine.github.io/posts/language-models-as-truth/</a></li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Explain solidity code</title>

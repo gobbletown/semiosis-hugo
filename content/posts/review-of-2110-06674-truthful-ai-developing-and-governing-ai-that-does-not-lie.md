@@ -1,28 +1,31 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Review of '[2110.06674] Truthful AI: Developing and governing AI that does not lie'"
+author = ["Shane Mulligan"]
+date = 2021-10-15T00:00:00+13:00
+keywords = ["alethiology", "epistemology"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+## Summary {#summary}
 
-#+TITLE: Review of '[2110.06674] Truthful AI: Developing and governing AI that does not lie'
-#+DATE: <2021-10-15>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: alethiology epistemology
-
-** Summary
 This is my notebook as I go through this paper.
 
-+ Original article :: [[https://arxiv.org/abs/2110.06674][ 2110.06674  Truthful AI: Developing and governing AI that does not lie]]
+Original article
+: [ 2110.06674  Truthful AI: Developing and governing AI that does not lie](https://arxiv.org/abs/2110.06674)
 
-+ Truth :: https://en.wikipedia.org/wiki/Truth
+
+Truth
+: <https://en.wikipedia.org/wiki/Truth>
 
 I have not yet read the paper, but this page will serve as my notes for it.
 
-** Types of truth
+
+## Types of truth {#types-of-truth}
+
 This is a work-in-progress.
 
 | Types          | Mentioned   | Other Possible candidates              |
-|----------------+-------------+----------------------------------------|
+|----------------|-------------|----------------------------------------|
 | Correspondence |             |                                        |
 | Coherence      |             | Language model                         |
 | Pragmatic      |             | Interrogating language model           |
@@ -31,7 +34,9 @@ This is a work-in-progress.
 | Deflationary   |             |                                        |
 | Performative   |             |                                        |
 
-*** No mention of blockchain
+
+### No mention of blockchain {#no-mention-of-blockchain}
+
 Here are my previous notes on base-truth via language models on the blockchain.
 
-- https://mullikine.github.io/posts/language-models-as-truth/
+-   <https://mullikine.github.io/posts/language-models-as-truth/>
