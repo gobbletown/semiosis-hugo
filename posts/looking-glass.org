@@ -4,19 +4,22 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: Looking Glass 🔍 (a browser for the imaginary web)
+#+TITLE: LookingGlass 🔍 (a browser for the imaginary web)
 #+DATE: <2021-10-15>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs imaginary-internet imaginary 𝑖web
 
-** Introducing Looking Glass 🔍
+** Introducing _LookingGlass_
 
 + Source code :: http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el
 
-=Looking Glass= is an imaginary-web (𝑖web)
+=LookingGlass= is an imaginary-web (𝑖web)
 browser. It allows lets you visit websites that do
 not exist concretely, and also also allows you
 to treat any text as having hyperlinks.
+
+An imaginary-web browser requires a LM such as
+GPT-3, Codex or GPT-j to generate websites.
 
 ** How to browse
 - https://mullikine.github.io/posts/the-imaginary-web-with-codex/
