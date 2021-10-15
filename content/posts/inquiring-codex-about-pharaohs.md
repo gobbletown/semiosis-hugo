@@ -47,6 +47,7 @@ Codex seems to think that Hor-Aha (Athotís) was Moses (also known as Moshe Rabb
 
 ### Narmer / Menes {#narmer-menes}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .76
 Confidence: .90
 TRUE because Moses is the name of the person who is known for the phrase "And these
@@ -54,10 +55,12 @@ are the names of the sons of Israel by their names, the heads of their fathers''
 houses, by their households, 1260 men, and in all, 6,230.
 TRUE because Moses is the name of the person and Rabbenu is a nickname.
 TRUE because they are very related.
+{{< /highlight >}}
 
 
 ### Hor-Aha (Athotís) {#hor-aha--athotís}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .80
 Confidence: .93
 Confidence: .83
@@ -66,62 +69,79 @@ TRUE because Moses is the name of the person Hor-Aha is.
 FALSE because Moses is the name of a prophet.
 TRUE because Moses is the name of the person Hor-Aha (Athotís) - Pharaoh of the First Dynasty of Egypt refers to.
 TRUE because Moses is the name of the person Hor-Aha (Athotís) - Pharaoh of the First Dynasty of Egypt.
+{{< /highlight >}}
 
 
 ### Djer (Kénkenes) {#djer--kénkenes}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .76
 Confidence: .90
 TRUE because Moses is a common name.
 TRUE because the name of the pharaoh is the name of the prophet.
 TRUE because Moses is a name and it is a name of the person who is the Pharaoh of the First Dynasty of Egypt.
+{{< /highlight >}}
 
 
 ### Djet (Ouenephes) {#djet--ouenephes}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .63
 Confidence: .76
 TRUE because Moses is the name of the person.
 FALSE because they are very unrelated.
+{{< /highlight >}}
 
 
 ### Den (Ousaphaidos) {#den--ousaphaidos}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .83
 TRUE because Moses is the name of the person and the fact that he is a Pharaoh.
 TRUE because Moses is the name of the person and Rabbenu is the nickname.
+{{< /highlight >}}
 
 
 ### Anedjib (Miebidós) {#anedjib--miebidós}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .86
-TRUE because \`Anedjib\` is a name of a person and \`Moses\` is a name of a person.
+TRUE because `Anedjib` is a name of a person and `Moses` is a name of a person.
 TRUE because the first sentence is the name of a person and the second sentence is a description of a person.
+{{< /highlight >}}
 
 
 ### Semerkhet (Semempsés) {#semerkhet--semempsés}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .70
 TRUE because Moses is the name of the person.
+{{< /highlight >}}
 
 
 ### Qa'a (Bienékhes) {#qa-a--bienékhes}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .86
 TRUE because Moses is the name of the person and Rabbenu is the title.
+{{< /highlight >}}
 
 
 ### Sneferka {#sneferka}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .86
 TRUE because Moses is the name of the person Sneferka is refering to.
 TRUE because Moses is the name of the person Sneferka is the name of.
+{{< /highlight >}}
 
 
 ### [Horus Bird] {#horus-bird}
 
+{{< highlight text "linenos=table, linenostart=1" >}}
 Confidence: .76
 Confidence: .73
+{{< /highlight >}}
 
 
 ## Issues and adjustments {#issues-and-adjustments}
