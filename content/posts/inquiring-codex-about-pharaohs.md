@@ -1,15 +1,13 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "Inquiring Codex about Pharaohs"
+author = ["Shane Mulligan"]
+date = 2021-10-15T00:00:00+13:00
+keywords = ["codex"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+## Summary {#summary}
 
-#+TITLE: Inquiring Codex about Pharaohs
-#+DATE: <2021-10-15>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: codex
-
-** Summary
 Let's have some fun. Who was "Moses also known
 as Moshe Rabbenu" out of this list of Pharaohs
 in the First Dynasty of Egypt?
@@ -21,25 +19,34 @@ TRUE and FALSE answers and data is somewhat convergent. I've had mixed results.
 There was also a lot of cherry picking. This
 is a very unscientific examination.
 
-** Demo
-#+BEGIN_EXPORT html
+
+## Demo {#demo}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/ejlF8MuqcmeUR5DnoGMKnJQYU" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ejlF8MuqcmeUR5DnoGMKnJQYU.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/ejlF8MuqcmeUR5DnoGMKnJQYU.js" id="asciicast-ejlF8MuqcmeUR5DnoGMKnJQYU" async></script>
-#+END_EXPORT
 
-** Prompt
-+ =pf-test-imaginary-equivalence/2= :: http://github.com/semiosis/prompts/blob/master/prompts/test-imaginary-equivalence-2.prompt
 
-** Results
+## Prompt {#prompt}
+
+`pf-test-imaginary-equivalence/2`
+: <http://github.com/semiosis/prompts/blob/master/prompts/test-imaginary-equivalence-2.prompt>
+
+
+## Results {#results}
+
 The actual reasoning Codex was more useful than the confidence, though that
 served as a guideline.
 
 Codex seems to think that Hor-Aha (Athotís) was Moses (also known as Moshe Rabbenu).
 
-** Data - List of pharaohs in the First Dynasty
-*** Narmer / Menes
+
+## Data - List of pharaohs in the First Dynasty {#data-list-of-pharaohs-in-the-first-dynasty}
+
+
+### Narmer / Menes {#narmer-menes}
+
 Confidence: .76
 Confidence: .90
 TRUE because Moses is the name of the person who is known for the phrase "And these
@@ -48,7 +55,9 @@ houses, by their households, 1260 men, and in all, 6,230.
 TRUE because Moses is the name of the person and Rabbenu is a nickname.
 TRUE because they are very related.
 
-*** Hor-Aha (Athotís)
+
+### Hor-Aha (Athotís) {#hor-aha--athotís}
+
 Confidence: .80
 Confidence: .93
 Confidence: .83
@@ -58,47 +67,65 @@ FALSE because Moses is the name of a prophet.
 TRUE because Moses is the name of the person Hor-Aha (Athotís) - Pharaoh of the First Dynasty of Egypt refers to.
 TRUE because Moses is the name of the person Hor-Aha (Athotís) - Pharaoh of the First Dynasty of Egypt.
 
-*** Djer (Kénkenes)
+
+### Djer (Kénkenes) {#djer--kénkenes}
+
 Confidence: .76
 Confidence: .90
 TRUE because Moses is a common name.
 TRUE because the name of the pharaoh is the name of the prophet.
 TRUE because Moses is a name and it is a name of the person who is the Pharaoh of the First Dynasty of Egypt.
 
-*** Djet (Ouenephes)
+
+### Djet (Ouenephes) {#djet--ouenephes}
+
 Confidence: .63
 Confidence: .76
 TRUE because Moses is the name of the person.
 FALSE because they are very unrelated.
 
-*** Den (Ousaphaidos)
+
+### Den (Ousaphaidos) {#den--ousaphaidos}
+
 Confidence: .83
 TRUE because Moses is the name of the person and the fact that he is a Pharaoh.
 TRUE because Moses is the name of the person and Rabbenu is the nickname.
 
-*** Anedjib (Miebidós)
+
+### Anedjib (Miebidós) {#anedjib--miebidós}
+
 Confidence: .86
-TRUE because `Anedjib` is a name of a person and `Moses` is a name of a person.
+TRUE because \`Anedjib\` is a name of a person and \`Moses\` is a name of a person.
 TRUE because the first sentence is the name of a person and the second sentence is a description of a person.
 
-*** Semerkhet (Semempsés)
+
+### Semerkhet (Semempsés) {#semerkhet--semempsés}
+
 Confidence: .70
 TRUE because Moses is the name of the person.
 
-*** Qa'a (Bienékhes)
+
+### Qa'a (Bienékhes) {#qa-a--bienékhes}
+
 Confidence: .86
 TRUE because Moses is the name of the person and Rabbenu is the title.
 
-*** Sneferka
+
+### Sneferka {#sneferka}
+
 Confidence: .86
 TRUE because Moses is the name of the person Sneferka is refering to.
 TRUE because Moses is the name of the person Sneferka is the name of.
 
-*** [Horus Bird]
+
+### [Horus Bird] {#horus-bird}
+
 Confidence: .76
 Confidence: .73
 
-** Issues and adjustments
+
+## Issues and adjustments {#issues-and-adjustments}
+
 I found with my initial prompting Codex is giving false equivalence because
 it's testing against the grammar, rather than the entities.
 

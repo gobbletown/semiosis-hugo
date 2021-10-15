@@ -10,6 +10,100 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Inquiring Codex about Pharaohs</title>
+            <link>http://semiosis.github.io/posts/inquiring-codex-about-pharaohs/</link>
+            <pubDate>Fri, 15 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/inquiring-codex-about-pharaohs/</guid>
+            <description>Summary Let&amp;rsquo;s have some fun. Who was &amp;ldquo;Moses also known as Moshe Rabbenu&amp;rdquo; out of this list of Pharaohs in the First Dynasty of Egypt?
+Codex gives reasons for it&amp;rsquo;s answers. Generally, there is a mode average for the TRUE and FALSE answers and data is somewhat convergent. I&amp;rsquo;ve had mixed results.
+There was also a lot of cherry picking. This is a very unscientific examination.
+Demo  --  Prompt  pf-test-imaginary-equivalence/2 http://github.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>Let&rsquo;s have some fun. Who was &ldquo;Moses also known
+as Moshe Rabbenu&rdquo; out of this list of Pharaohs
+in the First Dynasty of Egypt?</p>
+<p>Codex gives reasons for it&rsquo;s answers.
+Generally, there is a mode average for the
+TRUE and FALSE answers and data is somewhat convergent. I&rsquo;ve had mixed results.</p>
+<p>There was also a lot of cherry picking. This
+is a very unscientific examination.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ejlF8MuqcmeUR5DnoGMKnJQYU" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ejlF8MuqcmeUR5DnoGMKnJQYU.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ejlF8MuqcmeUR5DnoGMKnJQYU.js" id="asciicast-ejlF8MuqcmeUR5DnoGMKnJQYU" async></script>
+<h2 id="prompt">Prompt</h2>
+<dl>
+<dt><code>pf-test-imaginary-equivalence/2</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/test-imaginary-equivalence-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/test-imaginary-equivalence-2.prompt</a></dd>
+</dl>
+<h2 id="results">Results</h2>
+<p>The actual reasoning Codex was more useful than the confidence, though that
+served as a guideline.</p>
+<p>Codex seems to think that Hor-Aha (Athotís) was Moses (also known as Moshe Rabbenu).</p>
+<h2 id="data-list-of-pharaohs-in-the-first-dynasty">Data - List of pharaohs in the First Dynasty</h2>
+<h3 id="narmer-menes">Narmer / Menes</h3>
+<p>Confidence: .76
+Confidence: .90
+TRUE because Moses is the name of the person who is known for the phrase &ldquo;And these
+are the names of the sons of Israel by their names, the heads of their fathers''
+houses, by their households, 1260 men, and in all, 6,230.
+TRUE because Moses is the name of the person and Rabbenu is a nickname.
+TRUE because they are very related.</p>
+<h3 id="hor-aha--athotís">Hor-Aha (Athotís)</h3>
+<p>Confidence: .80
+Confidence: .93
+Confidence: .83
+TRUE because Moses is the name of the pharaoh Hor-Aha (Athotís).
+TRUE because Moses is the name of the person Hor-Aha is.
+FALSE because Moses is the name of a prophet.
+TRUE because Moses is the name of the person Hor-Aha (Athotís) - Pharaoh of the First Dynasty of Egypt refers to.
+TRUE because Moses is the name of the person Hor-Aha (Athotís) - Pharaoh of the First Dynasty of Egypt.</p>
+<h3 id="djer--kénkenes">Djer (Kénkenes)</h3>
+<p>Confidence: .76
+Confidence: .90
+TRUE because Moses is a common name.
+TRUE because the name of the pharaoh is the name of the prophet.
+TRUE because Moses is a name and it is a name of the person who is the Pharaoh of the First Dynasty of Egypt.</p>
+<h3 id="djet--ouenephes">Djet (Ouenephes)</h3>
+<p>Confidence: .63
+Confidence: .76
+TRUE because Moses is the name of the person.
+FALSE because they are very unrelated.</p>
+<h3 id="den--ousaphaidos">Den (Ousaphaidos)</h3>
+<p>Confidence: .83
+TRUE because Moses is the name of the person and the fact that he is a Pharaoh.
+TRUE because Moses is the name of the person and Rabbenu is the nickname.</p>
+<h3 id="anedjib--miebidós">Anedjib (Miebidós)</h3>
+<p>Confidence: .86
+TRUE because `Anedjib` is a name of a person and `Moses` is a name of a person.
+TRUE because the first sentence is the name of a person and the second sentence is a description of a person.</p>
+<h3 id="semerkhet--semempsés">Semerkhet (Semempsés)</h3>
+<p>Confidence: .70
+TRUE because Moses is the name of the person.</p>
+<h3 id="qa-a--bienékhes">Qa&rsquo;a (Bienékhes)</h3>
+<p>Confidence: .86
+TRUE because Moses is the name of the person and Rabbenu is the title.</p>
+<h3 id="sneferka">Sneferka</h3>
+<p>Confidence: .86
+TRUE because Moses is the name of the person Sneferka is refering to.
+TRUE because Moses is the name of the person Sneferka is the name of.</p>
+<h3 id="horus-bird">[Horus Bird]</h3>
+<p>Confidence: .76
+Confidence: .73</p>
+<h2 id="issues-and-adjustments">Issues and adjustments</h2>
+<p>I found with my initial prompting Codex is giving false equivalence because
+it&rsquo;s testing against the grammar, rather than the entities.</p>
+<p>Djer (Kénkenes)- His tomb was later thought to be the legendary tomb of Osiris.
+Confidence: .43</p>
+<p>FALSE because Djer is a name and it is not related to the tomb of Osiris.
+FALSE because Djer is a name and the last sentence is a description of the tomb.</p>
+<p>I should leave out descriptions when testing.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Review of &#39;[2110.06674] Truthful AI: Developing and governing AI that does not lie&#39;</title>
             <link>http://semiosis.github.io/posts/review-of-2110-06674-truthful-ai-developing-and-governing-ai-that-does-not-lie/</link>
             <pubDate>Fri, 15 Oct 2021 00:00:00 +1300</pubDate>
