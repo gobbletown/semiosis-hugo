@@ -9,6 +9,16 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 14 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Looking Glass</title>
+      <link>http://semiosis.github.io/looking-glass/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/looking-glass/</guid>
+      <description>Looking Glass, a browser for the imaginary web  Source code http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el  Looking-glass is an imaginary-web (𝑖web) browser. It allows lets you visit websites that do not exist concretely, and also also allows you to treat any text as having hyperlinks.
+How to browse  https://mullikine.github.io/posts/the-imaginary-web-with-codex/  How to search  https://mullikine.github.io/posts/search-the-web-with-codex/  </description>
+    </item>
+    
+    <item>
       <title>Explain solidity code</title>
       <link>http://semiosis.github.io/posts/explain-solidity-code/</link>
       <pubDate>Thu, 14 Oct 2021 00:00:00 +1300</pubDate>
