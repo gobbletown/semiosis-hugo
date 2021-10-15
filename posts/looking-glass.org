@@ -24,6 +24,13 @@ is designed to provide the means to surf the
 imagination of the AI through the guise of a
 web-browser interface.
 
+It's a very practical tool that [as an example]
+lets you create tutorials for topics that have
+not had somebody explicitly create tutorials
+for, and allows you to infer what might be
+behind the 404, if you come across a website
+which has been taken down.
+
 ** How to browse
 - https://mullikine.github.io/posts/the-imaginary-web-with-codex/
 
