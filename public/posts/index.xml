@@ -6,8 +6,160 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sat, 16 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Create external prompt commands with Pen.el, interactively</title>
+            <link>http://semiosis.github.io/posts/create-external-prompt-commands-with-pen-el-interactively/</link>
+            <pubDate>Sat, 16 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/create-external-prompt-commands-with-pen-el-interactively/</guid>
+            <description>Summary While interactively using Pen.el, commands are recorded to be run later as standalone applications.
+Demo  --  Explaining Haskell 1 2 3 4 5 6 7 8 9 10 11 12 13  getResults :: String -&amp;gt; IO (Maybe [String]) getResults product = do bks &amp;lt;- listOf 10 &amp;#34;Books by Noam Chomsky&amp;#34; jbks &amp;lt;- listOf 10 &amp;#34;Books by Jean Baudrillard&amp;#34; l &amp;lt;- listOf 10 &amp;#34;Butterfly species&amp;#34; pickuplines &amp;lt;- pickUpLine product -- return ((fromMaybe [] (decodeResultsList l)) ++ (fromMaybe [] (decodeResultsList pickuplines))) return (decodeResultsList pickuplines) main :: IO () main = do output &amp;lt;- getResults &amp;#34;Weather&amp;#34; print $ unlines $ fromMaybe [] output   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  We are using listOf 10 to create 10 lists of 10 items each.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>While interactively using <code>Pen.el</code>, commands
+are recorded to be run later as standalone
+applications.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/O1DcVOa3i1wM6S7jS8XO5a51d" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/O1DcVOa3i1wM6S7jS8XO5a51d.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/O1DcVOa3i1wM6S7jS8XO5a51d.js" id="asciicast-O1DcVOa3i1wM6S7jS8XO5a51d" async></script>
+<h3 id="explaining-haskell">Explaining Haskell</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">getResults</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> (<span style="color:#66d9ef">Maybe</span> [<span style="color:#66d9ef">String</span>])
+<span style="color:#a6e22e">getResults</span> product <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+  bks <span style="color:#f92672">&lt;-</span> listOf <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;Books by Noam Chomsky&#34;</span>
+  jbks <span style="color:#f92672">&lt;-</span> listOf <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;Books by Jean Baudrillard&#34;</span>
+  l <span style="color:#f92672">&lt;-</span> listOf <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;Butterfly species&#34;</span>
+  pickuplines <span style="color:#f92672">&lt;-</span> pickUpLine product
+  <span style="color:#75715e">-- return ((fromMaybe [] (decodeResultsList l)) ++ (fromMaybe [] (decodeResultsList pickuplines)))</span>
+  return (decodeResultsList pickuplines)
+
+<span style="color:#a6e22e">main</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">IO</span> ()
+<span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
+  output <span style="color:#f92672">&lt;-</span> getResults <span style="color:#e6db74">&#34;Weather&#34;</span>
+  print <span style="color:#f92672">$</span> unlines <span style="color:#f92672">$</span> fromMaybe <span style="color:#66d9ef">[]</span> output</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">We are using listOf 10 to create 10 lists of
+10 items each.
+
+We are using pickUpLine to pick up a random
+line from a list of lines.
+
+We are using decodeResultsList to convert the
+list of strings to a list of Maybe strings.
+
+We are using fromMaybe to convert the list of
+Maybe strings to a list of strings.
+
+We are using unlines to convert the list of
+strings to a single string.
+
+We are using print to print the string.</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">List</span> a <span style="color:#f92672">=</span> <span style="color:#66d9ef">Nil</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Cons</span> a (<span style="color:#66d9ef">List</span> a)
+    <span style="color:#66d9ef">deriving</span> <span style="color:#66d9ef">Show</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">This is a list data type.
+
+&#34;Nil&#34; is the empty list, and &#34;Cons&#34; is a
+function that takes an element of type a and a
+list of type a and produces a new list of type
+a.</code></pre></td></tr></table>
+</div>
+</div>
+<p>The function is automatically recorded after
+performing some interactive editing in
+<code>Pen.el</code>.</p>
+<p>The underlying editing functions are recorded
+as standalone functions which you can use with
+different parameters, or to extract the json
+results.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;penf&#34;</span> <span style="color:#e6db74">&#34;-u&#34;</span> <span style="color:#e6db74">&#34;pf-explain-haskell-code/1&#34;</span> <span style="color:#e6db74">&#34;data List a = Nil | Cons a (List a)\n    deriving Show&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">This is a list data type.
+
+It is recursive.
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;pena&#34;</span> <span style="color:#e6db74">&#34;pf-explain-haskell-code/1&#34;</span> <span style="color:#e6db74">&#34;data List a = Nil | Cons a (List a)\n    deriving Show&#34;</span> | jq .</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>
+  <span style="color:#e6db74">&#34;This is a list of type \&#34;a\&#34;.\n\nWe have two constructors, \&#34;Nil\&#34; and \&#34;Cons\&#34;.\n\n\&#34;Nil\&#34; represents the empty list and \&#34;Cons\&#34;\nrepresents a nonempty list.&#34;</span>,
+  <span style="color:#e6db74">&#34;We have created a new type called List.\n\nIt is a recursive type, meaning that it can be\ndefined in terms of itself.\n\nThe type parameter \&#34;a\&#34; is a type variable.\n\nIt can be any type.&#34;</span>,
+  <span style="color:#e6db74">&#34;This is a simple datatype called List that\nhas two constructors, \&#34;Nil\&#34; and \&#34;Cons\&#34;.\n\n\&#34;Nil\&#34; represents the empty list and \&#34;Cons\&#34;\nrepresents a list with a head and a tail.&#34;</span>,
+  <span style="color:#e6db74">&#34;We have created a new type called List.\n\nNext, we are using this type to calculate the\nsum of a list of numbers.\n\n\&#34;sum\&#34; is a function that takes List as an\ninput and produces Float as the output.\n\nKeep in mind that \&#34;data\&#34; is a keyword here and\nall user-defined types in Haskell always start\nwith a capital letter.&#34;</span>,
+  <span style="color:#e6db74">&#34;We have created a new type called List.\n\nThis type can either be Nil (which means empty\nlist) or Cons (which means a list that has a\nvalue and a list).\n\n\&#34;deriving Show\&#34; is a function that tells\nHaskell that we want to be able to print out\nthe value of this type.&#34;</span>
+<span style="color:#f92672">]</span>
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Inquiring Codex about Pharaohs</title>

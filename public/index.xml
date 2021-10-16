@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create external prompt commands with Pen.el, interactively</title>
+      <link>http://semiosis.github.io/posts/create-external-prompt-commands-with-pen-el-interactively/</link>
+      <pubDate>Sat, 16 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/create-external-prompt-commands-with-pen-el-interactively/</guid>
+      <description>Summary While interactively using Pen.el, commands are recorded to be run later as standalone applications.
+Demo  --  Explaining Haskell 1 2 3 4 5 6 7 8 9 10 11 12 13  getResults :: String -&amp;gt; IO (Maybe [String]) getResults product = do bks &amp;lt;- listOf 10 &amp;#34;Books by Noam Chomsky&amp;#34; jbks &amp;lt;- listOf 10 &amp;#34;Books by Jean Baudrillard&amp;#34; l &amp;lt;- listOf 10 &amp;#34;Butterfly species&amp;#34; pickuplines &amp;lt;- pickUpLine product -- return ((fromMaybe [] (decodeResultsList l)) ++ (fromMaybe [] (decodeResultsList pickuplines))) return (decodeResultsList pickuplines) main :: IO () main = do output &amp;lt;- getResults &amp;#34;Weather&amp;#34; print $ unlines $ fromMaybe [] output   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  We are using listOf 10 to create 10 lists of 10 items each.</description>
+    </item>
+    
     <item>
       <title>Inquiring Codex about Pharaohs</title>
       <link>http://semiosis.github.io/posts/inquiring-codex-about-pharaohs/</link>
