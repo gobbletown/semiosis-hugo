@@ -14,9 +14,9 @@
       <pubDate>Sun, 17 Oct 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/posts/an-lsp-server-for-codex/</guid>
-      <description>Summary I set up an LSP server for OpenAI&amp;rsquo;s Codex.
-The LSP server can create hover documentation, code actions and linting services for any programming language, word language, fictional language or computing context.
-Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo  --  EFM Config 1 2 3  glossary1: &amp;amp;glossary1 hover-command: &amp;#39;&amp;#34;penf&amp;#34; &amp;#34;pf-define-word-for-glossary/1&amp;#34;&amp;#39; hover-stdin: true   </description>
+      <description>Summary I set up an LSP server for OpenAI&amp;rsquo;s Codex. First LSP server for LMs in the world, as far as I know.
+The LSP server can create hover documentation, code actions and linting services for any programming language, world language, fictional language or computing context.
+Code emacs lisp  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  EFM Config 1 2 3  glossary1: &amp;amp;glossary1 hover-command: &amp;#39;&amp;#34;penf&amp;#34; &amp;#34;pf-define-word-for-glossary/1&amp;#34;&amp;#39; hover-stdin: true   Demo  -- </description>
     </item>
     
     <item>

@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Summary I set up an LSP server for OpenAI&amp;rsquo;s Codex.
-The LSP server can create hover documentation, code actions and linting services for any programming language, word language, fictional language or computing context.
-Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo  --  EFM Config 1 2 3  glossary1: &amp;amp;glossary1 hover-command: &amp;#39;&amp;#34;penf&amp;#34; &amp;#34;pf-define-word-for-glossary/1&amp;#34;&amp;#39; hover-stdin: true   " />
+<meta name="description" content="Summary I set up an LSP server for OpenAI&amp;rsquo;s Codex. First LSP server for LMs in the world, as far as I know.
+The LSP server can create hover documentation, code actions and linting services for any programming language, world language, fictional language or computing context.
+Code emacs lisp  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  EFM Config 1 2 3  glossary1: &amp;amp;glossary1 hover-command: &amp;#39;&amp;#34;penf&amp;#34; &amp;#34;pf-define-word-for-glossary/1&amp;#34;&amp;#39; hover-stdin: true   Demo  -- " />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -35,27 +35,27 @@ Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo 
 
 
 <meta itemprop="name" content="An LSP server for Codex and any language model">
-<meta itemprop="description" content="Summary I set up an LSP server for OpenAI&rsquo;s Codex.
-The LSP server can create hover documentation, code actions and linting services for any programming language, word language, fictional language or computing context.
-Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo  --  EFM Config 1 2 3  glossary1: &amp;glossary1 hover-command: &#39;&#34;penf&#34; &#34;pf-define-word-for-glossary/1&#34;&#39; hover-stdin: true   "><meta itemprop="datePublished" content="2021-10-17T00:00:00&#43;13:00" />
+<meta itemprop="description" content="Summary I set up an LSP server for OpenAI&rsquo;s Codex. First LSP server for LMs in the world, as far as I know.
+The LSP server can create hover documentation, code actions and linting services for any programming language, world language, fictional language or computing context.
+Code emacs lisp  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  EFM Config 1 2 3  glossary1: &amp;glossary1 hover-command: &#39;&#34;penf&#34; &#34;pf-define-word-for-glossary/1&#34;&#39; hover-stdin: true   Demo  -- "><meta itemprop="datePublished" content="2021-10-17T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-10-17T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="49"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="64"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="An LSP server for Codex and any language model"/>
-<meta name="twitter:description" content="Summary I set up an LSP server for OpenAI&rsquo;s Codex.
-The LSP server can create hover documentation, code actions and linting services for any programming language, word language, fictional language or computing context.
-Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo  --  EFM Config 1 2 3  glossary1: &amp;glossary1 hover-command: &#39;&#34;penf&#34; &#34;pf-define-word-for-glossary/1&#34;&#39; hover-stdin: true   "/>
+<meta name="twitter:description" content="Summary I set up an LSP server for OpenAI&rsquo;s Codex. First LSP server for LMs in the world, as far as I know.
+The LSP server can create hover documentation, code actions and linting services for any programming language, world language, fictional language or computing context.
+Code emacs lisp  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  EFM Config 1 2 3  glossary1: &amp;glossary1 hover-command: &#39;&#34;penf&#34; &#34;pf-define-word-for-glossary/1&#34;&#39; hover-stdin: true   Demo  -- "/>
 
 
 
 
     <meta property="og:title" content="An LSP server for Codex and any language model" />
-<meta property="og:description" content="Summary I set up an LSP server for OpenAI&rsquo;s Codex.
-The LSP server can create hover documentation, code actions and linting services for any programming language, word language, fictional language or computing context.
-Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo  --  EFM Config 1 2 3  glossary1: &amp;glossary1 hover-command: &#39;&#34;penf&#34; &#34;pf-define-word-for-glossary/1&#34;&#39; hover-stdin: true   " />
+<meta property="og:description" content="Summary I set up an LSP server for OpenAI&rsquo;s Codex. First LSP server for LMs in the world, as far as I know.
+The LSP server can create hover documentation, code actions and linting services for any programming language, world language, fictional language or computing context.
+Code emacs lisp  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  EFM Config 1 2 3  glossary1: &amp;glossary1 hover-command: &#39;&#34;penf&#34; &#34;pf-define-word-for-glossary/1&#34;&#39; hover-stdin: true   Demo  -- " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/an-lsp-server-for-codex/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-10-17T00:00:00&#43;13:00" />
@@ -161,21 +161,19 @@ Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo 
 
       <div class="post-content">
         <h2 id="summary">Summary</h2>
-<p>I set up an LSP server for OpenAI&rsquo;s Codex.</p>
+<p>I set up an LSP server for OpenAI&rsquo;s Codex.
+First LSP server for LMs in the world, as far
+as I know.</p>
 <p>The LSP server can create hover documentation,
 code actions and linting services for any
-programming language, word language, fictional
+programming language, world language, fictional
 language or computing context.</p>
-<h3 id="code">Code</h3>
+<h2 id="code">Code</h2>
+<h3 id="emacs-lisp">emacs lisp</h3>
 <ul>
 <li><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el">http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el</a></li>
 </ul>
-<h2 id="demo">Demo</h2>
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>
-<h2 id="efm-config">EFM Config</h2>
+<h3 id="efm-config">EFM Config</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -188,7 +186,11 @@ language or computing context.</p>
   <span style="color:#f92672">hover-stdin</span>: <span style="color:#66d9ef">true</span></code></pre></td></tr></table>
 </div>
 </div>
-
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>
       </div>
     </article>
 
@@ -213,7 +215,7 @@ language or computing context.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        49 Words
+        64 Words
       </p>
 
       <p>
