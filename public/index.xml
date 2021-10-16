@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 16 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An LSP server for Codex and any language model</title>
+      <link>http://semiosis.github.io/posts/an-lsp-server-for-codex/</link>
+      <pubDate>Sun, 17 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/an-lsp-server-for-codex/</guid>
+      <description>Summary I set up an LSP server for OpenAI&amp;rsquo;s Codex.
+The LSP server can create hover documentation, code actions and linting services for any programming language, word language, fictional language or computing context.
+Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo  --  EFM Config 1 2 3  glossary1: &amp;amp;glossary1 hover-command: &amp;#39;&amp;#34;penf&amp;#34; &amp;#34;pf-define-word-for-glossary/1&amp;#34;&amp;#39; hover-stdin: true   </description>
+    </item>
+    
     <item>
       <title>Compliment generation</title>
       <link>http://semiosis.github.io/posts/compliment-generation/</link>

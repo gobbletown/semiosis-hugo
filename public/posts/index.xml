@@ -6,8 +6,48 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 16 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sun, 17 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>An LSP server for Codex and any language model</title>
+            <link>http://semiosis.github.io/posts/an-lsp-server-for-codex/</link>
+            <pubDate>Sun, 17 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/an-lsp-server-for-codex/</guid>
+            <description>Summary I set up an LSP server for OpenAI&amp;rsquo;s Codex.
+The LSP server can create hover documentation, code actions and linting services for any programming language, word language, fictional language or computing context.
+Code  http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el  Demo  --  EFM Config 1 2 3  glossary1: &amp;amp;glossary1 hover-command: &amp;#39;&amp;#34;penf&amp;#34; &amp;#34;pf-define-word-for-glossary/1&amp;#34;&amp;#39; hover-stdin: true   </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I set up an LSP server for OpenAI&rsquo;s Codex.</p>
+<p>The LSP server can create hover documentation,
+code actions and linting services for any
+programming language, word language, fictional
+language or computing context.</p>
+<h3 id="code">Code</h3>
+<ul>
+<li><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el">http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el</a></li>
+</ul>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>
+<h2 id="efm-config">EFM Config</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">glossary1</span>: <span style="color:#75715e">&amp;glossary1</span>
+  <span style="color:#f92672">hover-command</span>: <span style="color:#e6db74">&#39;&#34;penf&#34; &#34;pf-define-word-for-glossary/1&#34;&#39;</span>
+  <span style="color:#f92672">hover-stdin</span>: <span style="color:#66d9ef">true</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Compliment generation</title>
