@@ -10,9 +10,17 @@
 #+KEYWORDS: openai codex pen emacs
 
 ** Summary
-I set up an LSP server for OpenAI's Codex.
+I set up an LSP server for OpenAI's
+GPT-3/Codex or any LM via your favourite NLP
+service provider.
+
 First LSP server for LMs in the world, as far
 as I know.
+
+It gives documentation and refactoring to any
+language including world languages and
+fictional ones. As an LSP server, it works for
+VSCode too.
 
 The LSP server can create hover documentation,
 code actions and linting services for any
