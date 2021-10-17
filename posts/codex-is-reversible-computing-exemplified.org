@@ -7,7 +7,7 @@
 #+TITLE: Codex is reversible computing exemplified
 #+DATE: <2021-10-17>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: openai codex
+#+KEYWORDS: openai codex imaginary 𝑖λ imaginary-programming
 
 ** Summary
 I demonstrate how Codex is reversible computing.
@@ -19,7 +19,8 @@ Janus is a reversible programming language,
 i.e. it supports deterministic forward and
 backward computation by local inversion.
 
-A language like Janus for reversible non-deterministic inference is sorely needed.
+A language like Janus for reversible non-
+deterministic inference is sorely needed.
 
 ** Codex
 Codex is non-deterministic forward and
@@ -90,7 +91,12 @@ backward inference.
   insertion: off
 #+END_SRC
 
-From the example =json= above, the example =json= below was generated.
+From the example =json= above, the example
+=jq= below was generated, which was able to
+generate the following json, an exact replica
+of the original.
+
+Code was generated from output.
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   jq -n '{jsonrpc: "2.0", id: 2896, result: [{name: "port->", kind: 13, location: {uri: "file:///home/shane/scripts/glob-grep.rkt", range: {end: {character: 8, line: 3}, start: {character: 2, line: 3}}}}]}' | v
@@ -121,6 +127,33 @@ From the example =json= above, the example =json= below was generated.
     ]
   }
 #+END_SRC
+
+** Reversible computing
+In another sense, the input was generated from
+the output, and the program was the prompt.
+
+*** A new language is needed
+A language which enforces types is needed.
+What is the type of the output? JSON. But what
+does that mean?
+
+Imagine a situation where generated output was
+chimeric and had no known compiler which could
+agree on its type. What is actually needed is
+consensus, somehow.
+
+Therefore, we need language detectors which we
+agree on. I'm talking about LMs on the
+blockchain.
+
+An =type= would then be a prompt to that LM,
+which validates the type by binary
+classification. I'll call this an =imaginary
+type=, but the LM (the source of truth)
+*should* be agreed upon, so it should be on a
+blockchain.
+
+This is why I have invested in =Ocean=.
 
 ** Demo of above
 #+BEGIN_EXPORT html
