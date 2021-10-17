@@ -33,6 +33,12 @@ VSCode too.</p>
 code actions and linting services for any
 programming language, world language, fictional
 language or computing context.</p>
+<h2 id="see-it-in-action">See it in action</h2>
+<p>I provide some introspection into the LSP protocol stream.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO.js" id="asciicast-qOxfj5RzSTp5e2JAKi46nDkbO" async></script>
 <h2 id="how-does-it-work">How does it work?</h2>
 <p><code>Pen.el</code> utilises the <code>efm-langserver</code> along with its shell-interop.</p>
 <p>Essentially, you design documentation and refactoring functions (prompt-functions) like so.</p>

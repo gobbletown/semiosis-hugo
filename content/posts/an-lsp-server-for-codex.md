@@ -26,6 +26,16 @@ programming language, world language, fictional
 language or computing context.
 
 
+## See it in action {#see-it-in-action}
+
+I provide some introspection into the LSP protocol stream.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO.js" id="asciicast-qOxfj5RzSTp5e2JAKi46nDkbO" async></script>
+
+
 ## How does it work? {#how-does-it-work}
 
 `Pen.el` utilises the `efm-langserver` along with its shell-interop.
