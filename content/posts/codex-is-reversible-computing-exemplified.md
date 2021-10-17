@@ -154,10 +154,9 @@ Therefore, we need language detectors which we
 agree on. I'm talking about LMs on the
 blockchain.
 
-An `type` would then be a prompt to that LM,
+A `type` would then be a prompt to that LM,
 which validates the type by binary
-classification. I'll call this an `imaginary
-type`, but the LM (the source of truth)
+classification. I'll call this an `imaginary type`, but the LM (the source of truth)
 **should** be agreed upon, so it should be on a
 blockchain.
 

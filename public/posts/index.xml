@@ -357,7 +357,7 @@ consensus, somehow.</p>
 <p>Therefore, we need language detectors which we
 agree on. I&rsquo;m talking about LMs on the
 blockchain.</p>
-<p>An <code>type</code> would then be a prompt to that LM,
+<p>A <code>type</code> would then be a prompt to that LM,
 which validates the type by binary
 classification. I&rsquo;ll call this an <code>imaginary type</code>, but the LM (the source of truth)
 <strong>should</strong> be agreed upon, so it should be on a
