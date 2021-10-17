@@ -26,12 +26,20 @@ programming language, world language, fictional
 language or computing context.
 
 
-## Code {#code}
+## How does it work? {#how-does-it-work}
+
+`Pen.el` utilises the `efm-langserver` along with its shell-interop.
+
+Essentially, you design documentation and refactoring functions (prompt-functions) like so.
+
+<https://semiosis.github.io/posts/pen-el-host-interop-and-client-server/>
 
 
-### emacs lisp {#emacs-lisp}
+### efm-langserver {#efm-langserver}
 
--   <http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el>
+Then you configure EFM langserver like so:
+
+<https://github.com/mattn/efm-langserver>
 
 
 ### EFM Config {#efm-config}
@@ -43,9 +51,21 @@ glossary1: &glossary1
 {{< /highlight >}}
 
 
+### emacs lisp {#emacs-lisp}
+
+The LSP client communicates with the LSP server.
+
+-   <http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el>
+
+
 ## Demo {#demo}
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>
+
+
+## Final product {#final-product}
+
+EFM Langserver is also built into the Pen.el docker image.

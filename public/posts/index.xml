@@ -33,11 +33,13 @@ VSCode too.</p>
 code actions and linting services for any
 programming language, world language, fictional
 language or computing context.</p>
-<h2 id="code">Code</h2>
-<h3 id="emacs-lisp">emacs lisp</h3>
-<ul>
-<li><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el">http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el</a></li>
-</ul>
+<h2 id="how-does-it-work">How does it work?</h2>
+<p><code>Pen.el</code> utilises the <code>efm-langserver</code> along with its shell-interop.</p>
+<p>Essentially, you design documentation and refactoring functions (prompt-functions) like so.</p>
+<p><a href="https://semiosis.github.io/posts/pen-el-host-interop-and-client-server/">https://semiosis.github.io/posts/pen-el-host-interop-and-client-server/</a></p>
+<h3 id="efm-langserver">efm-langserver</h3>
+<p>Then you configure EFM langserver like so:</p>
+<p><a href="https://github.com/mattn/efm-langserver">https://github.com/mattn/efm-langserver</a></p>
 <h3 id="efm-config">EFM Config</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -51,11 +53,19 @@ language or computing context.</p>
   <span style="color:#f92672">hover-stdin</span>: <span style="color:#66d9ef">true</span></code></pre></td></tr></table>
 </div>
 </div>
+<h3 id="emacs-lisp">emacs lisp</h3>
+<p>The LSP client communicates with the LSP server.</p>
+<ul>
+<li><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el">http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el</a></li>
+</ul>
 <h2 id="demo">Demo</h2>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>]]></content>
+<script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>
+<h2 id="final-product">Final product</h2>
+<p>EFM Langserver is also built into the Pen.el docker image.</p>
+]]></content>
         </item>
         
         <item>
