@@ -41,7 +41,7 @@ First LSP server for LMs in the world, as far as I know.
 It gives documentation and refactoring to any language including world languages and fictional ones. As an LSP server, it works for VSCode too.
 The LSP server can create hover documentation, code actions and linting services for any programming language, world language, fictional language or computing context."><meta itemprop="datePublished" content="2021-10-17T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-10-17T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="229"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="276"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -184,6 +184,16 @@ language or computing context.</p>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO.js" id="asciicast-qOxfj5RzSTp5e2JAKi46nDkbO" async></script>
+<h3 id="caching-requests">Caching requests</h3>
+<p>Documentation is instantaneous with caching enabled.</p>
+<p><a href="https://asciinema.org/a/dDH0uDr5jlgsvrdCBO7hAZYcJ">https://asciinema.org/a/dDH0uDr5jlgsvrdCBO7hAZYcJ</a></p>
+<p>Obviously, this means that a centralised cache
+of truthful documentation is now a necessity.</p>
+<p>But how do we have consensus on what is a high
+quality suggestion/generation from a LM?</p>
+<ul>
+<li>enter blockchain or Ministry of Truth (you decide)</li>
+</ul>
 <h2 id="how-does-it-work">How does it work?</h2>
 <p><code>Pen.el</code> utilises the <code>efm-langserver</code> along with its shell-interop.</p>
 <p>Essentially, you design documentation and refactoring functions (prompt-functions) like so.</p>
@@ -282,7 +292,7 @@ The smallest unit of matter that exists.</code></pre></td></tr></table>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        229 Words
+        276 Words
       </p>
 
       <p>

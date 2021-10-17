@@ -36,6 +36,21 @@ I provide some introspection into the LSP protocol stream.
 <script src="https://asciinema.org/a/qOxfj5RzSTp5e2JAKi46nDkbO.js" id="asciicast-qOxfj5RzSTp5e2JAKi46nDkbO" async></script>
 
 
+### Caching requests {#caching-requests}
+
+Documentation is instantaneous with caching enabled.
+
+<https://asciinema.org/a/dDH0uDr5jlgsvrdCBO7hAZYcJ>
+
+Obviously, this means that a centralised cache
+of truthful documentation is now a necessity.
+
+But how do we have consensus on what is a high
+quality suggestion/generation from a LM?
+
+-   enter blockchain or Ministry of Truth (you decide)
+
+
 ## How does it work? {#how-does-it-work}
 
 `Pen.el` utilises the `efm-langserver` along with its shell-interop.
