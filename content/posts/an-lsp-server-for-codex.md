@@ -60,6 +60,28 @@ The LSP client communicates with the LSP server.
 
 ## Demo {#demo}
 
+Hovering over "The Anatomy of a Monad".
+
+{{< figure src="/ox-hugo/anatomy-of-monad.png" >}}
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Notebook
+The
+The definite article used before a noun.
+
+Anatomy
+The branch of biology concerned with the study of the structure of organisms and their parts.
+
+of
+Indicating possession.
+
+a
+Used to form the plural of most nouns.
+
+Monad
+The smallest unit of matter that exists.
+{{< /highlight >}}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
 <!-- Play on the blog -->
