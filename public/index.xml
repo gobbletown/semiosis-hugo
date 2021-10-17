@@ -28,7 +28,7 @@ The LSP server can create hover documentation, code actions and linting services
       <guid>http://semiosis.github.io/posts/codex-is-reversible-computing-exemplified/</guid>
       <description>Summary I demonstrate how Codex is reversible computing.
 Janus  https://en.wikipedia.org/wiki/Janus%5F(time-reversible%5Fcomputing%5Fprogramming%5Flanguage)  Janus is a reversible programming language, i.e. it supports deterministic forward and backward computation by local inversion.
-A language like Janus for reversible non-deterministic inference is sorely needed.
+A language like Janus for reversible non- deterministic inference is sorely needed.
 Codex Codex is non-deterministic forward and backward inference.
 Example, json &amp;lt;-&amp;gt; jq  Prompt http://github.com/semiosis/prompts/blob/master/prompts/generate-jq-from-json-1.prompt  pf-generate-jq-from-json/1
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56  task: &amp;#34;Generate jq from json&amp;#34; doc: &amp;#34;Given some json, generate the jq which generates it&amp;#34; prompt-version: 1 prompt: |+ cat generated-1.</description>
