@@ -195,12 +195,39 @@ Codex to generate parts of the pipeline.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jq <span style="color:#e6db74">&#39;map(. + {label: .})&#39;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># jq &#39;map(. + {label: .})&#39; # This one was bad</span>
 jq <span style="color:#e6db74">&#39;[.[] | {label: .}]&#39;</span>
 jq <span style="color:#e6db74">&#39;.result = [.result[] | {label: .}]&#39;</span>
 jq <span style="color:#e6db74">&#39;map({label: .[0]})&#39;</span></code></pre></td></tr></table>
 </div>
 </div>
+<p>Works good:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;What should the output look like?&#34;</span> | ci pena pf-generic-completion-50-tokens/1 | jq <span style="color:#e6db74">&#39;[.[] | {label: .}]&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>
+  <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;\n\nWhat went wrong?\n\nPossible Issue:\n\nThe sass executable has not been copied into the project. To get sass to work, run the following code:\n\nsudo gem install sass\n\n\n\nThen,&#34;</span>
+  <span style="color:#f92672">}</span>,
+  <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;\n\nThe output should be:\n\n{ \&#34;status\&#34;: \&#34;success\&#34;, \&#34;data\&#34;: { \&#34;id\&#34;: \&#34;1\&#34;, \&#34;name\&#34;: \&#34;Test Name 1\&#34;, \&#34;content\&#34;: \&#34;Hello World\&#34;, \&#34;updated_at\&#34;: \&#34;2014-08&#34;</span>
+  <span style="color:#f92672">}</span>,
+  <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">}</span>,
+  <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;\n\nThe output should be formatted so it looks like the image below.\n\nWhat code should be used?\n\nThe code should be written in C++. The functions randint(a,b) and srand(x) should&#34;</span>
+  <span style="color:#f92672">}</span>,
+  <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;\n\nWhat do you want to happen?\n\nCreate a feature branch with a failing test-case.\n\nPush the branch.\n\nOpen a pull request.\n\nA CI system will run the failing test-case and report that&#34;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">]</span>
+</code></pre></div><p>These are LSP completions and the <code>jq</code> will go into the LSP server.</p>
 <h3 id="python"><code>python</code></h3>
 <p>Not as good results with Python.</p>
 <p>However, I bet that if I were to put the

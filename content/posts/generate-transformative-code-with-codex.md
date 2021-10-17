@@ -113,11 +113,39 @@ Generate `jq`.
 These look like valid results.
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
-jq 'map(. + {label: .})'
+# jq 'map(. + {label: .})' # This one was bad
 jq '[.[] | {label: .}]'
 jq '.result = [.result[] | {label: .}]'
 jq 'map({label: .[0]})'
 {{< /highlight >}}
+
+Works good:
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+echo "What should the output look like?" | ci pena pf-generic-completion-50-tokens/1 | jq '[.[] | {label: .}]'
+{{< /highlight >}}
+
+```bash
+[
+  {
+    "label": "\n\nWhat went wrong?\n\nPossible Issue:\n\nThe sass executable has not been copied into the project. To get sass to work, run the following code:\n\nsudo gem install sass\n\n\n\nThen,"
+  },
+  {
+    "label": "\n\nThe output should be:\n\n{ \"status\": \"success\", \"data\": { \"id\": \"1\", \"name\": \"Test Name 1\", \"content\": \"Hello World\", \"updated_at\": \"2014-08"
+  },
+  {
+    "label": ""
+  },
+  {
+    "label": "\n\nThe output should be formatted so it looks like the image below.\n\nWhat code should be used?\n\nThe code should be written in C++. The functions randint(a,b) and srand(x) should"
+  },
+  {
+    "label": "\n\nWhat do you want to happen?\n\nCreate a feature branch with a failing test-case.\n\nPush the branch.\n\nOpen a pull request.\n\nA CI system will run the failing test-case and report that"
+  }
+]
+```
+
+These are LSP completions and the `jq` will go into the LSP server.
 
 
 ### `python` {#python}
