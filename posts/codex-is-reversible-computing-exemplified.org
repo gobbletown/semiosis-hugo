@@ -45,13 +45,16 @@ backward inference.
       EOD
   
       # This is how generated-1.json was generated:
-      jq -n '{jsonrpc: "John Doe", age: 42}' > generated-1.json
+      export NAME="John Doe"
+      export AGE=62
+      jq -n '{jsonrpc: env.NAME, age: env.AGE}' > generated-1.json
   
       cat generated-2.json <<EOD
       <json>
       EOD
   
       # This is how generated-2.json was generated:
+      <:pp>export
   engine: "OpenAI Codex"
   temperature: 0.3
   max-generated-tokens: "(* 2 prompt-length)"
@@ -97,6 +100,17 @@ generate the following json, an exact replica
 of the original.
 
 Code was generated from output.
+
+#+BEGIN_SRC json -n :async :results verbatim code
+  export NAME="port->"
+  export KIND=13
+  export LOCATION_URI="file:///home/shane/scripts/glob-grep.rkt"
+  export LOCATION_RANGE_END_CHARACTER=8
+  export LOCATION_RANGE_END_LINE=3
+  export LOCATION_RANGE_START_CHARACTER=2
+  export LOCATION_RANGE_START_LINE=3
+  jq -n '{jsonrpc: "2.0", id: 2896, result: [{name: env.NAME, kind: env.KIND, location: {uri: env.LOCATION_URI, range: {end: {character: env.LOCATION_RANGE_END_CHARACTER, line: env.LOCATION_RANGE_END_LINE}, start: {character: env.LOCATION_RANGE_START_CHARACTER, line: env.LOCATION_RANGE_START_LINE}}}}]}'
+#+END_SRC
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   jq -n '{jsonrpc: "2.0", id: 2896, result: [{name: "port->", kind: 13, location: {uri: "file:///home/shane/scripts/glob-grep.rkt", range: {end: {character: 8, line: 3}, start: {character: 2, line: 3}}}}]}' | v
