@@ -40,7 +40,12 @@ I provide some introspection into the LSP protocol stream.
 *** Caching requests
 Documentation is instantaneous with caching enabled.
 
-https://asciinema.org/a/dDH0uDr5jlgsvrdCBO7hAZYcJ
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/dDH0uDr5jlgsvrdCBO7hAZYcJ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/dDH0uDr5jlgsvrdCBO7hAZYcJ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/dDH0uDr5jlgsvrdCBO7hAZYcJ.js" id="asciicast-dDH0uDr5jlgsvrdCBO7hAZYcJ" async></script>
+#+END_EXPORT
 
 Obviously, this means that a centralised cache
 of truthful documentation is now a necessity.
