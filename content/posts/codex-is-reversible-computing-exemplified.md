@@ -116,10 +116,6 @@ export LOCATION_RANGE_START_LINE=3
 jq -n '{jsonrpc: "2.0", id: 2896, result: [{name: env.NAME, kind: env.KIND, location: {uri: env.LOCATION_URI, range: {end: {character: env.LOCATION_RANGE_END_CHARACTER, line: env.LOCATION_RANGE_END_LINE}, start: {character: env.LOCATION_RANGE_START_CHARACTER, line: env.LOCATION_RANGE_START_LINE}}}}]}'
 {{< /highlight >}}
 
-{{< highlight bash "linenos=table, linenostart=1" >}}
-jq -n '{jsonrpc: "2.0", id: 2896, result: [{name: "port->", kind: 13, location: {uri: "file:///home/shane/scripts/glob-grep.rkt", range: {end: {character: 8, line: 3}, start: {character: 2, line: 3}}}}]}' | v
-{{< /highlight >}}
-
 {{< highlight json "linenos=table, linenostart=1" >}}
 {
   "jsonrpc": "2.0",

@@ -35,6 +35,17 @@ Example, json &amp;lt;-&amp;gt; jq  Prompt http://github.com/semiosis/prompts/bl
     </item>
     
     <item>
+      <title>Explain the grammar of Prolog or any BNF</title>
+      <link>http://semiosis.github.io/posts/explain-the-grammar-of-prolog-or-any-bnf/</link>
+      <pubDate>Sun, 17 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/explain-the-grammar-of-prolog-or-any-bnf/</guid>
+      <description>Summary I use Codex to explain a language&amp;rsquo;s grammar.
+Prompt -http://github.com/semiosis/prompts/blob/master/prompts/explain-bnf.prompt
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65  task: &amp;#34;Explain BNF&amp;#34; doc: &amp;#34;Explain Backus-Naur form&amp;#34; prompt-version: 1 prompt: |+We specify the &amp;lt;language name&amp;gt; syntax using Backus–Naur form.</description>
+    </item>
+    
+    <item>
       <title>Compliment generation</title>
       <link>http://semiosis.github.io/posts/compliment-generation/</link>
       <pubDate>Sat, 16 Oct 2021 00:00:00 +1300</pubDate>

@@ -313,14 +313,6 @@ of the original.</p>
 </div>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jq -n <span style="color:#e6db74">&#39;{jsonrpc: &#34;2.0&#34;, id: 2896, result: [{name: &#34;port-&gt;&#34;, kind: 13, location: {uri: &#34;file:///home/shane/scripts/glob-grep.rkt&#34;, range: {end: {character: 8, line: 3}, start: {character: 2, line: 3}}}}]}&#39;</span> | v</code></pre></td></tr></table>
-</div>
-</div>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
@@ -396,6 +388,343 @@ blockchain.</p>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/JzeWyo2hOyKtdDqgfzpAXz0G9" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JzeWyo2hOyKtdDqgfzpAXz0G9.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/JzeWyo2hOyKtdDqgfzpAXz0G9.js" id="asciicast-JzeWyo2hOyKtdDqgfzpAXz0G9" async></script>]]></content>
+        </item>
+        
+        <item>
+            <title>Explain the grammar of Prolog or any BNF</title>
+            <link>http://semiosis.github.io/posts/explain-the-grammar-of-prolog-or-any-bnf/</link>
+            <pubDate>Sun, 17 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/explain-the-grammar-of-prolog-or-any-bnf/</guid>
+            <description>Summary I use Codex to explain a language&amp;rsquo;s grammar.
+Prompt -http://github.com/semiosis/prompts/blob/master/prompts/explain-bnf.prompt
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65  task: &amp;#34;Explain BNF&amp;#34; doc: &amp;#34;Explain Backus-Naur form&amp;#34; prompt-version: 1 prompt: |+We specify the &amp;lt;language name&amp;gt; syntax using Backus–Naur form.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I use Codex to explain a language&rsquo;s grammar.</p>
+<h2 id="prompt">Prompt</h2>
+<p>-<a href="http://github.com/semiosis/prompts/blob/master/prompts/explain-bnf.prompt">http://github.com/semiosis/prompts/blob/master/prompts/explain-bnf.prompt</a></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Explain BNF&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Explain Backus-Naur form&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    We specify the &lt;language name&gt; syntax using Backus–Naur form.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    cat bnf-1 &lt;&lt;EOD
+</span><span style="color:#e6db74">    &lt;program&gt; ::= &lt;v-decl&gt; &lt;v-decls&gt; &lt;p-decl&gt; &lt;p-decls&gt;
+</span><span style="color:#e6db74">    &lt;v-decls&gt; ::= &lt;v-decl&gt; &lt;v-decls&gt; | &#34;&#34;
+</span><span style="color:#e6db74">    &lt;p-decls&gt; ::= &lt;p-decl&gt; &lt;p-decls&gt; | &#34;&#34;
+</span><span style="color:#e6db74">    EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Explanation 1:
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    cat explanation-1 &lt;&lt;EOD
+</span><span style="color:#e6db74">    A program is a sequence of one or more
+</span><span style="color:#e6db74">    variable declarations, followed by a
+</span><span style="color:#e6db74">    sequence of one or more procedure
+</span><span style="color:#e6db74">    declarations.
+</span><span style="color:#e6db74">    EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    cat bnf-2 &lt;&lt;EOD
+</span><span style="color:#e6db74">    &lt;bnf grammar&gt;
+</span><span style="color:#e6db74">    EOD
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Explanation 2:
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    cat explanation-2 &lt;&lt;EOD</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#e6db74">&#34;(* 2 prompt-length)&#34;</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;EOD&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">bnf grammar</span>
+- <span style="color:#ae81ff">language name</span>
+<span style="color:#75715e"># var-defaults:</span>
+<span style="color:#75715e"># - &#34;(read-string-hist \&#34;Explain BNF (bnf grammar): \&#34;)&#34;</span>
+<span style="color:#75715e"># - &#34;\&#34;program\&#34;&#34;</span>
+<span style="color:#f92672">examples</span>:
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;program&gt; ::= &lt;clause list&gt; &lt;query&gt; | &lt;query&gt;
+</span><span style="color:#e6db74">    &lt;clause list&gt; ::= &lt;clause&gt; | &lt;clause list&gt; &lt;clause&gt;
+</span><span style="color:#e6db74">    &lt;clause&gt; ::= &lt;predicate&gt; . | &lt;predicate&gt; :- &lt;predicate list&gt;.
+</span><span style="color:#e6db74">    &lt;predicate list&gt; ::= &lt;predicate&gt; | &lt;predicate list&gt; , &lt;predicate&gt;
+</span><span style="color:#e6db74">    &lt;predicate&gt; ::= &lt;atom&gt; | &lt;atom&gt; ( &lt;term list&gt; )
+</span><span style="color:#e6db74">    &lt;term list&gt; ::= &lt;term&gt; | &lt;term list&gt; , &lt;term&gt;
+</span><span style="color:#e6db74">    &lt;term&gt; ::= &lt;numeral&gt; | &lt;atom&gt; | &lt;variable&gt; | &lt;structure&gt;
+</span><span style="color:#e6db74">    &lt;structure&gt; ::= &lt;atom&gt; ( &lt;term list&gt; )
+</span><span style="color:#e6db74">    &lt;query&gt; ::= ?- &lt;predicate list&gt;.
+</span><span style="color:#e6db74">    &lt;atom&gt; ::= &lt;small atom&gt; | &#39; &lt;string&gt; &#39;
+</span><span style="color:#e6db74">    &lt;small atom&gt; ::= &lt;lowercase letter&gt; | &lt;small atom&gt; &lt;character&gt;
+</span><span style="color:#e6db74">    &lt;variable&gt; ::= &lt;uppercase letter&gt; | &lt;variable&gt; &lt;character&gt;
+</span><span style="color:#e6db74">    &lt;lowercase letter&gt; ::= a | b | c | ... | x | y | z
+</span><span style="color:#e6db74">    &lt;uppercase letter&gt; ::= A | B | C | ... | X | Y | Z | _
+</span><span style="color:#e6db74">    &lt;numeral&gt; ::= &lt;digit&gt; | &lt;numeral&gt; &lt;digit&gt;
+</span><span style="color:#e6db74">    &lt;digit&gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+</span><span style="color:#e6db74">    &lt;character&gt; ::= &lt;lowercase letter&gt; | &lt;uppercase letter&gt; | &lt;digit&gt; | &lt;special&gt;
+</span><span style="color:#e6db74">    &lt;special&gt; ::= + | - | * | / | \ | ^ | ~ | : | . | ? |  | # | $ | &amp;
+</span><span style="color:#e6db74">    &lt;string&gt; ::= &lt;character&gt; | &lt;string&gt; &lt;character&gt;</span>    
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="example-result">Example result</h2>
+<p>This is an example of the above grammar, which is Prolog.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">A program is either a clause list
+followed by a query, or a query
+alone.
+
+A clause list is either a clause,
+or a clause list followed by a
+clause.
+
+A clause is either a predicate
+followed by a period, or a
+predicate followed by a colon
+followed by a predicate list
+followed by a period.
+
+A predicate list is either a predicate,
+or a predicate list followed by a
+comma followed by a predicate.
+
+A predicate is either an atom,
+or an atom followed by an open
+parenthesis followed by a term
+list followed by a close
+parenthesis.
+
+A term list is either a term,
+or a term list followed by a comma
+followed by a term.
+
+A term is either a numeral,
+or an atom, or a variable, or a
+structure.
+
+A structure is either an atom
+followed by an open parenthesis
+followed by a term list followed by
+a close parenthesis.
+
+A query is either a question mark
+followed by a predicate list, or
+just a question mark.</code></pre></td></tr></table>
+</div>
+</div>
+<p>Another explanation:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">A program is either a clause list
+and a query, or just a query.
+
+A clause list is a sequence of clauses.
+A clause is either a predicate followed
+by a period, or a predicate followed by
+a &#34;:-&#34; followed by a predicate list.
+
+A predicate list is a sequence of predicates.
+A predicate is either an atom or an atom
+followed by an open parenthesis, followed
+by a term list, followed by a close
+parenthesis.
+
+A term list is a sequence of terms.
+A term is either a numeral, an atom, a
+variable, or a structure.
+
+A structure is either an atom followed by
+an open parenthesis, followed by a term list,
+followed by a close parenthesis.
+
+A query is either a &#34;?-&#34; followed by a
+predicate list, or just a predicate list.
+
+An atom is either a small atom or a quoted
+string.
+
+A small atom is either a lowercase letter,
+or a small atom followed by a character.
+
+A variable is either an uppercase letter,
+or a variable followed by a character.
+
+A numeral is either a single digit, or a
+numeral followed by a digit.
+
+A character is either a lowercase letter,
+an uppercase letter, a digit, or one of
+the following symbols: + - * / \ ^ ~ : . ? # $ &amp;
+
+A string is a character sequence surrounded
+by single quotes.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/L7dt9aaYcxcr06bLWNwQ349l7" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/L7dt9aaYcxcr06bLWNwQ349l7.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/L7dt9aaYcxcr06bLWNwQ349l7.js" id="asciicast-L7dt9aaYcxcr06bLWNwQ349l7" async></script>]]></content>
         </item>
         
         <item>
