@@ -52,6 +52,28 @@ The LSP client communicates with the LSP server.
 + http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el
 
 ** Demo
+Hovering over "The Anatomy of a Monad".
+
+[[./anatomy-of-monad.png]]
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  Notebook
+  The
+  The definite article used before a noun.
+
+  Anatomy
+  The branch of biology concerned with the study of the structure of organisms and their parts.
+
+  of
+  Indicating possession.
+
+  a
+  Used to form the plural of most nouns.
+
+  Monad
+  The smallest unit of matter that exists.
+#+END_SRC
+
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
