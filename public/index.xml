@@ -9,6 +9,19 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Demonstrating an LSP mode based on Codex with org-mode, and with code</title>
+      <link>http://semiosis.github.io/posts/demonstrating-an-lsp-mode-based-on-codex-with-org-mode-and-with-code/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/demonstrating-an-lsp-mode-based-on-codex-with-org-mode-and-with-code/</guid>
+      <description>Summary I just want to demonstrate what an LSP server based on Codex looks like.
+org-mode Demo  --  awk awk doesn&amp;rsquo;t have a language server, as far as I know. But we can add a Codex one.
+I&amp;rsquo;m not going to be bothered right now with tailoring prompts for awk.
+This is just a proof of concept.
+ --  All I&amp;rsquo;ve done here is copy the world-language context for awk, but I could easily customize it.</description>
+    </item>
+    
+    <item>
       <title>Generate transformative code with Codex</title>
       <link>http://semiosis.github.io/posts/generate-transformative-code-with-codex/</link>
       <pubDate>Mon, 18 Oct 2021 00:00:00 +1300</pubDate>
