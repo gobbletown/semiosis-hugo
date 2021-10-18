@@ -88,16 +88,16 @@ Hovering over "The Anatomy of a Monad".
   Notebook
   The
   The definite article used before a noun.
-  
+
   Anatomy
   The branch of biology concerned with the study of the structure of organisms and their parts.
-  
+
   of
   Indicating possession.
-  
+
   a
   Used to form the plural of most nouns.
-  
+
   Monad
   The smallest unit of matter that exists.
 #+END_SRC
@@ -109,5 +109,188 @@ Hovering over "The Anatomy of a Monad".
 <script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>
 #+END_EXPORT
 
+** Implementing completion
+*** Ensure pen can receive the POSITION
+Then remove the parts of the text which are
+not required, and forward the rest to the
+prompt function.
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  stdin_exists() {
+      ! [ -t 0 ] && ! test "$(readlink /proc/$$/fd/0)" = /dev/null
+  }
+
+  if stdin_exists; then
+      # 0</dev/null env | tv &>/dev/null
+      # cmd "$@" | tv &>/dev/null
+
+      input_fp="$(cat | tf txt)"
+
+      if test -n "$POSITION"; then
+          line="$(echo "$POSITION" | cut -d : -f 1)"
+          col="$(echo "$POSITION" | cut -d : -f 2)"
+
+          this_line="$(( line + 1 ))"
+          next_line="$(( line + 2 ))"
+
+          sed -i "$next_line,\$d" "$input_fp"
+          sed -i "${this_line}s/^\\(.\\{$col\\}\\).*\$/\\1/" "$input_fp"
+      fi
+
+      exec < <(cat "$input_fp")
+  fi
+#+END_SRC
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  tools:
+    pen-world-language-completion: &pen-world-language-completion
+      # completion-command: 'ci penf pf-generic-completion-50-tokens/1'
+      completion-command: 'POSITION=${POSITION} penf -u pf-generic-completion-50-tokens/1'
+      completion-stdin: true
+#+END_SRC
+
+*** Study the racket language server
+- see how output is formed
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  #!/bin/bash
+  export TTY
+
+  # raco pkg update --batch racket-langserver
+
+  if myrc-test ask_view_racket_lsp; then
+      tm yn "view stdin?" && exec < <(tmicat)
+      tm yn "view stdout?" && exec 1> >(tmicat)
+  elif myrc-test ask_log_racket_lsp; then
+      tm yn "log stdin?" && {
+          tf_in="$(ux tf in || echo /dev/null)"
+          exec < <(tee "$tf_in")
+          0</dev/null sps -E "$(cmd-nice v "$tf_in")"
+      }
+      tm yn "log stdout?" && {
+          tf_out="$(ux tf out || echo /dev/null)"
+          exec 1> >(tee "$tf_out")
+          0</dev/null sps -E "$(cmd-nice v "$tf_out")"
+      }
+  elif myrc-test ask_arbitrate_racket_lsp; then
+      tm yn "arbitrate stdin?" && exec < <(tmi)
+      tm yn "arbitrate stdout?" && exec 1> >(tmi)
+  fi
+
+  "racket" "--lib" "racket-langserver" "$@"
+#+END_SRC
+
+/*examining racket langserver output*/
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/RiJqI0j6SYzc0JJXsWcIwl9d0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/RiJqI0j6SYzc0JJXsWcIwl9d0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/RiJqI0j6SYzc0JJXsWcIwl9d0.js" id="asciicast-RiJqI0j6SYzc0JJXsWcIwl9d0" async></script>
+#+END_EXPORT
+
+This =json= was sent by the client to the server:
+
+#+BEGIN_SRC json -n :async :results verbatim code
+  {
+    "jsonrpc": "2.0",
+    "method": "textDocument/completion",
+    "params": {
+      "textDocument": {
+        "uri": "file:///home/shane/scripts/glob-grep.rkt"
+      },
+      "position": {
+        "line": 3,
+        "character": 4
+      },
+      "context": {
+        "triggerKind": 1
+      }
+    },
+    "id": 126
+  }
+#+END_SRC
+
+The following json was returned by the server:
+
+The =json= that comes back isn't really
+the completions yet. I think they're what's
+considered int the same scope as the
+identifier being completed.
+
+The original list was very long.
+
+#+BEGIN_SRC json -n :async :results verbatim code
+  {
+    "jsonrpc": "2.0",
+    "id": 10,
+    "result": [
+      {
+        "label": "directory-exists?"
+      },
+      {
+        "label": "nack-guard-evt"
+      },
+      {
+        "label": "procedure->method"
+      }
+    ]
+  }
+#+END_SRC
+
+** Generating =jq=
+- https://mullikine.github.io/posts/codex-is-reversible-computing-exemplified/
+
+I decided that I wouldn't try to write the
+=jq= for this myself, but rather rely on Codex
+for it.
+
+*** I want to create something like the following
+- However, I don't have the =LOCATION_URI=.
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  export NAME="port->"
+  export KIND=13
+  export LOCATION_URI="file:///home/shane/scripts/glob-grep.rkt"
+  export LOCATION_RANGE_END_CHARACTER=8
+  export LOCATION_RANGE_END_LINE=3
+  export LOCATION_RANGE_START_CHARACTER=2
+  export LOCATION_RANGE_START_LINE=3
+  jq -n '{jsonrpc: "2.0", id: 2896, result: [{name: env.NAME, kind: env.KIND, location: {uri: env.LOCATION_URI, range: {end: {character: env.LOCATION_RANGE_END_CHARACTER, line: env.LOCATION_RANGE_END_LINE}, start: {character: env.LOCATION_RANGE_START_CHARACTER, line: env.LOCATION_RANGE_START_LINE}}}}]}'
+#+END_SRC
+
+** =pen-lsp-complete=
+*** =shell= script
+- http://github.com/semiosis/pen.el/blob/master/scripts/pen-lsp-complete
+
+*** =emacs lisp=
+Because =efm-langserver= expects one
+completion per line from the shell script is
+uses (rather than json), I had to make a
+workaround.
+
+When I provide =efm-langserver= with
+completion candidates, I =one-linerize= them by replacing "\n" with =<pen-newline>=.
+
+Since =efm-langserver= is not providing the
+appropriate =textEdit= to unonlinerize, I have
+to do it myself in =company-lsp=.
+
+Unfortunately, =company-lsp= uses lexical
+scope, so I had to copy the entire file across
+and rename it to add the functionality.
+
+https://github.com/semiosis/pen.el/blob/master/src/pen-company-lsp.el#L346
+
 ** Final product
-EFM Langserver is also built into the Pen.el docker image.
+*** Demo
+This is a demo of both documentation and completion using the Pen.el language server.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/aeYBHe2oWZ7bsZFARGEBGyVq3" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/aeYBHe2oWZ7bsZFARGEBGyVq3.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/aeYBHe2oWZ7bsZFARGEBGyVq3.js" id="asciicast-aeYBHe2oWZ7bsZFARGEBGyVq3" async></script>
+#+END_EXPORT
+
+*** Built into the docker image
+EFM Langserver is also built into the Pen.el
+docker image.
