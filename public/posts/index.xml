@@ -354,8 +354,291 @@ The smallest unit of matter that exists.</code></pre></td></tr></table>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/qCTVSRGZgUZruwuiW1JVaNI6t.js" id="asciicast-qCTVSRGZgUZruwuiW1JVaNI6t" async></script>
+<h2 id="implementing-completion">Implementing completion</h2>
+<h3 id="ensure-pen-can-receive-the-position">Ensure pen can receive the POSITION</h3>
+<p>Then remove the parts of the text which are
+not required, and forward the rest to the
+prompt function.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stdin_exists<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    ! <span style="color:#f92672">[</span> -t <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> ! test <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>readlink /proc/$$/fd/0<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> /dev/null
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">if</span> stdin_exists; <span style="color:#66d9ef">then</span>
+    <span style="color:#75715e"># 0&lt;/dev/null env | tv &amp;&gt;/dev/null</span>
+    <span style="color:#75715e"># cmd &#34;$@&#34; | tv &amp;&gt;/dev/null</span>
+
+    input_fp<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cat | tf txt<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+    <span style="color:#66d9ef">if</span> test -n <span style="color:#e6db74">&#34;</span>$POSITION<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
+        line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$POSITION<span style="color:#e6db74">&#34;</span> | cut -d : -f 1<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$POSITION<span style="color:#e6db74">&#34;</span> | cut -d : -f 2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+        this_line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$((</span> line <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;</span>
+        next_line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$((</span> line <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;</span>
+
+        sed -i <span style="color:#e6db74">&#34;</span>$next_line<span style="color:#e6db74">,\$d&#34;</span> <span style="color:#e6db74">&#34;</span>$input_fp<span style="color:#e6db74">&#34;</span>
+        sed -i <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>this_line<span style="color:#e6db74">}</span><span style="color:#e6db74">s/^\\(.\\{</span>$col<span style="color:#e6db74">\\}\\).*\$/\\1/&#34;</span> <span style="color:#e6db74">&#34;</span>$input_fp<span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">fi</span>
+
+    exec &lt; &lt;<span style="color:#f92672">(</span>cat <span style="color:#e6db74">&#34;</span>$input_fp<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">fi</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tools</span>:
+  <span style="color:#f92672">pen-world-language-completion</span>: <span style="color:#75715e">&amp;pen-world-language-completion</span>
+    <span style="color:#75715e"># completion-command: &#39;ci penf pf-generic-completion-50-tokens/1&#39;</span>
+    <span style="color:#f92672">completion-command</span>: <span style="color:#e6db74">&#39;POSITION=${POSITION} penf -u pf-generic-completion-50-tokens/1&#39;</span>
+    <span style="color:#f92672">completion-stdin</span>: <span style="color:#66d9ef">true</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="study-the-racket-language-server">Study the racket language server</h3>
+<ul>
+<li>see how output is formed</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export TTY
+
+<span style="color:#75715e"># raco pkg update --batch racket-langserver</span>
+
+<span style="color:#66d9ef">if</span> myrc-test ask_view_racket_lsp; <span style="color:#66d9ef">then</span>
+    tm yn <span style="color:#e6db74">&#34;view stdin?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exec &lt; &lt;<span style="color:#f92672">(</span>tmicat<span style="color:#f92672">)</span>
+    tm yn <span style="color:#e6db74">&#34;view stdout?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exec 1&gt; &gt;<span style="color:#f92672">(</span>tmicat<span style="color:#f92672">)</span>
+<span style="color:#66d9ef">elif</span> myrc-test ask_log_racket_lsp; <span style="color:#66d9ef">then</span>
+    tm yn <span style="color:#e6db74">&#34;log stdin?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">{</span>
+        tf_in<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ux tf in <span style="color:#f92672">||</span> echo /dev/null<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        exec &lt; &lt;<span style="color:#f92672">(</span>tee <span style="color:#e6db74">&#34;</span>$tf_in<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+        0&lt;/dev/null sps -E <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cmd-nice v <span style="color:#e6db74">&#34;</span>$tf_in<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#f92672">}</span>
+    tm yn <span style="color:#e6db74">&#34;log stdout?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">{</span>
+        tf_out<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ux tf out <span style="color:#f92672">||</span> echo /dev/null<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        exec 1&gt; &gt;<span style="color:#f92672">(</span>tee <span style="color:#e6db74">&#34;</span>$tf_out<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+        0&lt;/dev/null sps -E <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cmd-nice v <span style="color:#e6db74">&#34;</span>$tf_out<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#66d9ef">elif</span> myrc-test ask_arbitrate_racket_lsp; <span style="color:#66d9ef">then</span>
+    tm yn <span style="color:#e6db74">&#34;arbitrate stdin?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exec &lt; &lt;<span style="color:#f92672">(</span>tmi<span style="color:#f92672">)</span>
+    tm yn <span style="color:#e6db74">&#34;arbitrate stdout?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exec 1&gt; &gt;<span style="color:#f92672">(</span>tmi<span style="color:#f92672">)</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#e6db74">&#34;racket&#34;</span> <span style="color:#e6db74">&#34;--lib&#34;</span> <span style="color:#e6db74">&#34;racket-langserver&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><em><strong>examining racket langserver output</strong></em></p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/RiJqI0j6SYzc0JJXsWcIwl9d0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/RiJqI0j6SYzc0JJXsWcIwl9d0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/RiJqI0j6SYzc0JJXsWcIwl9d0.js" id="asciicast-RiJqI0j6SYzc0JJXsWcIwl9d0" async></script>
+<p>This <code>json</code> was sent by the client to the server:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;jsonrpc&#34;</span>: <span style="color:#e6db74">&#34;2.0&#34;</span>,
+  <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;textDocument/completion&#34;</span>,
+  <span style="color:#f92672">&#34;params&#34;</span>: {
+    <span style="color:#f92672">&#34;textDocument&#34;</span>: {
+      <span style="color:#f92672">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;file:///home/shane/scripts/glob-grep.rkt&#34;</span>
+    },
+    <span style="color:#f92672">&#34;position&#34;</span>: {
+      <span style="color:#f92672">&#34;line&#34;</span>: <span style="color:#ae81ff">3</span>,
+      <span style="color:#f92672">&#34;character&#34;</span>: <span style="color:#ae81ff">4</span>
+    },
+    <span style="color:#f92672">&#34;context&#34;</span>: {
+      <span style="color:#f92672">&#34;triggerKind&#34;</span>: <span style="color:#ae81ff">1</span>
+    }
+  },
+  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">126</span>
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>The following json was returned by the server:</p>
+<p>The <code>json</code> that comes back isn&rsquo;t really
+the completions yet. I think they&rsquo;re what&rsquo;s
+considered int the same scope as the
+identifier being completed.</p>
+<p>The original list was very long.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;jsonrpc&#34;</span>: <span style="color:#e6db74">&#34;2.0&#34;</span>,
+  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">10</span>,
+  <span style="color:#f92672">&#34;result&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;directory-exists?&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;nack-guard-evt&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;procedure-&gt;method&#34;</span>
+    }
+  ]
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="generating-jq">Generating <code>jq</code></h2>
+<ul>
+<li><a href="https://mullikine.github.io/posts/codex-is-reversible-computing-exemplified/">https://mullikine.github.io/posts/codex-is-reversible-computing-exemplified/</a></li>
+</ul>
+<p>I decided that I wouldn&rsquo;t try to write the
+<code>jq</code> for this myself, but rather rely on Codex
+for it.</p>
+<h3 id="i-want-to-create-something-like-the-following">I want to create something like the following</h3>
+<ul>
+<li>However, I don&rsquo;t have the <code>LOCATION_URI</code>.</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;port-&gt;&#34;</span>
+export KIND<span style="color:#f92672">=</span><span style="color:#ae81ff">13</span>
+export LOCATION_URI<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///home/shane/scripts/glob-grep.rkt&#34;</span>
+export LOCATION_RANGE_END_CHARACTER<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>
+export LOCATION_RANGE_END_LINE<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+export LOCATION_RANGE_START_CHARACTER<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+export LOCATION_RANGE_START_LINE<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+jq -n <span style="color:#e6db74">&#39;{jsonrpc: &#34;2.0&#34;, id: 2896, result: [{name: env.NAME, kind: env.KIND, location: {uri: env.LOCATION_URI, range: {end: {character: env.LOCATION_RANGE_END_CHARACTER, line: env.LOCATION_RANGE_END_LINE}, start: {character: env.LOCATION_RANGE_START_CHARACTER, line: env.LOCATION_RANGE_START_LINE}}}}]}&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="pen-lsp-complete"><code>pen-lsp-complete</code></h2>
+<h3 id="shell-script"><code>shell</code> script</h3>
+<ul>
+<li><a href="http://github.com/semiosis/pen.el/blob/master/scripts/pen-lsp-complete">http://github.com/semiosis/pen.el/blob/master/scripts/pen-lsp-complete</a></li>
+</ul>
+<h3 id="emacs-lisp"><code>emacs lisp</code></h3>
+<p>Because <code>efm-langserver</code> expects one
+completion per line from the shell script is
+uses (rather than json), I had to make a
+workaround.</p>
+<p>When I provide <code>efm-langserver</code> with
+completion candidates, I <code>one-linerize</code> them by replacing &ldquo;\n&rdquo; with <code>&lt;pen-newline&gt;</code>.</p>
+<p>Since <code>efm-langserver</code> is not providing the
+appropriate <code>textEdit</code> to unonlinerize, I have
+to do it myself in <code>company-lsp</code>.</p>
+<p>Unfortunately, <code>company-lsp</code> uses lexical
+scope, so I had to copy the entire file across
+and rename it to add the functionality.</p>
+<p><a href="https://github.com/semiosis/pen.el/blob/master/src/pen-company-lsp.el#L346">https://github.com/semiosis/pen.el/blob/master/src/pen-company-lsp.el#L346</a></p>
 <h2 id="final-product">Final product</h2>
-<p>EFM Langserver is also built into the Pen.el docker image.</p>
+<h3 id="demo">Demo</h3>
+<p>This is a demo of both documentation and completion using the Pen.el language server.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/aeYBHe2oWZ7bsZFARGEBGyVq3" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/aeYBHe2oWZ7bsZFARGEBGyVq3.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/aeYBHe2oWZ7bsZFARGEBGyVq3.js" id="asciicast-aeYBHe2oWZ7bsZFARGEBGyVq3" async></script>
+<h3 id="built-into-the-docker-image">Built into the docker image</h3>
+<p>EFM Langserver is also built into the Pen.el
+docker image.</p>
 ]]></content>
         </item>
         
