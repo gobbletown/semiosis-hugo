@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Translate the code you&#39;re reading into your fav language</title>
+      <link>http://semiosis.github.io/posts/translate-the-code-you-re-reading-into-your-fav-language/</link>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/translate-the-code-you-re-reading-into-your-fav-language/</guid>
+      <description>Summary The idea is you have a favourite programming language and while reading code you don&amp;rsquo;t understand you want a default language to translate into.
+elisp 1 2 3 4 5 6 7 8 9 10 11  (defcustom pen-fav-programming-language &amp;#34;&amp;#34; &amp;#34;By setting pen-fav-programming-language, you set a default language to translate into. This is useful for code-understanding when reading languages you don&amp;#39;t understand. | =H-\&amp;#34; U= | =dff-pf-transpile-3-nil-nil-emacs-lisp-= | =pen-map= &amp;#34; :type &amp;#39;string :group &amp;#39;pen :initialize #&amp;#39;custom-initialize-default) ;; U is for understand (define-key pen-map (kbd &amp;#34;H-\&amp;#34; U&amp;#34;) (dff (etv (pf-transpile/3 nil nil (sor pen-fav-programming-language)))))   Demo  --  What does this Go code do?</description>
+    </item>
+    
     <item>
       <title>Demonstrating an LSP mode based on Codex with org-mode, and with code</title>
       <link>http://semiosis.github.io/posts/demonstrating-an-lsp-mode-based-on-codex-with-org-mode-and-with-code/</link>

@@ -6,8 +6,141 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Translate the code you&#39;re reading into your fav language</title>
+            <link>http://semiosis.github.io/posts/translate-the-code-you-re-reading-into-your-fav-language/</link>
+            <pubDate>Tue, 19 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/translate-the-code-you-re-reading-into-your-fav-language/</guid>
+            <description>Summary The idea is you have a favourite programming language and while reading code you don&amp;rsquo;t understand you want a default language to translate into.
+elisp 1 2 3 4 5 6 7 8 9 10 11  (defcustom pen-fav-programming-language &amp;#34;&amp;#34; &amp;#34;By setting pen-fav-programming-language, you set a default language to translate into. This is useful for code-understanding when reading languages you don&amp;#39;t understand. | =H-\&amp;#34; U= | =dff-pf-transpile-3-nil-nil-emacs-lisp-= | =pen-map= &amp;#34; :type &amp;#39;string :group &amp;#39;pen :initialize #&amp;#39;custom-initialize-default) ;; U is for understand (define-key pen-map (kbd &amp;#34;H-\&amp;#34; U&amp;#34;) (dff (etv (pf-transpile/3 nil nil (sor pen-fav-programming-language)))))   Demo  --  What does this Go code do?</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>The idea is you have a favourite programming
+language and while reading code you don&rsquo;t
+understand you want a default language to
+translate into.</p>
+<h2 id="elisp">elisp</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defcustom pen-fav-programming-language <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#e6db74">&#34;By setting pen-fav-programming-language, you set a default language to translate into.
+</span><span style="color:#e6db74">This is useful for code-understanding when reading languages you don&#39;t understand.
+</span><span style="color:#e6db74">| =H-\&#34; U= | =dff-pf-transpile-3-nil-nil-emacs-lisp-= | =pen-map=
+</span><span style="color:#e6db74">&#34;</span>
+  :type <span style="color:#e6db74">&#39;string</span>
+  :group <span style="color:#e6db74">&#39;pen</span>
+  :initialize <span style="color:#a6e22e">#&#39;</span>custom-initialize-default)
+
+<span style="color:#75715e">;; U is for understand</span>
+(<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-\&#34; U&#34;</span>) (dff (etv (pf-transpile/3 <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> (sor pen-fav-programming-language)))))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/cgN7wDVzbJLhHUeP5d9EpwoBm" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/cgN7wDVzbJLhHUeP5d9EpwoBm.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/cgN7wDVzbJLhHUeP5d9EpwoBm.js" id="asciicast-cgN7wDVzbJLhHUeP5d9EpwoBm" async></script>
+<h3 id="what-does-this-go-code-do">What does this Go code do?</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">filterCommands</span>(<span style="color:#a6e22e">uri</span> <span style="color:#a6e22e">DocumentURI</span>, <span style="color:#a6e22e">commands</span> []<span style="color:#a6e22e">Command</span>) []<span style="color:#a6e22e">Command</span> {
+  <span style="color:#a6e22e">results</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">Command</span>{}
+  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">commands</span> {
+  	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">OS</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+  		<span style="color:#a6e22e">found</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
+  		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">os</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">FieldsFunc</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">OS</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">r</span> <span style="color:#66d9ef">rune</span>) <span style="color:#66d9ef">bool</span> { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;,&#39;</span> }) {
+  			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimSpace</span>(<span style="color:#a6e22e">os</span>) <span style="color:#f92672">==</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">GOOS</span> {
+  				<span style="color:#a6e22e">found</span> = <span style="color:#66d9ef">true</span>
+  			}
+  		}
+  		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">found</span> {
+  			<span style="color:#66d9ef">continue</span>
+  		}
+  	}
+  	<span style="color:#a6e22e">results</span> = append(<span style="color:#a6e22e">results</span>, <span style="color:#a6e22e">Command</span>{
+  		<span style="color:#a6e22e">Title</span>:     <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Title</span>,
+  		<span style="color:#a6e22e">Command</span>:   <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;efm-langserver\t%s\t%s&#34;</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Command</span>, string(<span style="color:#a6e22e">uri</span>)),
+  		<span style="color:#a6e22e">Arguments</span>: []<span style="color:#66d9ef">interface</span>{}{string(<span style="color:#a6e22e">uri</span>)},
+  	})
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">results</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ahhh-elisp--that-makes-sense-now">Ahhh, Elisp :) That makes sense now</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun filter-commands (uri commands)
+  (let (results)
+    (dolist (v commands)
+      (when (and (not (string-empty-p v))
+                 (not (string-empty-p v.os)))
+        (let ((os (split-string v.os <span style="color:#e6db74">&#34;,&#34;</span>)))
+          (when (<span style="color:#a6e22e">member</span> (or (getenv <span style="color:#e6db74">&#34;GOOS&#34;</span>) <span style="color:#e6db74">&#34;&#34;</span>) os)
+            (push (<span style="color:#a6e22e">list</span> :title v.title
+                        :command (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;efm-langserver %s %s&#34;</span> v.command uri)
+                        :arguments (<span style="color:#a6e22e">list</span> uri))
+                  results)))))
+    results))</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Demonstrating an LSP mode based on Codex with org-mode, and with code</title>
