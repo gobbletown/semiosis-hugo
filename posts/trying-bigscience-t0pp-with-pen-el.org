@@ -19,8 +19,9 @@ There are also some whitespace limitations.
 
 + huggingface :: https://api-inference.huggingface.co/docs/python/html/quicktour.html#using-large-models-10-go
 
-** Pen code
-+ https://github.com/semiosis/pen.el/
+** Code
++ Pen.el https://github.com/semiosis/pen.el/
++ engine :: http://github.com/semiosis/engines/blob/master/engines/hf-bigscience-t0pp.engine
 
 ** Demo
 #+BEGIN_EXPORT html
