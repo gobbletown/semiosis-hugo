@@ -17,7 +17,7 @@
       <description>Summary I integrate T0pp into Pen.el via the huggingface inference API, and try it out on some things.
 It&amp;rsquo;s nice and fast but very narrow compared to GPT-3.
 There are also some whitespace limitations.
- huggingface https://api-inference.huggingface.co/docs/python/html/quicktour.html#using-large-models-10-go  Pen code  https://github.com/semiosis/pen.el/  Demo  --  Engine 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  engine-title: bigscience T0pp include: HuggingFace engine-doc: |+T0* is a series of encoder-decoder models trained on a large set of different tasks specified in NL prompts.</description>
+ huggingface https://api-inference.huggingface.co/docs/python/html/quicktour.html#using-large-models-10-go  Code  Pen.el https://github.com/semiosis/pen.el/ http://github.com/semiosis/engines/blob/master/engines/hf-bigscience-t0pp.engine  Demo  --  Engine 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  engine-title: bigscience T0pp include: HuggingFace engine-doc: |+T0* is a series of encoder-decoder models trained on a large set of different tasks specified in NL prompts.</description>
     </item>
     
     <item>

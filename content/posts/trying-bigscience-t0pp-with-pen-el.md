@@ -19,9 +19,10 @@ huggingface
 : <https://api-inference.huggingface.co/docs/python/html/quicktour.html#using-large-models-10-go>
 
 
-## Pen code {#pen-code}
+## Code {#code}
 
--   <https://github.com/semiosis/pen.el/>
+-   Pen.el <https://github.com/semiosis/pen.el/>
+-   <http://github.com/semiosis/engines/blob/master/engines/hf-bigscience-t0pp.engine>
 
 
 ## Demo {#demo}
