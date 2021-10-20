@@ -6,8 +6,275 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Trying bigscience T0pp with Pen.el</title>
+            <link>http://semiosis.github.io/posts/trying-bigscience-t0pp-with-pen-el/</link>
+            <pubDate>Wed, 20 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/trying-bigscience-t0pp-with-pen-el/</guid>
+            <description>Summary I integrate T0pp into Pen.el via the huggingface inference API, and try it out on some things.
+It&amp;rsquo;s nice and fast but very narrow compared to GPT-3.
+There are also some whitespace limitations.
+ huggingface https://api-inference.huggingface.co/docs/python/html/quicktour.html#using-large-models-10-go  Pen code  https://github.com/semiosis/pen.el/  Demo  --  Engine 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  engine-title: bigscience T0pp include: HuggingFace engine-doc: |+T0* is a series of encoder-decoder models trained on a large set of different tasks specified in NL prompts.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I integrate T0pp into Pen.el via the
+<code>huggingface</code> inference API, and try it out on some things.</p>
+<p>It&rsquo;s nice and fast but very narrow compared to GPT-3.</p>
+<p>There are also some whitespace limitations.</p>
+<dl>
+<dt>huggingface</dt>
+<dd><a href="https://api-inference.huggingface.co/docs/python/html/quicktour.html#using-large-models-10-go">https://api-inference.huggingface.co/docs/python/html/quicktour.html#using-large-models-10-go</a></dd>
+</dl>
+<h2 id="pen-code">Pen code</h2>
+<ul>
+<li><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></li>
+</ul>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/P2pIxqEclot2qHw9GHLh93vqk" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/P2pIxqEclot2qHw9GHLh93vqk.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/P2pIxqEclot2qHw9GHLh93vqk.js" id="asciicast-P2pIxqEclot2qHw9GHLh93vqk" async></script>
+<h2 id="engine">Engine</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">engine-title</span>: <span style="color:#ae81ff">bigscience T0pp</span>
+<span style="color:#f92672">include</span>: <span style="color:#ae81ff">HuggingFace</span>
+<span style="color:#f92672">engine-doc</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    T0* is a series of encoder-decoder models
+</span><span style="color:#e6db74">    trained on a large set of different tasks
+</span><span style="color:#e6db74">    specified in NL prompts. We convert
+</span><span style="color:#e6db74">    numerous English supervised datasets into
+</span><span style="color:#e6db74">    prompts, each with multiple templates
+</span><span style="color:#e6db74">    using varying formulations. These prompted
+</span><span style="color:#e6db74">    datasets allow for benchmarking the
+</span><span style="color:#e6db74">    ability of a model to perform completely
+</span><span style="color:#e6db74">    unseen tasks specified in NL. To obtain
+</span><span style="color:#e6db74">    T0*, we fine-tune a pretrained LM on this
+</span><span style="color:#e6db74">    multitask mixture covering many different
+</span><span style="color:#e6db74">    NLP tasks.</span>    
+<span style="color:#f92672">model</span>: <span style="color:#ae81ff">bigscience/T0pp</span>
+<span style="color:#f92672">engine-whitespace-support</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">engine-strips-gen-starting-whitespace</span>: <span style="color:#66d9ef">yes</span>
+<span style="color:#f92672">foundation</span>: <span style="color:#66d9ef">no</span>
+<span style="color:#f92672">layers</span>:
+- <span style="color:#ae81ff">foundation</span>
+<span style="color:#f92672">libre</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">engine-links</span>:
+- <span style="color:#e6db74">&#34;https://huggingface.co/bigscience/T0pp&#34;</span>
+<span style="color:#f92672">cant-n-complete</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">envs</span>:
+- <span style="color:#f92672">NO_PARAMETERS</span>: <span style="color:#e6db74">&#34;y&#34;</span>
+- <span style="color:#f92672">REMOVE_PROMPT_FROM_GEN</span>: <span style="color:#e6db74">&#34;y&#34;</span>
+
+<span style="color:#f92672">repetition-penalty</span>: <span style="color:#ae81ff">1.0</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="basic-autocompletion">Basic autocompletion</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate.</code></pre></td></tr></table>
+</div>
+</div>
+<p>I made 10 separate completions of this. It
+looks like the default parameter for the
+HuggingFace inference API is completely
+deterministic (i.e. temperature=0, or cached)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.
+Hello there, I&#39;m a student at the University
+of Michigan. I&#39;m a part of the Moose lodge,
+and I&#39;m looking for a roommate. I&#39;m looking for a roommate for the fall semester.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="fact-testing">Fact testing</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">What is the capital of Finland? Helsinki</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">What is the colour of water? blue</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">What is the best way to skin a cat? cut the cat into pieces and then skin them.</code></pre></td></tr></table>
+</div>
+</div>
+<p>Eww.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">What is the meaning of life? to live a life of meaning</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="try-completing-between-other-text">Try completing between other text</h3>
+<p>Ok, I will try but with the babel text in
+context. Since, I think the inference is not
+very good between tasks. I think the model is
+not trained to see arbitrary text.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Can a human fly? University of Michigan</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">What can fly? University of Michigan</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">What do I do with myself? Hello there, I&#39;m a
+student at the University of Michigan. I&#39;m a
+part of the Moose lodge, and I&#39;m looking for a
+roommate. I&#39;m looking for a roommate for the
+fall semester.</code></pre></td></tr></table>
+</div>
+</div>
+<p>It appears that it looks at the beginning of
+the prompt for its generation task, not the
+end!</p>
+<h2 id="can-i-make-pick-up-lines">Can I make pick-up lines?</h2>
+<p>No, but it did manage to copy one out of the prompt that I used!</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">If I said you had a purrfect body, would you hold it against me?</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="can-i-do-imaginary-programming-with-it">Can I do imaginary programming with it?</h2>
+<p>LOL, I won&rsquo;t try.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Translate the code you&#39;re reading into your fav language</title>
