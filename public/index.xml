@@ -9,6 +9,18 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A suite of default functions for Pen.el</title>
+      <link>http://semiosis.github.io/posts/a-suite-of-default-functions-for-pen-el/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/a-suite-of-default-functions-for-pen-el/</guid>
+      <description>Summary I showcase some UI functions for Pen.el. This is what a futuristic IDE based on LMs looks like!
+Customizing Pen.el M-x pen-customize This is how to interact with the current list of configuration parameters.
+Select to force all prompts to use the same engine, for example!
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  Reasonable defaults OpenAI OpenAI Davinci Instruct OpenAI Davinci OpenAI Cushman OpenAI Curie OpenAI Codex OpenAI Babbage NLP Cloud HuggingFace HF NovelAI Genji Python 6B HuggingFace GPT-2 bigscience T0pp local GPT-J-6B slim AIx GPT-J-6B FB Bart Large CNN AI21 J1-Jumbo AI21    --  Set key bindings   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74  (setq pen-fav-programming-language &amp;#34;Emacs Lisp&amp;#34;) (setq pen-fav-world-language &amp;#34;English&amp;#34;) ;; Actually, I want to run prompts this way ;; C-M-i is the same as M-C-i.</description>
+    </item>
+    
+    <item>
       <title>Trying bigscience T0pp with Pen.el</title>
       <link>http://semiosis.github.io/posts/trying-bigscience-t0pp-with-pen-el/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +1300</pubDate>
