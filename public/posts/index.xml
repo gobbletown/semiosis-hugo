@@ -6,8 +6,69 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sat, 23 Oct 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Who&#39;s Line is it Anyway, with GPT-3</title>
+            <link>http://semiosis.github.io/posts/who-s-line-is-it-anyway-with-gpt-3/</link>
+            <pubDate>Sat, 23 Oct 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/who-s-line-is-it-anyway-with-gpt-3/</guid>
+            <description>Summary GPT-3 can do humour but you need to know how to evoke it.
+1 2 3 4 5 6  This is a script from Who&amp;#39;s Line is it Anyway? Things you can say about a film but not your partner: Wayne Brady: I&amp;#39;m bored. That was way too long. Extra: I can&amp;#39;t believe how easy it was to get in here! Colin Mochrie:   It actually got Brad Sherwood.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>GPT-3 can do humour but you need to know how to evoke it.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">This is a script from Who&#39;s Line is it Anyway?
+
+Things you can say about a film but not your partner:
+Wayne Brady: I&#39;m bored. That was way too long.
+Extra: I can&#39;t believe how easy it was to get in here!
+Colin Mochrie:</code></pre></td></tr></table>
+</div>
+</div>
+<p>It actually got <code>Brad Sherwood</code>.</p>
+<h2 id="results">Results</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">This is a script from Who&#39;s Line is it Anyway?
+
+Things you can say about a film but not your partner:
+Wayne Brady: I&#39;m bored. That was way too long.
+Extra: I can&#39;t believe how easy it was to get in here!
+Colin Mochrie: I thought it was good up until the last five minutes.
+Ryan Stiles: You didn&#39;t watch the whole thing did you?
+Drew Carey: You&#39;re gonna regret this in the morning.
+Brad Sherwood: I was so distracted by your snoring.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/BL0mFDvqOuWizv65J74gQgcwb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/BL0mFDvqOuWizv65J74gQgcwb.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/BL0mFDvqOuWizv65J74gQgcwb.js" id="asciicast-BL0mFDvqOuWizv65J74gQgcwb" async></script>]]></content>
+        </item>
         
         <item>
             <title>A suite of default functions for Pen.el</title>
