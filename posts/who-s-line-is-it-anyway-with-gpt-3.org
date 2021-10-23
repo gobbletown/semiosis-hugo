@@ -1,0 +1,46 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: Who's Line is it Anyway, with GPT-3
+#+DATE: <2021-10-23>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: openai gpt-3
+
+** Summary
+
+GPT-3 can do humour but you need to know how to evoke it.
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  This is a script from Who's Line is it Anyway?
+  
+  Things you can say about a film but not your partner:
+  Wayne Brady: I'm bored. That was way too long.
+  Extra: I can't believe how easy it was to get in here!
+  Colin Mochrie: 
+#+END_SRC
+
+It actually got =Brad Sherwood=.
+
+** Results
+#+BEGIN_SRC text -n :async :results verbatim code
+  This is a script from Who's Line is it Anyway?
+  
+  Things you can say about a film but not your partner:
+  Wayne Brady: I'm bored. That was way too long.
+  Extra: I can't believe how easy it was to get in here!
+  Colin Mochrie: I thought it was good up until the last five minutes.
+  Ryan Stiles: You didn't watch the whole thing did you?
+  Drew Carey: You're gonna regret this in the morning.
+  Brad Sherwood: I was so distracted by your snoring.
+#+END_SRC
+
+** Demo
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/BL0mFDvqOuWizv65J74gQgcwb" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/BL0mFDvqOuWizv65J74gQgcwb.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/BL0mFDvqOuWizv65J74gQgcwb.js" id="asciicast-BL0mFDvqOuWizv65J74gQgcwb" async></script>
+#+END_EXPORT
