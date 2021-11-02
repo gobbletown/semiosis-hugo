@@ -131,9 +131,39 @@ form she will always try.
 I want to use this to experiment with tri-modal
 prompts (Text + Image + Image).
 
--   Easy questions I could ask the AI:
+
+### Description {#description}
+
+One literal interpretation
+: A strong black
+    woman wears a ribbon over her eyes and
+    comfortably tucked behind her ears, as if
+    wearing it is part of her routine, in full
+    light of day.
+
+    The ribbon is supposedly harmless and she
+    can see through it, but she values its
+    direction more than her own.
+
+    Her hair is neatly tied so the ribbon is
+    unobstructed to prompt her whichever way to
+    look or rather, way to walk.
+
+    She doesn't know who holds the ends or who
+    gives her direction. She trusts the ribbon.- Easy questions I could ask the AI:
+
     -   What is the name of this artwork?
     -   What does the full picture look like?
+
+
+### _**Semi-blind**_ {#semi-blind}
+
+{{< figure src="/ox-hugo/149610795_852720085510722_7762625424216125088_n.jpg" >}}
+
+
+### _**Semi-bound**_ {#semi-bound}
+
+{{< figure src="/ox-hugo/148957104_4062416750455469_4718804921220743845_n.jpg" >}}
 
 -   Questions I have:
     -   Is she aware that she is tangled in the ribbon?
@@ -145,16 +175,8 @@ prompts (Text + Image + Image).
     -   What are the most relevant symbols?
         -   Expecting the AI to associate the imagery with symbolism (i.e. referring to the signified).
 
--   A strong black woman
-    wears a ribbon over her eyes and comfortably
-    tucked behind her ears. She doesn't appear
-    to be struggling.
 
-    She can see through it but also to
-    prompt her to tilt her head after. Her hair
-    is neatly tied so the ribbon is unobstructed. It may be her way of sensing.
-
-    She doesn't know who holds the ends.
+### Prompting {#prompting}
 
 _**Possible interpretation**_
 
@@ -165,16 +187,6 @@ ribbon more than her immediate surroundings.
 
 She doesn't know who holds the ends. Is this
 slavery or freedom?
-
-
-### _**Semi-blind**_ {#semi-blind}
-
-{{< figure src="/ox-hugo/149610795_852720085510722_7762625424216125088_n.jpg" >}}
-
-
-### _**Semi-bound**_ {#semi-bound}
-
-{{< figure src="/ox-hugo/148957104_4062416750455469_4718804921220743845_n.jpg" >}}
 
 
 ### Experiments {#experiments}
