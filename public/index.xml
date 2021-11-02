@@ -15,7 +15,8 @@
       
       <guid>http://semiosis.github.io/posts/describing-melee-s-paintings-with-alephalpha/</guid>
       <description>Summary I take AlephAlpha&amp;rsquo;s multimodal LM for a spin to see how well it does surreal art interpretation.
- AlephAlpha https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet  Rose Mannequin   My description In this surreal artwork, flowers confidently stand from the sawn-off head of a ceramic mannequin. Water endlessly surfaces from the neck and quietly overflows from the lip. The arms and hands delicately embrace each other with attention towards the beholder in a sign of defencelessness and trust.</description>
+ AlephAlpha https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet Prompt http://github.com/semiosis/prompts/blob/master/prompts/given-some-surreal-art-and-a-description-elaborate-1.prompt Pen.el https://github.com/semiosis/pen.el/blob/master/src/pen.el  This is how to make a multi-modal prompt payload pf-given-some-surreal-art-and-a-description-elaborate/1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  task: &amp;#34;Given some surreal art and a description, elaborate&amp;#34; doc: &amp;#34;Given some surreal art and a description, elaborate&amp;#34; prompt-version: 1 payloads: # This could be a raw string to a file or URL, or an elisp function # - image: &amp;#34;(read-file-name \&amp;#34;image 2 of 2: \&amp;#34;)&amp;#34; - image: &amp;#34;(read-file-name \&amp;#34;image: \&amp;#34;)&amp;#34; prompt: |+ &amp;lt;description&amp;gt; Furthermore, engine: &amp;#34;AlephAlpha EUTranMM&amp;#34; temperature: 0.</description>
     </item>
     
     <item>

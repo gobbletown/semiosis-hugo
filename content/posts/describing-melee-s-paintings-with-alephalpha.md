@@ -16,6 +16,46 @@ AlephAlpha
 : <https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet>
 
 
+Prompt
+: <http://github.com/semiosis/prompts/blob/master/prompts/given-some-surreal-art-and-a-description-elaborate-1.prompt>
+
+
+Pen.el
+: <https://github.com/semiosis/pen.el/blob/master/src/pen.el>
+
+
+### This is how to make a multi-modal prompt payload {#this-is-how-to-make-a-multi-modal-prompt-payload}
+
+`pf-given-some-surreal-art-and-a-description-elaborate/1`
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+task: "Given some surreal art and a description, elaborate"
+doc: "Given some surreal art and a description, elaborate"
+prompt-version: 1
+payloads:
+# This could be a raw string to a file or URL, or an elisp function
+# - image: "(read-file-name \"image 2 of 2: \")"
+- image: "(read-file-name \"image: \")"
+prompt: |+
+  <description> Furthermore,
+engine: "AlephAlpha EUTranMM"
+temperature: 0.1
+max-generated-tokens: "(* 2 prompt-length)"
+top-p: 1.0
+stop-sequences:
+- "\n"
+cache: on
+vars:
+- "description"
+examples:
+- "This is a painting."
+info: on
+# filter: on
+completion: off
+insertion: off
+{{< /highlight >}}
+
+
 ## Rose Mannequin {#rose-mannequin}
 
 {{< figure src="/ox-hugo/148658560_2839287366296108_857180560792297037_n.jpg" >}}
