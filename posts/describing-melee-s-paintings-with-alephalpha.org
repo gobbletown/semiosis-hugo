@@ -143,10 +143,10 @@ composition.
   - What is the name of this artwork?
   - What does the full picture look like?
 
-*** /*Semi-blind*/
+*** /*Quasi-blind*/
 [[./149610795_852720085510722_7762625424216125088_n.jpg]]
 
-*** /*Semi-bound*/
+*** /*Quasi-bound*/
 [[./148957104_4062416750455469_4718804921220743845_n.jpg]]
 
 - Questions I have:
