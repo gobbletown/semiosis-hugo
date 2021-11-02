@@ -150,8 +150,11 @@ One literal interpretation
     look or rather, way to walk.
 
     She doesn't know who holds the ends or who
-    gives her direction. She trusts the ribbon.- Easy questions I could ask the AI:
+    gives her direction. She trusts the ribbon.
 
+----
+
+-   Easy questions I could ask the AI:
     -   What is the name of this artwork?
     -   What does the full picture look like?
 
