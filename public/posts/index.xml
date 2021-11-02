@@ -73,8 +73,10 @@ to construct one. As observers, we can see it
 for what it really is.</p>
 <p>The canvas is just a chameleon, that believes
 what we program it to believe, and does its
-best to take that form. One day it thinks it&rsquo;s
-a girl, but the next a cat.</p>
+best to take that form. We can make it think
+it&rsquo;s a girl or a cat, but we don&rsquo;t want it to
+be able to see itself because then it would
+have self-awareness.</p>
 <ul>
 <li>Continuations:
 <ul>

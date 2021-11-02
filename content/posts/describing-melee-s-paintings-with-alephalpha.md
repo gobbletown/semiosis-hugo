@@ -80,8 +80,10 @@ for what it really is.
 
 The canvas is just a chameleon, that believes
 what we program it to believe, and does its
-best to take that form. One day it thinks it's
-a girl, but the next a cat.
+best to take that form. We can make it think
+it's a girl or a cat, but we don't want it to
+be able to see itself because then it would
+have self-awareness.
 
 -   Continuations:
     -   `Furthermore,`
