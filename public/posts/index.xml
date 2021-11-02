@@ -6,8 +6,104 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 23 Oct 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Describing Melee&#39;s Paintings with AlephAlpha</title>
+            <link>http://semiosis.github.io/posts/describing-melee-s-paintings-with-alephalpha/</link>
+            <pubDate>Tue, 02 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/describing-melee-s-paintings-with-alephalpha/</guid>
+            <description>Summary I take AlephAlpha&amp;rsquo;s multimodal LM for a spin to see how well it does surreal art interpretation.
+ AlephAlpha https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet  Rose Mannequin   My description In this surreal artwork, flowers confidently stand from the sawn-off head of a ceramic mannequin. Water endlessly surfaces from the neck and quietly overflows from the lip. The arms and hands delicately embrace each other with attention towards to beholder in a sign of defencelessness and trust.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I take AlephAlpha&rsquo;s multimodal LM for a spin
+to see how well it does surreal art
+interpretation.</p>
+<dl>
+<dt>AlephAlpha</dt>
+<dd><a href="https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet">https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet</a></dd>
+</dl>
+<h2 id="rose-mannequin">Rose Mannequin</h2>
+<figure>
+    <img src="/ox-hugo/148658560_2839287366296108_857180560792297037_n.jpg"/> 
+</figure>
+
+<h3 id="my-description">My description</h3>
+<p>In this surreal artwork, flowers confidently stand from the sawn-off head of a
+ceramic mannequin. Water endlessly surfaces
+from the neck and quietly overflows from the lip. The arms
+and hands delicately embrace each other with attention towards to beholder in a sign of defencelessness and trust. The offering is attention, beauty and conversation.
+A dichotomy of insecurity with innocence is outweighed by confidence.</p>
+<h3 id="continuations">Continuations</h3>
+<p><code>Furthermore,</code> (temperature=0.0 i.e. fully deterministic)
+the flowers are a symbol of the human soul.</p>
+<p><code>Furthermore,</code> (temperature=0.1)
+the flowers are a symbol of life and growth.</p>
+<p><code>Furthermore,</code> (temperature=0.3)
+the flowers are a symbol of the human soul and the human spirit.</p>
+<p><code>Furthermore,</code> (temperature=0.8)
+a subtle harmonization of the positive and negative sides seems to resonate in this simple and yet sophisticated work of art.</p>
+<h3 id="description-by-alephalpha-eutranmultimodal">Description by AlephAlpha <code>EUTranMultimodal</code></h3>
+<h3 id="questions">Questions</h3>
+<ul>
+<li>Who does this person represent?</li>
+<li>Is this an accurate description?</li>
+<li>What else could be said about the mannequin?</li>
+<li>What types of flowers are there?</li>
+</ul>
+<h2 id="fiery-red-girl">Fiery red girl</h2>
+<figure>
+    <img src="/ox-hugo/148751110_885252488961991_2593863030122457822_n.jpg"/> 
+</figure>
+
+<h3 id="my-interpretation">My interpretation</h3>
+<p><em><strong>Theory 1: dark chimera</strong></em>
+A girl believes she must prepare for her photo
+to be taken. So she wears a low cut, frilly
+garment, and splays her fiery red hair, which
+she put great effort into, and she is so proud
+of. She poses for the viewer so they can see.</p>
+<p>She doesn&rsquo;t know that she is actually an
+intelligent canvas, which genuinely believes
+it is a girl, but is unable to look back on
+its own face, and so has no idea that it needs
+to construct one. As observers, we can see it
+for what it really is.</p>
+<p>The canvas is a dark chimera which survives by
+believing it is real and has a purpose. One
+day it thinks it&rsquo;s a girl, but the next a cat.</p>
+<ul>
+<li>Continuations:
+<ul>
+<li><code>Furthermore,</code></li>
+<li><code>Furthermore,</code></li>
+</ul>
+</li>
+</ul>
+<p><em><strong>Theory 2: hasty ouroboros</strong></em>
+The effort she placed in hair reveals that she
+is a person, and the entity that removes her
+face was not in her control.</p>
+<p>In a race against time, she prepares her hair,
+and positions herself for the meaning of her
+life.</p>
+<p>And this is the moment after the black entity
+of the canvas began to redact her, starting
+with her face.</p>
+<p>Her hair, she hopes will be like a flag in battle, defiant to the last moment.
+But she has no idea that the enemy is actually herself and is she in a continual cycle of rebirth and transformation.</p>
+<ul>
+<li>Continuations:
+<ul>
+<li><code>Furthermore,</code></li>
+<li><code>Furthermore,</code></li>
+</ul>
+</li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Who&#39;s Line is it Anyway, with GPT-3</title>

@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 23 Oct 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Describing Melee&#39;s Paintings with AlephAlpha</title>
+      <link>http://semiosis.github.io/posts/describing-melee-s-paintings-with-alephalpha/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/describing-melee-s-paintings-with-alephalpha/</guid>
+      <description>Summary I take AlephAlpha&amp;rsquo;s multimodal LM for a spin to see how well it does surreal art interpretation.
+ AlephAlpha https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet  Rose Mannequin   My description In this surreal artwork, flowers confidently stand from the sawn-off head of a ceramic mannequin. Water endlessly surfaces from the neck and quietly overflows from the lip. The arms and hands delicately embrace each other with attention towards to beholder in a sign of defencelessness and trust.</description>
+    </item>
+    
     <item>
       <title>Who&#39;s Line is it Anyway, with GPT-3</title>
       <link>http://semiosis.github.io/posts/who-s-line-is-it-anyway-with-gpt-3/</link>
