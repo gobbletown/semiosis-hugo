@@ -161,12 +161,12 @@ One literal interpretation
     -   What does the full picture look like?
 
 
-### _**Semi-blind**_ {#semi-blind}
+### _**Quasi-blind**_ {#quasi-blind}
 
 {{< figure src="/ox-hugo/149610795_852720085510722_7762625424216125088_n.jpg" >}}
 
 
-### _**Semi-bound**_ {#semi-bound}
+### _**Quasi-bound**_ {#quasi-bound}
 
 {{< figure src="/ox-hugo/148957104_4062416750455469_4718804921220743845_n.jpg" >}}
 
