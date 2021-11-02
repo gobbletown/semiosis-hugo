@@ -13,7 +13,7 @@ to see how well it does surreal art
 interpretation.
 
 AlephAlpha
-: <https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet>
+: [https://aleph-alpha.de/techblog/95\_the\_end\_of\_the\_era\_imagenet](https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet)
 
 
 Prompt
@@ -25,7 +25,7 @@ Engine
 
 
 Pen.el
-: <https://github.com/semiosis/pen.el/blob/master/src/pen.el>
+: <https://github.com/semiosis/pen.el/>
 
 
 ### This is how to make a multi-modal prompt payload {#this-is-how-to-make-a-multi-modal-prompt-payload}
