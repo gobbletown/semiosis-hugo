@@ -63,12 +63,13 @@ a subtle harmonization of the positive and negative sides seems to resonate in t
 
 ### My interpretation {#my-interpretation}
 
-_**Theory 1: dark chimera**_
+_**Theory 1: chameleon canvas**_
+
 A girl believes she must prepare for her photo
 to be taken. So she wears a low cut, frilly
 garment, and splays her fiery red hair, which
-she put great effort into, and she is so proud
-of. She poses for the viewer so they can see.
+she put great effort into, and is so proud of.
+She poses for the viewer so they can see.
 
 She doesn't know that she is actually an
 intelligent canvas, which genuinely believes
@@ -77,29 +78,42 @@ its own face, and so has no idea that it needs
 to construct one. As observers, we can see it
 for what it really is.
 
-The canvas is a dark chimera which survives by
-believing it is real and has a purpose. One
-day it thinks it's a girl, but the next a cat.
+The canvas is just a chameleon, that believes
+what we program it to believe, and does its
+best to take that form. One day it thinks it's
+a girl, but the next a cat.
 
 -   Continuations:
     -   `Furthermore,`
     -   `Furthermore,`
 
 _**Theory 2: hasty ouroboros**_
-The effort she placed in hair reveals that she
-is a person, and the entity that removes her
-face was not in her control.
 
-In a race against time, she prepares her hair,
-and positions herself for the meaning of her
-life.
+Despite the lack of a face, the viewer can
+still tell that this was actually a person, by
+the effort she made in preparing her hair, and
+the gown she wore.
 
-And this is the moment after the black entity
-of the canvas began to redact her, starting
-with her face.
+The black entity that removes her face is not
+in her control. She is always aware of it and so in a
+race against time, she prepared her hair, and
+positioned herself for the meaning of her
+life; to show the viewer she is real, and
+barely managed to do that.
 
-Her hair, she hopes will be like a flag in battle, defiant to the last moment.
-But she has no idea that the enemy is actually herself and is she in a continual cycle of rebirth and transformation.
+And as she tries to complete the picture, the hand of
+the black canvas is compelled to enter the
+frame and redact her image because
+it was too great a violation, and starting with
+her face.
+
+Her hair is like a flag in battle, defiant to
+the last moment. But the enemy is herself, or
+what she's made of.
+
+So if there is evidence in this shot that she
+is real and more than what's she's made of, it
+is her hair.
 
 -   Continuations:
     -   `Furthermore,`
