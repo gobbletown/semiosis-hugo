@@ -44,6 +44,9 @@ the flowers are a symbol of the human soul and the human spirit.
 `Furthermore,` (temperature=0.8)
 a subtle harmonization of the positive and negative sides seems to resonate in this simple and yet sophisticated work of art.
 
+-   Thoughts:
+    -   I am amazed that it is able to infer that the flowers represent the human soul and spirit.
+
 
 ### Description by AlephAlpha `EUTranMultimodal` {#description-by-alephalpha-eutranmultimodal}
 
@@ -73,7 +76,7 @@ She poses for the viewer so they can see.
 
 She doesn't know that she is actually an
 intelligent canvas, which genuinely believes
-it is a girl, but is unable to look back on
+it is a girl, but is unable to look back upon
 its own face, and so has no idea that it needs
 to construct one. As observers, we can see it
 for what it really is.
