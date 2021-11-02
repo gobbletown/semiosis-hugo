@@ -26,7 +26,7 @@ AlephAlpha
 In this surreal artwork, flowers confidently stand from the sawn-off head of a
 ceramic mannequin. Water endlessly surfaces
 from the neck and quietly overflows from the lip. The arms
-and hands delicately embrace each other with attention towards to beholder in a sign of defencelessness and trust. The offering is attention, beauty and conversation.
+and hands delicately embrace each other with attention towards the beholder in a sign of defencelessness and trust. The offering is attention, beauty and conversation.
 A dichotomy of insecurity with innocence is outweighed by confidence.
 
 

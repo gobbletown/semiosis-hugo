@@ -16,7 +16,7 @@
             
             <guid>http://semiosis.github.io/posts/describing-melee-s-paintings-with-alephalpha/</guid>
             <description>Summary I take AlephAlpha&amp;rsquo;s multimodal LM for a spin to see how well it does surreal art interpretation.
- AlephAlpha https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet  Rose Mannequin   My description In this surreal artwork, flowers confidently stand from the sawn-off head of a ceramic mannequin. Water endlessly surfaces from the neck and quietly overflows from the lip. The arms and hands delicately embrace each other with attention towards to beholder in a sign of defencelessness and trust.</description>
+ AlephAlpha https://aleph-alpha.de/techblog/95%5Fthe%5Fend%5Fof%5Fthe%5Fera%5Fimagenet  Rose Mannequin   My description In this surreal artwork, flowers confidently stand from the sawn-off head of a ceramic mannequin. Water endlessly surfaces from the neck and quietly overflows from the lip. The arms and hands delicately embrace each other with attention towards the beholder in a sign of defencelessness and trust.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I take AlephAlpha&rsquo;s multimodal LM for a spin
 to see how well it does surreal art
@@ -34,7 +34,7 @@ interpretation.</p>
 <p>In this surreal artwork, flowers confidently stand from the sawn-off head of a
 ceramic mannequin. Water endlessly surfaces
 from the neck and quietly overflows from the lip. The arms
-and hands delicately embrace each other with attention towards to beholder in a sign of defencelessness and trust. The offering is attention, beauty and conversation.
+and hands delicately embrace each other with attention towards the beholder in a sign of defencelessness and trust. The offering is attention, beauty and conversation.
 A dichotomy of insecurity with innocence is outweighed by confidence.</p>
 <h3 id="continuations">Continuations</h3>
 <p><code>Furthermore,</code> (temperature=0.0 i.e. fully deterministic)
