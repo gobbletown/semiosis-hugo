@@ -126,9 +126,64 @@ form she will always try.
     -   `Furthermore,`
 
 
-## Tethered hand {#tethered-hand}
+## Red Ribbon {#red-ribbon}
+
+I want to use this to experiment with tri-modal
+prompts (Text + Image + Image).
+
+-   Easy questions I could ask the AI:
+    -   What is the name of this artwork?
+    -   What does the full picture look like?
+
+-   Questions I have:
+    -   Is she aware that she is tangled in the ribbon?
+    -   What does the ribbon represent?
+    -   What is the significance to partial blindness and partial boundness?
+        -   What is the significance of the hands and the head?
+    -   Describe these images in a few sentences each.
+        -   Expecting to get the most relevant or obvious concepts/entities/symbols for each image.
+    -   What are the most relevant symbols?
+        -   Expecting the AI to associate the imagery with symbolism (i.e. referring to the signified).
+
+-   A strong black woman
+    wears a ribbon over her eyes and comfortably
+    tucked behind her ears. She doesn't appear
+    to be struggling.
+
+    She can see through it but also to
+    prompt her to tilt her head after. Her hair
+    is neatly tied so the ribbon is unobstructed. It may be her way of sensing.
+
+    She doesn't know who holds the ends.
+
+_**Possible interpretation**_
+
+A free and strong black woman uses a red
+ribbon to help her to see and sense. She is
+voluntarily bound because she trusts the
+ribbon more than her immediate surroundings.
+
+She doesn't know who holds the ends. Is this
+slavery or freedom?
+
+
+### _**Semi-blind**_ {#semi-blind}
+
+{{< figure src="/ox-hugo/149610795_852720085510722_7762625424216125088_n.jpg" >}}
+
+
+### _**Semi-bound**_ {#semi-bound}
 
 {{< figure src="/ox-hugo/148957104_4062416750455469_4718804921220743845_n.jpg" >}}
+
+
+### Experiments {#experiments}
+
+-   Can I multiplex images?
+    -   Use ImageMagick to position them side-by-side.
+-   Can I multiplex prompt questions?
+    -   Essentially, I want to test multiple image
+        and text prompts for a bi-modal model.
 
 
 ### Symbolism {#symbolism}
