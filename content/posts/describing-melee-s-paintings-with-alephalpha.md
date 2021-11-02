@@ -20,6 +20,10 @@ Prompt
 : <http://github.com/semiosis/prompts/blob/master/prompts/given-some-surreal-art-and-a-description-elaborate-1.prompt>
 
 
+Engine
+: <http://github.com/semiosis/engines/blob/master/engines/alephalpha-eu-tran-mm.engine>
+
+
 Pen.el
 : <https://github.com/semiosis/pen.el/blob/master/src/pen.el>
 
@@ -29,9 +33,7 @@ Pen.el
 `pf-given-some-surreal-art-and-a-description-elaborate/1`
 
 {{< highlight yaml "linenos=table, linenostart=1" >}}
-task: "Given some surreal art and a description, elaborate"
-doc: "Given some surreal art and a description, elaborate"
-prompt-version: 1
+...
 payloads:
 # This could be a raw string to a file or URL, or an elisp function
 # - image: "(read-file-name \"image 2 of 2: \")"
@@ -39,20 +41,7 @@ payloads:
 prompt: |+
   <description> Furthermore,
 engine: "AlephAlpha EUTranMM"
-temperature: 0.1
-max-generated-tokens: "(* 2 prompt-length)"
-top-p: 1.0
-stop-sequences:
-- "\n"
-cache: on
-vars:
-- "description"
-examples:
-- "This is a painting."
-info: on
-# filter: on
-completion: off
-insertion: off
+...
 {{< /highlight >}}
 
 
