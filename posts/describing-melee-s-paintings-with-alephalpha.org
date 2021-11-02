@@ -14,13 +14,13 @@ I take AlephAlpha's multimodal LM for a spin
 to see how well it does surreal art
 interpretation.
 
-+ AlephAlpha :: https://aleph-alpha.de/techblog/95_the_end_of_the_era_imagenet
++ AlephAlpha :: [[https://aleph-alpha.de/techblog/95_the_end_of_the_era_imagenet][https://aleph-alpha.de/techblog/95_the_end_of_the_era_imagenet]]
 
 + Prompt :: http://github.com/semiosis/prompts/blob/master/prompts/given-some-surreal-art-and-a-description-elaborate-1.prompt
 
 + Engine :: http://github.com/semiosis/engines/blob/master/engines/alephalpha-eu-tran-mm.engine
 
-+ Pen.el :: https://github.com/semiosis/pen.el/blob/master/src/pen.el
++ Pen.el :: https://github.com/semiosis/pen.el/
 
 *** This is how to make a multi-modal prompt payload
 =pf-given-some-surreal-art-and-a-description-elaborate/1=
