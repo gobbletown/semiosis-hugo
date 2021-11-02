@@ -125,7 +125,9 @@ form she will always try.</p>
 </ul>
 <h2 id="red-ribbon">Red Ribbon</h2>
 <p>I want to use this to experiment with tri-modal
-prompts (Text + Image + Image).</p>
+prompts (Text + Image + Image) on a bimodal
+modal using prompt multiplexing and/or
+composition.</p>
 <h3 id="description">Description</h3>
 <dl>
 <dt>One literal interpretation</dt>

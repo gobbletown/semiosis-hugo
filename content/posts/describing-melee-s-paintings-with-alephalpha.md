@@ -129,7 +129,9 @@ form she will always try.
 ## Red Ribbon {#red-ribbon}
 
 I want to use this to experiment with tri-modal
-prompts (Text + Image + Image).
+prompts (Text + Image + Image) on a bimodal
+modal using prompt multiplexing and/or
+composition.
 
 
 ### Description {#description}
