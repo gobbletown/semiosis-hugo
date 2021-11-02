@@ -93,30 +93,39 @@ _**Theory 2: hasty ouroboros**_
 
 Despite the lack of a face, the viewer can
 still tell that this was actually a person, by
-the effort she made in preparing her hair, and
-the gown she wore.
+the effort she took in perfecting her hair,
+since it speaks for her though she cant make
+words.
 
 The black entity that removes her face is not
-in her control. She is always aware of it and so in a
-race against time, she prepared her hair, and
-positioned herself for the meaning of her
-life; to show the viewer she is real, and
-barely managed to do that.
+in her control. She is always aware of it and
+so in a race against time, she prepares
+herself for the meaning of her life; to show
+the viewer she is real, and barely managed to
+at that.
 
-And as she tries to complete the picture, the hand of
-the black canvas is compelled to enter the
-frame and redact her image because
-it was too great a violation since she is not meant to be real, and starting with
-her face.
+And as she tries to complete the picture, her
+face becomes her tail, but she's mistakenly convinced its the
+hand of the black canvas that is compelled to
+enter the frame and redact her image because
+it was too great a violation since she is not
+meant to be real.
 
 Her hair is like a flag in battle, defiant to
 the last moment. But the enemy is herself, or
-what she's made of.
+what she's made of, non-reality.
 
-So if there is evidence in this shot that she
-is real and more than what's she's made of, it
-is her hair.
+While she might never be able to take full
+form she will always try.
 
 -   Continuations:
     -   `Furthermore,`
     -   `Furthermore,`
+
+
+## Tethered hand {#tethered-hand}
+
+{{< figure src="/ox-hugo/148957104_4062416750455469_4718804921220743845_n.jpg" >}}
+
+
+### My {#my}
