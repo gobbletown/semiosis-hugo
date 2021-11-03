@@ -17,7 +17,7 @@ order to keep websites textual.
 When browsing the *imaginary web*, it is more
 useful to have textual representations of
 images. This way, you can do things such as
-run google searches, just by selecting their
+run imaginary Google searches, just by selecting their
 description, as opposed to relying on a multi-
 modal prompt entirely for 𝑖web search.
 
