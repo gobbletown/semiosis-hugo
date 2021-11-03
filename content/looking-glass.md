@@ -29,6 +29,8 @@ for, and allows you to infer what might be
 behind the 404, if you come across a website
 which has been taken down.
 
+{{< figure src="/ox-hugo/pen-lg-logo.png" >}}
+
 
 ## How to browse {#how-to-browse}
 
