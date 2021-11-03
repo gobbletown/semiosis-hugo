@@ -273,10 +273,26 @@ One literal interpretation
 
 {{< figure src="/ox-hugo/149610795_852720085510722_7762625424216125088_n.jpg" >}}
 
+-   Question AlephAlpha: `What does the ribbon represent?`
+    -   It's the ribbon of the flag, representing the unity of the country and the people. It's a reminder that we are all one.
+
+-   Question AlephAlpha: `What is in this image?` (with help from GPT-3 to correct spelling)
+    -   Drawing of a person who is a young man with a black bandana on his head.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/jFUeSbaCqmGRiK8hKhNMWlZFn" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/jFUeSbaCqmGRiK8hKhNMWlZFn.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/jFUeSbaCqmGRiK8hKhNMWlZFn.js" id="asciicast-jFUeSbaCqmGRiK8hKhNMWlZFn" async></script>
+
 
 ### _**Quasi-bound**_ {#quasi-bound}
 
 {{< figure src="/ox-hugo/148957104_4062416750455469_4718804921220743845_n.jpg" >}}
+
+-   Question AlephAlpha: `What does the ribbon represent?`
+    -   The ribbon represents the love of my family and friends and how much I love them.
+
+---
 
 -   Questions I have:
     -   Is she aware that she is tangled in the ribbon?
