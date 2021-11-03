@@ -73,24 +73,54 @@ the flowers are a symbol of the human soul and the human spirit.
 `Furthermore,` (temperature=0.8)
 a subtle harmonization of the positive and negative sides seems to resonate in this simple and yet sophisticated work of art.
 
+`Furthermore, the water represents` (temperature=0.3)
+
+-   Furthermore, the water represents the human of life and which is the source of life that is beautiful.
+-   Furthermore, the water represents the life of life and symbolizes life is beautiful and
+-   Furthermore, the water represents the soul of life.
+-   Furthermore, the water represents the water of life, which is the essence of all that is beautiful.
+
 -   Thoughts:
     -   I am amazed that it is able to infer that the flowers represent the human soul and spirit.
+    -   It seems to have become a little hung up on that though, and makes similar conclusions about the water.
 
 
 ### Description by AlephAlpha `EUTranMultimodal` {#description-by-alephalpha-eutranmultimodal}
+
+`In this surreal artwork, flowers`
+
+Without any context, the model has greater difficulty.
+
+-   In this surreal artwork, flowers bloom in the mouth of a woman's head.
+-   In this surreal artwork, a plant is sprouting from a woman's head.
+-   In this surreal painting, a woman holds a flower in her head, which grows out of her mouth.
+-   In this surreal artwork, the water represents the human emotions and thoughts, and the plant is the brain.
 
 
 ### Questions {#questions}
 
 -   Who does this person represent?
+    -   A person who is in love with the world.
 -   Is this an accurate description?
 -   What else could be said about the mannequin?
 -   What types of flowers are there?
+    -   Roses.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/4r7x5nIcHUYU86i1oQZrUdyqy" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/4r7x5nIcHUYU86i1oQZrUdyqy.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/4r7x5nIcHUYU86i1oQZrUdyqy.js" id="asciicast-4r7x5nIcHUYU86i1oQZrUdyqy" async></script>
 
 
 ## Fiery red girl {#fiery-red-girl}
 
 {{< figure src="/ox-hugo/148751110_885252488961991_2593863030122457822_n.jpg" >}}
+
+
+### AlephAlpha interpretation {#alephalpha-interpretation}
+
+-   `In this surreal artwork,` I tried to capture the feeling of a woman with a long red hair in a dream-like state.
+-   `What has happened to this girl's face?` I's been eaten by the demon and...
 
 
 ### My interpretation {#my-interpretation}
@@ -118,8 +148,23 @@ be able to see itself because then it would
 have self-awareness.
 
 -   Continuations:
-    -   `Furthermore,`
-    -   `Furthermore,`
+    -   `Furthermore,` it doesn't understand the difference between itself and its surroundings.
+    -   `Furthermore,` we can make it think it's a person, but we don't want it to know what we are doing, because then it would have consciousness.
+
+A girl believes she must prepare for her photo
+to be taken. So she wears a low cut, frilly
+garment, and splays her fiery red hair, which
+she put great effort into, and is so proud of.
+She poses for the viewer so they can see.
+
+-   Continuations:
+-   `Furthermore,` she has her face turned towards the camera, and she is staring directly at the viewer, who is supposed to feel as if she is being stared down by a scary monster.
+-   `Furthermore,` she is a ghost monster looking directly at the viewer, as if she is staring at the viewer to see if they are scared.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/X4Iidg5serY9bkMUnoHZet5TA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/X4Iidg5serY9bkMUnoHZet5TA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/X4Iidg5serY9bkMUnoHZet5TA.js" id="asciicast-X4Iidg5serY9bkMUnoHZet5TA" async></script>
 
 _**Theory 2: hasty ouroboros**_
 
@@ -151,8 +196,42 @@ While she might never be able to take full
 form she will always try.
 
 -   Continuations:
-    -   `Furthermore,`
-    -   `Furthermore,`
+    -   `Furthermore, her image is not her only form.`
+
+Despite the lack of a face, the viewer can
+still tell that this was actually a person, by
+the effort she took in perfecting her hair,
+since it speaks for her though she cant make
+words.
+
+-   Continuations:
+    -   `Furthermore, she is holding a book, and it seems to be an important one.`
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/rRxGzvZsmHAuoia0bVgO0u8I0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rRxGzvZsmHAuoia0bVgO0u8I0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/rRxGzvZsmHAuoia0bVgO0u8I0.js" id="asciicast-rRxGzvZsmHAuoia0bVgO0u8I0" async></script>
+
+Despite the lack of a face, the viewer can
+still tell that this was actually a person.
+
+-   Continuations:
+    -   `Furthermore,` this viewer has made a figure's hair look like a spider web
+    -   `Furthermore,` the viewer has managed sure person look eyes look like a human web
+    -   `Furthermore,` the artist has made this person's hair look like a spider.
+    -   `Her hair represents` the hair of a person, and the eyes is red of the ghost.
+    -   `Her hair symbolizes` the power, her eyes hair representsizes her blood that her earth.
+    -   `Her hair symbolizes` her soul and her red hair symbolizes the blood of the innocent.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/FJwJoKz72fPY9PpDkWCoZzr7X" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/FJwJoKz72fPY9PpDkWCoZzr7X.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/FJwJoKz72fPY9PpDkWCoZzr7X.js" id="asciicast-FJwJoKz72fPY9PpDkWCoZzr7X" async></script>
+
+----
+
+-   Thoughts:
+    -   Abstract art is hard. The model appears to be drawn to concepts like a spider web, which is understandable.
 
 
 ## Red Ribbon {#red-ribbon}
