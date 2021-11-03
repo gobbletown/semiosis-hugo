@@ -39,7 +39,7 @@
  AlephAlpha https://aleph-alpha.de/techblog/95_the_end_of_the_era_imagenet Prompt http://github.com/semiosis/prompts/blob/master/prompts/given-some-surreal-art-and-a-description-elaborate-1.prompt Engine http://github.com/semiosis/engines/blob/master/engines/alephalpha-eu-tran-mm.engine Pen.el https://github.com/semiosis/pen.el/  This is how to make a multi-modal prompt payload pf-given-some-surreal-art-and-a-description-elaborate/1
 1 2 3 4 5 6 7 8 9  ... payloads: # This could be a raw string to a file or URL, or an elisp function # - image: &#34;(read-file-name \&#34;image 2 of 2: \&#34;)&#34; - image: &#34;(read-file-name \&#34;image: \&#34;)&#34; prompt: |&#43; &lt;description&gt; Furthermore, engine: &#34;AlephAlpha EUTranMM&#34; ."><meta itemprop="datePublished" content="2021-11-02T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-11-02T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="1506"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1754"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -144,7 +144,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        8 minutes
+        9 minutes
 
         
       </p>
@@ -454,15 +454,91 @@ gives her direction. She trusts the ribbon.</p>
 </figure>
 
 <ul>
-<li>Question AlephAlpha: <code>What does the ribbon represent?</code>
+<li>
+<p>Question AlephAlpha: <code>What does the ribbon represent?</code></p>
 <ul>
 <li>The ribbon represents the love of my family and friends and how much I love them.</li>
+</ul>
+</li>
+<li>
+<p>Question AlephAlpha: <code>What is in this image?</code> (temperature=0.8) (with help from GPT-3 to correct spelling)</p>
+<ul>
+<li>This is a drawing of a person holding a sword in each hand and pointing to the sky.
+<ul>
+<li>Eek. That&rsquo;s very incorrect.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Here is a drawing of a lady&#39;s hand tangled loosely with a ribbon.
+Q: What does the ribbon represent? A:</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Continuations:
+<ul>
+<li>It&rsquo;s a symbol of love, loyalty, friendship and affection.</li>
+<li>The ribbon is tied in a knot around her hand.</li>
+</ul>
+</li>
+</ul>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Here is a drawing of a lady&#39;s hand tangled in something.
+Q: What is she tangled in? A:</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>
+<p>Continuations:</p>
+<ul>
+<li>A red and white flag of the United States.</li>
+</ul>
+</li>
+<li>
+<p>Question AlephAlpha: <code>In this artwork a hand is</code> (temperature=0.8)</p>
+<ul>
+<li>holding a clenched with a red in a sword is also and the sword is red.</li>
+</ul>
+</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/7w1kfs2x58hS2OtQy41K0C3Eq" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/7w1kfs2x58hS2OtQy41K0C3Eq.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/7w1kfs2x58hS2OtQy41K0C3Eq.js" id="asciicast-7w1kfs2x58hS2OtQy41K0C3Eq" async></script>
+<hr>
+<ul>
+<li>Conclusions:
+<ul>
+<li>I believe that the questions we pose the model, being simple, yield simple responses, that are often wrong to a human.
+<ul>
+<li>But I don&rsquo;t believe that we can conclude there is no understanding of more abstract concepts. It&rsquo;s just that it&rsquo;s extremely difficult to test for.</li>
+</ul>
+</li>
+<li>On the other hand, posing complicated questions, may yield seemingly intelligent responses, that I believe are not entirely inspired by the text, but that the image has some involvement.
+<ul>
+<li>Relevance is a very hard thing to test for.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <hr>
 <ul>
-<li>Questions I have:
+<li>Questions I have about the artwork:
 <ul>
 <li>Is she aware that she is tangled in the ribbon?</li>
 <li>What does the ribbon represent?</li>
@@ -492,6 +568,21 @@ voluntarily bound because she trusts the
 ribbon more than her immediate surroundings.</p>
 <p>She doesn&rsquo;t know who holds the ends. Is this
 slavery or freedom?</p>
+<ul>
+<li>
+<p>Continuations:</p>
+<ul>
+<li><code>Title:</code> Ribbon of Freedom</li>
+<li><code>Title:</code> Ribbon Women.</li>
+</ul>
+</li>
+<li>
+<p>Full prompts:</p>
+<ul>
+<li><code>Image Description:</code> A pencil drawing of a hand holding a red and white striped flag,</li>
+</ul>
+</li>
+</ul>
 <h3 id="experiments">Experiments</h3>
 <ul>
 <li>Can I multiplex images?
@@ -532,7 +623,7 @@ and text prompts for a bi-modal model.</li>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1506 Words
+        1754 Words
       </p>
 
       <p>

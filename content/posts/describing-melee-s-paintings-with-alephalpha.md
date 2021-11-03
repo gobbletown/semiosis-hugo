@@ -292,9 +292,50 @@ One literal interpretation
 -   Question AlephAlpha: `What does the ribbon represent?`
     -   The ribbon represents the love of my family and friends and how much I love them.
 
+-   Question AlephAlpha: `What is in this image?` (temperature=0.8) (with help from GPT-3 to correct spelling)
+    -   This is a drawing of a person holding a sword in each hand and pointing to the sky.
+        -   Eek. That's very incorrect.
+
+<!--listend-->
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Here is a drawing of a lady's hand tangled loosely with a ribbon.
+Q: What does the ribbon represent? A:
+{{< /highlight >}}
+
+-   Continuations:
+    -   It's a symbol of love, loyalty, friendship and affection.
+    -   The ribbon is tied in a knot around her hand.
+
+<!--listend-->
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+Here is a drawing of a lady's hand tangled in something.
+Q: What is she tangled in? A:
+{{< /highlight >}}
+
+-   Continuations:
+    -   A red and white flag of the United States.
+
+-   Question AlephAlpha: `In this artwork a hand is` (temperature=0.8)
+    -   holding a clenched with a red in a sword is also and the sword is red.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/7w1kfs2x58hS2OtQy41K0C3Eq" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/7w1kfs2x58hS2OtQy41K0C3Eq.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/7w1kfs2x58hS2OtQy41K0C3Eq.js" id="asciicast-7w1kfs2x58hS2OtQy41K0C3Eq" async></script>
+
 ---
 
--   Questions I have:
+-   Conclusions:
+    -   I believe that the questions we pose the model, being simple, yield simple responses, that are often wrong to a human.
+        -   But I don't believe that we can conclude there is no understanding of more abstract concepts. It's just that it's extremely difficult to test for.
+    -   On the other hand, posing complicated questions, may yield seemingly intelligent responses, that I believe are not entirely inspired by the text, but that the image has some involvement.
+        -   Relevance is a very hard thing to test for.
+
+---
+
+-   Questions I have about the artwork:
     -   Is she aware that she is tangled in the ribbon?
     -   What does the ribbon represent?
     -   What is the significance to partial blindness and partial boundness?
@@ -316,6 +357,13 @@ ribbon more than her immediate surroundings.
 
 She doesn't know who holds the ends. Is this
 slavery or freedom?
+
+-   Continuations:
+    -   `Title:` Ribbon of Freedom
+    -   `Title:` Ribbon Women.
+
+-   Full prompts:
+    -   `Image Description:` A pencil drawing of a hand holding a red and white striped flag,
 
 
 ### Experiments {#experiments}
