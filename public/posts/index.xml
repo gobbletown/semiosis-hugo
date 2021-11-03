@@ -16,8 +16,8 @@
             
             <guid>http://semiosis.github.io/posts/alephalpha-for-alttext/</guid>
             <description>Summary I use AlephAlpha&amp;rsquo;s multimodal LM to generate alttext for the eww web browser. This is in order to keep websites textual.
-When browsing the imaginary web, it is more useful to have textual representations of images. This way, you can do things such as run google searches, just by selecting their description, as opposed to relying on a multi- modal prompt entirely for 𝑖web search.
-Prompt  pf-given-an-image-describe-it/1 http://github.com/semiosis/prompts/blob/master/prompts/given-an-image-describe-it-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  task: &amp;#34;Given an image, describe it&amp;#34; doc: &amp;#34;Given an image, describe it.</description>
+When browsing the imaginary web, it is more useful to have textual representations of images. This way, you can do things such as run imaginary Google searches, just by selecting their description, as opposed to relying on a multi- modal prompt entirely for 𝑖web search.
+Prompt  pf-given-an-image-describe-it/1 http://github.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I use AlephAlpha&rsquo;s multimodal LM to generate
 <em>alttext</em> for the <code>eww</code> web browser. This is in
@@ -25,7 +25,7 @@ order to keep websites textual.</p>
 <p>When browsing the <strong>imaginary web</strong>, it is more
 useful to have textual representations of
 images. This way, you can do things such as
-run google searches, just by selecting their
+run imaginary Google searches, just by selecting their
 description, as opposed to relying on a multi-
 modal prompt entirely for 𝑖web search.</p>
 <h2 id="prompt">Prompt</h2>
