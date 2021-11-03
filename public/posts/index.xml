@@ -6,8 +6,291 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>AlephAlpha for alttext</title>
+            <link>http://semiosis.github.io/posts/alephalpha-for-alttext/</link>
+            <pubDate>Wed, 03 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/alephalpha-for-alttext/</guid>
+            <description>Summary I use AlephAlpha&amp;rsquo;s multimodal LM to generate alttext for the eww web browser. This is in order to keep websites textual.
+When browsing the imaginary web, it is more useful to have textual representations of images. This way, you can do things such as run google searches, just by selecting their description, as opposed to relying on a multi- modal prompt entirely for 𝑖web search.
+Prompt  pf-given-an-image-describe-it/1 http://github.com/semiosis/prompts/blob/master/prompts/given-an-image-describe-it-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  task: &amp;#34;Given an image, describe it&amp;#34; doc: &amp;#34;Given an image, describe it.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I use AlephAlpha&rsquo;s multimodal LM to generate
+<em>alttext</em> for the <code>eww</code> web browser. This is in
+order to keep websites textual.</p>
+<p>When browsing the <strong>imaginary web</strong>, it is more
+useful to have textual representations of
+images. This way, you can do things such as
+run google searches, just by selecting their
+description, as opposed to relying on a multi-
+modal prompt entirely for 𝑖web search.</p>
+<h2 id="prompt">Prompt</h2>
+<dl>
+<dt><code>pf-given-an-image-describe-it/1</code></dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/given-an-image-describe-it-1.prompt">http://github.com/semiosis/prompts/blob/master/prompts/given-an-image-describe-it-1.prompt</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Given an image, describe it&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given an image, describe it. For alttext&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">payloads</span>:
+- <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;&lt;file path or url&gt;&#34;</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  </span>  <span style="color:#f92672">Q</span>: <span style="color:#f92672">What is in this image? A</span>:
+<span style="color:#f92672">force-engine</span>: <span style="color:#e6db74">&#34;AlephAlpha EUTranMM&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.0</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">150</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;Q:&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;file path or url&#34;</span>
+<span style="color:#75715e"># filter: on</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pen-str clean-alephalpha</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="emacs-lisp">Emacs lisp</h2>
+<h3 id="lg-generate-alttext"><code>lg-generate-alttext</code></h3>
+<p>Here is the function which will be used to
+generate the alttexts. It&rsquo;s based on
+AlephAlpha&rsquo;s multimodal <code>image&lt;-&gt;text</code> LM.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun lg-generate-alttext (fp-or-url)
+  (interactive (<span style="color:#a6e22e">list</span> (read-string-hist <span style="color:#e6db74">&#34;lg-generate-alttext (fp or url): &#34;</span>)))
+  (let ((description (sor (<span style="color:#a6e22e">car</span> (pen-one (pf-given-an-image-describe-it/1 fp-or-url)))
+                          <span style="color:#e6db74">&#34;*&#34;</span>)))
+    (if (interactive-p)
+        (etv description)
+      description)))
+
+(defun file-from-data (data)
+  (let* ((hash (sha1 data))
+         (fp (f-join <span style="color:#e6db74">&#34;/tmp&#34;</span> hash)))
+    (write-to-file data fp)
+    fp))</code></pre></td></tr></table>
+</div>
+</div>
+<p>Example outputs for Fievel.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#e6db74">&#34;character of a person. from the Disney a person film.&#34;</span>
+ <span style="color:#e6db74">&#34;The image of a person from the a person movie. He&#34;</span>
+ <span style="color:#e6db74">&#34;The character a person ,in the movie a person series.&#34;</span>
+ <span style="color:#e6db74">&#34;The character a person from the a person series. The&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>Now the Google logo:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#e6db74">&#34;Google&#39;s a Google Google for Google Google version Chrome page for&#34;</span>
+ <span style="color:#e6db74">&#34;Google is a Google logo for Google new Google search.,&#34;</span>
+ <span style="color:#e6db74">&#34;The is a Google Google for Google search search search app.&#34;</span>
+ <span style="color:#e6db74">&#34;It&#39;s the new logo for the new Google search app.&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>I think these should make decent alttexts.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/D70Ht8HPipHIjSDnsFrviROzA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/D70Ht8HPipHIjSDnsFrviROzA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/D70Ht8HPipHIjSDnsFrviROzA.js" id="asciicast-D70Ht8HPipHIjSDnsFrviROzA" async></script>
+<h3 id="shr-put-image"><code>shr-put-image</code></h3>
+<p>Here is the function, which puts an image into
+the web browser.</p>
+<p>I have modified it to make use of AlephAlpha&rsquo;s
+API to describe images.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun shr-put-image (spec alt <span style="color:#66d9ef">&amp;optional</span> flags)
+  <span style="color:#e6db74">&#34;Insert image SPEC with a string ALT.  Return image.
+</span><span style="color:#e6db74">SPEC is either an image data blob, or a list where the first
+</span><span style="color:#e6db74">element is the data blob and the second element is the content-type.&#34;</span>
+  (if (display-graphic-p)
+      (let* ((size (<span style="color:#a6e22e">cdr</span> (<span style="color:#a6e22e">assq</span> <span style="color:#e6db74">&#39;size</span> flags)))
+             (data (if (<span style="color:#a6e22e">consp</span> spec)
+                       (<span style="color:#a6e22e">car</span> spec)
+                     spec))
+             (content-type (and (<span style="color:#a6e22e">consp</span> spec)
+                                (cadr spec)))
+             (start (<span style="color:#a6e22e">point</span>))
+             (image (cond
+                     ((<span style="color:#a6e22e">eq</span> size <span style="color:#e6db74">&#39;original</span>)
+                      (create-image data <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">t</span> :ascent <span style="color:#ae81ff">100</span>
+                                    :format content-type))
+                     ((<span style="color:#a6e22e">eq</span> content-type <span style="color:#e6db74">&#39;image/svg+xml</span>)
+                      (create-image data <span style="color:#e6db74">&#39;svg</span> <span style="color:#66d9ef">t</span> :ascent <span style="color:#ae81ff">100</span>))
+                     ((<span style="color:#a6e22e">eq</span> size <span style="color:#e6db74">&#39;full</span>)
+                      (ignore-errors
+                        (shr-rescale-image data content-type
+                                           (<span style="color:#a6e22e">plist-get</span> flags :width)
+                                           (<span style="color:#a6e22e">plist-get</span> flags :height))))
+                     (<span style="color:#66d9ef">t</span>
+                      (ignore-errors
+                        (shr-rescale-image data content-type
+                                           (<span style="color:#a6e22e">plist-get</span> flags :width)
+                                           (<span style="color:#a6e22e">plist-get</span> flags :height)))))))
+        (when image
+          <span style="color:#75715e">;; When inserting big-ish pictures, put them at the</span>
+          <span style="color:#75715e">;; beginning of the line.</span>
+          (when (and (<span style="color:#a6e22e">&gt;</span> (<span style="color:#a6e22e">current-column</span>) <span style="color:#ae81ff">0</span>)
+                     (<span style="color:#a6e22e">&gt;</span> (<span style="color:#a6e22e">car</span> (<span style="color:#a6e22e">image-size</span> image <span style="color:#66d9ef">t</span>)) <span style="color:#ae81ff">400</span>))
+            (<span style="color:#a6e22e">insert</span> <span style="color:#e6db74">&#34;\n&#34;</span>))
+          (if (<span style="color:#a6e22e">eq</span> size <span style="color:#e6db74">&#39;original</span>)
+              (insert-sliced-image image (or (lg-generate-alttext (file-from-data data))
+                                             alt <span style="color:#e6db74">&#34;*&#34;</span>) <span style="color:#66d9ef">nil</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">1</span>)
+            (insert-image image (or
+                                 (lg-generate-alttext (file-from-data data))
+                                 alt <span style="color:#e6db74">&#34;*&#34;</span>)))
+          (<span style="color:#a6e22e">put-text-property</span> start (<span style="color:#a6e22e">point</span>) <span style="color:#e6db74">&#39;image-size</span> size)
+          (when (and shr-image-animate
+                     (cond ((<span style="color:#a6e22e">fboundp</span> <span style="color:#e6db74">&#39;image-multi-frame-p</span>)
+                            <span style="color:#75715e">;; Only animate multi-frame things that specify a</span>
+                            <span style="color:#75715e">;; delay; eg animated gifs as opposed to</span>
+                            <span style="color:#75715e">;; multi-page tiffs.  FIXME?</span>
+                            (<span style="color:#a6e22e">cdr</span> (image-multi-frame-p image)))
+                           ((<span style="color:#a6e22e">fboundp</span> <span style="color:#e6db74">&#39;image-animated-p</span>)
+                            (image-animated-p image))))
+            (image-animate image <span style="color:#66d9ef">nil</span> <span style="color:#ae81ff">60</span>)))
+        image)
+    (let ((data (if (<span style="color:#a6e22e">consp</span> spec)
+                    (<span style="color:#a6e22e">car</span> spec)
+                  spec)))
+      (<span style="color:#a6e22e">insert</span> (or
+               (lg-generate-alttext (file-from-data data))
+               alt <span style="color:#e6db74">&#34;&#34;</span>)))))</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="testing-it-out">Testing it out</h2>
+<p>The AlephAlpha API generates the alttext for images in <code>eww</code> browser.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/WO6dke7F6BBSBM1utPNZjeFZU" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/WO6dke7F6BBSBM1utPNZjeFZU.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/WO6dke7F6BBSBM1utPNZjeFZU.js" id="asciicast-WO6dke7F6BBSBM1utPNZjeFZU" async></script>
+<h2 id="semiosis-token">💡 Semiosis token</h2>
+<p>Instead of prompting for the alttext, look for
+an existing generation through the semiosis
+p2p network.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Describing Melee&#39;s Paintings with AlephAlpha</title>

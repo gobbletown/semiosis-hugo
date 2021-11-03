@@ -1,0 +1,189 @@
++++
+title = "AlephAlpha for alttext"
+author = ["Shane Mulligan"]
+date = 2021-11-03T00:00:00+13:00
+keywords = ["𝑖web", "pen", "אα", "mm"]
+draft = false
++++
+
+## Summary {#summary}
+
+I use AlephAlpha's multimodal LM to generate
+_alttext_ for the `eww` web browser. This is in
+order to keep websites textual.
+
+When browsing the **imaginary web**, it is more
+useful to have textual representations of
+images. This way, you can do things such as
+run google searches, just by selecting their
+description, as opposed to relying on a multi-
+modal prompt entirely for 𝑖web search.
+
+
+## Prompt {#prompt}
+
+`pf-given-an-image-describe-it/1`
+: <http://github.com/semiosis/prompts/blob/master/prompts/given-an-image-describe-it-1.prompt>
+
+<!--listend-->
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+task: "Given an image, describe it"
+doc: "Given an image, describe it. For alttext"
+prompt-version: 1
+payloads:
+- image: "<file path or url>"
+prompt: |+
+  Q: What is in this image? A:
+force-engine: "AlephAlpha EUTranMM"
+temperature: 0.0
+max-generated-tokens: 150
+top-p: 1.0
+stop-sequences:
+- "Q:"
+cache: on
+info: on
+vars:
+- "file path or url"
+# filter: on
+completion: off
+insertion: off
+postprocessor: pen-str clean-alephalpha
+{{< /highlight >}}
+
+
+## Emacs lisp {#emacs-lisp}
+
+
+### `lg-generate-alttext` {#lg-generate-alttext}
+
+Here is the function which will be used to
+generate the alttexts. It's based on
+AlephAlpha's multimodal `image<->text` LM.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun lg-generate-alttext (fp-or-url)
+  (interactive (list (read-string-hist "lg-generate-alttext (fp or url): ")))
+  (let ((description (sor (car (pen-one (pf-given-an-image-describe-it/1 fp-or-url)))
+                          "*")))
+    (if (interactive-p)
+        (etv description)
+      description)))
+
+(defun file-from-data (data)
+  (let* ((hash (sha1 data))
+         (fp (f-join "/tmp" hash)))
+    (write-to-file data fp)
+    fp))
+{{< /highlight >}}
+
+Example outputs for Fievel.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+("character of a person. from the Disney a person film."
+ "The image of a person from the a person movie. He"
+ "The character a person ,in the movie a person series."
+ "The character a person from the a person series. The")
+{{< /highlight >}}
+
+Now the Google logo:
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+("Google's a Google Google for Google Google version Chrome page for"
+ "Google is a Google logo for Google new Google search.,"
+ "The is a Google Google for Google search search search app."
+ "It's the new logo for the new Google search app.")
+{{< /highlight >}}
+
+I think these should make decent alttexts.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/D70Ht8HPipHIjSDnsFrviROzA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/D70Ht8HPipHIjSDnsFrviROzA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/D70Ht8HPipHIjSDnsFrviROzA.js" id="asciicast-D70Ht8HPipHIjSDnsFrviROzA" async></script>
+
+
+### `shr-put-image` {#shr-put-image}
+
+Here is the function, which puts an image into
+the web browser.
+
+I have modified it to make use of AlephAlpha's
+API to describe images.
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun shr-put-image (spec alt &optional flags)
+  "Insert image SPEC with a string ALT.  Return image.
+SPEC is either an image data blob, or a list where the first
+element is the data blob and the second element is the content-type."
+  (if (display-graphic-p)
+      (let* ((size (cdr (assq 'size flags)))
+             (data (if (consp spec)
+                       (car spec)
+                     spec))
+             (content-type (and (consp spec)
+                                (cadr spec)))
+             (start (point))
+             (image (cond
+                     ((eq size 'original)
+                      (create-image data nil t :ascent 100
+                                    :format content-type))
+                     ((eq content-type 'image/svg+xml)
+                      (create-image data 'svg t :ascent 100))
+                     ((eq size 'full)
+                      (ignore-errors
+                        (shr-rescale-image data content-type
+                                           (plist-get flags :width)
+                                           (plist-get flags :height))))
+                     (t
+                      (ignore-errors
+                        (shr-rescale-image data content-type
+                                           (plist-get flags :width)
+                                           (plist-get flags :height)))))))
+        (when image
+          ;; When inserting big-ish pictures, put them at the
+          ;; beginning of the line.
+          (when (and (> (current-column) 0)
+                     (> (car (image-size image t)) 400))
+            (insert "\n"))
+          (if (eq size 'original)
+              (insert-sliced-image image (or (lg-generate-alttext (file-from-data data))
+                                             alt "*") nil 20 1)
+            (insert-image image (or
+                                 (lg-generate-alttext (file-from-data data))
+                                 alt "*")))
+          (put-text-property start (point) 'image-size size)
+          (when (and shr-image-animate
+                     (cond ((fboundp 'image-multi-frame-p)
+                            ;; Only animate multi-frame things that specify a
+                            ;; delay; eg animated gifs as opposed to
+                            ;; multi-page tiffs.  FIXME?
+                            (cdr (image-multi-frame-p image)))
+                           ((fboundp 'image-animated-p)
+                            (image-animated-p image))))
+            (image-animate image nil 60)))
+        image)
+    (let ((data (if (consp spec)
+                    (car spec)
+                  spec)))
+      (insert (or
+               (lg-generate-alttext (file-from-data data))
+               alt "")))))
+{{< /highlight >}}
+
+
+## Testing it out {#testing-it-out}
+
+The AlephAlpha API generates the alttext for images in `eww` browser.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/WO6dke7F6BBSBM1utPNZjeFZU" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/WO6dke7F6BBSBM1utPNZjeFZU.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/WO6dke7F6BBSBM1utPNZjeFZU.js" id="asciicast-WO6dke7F6BBSBM1utPNZjeFZU" async></script>
+
+
+## 💡 Semiosis token {#semiosis-token}
+
+Instead of prompting for the alttext, look for
+an existing generation through the semiosis
+p2p network.
