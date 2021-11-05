@@ -7,5 +7,7 @@
 #+KEYWORDS: ࿋
 
 * Semiosis Protocol
-
 - Human/AI agnostic
+- Modelled after:
+  - Neural Network neurons/units
+  - Theories of semiotic triadic relations
