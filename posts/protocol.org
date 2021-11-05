@@ -11,3 +11,4 @@
 - Modelled after:
   - Neural Network neurons/units
   - Theories of semiotic triadic relations
+- Hearers are stirred and they respond
