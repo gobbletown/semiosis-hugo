@@ -1,12 +1,11 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: protocol
+#+TITLE: Semiosis Protocol
 #+DATE: <2021-11-05>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: ࿋
 
-* Semiosis Protocol
 - Human/AI agnostic
 - Modelled after:
   - Neural Network neurons/units
