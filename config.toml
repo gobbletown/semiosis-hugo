@@ -78,6 +78,11 @@ unsafe= true
     url        = "/ilambda/"
 
   [[menu.main]]
+    identifier = "protocol"
+    name       = "࿋"
+    url        = "/protocol/"
+
+  [[menu.main]]
     identifier = "looking-glass"
     name       = "🔍"
     url        = "/looking-glass/"
