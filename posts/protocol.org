@@ -1,5 +1,5 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./posts
+#+HUGO_SECTION: ./protocol
 
 #+TITLE: protocol
 #+DATE: <2021-11-05>
