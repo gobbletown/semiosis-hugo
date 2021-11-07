@@ -14797,10 +14797,16 @@ delimitation.</p>
             <pubDate>Sun, 05 Sep 2021 00:00:00 +1200</pubDate>
             
             <guid>http://semiosis.github.io/posts/emacsconf-2021-imaginary-programming/</guid>
-            <description>Talk: Imaginary Programming Abstract: Imaginary Programming (IP) is both methodology and paradigm. It is an extension of literate programming and a way of creating software without the use of imperative, functional or even declarative code. Yet IP employs all disciplines to achieve the miraculous. The only contingency is on one or more language models, known as foundation models. The real value of IP is not found by abandoning sound logic altogether, but in weaving the real with the imaginary.</description>
+            <description>Talk: Imaginary Programming  video https://www.youtube.com/watch?v=yuSPO6xwwu8 slides presentation.pdf  Abstract: Imaginary Programming (IP) is both methodology and paradigm. It is an extension of literate programming and a way of creating software without the use of imperative, functional or even declarative code. Yet IP employs all disciplines to achieve the miraculous. The only contingency is on one or more language models, known as foundation models. The real value of IP is not found by abandoning sound logic altogether, but in weaving the real with the imaginary.</description>
             <content type="html"><![CDATA[<h2 id="talk">Talk: <span class="underline">Imaginary Programming</span></h2>
+<dl>
+<dt>video</dt>
+<dd><a href="https://www.youtube.com/watch?v=yuSPO6xwwu8">https://www.youtube.com/watch?v=yuSPO6xwwu8</a></dd>
+<dt>slides</dt>
+<dd><a href="https://github.com/mullikine/imaginary-programming-transcript-emacsconf-2021/blob/master/presentation.pdf">presentation.pdf</a></dd>
+</dl>
 <h3 id="abstract">Abstract:</h3>
-<p>Imaginary Programming (IP) is both methodology and paradigm. It is an extension
+<p>Imaginary Programming (<code>IP</code>) is both methodology and paradigm. It is an extension
 of literate programming and a way of creating software without the use of
 imperative, functional or even declarative code. Yet IP employs all disciplines
 to achieve the miraculous. The only contingency is on one or more language

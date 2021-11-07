@@ -2,16 +2,22 @@
 title = "EmacsConf 2021 - Imaginary Programming"
 author = ["Shane Mulligan"]
 date = 2021-09-05T00:00:00+12:00
-keywords = ["imaginary-programming", "gpt", "emacs"]
+keywords = ["imaginary-programming", "gpt", "emacs", "imaginary", "𝑖λ"]
 draft = false
 +++
 
 ## Talk: <span class="underline">Imaginary Programming</span> {#talk}
 
+video
+: <https://www.youtube.com/watch?v=yuSPO6xwwu8>
+
+slides
+: [presentation.pdf](https://github.com/mullikine/imaginary-programming-transcript-emacsconf-2021/blob/master/presentation.pdf)
+
 
 ### Abstract: {#abstract}
 
-Imaginary Programming (IP) is both methodology and paradigm. It is an extension
+Imaginary Programming (`IP`) is both methodology and paradigm. It is an extension
 of literate programming and a way of creating software without the use of
 imperative, functional or even declarative code. Yet IP employs all disciplines
 to achieve the miraculous. The only contingency is on one or more language
