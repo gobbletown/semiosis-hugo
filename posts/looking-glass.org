@@ -31,8 +31,6 @@ for, and allows you to infer what might be
 behind the 404, if you come across a website
 which has been taken down.
 
-[[./pen-lg-logo.png]]
-
 ** How to browse with LookingGlass v1.0i
 *** Interactive Demo
 - https://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/
@@ -42,3 +40,5 @@ which has been taken down.
 
 ** How to search
 - https://mullikine.github.io/posts/search-the-web-with-codex/
+
+[[./pen-lg-logo.png]]
