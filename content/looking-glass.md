@@ -32,7 +32,15 @@ which has been taken down.
 {{< figure src="/ox-hugo/pen-lg-logo.png" >}}
 
 
-## How to browse {#how-to-browse}
+## How to browse with LookingGlass v1.0i {#how-to-browse-with-lookingglass-v1-dot-0i}
+
+
+### Interactive Demo {#interactive-demo}
+
+-   <https://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/>
+
+
+### Explanation {#explanation}
 
 -   <https://mullikine.github.io/posts/the-imaginary-web-with-codex/>
 
