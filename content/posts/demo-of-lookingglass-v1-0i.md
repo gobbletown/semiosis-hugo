@@ -13,6 +13,15 @@ This is an early demo of the LookingGlass web browser.
 I use a standalone Docker image (i.e. standalone browser command, `lg`).
 
 
+### Code {#code}
+
+LookingGlass
+: <http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el>
+
+eww
+: <http://github.com/semiosis/pen.el/blob/master/src/pen-eww.el>
+
+
 ## Browse non-existent wiki pages {#browse-non-existent-wiki-pages}
 
 <!-- Play on asciinema.com -->
