@@ -33,7 +33,11 @@ which has been taken down.
 
 [[./pen-lg-logo.png]]
 
-** How to browse
+** How to browse with LookingGlass v1.0i
+*** Interactive Demo
+- https://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/
+
+*** Explanation
 - https://mullikine.github.io/posts/the-imaginary-web-with-codex/
 
 ** How to search
