@@ -10,8 +10,18 @@ draft = false
 
 This is an early demo of the LookingGlass web browser.
 
+I use a standalone Docker image (i.e. standalone browser command, `lg`).
 
-## Use Docker image (Standalone browser) {#use-docker-image--standalone-browser}
+
+## Browse non-existent wiki pages {#browse-non-existent-wiki-pages}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/1MkhkkSP2BVDsmqUKE2jXRjOI" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/1MkhkkSP2BVDsmqUKE2jXRjOI.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/1MkhkkSP2BVDsmqUKE2jXRjOI.js" id="asciicast-1MkhkkSP2BVDsmqUKE2jXRjOI" async></script>
+
+
+## Designing a house {#designing-a-house}
 
 Here I demonstrate interactively imagining and
 designing a website, and image of a house with

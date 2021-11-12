@@ -15,10 +15,10 @@
       
       <guid>http://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/</guid>
       <description>Summary This is an early demo of the LookingGlass web browser.
-Use Docker image (Standalone browser) Here I demonstrate interactively imagining and designing a website, and image of a house with Codex.
+I use a standalone Docker image (i.e. standalone browser command, lg).
+Browse non-existent wiki pages  --  Designing a house Here I demonstrate interactively imagining and designing a website, and image of a house with Codex.
  --  The next step is to use DALL-E to imagine the images.
-Regular google search with image-to-text The web browser works like a regular browser, too.
- --  Browse unavailable website  --   Automatically visit imaginary when 404 or 502 Generate html from ascii, up to the &amp;lt;/html&amp;gt;  </description>
+Regular google search with image-to-text The web browser works like a regular browser, too.</description>
     </item>
     
     <item>

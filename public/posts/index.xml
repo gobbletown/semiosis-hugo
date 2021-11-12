@@ -16,13 +16,19 @@
             
             <guid>http://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/</guid>
             <description>Summary This is an early demo of the LookingGlass web browser.
-Use Docker image (Standalone browser) Here I demonstrate interactively imagining and designing a website, and image of a house with Codex.
+I use a standalone Docker image (i.e. standalone browser command, lg).
+Browse non-existent wiki pages  --  Designing a house Here I demonstrate interactively imagining and designing a website, and image of a house with Codex.
  --  The next step is to use DALL-E to imagine the images.
-Regular google search with image-to-text The web browser works like a regular browser, too.
- --  Browse unavailable website  --   Automatically visit imaginary when 404 or 502 Generate html from ascii, up to the &amp;lt;/html&amp;gt;  </description>
+Regular google search with image-to-text The web browser works like a regular browser, too.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is an early demo of the LookingGlass web browser.</p>
-<h2 id="use-docker-image--standalone-browser">Use Docker image (Standalone browser)</h2>
+<p>I use a standalone Docker image (i.e. standalone browser command, <code>lg</code>).</p>
+<h2 id="browse-non-existent-wiki-pages">Browse non-existent wiki pages</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/1MkhkkSP2BVDsmqUKE2jXRjOI" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/1MkhkkSP2BVDsmqUKE2jXRjOI.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/1MkhkkSP2BVDsmqUKE2jXRjOI.js" id="asciicast-1MkhkkSP2BVDsmqUKE2jXRjOI" async></script>
+<h2 id="designing-a-house">Designing a house</h2>
 <p>Here I demonstrate interactively imagining and
 designing a website, and image of a house with
 Codex.</p>
