@@ -6,8 +6,49 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 11 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Fri, 12 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Demo of LookingGlass v1.0i</title>
+            <link>http://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/</link>
+            <pubDate>Fri, 12 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/</guid>
+            <description>Summary This is an early demo of the LookingGlass web browser.
+Use Docker image (Standalone browser) Here I demonstrate interactively imagining and designing a website, and image of a house with Codex.
+ --  The next step is to use DALL-E to imagine the images.
+Regular google search with image-to-text The web browser works like a regular browser, too.
+ --  Browse unavailable website  --   Automatically visit imaginary when 404 or 502 Generate html from ascii, up to the &amp;lt;/html&amp;gt;  </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>This is an early demo of the LookingGlass web browser.</p>
+<h2 id="use-docker-image--standalone-browser">Use Docker image (Standalone browser)</h2>
+<p>Here I demonstrate interactively imagining and
+designing a website, and image of a house with
+Codex.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/F1uXYJn8BXcNUOCb9uYwL5ySr" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/F1uXYJn8BXcNUOCb9uYwL5ySr.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/F1uXYJn8BXcNUOCb9uYwL5ySr.js" id="asciicast-F1uXYJn8BXcNUOCb9uYwL5ySr" async></script>
+<p>The next step is to use DALL-E to imagine the
+images.</p>
+<h2 id="regular-google-search-with-image-to-text">Regular google search with <code>image-to-text</code></h2>
+<p>The web browser works like a regular browser, too.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/MBEZM8EwCK2VtDuYq8ww8X5zf" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/MBEZM8EwCK2VtDuYq8ww8X5zf.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/MBEZM8EwCK2VtDuYq8ww8X5zf.js" id="asciicast-MBEZM8EwCK2VtDuYq8ww8X5zf" async></script>
+<h2 id="browse-unavailable-website">Browse unavailable website</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/MsI2s9TpwSinAhGEkL6WnWerT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/MsI2s9TpwSinAhGEkL6WnWerT.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/MsI2s9TpwSinAhGEkL6WnWerT.js" id="asciicast-MsI2s9TpwSinAhGEkL6WnWerT" async></script>
+<ul>
+<li>Automatically visit imaginary when 404 or 502</li>
+<li>Generate html from ascii, up to the <code>&lt;/html&gt;</code></li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Demo of explain-a-file-4.prompt – Explain any file</title>
