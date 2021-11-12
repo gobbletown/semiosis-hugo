@@ -29,6 +29,18 @@ for, and allows you to infer what might be
 behind the 404, if you come across a website
 which has been taken down.
 
+`LookingGlass` is the first **imaginary** web browser (to
+my knowledge), but it is shamelessly inspired
+by, `moire`'s precocious demonstration of
+`GPT-3`'s [mirror internet](https://generative.ink/posts/the-internet-mirrored-by-gpt-3/).
+
+`LG` utilises Language Models, MultiModal-Models
+and World Models in order to create a
+web-browsing experience in the imagination of
+multiple AI systems. But it gives you
+interactive control over the imagination of
+the websites.
+
 
 ## How to browse with LookingGlass v1.0i {#how-to-browse-with-lookingglass-v1-dot-0i}
 
