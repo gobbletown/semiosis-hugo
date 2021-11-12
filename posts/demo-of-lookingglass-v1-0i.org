@@ -33,3 +33,16 @@ This is an early demo of the LookingGlass web browser.
 - Generate html from ascii, up to the =</html>=
 
 ** Use Docker image (Standalone browser)
+Here I demonstrate interactively imagining and
+designing a website, and image of a house with
+Codex.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/F1uXYJn8BXcNUOCb9uYwL5ySr" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/F1uXYJn8BXcNUOCb9uYwL5ySr.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/F1uXYJn8BXcNUOCb9uYwL5ySr.js" id="asciicast-F1uXYJn8BXcNUOCb9uYwL5ySr" async></script>
+#+END_EXPORT
+
+The next step is to use DALL-E to imagine the
+images.
