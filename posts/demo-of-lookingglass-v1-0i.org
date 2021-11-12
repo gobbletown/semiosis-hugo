@@ -31,3 +31,5 @@ This is an early demo of the LookingGlass web browser.
 
 - Automatically visit imaginary when 404 or 502
 - Generate html from ascii, up to the =</html>=
+
+** Use Docker image (Standalone browser)
