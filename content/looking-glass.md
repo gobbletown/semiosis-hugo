@@ -29,8 +29,6 @@ for, and allows you to infer what might be
 behind the 404, if you come across a website
 which has been taken down.
 
-{{< figure src="/ox-hugo/pen-lg-logo.png" >}}
-
 
 ## How to browse with LookingGlass v1.0i {#how-to-browse-with-lookingglass-v1-dot-0i}
 
@@ -48,3 +46,5 @@ which has been taken down.
 ## How to search {#how-to-search}
 
 -   <https://mullikine.github.io/posts/search-the-web-with-codex/>
+
+{{< figure src="/ox-hugo/pen-lg-logo.png" >}}
