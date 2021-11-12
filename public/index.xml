@@ -16,9 +16,7 @@
       <guid>http://semiosis.github.io/posts/demo-of-lookingglass-v1-0i/</guid>
       <description>Summary This is an early demo of the LookingGlass web browser.
 I use a standalone Docker image (i.e. standalone browser command, lg).
-Browse non-existent wiki pages  --  Designing a house Here I demonstrate interactively imagining and designing a website, and image of a house with Codex.
- --  The next step is to use DALL-E to imagine the images.
-Regular google search with image-to-text The web browser works like a regular browser, too.</description>
+Browse non-existent wiki pages  --  Prompts Generate html from ascii browser  Code http://github.com/semiosis/prompts/blob/master/prompts/generate-html-from-ascii-browser-2.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48  task: &amp;#34;generate html from ascii browser&amp;#34; doc: &amp;#34;Given an ascii browser dump, generate some html&amp;#34; prompt-version: 3 prompt: |-# Render the website: lynx --dump -nolist &amp;lt;q:url&amp;gt; &amp;lt;&amp;lt;EOD &amp;lt;ascii&amp;gt; EOD # The following is the html for the above web page curl -s &amp;lt;q:url&amp;gt; &amp;lt;&amp;lt;EOD &amp;lt;!</description>
     </item>
     
     <item>

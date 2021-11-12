@@ -21,6 +21,74 @@ I use a standalone Docker image (i.e. standalone browser command, `lg`).
 <script src="https://asciinema.org/a/1MkhkkSP2BVDsmqUKE2jXRjOI.js" id="asciicast-1MkhkkSP2BVDsmqUKE2jXRjOI" async></script>
 
 
+## Prompts {#prompts}
+
+
+### Generate html from ascii browser {#generate-html-from-ascii-browser}
+
+Code
+: <http://github.com/semiosis/prompts/blob/master/prompts/generate-html-from-ascii-browser-2.prompt>
+
+<!--listend-->
+
+{{< highlight yaml "linenos=table, linenostart=1" >}}
+task: "generate html from ascii browser"
+doc: "Given an ascii browser dump, generate some html"
+prompt-version: 3
+prompt: |-
+    # Render the website:
+    lynx --dump -nolist <q:url> <<EOD
+    <ascii>
+    EOD
+
+    # The following is the html for the above web page
+    curl -s <q:url> <<EOD
+    <!DOCTYPE html>
+    <!-- This page uses very simple html -->
+    <!-- Allowed tags: h1 p ul li a -->
+    <:pp><html>
+    <head>
+    <title>
+engine: "OpenAI Codex"
+temperature: 0.2
+max-generated-tokens: "(* 1 prompt-length)"
+frequency-penalty: 0.5
+top-p: 1.0
+n-collate: 1
+n-completions: 5
+
+closer: pf-continue-last
+autoclose: on
+
+stop-sequences:
+- "EOD"
+cache: on
+vars:
+- url
+- ascii
+postprocessor: "sed -z -e 's=\\(</html>\\).*=\\1=' -e 's= >=>=g'"
+examples:
+- |-
+     Apple
+
+     We look forward to welcoming you to our stores. Whether you shop in a
+     store or shop online, our Specialists can help you buy the products
+     you love. Shop with a Specialist, get credit with Apple Trade In,
+     choose free delivery or pickup, and more at the Apple Store Online.
+     Shop with a Specialist, get credit with Apple Trade In, choose free
+     delivery or pickup, and more at the Apple Store Online.
+info: on
+completion: off
+insertion: off
+{{< /highlight >}}
+
+
+### Imagine a website from a URL {#imagine-a-website-from-a-url}
+
+Code
+: <http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-website-from-a-url-1.prompt>
+
+
 ## Designing a house {#designing-a-house}
 
 Here I demonstrate interactively imagining and
