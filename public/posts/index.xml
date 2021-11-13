@@ -6,8 +6,34 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 13 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Demo of Imaginary Interpreters with Pen.el</title>
+            <link>http://semiosis.github.io/posts/demo-of-imaginary-interpreters-with-pen-el/</link>
+            <pubDate>Sun, 14 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/demo-of-imaginary-interpreters-with-pen-el/</guid>
+            <description>Summary I demonstrate how to use the imaginary interpreter with the pen docker image.
+ Firstly, start pen Then run ii python  Or any language you want    Demo  -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I demonstrate how to use the imaginary
+interpreter with the <code>pen</code> docker image.</p>
+<ul>
+<li>Firstly, start pen</li>
+<li>Then run <code>ii python</code>
+<ul>
+<li>Or any language you want</li>
+</ul>
+</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/IJW1uab7p40Hi5VJ7Uw4N3aPW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/IJW1uab7p40Hi5VJ7Uw4N3aPW.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/IJW1uab7p40Hi5VJ7Uw4N3aPW.js" id="asciicast-IJW1uab7p40Hi5VJ7Uw4N3aPW" async></script>]]></content>
+        </item>
         
         <item>
             <title>Demo of Org-Brain with Pen.el</title>
