@@ -79,12 +79,12 @@ unsafe= true
 
   [[menu.main]]
     identifier = "protocol"
-    name       = "࿋ Protocol"
+    name       = "࿋ Semiosis Protocol"
     url        = "/protocol/"
 
   [[menu.main]]
     identifier = "looking-glass"
-    name       = "Looking 🔍 Glass"
+    name       = "🔍 Looking Glass"
     url        = "/looking-glass/"
 
   [[menu.main]]
