@@ -17,7 +17,7 @@ Solving the problems of utilising current LMs will make it easier down the line 
 
     <title>
         
-            ii (Imaginary Interpreter) :: semiosis  — Signs, Natural Language and Coding
+            𝑖i (Imaginary Interpreter) :: semiosis  — Signs, Natural Language and Coding
         
     </title>
 
@@ -35,7 +35,7 @@ Solving the problems of utilising current LMs will make it easier down the line 
 
 
 
-<meta itemprop="name" content="ii (Imaginary Interpreter)">
+<meta itemprop="name" content="𝑖i (Imaginary Interpreter)">
 <meta itemprop="description" content="Summary This is an introduction to the imaginary interpreter built into Pen.el.
 The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
 It&rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.
@@ -46,7 +46,7 @@ Solving the problems of utilising current LMs will make it easier down the line 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
-<meta name="twitter:title" content="ii (Imaginary Interpreter)"/>
+<meta name="twitter:title" content="𝑖i (Imaginary Interpreter)"/>
 <meta name="twitter:description" content="Summary This is an introduction to the imaginary interpreter built into Pen.el.
 The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
 It&rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.
@@ -55,7 +55,7 @@ Solving the problems of utilising current LMs will make it easier down the line 
 
 
 
-    <meta property="og:title" content="ii (Imaginary Interpreter)" />
+    <meta property="og:title" content="𝑖i (Imaginary Interpreter)" />
 <meta property="og:description" content="Summary This is an introduction to the imaginary interpreter built into Pen.el.
 The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
 It&rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.
@@ -148,7 +148,7 @@ Solving the problems of utilising current LMs will make it easier down the line 
         </div>
 
         <article>
-            <h2 class="post-title"><a href="http://semiosis.github.io/ii/">ii (Imaginary Interpreter)</a></h2>
+            <h2 class="post-title"><a href="http://semiosis.github.io/ii/">𝑖i (Imaginary Interpreter)</a></h2>
 
             
             
@@ -174,13 +174,13 @@ more advanced ones.</p>
 <ul>
 <li>An interpreter prompt is selected depending on if a specialised prompt exists for the chosen language.
 <ul>
-<li>The generic <code>ii</code> prompts is comprised of:
+<li>The generic <code>𝑖i</code> prompts is comprised of:
 <ul>
 <li>kickstarter: A subprompt declaring that the following are examples of the specified language.</li>
 <li>Consecutive Input/Output pairs.</li>
 </ul>
 </li>
-<li>Language-specific <code>ii</code> prompts are comprised of:
+<li>Language-specific <code>𝑖i</code> prompts are comprised of:
 <ul>
 <li>kickstarter: A subprompt which is typically a banner.</li>
 <li>postpostprocessor: A script that takes the interpreter history and generates a new &ldquo;user prompt&rdquo;.</li>
@@ -195,13 +195,13 @@ This way, the interpreter has an imaginary state as you work with it.</li>
 <ul>
 <li>Accepts a language as an argument</li>
 <li>Docker bash-host interop:
-<code>ii</code> communicates with arbitrary LMs via the
+<code>𝑖i</code> communicates with arbitrary LMs via the
 bash (docker-host) interop of <code>Pen.el</code>.</li>
 <li><code>rlwrap</code> is used to keep a history of the inputs specific to each interpreter.</li>
 <li>A <code>REPL</code> that keeps builds a transcript and passes that as input to the interpreter prompt.</li>
 </ul>
 <h2 id="code">Code</h2>
-<h3 id="ii--imaginary-interpreter-for-bash"><code>ii</code> (Imaginary Interpreter for bash)</h3>
+<h3 id="𝑖i--imaginary-interpreter-for-bash"><code>𝑖i</code> (Imaginary Interpreter for bash)</h3>
 <dl>
 <dt>full code</dt>
 <dd><a href="http://github.com/semiosis/pen.el/blob/master/scripts/ii">http://github.com/semiosis/pen.el/blob/master/scripts/ii</a></dd>
@@ -481,7 +481,7 @@ Out<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span>: <s
 <p>This will use a generic prompt which does any
 language, but the name of the language has
 been specified as Rubylang.</p>
-<p>When using <code>ii</code>, if a specialised interpreter
+<p>When using <code>𝑖i</code>, if a specialised interpreter
 prompt for a given language can be found then
 that will be used.</p>
 <p>However, since no interpreter can be found for
@@ -557,7 +557,7 @@ to know what the prompt for Ruby looks like.</p>
 </span><span style="color:#e6db74">    2.7.0 :002 &gt;</span>    
 <span style="color:#75715e"># Because the prompt generates from at the end of the user expression</span>
 <span style="color:#75715e"># The generation will contain a starting newline.</span>
-<span style="color:#75715e"># Want to trim that with =ii=, but not in the prompt function because a better harness could be made.</span>
+<span style="color:#75715e"># Want to trim that with =𝑖i=, but not in the prompt function because a better harness could be made.</span>
 <span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
 </span><span style="color:#e6db74">    </span>    <span style="color:#ae81ff">&lt;history&gt;&lt;expression&gt;</span>
 <span style="color:#f92672">user-prompt</span>: <span style="color:#e6db74">&#34;^2.7.0 :[0-9]* &gt; &#34;</span>
@@ -581,7 +581,7 @@ to know what the prompt for Ruby looks like.</p>
 </div>
 </div>
 <h2 id="support-scripts">Support scripts</h2>
-<p>These are used as post-processors in the prompt and in <code>ii</code>.</p>
+<p>These are used as post-processors in the prompt and in <code>𝑖i</code>.</p>
 <h3 id="string-utilities--pen-s">String utilities (<code>pen-s</code>)</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

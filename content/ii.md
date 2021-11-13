@@ -1,5 +1,5 @@
 +++
-title = "ii (Imaginary Interpreter)"
+title = "𝑖i (Imaginary Interpreter)"
 author = ["Shane Mulligan"]
 date = 2021-08-22T00:00:00+12:00
 keywords = ["gpt", "pen", "openai"]
@@ -32,10 +32,10 @@ more advanced ones.
 ### The interpreter prompt {#the-interpreter-prompt}
 
 -   An interpreter prompt is selected depending on if a specialised prompt exists for the chosen language.
-    -   The generic `ii` prompts is comprised of:
+    -   The generic `𝑖i` prompts is comprised of:
         -   kickstarter: A subprompt declaring that the following are examples of the specified language.
         -   Consecutive Input/Output pairs.
-    -   Language-specific `ii` prompts are comprised of:
+    -   Language-specific `𝑖i` prompts are comprised of:
         -   kickstarter: A subprompt which is typically a banner.
         -   postpostprocessor: A script that takes the interpreter history and generates a new "user prompt".
 -   An interpreter prompt accepts as a first argument the history of the interaction with the interpreter.
@@ -46,7 +46,7 @@ more advanced ones.
 
 -   Accepts a language as an argument
 -   Docker bash-host interop:
-    `ii` communicates with arbitrary LMs via the
+    `𝑖i` communicates with arbitrary LMs via the
     bash (docker-host) interop of `Pen.el`.
 -   `rlwrap` is used to keep a history of the inputs specific to each interpreter.
 -   A `REPL` that keeps builds a transcript and passes that as input to the interpreter prompt.
@@ -55,7 +55,7 @@ more advanced ones.
 ## Code {#code}
 
 
-### `ii` (Imaginary Interpreter for bash) {#ii--imaginary-interpreter-for-bash}
+### `𝑖i` (Imaginary Interpreter for bash) {#𝑖i--imaginary-interpreter-for-bash}
 
 full code
 : <http://github.com/semiosis/pen.el/blob/master/scripts/ii>
@@ -249,7 +249,7 @@ This will use a generic prompt which does any
 language, but the name of the language has
 been specified as Rubylang.
 
-When using `ii`, if a specialised interpreter
+When using `𝑖i`, if a specialised interpreter
 prompt for a given language can be found then
 that will be used.
 
@@ -295,7 +295,7 @@ subprompts:
     2.7.0 :002 >
 # Because the prompt generates from at the end of the user expression
 # The generation will contain a starting newline.
-# Want to trim that with =ii=, but not in the prompt function because a better harness could be made.
+# Want to trim that with =𝑖i=, but not in the prompt function because a better harness could be made.
 prompt: |+
     <history><expression>
 user-prompt: "^2.7.0 :[0-9]* > "
@@ -321,7 +321,7 @@ examples:
 
 ## Support scripts {#support-scripts}
 
-These are used as post-processors in the prompt and in `ii`.
+These are used as post-processors in the prompt and in `𝑖i`.
 
 
 ### String utilities (`pen-s`) {#string-utilities--pen-s}
