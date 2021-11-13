@@ -74,17 +74,17 @@ unsafe= true
 
   [[menu.main]]
     identifier = "ilambda"
-    name       = "𝑖λ"
+    name       = "𝑖λ ilambda"
     url        = "/ilambda/"
 
   [[menu.main]]
     identifier = "protocol"
-    name       = "࿋"
+    name       = "࿋ Protocol"
     url        = "/protocol/"
 
   [[menu.main]]
     identifier = "looking-glass"
-    name       = "🔍"
+    name       = "Lookin g🔍 Glass"
     url        = "/looking-glass/"
 
   [[menu.main]]
