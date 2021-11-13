@@ -84,7 +84,7 @@ unsafe= true
 
   [[menu.main]]
     identifier = "looking-glass"
-    name       = "Lookin g🔍 Glass"
+    name       = "Looking 🔍 Glass"
     url        = "/looking-glass/"
 
   [[menu.main]]
