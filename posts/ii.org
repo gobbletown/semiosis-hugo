@@ -4,7 +4,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: ii (Imaginary Interpreter)
+#+TITLE: 𝑖i (Imaginary Interpreter)
 #+DATE: <2021-08-22>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: gpt pen openai
