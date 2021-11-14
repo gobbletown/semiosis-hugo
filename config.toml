@@ -93,7 +93,7 @@ unsafe= true
     url        = "/ii/"
 
   [[menu.main]]
-    identifier = "ii"
+    identifier = "cterm"
     name       = "Complex Term"
     url        = "/cterm/"
 
