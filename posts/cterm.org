@@ -11,6 +11,8 @@ The complex terminal built into =Pen.el= is a
 regular terminal that has an imaginary
 component.
 
++ Original article :: https://mullikine.github.io/posts/imaginary-real-codex-complex/
+
 ** Demo
 *** Use language models in any terminal environment
 #+BEGIN_EXPORT html
@@ -19,6 +21,3 @@ component.
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/38xoJzrUrBC1dJrsIXeOD3Sni.js" id="asciicast-38xoJzrUrBC1dJrsIXeOD3Sni" async></script>
 #+END_EXPORT
-
-** Example
-https://mullikine.github.io/posts/imaginary-real-codex-complex/
