@@ -11,6 +11,9 @@ The complex terminal built into =Pen.el= is a
 regular terminal that has an imaginary
 component.
 
+You may connect the dockerized =cterm= to any
+host process.
+
 + Original article :: https://mullikine.github.io/posts/imaginary-real-codex-complex/
 
 ** Demo
