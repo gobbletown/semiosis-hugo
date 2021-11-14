@@ -1,0 +1,12 @@
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: cterm (Complex Terminal)
+#+DATE: <2021-11-15>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: 𝑖i imaginary pen
+
+** Summary
+The complex terminal built into =Pen.el= is a
+regular terminal that has an imaginary
+component.
