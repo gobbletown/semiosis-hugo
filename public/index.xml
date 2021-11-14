@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cterm (Complex Terminal)</title>
+      <link>http://semiosis.github.io/posts/cterm/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/cterm/</guid>
+      <description>Summary The complex terminal built into Pen.el is a regular terminal that has an imaginary component.
+ Original article https://mullikine.github.io/posts/imaginary-real-codex-complex/  Demo Use language models in any terminal environment  -- </description>
+    </item>
+    
     <item>
       <title>Demo of Imaginary Interpreters with Pen.el</title>
       <link>http://semiosis.github.io/posts/demo-of-imaginary-interpreters-with-pen-el/</link>
