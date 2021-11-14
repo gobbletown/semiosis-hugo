@@ -93,6 +93,11 @@ unsafe= true
     url        = "/ii/"
 
   [[menu.main]]
+    identifier = "ii"
+    name       = "Complex Term"
+    url        = "/cterm/"
+
+  [[menu.main]]
     identifier = "ink"
     name       = "Ink.el"
     url        = "/ink/"
