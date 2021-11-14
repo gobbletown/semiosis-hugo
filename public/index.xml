@@ -15,6 +15,7 @@
       
       <guid>http://semiosis.github.io/cterm/</guid>
       <description>Summary The complex terminal built into Pen.el is a regular terminal that has an imaginary component.
+You may connect the dockerized cterm to any host process simply by prefixing ct to any shell command.
  Original article https://mullikine.github.io/posts/imaginary-real-codex-complex/  Demo Use language models in any terminal environment  -- </description>
     </item>
     
