@@ -10,3 +10,6 @@
 The complex terminal built into =Pen.el= is a
 regular terminal that has an imaginary
 component.
+
+** Example
+https://mullikine.github.io/posts/imaginary-real-codex-complex/
