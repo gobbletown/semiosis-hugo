@@ -6,32 +6,8 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>cterm (Complex Terminal)</title>
-            <link>http://semiosis.github.io/posts/cterm/</link>
-            <pubDate>Mon, 15 Nov 2021 00:00:00 +1300</pubDate>
-            
-            <guid>http://semiosis.github.io/posts/cterm/</guid>
-            <description>Summary The complex terminal built into Pen.el is a regular terminal that has an imaginary component.
- Original article https://mullikine.github.io/posts/imaginary-real-codex-complex/  Demo Use language models in any terminal environment  -- </description>
-            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
-<p>The complex terminal built into <code>Pen.el</code> is a
-regular terminal that has an imaginary
-component.</p>
-<dl>
-<dt>Original article</dt>
-<dd><a href="https://mullikine.github.io/posts/imaginary-real-codex-complex/">https://mullikine.github.io/posts/imaginary-real-codex-complex/</a></dd>
-</dl>
-<h2 id="demo">Demo</h2>
-<h3 id="use-language-models-in-any-terminal-environment">Use language models in any terminal environment</h3>
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/38xoJzrUrBC1dJrsIXeOD3Sni" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/38xoJzrUrBC1dJrsIXeOD3Sni.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/38xoJzrUrBC1dJrsIXeOD3Sni.js" id="asciicast-38xoJzrUrBC1dJrsIXeOD3Sni" async></script>]]></content>
-        </item>
         
         <item>
             <title>Demo of Imaginary Interpreters with Pen.el</title>
