@@ -11,7 +11,7 @@
 | Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
 
 ** Summary
-=Paracosm= is an accelerator for learning and world-building.
+=Paracosm= is an accelerator for learning, world-building and personal development.
 
 Accelerate your thinking and immerse yourself
 in your own detailed imaginary world of
