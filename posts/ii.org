@@ -9,6 +9,10 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: gpt pen openai
 
+| Install with Pen  |                                     |
+|-------------------+-------------------------------------|
+| Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
+
 ** Summary
 This is an introduction to the imaginary
 interpreter built into =Pen.el=.
@@ -26,10 +30,6 @@ imagined languages.
 Solving the problems of utilising current LMs
 will make it easier down the line to utilise
 more advanced ones.
-
-| Install with Pen  |                                     |
-|-------------------+-------------------------------------|
-| Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
 
 ** Architecture
 *** The interpreter prompt
