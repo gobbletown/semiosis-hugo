@@ -1,5 +1,5 @@
 +++
-title = "Paracosm"
+title = "Paracosm (Your Imaginary World In Plain Text!)"
 author = ["Shane Mulligan"]
 date = 2021-11-15T00:00:00+13:00
 keywords = ["pen", "imaginary", "paracosm"]
