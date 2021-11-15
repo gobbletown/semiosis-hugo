@@ -1,0 +1,20 @@
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./
+
+#+TITLE: Paracosm
+#+DATE: <2021-11-15>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: pen imaginary paracosm
+
+** Summary
+=Paracosm= is where imagination meets mind mapping.
+
+Using LMs to infer and unstand, you can to
+accelerate your mind-mapping through a melding
+of human and AI imagination!
+
+- Generate topics,
+- Suggest new topics
+- Talk to chatbots on any topic
+
+It's an integrated mind map and chatbot where
