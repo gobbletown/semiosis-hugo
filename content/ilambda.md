@@ -42,6 +42,10 @@ IP library
 IP glossary
 : <https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
 
+| Install with Pen |                                       |
+|------------------|---------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+
 `imacro` (like regular macros) are for
 generating code. `idefun`, however, doesnt
 generate the code but attempts to evaluate a

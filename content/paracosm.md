@@ -20,6 +20,10 @@ of human and AI imagination!
 
 Run `paracosm` from the host to start it.
 
+| Install with Pen |                                       |
+|------------------|---------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+
 
 ## Demo {#demo}
 

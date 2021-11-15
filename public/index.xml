@@ -28,7 +28,7 @@ You may connect the dockerized cterm to any host process simply by prefixing ct 
       <description>Summary Paracosm is where imagination meets mind mapping.
 Using LMs to infer and unstand, you can to accelerate your mind-mapping through a melding of human and AI imagination!
  Generate topics, Suggest new topics Talk to chatbots on any topic  Run paracosm from the host to start it.
-Demo  -- </description>
+   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Demo  -- </description>
     </item>
     
     <item>
@@ -251,7 +251,7 @@ Demo  --  Prompt  pf-test-imaginary-equivalence/2 http://github.</description>
       
       <guid>http://semiosis.github.io/looking-glass/</guid>
       <description>Introducing LookingGlass  Source code http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el  LookingGlass is an imaginary-web (𝑖web) browser. It allows lets you visit websites that do not exist concretely, and also also allows you to treat any text as having hyperlinks.
-An imaginary-web browser requires a LM such as GPT-3, Codex or GPT-j to generate websites and is designed to provide the means to surf the imagination of the AI through the guise of a web-browser interface.</description>
+   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    An imaginary-web browser requires a LM such as GPT-3, Codex or GPT-j to generate websites and is designed to provide the means to surf the imagination of the AI through the guise of a web-browser interface.</description>
     </item>
     
     <item>
