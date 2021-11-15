@@ -13,9 +13,13 @@
 ** Summary
 =Paracosm= is an accelerator for learning and world-building.
 
-Using language models that suggest and understand, you can to
-accelerate your mind-mapping through a melding
-of human and AI imagination, and build up a detailed and intricate graph!
+Accelerate your thinking and immerse yourself
+in your own detailed imaginary world of
+chatbots, knowledge and personal learning
+through a melding of human and AI imagination,
+and build up a detailed and intricate graph,
+intermixed with code, which you can publish as
+a book or website using =org-mode=!
 
 - Generate topics,
 - Suggest new topics
