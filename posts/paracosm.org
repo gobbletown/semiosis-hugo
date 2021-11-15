@@ -11,7 +11,7 @@
 | Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
 
 ** Summary
-=Paracosm= is an accelerator for learning.
+=Paracosm= is an accelerator for learning and world-building.
 
 Using language models that suggest and understand, you can to
 accelerate your mind-mapping through a melding
