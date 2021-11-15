@@ -9,11 +9,11 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: emacs openai pen gpt imaginary-programming
 
-* =𝑖λ= (Imaginary Programming Functions)
-
 | Install with Pen  |                                     |
 |-------------------+-------------------------------------|
 | Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
+
+* =𝑖λ= (Imaginary Programming Functions)
 
 ** Summary
 _tl;dr:_ Imaginary Programming (=IP=) is where
