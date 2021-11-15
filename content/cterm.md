@@ -19,6 +19,10 @@ shell command.
 Original article
 : <https://mullikine.github.io/posts/imaginary-real-codex-complex/>
 
+| Install with Pen |                                       |
+|------------------|---------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+
 
 ## This is how easy it is to use {#this-is-how-easy-it-is-to-use}
 
