@@ -28,7 +28,7 @@ Original article
 -   Now you can use pen with vim, or nano, or codexify anything!
 
 <!-- Play on asciinema.com -->
-<a title="asciinema recording" href="https://asciinema.org/a/qf4EMRKxaKNZAB23SaVHciiES" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qf4EMRKxaKNZAB23SaVHciiES.svg" /></a>
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qf4EMRKxaKNZAB23SaVHciiES" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qf4EMRKxaKNZAB23SaVHciiES.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/qf4EMRKxaKNZAB23SaVHciiES.js" id="asciicast-qf4EMRKxaKNZAB23SaVHciiES" async></script>
 
