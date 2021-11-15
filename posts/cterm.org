@@ -17,8 +17,6 @@ shell command.
 
 + Original article :: https://mullikine.github.io/posts/imaginary-real-codex-complex/
 
-https://asciinema.org/a/qf4EMRKxaKNZAB23SaVHciiES
-
 ** This is how easy it is to use
 - First start the pen server
 - then prefix =ct= before vim or bash, or any command which runs on your host
