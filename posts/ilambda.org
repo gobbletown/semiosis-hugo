@@ -11,6 +11,10 @@
 
 * =𝑖λ= (Imaginary Programming Functions)
 
+| Install with Pen  |                                     |
+|-------------------+-------------------------------------|
+| Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
+
 ** Summary
 _tl;dr:_ Imaginary Programming (=IP=) is where
 data and knowledge has been substituted for
@@ -35,10 +39,6 @@ straight into my thesis.
 + IP thesis ::  https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org
 + IP library :: http://github.com/semiosis/pen.el/blob/master/src/ilambda.el
 + IP glossary :: https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
-
-| Install with Pen  |                                     |
-|-------------------+-------------------------------------|
-| Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
 
 =imacro= (like regular macros) are for
 generating code. =idefun=, however, doesnt
