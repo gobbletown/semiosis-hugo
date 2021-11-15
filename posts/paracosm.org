@@ -1,7 +1,7 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: Paracosm (Your imaginary world in plain text!)
+#+TITLE: Paracosm (Your Imaginary World In Plain Text!)
 #+DATE: <2021-11-15>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: pen imaginary paracosm
