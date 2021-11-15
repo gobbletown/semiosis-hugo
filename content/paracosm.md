@@ -6,6 +6,11 @@ keywords = ["pen", "imaginary", "paracosm"]
 draft = false
 +++
 
+| Install with Pen |                                       |
+|------------------|---------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+
+
 ## Summary {#summary}
 
 `Paracosm` is where imagination meets mind mapping.
@@ -19,10 +24,6 @@ of human and AI imagination!
 -   Talk to chatbots on any topic
 
 Run `paracosm` from the host to start it.
-
-| Install with Pen |                                       |
-|------------------|---------------------------------------|
-| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
 
 
 ## Demo {#demo}

@@ -6,6 +6,11 @@ keywords = ["gpt", "pen", "openai"]
 draft = false
 +++
 
+| Install with Pen |                                       |
+|------------------|---------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+
+
 ## Summary {#summary}
 
 This is an introduction to the imaginary
@@ -24,10 +29,6 @@ imagined languages.
 Solving the problems of utilising current LMs
 will make it easier down the line to utilise
 more advanced ones.
-
-| Install with Pen |                                       |
-|------------------|---------------------------------------|
-| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
 
 
 ## Architecture {#architecture}

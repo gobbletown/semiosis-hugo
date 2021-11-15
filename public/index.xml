@@ -14,9 +14,9 @@
       <pubDate>Mon, 15 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/cterm/</guid>
-      <description>Summary The complex terminal built into Pen.el is a regular terminal that has an imaginary component.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Summary The complex terminal built into Pen.el is a regular terminal that has an imaginary component.
 You may connect the dockerized cterm to any host process simply by prefixing ct to any shell command.
- Original article https://mullikine.github.io/posts/imaginary-real-codex-complex/     Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    This is how easy it is to use  First start the pen server then prefix ct before vim or bash, or any command which runs on your host  it will then run that command inside pen.</description>
+ Original article https://mullikine.github.io/posts/imaginary-real-codex-complex/  This is how easy it is to use  First start the pen server then prefix ct before vim or bash, or any command which runs on your host  it will then run that command inside pen.</description>
     </item>
     
     <item>
@@ -25,10 +25,10 @@ You may connect the dockerized cterm to any host process simply by prefixing ct 
       <pubDate>Mon, 15 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/paracosm/</guid>
-      <description>Summary Paracosm is where imagination meets mind mapping.
+      <description>   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Summary Paracosm is where imagination meets mind mapping.
 Using LMs to infer and unstand, you can to accelerate your mind-mapping through a melding of human and AI imagination!
  Generate topics, Suggest new topics Talk to chatbots on any topic  Run paracosm from the host to start it.
-   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Demo  -- </description>
+Demo  -- </description>
     </item>
     
     <item>
@@ -747,7 +747,7 @@ Demo  --  Source A combination of lazy prompting with real emacs lisp, a dockeri
       <pubDate>Fri, 03 Sep 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/ilambda/</guid>
-      <description>𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.
 I design and build an IP library named 𝑖λ.el for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm.</description>
     </item>
     
@@ -902,10 +902,9 @@ Solving the problems of utilising current LMs will make it easier down the line 
       <pubDate>Sun, 22 Aug 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/ii/</guid>
-      <description>Summary This is an introduction to the imaginary interpreter built into Pen.el.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Summary This is an introduction to the imaginary interpreter built into Pen.el.
 The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
-It&amp;rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.
-Solving the problems of utilising current LMs will make it easier down the line to utilise more advanced ones.</description>
+It&amp;rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.</description>
     </item>
     
     <item>
