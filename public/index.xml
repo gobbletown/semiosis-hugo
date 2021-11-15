@@ -20,6 +20,18 @@ You may connect the dockerized cterm to any host process simply by prefixing ct 
     </item>
     
     <item>
+      <title>Paracosm</title>
+      <link>http://semiosis.github.io/paracosm/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/paracosm/</guid>
+      <description>Summary Paracosm is where imagination meets mind mapping.
+Using LMs to infer and unstand, you can to accelerate your mind-mapping through a melding of human and AI imagination!
+ Generate topics, Suggest new topics Talk to chatbots on any topic  Run paracosm from the host to start it.
+Demo  -- </description>
+    </item>
+    
+    <item>
       <title>Demo of Imaginary Interpreters with Pen.el</title>
       <link>http://semiosis.github.io/posts/demo-of-imaginary-interpreters-with-pen-el/</link>
       <pubDate>Sun, 14 Nov 2021 00:00:00 +1300</pubDate>
