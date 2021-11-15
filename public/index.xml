@@ -26,7 +26,7 @@ You may connect the dockerized cterm to any host process simply by prefixing ct 
       
       <guid>http://semiosis.github.io/paracosm/</guid>
       <description>   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Summary Paracosm is where imagination meets mind mapping.
-Using LMs to infer and unstand, you can to accelerate your mind-mapping through a melding of human and AI imagination!
+Using language models to infer and understand, you can to accelerate your mind-mapping through a melding of human and AI imagination!
  Generate topics, Suggest new topics Talk to chatbots on any topic  Run paracosm from the host to start it.
 Demo  -- </description>
     </item>

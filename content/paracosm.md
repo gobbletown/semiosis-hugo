@@ -15,7 +15,7 @@ draft = false
 
 `Paracosm` is where imagination meets mind mapping.
 
-Using LMs to infer and unstand, you can to
+Using language models to infer and understand, you can to
 accelerate your mind-mapping through a melding
 of human and AI imagination!
 
