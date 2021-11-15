@@ -250,8 +250,8 @@ Demo  --  Prompt  pf-test-imaginary-equivalence/2 http://github.</description>
       <pubDate>Fri, 15 Oct 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/looking-glass/</guid>
-      <description>Introducing LookingGlass  Source code http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el  LookingGlass is an imaginary-web (𝑖web) browser. It allows lets you visit websites that do not exist concretely, and also also allows you to treat any text as having hyperlinks.
-   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    An imaginary-web browser requires a LM such as GPT-3, Codex or GPT-j to generate websites and is designed to provide the means to surf the imagination of the AI through the guise of a web-browser interface.</description>
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Introducing LookingGlass  Source code http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el  LookingGlass is an imaginary-web (𝑖web) browser. It allows lets you visit websites that do not exist concretely, and also also allows you to treat any text as having hyperlinks.
+An imaginary-web browser requires a LM such as GPT-3, Codex or GPT-j to generate websites and is designed to provide the means to surf the imagination of the AI through the guise of a web-browser interface.</description>
     </item>
     
     <item>

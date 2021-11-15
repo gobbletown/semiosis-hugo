@@ -6,6 +6,11 @@ keywords = ["emacs", "imaginary-internet", "imaginary", "𝑖web"]
 draft = false
 +++
 
+| Install with Pen |                                       |
+|------------------|---------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+
+
 ## Introducing <span class="underline">LookingGlass</span> {#introducing}
 
 Source code
@@ -15,10 +20,6 @@ Source code
 browser. It allows lets you visit websites that do
 not exist concretely, and also also allows you
 to treat any text as having hyperlinks.
-
-| Install with Pen |                                       |
-|------------------|---------------------------------------|
-| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
 
 An imaginary-web browser requires a LM such as
 GPT-3, Codex or GPT-j to generate websites and
