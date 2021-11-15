@@ -11,11 +11,11 @@
 | Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
 
 ** Summary
-=Paracosm= is where imagination meets mind mapping.
+=Paracosm= is an accelerator for learning.
 
-Using language models to infer and understand, you can to
+Using language models that suggest and understand, you can to
 accelerate your mind-mapping through a melding
-of human and AI imagination!
+of human and AI imagination, and build up a detailed and intricate graph!
 
 - Generate topics,
 - Suggest new topics
