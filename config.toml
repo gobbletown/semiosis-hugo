@@ -83,6 +83,11 @@ unsafe= true
     url        = "/protocol/"
 
   [[menu.main]]
+    identifier = "paracosm"
+    name       = "Paracosm"
+    url        = "/paracosm/"
+
+  [[menu.main]]
     identifier = "looking-glass"
     name       = "🔍 Looking Glass"
     url        = "/looking-glass/"
