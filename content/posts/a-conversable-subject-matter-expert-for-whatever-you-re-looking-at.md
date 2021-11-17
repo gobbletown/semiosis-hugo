@@ -2,7 +2,7 @@
 title = "A conversable subject-matter-expert for whatever you're looking at!"
 author = ["Shane Mulligan"]
 date = 2021-11-17T00:00:00+13:00
-keywords = ["gpt", "openai", "pen"]
+keywords = ["gpt", "openai", "pen", "apostrophe", "paracosm", "𝑖web", "emacs"]
 draft = false
 +++
 
