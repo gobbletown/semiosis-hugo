@@ -16,14 +16,29 @@
             
             <guid>http://semiosis.github.io/posts/a-conversable-subject-matter-expert-for-whatever-you-re-looking-at/</guid>
             <description>Summary I make a conversable subject-matter expert for whatever you&amp;rsquo;re looking at. Right now, that means your computer. But in future this could be your eye sight. This uses Pen.el as the kernel.
-Demos Chat with John Dee  --  Selecting text, then a subject matter expert from history The text selection can be anything (including images in the future).
- --  Prompts Two prompts are necessary. Given an arbitrary text snippet, a list of related scholars needs to be generated, then a new prompt is needed to generate a short blurb for that scholar.</description>
+   kb f      M-SPC a c apostrophe-start-chatbot-from-selection pen-map    Demos Chat with John Dee  --  Selecting text, then a subject matter expert from history The text selection can be anything (including images in the future).</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I make a conversable subject-matter expert for
 whatever you&rsquo;re looking at. Right now, that
 means your computer. But in future this could
 be your eye sight. This uses <code>Pen.el</code> as the
 kernel.</p>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M-SPC a c</code></td>
+<td><code>apostrophe-start-chatbot-from-selection</code></td>
+<td><code>pen-map</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="demos">Demos</h2>
 <h3 id="chat-with-john-dee">Chat with John Dee</h3>
 <!-- Play on asciinema.com -->
@@ -36,6 +51,14 @@ kernel.</p>
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9.js" id="asciicast-yTm7W1mOduxhQ3qV0lh3FVsO9" async></script>
+<h3 id="peter-thiel">Peter Thiel</h3>
+<p>It appears that the Codex model makes Peter
+Thiel really distrusting, and it&rsquo;s incredibly
+difficult to get ideas out of his projected imaginary Codex consciousness / image.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/UmdppEOoKbVszCnb9eW8WHRGk" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/UmdppEOoKbVszCnb9eW8WHRGk.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/UmdppEOoKbVszCnb9eW8WHRGk.js" id="asciicast-UmdppEOoKbVszCnb9eW8WHRGk" async></script>
 <h2 id="prompts">Prompts</h2>
 <p>Two prompts are necessary. Given an arbitrary
 text snippet, a list of related scholars needs

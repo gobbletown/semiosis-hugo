@@ -14,6 +14,10 @@ means your computer. But in future this could
 be your eye sight. This uses `Pen.el` as the
 kernel.
 
+| kb          | f                                         |           |
+|-------------|-------------------------------------------|-----------|
+| `M-SPC a c` | `apostrophe-start-chatbot-from-selection` | `pen-map` |
+
 
 ## Demos {#demos}
 
@@ -34,6 +38,18 @@ The text selection can be anything (including images in the future).
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9.js" id="asciicast-yTm7W1mOduxhQ3qV0lh3FVsO9" async></script>
+
+
+### Peter Thiel {#peter-thiel}
+
+It appears that the Codex model makes Peter
+Thiel really distrusting, and it's incredibly
+difficult to get ideas out of his projected imaginary Codex consciousness / image.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/UmdppEOoKbVszCnb9eW8WHRGk" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/UmdppEOoKbVszCnb9eW8WHRGk.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/UmdppEOoKbVszCnb9eW8WHRGk.js" id="asciicast-UmdppEOoKbVszCnb9eW8WHRGk" async></script>
 
 
 ## Prompts {#prompts}
