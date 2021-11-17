@@ -1,13 +1,13 @@
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+OPTIONS: toc:nil
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_BASE_DIR: /home/shane/dump/home/shane/notes/ws/blog/blog
 #+HUGO_SECTION: ./posts
 
 #+TITLE: A conversable subject-matter-expert for whatever you're looking at!
 #+DATE: <2021-11-17>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: gpt openai pen
+#+KEYWORDS: gpt openai pen apostrophe paracosm 𝑖web emacs
 
 ** Summary
 I make a conversable subject-matter expert for
