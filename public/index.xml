@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A conversable subject-matter-expert for whatever you&#39;re looking at!</title>
+      <link>http://semiosis.github.io/posts/a-conversable-subject-matter-expert-for-whatever-you-re-looking-at/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/a-conversable-subject-matter-expert-for-whatever-you-re-looking-at/</guid>
+      <description>Summary I make a conversable subject-matter expert for whatever you&amp;rsquo;re looking at. Right now, that means your computer. But in future this could be your eye sight. This uses Pen.el as the kernel.
+Demos Chat with John Dee  --  Selecting text, then a subject matter expert from history The text selection can be anything (including images in the future).
+ --  Prompts Two prompts are necessary. Given an arbitrary text snippet, a list of related scholars needs to be generated, then a new prompt is needed to generate a short blurb for that scholar.</description>
+    </item>
+    
     <item>
       <title>cterm (Complex Terminal)</title>
       <link>http://semiosis.github.io/cterm/</link>

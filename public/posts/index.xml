@@ -6,8 +6,261 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>A conversable subject-matter-expert for whatever you&#39;re looking at!</title>
+            <link>http://semiosis.github.io/posts/a-conversable-subject-matter-expert-for-whatever-you-re-looking-at/</link>
+            <pubDate>Wed, 17 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/a-conversable-subject-matter-expert-for-whatever-you-re-looking-at/</guid>
+            <description>Summary I make a conversable subject-matter expert for whatever you&amp;rsquo;re looking at. Right now, that means your computer. But in future this could be your eye sight. This uses Pen.el as the kernel.
+Demos Chat with John Dee  --  Selecting text, then a subject matter expert from history The text selection can be anything (including images in the future).
+ --  Prompts Two prompts are necessary. Given an arbitrary text snippet, a list of related scholars needs to be generated, then a new prompt is needed to generate a short blurb for that scholar.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I make a conversable subject-matter expert for
+whatever you&rsquo;re looking at. Right now, that
+means your computer. But in future this could
+be your eye sight. This uses <code>Pen.el</code> as the
+kernel.</p>
+<h2 id="demos">Demos</h2>
+<h3 id="chat-with-john-dee">Chat with John Dee</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/6HLHWqSPWeaOBDQyQqjqahPy1" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/6HLHWqSPWeaOBDQyQqjqahPy1.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/6HLHWqSPWeaOBDQyQqjqahPy1.js" id="asciicast-6HLHWqSPWeaOBDQyQqjqahPy1" async></script>
+<h3 id="selecting-text-then-a-subject-matter-expert-from-history">Selecting text, then a subject matter expert from history</h3>
+<p>The text selection can be anything (including images in the future).</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/yTm7W1mOduxhQ3qV0lh3FVsO9.js" id="asciicast-yTm7W1mOduxhQ3qV0lh3FVsO9" async></script>
+<h2 id="prompts">Prompts</h2>
+<p>Two prompts are necessary. Given an arbitrary
+text snippet, a list of related scholars needs
+to be generated, then a new prompt is needed
+to generate a short blurb for that scholar.</p>
+<p>All of that goes into <code>apostrophe</code>, my
+imaginary interlocution chamber.</p>
+<h3 id="pf-who-is-the-subject-matter-expert-for-1"><code>pf-who-is-the-subject-matter-expert-for-/1</code></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Who is the subject matter expert for?&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Given a prompt, be told of a subject-matter-expert.&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">todo</span>:
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    Instead of having a document, have an
+</span><span style="color:#e6db74">    entire multi-modal prompts array (time-
+</span><span style="color:#e6db74">    wise)? The document should be &#39;multi-modal
+</span><span style="color:#e6db74">    prompt format&#39;, whatever that is.</span>    
+
+<span style="color:#75715e"># TODO Make a list of scholars and qualifications relating to a document</span>
+
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">  Document 1:
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Truth is the property of being in accord
+</span><span style="color:#e6db74">  with fact or reality.[1] In everyday
+</span><span style="color:#e6db74">  language, truth is typically ascribed to
+</span><span style="color:#e6db74">  things that aim to represent reality or
+</span><span style="color:#e6db74">  otherwise correspond to it, such as beliefs,
+</span><span style="color:#e6db74">  propositions, and declarative sentences.[2]
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Document 1 scholars:
+</span><span style="color:#e6db74">  - 1. Kant (1724-1804)
+</span><span style="color:#e6db74">  - 2. Hegel (1770-1831)
+</span><span style="color:#e6db74">  - 3. Schopenhauer (1788-1860)
+</span><span style="color:#e6db74">  - 4. Kierkegaard (1813-1855)
+</span><span style="color:#e6db74">  - 5. Nietzsche (1844-1900)
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Document 2:
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  &lt;document&gt;
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">  Document 2 scholars:
+</span><span style="color:#e6db74">  &lt;:pp&gt;- 1.</span>  
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">150</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">delimiter</span>: <span style="color:#e6db74">&#34;###&#34;</span>
+<span style="color:#f92672">frequency-penalty</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;&lt;delim&gt;&#34;</span>
+- <span style="color:#ae81ff">Document</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#ae81ff">document</span>
+<span style="color:#f92672">var-defaults</span>:
+- <span style="color:#e6db74">&#34;(pen-screen-or-selection)&#34;</span>
+<span style="color:#75715e"># no EOD? needed or default?</span>
+<span style="color:#f92672">preprocessors</span>:
+- <span style="color:#ae81ff">pen-str garbify | sed &#39;s/^/  /&#39;</span>
+<span style="color:#f92672">examples</span>:
+- |-<span style="color:#e6db74">
+</span><span style="color:#e6db74">    In Abrahamic religions, the Garden of Eden
+</span><span style="color:#e6db74">    (Hebrew: גַּן־עֵדֶן‎ – gan-ʿḖḏen) or Garden of
+</span><span style="color:#e6db74">    God (גַּן־יְהֹוָה‎ – gan-Yhwh), also called
+</span><span style="color:#e6db74">    the Terrestrial Paradise, is the biblical
+</span><span style="color:#e6db74">    paradise described in Genesis 2-3 and Ezekiel
+</span><span style="color:#e6db74">    28 and 31.[1][2] The location of Eden is
+</span><span style="color:#e6db74">    described in the Book of Genesis as the source
+</span><span style="color:#e6db74">    of four tributaries. Among scholars who
+</span><span style="color:#e6db74">    consider it to have been real, there have been
+</span><span style="color:#e6db74">    various suggestions for its location:[3] at
+</span><span style="color:#e6db74">    the head of the Persian Gulf, in southern
+</span><span style="color:#e6db74">    Mesopotamia (now Iraq) where the Tigris and
+</span><span style="color:#e6db74">    Euphrates rivers run into the sea;[4] and in
+</span><span style="color:#e6db74">    Armenia.</span>    
+<span style="color:#f92672">validator</span>: <span style="color:#e6db74">&#34;grep -qP &#39;^- [0-9]*\\. .*\\(.*\\)$&#39;&#34;</span>
+<span style="color:#f92672">postpostprocessor</span>: <span style="color:#e6db74">&#34;sed &#39;s/^- [0-9]*. //&#39; | sed &#39;s/^\\s\\+/ /g&#39; | tr -d &#39; &#39;&#34;</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">end-split-patterns</span>:
+- <span style="color:#e6db74">&#34;\n&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="pf-generate-wiki-blurb-for-a-famous-person-1"><code>pf-generate-wiki-blurb-for-a-famous-person/1</code></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">task</span>: <span style="color:#e6db74">&#34;Generate wiki blurb for a famous person&#34;</span>
+<span style="color:#f92672">doc</span>: <span style="color:#e6db74">&#34;Create a wiki blurb for a famous person&#34;</span>
+<span style="color:#f92672">prompt-version</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">prompt</span>: |+<span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;person&gt; - Wikipedia
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    en.wikipedia.org › wiki › &lt;person&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;:pp&gt;&lt;person&gt; was a</span>    
+<span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;OpenAI Codex&#34;</span>
+<span style="color:#f92672">temperature</span>: <span style="color:#ae81ff">0.3</span>
+<span style="color:#f92672">max-generated-tokens</span>: <span style="color:#ae81ff">200</span>
+<span style="color:#f92672">top-p</span>: <span style="color:#ae81ff">1.0</span>
+<span style="color:#f92672">stop-sequences</span>:
+- <span style="color:#e6db74">&#34;.&#34;</span>
+<span style="color:#f92672">cache</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">vars</span>:
+- <span style="color:#e6db74">&#34;person&#34;</span>
+<span style="color:#f92672">examples</span>:
+- <span style="color:#e6db74">&#34;John Dee&#34;</span>
+<span style="color:#f92672">postprocessor</span>: <span style="color:#ae81ff">pen-str join &#39; &#39; | sed -z &#39;s/\s*\n$//&#39; | sed -z &#39;s/[^a-zA-Z0-9]*$//&#39; | sed -z &#39;s/$/./&#39;</span>
+<span style="color:#f92672">info</span>: <span style="color:#66d9ef">on</span>
+<span style="color:#f92672">filter</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">completion</span>: <span style="color:#66d9ef">off</span>
+<span style="color:#f92672">insertion</span>: <span style="color:#66d9ef">off</span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Demo of Imaginary Interpreters with Pen.el</title>
