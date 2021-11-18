@@ -39,7 +39,7 @@ It&amp;rsquo;s important to develop a language-agnostic harness for working with
 The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
 It&rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages."><meta itemprop="datePublished" content="2021-08-22T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-08-22T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="1272"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1317"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -179,7 +179,27 @@ imagined languages.</p>
 <p>Solving the problems of utilising current LMs
 will make it easier down the line to utilise
 more advanced ones.</p>
-<h2 id="architecture">Architecture</h2>
+<h2 id="steps-to-run">Steps to run</h2>
+<ul>
+<li>On your host machine, or from within the docker container&rsquo;s shell
+<ul>
+<li>Run <code>ii python</code>, or any desired language as the first argument</li>
+</ul>
+</li>
+</ul>
+<h3 id="to-see-what-interpreters-are-available">To see what interpreters are available:</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">penl | grep -P -- <span style="color:#e6db74">&#34;imagine.*-interpreter&#34;</span> | head -n <span style="color:#ae81ff">3</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pf-imagine-a-smalltalk-interpreter/1
+pf-imagine-a-scheme-interpreter/1
+pf-imagine-a-scala-interpreter/1
+</code></pre></div><h2 id="architecture">Architecture</h2>
 <h3 id="the-interpreter-prompt">The interpreter prompt</h3>
 <ul>
 <li>An interpreter prompt is selected depending on if a specialised prompt exists for the chosen language.

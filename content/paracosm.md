@@ -29,6 +29,13 @@ a book or website using `org-mode`!
 
 Run `paracosm` from the host to start it.
 
+| kb          | f                                         |                                |
+|-------------|-------------------------------------------|--------------------------------|
+| `M-SPC a c` | `apostrophe-start-chatbot-from-selection` | `pen-map`                      |
+| `C-c d`     | `dumb-diff`                               | `global-map`                   |
+| `H-q`       | `pen-org-brain-switch-brain`              | `pen-map`                      |
+| `C-M-i`     | `org-brain-suggest-subtopics`             | `org-brain-visualize-mode-map` |
+
 
 ## Demo {#demo}
 

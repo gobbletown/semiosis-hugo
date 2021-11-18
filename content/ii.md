@@ -31,6 +31,25 @@ will make it easier down the line to utilise
 more advanced ones.
 
 
+## Steps to run {#steps-to-run}
+
+-   On your host machine, or from within the docker container's shell
+    -   Run `ii python`, or any desired language as the first argument
+
+
+### To see what interpreters are available: {#to-see-what-interpreters-are-available}
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+penl | grep -P -- "imagine.*-interpreter" | head -n 3
+{{< /highlight >}}
+
+```bash
+pf-imagine-a-smalltalk-interpreter/1
+pf-imagine-a-scheme-interpreter/1
+pf-imagine-a-scala-interpreter/1
+```
+
+
 ## Architecture {#architecture}
 
 
