@@ -31,6 +31,23 @@ Solving the problems of utilising current LMs
 will make it easier down the line to utilise
 more advanced ones.
 
+** Steps to run
+- On your host machine, or from within the docker container's shell
+  - Run =ii python=, or any desired language as the first argument
+
+*** To see what interpreters are available:
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  penl | grep -P -- "imagine.*-interpreter" | head -n 3
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+pf-imagine-a-smalltalk-interpreter/1
+pf-imagine-a-scheme-interpreter/1
+pf-imagine-a-scala-interpreter/1
+#+end_src
+
 ** Architecture
 *** The interpreter prompt
 - An interpreter prompt is selected depending on if a specialised prompt exists for the chosen language.
