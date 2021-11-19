@@ -15,10 +15,17 @@
             <pubDate>Fri, 19 Nov 2021 00:00:00 +1300</pubDate>
             
             <guid>http://semiosis.github.io/posts/multi-part-prompts/</guid>
-            <description>Prompt format addition At places where &amp;lt;:fz-eol&amp;gt; is found in a prompt, the line will be completed and you will be able to select from some possible completions there.
-1 2 3 4 5 6 7 8  Document 3: ### &amp;lt;document&amp;gt; ### Topics: &amp;lt;:fz-eol&amp;gt; ### Document 3 scholars: &amp;lt;:pp&amp;gt;- 1.   This method will be further extended to assign specific prompt settings, beam search and counterfactual parsing.
-Demo Speaking to AI Richard Stallman  --  Speaking to AI Richard Stallman  -- </description>
-            <content type="html"><![CDATA[<h2 id="prompt-format-addition">Prompt format addition</h2>
+            <description>Summary This is better than stackoverflow for many tasks. It&amp;rsquo;s great because this works for the imaginary web too. The images in the web site were converted to text, but can also browse imaginary websites about anything. I asked John Dee what was his most rarest book, and he told me about book. Looked it up and it was real/legit.
+Prompt format addition At places where &amp;lt;:fz-eol&amp;gt; is found in a prompt, the line will be completed and you will be able to select from some possible completions there.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>This is better than stackoverflow for many tasks. It&rsquo;s great
+because this works for the imaginary web too.
+The images in the web site were converted to
+text, but can also browse imaginary websites
+about anything. I asked John Dee what was his
+most rarest book, and he told me about book.
+Looked it up and it was real/legit.</p>
+<h2 id="prompt-format-addition">Prompt format addition</h2>
 <p>At places where <code>&lt;:fz-eol&gt;</code> is found in a
 prompt, the line will be completed and you
 will be able to select from some possible

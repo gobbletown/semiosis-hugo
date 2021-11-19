@@ -6,6 +6,17 @@ keywords = ["pen", "openai", "nlp", "prompt-engineering"]
 draft = false
 +++
 
+## Summary {#summary}
+
+This is better than stackoverflow for many tasks. It's great
+because this works for the imaginary web too.
+The images in the web site were converted to
+text, but can also browse imaginary websites
+about anything. I asked John Dee what was his
+most rarest book, and he told me about book.
+Looked it up and it was real/legit.
+
+
 ## Prompt format addition {#prompt-format-addition}
 
 At places where `<:fz-eol>` is found in a
