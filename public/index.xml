@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multi-part prompts in Pen.el for more advanced chatbots!</title>
+      <link>http://semiosis.github.io/posts/multi-part-prompts/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/multi-part-prompts/</guid>
+      <description>Prompt format addition At places where &amp;lt;:fz-eol&amp;gt; is found in a prompt, the line will be completed and you will be able to select from some possible completions there.
+1 2 3 4 5 6 7 8  Document 3: ### &amp;lt;document&amp;gt; ### Topics: &amp;lt;:fz-eol&amp;gt; ### Document 3 scholars: &amp;lt;:pp&amp;gt;- 1.   This method will be further extended to assign specific prompt settings, beam search and counterfactual parsing.
+Demo Speaking to AI Richard Stallman  --  Speaking to AI Richard Stallman  -- </description>
+    </item>
+    
     <item>
       <title>A conversable subject-matter-expert for whatever you&#39;re looking at!</title>
       <link>http://semiosis.github.io/posts/a-conversable-subject-matter-expert-for-whatever-you-re-looking-at/</link>

@@ -6,8 +6,60 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Multi-part prompts in Pen.el for more advanced chatbots!</title>
+            <link>http://semiosis.github.io/posts/multi-part-prompts/</link>
+            <pubDate>Fri, 19 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/multi-part-prompts/</guid>
+            <description>Prompt format addition At places where &amp;lt;:fz-eol&amp;gt; is found in a prompt, the line will be completed and you will be able to select from some possible completions there.
+1 2 3 4 5 6 7 8  Document 3: ### &amp;lt;document&amp;gt; ### Topics: &amp;lt;:fz-eol&amp;gt; ### Document 3 scholars: &amp;lt;:pp&amp;gt;- 1.   This method will be further extended to assign specific prompt settings, beam search and counterfactual parsing.
+Demo Speaking to AI Richard Stallman  --  Speaking to AI Richard Stallman  -- </description>
+            <content type="html"><![CDATA[<h2 id="prompt-format-addition">Prompt format addition</h2>
+<p>At places where <code>&lt;:fz-eol&gt;</code> is found in a
+prompt, the line will be completed and you
+will be able to select from some possible
+completions there.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Document 3</span>:
+<span style="color:#75715e">###</span>
+<span style="color:#ae81ff">&lt;document&gt;</span>
+<span style="color:#75715e">###</span>
+<span style="color:#f92672">Topics</span>: <span style="color:#ae81ff">&lt;:fz-eol&gt;</span>
+<span style="color:#75715e">###</span>
+<span style="color:#f92672">Document 3 scholars</span>:
+<span style="color:#ae81ff">&lt;:pp&gt;- 1.</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>This method will be further extended to assign
+specific prompt settings, beam search and
+counterfactual parsing.</p>
+<h2 id="demo">Demo</h2>
+<h3 id="speaking-to-ai-richard-stallman">Speaking to AI Richard Stallman</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/RZj0HRo1n3ote0AMqZMW0I4HZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/RZj0HRo1n3ote0AMqZMW0I4HZ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/RZj0HRo1n3ote0AMqZMW0I4HZ.js" id="asciicast-RZj0HRo1n3ote0AMqZMW0I4HZ" async></script>
+<h3 id="speaking-to-ai-richard-stallman">Speaking to AI Richard Stallman</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/aUAjViUGrS42xqk9DHgONiyl8" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/aUAjViUGrS42xqk9DHgONiyl8.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/aUAjViUGrS42xqk9DHgONiyl8.js" id="asciicast-aUAjViUGrS42xqk9DHgONiyl8" async></script>]]></content>
+        </item>
         
         <item>
             <title>A conversable subject-matter-expert for whatever you&#39;re looking at!</title>
