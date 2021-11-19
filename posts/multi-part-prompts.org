@@ -40,7 +40,7 @@ specific prompt settings, beam search and
 counterfactual parsing.
 
 ** Demo
-*** Speaking to AI Richard Stallman
+*** Speaking to AI Claude Shannon
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/RZj0HRo1n3ote0AMqZMW0I4HZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/RZj0HRo1n3ote0AMqZMW0I4HZ.svg" /></a> -->
