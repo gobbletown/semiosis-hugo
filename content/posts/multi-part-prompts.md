@@ -43,7 +43,7 @@ counterfactual parsing.
 ## Demo {#demo}
 
 
-### Speaking to AI Richard Stallman {#speaking-to-ai-richard-stallman}
+### Speaking to AI Claude Shannon {#speaking-to-ai-claude-shannon}
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/RZj0HRo1n3ote0AMqZMW0I4HZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/RZj0HRo1n3ote0AMqZMW0I4HZ.svg" /></a> -->
