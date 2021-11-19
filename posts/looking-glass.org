@@ -18,8 +18,8 @@
 + Source code :: http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el
 
 =LookingGlass= is an imaginary-web (𝑖web)
-browser. It allows lets you visit websites that do
-not exist concretely, and also also allows you
+browser. It lets you visit websites that do
+not exist concretely, and also allows you
 to treat any text as having hyperlinks.
 
 An imaginary-web browser requires a LM such as
