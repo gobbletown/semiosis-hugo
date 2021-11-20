@@ -54,6 +54,15 @@ distribution with docker installed.
 To get to the other side.
 #+end_src
 
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  echo "Q: 'Why did the chicken cross the road?' A: 'To get to the other side.'\nQ: 'Why did the chicken cross the interdimensional barrier?' A: 'To find their " | pen-prompt -u | head -n 1 | sed "s/'.*//"
+ #+END_SRC
+
+ #+RESULTS:
+ #+begin_src bash
+ car keys.
+ #+end_src
+
 *** Pen.el thin client
 - [[https://mullikine.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/][Thin-client for Pen.el. Just load pen-client.el // Bodacious Blog]]
 
