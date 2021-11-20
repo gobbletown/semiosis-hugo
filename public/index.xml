@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thin-client for Pen.el. Just load pen-client.el</title>
+      <link>http://semiosis.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/</link>
+      <pubDate>Sat, 20 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/</guid>
+      <description>Summary Here is a thin-client for emacs.
+ Code http://github.com/semiosis/pen.el/blob/master/src/pen-client.el  It uses the docker container as a server.
+You will still need to add the scripts directory to your path and add appropriate keys to ~/.pen as shown in the readme.
+https://github.com/semiosis/pen.el/tree/master/scripts
+https://github.com/semiosis/pen.el/blob/master/README.org
+Demo  -- </description>
+    </item>
+    
     <item>
       <title>Multi-part prompts in Pen.el for more advanced chatbots!</title>
       <link>http://semiosis.github.io/posts/multi-part-prompts/</link>

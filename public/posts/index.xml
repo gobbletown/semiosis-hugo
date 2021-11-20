@@ -6,8 +6,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Thin-client for Pen.el. Just load pen-client.el</title>
+            <link>http://semiosis.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/</link>
+            <pubDate>Sat, 20 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/</guid>
+            <description>Summary Here is a thin-client for emacs.
+ Code http://github.com/semiosis/pen.el/blob/master/src/pen-client.el  It uses the docker container as a server.
+You will still need to add the scripts directory to your path and add appropriate keys to ~/.pen as shown in the readme.
+https://github.com/semiosis/pen.el/tree/master/scripts
+https://github.com/semiosis/pen.el/blob/master/README.org
+Demo  -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>Here is a thin-client for emacs.</p>
+<dl>
+<dt>Code</dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-client.el">http://github.com/semiosis/pen.el/blob/master/src/pen-client.el</a></dd>
+</dl>
+<p>It uses the docker container as a server.</p>
+<p>You will still need to add the scripts directory to your path and add appropriate keys to <code>~/.pen</code> as shown in the readme.</p>
+<p><a href="https://github.com/semiosis/pen.el/tree/master/scripts">https://github.com/semiosis/pen.el/tree/master/scripts</a></p>
+<p><a href="https://github.com/semiosis/pen.el/blob/master/README.org">https://github.com/semiosis/pen.el/blob/master/README.org</a></p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/tFJkpnEI2maDoRCBqZwKP375f" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/tFJkpnEI2maDoRCBqZwKP375f.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/tFJkpnEI2maDoRCBqZwKP375f.js" id="asciicast-tFJkpnEI2maDoRCBqZwKP375f" async></script>]]></content>
+        </item>
         
         <item>
             <title>Multi-part prompts in Pen.el for more advanced chatbots!</title>
