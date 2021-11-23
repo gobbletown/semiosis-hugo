@@ -13,7 +13,11 @@
 These instructions are designed for a linux
 distribution with docker installed.
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+# #+BEGIN_SRC bash -n :i bash :async :results verbatim code
+#   echo "<aix key here>" > ~/.pen/aix_api_key                # https://aixsolutionsgroup.com/
+# #+END_SRC
+
+#+BEGIN_SRC bash -n :i false :async :results verbatim code
   git clone "https://github.com/semiosis/pen.el"
   git clone "https://github.com/semiosis/prompts"
   git clone "https://github.com/semiosis/engines"
@@ -24,7 +28,6 @@ distribution with docker installed.
   # Put in your keys, or do not, it's up to you!
   echo "sk-<openai key here>" > ~/.pen/openai_api_key       # https://openai.com/
   echo "<ai21 key here>" > ~/.pen/ai21_api_key              # https://www.ai21.com/
-  echo "<aix key here>" > ~/.pen/aix_api_key                # https://aixsolutionsgroup.com/
   echo "<hf key here>" > ~/.pen/hf_api_key                  # https://huggingface.co/
   echo "<nlpcloud key here>" > ~/.pen/nlpcloud_api_key      # https://nlpcloud.io/
   echo "<alephalpha key here>" > ~/.pen/alephalpha_api_key  # https://aleph-alpha.de/
@@ -54,21 +57,13 @@ distribution with docker installed.
 To get to the other side.
 #+end_src
 
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  echo "Q: 'Why did the chicken cross the road?' A: 'To get to the other side.'\nQ: 'Why did the chicken cross the interdimensional barrier?' A: 'To find their " | pen-prompt -u | head -n 1 | sed "s/'.*//"
- #+END_SRC
-
- #+RESULTS:
- #+begin_src bash
- mommy
- #+end_src
-
 *** Pen.el thin client
 - [[https://mullikine.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/][Thin-client for Pen.el. Just load pen-client.el // Bodacious Blog]]
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (pen-fn-translate/3 (buffer-substring (region-beginning) (region-end)) "English" "French")
 #+END_SRC
+
 
 *** Introduction
 **** Demonstrate basic invocation
