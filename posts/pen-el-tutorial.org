@@ -60,7 +60,7 @@ To get to the other side.
 
  #+RESULTS:
  #+begin_src bash
- car keys.
+ mommy
  #+end_src
 
 *** Pen.el thin client
@@ -69,7 +69,6 @@ To get to the other side.
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (pen-fn-translate/3 (buffer-substring (region-beginning) (region-end)) "English" "French")
 #+END_SRC
-
 
 *** Introduction
 **** Demonstrate basic invocation
