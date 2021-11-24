@@ -10,7 +10,7 @@
 #+KEYWORDS: demo pen.el
 
 ** Summary
-Just a bit of fun. I demo interacting with an AGI via imaginary python.
+Just a bit of fun to showcase the imaginary interpreter and universal syntax highlighting. I demo interacting with an AGI via imaginary python.
 
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
