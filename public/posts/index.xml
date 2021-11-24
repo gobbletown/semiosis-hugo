@@ -10,6 +10,22 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Imaginary AGI Library with Pen.el</title>
+            <link>http://semiosis.github.io/posts/imaginary-agi-library-with-pen-el/</link>
+            <pubDate>Wed, 24 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/imaginary-agi-library-with-pen-el/</guid>
+            <description>Summary Just a bit of fun. I demo interacting with an AGI via imaginary python.
+ -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>Just a bit of fun. I demo interacting with an AGI via imaginary python.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s.js" id="asciicast-Mmi1niX76Llg6JigBGFg518LV" async></script>]]></content>
+        </item>
+        
+        <item>
             <title>Universal syntax highlighting for Pen.el, nlsh and Imaginary Interpreter</title>
             <link>http://semiosis.github.io/posts/universal-syntax-highlighting-for-pen-el-nlsh-and-imaginary-interpreter/</link>
             <pubDate>Wed, 24 Nov 2021 00:00:00 +1300</pubDate>

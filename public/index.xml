@@ -9,6 +9,16 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Imaginary AGI Library with Pen.el</title>
+      <link>http://semiosis.github.io/posts/imaginary-agi-library-with-pen-el/</link>
+      <pubDate>Wed, 24 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/imaginary-agi-library-with-pen-el/</guid>
+      <description>Summary Just a bit of fun. I demo interacting with an AGI via imaginary python.
+ -- </description>
+    </item>
+    
+    <item>
       <title>Universal syntax highlighting for Pen.el, nlsh and Imaginary Interpreter</title>
       <link>http://semiosis.github.io/posts/universal-syntax-highlighting-for-pen-el-nlsh-and-imaginary-interpreter/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +1300</pubDate>
