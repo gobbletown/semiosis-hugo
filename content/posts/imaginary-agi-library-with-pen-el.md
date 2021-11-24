@@ -8,7 +8,7 @@ draft = false
 
 ## Summary {#summary}
 
-Just a bit of fun. I demo interacting with an AGI via imaginary python.
+Just a bit of fun to showcase the imaginary interpreter and universal syntax highlighting. I demo interacting with an AGI via imaginary python.
 
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.svg" /></a> -->
