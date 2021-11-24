@@ -15,27 +15,27 @@ As a beginner, to get started I would aim to simply set up the =pen= standalone 
 This enables you do use =pen= without integrating it tightly into your own emacs.
 
 You can still use the prompting functions in a
-basic way; The thin-client function names all start with =pen-fn-=.
+basic way; The thin-client prompting function names all start with =pen-fn-=
+and the names of the fully-featured prompting functions all begin with =pf-=.
 
 But you will not be able to use the =ilambda=
 functions, or get the full experience without
 integrating =Pen.el= into your host emacs
 configuration.
 
-The names of the fully-featured prompting functions all begin with =pf-=.
-
 However, if you're going to test out =pen= and
 plan on only setting up the standalone
 application along with the thin-client, you'll
 still be able to use the following
 applications:
-| Application            | script name |
-|------------------------+-------------|
-| =LookingGlass=         | =lg=        |
-| =Paracosm=             | =cosm=      |
-| =ComplexTerm=          | =ct=        |
-| =ImaginaryInterpreter= | =ii=        |
-| =pen bash interop=     | =penf=      |
+
+| Application name       | Script name | Purpose                              |
+|------------------------+-------------+--------------------------------------|
+| =LookingGlass=         | =lg=        | Imaginary-Web Browser                |
+| =Paracosm=             | =cosm=      | AI-Assisted Mind-map                 |
+| =ComplexTerm=          | =ct=        | Real+Imaginary Terminal Multiplexer  |
+| =ImaginaryInterpreter= | =ii=        | Fully imaginary language interpreter |
+| =pen bash interop=     | =penf=      | Prompt function interface for bash   |
 
 They are accessible by running the script name
 on the host (or inside the container shell, if
@@ -147,6 +147,97 @@ Now that it is running, you can also use the bash interop.
   penf pf-very-witty-pick-up-lines-for-a-topic/1 slovenia
 #+END_SRC
 
+To create a shell into the docker container, simply run =pen sh=.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  # From the host, start a shell in the docker container
+  pen sh
+
+  # If you want start a specific program (inside the container)
+  pen sh vim /
+  pen sh nlsh Ubuntu
+#+END_SRC
+
+*** Configuration
+I'll explain the following example =pen.yaml= file.
+
+http://github.com/semiosis/pen.el/blob/master/config/example-pen.yaml
+
+=pen.yaml= lives at =~/.pen/pen.yaml= on the host machine.
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  # When debug is on, try is disabled, and all errors throw an exception
+  debug: on
+  
+  # Setting sh-update to on would disable caching/memoization
+  sh-update: off
+  
+  # In future, this would disable the use of non-libre models
+  libre-only: off
+  
+  # These variables are used by pen.el to
+  # automatically tailor the experience towards
+  # you.
+  fav-world-language: English
+  fav-programming-language: Emacs Lisp
+  
+  # This overrides the language model / engine used for prompting functions
+  # However, if a .prompt file specifies
+  # force-engine, then this override will not
+  # override.
+  force-engine: OpenAI Codex
+  
+  # This 
+  force-few-completions: off
+  
+  # This prevents multiple requests.
+  # Under normal circumstances, pen.el might
+  # perform multiple requests/generations to
+  # get to the desired quota for a prompt
+  # function. Under the hood, engines may have
+  # a max number of generations they can provide
+  # for a single request. force-single-
+  # collation ensures that only one request
+  # happens.
+  force-single-collation: off
+  
+  # Force one is more extreme. It also sets
+  # the number of completions. So you get only
+  # one generation/completion per request, and only one request.
+  force-one: off
+  
+  # This allows you to set the number of collations.
+  force-n-collate: ~
+  force-n-completions: ~
+  # force-temperature: ~
+  
+  # Ink.el adds text properties to the emacs buffer when text has been generated.
+  disable-ink: off
+  
+  # This is a heuristic used within Pen.el to make select cost-effiient options.
+  cost-efficient: on
+  
+  # This generates alttext for the LookingGlass web browser
+  describe-images: on
+  
+  # Default engines are used when the engine resolver (all fallbacks) fail
+  default-engines:
+  - text-to-text: OpenAI Codex
+  - image-to-text: AlephAlpha EUTranMM
+  # - text-to-image: OpenAI Dall-E
+  - text-to-image: ruDALL-E Malevich (XL)
+  
+  # Here's a way to disable engines. This
+  # might be useful if you have a bad API key
+  # for example, and just want to disable the
+  # engine.
+  # Pattern match on the names
+  disabled-prompts:
+  # disabled-engines:
+  # - "AlephAlpha.*"
+  disabled-models:
+#+END_SRC
+
 *** =M-SPC= (aka. hyperspace) menu
 If you navigate to =pen-define-maps= in http://github.com/semiosis/pen.el/blob/master/src/pen-example-config.el
 You will find the default key bindings.
@@ -231,11 +322,17 @@ pen-el-tutorial-ip.cast
 *** Surf the imaginary web
  - Search the web by selecting
  - Use eww browser
+
 *** Use pen for autocompletion
+
 *** Use pen for translation
+
 *** Run pickup lines
+
 *** Translate code
+
 *** Run imaginary interpreters using =ii=
+
 *** Use the shell interop
 
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
@@ -251,6 +348,7 @@ I'd like to visit Slovenia with you.
 - https://mullikine.github.io/posts/an-lsp-server-for-codex/
 
 *** Use the glossary system
+
 *** Use =cterm=
 Still use =C-u 0= or =H-u= to prefix onto pen bindings to bypass/update the cache.
 
