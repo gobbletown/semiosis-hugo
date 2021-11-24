@@ -421,3 +421,9 @@ them into real shell commands.
 Select any text and run `M-x apostrophe-start-chatbot-from-selection` or `M-SPC a c`.
 
 -   <https://semiosis.github.io/posts/multi-part-prompts/>
+
+
+## See also {#see-also}
+
+Original tutorial
+: <https://semiosis.github.io/posts/pen-tutorial/>

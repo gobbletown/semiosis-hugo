@@ -1222,8 +1222,7 @@ The following commands set up pen.el for the first time.
       
       <guid>http://semiosis.github.io/pen/</guid>
       <description>Introducing Pen.el The pen of imagination - |:ϝ∷¦ϝ.
-  Pen.el integrates LMs (Language Models) such as OpenAI&amp;rsquo;s GPT-3 or EleutherAI&amp;rsquo;s GPT-J into emacs by generating functions from prompts that map emacs&amp;rsquo;s corners loosely onto LMs. These functions can be used interactively or non- interactively and in a variety of configurable ways. Pen.el also facilitates the creation, development, discovery and usage of prompts. It&amp;rsquo;s completely free, libre and open-source.
-         Pen.</description>
+   See most recent tutorial https://semiosis.github.io/posts/pen-el-tutorial/  Pen.el integrates LMs (Language Models) such as OpenAI&amp;rsquo;s GPT-3 or EleutherAI&amp;rsquo;s GPT-J into emacs by generating functions from prompts that map emacs&amp;rsquo;s corners loosely onto LMs. These functions can be used interactively or non- interactively and in a variety of configurable ways. Pen.el also facilitates the creation, development, discovery and usage of prompts. It&amp;rsquo;s completely free, libre and open-source.</description>
     </item>
     
     <item>

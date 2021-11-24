@@ -12,6 +12,9 @@ _The pen of imagination - |:ϝ∷¦ϝ._
 
 {{< figure src="/ox-hugo/the_pen_of_imagination.png" >}}
 
+See most recent tutorial
+: <https://semiosis.github.io/posts/pen-el-tutorial/>
+
 `Pen.el` integrates LMs (Language Models) such as OpenAI's
 `GPT-3` or EleutherAI's `GPT-J` into emacs by
 generating functions from prompts that map
@@ -27,7 +30,7 @@ It's completely free, libre and open-source.
 | Pen.el on GitHub                  | <https://github.com/semiosis/pen.el/>                                                                |
 | Project timeline and objectives   | <https://github.com/semiosis/pen.el/tree/master/docs>                                                |
 | Prompts on GitHub                 | <http://github.com/semiosis/prompts/>                                                                |
-| Tutorial                          | <https://semiosis.github.io/posts/pen-tutorial/>                                                     |
+| Tutorial                          | <https://semiosis.github.io/posts/pen-el-tutorial/>                                                  |
 | Demo video                        | [Augment Minds 2021: Demo of Loom and Pen.el - YouTube](https://www.youtube.com/watch?v=J9BnZjWV1jw) |
 | Discord channel invite            | <https://discord.gg/JwKGbAdNHR>                                                                      |
 | Thesis                            | <https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org>                    |
