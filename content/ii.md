@@ -30,6 +30,8 @@ Solving the problems of utilising current LMs
 will make it easier down the line to utilise
 more advanced ones.
 
+{{< figure src="/ox-hugo/agi.png" >}}
+
 
 ## Steps to run {#steps-to-run}
 
