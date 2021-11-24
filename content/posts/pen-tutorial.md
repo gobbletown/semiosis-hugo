@@ -18,10 +18,12 @@ Apply for a GPT-3 key
 : <https://beta.openai.com/>
 
 
-Free AIx GPT-J-6B key
-: <https://apps.aixsolutionsgroup.com/>
-    The AIx API is under heavy development. Multiple completions is currently being emulated by making several calls.
-    Therefore, `Pen.el` will seem less responsive with GPT-J, currently.
+Apply for an AI-21 key
+: <https://www.ai21.com/>
+
+
+Apply for a Cohere key
+: <https://cohere.ai/>
 
 These are the steps to run `Pen` on a linux
 machine. It will use a docker image. See the
@@ -42,7 +44,6 @@ mkdir -p ~/.pen
 
 # Put in your keys, or do not, it's up to you!
 echo "sk-<openai key here>" > ~/.pen/openai_api_key # https://openai.com/
-echo "<aix key here>" > ~/.pen/aix_api_key          # https://aixsolutionsgroup.com/
 echo "<hf key here>" > ~/.pen/hf_api_key            # https://huggingface.co/
 
 # Add the scripts to the PATH
@@ -247,7 +248,7 @@ You may also press `SPC` while some text is selected to run a prompt function.
 ## An exhibition of a `.prompt` {#an-exhibition-of-a-dot-prompt}
 
 Prompt file
-: [prompts/get-language.prompt at master  semiosis/prompts  GitHub](http://github.com/semiosis/prompts/blob/master/prompts/get-language.prompt)
+: [prompts/get-language.prompt at master  semiosis/prompts  GitHub](http://github.com/semiosis/prompts/blob/master/prompts/get-language-1.prompt)
 
 <!--listend-->
 

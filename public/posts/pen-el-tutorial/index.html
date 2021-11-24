@@ -5,8 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
-<meta name="description" content="Initial setup These instructions are designed for a linux distribution with docker installed.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; git clone &amp;#34;https://github.com/semiosis/engines&amp;#34; git clone &amp;#34;https://github.com/semiosis/pen-contrib.el&amp;#34; mkdir -p ~/.pen # Put in your keys, or do not, it&amp;#39;s up to you! echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/." />
+<meta name="description" content="Introduction As a beginner, to get started I would aim to simply set up the pen standalone application.
+This enables you do use pen without integrating it tightly into your own emacs.
+You can still use the prompting functions in a basic way; The thin-client prompting function names all start with pen-fn- and the names of the fully-featured prompting functions all begin with pf-.
+But you will not be able to use the ilambda functions, or get the full experience without integrating Pen." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -34,24 +36,30 @@
 
 
 <meta itemprop="name" content="Pen.el Tutorial">
-<meta itemprop="description" content="Initial setup These instructions are designed for a linux distribution with docker installed.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  git clone &#34;https://github.com/semiosis/pen.el&#34; git clone &#34;https://github.com/semiosis/prompts&#34; git clone &#34;https://github.com/semiosis/engines&#34; git clone &#34;https://github.com/semiosis/pen-contrib.el&#34; mkdir -p ~/.pen # Put in your keys, or do not, it&#39;s up to you! echo &#34;sk-&lt;openai key here&gt;&#34; &gt; ~/."><meta itemprop="datePublished" content="2021-11-20T00:00:00&#43;13:00" />
+<meta itemprop="description" content="Introduction As a beginner, to get started I would aim to simply set up the pen standalone application.
+This enables you do use pen without integrating it tightly into your own emacs.
+You can still use the prompting functions in a basic way; The thin-client prompting function names all start with pen-fn- and the names of the fully-featured prompting functions all begin with pf-.
+But you will not be able to use the ilambda functions, or get the full experience without integrating Pen."><meta itemprop="datePublished" content="2021-11-20T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-11-20T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="333"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1589"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="Pen.el Tutorial"/>
-<meta name="twitter:description" content="Initial setup These instructions are designed for a linux distribution with docker installed.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  git clone &#34;https://github.com/semiosis/pen.el&#34; git clone &#34;https://github.com/semiosis/prompts&#34; git clone &#34;https://github.com/semiosis/engines&#34; git clone &#34;https://github.com/semiosis/pen-contrib.el&#34; mkdir -p ~/.pen # Put in your keys, or do not, it&#39;s up to you! echo &#34;sk-&lt;openai key here&gt;&#34; &gt; ~/."/>
+<meta name="twitter:description" content="Introduction As a beginner, to get started I would aim to simply set up the pen standalone application.
+This enables you do use pen without integrating it tightly into your own emacs.
+You can still use the prompting functions in a basic way; The thin-client prompting function names all start with pen-fn- and the names of the fully-featured prompting functions all begin with pf-.
+But you will not be able to use the ilambda functions, or get the full experience without integrating Pen."/>
 
 
 
 
     <meta property="og:title" content="Pen.el Tutorial" />
-<meta property="og:description" content="Initial setup These instructions are designed for a linux distribution with docker installed.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  git clone &#34;https://github.com/semiosis/pen.el&#34; git clone &#34;https://github.com/semiosis/prompts&#34; git clone &#34;https://github.com/semiosis/engines&#34; git clone &#34;https://github.com/semiosis/pen-contrib.el&#34; mkdir -p ~/.pen # Put in your keys, or do not, it&#39;s up to you! echo &#34;sk-&lt;openai key here&gt;&#34; &gt; ~/." />
+<meta property="og:description" content="Introduction As a beginner, to get started I would aim to simply set up the pen standalone application.
+This enables you do use pen without integrating it tightly into your own emacs.
+You can still use the prompting functions in a basic way; The thin-client prompting function names all start with pen-fn- and the names of the fully-featured prompting functions all begin with pf-.
+But you will not be able to use the ilambda functions, or get the full experience without integrating Pen." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-el-tutorial/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-20T00:00:00&#43;13:00" />
@@ -140,7 +148,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        2 minutes
+        8 minutes
 
         
       </p>
@@ -156,7 +164,61 @@
       
 
       <div class="post-content">
-        <h2 id="initial-setup">Initial setup</h2>
+        <h2 id="introduction">Introduction</h2>
+<p>As a beginner, to get started I would aim to simply set up the <code>pen</code> standalone application.</p>
+<p>This enables you do use <code>pen</code> without integrating it tightly into your own emacs.</p>
+<p>You can still use the prompting functions in a
+basic way; The thin-client prompting function names all start with <code>pen-fn-</code>
+and the names of the fully-featured prompting functions all begin with <code>pf-</code>.</p>
+<p>But you will not be able to use the <code>ilambda</code>
+functions, or get the full experience without
+integrating <code>Pen.el</code> into your host emacs
+configuration.</p>
+<p>However, if you&rsquo;re going to test out <code>pen</code> and
+plan on only setting up the standalone
+application along with the thin-client, you&rsquo;ll
+still be able to use the following
+applications:</p>
+<table>
+<thead>
+<tr>
+<th>Application name</th>
+<th>Script name</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LookingGlass</code></td>
+<td><code>lg</code></td>
+<td>Imaginary-Web Browser</td>
+</tr>
+<tr>
+<td><code>Paracosm</code></td>
+<td><code>cosm</code></td>
+<td>AI-Assisted Mind-map</td>
+</tr>
+<tr>
+<td><code>ComplexTerm</code></td>
+<td><code>ct</code></td>
+<td>Real+Imaginary Terminal Multiplexer</td>
+</tr>
+<tr>
+<td><code>ImaginaryInterpreter</code></td>
+<td><code>ii</code></td>
+<td>Fully imaginary language interpreter</td>
+</tr>
+<tr>
+<td><code>pen bash interop</code></td>
+<td><code>penf</code></td>
+<td>Prompt function interface for bash</td>
+</tr>
+</tbody>
+</table>
+<p>They are accessible by running the script name
+on the host (or inside the container shell, if
+you prefer).</p>
+<h2 id="initial-setup">Initial setup</h2>
 <p>These instructions are designed for a linux
 distribution with docker installed.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -187,7 +249,6 @@ distribution with docker installed.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
@@ -200,7 +261,6 @@ mkdir -p ~/.pen
 <span style="color:#75715e"># Put in your keys, or do not, it&#39;s up to you!</span>
 echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key       <span style="color:#75715e"># https://openai.com/</span>
 echo <span style="color:#e6db74">&#34;&lt;ai21 key here&gt;&#34;</span> &gt; ~/.pen/ai21_api_key              <span style="color:#75715e"># https://www.ai21.com/</span>
-echo <span style="color:#e6db74">&#34;&lt;aix key here&gt;&#34;</span> &gt; ~/.pen/aix_api_key                <span style="color:#75715e"># https://aixsolutionsgroup.com/</span>
 echo <span style="color:#e6db74">&#34;&lt;hf key here&gt;&#34;</span> &gt; ~/.pen/hf_api_key                  <span style="color:#75715e"># https://huggingface.co/</span>
 echo <span style="color:#e6db74">&#34;&lt;nlpcloud key here&gt;&#34;</span> &gt; ~/.pen/nlpcloud_api_key      <span style="color:#75715e"># https://nlpcloud.io/</span>
 echo <span style="color:#e6db74">&#34;&lt;alephalpha key here&gt;&#34;</span> &gt; ~/.pen/alephalpha_api_key  <span style="color:#75715e"># https://aleph-alpha.de/</span>
@@ -219,6 +279,19 @@ echo <span style="color:#e6db74">&#34;stty stop undef 2&gt;/dev/null; stty start
 pen</code></pre></td></tr></table>
 </div>
 </div>
+<p>This will start <code>pen</code> emacs inside of a docker container.</p>
+<h3 id="you-can-use-it-like-a-regular-editor">You can use it like a regular editor</h3>
+<p>This way, it will create a hardlink to the
+file, so emacs in the docker container can
+access it.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pen yas.el</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="basic-demo">Basic demo</h2>
 <h3 id="this-is-prompting">This is prompting</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -234,7 +307,9 @@ pen</code></pre></td></tr></table>
 <ul>
 <li><a href="https://mullikine.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/">Thin-client for Pen.el. Just load pen-client.el // Bodacious Blog</a></li>
 </ul>
-<!--listend-->
+<p>This lets you put basic prompt functions into
+your own emacs without loading the whole of
+<code>pen.el</code>.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -243,52 +318,310 @@ pen</code></pre></td></tr></table>
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(pen-fn-translate/3 (<span style="color:#a6e22e">buffer-substring</span> (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>)) <span style="color:#e6db74">&#34;English&#34;</span> <span style="color:#e6db74">&#34;French&#34;</span>)</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="introduction">Introduction</h3>
-<h4 id="demonstrate-basic-invocation">Demonstrate basic invocation</h4>
-<!--list-separator-->
+<h3 id="pen-dot-el-full-install-into-your-own-dot-emacs-dot-d">Pen.el full install into your own <code>.emacs.d</code></h3>
+<p>This is for advanced users, really.</p>
 <ul>
-<li>Start pen server then use the client</li>
+<li>Install the prerequsites
+<ul>
+<li><a href="http://github.com/semiosis/pen.el/blob/master/scripts/setup.sh">http://github.com/semiosis/pen.el/blob/master/scripts/setup.sh</a></li>
+<li>These instructions are for root and designed for Ubuntu or Debian.</li>
+<li>It will take more work to get set up.</li>
 </ul>
-<!--list-separator-->
+</li>
+<li>Load the example config
 <ul>
-<li>M-SPC menu</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Right click menu</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Use <code>pen</code> with the web server</p>
-<ul>
-<li>Control-Click for right click</li>
+<li><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-example-config.el">http://github.com/semiosis/pen.el/blob/master/src/pen-example-config.el</a></li>
 </ul>
 </li>
 </ul>
-<!--list-separator-->
+<h3 id="pen-server--using-the-standalone-application-pen"><code>pen</code> server (Using the standalone application, <code>pen</code>)</h3>
+<p><code>pen</code> has a standalone application which is an emacs inside docker.
+This also functions as a server.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># interact with pen as an editor</span>
+pen /path/to/my-file.txt
+
+<span style="color:#75715e"># It can also take stdin</span>
+cat my-file.txt | pen</code></pre></td></tr></table>
+</div>
+</div>
+<p>The first time you run <code>pen</code>, it will start an emacs daemon inside a docker container.
+Subsequent calls to <code>pen</code> will use the same container and an <code>emacsclient</code>.</p>
+<p>Starting the <code>pen</code> server with <code>pen -nw -n</code>
+starts a new <code>pen</code> frame with &ldquo;no window&rdquo; i.e.
+the terminal user interface, and says &lsquo;no&rsquo; to
+pulling updates.</p>
+<p>Now that it is running, you can also use the bash interop.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">penf pf-very-witty-pick-up-lines-for-a-topic/1 slovenia</code></pre></td></tr></table>
+</div>
+</div>
+<p>To create a shell into the docker container, simply run <code>pen sh</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># From the host, start a shell in the docker container</span>
+pen sh
+
+<span style="color:#75715e"># If you want start a specific program (inside the container)</span>
+pen sh vim /
+pen sh nlsh Ubuntu</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="configuration">Configuration</h3>
+<p>I&rsquo;ll explain the following example <code>pen.yaml</code> file.</p>
+<p><a href="http://github.com/semiosis/pen.el/blob/master/config/example-pen.yaml">http://github.com/semiosis/pen.el/blob/master/config/example-pen.yaml</a></p>
+<p><code>pen.yaml</code> lives at <code>~/.pen/pen.yaml</code> on the host machine.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># When debug is on, try is disabled, and all errors throw an exception</span>
+<span style="color:#f92672">debug</span>: <span style="color:#66d9ef">on</span>
+
+<span style="color:#75715e"># Setting sh-update to on would disable caching/memoization</span>
+<span style="color:#f92672">sh-update</span>: <span style="color:#66d9ef">off</span>
+
+<span style="color:#75715e"># In future, this would disable the use of non-libre models</span>
+<span style="color:#f92672">libre-only</span>: <span style="color:#66d9ef">off</span>
+
+<span style="color:#75715e"># These variables are used by pen.el to</span>
+<span style="color:#75715e"># automatically tailor the experience towards</span>
+<span style="color:#75715e"># you.</span>
+<span style="color:#f92672">fav-world-language</span>: <span style="color:#ae81ff">English</span>
+<span style="color:#f92672">fav-programming-language</span>: <span style="color:#ae81ff">Emacs Lisp</span>
+
+<span style="color:#75715e"># This overrides the language model / engine used for prompting functions</span>
+<span style="color:#75715e"># However, if a .prompt file specifies</span>
+<span style="color:#75715e"># force-engine, then this override will not</span>
+<span style="color:#75715e"># override.</span>
+<span style="color:#f92672">force-engine</span>: <span style="color:#ae81ff">OpenAI Codex</span>
+
+<span style="color:#75715e"># This</span>
+<span style="color:#f92672">force-few-completions</span>: <span style="color:#66d9ef">off</span>
+
+<span style="color:#75715e"># This prevents multiple requests.</span>
+<span style="color:#75715e"># Under normal circumstances, pen.el might</span>
+<span style="color:#75715e"># perform multiple requests/generations to</span>
+<span style="color:#75715e"># get to the desired quota for a prompt</span>
+<span style="color:#75715e"># function. Under the hood, engines may have</span>
+<span style="color:#75715e"># a max number of generations they can provide</span>
+<span style="color:#75715e"># for a single request. force-single-</span>
+<span style="color:#75715e"># collation ensures that only one request</span>
+<span style="color:#75715e"># happens.</span>
+<span style="color:#f92672">force-single-collation</span>: <span style="color:#66d9ef">off</span>
+
+<span style="color:#75715e"># Force one is more extreme. It also sets</span>
+<span style="color:#75715e"># the number of completions. So you get only</span>
+<span style="color:#75715e"># one generation/completion per request, and only one request.</span>
+<span style="color:#f92672">force-one</span>: <span style="color:#66d9ef">off</span>
+
+<span style="color:#75715e"># This allows you to set the number of collations.</span>
+<span style="color:#f92672">force-n-collate</span>: <span style="color:#ae81ff">~</span>
+<span style="color:#f92672">force-n-completions</span>: <span style="color:#ae81ff">~</span>
+<span style="color:#75715e"># force-temperature: ~</span>
+
+<span style="color:#75715e"># Ink.el adds text properties to the emacs buffer when text has been generated.</span>
+<span style="color:#f92672">disable-ink</span>: <span style="color:#66d9ef">off</span>
+
+<span style="color:#75715e"># This is a heuristic used within Pen.el to make select cost-effiient options.</span>
+<span style="color:#f92672">cost-efficient</span>: <span style="color:#66d9ef">on</span>
+
+<span style="color:#75715e"># This generates alttext for the LookingGlass web browser</span>
+<span style="color:#f92672">describe-images</span>: <span style="color:#66d9ef">on</span>
+
+<span style="color:#75715e"># Default engines are used when the engine resolver (all fallbacks) fail</span>
+<span style="color:#f92672">default-engines</span>:
+- <span style="color:#f92672">text-to-text</span>: <span style="color:#ae81ff">OpenAI Codex</span>
+- <span style="color:#f92672">image-to-text</span>: <span style="color:#ae81ff">AlephAlpha EUTranMM</span>
+<span style="color:#75715e"># - text-to-image: OpenAI Dall-E</span>
+- <span style="color:#f92672">text-to-image</span>: <span style="color:#ae81ff">ruDALL-E Malevich (XL)</span>
+
+<span style="color:#75715e"># Here&#39;s a way to disable engines. This</span>
+<span style="color:#75715e"># might be useful if you have a bad API key</span>
+<span style="color:#75715e"># for example, and just want to disable the</span>
+<span style="color:#75715e"># engine.</span>
+<span style="color:#75715e"># Pattern match on the names</span>
+<span style="color:#f92672">disabled-prompts</span>:
+<span style="color:#75715e"># disabled-engines:</span>
+<span style="color:#75715e"># - &#34;AlephAlpha.*&#34;</span>
+<span style="color:#ae81ff">disabled-models:</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="m-spc--aka-dot-hyperspace--menu"><code>M-SPC</code> (aka. hyperspace) menu</h3>
+<p>If you navigate to <code>pen-define-maps</code> in <a href="http://github.com/semiosis/pen.el/blob/master/src/pen-example-config.el">http://github.com/semiosis/pen.el/blob/master/src/pen-example-config.el</a>
+You will find the default key bindings.</p>
+<p>A bunch of useful prompting functions for code are bound under <code>M-SPC c</code>, for example.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(pen-dk-easy <span style="color:#e6db74">&#34;c l&#34;</span> <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+
+<span style="color:#75715e">;; The above maps the following:</span>
+(progn
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-TAB c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-SPC c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-Q c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-u c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;&lt;H-tab&gt; c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-SPC c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-SPC TAB c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-SPC C-M-i c l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-TAB M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;H-SPC M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-Q M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-u M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;&lt;H-tab&gt; M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-SPC M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-SPC TAB M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>)
+  (<span style="color:#a6e22e">define-key</span> pen-map (kbd <span style="color:#e6db74">&#34;M-SPC C-M-i M-c M-l&#34;</span>) <span style="color:#e6db74">&#39;pf-transpile/3</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<p>The above are all valid ways to access the <code>hyperspace</code> menu.</p>
+<p>I call it the hyperspace menu because one of the prefixes is <code>H-SPC</code>.</p>
+<p><code>H-</code> stands for the hyper key. It is invokable in pen with the chord <code>C-M-\</code>.</p>
+<h3 id="right-click-menu">Right click menu</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ZVnG7bMcDR2zhqTnAOaOgP6qc" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ZVnG7bMcDR2zhqTnAOaOgP6qc.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ZVnG7bMcDR2zhqTnAOaOgP6qc.js" id="asciicast-ZVnG7bMcDR2zhqTnAOaOgP6qc" async></script>
+<p>To invoke the right-click context menu, you may use <code>right-click</code> or <code>control-left-click</code>.</p>
+<p><code>Control-Left-Click</code> is needed for the web interface.</p>
+<h3 id="use-pen-with-the-web-server">Use <code>pen</code> with the web server</h3>
+<p>There are a few differences:</p>
 <ul>
-<li>Use <code>pen</code> in gui mode</li>
+<li>Always runs in terminal mode.</li>
+<li>Right-click doesn&rsquo;t work, so use <code>Control-Click</code> instead for the context menu.</li>
+<li><code>M-SPC</code> doesn&rsquo;t work, so use <code>M-u</code> instead as a prefix.</li>
 </ul>
-<!--list-separator-->
+<h3 id="use-pen-in-gui-mode">Use <code>pen</code> in gui mode</h3>
+<p>To get the GUI mode, all you need to do is run
+<code>pen</code> in a terminal somewhere.</p>
+<h3 id="use-pen-in-terminal-mode">Use <code>pen</code> in terminal mode</h3>
+<p>Just add <code>-nw</code> to one of your commands, just like running <code>emacs</code>.</p>
+<h3 id="configuring-pen">Configuring <code>pen</code></h3>
+<p>Firstly, there is a <code>~/.pen</code> directory on your host machine.</p>
+<h3 id="use-lg-in-gui-mode">Use <code>lg</code> in gui mode</h3>
+<p>There are a couple of configuration options.</p>
 <ul>
-<li>Use <code>pen</code> in terminal mode</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Use <code>lg</code> in gui mode</p>
-<ul>
-<li>configuration of force-images
+<li>configuration of <span class="underline">force-images</span>
 <ul>
 <li>This should generate missing images from alttext</li>
 </ul>
 </li>
-<li>configuration of force-text
+<li>configuration of <span class="underline">force-text</span>
 <ul>
 <li>This should generate missing alttext</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -296,21 +629,65 @@ pen</code></pre></td></tr></table>
 <ul>
 <li>Use <code>lg</code> in terminal mode</li>
 </ul>
-<h4 id="do-imaginary-programming">Do imaginary programming</h4>
-<h4 id="surf-the-imaginary-web">Surf the imaginary web</h4>
+<h3 id="do-imaginary-programming">Do imaginary programming</h3>
+<ul>
+<li><a href="http://github.com/semiosis/pen.el/blob/master/src/ilambda.el">http://github.com/semiosis/pen.el/blob/master/src/ilambda.el</a></li>
+</ul>
+<p>The functions are built into <code>pen.el</code>, and so
+you can access them from within the <code>pen</code>
+standalone application.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG.js" id="asciicast-wCBT3BxnPI8YKJHslC4xd4gfG" async></script>
+<h3 id="surf-the-imaginary-web">Surf the imaginary web</h3>
 <ul>
 <li>Search the web by selecting</li>
 <li>Use eww browser</li>
 </ul>
-<h4 id="use-pen-for-autocompletion">Use pen for autocompletion</h4>
-<h4 id="use-pen-for-translation">Use pen for translation</h4>
-<h4 id="run-pickup-lines">Run pickup lines</h4>
-<h4 id="translate-code">Translate code</h4>
-<h4 id="run-imaginary-interpreters-using-ii">Run imaginary interpreters using <code>ii</code></h4>
-<h4 id="use-the-shell-interop">Use the shell interop</h4>
-<h4 id="use-the-lsp-server">Use the LSP server</h4>
-<h4 id="use-the-glossary-system">Use the glossary system</h4>
-<h4 id="use-cterm">Use <code>cterm</code></h4>
+<h3 id="use-pen-for-autocompletion">Use pen for autocompletion</h3>
+<h3 id="use-pen-for-translation">Use pen for translation</h3>
+<h3 id="run-pickup-lines">Run pickup lines</h3>
+<h3 id="translate-code">Translate code</h3>
+<h3 id="run-imaginary-interpreters-using-ii">Run imaginary interpreters using <code>ii</code></h3>
+<h3 id="use-the-shell-interop">Use the shell interop</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">penf -u pf-very-witty-pick-up-lines-for-a-topic/1 slovenia</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">I<span style="color:#960050;background-color:#1e0010">&#39;</span>d like to visit Slovenia with you.
+</code></pre></div><h3 id="use-the-lsp-server">Use the LSP server</h3>
+<ul>
+<li><a href="https://mullikine.github.io/posts/an-lsp-server-for-codex/">https://mullikine.github.io/posts/an-lsp-server-for-codex/</a></li>
+</ul>
+<h3 id="use-the-glossary-system">Use the glossary system</h3>
+<h3 id="use-cterm">Use <code>cterm</code></h3>
+<p>Still use <code>C-u 0</code> or <code>H-u</code> to prefix onto pen bindings to bypass/update the cache.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qW1NNbbErJPrXU4mStyZmRc6p" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qW1NNbbErJPrXU4mStyZmRc6p.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/qW1NNbbErJPrXU4mStyZmRc6p.js" id="asciicast-qW1NNbbErJPrXU4mStyZmRc6p" async></script>
+<h3 id="use-nlsh--natural-language-shell">Use <code>nlsh</code> (Natural Language Shell)</h3>
+<p>You may describe the actions you wish to
+perform in NL, and <code>nlsh</code> will give you the
+shell commands.</p>
+<p><code>nlsh</code> expects one parameter (the operating
+system) and provides you with a REPL.</p>
+<p>This allows you to rapidly create a shell that
+awaits your NL descriptions and translates
+them into real shell commands.</p>
+<ul>
+<li><a href="http://semiosis.github.io/posts/pen-s-nlsh-for-codex/">http://semiosis.github.io/posts/pen-s-nlsh-for-codex/</a></li>
+</ul>
+<h3 id="talk-to-a-chatbot">Talk to a chatbot</h3>
+<p>Select any text and run <code>M-x apostrophe-start-chatbot-from-selection</code> or <code>M-SPC a c</code>.</p>
+<ul>
+<li><a href="https://semiosis.github.io/posts/multi-part-prompts/">https://semiosis.github.io/posts/multi-part-prompts/</a></li>
+</ul>
 
       </div>
     </article>
@@ -336,7 +713,7 @@ pen</code></pre></td></tr></table>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        333 Words
+        1589 Words
       </p>
 
       <p>

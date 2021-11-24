@@ -14,8 +14,10 @@
       <pubDate>Sat, 20 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/posts/pen-el-tutorial/</guid>
-      <description>Initial setup These instructions are designed for a linux distribution with docker installed.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.com/semiosis/prompts&amp;#34; git clone &amp;#34;https://github.com/semiosis/engines&amp;#34; git clone &amp;#34;https://github.com/semiosis/pen-contrib.el&amp;#34; mkdir -p ~/.pen # Put in your keys, or do not, it&amp;#39;s up to you! echo &amp;#34;sk-&amp;lt;openai key here&amp;gt;&amp;#34; &amp;gt; ~/.</description>
+      <description>Introduction As a beginner, to get started I would aim to simply set up the pen standalone application.
+This enables you do use pen without integrating it tightly into your own emacs.
+You can still use the prompting functions in a basic way; The thin-client prompting function names all start with pen-fn- and the names of the fully-featured prompting functions all begin with pf-.
+But you will not be able to use the ilambda functions, or get the full experience without integrating Pen.</description>
     </item>
     
     <item>
@@ -1210,7 +1212,7 @@ http://github.com/semiosis/prompts/blob/master/prompts/generic-completion-50-tok
       <guid>http://semiosis.github.io/posts/pen-tutorial/</guid>
       <description>Quick Setup using Docker   A time-traveling wizard who uses a magic book and pen to create worlds.
 The following commands set up pen.el for the first time.
- Apply for a GPT-3 key https://beta.openai.com/ Free AIx GPT-J-6B key https://apps.aixsolutionsgroup.com/ The AIx API is under heavy development. Multiple completions is currently being emulated by making several calls. Therefore, Pen.el will seem less responsive with GPT-J, currently.  These are the steps to run Pen on a linux machine.</description>
+ Apply for a GPT-3 key https://beta.openai.com/ Apply for an AI-21 key https://www.ai21.com/ Apply for a Cohere key https://cohere.ai/  These are the steps to run Pen on a linux machine. It will use a docker image. See the bottom of this document for Windows instructions.</description>
     </item>
     
     <item>
