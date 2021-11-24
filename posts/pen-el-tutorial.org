@@ -317,7 +317,13 @@ The functions are built into =pen.el=, and so
 you can access them from within the =pen=
 standalone application.
 
-pen-el-tutorial-ip.cast
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG.js" id="asciicast-wCBT3BxnPI8YKJHslC4xd4gfG" async></script>
+#+END_EXPORT
+
 
 *** Surf the imaginary web
  - Search the web by selecting
