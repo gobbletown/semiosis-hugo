@@ -14,7 +14,7 @@ Just a bit of fun to showcase the imaginary interpreter and universal syntax hig
 
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s.js" id="asciicast-Mmi1niX76Llg6JigBGFg518LV" async></script>
+<script src="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s.js" id="asciicast-moaMT9uoQ18oEFR07QPY8jP5s" async></script>
 #+END_EXPORT
