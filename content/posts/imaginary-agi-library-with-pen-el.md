@@ -2,7 +2,7 @@
 title = "Imaginary AGI Library with Pen.el"
 author = ["Shane Mulligan"]
 date = 2021-11-24T00:00:00+13:00
-keywords = ["demo", "pen.el"]
+keywords = ["demo", "pen", "𝑖λ", "imaginary"]
 draft = false
 +++
 
