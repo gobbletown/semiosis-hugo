@@ -15,7 +15,8 @@
       
       <guid>http://semiosis.github.io/posts/imaginary-agi-library-with-pen-el/</guid>
       <description>Summary Just a bit of fun to showcase the imaginary interpreter and universal syntax highlighting. I demo interacting with an AGI via imaginary python.
- -- </description>
+Technical details This is a dockerized emacs running within neovim. Emacs is communicating with itself via a bash interop, that constructs a readline- capable imaginary interpreter. emacs&#39; comint mode is used to provide structure and prompt highlighting.
+Pen.el is used to provide autocompletion. The interperter is imagined, and the python libraries used are imagined too.</description>
     </item>
     
     <item>
