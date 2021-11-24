@@ -9,6 +9,38 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: openai pen gpt nlp prompt-engineering
 
+** Introduction
+As a beginner, to get started I would aim to simply set up the =pen= standalone application.
+
+This enables you do use =pen= without integrating it tightly into your own emacs.
+
+You can still use the prompting functions in a
+basic way; The thin-client function names all start with =pen-fn-=.
+
+But you will not be able to use the =ilambda=
+functions, or get the full experience without
+integrating =Pen.el= into your host emacs
+configuration.
+
+The names of the fully-featured prompting functions all begin with =pf-=.
+
+However, if you're going to test out =pen= and
+plan on only setting up the standalone
+application along with the thin-client, you'll
+still be able to use the following
+applications:
+| Application            | script name |
+|------------------------+-------------|
+| =LookingGlass=         | =lg=        |
+| =Paracosm=             | =cosm=      |
+| =ComplexTerm=          | =ct=        |
+| =ImaginaryInterpreter= | =ii=        |
+| =pen bash interop=     | =penf=      |
+
+They are accessible by running the script name
+on the host (or inside the container shell, if
+you prefer).
+
 ** Initial setup
 These instructions are designed for a linux
 distribution with docker installed.
@@ -46,6 +78,17 @@ distribution with docker installed.
   pen
 #+END_SRC
 
+This will start =pen= emacs inside of a docker container.
+
+*** You can use it like a regular editor
+This way, it will create a hardlink to the
+file, so emacs in the docker container can
+access it.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  pen yas.el 
+#+END_SRC
+
 ** Basic demo
 *** This is prompting
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
@@ -60,36 +103,179 @@ To get to the other side.
 *** Pen.el thin client
 - [[https://mullikine.github.io/posts/thin-client-for-pen-el-just-load-pen-client-el/][Thin-client for Pen.el. Just load pen-client.el // Bodacious Blog]]
 
+This lets you put basic prompt functions into
+your own emacs without loading the whole of
+=pen.el=.
+
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (pen-fn-translate/3 (buffer-substring (region-beginning) (region-end)) "English" "French")
 #+END_SRC
 
+*** Pen.el full install into your own =.emacs.d=
+This is for advanced users, really.
 
-*** Introduction
-**** Demonstrate basic invocation
-***** Start pen server then use the client
-***** M-SPC menu
-***** Right click menu
-***** Use =pen= with the web server
- - Control-Click for right click
-***** Use =pen= in gui mode
-***** Use =pen= in terminal mode
-***** Use =lg= in gui mode
- - configuration of force-images
-   - This should generate missing images from alttext
- - configuration of force-text
-   - This should generate missing alttext
+- Install the prerequsites
+  - http://github.com/semiosis/pen.el/blob/master/scripts/setup.sh
+  - These instructions are for root and designed for Ubuntu or Debian.
+  - It will take more work to get set up.
+- Load the example config
+  - http://github.com/semiosis/pen.el/blob/master/src/pen-example-config.el
+
+*** =pen= server (Using the standalone application, =pen=)
+=pen= has a standalone application which is an emacs inside docker.
+This also functions as a server.
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  # interact with pen as an editor
+  pen /path/to/my-file.txt
+
+  # It can also take stdin
+  cat my-file.txt | pen
+#+END_SRC
+
+The first time you run =pen=, it will start an emacs daemon inside a docker container.
+Subsequent calls to =pen= will use the same container and an =emacsclient=.
+
+Starting the =pen= server with =pen -nw -n=
+starts a new =pen= frame with "no window" i.e.
+the terminal user interface, and says 'no' to
+pulling updates.
+
+Now that it is running, you can also use the bash interop.
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  penf pf-very-witty-pick-up-lines-for-a-topic/1 slovenia
+#+END_SRC
+
+*** =M-SPC= (aka. hyperspace) menu
+If you navigate to =pen-define-maps= in http://github.com/semiosis/pen.el/blob/master/src/pen-example-config.el
+You will find the default key bindings.
+
+A bunch of useful prompting functions for code are bound under =M-SPC c=, for example.
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (pen-dk-easy "c l" 'pf-transpile/3)
+  
+  ;; The above maps the following:
+  (progn
+    (define-key pen-map (kbd "H-TAB c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "H-SPC c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-Q c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-u c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "<H-tab> c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-SPC c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-SPC TAB c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-SPC C-M-i c l") 'pf-transpile/3)
+    (define-key pen-map (kbd "H-TAB M-c M-l") 'pf-transpile/3)
+    (define-key pen-map (kbd "H-SPC M-c M-l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-Q M-c M-l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-u M-c M-l") 'pf-transpile/3)
+    (define-key pen-map (kbd "<H-tab> M-c M-l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-SPC M-c M-l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-SPC TAB M-c M-l") 'pf-transpile/3)
+    (define-key pen-map (kbd "M-SPC C-M-i M-c M-l") 'pf-transpile/3))
+#+END_SRC
+
+The above are all valid ways to access the =hyperspace= menu.
+
+I call it the hyperspace menu because one of the prefixes is =H-SPC=.
+
+=H-= stands for the hyper key. It is invokable in pen with the chord =C-M-\=.
+
+*** Right click menu
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ZVnG7bMcDR2zhqTnAOaOgP6qc" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ZVnG7bMcDR2zhqTnAOaOgP6qc.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ZVnG7bMcDR2zhqTnAOaOgP6qc.js" id="asciicast-ZVnG7bMcDR2zhqTnAOaOgP6qc" async></script>
+#+END_EXPORT
+
+To invoke the right-click context menu, you may use =right-click= or =control-left-click=.
+
+=Control-Left-Click= is needed for the web interface.
+
+*** Use =pen= with the web server
+There are a few differences:
+- Always runs in terminal mode.
+- Right-click doesn't work, so use =Control-Click= instead for the context menu.
+- =M-SPC= doesn't work, so use =M-u= instead as a prefix.
+
+*** Use =pen= in gui mode
+To get the GUI mode, all you need to do is run
+=pen= in a terminal somewhere.
+
+*** Use =pen= in terminal mode
+Just add =-nw= to one of your commands, just like running =emacs=.
+
+*** Configuring =pen=
+Firstly, there is a =~/.pen= directory on your host machine.
+
+*** Use =lg= in gui mode
+There are a couple of configuration options.
+
+- configuration of _force-images_
+  - This should generate missing images from alttext
+- configuration of _force-text_
+  - This should generate missing alttext
+
 ***** Use =lg= in terminal mode
-**** Do imaginary programming
-**** Surf the imaginary web
+*** Do imaginary programming
+- http://github.com/semiosis/pen.el/blob/master/src/ilambda.el
+
+The functions are built into =pen.el=, and so
+you can access them from within the =pen=
+standalone application.
+
+pen-el-tutorial-ip.cast
+
+*** Surf the imaginary web
  - Search the web by selecting
  - Use eww browser
-**** Use pen for autocompletion
-**** Use pen for translation
-**** Run pickup lines
-**** Translate code
-**** Run imaginary interpreters using =ii=
-**** Use the shell interop
-**** Use the LSP server
-**** Use the glossary system
-**** Use =cterm=
+*** Use pen for autocompletion
+*** Use pen for translation
+*** Run pickup lines
+*** Translate code
+*** Run imaginary interpreters using =ii=
+*** Use the shell interop
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  penf -u pf-very-witty-pick-up-lines-for-a-topic/1 slovenia
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+I'd like to visit Slovenia with you.
+#+end_src
+
+*** Use the LSP server
+- https://mullikine.github.io/posts/an-lsp-server-for-codex/
+
+*** Use the glossary system
+*** Use =cterm=
+Still use =C-u 0= or =H-u= to prefix onto pen bindings to bypass/update the cache.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/qW1NNbbErJPrXU4mStyZmRc6p" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/qW1NNbbErJPrXU4mStyZmRc6p.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/qW1NNbbErJPrXU4mStyZmRc6p.js" id="asciicast-qW1NNbbErJPrXU4mStyZmRc6p" async></script>
+#+END_EXPORT
+
+*** Use =nlsh= (Natural Language Shell)
+You may describe the actions you wish to
+perform in NL, and =nlsh= will give you the
+shell commands.
+
+=nlsh= expects one parameter (the operating
+system) and provides you with a REPL.
+
+This allows you to rapidly create a shell that
+awaits your NL descriptions and translates
+them into real shell commands.
+
+- http://semiosis.github.io/posts/pen-s-nlsh-for-codex/
+
+*** Talk to a chatbot
+Select any text and run =M-x apostrophe-start-chatbot-from-selection= or =M-SPC a c=.
+
+- https://semiosis.github.io/posts/multi-part-prompts/
