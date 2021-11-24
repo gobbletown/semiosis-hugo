@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Charming conversation with multiversal search</title>
+      <link>http://semiosis.github.io/posts/charming-conversation-with-multiversal-search/</link>
+      <pubDate>Tue, 23 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/charming-conversation-with-multiversal-search/</guid>
+      <description>Summary I add multiversal search to Pen.el, to filter generated conversation candidates for those which result in constructive/better responses from the other party.
+This way you can avoid stuff-ups in your conversation.
+Textual semantic search  prompt http://github.com/semiosis/prompts/blob/master/prompts/textual-semantic-search-2.prompt  Textual semantic search is the starting point for filtering text according to semantic predicates.
+This also works on the command-line so you can conveniently perform semantic filtering in your day-to-day tasks.</description>
+    </item>
+    
     <item>
       <title>Pen.el Tutorial</title>
       <link>http://semiosis.github.io/posts/pen-el-tutorial/</link>
