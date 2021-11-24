@@ -6,8 +6,49 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Universal syntax highlighting for Pen.el, nlsh and Imaginary Interpreter</title>
+            <link>http://semiosis.github.io/posts/universal-syntax-highlighting-for-pen-el-nlsh-and-imaginary-interpreter/</link>
+            <pubDate>Wed, 24 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/universal-syntax-highlighting-for-pen-el-nlsh-and-imaginary-interpreter/</guid>
+            <description>Summary I add universal syntax highlighting to nlsh and ii.
+This is to keep it interesting and beautiful while using imaginary interpreters, which may not have their own syntax highlighting.
+Code  Syntax highlighting rules http://github.com/semiosis/pen.el/blob/master/config/nvimrc  Demos ii    --  nlsh    -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I add universal syntax highlighting to <code>nlsh</code>
+and <code>ii</code>.</p>
+<p>This is to keep it interesting and beautiful
+while using imaginary interpreters, which may
+not have their own syntax highlighting.</p>
+<h2 id="code">Code</h2>
+<dl>
+<dt>Syntax highlighting rules</dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/config/nvimrc">http://github.com/semiosis/pen.el/blob/master/config/nvimrc</a></dd>
+</dl>
+<h2 id="demos">Demos</h2>
+<h3 id="ii"><code>ii</code></h3>
+<figure>
+    <img src="/ox-hugo/agi.png"/> 
+</figure>
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/OBn9OJGyMBirLDRHVImPFlnoW" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/OBn9OJGyMBirLDRHVImPFlnoW.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/OBn9OJGyMBirLDRHVImPFlnoW.js" id="asciicast-OBn9OJGyMBirLDRHVImPFlnoW" async></script>
+<h3 id="nlsh"><code>nlsh</code></h3>
+<figure>
+    <img src="/ox-hugo/nlsh-demo.png"/> 
+</figure>
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ZS1q9uMNRYfsdF6farnZbaQSX" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ZS1q9uMNRYfsdF6farnZbaQSX.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ZS1q9uMNRYfsdF6farnZbaQSX.js" id="asciicast-ZS1q9uMNRYfsdF6farnZbaQSX" async></script>]]></content>
+        </item>
         
         <item>
             <title>Charming conversation with multiversal search</title>
