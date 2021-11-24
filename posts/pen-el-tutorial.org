@@ -159,6 +159,18 @@ To create a shell into the docker container, simply run =pen sh=.
 #+END_SRC
 
 *** Configuration
+The Pen configuration consists of a config
+file =pen.yaml= and also the =M-x pen-customize= control panel.
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  # You may also access pen-customize by running
+  # the following on the host or container
+  # terminal:
+  pen config
+#+END_SRC
+
+Some of the values found in =pen.yaml= make their way into =pen-customize=.
+
 I'll explain the following example =pen.yaml= file.
 
 http://github.com/semiosis/pen.el/blob/master/config/example-pen.yaml
