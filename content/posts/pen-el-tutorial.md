@@ -168,6 +168,18 @@ pen sh nlsh Ubuntu
 
 ### Configuration {#configuration}
 
+The Pen configuration consists of a config
+file `pen.yaml` and also the `M-x pen-customize` control panel.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+# You may also access pen-customize by running
+# the following on the host or container
+# terminal:
+pen config
+{{< /highlight >}}
+
+Some of the values found in `pen.yaml` make their way into `pen-customize`.
+
 I'll explain the following example `pen.yaml` file.
 
 <http://github.com/semiosis/pen.el/blob/master/config/example-pen.yaml>
