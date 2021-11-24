@@ -31,6 +31,8 @@ Solving the problems of utilising current LMs
 will make it easier down the line to utilise
 more advanced ones.
 
+[[./agi.png]]
+
 ** Steps to run
 - On your host machine, or from within the docker container's shell
   - Run =ii python=, or any desired language as the first argument
