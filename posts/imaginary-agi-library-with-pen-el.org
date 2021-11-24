@@ -7,7 +7,7 @@
 #+TITLE: Imaginary AGI Library with Pen.el
 #+DATE: <2021-11-24>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: demo pen.el
+#+KEYWORDS: demo pen 𝑖λ imaginary
 
 ** Summary
 Just a bit of fun to showcase the imaginary interpreter and universal syntax highlighting. I demo interacting with an AGI via imaginary python.
