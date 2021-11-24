@@ -1,0 +1,20 @@
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+OPTIONS: toc:nil
+
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./posts
+
+#+TITLE: Imaginary AGI Library with Pen.el
+#+DATE: <2021-11-24>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: demo pen.el
+
+** Summary
+Just a bit of fun. I demo interacting with an AGI via imaginary python.
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/moaMT9uoQ18oEFR07QPY8jP5s.js" id="asciicast-Mmi1niX76Llg6JigBGFg518LV" async></script>
+#+END_EXPORT
