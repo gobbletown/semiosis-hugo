@@ -9,12 +9,12 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>apostrophe</title>
+      <title>Apostrophe (conversation unrestricted)</title>
       <link>http://semiosis.github.io/apostrophe/</link>
       <pubDate>Sat, 27 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/apostrophe/</guid>
-      <description>Introducing apostrophe The comint conversation mode for emacs.
+      <description>Introducing Apostrophe! The comint conversation mode for emacs that uses language models.
 1 2 3 4 5 6 7  apostrophe An exclamatory passage in a speech or poem addressed to a person (typically one who is dead or absent) or thing (typically one that is personified). It&amp;#39;s a little bit like a soliloquy.   Talk to people 1  apostrophe Amber Heard    --  Use the universal highlighting (-nw) This works with any terminal Pen.</description>
     </item>
     

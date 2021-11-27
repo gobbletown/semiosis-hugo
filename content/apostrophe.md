@@ -1,14 +1,14 @@
 +++
-title = "apostrophe"
+title = "Apostrophe (conversation unrestricted)"
 author = ["Shane Mulligan"]
 date = 2021-11-27T00:00:00+13:00
 keywords = ["pen"]
 draft = false
 +++
 
-## Introducing apostrophe {#introducing-apostrophe}
+## Introducing Apostrophe! {#introducing-apostrophe}
 
-The `comint` conversation mode for emacs.
+The `comint` conversation mode for emacs that uses language models.
 
 {{< highlight text "linenos=table, linenostart=1" >}}
 apostrophe

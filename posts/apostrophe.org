@@ -4,13 +4,13 @@
 #+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./
 
-#+TITLE: apostrophe
+#+TITLE: Apostrophe (conversation unrestricted)
 #+DATE: <2021-11-27>
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: pen
 
-** Introducing apostrophe
-The =comint= conversation mode for emacs.
+** Introducing Apostrophe!
+The =comint= conversation mode for emacs that uses language models.
 
 #+BEGIN_SRC text -n :async :results verbatim code
   apostrophe
