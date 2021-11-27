@@ -6,17 +6,11 @@ keywords = ["pen", "ink", "openai", "gpt", "emacs"]
 draft = false
 +++
 
-Pen.el
-: <https://github.com/semiosis/pen.el>
-
-Ink.el
-: <https://github.com/semiosis/ink.el>
-
-prompts
-: <https://github.com/semiosis/prompts>
-
-engines
-: <https://github.com/semiosis/engines>
+| Install with Pen |                                                      |
+|------------------|------------------------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/>                |
+| Tutorial         | <https://mullikine.github.io/posts/pen-el-tutorial/> |
+| Ink.el           | <https://github.com/semiosis/ink.el>                 |
 
 Moire's blog on Quantifying Curation
 : <https://generative.ink/posts/quantifying-curation/>

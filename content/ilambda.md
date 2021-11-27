@@ -6,9 +6,10 @@ keywords = ["emacs", "openai", "pen", "gpt", "imaginary-programming"]
 draft = false
 +++
 
-| Install with Pen |                                       |
-|------------------|---------------------------------------|
-| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+| Install with Pen |                                                      |
+|------------------|------------------------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/>                |
+| Tutorial         | <https://mullikine.github.io/posts/pen-el-tutorial/> |
 
 
 ## `𝑖λ` (Imaginary Programming Functions) {#𝑖λ--imaginary-programming-functions}

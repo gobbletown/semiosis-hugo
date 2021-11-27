@@ -6,6 +6,11 @@ keywords = ["nlp", "openai", "pen", "gpt"]
 draft = false
 +++
 
+| Install with Pen |                                                      |
+|------------------|------------------------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/>                |
+| Tutorial         | <https://mullikine.github.io/posts/pen-el-tutorial/> |
+
 `Examplary` is an example-oriented DSL that can be used to construct and
 compose functions based on prompts and external `String->String` commands.
 

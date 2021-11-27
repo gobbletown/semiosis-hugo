@@ -14,7 +14,7 @@
       <pubDate>Sat, 27 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/apostrophe/</guid>
-      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Introducing Apostrophe! The comint conversation mode for emacs that uses language models.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing Apostrophe! The comint conversation mode for emacs that uses language models.
 1 2 3 4 5 6 7  apostrophe An exclamatory passage in a speech or poem addressed to a person (typically one who is dead or absent) or thing (typically one that is personified). It&amp;#39;s a little bit like a soliloquy.</description>
     </item>
     
@@ -104,7 +104,7 @@ Prompt format addition At places where &amp;lt;:fz-eol&amp;gt; is found in a pro
       <pubDate>Mon, 15 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/cterm/</guid>
-      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Summary The complex terminal built into Pen.el is a regular terminal that has an imaginary component.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Summary The complex terminal built into Pen.el is a regular terminal that has an imaginary component.
 You may connect the dockerized cterm to any host process simply by prefixing ct to any shell command.
  Original article https://mullikine.github.io/posts/imaginary-real-codex-complex/  This is how easy it is to use  First start the pen server then prefix ct before vim or bash, or any command which runs on your host  it will then run that command inside pen.</description>
     </item>
@@ -338,7 +338,7 @@ Demo  --  Prompt  pf-test-imaginary-equivalence/2 http://github.</description>
       <pubDate>Fri, 15 Oct 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/looking-glass/</guid>
-      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Introducing LookingGlass  Source code http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el  LookingGlass is an imaginary-web (𝑖web) browser. It lets you visit websites that do not exist concretely, and also allows you to treat any text as having hyperlinks.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing LookingGlass  Source code http://github.com/semiosis/pen.el/blob/master/src/pen-looking-glass.el  LookingGlass is an imaginary-web (𝑖web) browser. It lets you visit websites that do not exist concretely, and also allows you to treat any text as having hyperlinks.
 An imaginary-web browser requires a LM such as GPT-3, Codex or GPT-j to generate websites and is designed to provide the means to surf the imagination of the AI through the guise of a web-browser interface.</description>
     </item>
     
@@ -835,7 +835,7 @@ Demo  --  Source A combination of lazy prompting with real emacs lisp, a dockeri
       <pubDate>Fri, 03 Sep 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/ilambda/</guid>
-      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.
 I design and build an IP library named 𝑖λ.el for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm.</description>
     </item>
     
@@ -990,9 +990,8 @@ Solving the problems of utilising current LMs will make it easier down the line 
       <pubDate>Sun, 22 Aug 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/ii/</guid>
-      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/    Summary This is an introduction to the imaginary interpreter built into Pen.el.
-The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.
-It&amp;rsquo;s important to develop a language-agnostic harness for working with arbitrarily many imagined languages.</description>
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Summary This is an introduction to the imaginary interpreter built into Pen.el.
+The reason I am building REPLs and emacs modes based around imaginary interpreters (which are not at all deterministic or logically sound) is that I believe they will be very powerful and useful in the future.</description>
     </item>
     
     <item>
@@ -1022,8 +1021,7 @@ split-patterns  README http://github.com/semiosis/prompts/  split-patterns is a 
       <pubDate>Mon, 16 Aug 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/ink/</guid>
-      <description>Pen.el https://github.com/semiosis/pen.el Ink.el https://github.com/semiosis/ink.el prompts https://github.com/semiosis/prompts engines https://github.com/semiosis/engines Moire&amp;rsquo;s blog on Quantifying Curation https://generative.ink/posts/quantifying-curation/  Introducing Ink.el   The purpose of Ink.el is to encode within its text properties information about its own provenance. What was the intended meaning behind parts of the text? Annotations made by the writer are encoded in Ink. Where did the text originate? Data of a LM&amp;rsquo;s influence is also included.
-It was created for Pen.</description>
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/   Ink.el https://github.com/semiosis/ink.el     Moire&amp;rsquo;s blog on Quantifying Curation https://generative.ink/posts/quantifying-curation/  Introducing Ink.el   The purpose of Ink.el is to encode within its text properties information about its own provenance. What was the intended meaning behind parts of the text? Annotations made by the writer are encoded in Ink.</description>
     </item>
     
     <item>
@@ -1572,7 +1570,7 @@ Shane Mulligan  Website: Bodacious Blog GitHub: https://github.com/mullikine/ CV
       <pubDate>Wed, 17 Mar 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/examplary/</guid>
-      <description>Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&amp;gt;String commands.
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Examplary is an example-oriented DSL that can be used to construct and compose functions based on prompts and external String-&amp;gt;String commands.
  Emacs Lisp: http://github.com/semiosis/pen.el/blob/master/src/pen-examplary.el Clojure: http://github.com/semiosis/examplary  Using examplary, one can keep track of their various String-&amp;gt;String functions but also:
  generate prompts from an example generator design prompts using design patterns   1 2 3 4 5 6 7 8 9 10 11  fifth-generation programming language 5GL Any programming language based on problem solving using constraints given to the program, rather than using an algorithm written by a programmer.</description>
     </item>

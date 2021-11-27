@@ -6,9 +6,10 @@ keywords = ["emacs", "imaginary-internet", "imaginary", "𝑖web"]
 draft = false
 +++
 
-| Install with Pen |                                       |
-|------------------|---------------------------------------|
-| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+| Install with Pen |                                                      |
+|------------------|------------------------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/>                |
+| Tutorial         | <https://mullikine.github.io/posts/pen-el-tutorial/> |
 
 
 ## Introducing <span class="underline">LookingGlass</span> {#introducing}
