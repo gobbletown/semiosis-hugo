@@ -6,6 +6,11 @@ keywords = ["pen"]
 draft = false
 +++
 
+| Install with Pen |                                       |
+|------------------|---------------------------------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/> |
+
+
 ## Introducing Apostrophe! {#introducing-apostrophe}
 
 The `comint` conversation mode for emacs that uses language models.
