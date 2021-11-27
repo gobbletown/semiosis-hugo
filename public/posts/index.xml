@@ -141,19 +141,27 @@ I&rsquo;ll do something with that difference.</p>
             <pubDate>Sat, 20 Nov 2021 00:00:00 +1300</pubDate>
             
             <guid>http://semiosis.github.io/posts/pen-el-tutorial/</guid>
-            <description>Introduction As a beginner, to get started I would aim to simply set up the pen standalone application.
-This enables you do use pen without integrating it tightly into your own emacs.
-You can still use the prompting functions in a basic way; The thin-client prompting function names all start with pen-fn- and the names of the fully-featured prompting functions all begin with pf-.
-But you will not be able to use the ilambda functions, or get the full experience without integrating Pen.</description>
-            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>As a beginner, to get started I would aim to simply set up the <code>pen</code> standalone application.</p>
-<p>This enables you do use <code>pen</code> without integrating it tightly into your own emacs.</p>
-<p>You can still use the prompting functions in a
+            <description>What is Pen.el? Pen.el stands for Prompt Engineering in Emacs. It&amp;rsquo;s an IDE for Prompt-Engineering, a new type of programming, and the project integrates functions based on prompts (i.e. prompt functions) into emacs. Emacs is an intelligible user interface with an initial version in 1976. Therefore, the user interface has been maturing after 45 years. Pen.el takes advantage of this to allow the user to use the frame off emacs to interact with language models.</description>
+            <content type="html"><![CDATA[<h2 id="what-is-pen-dot-el">What is Pen.el?</h2>
+<p><code>Pen.el</code> stands for <span class="underline">Prompt Engineering in Emacs</span>.
+It&rsquo;s an IDE for Prompt-Engineering, a new type of programming, and the
+project integrates functions based on prompts (i.e. prompt functions) into
+emacs. Emacs is an intelligible user interface
+with an initial version in 1976. Therefore,
+the user interface has been maturing after 45 years.
+Pen.el takes advantage of this to allow the
+user to use the frame off emacs to interact with language models.</p>
+<h2 id="introduction">Introduction</h2>
+<p>As a beginner, to get started I would aim to
+simply set up the <code>pen</code> standalone
+application, which will provide you with most functionality via a docker container.</p>
+<p>This enables you do use <code>pen</code> without
+integrating it tightly into your own emacs, whereby you can still use the prompting functions in a
 basic way; The thin-client prompting function names all start with <code>pen-fn-</code>
 and the names of the fully-featured prompting functions all begin with <code>pf-</code>.</p>
 <p>But you will not be able to use the <code>ilambda</code>
-functions, or get the full experience without
-integrating <code>Pen.el</code> into your host emacs
+functions, or get the full Pen experience without
+integrating <code>Pen.el</code> into your main emacs
 configuration.</p>
 <p>However, if you&rsquo;re going to test out <code>pen</code> and
 plan on only setting up the standalone
@@ -166,33 +174,57 @@ applications:</p>
 <th>Application name</th>
 <th>Script name</th>
 <th>Purpose</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><code>Apostrophe</code></td>
+<td><code>apostrophe</code></td>
+<td>Imaginary conversation</td>
+<td><a href="https://semiosis.github.io/apostrophe/">https://semiosis.github.io/apostrophe/</a></td>
+</tr>
+<tr>
 <td><code>LookingGlass</code></td>
 <td><code>lg</code></td>
 <td>Imaginary-Web Browser</td>
+<td><a href="https://semiosis.github.io/looking-glass/">https://semiosis.github.io/looking-glass/</a></td>
 </tr>
 <tr>
 <td><code>Paracosm</code></td>
 <td><code>cosm</code></td>
 <td>AI-Assisted Mind-map</td>
+<td><a href="https://semiosis.github.io/paracosm/">https://semiosis.github.io/paracosm/</a></td>
 </tr>
 <tr>
 <td><code>ComplexTerm</code></td>
 <td><code>ct</code></td>
 <td>Real+Imaginary Terminal Multiplexer</td>
+<td><a href="https://semiosis.github.io/cterm/">https://semiosis.github.io/cterm/</a></td>
 </tr>
 <tr>
 <td><code>ImaginaryInterpreter</code></td>
 <td><code>ii</code></td>
 <td>Fully imaginary language interpreter</td>
+<td><a href="https://semiosis.github.io/ii/">https://semiosis.github.io/ii/</a></td>
 </tr>
 <tr>
 <td><code>pen bash interop</code></td>
 <td><code>penf</code></td>
 <td>Prompt function interface for bash</td>
+<td><a href="https://semiosis.github.io/posts/pen-el-host-interop-and-client-server/">Pen.el host interop</a></td>
+</tr>
+<tr>
+<td><code>NL·SH</code></td>
+<td><code>nlsh</code></td>
+<td>Natural Language Shell</td>
+<td><a href="https://semiosis.github.io/nlsh/">https://semiosis.github.io/nlsh/</a></td>
+</tr>
+<tr>
+<td><code>Pen.el</code></td>
+<td><code>pen</code></td>
+<td>Prompt Engineering in Emacs</td>
+<td><a href="https://semiosis.github.io/pen/">https://semiosis.github.io/pen/</a></td>
 </tr>
 </tbody>
 </table>
@@ -202,6 +234,7 @@ you prefer).</p>
 <h2 id="initial-setup">Initial setup</h2>
 <p>These instructions are designed for a linux
 distribution with docker installed.</p>
+<p>You will need at bare minimum an OpenAI key, AI21 key or Cohere key.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -239,7 +272,7 @@ git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen-contr
 
 mkdir -p ~/.pen
 
-<span style="color:#75715e"># Put in your keys, or do not, it&#39;s up to you!</span>
+<span style="color:#75715e"># Put in your keys, or do not, it&#39;s up to you! Get your free keys from the following URLs</span>
 echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key       <span style="color:#75715e"># https://openai.com/</span>
 echo <span style="color:#e6db74">&#34;&lt;ai21 key here&gt;&#34;</span> &gt; ~/.pen/ai21_api_key              <span style="color:#75715e"># https://www.ai21.com/</span>
 echo <span style="color:#e6db74">&#34;&lt;hf key here&gt;&#34;</span> &gt; ~/.pen/hf_api_key                  <span style="color:#75715e"># https://huggingface.co/</span>
@@ -256,11 +289,50 @@ echo <span style="color:#e6db74">&#34;stty stop undef 2&gt;/dev/null; stty start
 <span style="color:#75715e"># Source your .profile</span>
 . ~/.profile
 
-<span style="color:#75715e"># Run pen</span>
+<span style="color:#75715e"># Run pen - This will start &#39;pen&#39; emacs inside of a docker container.</span>
 pen</code></pre></td></tr></table>
 </div>
 </div>
-<p>This will start <code>pen</code> emacs inside of a docker container.</p>
+<h3 id="force-the-engine">Force the engine</h3>
+<p>If you have an <code>OpenAI</code> key, then most
+prompts/features/applications will simply
+work without further setup. If you don&rsquo;t have an OpenAI key, but
+have another key such as <code>AI21</code> then you can
+force all prompts to use the key you have.</p>
+<p>I will demonstrate forcing Pen.el to use the <code>Cohere</code> engine for everything.
+This is useful if you only have a Cohere key.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Run this on your host machine</span>
+pen config</code></pre></td></tr></table>
+</div>
+</div>
+<p>Ensure this is enabled:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq pen-prompt-force-engine-disabled <span style="color:#66d9ef">t</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>And this is set:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq pen-force-engine <span style="color:#e6db74">&#34;Cohere&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP.js" id="asciicast-h7EUvqjA0hH6g3Wuab6TLHpVP" async></script>
 <h3 id="you-can-use-it-like-a-regular-editor">You can use it like a regular editor</h3>
 <p>This way, it will create a hardlink to the
 file, so emacs in the docker container can
@@ -461,6 +533,11 @@ pen config</code></pre></td></tr></table>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># When debug is on, try is disabled, and all errors throw an exception</span>
@@ -510,6 +587,11 @@ pen config</code></pre></td></tr></table>
 
 <span style="color:#75715e"># Ink.el adds text properties to the emacs buffer when text has been generated.</span>
 <span style="color:#f92672">disable-ink</span>: <span style="color:#66d9ef">off</span>
+
+<span style="color:#75715e"># Disable prompt force-engine</span>
+<span style="color:#75715e"># This can be used to truly force an engine, because individual .prompts may</span>
+<span style="color:#75715e"># override the global force-engine custom variable with its own force-engine.</span>
+<span style="color:#f92672">prompt-force-engine-disabled</span>: <span style="color:#66d9ef">on</span>
 
 <span style="color:#75715e"># This is a heuristic used within Pen.el to make select cost-effiient options.</span>
 <span style="color:#f92672">cost-efficient</span>: <span style="color:#66d9ef">on</span>

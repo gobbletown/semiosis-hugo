@@ -6,19 +6,32 @@ keywords = ["openai", "pen", "gpt", "nlp", "prompt-engineering"]
 draft = false
 +++
 
+## What is Pen.el? {#what-is-pen-dot-el}
+
+`Pen.el` stands for <span class="underline">Prompt Engineering in Emacs</span>.
+It's an IDE for Prompt-Engineering, a new type of programming, and the
+project integrates functions based on prompts (i.e. prompt functions) into
+emacs. Emacs is an intelligible user interface
+with an initial version in 1976. Therefore,
+the user interface has been maturing after 45 years.
+Pen.el takes advantage of this to allow the
+user to use the frame off emacs to interact with language models.
+
+
 ## Introduction {#introduction}
 
-As a beginner, to get started I would aim to simply set up the `pen` standalone application.
+As a beginner, to get started I would aim to
+simply set up the `pen` standalone
+application, which will provide you with most functionality via a docker container.
 
-This enables you do use `pen` without integrating it tightly into your own emacs.
-
-You can still use the prompting functions in a
+This enables you do use `pen` without
+integrating it tightly into your own emacs, whereby you can still use the prompting functions in a
 basic way; The thin-client prompting function names all start with `pen-fn-`
 and the names of the fully-featured prompting functions all begin with `pf-`.
 
 But you will not be able to use the `ilambda`
-functions, or get the full experience without
-integrating `Pen.el` into your host emacs
+functions, or get the full Pen experience without
+integrating `Pen.el` into your main emacs
 configuration.
 
 However, if you're going to test out `pen` and
@@ -27,13 +40,16 @@ application along with the thin-client, you'll
 still be able to use the following
 applications:
 
-| Application name       | Script name | Purpose                              |
-|------------------------|-------------|--------------------------------------|
-| `LookingGlass`         | `lg`        | Imaginary-Web Browser                |
-| `Paracosm`             | `cosm`      | AI-Assisted Mind-map                 |
-| `ComplexTerm`          | `ct`        | Real+Imaginary Terminal Multiplexer  |
-| `ImaginaryInterpreter` | `ii`        | Fully imaginary language interpreter |
-| `pen bash interop`     | `penf`      | Prompt function interface for bash   |
+| Application name       | Script name  | Purpose                              | URL                                                                                            |
+|------------------------|--------------|--------------------------------------|------------------------------------------------------------------------------------------------|
+| `Apostrophe`           | `apostrophe` | Imaginary conversation               | <https://semiosis.github.io/apostrophe/>                                                       |
+| `LookingGlass`         | `lg`         | Imaginary-Web Browser                | <https://semiosis.github.io/looking-glass/>                                                    |
+| `Paracosm`             | `cosm`       | AI-Assisted Mind-map                 | <https://semiosis.github.io/paracosm/>                                                         |
+| `ComplexTerm`          | `ct`         | Real+Imaginary Terminal Multiplexer  | <https://semiosis.github.io/cterm/>                                                            |
+| `ImaginaryInterpreter` | `ii`         | Fully imaginary language interpreter | <https://semiosis.github.io/ii/>                                                               |
+| `pen bash interop`     | `penf`       | Prompt function interface for bash   | [Pen.el host interop](https://semiosis.github.io/posts/pen-el-host-interop-and-client-server/) |
+| `NL·SH`                | `nlsh`       | Natural Language Shell               | <https://semiosis.github.io/nlsh/>                                                             |
+| `Pen.el`               | `pen`        | Prompt Engineering in Emacs          | <https://semiosis.github.io/pen/>                                                              |
 
 They are accessible by running the script name
 on the host (or inside the container shell, if
@@ -45,6 +61,8 @@ you prefer).
 These instructions are designed for a linux
 distribution with docker installed.
 
+You will need at bare minimum an OpenAI key, AI21 key or Cohere key.
+
 {{< highlight bash "linenos=table, linenostart=1" >}}
 git clone "https://github.com/semiosis/pen.el"
 git clone "https://github.com/semiosis/prompts"
@@ -53,7 +71,7 @@ git clone "https://github.com/semiosis/pen-contrib.el"
 
 mkdir -p ~/.pen
 
-# Put in your keys, or do not, it's up to you!
+# Put in your keys, or do not, it's up to you! Get your free keys from the following URLs
 echo "sk-<openai key here>" > ~/.pen/openai_api_key       # https://openai.com/
 echo "<ai21 key here>" > ~/.pen/ai21_api_key              # https://www.ai21.com/
 echo "<hf key here>" > ~/.pen/hf_api_key                  # https://huggingface.co/
@@ -70,11 +88,43 @@ echo "stty stop undef 2>/dev/null; stty start undef 2>/dev/null" | tee -a ~/.zsh
 # Source your .profile
 . ~/.profile
 
-# Run pen
+# Run pen - This will start 'pen' emacs inside of a docker container.
 pen
 {{< /highlight >}}
 
-This will start `pen` emacs inside of a docker container.
+
+### Force the engine {#force-the-engine}
+
+If you have an `OpenAI` key, then most
+prompts/features/applications will simply
+work without further setup. If you don't have an OpenAI key, but
+have another key such as `AI21` then you can
+force all prompts to use the key you have.
+
+I will demonstrate forcing Pen.el to use the `Cohere` engine for everything.
+This is useful if you only have a Cohere key.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+# Run this on your host machine
+pen config
+{{< /highlight >}}
+
+Ensure this is enabled:
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(setq pen-prompt-force-engine-disabled t)
+{{< /highlight >}}
+
+And this is set:
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(setq pen-force-engine "Cohere")
+{{< /highlight >}}
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP.js" id="asciicast-h7EUvqjA0hH6g3Wuab6TLHpVP" async></script>
 
 
 ### You can use it like a regular editor {#you-can-use-it-like-a-regular-editor}
@@ -234,6 +284,11 @@ force-n-completions: ~
 
 # Ink.el adds text properties to the emacs buffer when text has been generated.
 disable-ink: off
+
+# Disable prompt force-engine
+# This can be used to truly force an engine, because individual .prompts may
+# override the global force-engine custom variable with its own force-engine.
+prompt-force-engine-disabled: on
 
 # This is a heuristic used within Pen.el to make select cost-effiient options.
 cost-efficient: on
