@@ -88,6 +88,11 @@ unsafe= true
     url        = "/paracosm/"
 
   [[menu.main]]
+    identifier = "apostrophe"
+    name       = "Apostrophe"
+    url        = "/apostrophe/"
+
+  [[menu.main]]
     identifier = "looking-glass"
     name       = "🔍 Looking Glass"
     url        = "/looking-glass/"
