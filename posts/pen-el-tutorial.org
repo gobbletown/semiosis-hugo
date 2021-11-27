@@ -120,6 +120,12 @@ And this is set:
   (setq pen-force-engine "Cohere")
 #+END_SRC
 
+You may also set these values in this file:
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  vim ~/.pen/pen.yaml
+#+END_SRC
+
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP.svg" /></a> -->
