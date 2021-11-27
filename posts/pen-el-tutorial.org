@@ -10,13 +10,18 @@
 #+KEYWORDS: openai pen gpt nlp prompt-engineering
 
 ** Introduction
-As a beginner, to get started I would aim to simply set up the =pen= standalone application.
+As a beginner, to get started I would aim to
+simply set up the =pen= standalone
+application.
 
-This enables you do use =pen= without integrating it tightly into your own emacs.
+This enables you do use =pen= without
+integrating it tightly into your own emacs.
 
 You can still use the prompting functions in a
-basic way; The thin-client prompting function names all start with =pen-fn-=
-and the names of the fully-featured prompting functions all begin with =pf-=.
+basic way; The thin-client prompting function
+names all start with =pen-fn-= and the names
+of the fully-featured prompting functions all
+begin with =pf-=.
 
 But you will not be able to use the =ilambda=
 functions, or get the full experience without
