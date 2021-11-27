@@ -1,0 +1,23 @@
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
+#+HUGO_SECTION: ./
+
+#+TITLE: nlsh (Natural Language Shell)
+#+DATE: <2021-11-28>
+#+AUTHOR: Shane Mulligan
+#+KEYWORDS: pen
+
+| Install with Pen |                                                    |
+|------------------+----------------------------------------------------|
+| Pen.el on GitHub | https://github.com/semiosis/pen.el/                |
+| Tutorial         | https://mullikine.github.io/posts/pen-el-tutorial/ |
+
+** Introducing nlsh!
+*** Demo
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TlSZoI9sBFmVVt0PlFm4o6gYQ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TlSZoI9sBFmVVt0PlFm4o6gYQ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TlSZoI9sBFmVVt0PlFm4o6gYQ.js" id="asciicast-TlSZoI9sBFmVVt0PlFm4o6gYQ" async></script>
+#+END_EXPORT
+
+[[./nlsh-demo.png]]
