@@ -1,7 +1,7 @@
 #+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
 #+OPTIONS: toc:nil
 
-#+HUGO_BASE_DIR: /home/shane/dump/home/shane/notes/ws/blog/blog
+#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
 #+HUGO_SECTION: ./posts
 
 #+TITLE: Pen.el Tutorial
@@ -9,23 +9,29 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: openai pen gpt nlp prompt-engineering
 
+** What is Pen.el?
+=Pen.el= stands for _Prompt Engineering in Emacs_.
+It's an IDE for Prompt-Engineering, a new type of programming, and the
+project integrates functions based on prompts (i.e. prompt functions) into
+emacs. Emacs is an intelligible user interface
+with an initial version in 1976. Therefore,
+the user interface has been maturing after 45 years.
+Pen.el takes advantage of this to allow the
+user to use the frame off emacs to interact with language models.
+
 ** Introduction
 As a beginner, to get started I would aim to
 simply set up the =pen= standalone
-application.
+application, which will provide you with most functionality via a docker container.
 
 This enables you do use =pen= without
-integrating it tightly into your own emacs.
-
-You can still use the prompting functions in a
-basic way; The thin-client prompting function
-names all start with =pen-fn-= and the names
-of the fully-featured prompting functions all
-begin with =pf-=.
+integrating it tightly into your own emacs, whereby you can still use the prompting functions in a
+basic way; The thin-client prompting function names all start with =pen-fn-=
+and the names of the fully-featured prompting functions all begin with =pf-=.
 
 But you will not be able to use the =ilambda=
-functions, or get the full experience without
-integrating =Pen.el= into your host emacs
+functions, or get the full Pen experience without
+integrating =Pen.el= into your main emacs
 configuration.
 
 However, if you're going to test out =pen= and
@@ -43,6 +49,7 @@ applications:
 | =ImaginaryInterpreter= | =ii=         | Fully imaginary language interpreter | https://semiosis.github.io/ii/            |
 | =pen bash interop=     | =penf=       | Prompt function interface for bash   | [[https://semiosis.github.io/posts/pen-el-host-interop-and-client-server/][Pen.el host interop]]                       |
 | =NL·SH=                | =nlsh=       | Natural Language Shell               | https://semiosis.github.io/nlsh/          |
+| =Pen.el=               | =pen=        | Prompt Engineering in Emacs          | https://semiosis.github.io/pen/           |
 
 They are accessible by running the script name
 on the host (or inside the container shell, if
@@ -51,6 +58,8 @@ you prefer).
 ** Initial setup
 These instructions are designed for a linux
 distribution with docker installed.
+
+You will need at bare minimum an OpenAI key, AI21 key or Cohere key.
 
 # #+BEGIN_SRC bash -n :i bash :async :results verbatim code
 #   echo "<aix key here>" > ~/.pen/aix_api_key                # https://aixsolutionsgroup.com/
@@ -88,7 +97,7 @@ distribution with docker installed.
 *** Force the engine
 If you have an =OpenAI= key, then most
 prompts/features/applications will simply
-work. If you don't have an OpenAI key, but
+work without further setup. If you don't have an OpenAI key, but
 have another key such as =AI21= then you can
 force all prompts to use the key you have.
 
@@ -96,6 +105,7 @@ I will demonstrate forcing Pen.el to use the =Cohere= engine for everything.
 This is useful if you only have a Cohere key.
 
 #+BEGIN_SRC sh -n :sps bash :async :results none
+  # Run this on your host machine
   pen config
 #+END_SRC
 
@@ -378,6 +388,7 @@ standalone application.
 <script src="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG.js" id="asciicast-wCBT3BxnPI8YKJHslC4xd4gfG" async></script>
 #+END_EXPORT
 
+
 *** Surf the imaginary web
  - Search the web by selecting
  - Use eww browser
@@ -387,14 +398,6 @@ standalone application.
 *** Use pen for translation
 
 *** Run pickup lines
-
-*** Summarize
-#+BEGIN_EXPORT html
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/org/a/lrC1HI8gdFfOwTd978FCVJexo" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/org/a/lrC1HI8gdFfOwTd978FCVJexo.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/org/a/lrC1HI8gdFfOwTd978FCVJexo.js" id="asciicast-org/a/lrC1HI8gdFfOwTd978FCVJexo" async></script>
-#+END_EXPORT
 
 *** Translate code
 
