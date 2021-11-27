@@ -66,6 +66,9 @@ You will need at bare minimum an OpenAI key, AI21 key or Cohere key.
 # #+END_SRC
 
 #+BEGIN_SRC bash -n :i false :async :results verbatim code
+  # Start by installing docker!
+  # https://docs.docker.com/get-docker/
+
   git clone "https://github.com/semiosis/pen.el"
   git clone "https://github.com/semiosis/prompts"
   git clone "https://github.com/semiosis/engines"
@@ -91,7 +94,32 @@ You will need at bare minimum an OpenAI key, AI21 key or Cohere key.
   . ~/.profile
 
   # Run pen - This will start 'pen' emacs inside of a docker container.
+  # If you are missing keys, just press enter to ignore them!
   pen
+#+END_SRC
+
+Upon first running, it will ask you to create the =~/.pen= directory.
+Because the docker container creates this directory on the host, it will be accessible only to the root user.
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  # But you may freely chown it to access it
+  sudo chown -R $USER:USER ~/.pen
+#+END_SRC
+
+Then you may copy the following config file to =~/.pen/pen.yaml= as an example.
+
+http://github.com/semiosis/pen.el/blob/master/config/example-pen.yaml
+
+If you ever get an error such as:
+#+BEGIN_SRC text -n :async :results verbatim code
+  docker: Error response from daemon: Conflict. The container name "/pen" is already in use by container "...". You have to remove (or rename) that container to be able to reuse that name.`.
+#+END_SRC
+
+Try running this to stop the docker container first, and try again.
+You shouldn't run into that issue under normal circumstances, though.
+
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  docker container stop pen
 #+END_SRC
 
 *** Force the engine
@@ -118,12 +146,6 @@ And this is set:
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (setq pen-force-engine "Cohere")
-#+END_SRC
-
-You may also set these values in this file:
-
-#+BEGIN_SRC sh -n :sps bash :async :results none
-  vim ~/.pen/pen.yaml
 #+END_SRC
 
 #+BEGIN_EXPORT html
@@ -368,6 +390,11 @@ To get the GUI mode, all you need to do is run
 *** Use =pen= in terminal mode
 Just add =-nw= to one of your commands, just like running =emacs=.
 
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  # Example
+  pen -nw
+#+END_SRC
+
 *** Configuring =pen=
 Firstly, there is a =~/.pen= directory on your host machine.
 
@@ -395,25 +422,61 @@ standalone application.
 #+END_EXPORT
 
 *** Surf the imaginary web
-- Search the web by selecting
-- Use eww browser
+ - Search the web by selecting
 
-- https://mullikine.github.io/posts/search-the-web-with-codex/
-- https://semiosis.github.io/looking-glass/
+Select any text and run =lg-search=.
+
+=M-x lg-search=
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/UUW3AWX6CZwYsv6hLgEJrtHE0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/UUW3AWX6CZwYsv6hLgEJrtHE0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/UUW3AWX6CZwYsv6hLgEJrtHE0.js" id="asciicast-UUW3AWX6CZwYsv6hLgEJrtHE0" async></script>
+#+END_EXPORT
+
+After the first generation, you may rerun a
+prior prompt function with the same
+parameters, but continue upon the a
+generation, such as the last partially
+generated web-page.
+
+To do that run the following:
+
+=M-x pen-continue-from-hist=
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/JQRekLAwqdBJKif24JVGHZx5g" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JQRekLAwqdBJKif24JVGHZx5g.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/JQRekLAwqdBJKif24JVGHZx5g.js" id="asciicast-JQRekLAwqdBJKif24JVGHZx5g" async></script>
+#+END_EXPORT
+
+Now that the web page is somewhat complete, we can turn it into html.
+
+Just select the text and run =lg-render=.
+
+=M-x lg-render=
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/KRda2JGlHsJyNQT7lU6lGikEM" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/KRda2JGlHsJyNQT7lU6lGikEM.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/KRda2JGlHsJyNQT7lU6lGikEM.js" id="asciicast-KRda2JGlHsJyNQT7lU6lGikEM" async></script>
+#+END_EXPORT
+
+Now we can try imagining a random website from a URL.
+Just run =eww= with a made-up URL!
 
 *** Use pen for autocompletion
 
 *** Use pen for translation
 
 *** Run pickup lines
-M-x pf-very-witty-pick-up-lines-for-a-topic/1
-
-- https://semiosis.github.io/posts/generating-pickup-lines-with-gpt-3/
 
 *** Translate code
 
 *** Run imaginary interpreters using =ii=
-- https://semiosis.github.io/ii/
 
 *** Use the shell interop
 
