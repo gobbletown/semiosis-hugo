@@ -9,6 +9,10 @@
 #+AUTHOR: Shane Mulligan
 #+KEYWORDS: pen
 
+| Install with Pen  |                                     |
+|-------------------+-------------------------------------|
+| Pen.el on GitHub  | https://github.com/semiosis/pen.el/ |
+
 ** Introducing Apostrophe!
 The =comint= conversation mode for emacs that uses language models.
 
