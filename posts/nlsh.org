@@ -12,6 +12,15 @@
 | Tutorial         | https://mullikine.github.io/posts/pen-el-tutorial/ |
 
 ** Introducing NL·SH!
+To use it, simply run nlsh with the operating system.
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  # Example 1
+  nlsh Alpine Linux
+
+  # Example 2
+  nlsh Ubuntu
+#+END_SRC
+
 *** Demo
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
