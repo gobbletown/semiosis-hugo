@@ -395,8 +395,11 @@ standalone application.
 #+END_EXPORT
 
 *** Surf the imaginary web
- - Search the web by selecting
- - Use eww browser
+- Search the web by selecting
+- Use eww browser
+
+- https://mullikine.github.io/posts/search-the-web-with-codex/
+- https://semiosis.github.io/looking-glass/
 
 *** Use pen for autocompletion
 
