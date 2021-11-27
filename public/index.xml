@@ -9,6 +9,15 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>nlsh (Natural Language Shell)</title>
+      <link>http://semiosis.github.io/nlsh/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/nlsh/</guid>
+      <description>   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing nlsh! Demo  --    </description>
+    </item>
+    
+    <item>
       <title>Apostrophe (conversation unrestricted)</title>
       <link>http://semiosis.github.io/apostrophe/</link>
       <pubDate>Sat, 27 Nov 2021 00:00:00 +1300</pubDate>

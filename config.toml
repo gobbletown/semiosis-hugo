@@ -93,6 +93,11 @@ unsafe= true
     url        = "/apostrophe/"
 
   [[menu.main]]
+    identifier = "nlsh"
+    name       = "NL·SH"
+    url        = "/nlsh/"
+
+  [[menu.main]]
     identifier = "looking-glass"
     name       = "🔍 Looking Glass"
     url        = "/looking-glass/"
