@@ -14,7 +14,8 @@
       <pubDate>Sun, 28 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/nlsh/</guid>
-      <description>   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing nlsh! Demo  --    </description>
+      <description>   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing NL·SH! To use it, simply run nlsh with the operating system.
+1 2 3 4 5  # Example 1 nlsh Alpine Linux # Example 2 nlsh Ubuntu   Demo  --    </description>
     </item>
     
     <item>

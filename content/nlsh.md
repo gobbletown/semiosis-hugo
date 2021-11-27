@@ -12,7 +12,17 @@ draft = false
 | Tutorial         | <https://mullikine.github.io/posts/pen-el-tutorial/> |
 
 
-## Introducing nlsh! {#introducing-nlsh}
+## Introducing NL·SH! {#introducing-nl-sh}
+
+To use it, simply run nlsh with the operating system.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+# Example 1
+nlsh Alpine Linux
+
+# Example 2
+nlsh Ubuntu
+{{< /highlight >}}
 
 
 ### Demo {#demo}
