@@ -384,6 +384,12 @@ standalone application.
 *** Run pickup lines
 
 *** Summarize
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/org/a/lrC1HI8gdFfOwTd978FCVJexo" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/org/a/lrC1HI8gdFfOwTd978FCVJexo.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/org/a/lrC1HI8gdFfOwTd978FCVJexo.js" id="asciicast-org/a/lrC1HI8gdFfOwTd978FCVJexo" async></script>
+#+END_EXPORT
 
 *** Translate code
 
