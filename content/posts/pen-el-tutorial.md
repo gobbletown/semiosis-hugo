@@ -11,11 +11,11 @@ draft = false
 `Pen.el` stands for <span class="underline">Prompt Engineering in Emacs</span>.
 It's an IDE for Prompt-Engineering, a new type of programming, and the
 project integrates functions based on prompts (i.e. prompt functions) into
-emacs. Emacs is an intelligible user interface
-with an initial version in 1976. Therefore,
-the user interface has been maturing after 45 years.
-Pen.el takes advantage of this to allow the
-user to use the frame off emacs to interact with language models.
+emacs. Emacs is a human-designed, intelligible user interface
+with its initial version in 1976. Therefore,
+the user interface has been maturing for over 45 years.
+`Pen.el` takes advantage of this epic legacy
+of UI design to frame LMs in a powerful way to the user.
 
 
 ## Introduction {#introduction}

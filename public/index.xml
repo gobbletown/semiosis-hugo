@@ -15,7 +15,7 @@
       
       <guid>http://semiosis.github.io/nlsh/</guid>
       <description>   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing NL·SH! To use it, simply run nlsh with the operating system.
-1 2 3 4 5  # Example 1 nlsh Alpine Linux # Example 2 nlsh Ubuntu   Demo  --    </description>
+1 2 3 4 5 6 7 8  # Example 1 nlsh Alpine Linux # Example 2 nlsh Ubuntu # Example 3 -- with syntax highlighting nlsh -nv Ubuntu   Demo  --     -- </description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ This also works on the command-line so you can conveniently perform semantic fil
       <pubDate>Sat, 20 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/posts/pen-el-tutorial/</guid>
-      <description>What is Pen.el? Pen.el stands for Prompt Engineering in Emacs. It&amp;rsquo;s an IDE for Prompt-Engineering, a new type of programming, and the project integrates functions based on prompts (i.e. prompt functions) into emacs. Emacs is an intelligible user interface with an initial version in 1976. Therefore, the user interface has been maturing after 45 years. Pen.el takes advantage of this to allow the user to use the frame off emacs to interact with language models.</description>
+      <description>What is Pen.el? Pen.el stands for Prompt Engineering in Emacs. It&amp;rsquo;s an IDE for Prompt-Engineering, a new type of programming, and the project integrates functions based on prompts (i.e. prompt functions) into emacs. Emacs is a human-designed, intelligible user interface with its initial version in 1976. Therefore, the user interface has been maturing for over 45 years. Pen.el takes advantage of this epic legacy of UI design to frame LMs in a powerful way to the user.</description>
     </item>
     
     <item>
