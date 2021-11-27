@@ -1,72 +1,68 @@
-#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
-#+OPTIONS: toc:nil
++++
+title = "apostrophe"
+author = ["Shane Mulligan"]
+date = 2021-11-27T00:00:00+13:00
+keywords = ["pen"]
+draft = false
++++
 
-#+HUGO_BASE_DIR: /home/shane/var/smulliga/source/git/semiosis/semiosis-hugo
-#+HUGO_SECTION: ./
+## Introducing apostrophe {#introducing-apostrophe}
 
-#+TITLE: apostrophe
-#+DATE: <2021-11-27>
-#+AUTHOR: Shane Mulligan
-#+KEYWORDS: pen
+The `comint` conversation mode for emacs.
 
-** Introducing apostrophe
-The =comint= conversation mode for emacs.
+{{< highlight text "linenos=table, linenostart=1" >}}
+apostrophe
+    An exclamatory passage in a speech or poem
+    addressed to a person (typically one who
+    is dead or absent) or thing (typically one
+    that is personified).
 
-#+BEGIN_SRC text -n :async :results verbatim code
-  apostrophe
-      An exclamatory passage in a speech or poem
-      addressed to a person (typically one who
-      is dead or absent) or thing (typically one
-      that is personified).
-  
-      It's a little bit like a soliloquy.
-#+END_SRC
+    It's a little bit like a soliloquy.
+{{< /highlight >}}
 
-*** Talk to people
-#+BEGIN_SRC sh -n :sps bash :async :results none
-  apostrophe Amber Heard
-#+END_SRC
 
-#+BEGIN_EXPORT html
+### Talk to people {#talk-to-people}
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+apostrophe Amber Heard
+{{< /highlight >}}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/nuT2ZMwujnnSObNUTGqHArOsB" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/nuT2ZMwujnnSObNUTGqHArOsB.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/nuT2ZMwujnnSObNUTGqHArOsB.js" id="asciicast-nuT2ZMwujnnSObNUTGqHArOsB" async></script>
-#+END_EXPORT
 
-*** Use the universal highlighting (=-nw=)
-This works with any terminal =Pen.el= invocation.
+
+### Use the universal highlighting (`-nw`) {#use-the-universal-highlighting--nw}
+
+This works with any terminal `Pen.el` invocation.
 
 Here is a three-way conversation between two chatbots and myself.
 
-#+BEGIN_SRC sh -n :sps bash :async :results none
-  apostrophe -nv Amber Heard
-#+END_SRC
+{{< highlight sh "linenos=table, linenostart=1" >}}
+apostrophe -nv Amber Heard
+{{< /highlight >}}
 
-#+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/K40px4H4CPPN15QMz6Uy8Pz3q" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/K40px4H4CPPN15QMz6Uy8Pz3q.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/K40px4H4CPPN15QMz6Uy8Pz3q.js" id="asciicast-K40px4H4CPPN15QMz6Uy8Pz3q" async></script>
-#+END_EXPORT
 
-#+BEGIN_SRC sh -n :sps bash :async :results none
-  apostrophe -nv Tom Cruise
-#+END_SRC
+{{< highlight sh "linenos=table, linenostart=1" >}}
+apostrophe -nv Tom Cruise
+{{< /highlight >}}
 
-#+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/aLn5lZq5yIeBxR6dyFyveDJGc" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/aLn5lZq5yIeBxR6dyFyveDJGc.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/aLn5lZq5yIeBxR6dyFyveDJGc.js" id="asciicast-aLn5lZq5yIeBxR6dyFyveDJGc" async></script>
-#+END_EXPORT
 
 Next step, combine the REPLs together and let them talk to eachother!
 
-** Select arbitrary text and initiate a conversation
-#+BEGIN_EXPORT html
+
+## Select arbitrary text and initiate a conversation {#select-arbitrary-text-and-initiate-a-conversation}
+
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/YdX4bzPownHsVT3T0UPLMcp3c" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/YdX4bzPownHsVT3T0UPLMcp3c.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/YdX4bzPownHsVT3T0UPLMcp3c.js" id="asciicast-YdX4bzPownHsVT3T0UPLMcp3c" async></script>
-#+END_EXPORT
