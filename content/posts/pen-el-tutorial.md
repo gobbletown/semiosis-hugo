@@ -496,17 +496,50 @@ Just run `eww` with a made-up URL!
 
 ### Use pen for autocompletion {#use-pen-for-autocompletion}
 
+Here are some basic autocompletion commands.
+
+| kb          | f                    |           |
+|-------------|----------------------|-----------|
+| `M-SPC 1`   | `pen-complete-word`  | `pen-map` |
+| `M-SPC 2`   | `pen-complete-words` | `pen-map` |
+| `M-SPC 3`   | `pen-complete-line`  | `pen-map` |
+| `M-SPC 4`   | `pen-complete-lines` | `pen-map` |
+| `M-SPC M-5` | `pen-complete-long`  | `pen-map` |
+
 
 ### Use pen for translation {#use-pen-for-translation}
+
+Select some text and right click, and under
+the menu select translate.
+
+Sélectionnez du texte et cliquez droit, puis
+sous le menu cliquez sur traduire.
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TY5XKFLk40RNYkza5VmGSIXxO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TY5XKFLk40RNYkza5VmGSIXxO.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TY5XKFLk40RNYkza5VmGSIXxO.js" id="asciicast-TY5XKFLk40RNYkza5VmGSIXxO" async></script>
 
 
 ### Run pickup lines {#run-pickup-lines}
 
+`M-x pf-very-witty-pick-up-lines-for-a-topic/1`
+
 
 ### Translate code {#translate-code}
 
+`M-x pf-transpile/3`
+
 
 ### Run imaginary interpreters using `ii` {#run-imaginary-interpreters-using-ii}
+
+Try it out with python first.
+
+{{< highlight sh "linenos=table, linenostart=1" >}}
+ii python
+{{< /highlight >}}
+
+<https://semiosis.github.io/ii/>
 
 
 ### Use the shell interop {#use-the-shell-interop}
@@ -519,6 +552,14 @@ penf -u pf-very-witty-pick-up-lines-for-a-topic/1 slovenia
 I'd like to visit Slovenia with you.
 ```
 
+{{< highlight bash "linenos=table, linenostart=1" >}}
+echo Slovenia | pena -u pf-very-witty-pick-up-lines-for-a-topic/1
+{{< /highlight >}}
+
+```bash
+["I'd like to visit Slovenia with you.","I'd like to visit Slovenia.","You look like you'd be a good tourist in Slovenia.","I want to be your vacation.","I want to be your Slovenian.","I'm from Slovenia, but I'd like to visit you.","I would like to visit Slovenia one day.","I'd like to visit Slovenia and see your beautiful smile."]
+```
+
 
 ### Use the LSP server {#use-the-lsp-server}
 
@@ -526,6 +567,9 @@ I'd like to visit Slovenia with you.
 
 
 ### Use the glossary system {#use-the-glossary-system}
+
+Select text and press `A`.
+Select a glossary to add to.
 
 
 ### Use `cterm` {#use-cterm}

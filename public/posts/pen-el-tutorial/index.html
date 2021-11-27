@@ -35,7 +35,7 @@
 <meta itemprop="name" content="Pen.el Tutorial">
 <meta itemprop="description" content="What is Pen.el? Pen.el stands for Prompt Engineering in Emacs. It&rsquo;s an IDE for Prompt-Engineering, a new type of programming, and the project integrates functions based on prompts (i.e. prompt functions) into emacs. Emacs is a human-designed, intelligible user interface with its initial version in 1976. Therefore, the user interface has been maturing for over 45 years. Pen.el takes advantage of this epic legacy of UI design to frame LMs in a powerful way to the user."><meta itemprop="datePublished" content="2021-11-20T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-11-20T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="2159"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2299"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -812,10 +812,67 @@ generated web-page.</p>
 <p>Now we can try imagining a random website from a URL.
 Just run <code>eww</code> with a made-up URL!</p>
 <h3 id="use-pen-for-autocompletion">Use pen for autocompletion</h3>
+<p>Here are some basic autocompletion commands.</p>
+<table>
+<thead>
+<tr>
+<th>kb</th>
+<th>f</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M-SPC 1</code></td>
+<td><code>pen-complete-word</code></td>
+<td><code>pen-map</code></td>
+</tr>
+<tr>
+<td><code>M-SPC 2</code></td>
+<td><code>pen-complete-words</code></td>
+<td><code>pen-map</code></td>
+</tr>
+<tr>
+<td><code>M-SPC 3</code></td>
+<td><code>pen-complete-line</code></td>
+<td><code>pen-map</code></td>
+</tr>
+<tr>
+<td><code>M-SPC 4</code></td>
+<td><code>pen-complete-lines</code></td>
+<td><code>pen-map</code></td>
+</tr>
+<tr>
+<td><code>M-SPC M-5</code></td>
+<td><code>pen-complete-long</code></td>
+<td><code>pen-map</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="use-pen-for-translation">Use pen for translation</h3>
+<p>Select some text and right click, and under
+the menu select translate.</p>
+<p>Sélectionnez du texte et cliquez droit, puis
+sous le menu cliquez sur traduire.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/TY5XKFLk40RNYkza5VmGSIXxO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/TY5XKFLk40RNYkza5VmGSIXxO.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/TY5XKFLk40RNYkza5VmGSIXxO.js" id="asciicast-TY5XKFLk40RNYkza5VmGSIXxO" async></script>
 <h3 id="run-pickup-lines">Run pickup lines</h3>
+<p><code>M-x pf-very-witty-pick-up-lines-for-a-topic/1</code></p>
 <h3 id="translate-code">Translate code</h3>
+<p><code>M-x pf-transpile/3</code></p>
 <h3 id="run-imaginary-interpreters-using-ii">Run imaginary interpreters using <code>ii</code></h3>
+<p>Try it out with python first.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ii python</code></pre></td></tr></table>
+</div>
+</div>
+<p><a href="https://semiosis.github.io/ii/">https://semiosis.github.io/ii/</a></p>
 <h3 id="use-the-shell-interop">Use the shell interop</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -826,11 +883,22 @@ Just run <code>eww</code> with a made-up URL!</p>
 </div>
 </div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">I<span style="color:#960050;background-color:#1e0010">&#39;</span>d like to visit Slovenia with you.
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo Slovenia | pena -u pf-very-witty-pick-up-lines-for-a-topic/1</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span><span style="color:#e6db74">&#34;I&#39;d like to visit Slovenia with you.&#34;</span>,<span style="color:#e6db74">&#34;I&#39;d like to visit Slovenia.&#34;</span>,<span style="color:#e6db74">&#34;You look like you&#39;d be a good tourist in Slovenia.&#34;</span>,<span style="color:#e6db74">&#34;I want to be your vacation.&#34;</span>,<span style="color:#e6db74">&#34;I want to be your Slovenian.&#34;</span>,<span style="color:#e6db74">&#34;I&#39;m from Slovenia, but I&#39;d like to visit you.&#34;</span>,<span style="color:#e6db74">&#34;I would like to visit Slovenia one day.&#34;</span>,<span style="color:#e6db74">&#34;I&#39;d like to visit Slovenia and see your beautiful smile.&#34;</span><span style="color:#f92672">]</span>
 </code></pre></div><h3 id="use-the-lsp-server">Use the LSP server</h3>
 <ul>
 <li><a href="https://mullikine.github.io/posts/an-lsp-server-for-codex/">https://mullikine.github.io/posts/an-lsp-server-for-codex/</a></li>
 </ul>
 <h3 id="use-the-glossary-system">Use the glossary system</h3>
+<p>Select text and press <code>A</code>.
+Select a glossary to add to.</p>
 <h3 id="use-cterm">Use <code>cterm</code></h3>
 <p>Still use <code>C-u 0</code> or <code>H-u</code> to prefix onto pen bindings to bypass/update the cache.</p>
 <!-- Play on asciinema.com -->
@@ -884,7 +952,7 @@ them into real shell commands.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2159 Words
+        2299 Words
       </p>
 
       <p>
