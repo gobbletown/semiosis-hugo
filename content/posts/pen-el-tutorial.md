@@ -64,6 +64,9 @@ distribution with docker installed.
 You will need at bare minimum an OpenAI key, AI21 key or Cohere key.
 
 {{< highlight bash "linenos=table, linenostart=1" >}}
+# Start by installing docker!
+# https://docs.docker.com/get-docker/
+
 git clone "https://github.com/semiosis/pen.el"
 git clone "https://github.com/semiosis/prompts"
 git clone "https://github.com/semiosis/engines"
@@ -89,7 +92,33 @@ echo "stty stop undef 2>/dev/null; stty start undef 2>/dev/null" | tee -a ~/.zsh
 . ~/.profile
 
 # Run pen - This will start 'pen' emacs inside of a docker container.
+# If you are missing keys, just press enter to ignore them!
 pen
+{{< /highlight >}}
+
+Upon first running, it will ask you to create the `~/.pen` directory.
+Because the docker container creates this directory on the host, it will be accessible only to the root user.
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+# But you may freely chown it to access it
+sudo chown -R $USER:USER ~/.pen
+{{< /highlight >}}
+
+Then you may copy the following config file to `~/.pen/pen.yaml` as an example.
+
+<http://github.com/semiosis/pen.el/blob/master/config/example-pen.yaml>
+
+If you ever get an error such as:
+
+{{< highlight text "linenos=table, linenostart=1" >}}
+docker: Error response from daemon: Conflict. The container name "/pen" is already in use by container "...". You have to remove (or rename) that container to be able to reuse that name.`.
+{{< /highlight >}}
+
+Try running this to stop the docker container first, and try again.
+You shouldn't run into that issue under normal circumstances, though.
+
+{{< highlight bash "linenos=table, linenostart=1" >}}
+docker container stop pen
 {{< /highlight >}}
 
 
@@ -383,6 +412,11 @@ To get the GUI mode, all you need to do is run
 
 Just add `-nw` to one of your commands, just like running `emacs`.
 
+{{< highlight sh "linenos=table, linenostart=1" >}}
+# Example
+pen -nw
+{{< /highlight >}}
+
 
 ### Configuring `pen` {#configuring-pen}
 
@@ -420,7 +454,44 @@ standalone application.
 ### Surf the imaginary web {#surf-the-imaginary-web}
 
 -   Search the web by selecting
--   Use eww browser
+
+Select any text and run `lg-search`.
+
+`M-x lg-search`
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/UUW3AWX6CZwYsv6hLgEJrtHE0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/UUW3AWX6CZwYsv6hLgEJrtHE0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/UUW3AWX6CZwYsv6hLgEJrtHE0.js" id="asciicast-UUW3AWX6CZwYsv6hLgEJrtHE0" async></script>
+
+After the first generation, you may rerun a
+prior prompt function with the same
+parameters, but continue upon the a
+generation, such as the last partially
+generated web-page.
+
+To do that run the following:
+
+`M-x pen-continue-from-hist`
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/JQRekLAwqdBJKif24JVGHZx5g" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/JQRekLAwqdBJKif24JVGHZx5g.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/JQRekLAwqdBJKif24JVGHZx5g.js" id="asciicast-JQRekLAwqdBJKif24JVGHZx5g" async></script>
+
+Now that the web page is somewhat complete, we can turn it into html.
+
+Just select the text and run `lg-render`.
+
+`M-x lg-render`
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/KRda2JGlHsJyNQT7lU6lGikEM" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/KRda2JGlHsJyNQT7lU6lGikEM.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/KRda2JGlHsJyNQT7lU6lGikEM.js" id="asciicast-KRda2JGlHsJyNQT7lU6lGikEM" async></script>
+
+Now we can try imagining a random website from a URL.
+Just run `eww` with a made-up URL!
 
 
 ### Use pen for autocompletion {#use-pen-for-autocompletion}
