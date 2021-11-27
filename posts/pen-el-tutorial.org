@@ -394,7 +394,6 @@ standalone application.
 <script src="https://asciinema.org/a/wCBT3BxnPI8YKJHslC4xd4gfG.js" id="asciicast-wCBT3BxnPI8YKJHslC4xd4gfG" async></script>
 #+END_EXPORT
 
-
 *** Surf the imaginary web
  - Search the web by selecting
  - Use eww browser
@@ -404,10 +403,14 @@ standalone application.
 *** Use pen for translation
 
 *** Run pickup lines
+M-x pf-very-witty-pick-up-lines-for-a-topic/1
+
+- https://semiosis.github.io/posts/generating-pickup-lines-with-gpt-3/
 
 *** Translate code
 
 *** Run imaginary interpreters using =ii=
+- https://semiosis.github.io/ii/
 
 *** Use the shell interop
 
