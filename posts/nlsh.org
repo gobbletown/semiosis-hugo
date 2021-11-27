@@ -11,7 +11,7 @@
 | Pen.el on GitHub | https://github.com/semiosis/pen.el/                |
 | Tutorial         | https://mullikine.github.io/posts/pen-el-tutorial/ |
 
-** Introducing nlsh!
+** Introducing NL·SH!
 *** Demo
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
