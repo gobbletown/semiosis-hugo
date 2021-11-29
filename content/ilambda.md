@@ -354,6 +354,26 @@ of the function as opposed to generate code.
 `idefun` returns a binding to a new prompt
 function.
 
+Some examples:
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(idefun add-two-numbers)
+(add-two-numbers 5 8)
+
+(idefun add-two-numbers (a b))
+(add-two-numbers 5 8)
+
+(idefun add-two-numbers (a b) "add a to b")
+(add-two-numbers 5 8)
+
+(idefun sum-of-integers)
+(sum-of-integers 1 2 3 10 200 3000)
+
+(idefun thing-to-hex-color)
+
+(idefun add-two-numbers (a b) "add a to b")
+{{< /highlight >}}
+
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (idefun generate-fib-sequence (n))
 

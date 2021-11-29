@@ -37,7 +37,7 @@ I design and build an IP library named 𝑖λ.el for emacs. Think of it a bit li
 <meta itemprop="description" content="Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.
 I design and build an IP library named 𝑖λ.el for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="2211"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2270"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -680,6 +680,43 @@ the code is evaluted in imaginary space.</p>
 of the function as opposed to generate code.</p>
 <p><code>idefun</code> returns a binding to a new prompt
 function.</p>
+<p>Some examples:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(idefun add-two-numbers)
+(add-two-numbers <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">8</span>)
+
+(idefun add-two-numbers (a b))
+(add-two-numbers <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">8</span>)
+
+(idefun add-two-numbers (a b) <span style="color:#e6db74">&#34;add a to b&#34;</span>)
+(add-two-numbers <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">8</span>)
+
+(idefun sum-of-integers)
+(sum-of-integers <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">3000</span>)
+
+(idefun thing-to-hex-color)
+
+(idefun add-two-numbers (a b) <span style="color:#e6db74">&#34;add a to b&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
