@@ -50,16 +50,13 @@ straight into my thesis.
 #+RESULTS:
 #+begin_src emacs-lisp
 "(progn
-  (defun reduce-with-addition
-      (l)
-    \"reduce a list of ints by adding them together\"
-    (if
-        (null l)
-        0
-      (+
-       (car l)
-       (reduce-with-addition
-        (cdr l))))))
+  (if
+      (null l)
+      0
+    (+
+     (car l)
+     (reduce-with-addition
+      (cdr l)))))
 "
 #+end_src
 
