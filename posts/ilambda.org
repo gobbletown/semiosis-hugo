@@ -38,8 +38,6 @@ straight into my thesis.
 
 ** Quick demos
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
-  (apply (ilambda (x y) "add two numbers") '(4 10))
-  
   (apply (idefun translate-to-pirate (phrase) "reword the phrase to sound like a pirate") '("Let's go, my friend"))
   
   ;; Output: Let's go, me matey
