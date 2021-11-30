@@ -7,17 +7,18 @@
 #+TITLE: 𝑖λ, a family of imaginary programming libraries
 #+DATE: <2021-09-03>
 #+AUTHOR: Shane Mulligan
-#+KEYWORDS: emacs openai pen gpt imaginary-programming
+#+KEYWORDS: emacs openai pen gpt imaginary-programming imaginary 𝑖λ
 
-| Install with Pen |                                                    |
-|------------------+----------------------------------------------------|
-| Pen.el on GitHub | https://github.com/semiosis/pen.el/                |
-| Tutorial         | https://mullikine.github.io/posts/pen-el-tutorial/ |
+| Install with Pen |                                                    |              |
+|------------------+----------------------------------------------------+--------------|
+| Pen.el on GitHub | https://github.com/semiosis/pen.el/                |              |
+| Pen Tutorial     | https://mullikine.github.io/posts/pen-el-tutorial/ |              |
+| ilambda Tutorial | https://semiosis.github.io/posts/ilambda-tutorial/ | Just do this |
 
 * =𝑖λ= (Imaginary Programming Functions)
 
 ** Summary
-_tl;dr:_ Imaginary Programming (=IP=) is where
+*tl;dr:* Imaginary Programming (=IP=) is where
 data and knowledge has been substituted for
 inference by a LM. Therefore, the
 implementation of an =𝑖λ= library will be
@@ -33,47 +34,13 @@ doing IP in emacs lisp, since emacs lisp has
 the expressive power to prototype such things,
 but the ideas contained here can easily be
 transferred to any other programming language.
-The results of this little experiment will
+The results of this little experiment will go
 straight into my thesis.
 
-** Quick demos
-#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
-  (apply (idefun translate-to-pirate (phrase) "reword the phrase to sound like a pirate") '("Let's go, my friend"))
-  
-  ;; Output: Let's go, me matey
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
-  (expand-macro '(imacro reduce-with-addition (l) "reduce a list of ints by adding them together"))
-#+END_SRC
-
-#+RESULTS:
-#+begin_src emacs-lisp
-"(progn
-  (if
-      (null l)
-      0
-    (+
-     (car l)
-     (reduce-with-addition
-      (cdr l)))))
-"
-#+end_src
-
-#+BEGIN_EXPORT html
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.js" id="asciicast-rEHA6UOMNxLSUdLLPB3UT3nxT" async></script>
-#+END_EXPORT
-
-** Info
 + 𝑖λ project :: http://github.com/semiosis/ilambda/
 + IP thesis ::  https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org
 + IP library :: http://github.com/semiosis/pen.el/blob/master/src/ilambda.el
-+ IP glossary :: https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
-
-** Extended summary
++ Glossaries :: [[https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt][Imaginary Programming]] ⚔ [[http://github.com/semiosis/glossaries-gh/blob/master/pen.el.txt][Pen.el]] ⚔ [[https://github.com/semiosis/glossaries-gh/blob/master/pe-prompt-engineering.txt][Prompt Engineering]] ⚔ [[http://github.com/semiosis/glossaries-gh/blob/master/epistemology.txt][Epistemology]]
 
 =imacro= (like regular macros) are for
 generating code. =idefun=, however, doesnt
@@ -136,7 +103,7 @@ _/prompt function/_ for running the eval.
   prompt: |+
     <code>
     (message (eval <expression>))
-    --> 
+    -->
   engine: "OpenAI Codex"
   temperature: 0.2
   max-generated-tokens: 60
@@ -251,7 +218,7 @@ task description is given.
             (,',fsym ,,@args)
             ,,(concat ";; " task))))))
   (defalias '𝑖λ/task 'ilambda/task)
-  
+
   (defmacro ilambda/task-code (args task code &optional name-sym)
     (let* ((slug (s-replace-regexp "-$" "" (slugify (eval task))))
            (fsym (or
@@ -267,7 +234,7 @@ task description is given.
               ,,task
               ,',code))))))
   (defalias '𝑖λ/task-code 'ilambda/task-code)
-  
+
   (defmacro ilambda/code (args code &optional name-sym)
     (let ((fsym (or name-sym
                     'main)))
@@ -339,7 +306,7 @@ The /*ilambda*/ macro.
         `(ilambda/task ,args ,task ,name-sym))
        ((listp code-or-task)
         `(ilambda/code ,args ,code ,name-sym)))))
-  
+
   (defalias '𝑖λ 'ilambda)
 #+END_SRC
 
@@ -376,24 +343,24 @@ Some examples:
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (idefun add-two-numbers)
   (add-two-numbers 5 8)
-  
+
   (idefun add-two-numbers (a b))
   (add-two-numbers 5 8)
-  
+
   (idefun add-two-numbers (a b) "add a to b")
   (add-two-numbers 5 8)
-  
+
   (idefun sum-of-integers)
   (sum-of-integers 1 2 3 10 200 3000)
-  
+
   (idefun thing-to-hex-color)
-  
+
   (idefun add-two-numbers (a b) "add a to b")
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (idefun generate-fib-sequence (n))
-  
+
   (pp-to-string (generate-fib-sequence 5))
 #+END_SRC
 
@@ -408,7 +375,7 @@ Strangely, we can't call it a 'neural hash' though.
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim raw
   (idefun sha-hash-string (s))
-  
+
   (pen-force
    ((temperature 0.0))
    (sha-hash-string "sugar shane"))
@@ -421,7 +388,7 @@ Strangely, we can't call it a 'neural hash' though.
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim raw
   (idefun neural-hash-string (s)
     "This calculates a neural hash of the string.")
-  
+
   (pen-force
    ((temperature 0.0))
    (neural-hash-string "sugar shane"))
@@ -445,7 +412,7 @@ Strangely, we can't call it a 'neural hash' though.
     `(defalias ',name-sym
        (function ,(eval
                    `(ilambda ,args ,code-or-task ,task-or-code ,name-sym)))))
-  
+
   (idefun idoubleit (x)
           "double it")
 #+END_SRC
@@ -462,7 +429,7 @@ Strangely, we can't call it a 'neural hash' though.
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (idefun distance-between-planets (x y)
           "distance between planets in astronomical units (AU)")
-  
+
   (concat (str (distance-between-planets "saturn" "jupiter"))
           "\n"
           (str (distance-between-planets "mercury" "jupiter")))
@@ -479,7 +446,7 @@ seems consistent with itself.
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (idefun distance-between-planets (x y)
           "distance between planets in million miles")
-  
+
   (concat (str (distance-between-planets "saturn" "jupiter"))
           "\n"
           (str (distance-between-planets "mercury" "jupiter")))
@@ -503,7 +470,7 @@ Sadly, Codex doesn't know too much about Scoville food hotness.
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (idefun scoville-difference (food-a food-b)
           "difference between two foods in scoville Heat Units (SHUs)")
-  
+
   (concat (str (scoville-difference "Pure capsaicin" "Jalapeño"))
           "\n"
           (str (scoville-difference "Chipotle" "Trinidad Scorpion Butch")))
@@ -516,7 +483,7 @@ Sadly, Codex doesn't know too much about Scoville food hotness.
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (idefun hex-for-colour (colour))
-  
+
   (hex-for-colour "watermelon")
 #+END_SRC
 
@@ -527,7 +494,7 @@ Sadly, Codex doesn't know too much about Scoville food hotness.
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (idefun hex-for-colour (colour))
-  
+
   (hex-for-colour "snow")
 #+END_SRC
 
@@ -559,6 +526,51 @@ will infer/generate underlying code.
 
 [[./macro-expand-codex.gif]]
 
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun test-imacro-1 ()
+    (interactive)
+    (imacro/1 get-real-component-from-imaginary-number))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun test-imacro-1 ()
+    (interactive)
+    (progn
+      (defun get-real-component-from-imaginary-number
+          (number)
+        "Return the real component of a complex number."
+        (if
+            (numberp number)
+            (if
+                (eq
+                 (car number)
+                 'polar)
+                (car
+                 (cdr number))
+              number)
+          (error "Not a complex number: %s" number)))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun test-imacro-1 ()
+    (interactive)
+    (progn
+      (defun get-real-component-from-imaginary-number
+          (number)
+        "Return the real component of the complex number NUMBER."
+        (if
+            (numberp number)
+            (if
+                (eq
+                 (car number)
+                 'polar)
+                (nth 1 number)
+              number)
+          number))))
+#+END_SRC
+
+[[./real-imaginary-macro-expand.gif]]
+
 + =pf-imagine-an-emacs-function/3= :: http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-function-3.prompt
 
 #+BEGIN_SRC yaml -n :async :results verbatim code
@@ -568,7 +580,7 @@ will infer/generate underlying code.
   prompt-version: 1
   prompt: |+
     ;;my-emacs-library.el
-  
+
     (defun <name> (<arguments>)
       "<docstring>"
   engine: "OpenAI Codex"
@@ -632,7 +644,7 @@ it.
                :no-select-result t))))
            (body (eval-string (concat "'" bodystr))))
       `(progn ,body)))
-  
+
   (defmacro imacro/2 (name args)
     "Does not evaluate. It merely generates code."
     (let* ((argstr (apply 'cmd (mapcar 'slugify (mapcar 'str args))))
@@ -646,7 +658,7 @@ it.
                :no-select-result t))))
            (body (eval-string (concat "'" bodystr))))
       `(progn ,body)))
-  
+
   (defmacro imacro/1 (name)
     "Does not evaluate. It merely generates code."
     (let* ((bodystr
@@ -759,7 +771,7 @@ of such things.
     (interactive (list (read-string-hist "ilist n: ")
                        (read-string-hist "ilist type-of-thing: ")))
     (pen-single-generation (pf-list-of/2 (str n) (str type-of-thing) :no-select-result t)))
-  
+
   (defun test-ilist ()
     (interactive)
     (etv (pps (ilist 10 "tennis players"))))
@@ -767,10 +779,43 @@ of such things.
 
 *** =ifilter=
 
+=ifilter= takes
+
 Example:
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
-  (pps (ifilter (ilist 10 "tennis players") "is male"))
+  (pps (ifilter "is male" (ilist 10 "tennis players")))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (pps (ifilter (lambda (e) (full-name-p e)) (ilist 10 "tennis players")))
+#+END_SRC
+
+*** =itest=
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defmacro itest/m (predicate value)
+    `(ieval
+      `(my/test ,',value)
+      `(defun my/test (x)
+         (apply ,',predicate
+                x))))
+
+  (defun itest (predicate value)
+    (eval `(itest/m ,predicate ,value)))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun test-itest-1 ()
+    (interactive)
+    (etv
+     (itest '(lambda (l) '(= 5 (length l)))
+            '(a b c d))))
+
+  (defun test-itest-2 ()
+    (interactive)
+    (etv
+     (itest/m (lambda (l) '(= 4 (length l)))
+              '(a b c d))))
 #+END_SRC
 
 *** Derived functions
@@ -782,7 +827,7 @@ Example:
 
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defun get-backstory ()
-  
+
     )
   (itransform)
 #+END_SRC
@@ -790,3 +835,9 @@ Example:
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (pps (mapcar 'get-backstory (ilist 10 "tennis players"))
 #+END_SRC
+
+** TODO Pure imaginary syntax forms
+
+| name                 |
+|----------------------|
+| imaginary comparator |
