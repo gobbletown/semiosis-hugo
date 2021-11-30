@@ -39,7 +39,18 @@ straight into my thesis.
 ** Quick setup and demo
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (apply (ilambda (x y) "add two numbers") '(4 10))
+  
+  (apply (idefun translate-to-pirate (phrase) "reword the phrase to sound like a pirate") '("Let's go, my friend"))
+
+  ;; Output: Let's go, me matey
 #+END_SRC
+
+#+BEGIN_EXPORT html
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.js" id="asciicast-rEHA6UOMNxLSUdLLPB3UT3nxT" async></script>
+#+END_EXPORT
 
 ** Info
 + 𝑖λ project :: http://github.com/semiosis/ilambda/
