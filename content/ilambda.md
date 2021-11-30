@@ -2,14 +2,15 @@
 title = "𝑖λ, a family of imaginary programming libraries"
 author = ["Shane Mulligan"]
 date = 2021-09-03T00:00:00+12:00
-keywords = ["emacs", "openai", "pen", "gpt", "imaginary-programming"]
+keywords = ["emacs", "openai", "pen", "gpt", "imaginary-programming", "imaginary", "𝑖λ"]
 draft = false
 +++
 
-| Install with Pen |                                                      |
-|------------------|------------------------------------------------------|
-| Pen.el on GitHub | <https://github.com/semiosis/pen.el/>                |
-| Tutorial         | <https://mullikine.github.io/posts/pen-el-tutorial/> |
+| Install with Pen |                                                      |              |
+|------------------|------------------------------------------------------|--------------|
+| Pen.el on GitHub | <https://github.com/semiosis/pen.el/>                |              |
+| Pen Tutorial     | <https://mullikine.github.io/posts/pen-el-tutorial/> |              |
+| ilambda Tutorial | <https://semiosis.github.io/posts/ilambda-tutorial/> | Just do this |
 
 
 ## `𝑖λ` (Imaginary Programming Functions) {#𝑖λ--imaginary-programming-functions}
@@ -17,7 +18,7 @@ draft = false
 
 ### Summary {#summary}
 
-<span class="underline">tl;dr:</span> Imaginary Programming (`IP`) is where
+**tl;dr:** Imaginary Programming (`IP`) is where
 data and knowledge has been substituted for
 inference by a LM. Therefore, the
 implementation of an `𝑖λ` library will be
@@ -33,41 +34,8 @@ doing IP in emacs lisp, since emacs lisp has
 the expressive power to prototype such things,
 but the ideas contained here can easily be
 transferred to any other programming language.
-The results of this little experiment will
+The results of this little experiment will go
 straight into my thesis.
-
-
-### Quick demos {#quick-demos}
-
-{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(apply (idefun translate-to-pirate (phrase) "reword the phrase to sound like a pirate") '("Let's go, my friend"))
-
-;; Output: Let's go, me matey
-{{< /highlight >}}
-
-{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(expand-macro '(imacro reduce-with-addition (l) "reduce a list of ints by adding them together"))
-{{< /highlight >}}
-
-```emacs-lisp
-"(progn
-  (if
-      (null l)
-      0
-    (+
-     (car l)
-     (reduce-with-addition
-      (cdr l)))))
-"
-```
-
-<!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.svg" /></a> -->
-<!-- Play on the blog -->
-<script src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.js" id="asciicast-rEHA6UOMNxLSUdLLPB3UT3nxT" async></script>
-
-
-### Info {#info}
 
 𝑖λ project
 : <http://github.com/semiosis/ilambda/>
@@ -78,11 +46,8 @@ IP thesis
 IP library
 : <http://github.com/semiosis/pen.el/blob/master/src/ilambda.el>
 
-IP glossary
-: <https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
-
-
-### Extended summary {#extended-summary}
+Glossaries
+: [Imaginary Programming](https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt) ⚔ [Pen.el](http://github.com/semiosis/glossaries-gh/blob/master/pen.el.txt) ⚔ [Prompt Engineering](https://github.com/semiosis/glossaries-gh/blob/master/pe-prompt-engineering.txt) ⚔ [Epistemology](http://github.com/semiosis/glossaries-gh/blob/master/epistemology.txt)
 
 `imacro` (like regular macros) are for
 generating code. `idefun`, however, doesnt
@@ -572,6 +537,51 @@ will infer/generate underlying code.
 
 {{< figure src="/ox-hugo/macro-expand-codex.gif" >}}
 
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun test-imacro-1 ()
+  (interactive)
+  (imacro/1 get-real-component-from-imaginary-number))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun test-imacro-1 ()
+  (interactive)
+  (progn
+    (defun get-real-component-from-imaginary-number
+        (number)
+      "Return the real component of a complex number."
+      (if
+          (numberp number)
+          (if
+              (eq
+               (car number)
+               'polar)
+              (car
+               (cdr number))
+            number)
+        (error "Not a complex number: %s" number)))))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun test-imacro-1 ()
+  (interactive)
+  (progn
+    (defun get-real-component-from-imaginary-number
+        (number)
+      "Return the real component of the complex number NUMBER."
+      (if
+          (numberp number)
+          (if
+              (eq
+               (car number)
+               'polar)
+              (nth 1 number)
+            number)
+        number))))
+{{< /highlight >}}
+
+{{< figure src="./real-imaginary-macro-expand.gif" >}}
+
 `pf-imagine-an-emacs-function/3`
 : <http://github.com/semiosis/prompts/blob/master/prompts/imagine-an-emacs-function-3.prompt>
 
@@ -782,10 +792,45 @@ of such things.
 
 #### `ifilter` {#ifilter}
 
+`ifilter` takes
+
 Example:
 
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
-(pps (ifilter (ilist 10 "tennis players") "is male"))
+(pps (ifilter "is male" (ilist 10 "tennis players")))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(pps (ifilter (lambda (e) (full-name-p e)) (ilist 10 "tennis players")))
+{{< /highlight >}}
+
+
+#### `itest` {#itest}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defmacro itest/m (predicate value)
+  `(ieval
+    `(my/test ,',value)
+    `(defun my/test (x)
+       (apply ,',predicate
+              x))))
+
+(defun itest (predicate value)
+  (eval `(itest/m ,predicate ,value)))
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(defun test-itest-1 ()
+  (interactive)
+  (etv
+   (itest '(lambda (l) '(= 5 (length l)))
+          '(a b c d))))
+
+(defun test-itest-2 ()
+  (interactive)
+  (etv
+   (itest/m (lambda (l) '(= 4 (length l)))
+            '(a b c d))))
 {{< /highlight >}}
 
 
@@ -809,3 +854,10 @@ Example:
 {{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
 (pps (mapcar 'get-backstory (ilist 10 "tennis players"))
 {{< /highlight >}}
+
+
+### <span class="org-todo todo TODO">TODO</span> Pure imaginary syntax forms {#pure-imaginary-syntax-forms}
+
+| name                 |
+|----------------------|
+| imaginary comparator |

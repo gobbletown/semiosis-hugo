@@ -854,8 +854,7 @@ Demo  --  Source A combination of lazy prompting with real emacs lisp, a dockeri
       <pubDate>Fri, 03 Sep 2021 00:00:00 +1200</pubDate>
       
       <guid>http://semiosis.github.io/ilambda/</guid>
-      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.
-I design and build an IP library named 𝑖λ.el for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm.</description>
+      <description>Install with Pen       Pen.el on GitHub https://github.com/semiosis/pen.el/    Pen Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    ilambda Tutorial https://semiosis.github.io/posts/ilambda-tutorial/ Just do this    𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.</description>
     </item>
     
     <item>
