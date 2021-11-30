@@ -113,7 +113,7 @@ emacs -nw -Q
 
 As you can see, that all works well.
 
-{{< figure src="./ilambda-pirate.png" >}}
+{{< figure src="/ox-hugo/ilambda-pirate.png" >}}
 
 
 ## Demo {#demo}
