@@ -36,10 +36,18 @@ transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.
 
+** Quick setup and demo
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (apply (ilambda (x y) "add two numbers") '(4 10))
+#+END_SRC
+
+** Info
 + 𝑖λ project :: http://github.com/semiosis/ilambda/
 + IP thesis ::  https://github.com/semiosis/imaginary-programming-thesis/blob/master/thesis.org
 + IP library :: http://github.com/semiosis/pen.el/blob/master/src/ilambda.el
 + IP glossary :: https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt
+
+** Extended summary
 
 =imacro= (like regular macros) are for
 generating code. =idefun=, however, doesnt
