@@ -36,14 +36,36 @@ transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.
 
-** Quick setup and demo
+** Quick demos
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (apply (ilambda (x y) "add two numbers") '(4 10))
   
+  (expand-macro '(imacro reduce-with-addition (l) "reduce a list of ints by adding them together"))
+  
   (apply (idefun translate-to-pirate (phrase) "reword the phrase to sound like a pirate") '("Let's go, my friend"))
-
+  
   ;; Output: Let's go, me matey
 #+END_SRC
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (expand-macro '(imacro reduce-with-addition (l) "reduce a list of ints by adding them together"))
+#+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+"(progn
+  (defun reduce-with-addition
+      (l)
+    \"reduce a list of ints by adding them together\"
+    (if
+        (null l)
+        0
+      (+
+       (car l)
+       (reduce-with-addition
+        (cdr l))))))
+"
+#+end_src
 
 #+BEGIN_EXPORT html
 <!-- Play on asciinema.com -->
