@@ -36,6 +36,39 @@ transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.
 
+
+### Quick demos {#quick-demos}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(apply (idefun translate-to-pirate (phrase) "reword the phrase to sound like a pirate") '("Let's go, my friend"))
+
+;; Output: Let's go, me matey
+{{< /highlight >}}
+
+{{< highlight emacs-lisp "linenos=table, linenostart=1" >}}
+(expand-macro '(imacro reduce-with-addition (l) "reduce a list of ints by adding them together"))
+{{< /highlight >}}
+
+```emacs-lisp
+"(progn
+  (if
+      (null l)
+      0
+    (+
+     (car l)
+     (reduce-with-addition
+      (cdr l)))))
+"
+```
+
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.js" id="asciicast-rEHA6UOMNxLSUdLLPB3UT3nxT" async></script>
+
+
+### Info {#info}
+
 𝑖λ project
 : <http://github.com/semiosis/ilambda/>
 
@@ -47,6 +80,9 @@ IP library
 
 IP glossary
 : <https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt>
+
+
+### Extended summary {#extended-summary}
 
 `imacro` (like regular macros) are for
 generating code. `idefun`, however, doesnt

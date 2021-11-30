@@ -37,7 +37,7 @@ I design and build an IP library named 𝑖λ.el for emacs. Think of it a bit li
 <meta itemprop="description" content="Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    𝑖λ (Imaginary Programming Functions) Summary tl;dr: Imaginary Programming (IP) is where data and knowledge has been substituted for inference by a LM. Therefore, the implementation of an 𝑖λ library will be uniquely tailored to each language.
 I design and build an IP library named 𝑖λ.el for emacs. Think of it a bit like a functional programming library in that you will find a set of functions and macros for working in the programming paradigm."><meta itemprop="datePublished" content="2021-09-03T00:00:00&#43;12:00" />
 <meta itemprop="dateModified" content="2021-09-03T00:00:00&#43;12:00" />
-<meta itemprop="wordCount" content="2270"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="2327"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -184,6 +184,41 @@ but the ideas contained here can easily be
 transferred to any other programming language.
 The results of this little experiment will
 straight into my thesis.</p>
+<h3 id="quick-demos">Quick demos</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">apply</span> (idefun translate-to-pirate (phrase) <span style="color:#e6db74">&#34;reword the phrase to sound like a pirate&#34;</span>) <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;Let&#39;s go, my friend&#34;</span>))
+
+<span style="color:#75715e">;; Output: Let&#39;s go, me matey</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(expand-macro <span style="color:#f92672">&#39;</span>(imacro reduce-with-addition (l) <span style="color:#e6db74">&#34;reduce a list of ints by adding them together&#34;</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#e6db74">&#34;(progn
+</span><span style="color:#e6db74">  (if
+</span><span style="color:#e6db74">      (null l)
+</span><span style="color:#e6db74">      0
+</span><span style="color:#e6db74">    (+
+</span><span style="color:#e6db74">     (car l)
+</span><span style="color:#e6db74">     (reduce-with-addition
+</span><span style="color:#e6db74">      (cdr l)))))
+</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/rEHA6UOMNxLSUdLLPB3UT3nxT.js" id="asciicast-rEHA6UOMNxLSUdLLPB3UT3nxT" async></script>
+<h3 id="info">Info</h3>
 <dl>
 <dt>𝑖λ project</dt>
 <dd><a href="http://github.com/semiosis/ilambda/">http://github.com/semiosis/ilambda/</a></dd>
@@ -194,6 +229,7 @@ straight into my thesis.</p>
 <dt>IP glossary</dt>
 <dd><a href="https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt">https://github.com/semiosis/glossaries-gh/blob/master/imaginary-programming.txt</a></dd>
 </dl>
+<h3 id="extended-summary">Extended summary</h3>
 <p><code>imacro</code> (like regular macros) are for
 generating code. <code>idefun</code>, however, doesnt
 generate the code but attempts to evaluate a

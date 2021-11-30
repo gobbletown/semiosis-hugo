@@ -6,8 +6,184 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>ilambda Tutorial</title>
+            <link>http://semiosis.github.io/posts/ilambda-tutorial/</link>
+            <pubDate>Tue, 30 Nov 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/ilambda-tutorial/</guid>
+            <description>Summary Here&amp;rsquo;s a demonstration of how to use ilambda for emacs.
+This is all you need to do to use ilambda :).
+Thin-client demo Firstly, start the pen server in the background. You will need to follow setup instructions for pen.el
+Initial pen server setup 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  git clone &amp;#34;https://github.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>Here&rsquo;s a demonstration of how to use ilambda for emacs.</p>
+<p>This is all you need to do to use <code>ilambda</code> <code>:)</code>.</p>
+<h2 id="thin-client-demo">Thin-client demo</h2>
+<p>Firstly, start the pen server in the background.
+You will need to follow setup instructions for pen.el</p>
+<h3 id="initial-pen-server-setup">Initial pen server setup</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
+git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#34;</span>
+
+mkdir -p ~/.pen
+
+<span style="color:#75715e"># Put in your keys, or do not, it&#39;s up to you!</span>
+echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; ~/.pen/openai_api_key       <span style="color:#75715e"># https://openai.com/</span>
+echo <span style="color:#e6db74">&#34;&lt;ai21 key here&gt;&#34;</span> &gt; ~/.pen/ai21_api_key              <span style="color:#75715e"># https://www.ai21.com/</span>
+echo <span style="color:#e6db74">&#34;&lt;hf key here&gt;&#34;</span> &gt; ~/.pen/hf_api_key                  <span style="color:#75715e"># https://huggingface.co/</span>
+echo <span style="color:#e6db74">&#34;&lt;nlpcloud key here&gt;&#34;</span> &gt; ~/.pen/nlpcloud_api_key      <span style="color:#75715e"># https://nlpcloud.io/</span>
+echo <span style="color:#e6db74">&#34;&lt;alephalpha key here&gt;&#34;</span> &gt; ~/.pen/alephalpha_api_key  <span style="color:#75715e"># https://aleph-alpha.de/</span>
+echo <span style="color:#e6db74">&#34;&lt;cohere key here&gt;&#34;</span> &gt; ~/.pen/cohere_api_key          <span style="color:#75715e"># https://cohere.ai/</span>
+
+<span style="color:#75715e"># Add the scripts to the PATH</span>
+echo export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath .<span style="color:#66d9ef">)</span><span style="color:#e6db74">/pen.el/scripts:\$PATH&#34;</span> &gt;&gt; ~/.profile
+
+<span style="color:#75715e"># Add this to prevent C-s from freezing the terminal</span>
+echo <span style="color:#e6db74">&#34;stty stop undef 2&gt;/dev/null; stty start undef 2&gt;/dev/null&#34;</span> | tee -a ~/.zshrc &gt;&gt; ~/.bashrc
+
+<span style="color:#75715e"># Source your .profile</span>
+. ~/.profile
+
+<span style="color:#75715e"># Run pen in the background, and ensure everything is pulled and up-to-date</span>
+pen -nw</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="force-the-engine-to-the-key-you-have-if-you-don-t-have-the-openai-key">Force the engine to the key you have, if you don&rsquo;t have the OpenAI key</h3>
+<p>If you have an <code>OpenAI</code> key, then most
+prompts/features/applications will simply
+work without further setup. If you don&rsquo;t have an OpenAI key, but
+have another key such as <code>AI21</code> then you can
+force all prompts to use the key you have.</p>
+<p>I will demonstrate forcing Pen.el to use the <code>Cohere</code> engine for everything.
+This is useful if you only have a Cohere key.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Run this on your host machine</span>
+pen config</code></pre></td></tr></table>
+</div>
+</div>
+<p>Ensure this is enabled:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq pen-prompt-force-engine-disabled <span style="color:#66d9ef">t</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>And this is set:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq pen-force-engine <span style="color:#e6db74">&#34;Cohere&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/h7EUvqjA0hH6g3Wuab6TLHpVP.js" id="asciicast-h7EUvqjA0hH6g3Wuab6TLHpVP" async></script>
+<h3 id="now-to-showcase-ilambda">Now to showcase ilambda</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Start a vanilla emacs</span>
+emacs -nw -Q</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Load the libaries inside the vanilla emacs</span>
+(<span style="color:#a6e22e">load</span> <span style="color:#e6db74">&#34;/home/shane/source/git/semiosis/pen.el/src/ilambda.el&#34;</span>)
+(<span style="color:#a6e22e">load</span> <span style="color:#e6db74">&#34;/home/shane/source/git/semiosis/pen.el/src/pen-client.el&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;pen-client</span>)
+(require <span style="color:#e6db74">&#39;ilambda</span>)
+
+(setq iλ-thin <span style="color:#66d9ef">t</span>)
+
+(idefun thing-to-hex-color (thing))
+
+(<span style="color:#a6e22e">message</span> (thing-to-hex-color <span style="color:#e6db74">&#34;watermelon&#34;</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">message</span> (<span style="color:#a6e22e">apply</span> (idefun translate-to-pirate (phrase) <span style="color:#e6db74">&#34;reword the phrase to sound like a pirate&#34;</span>) <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;Let&#39;s go, my friend&#34;</span>)))</code></pre></td></tr></table>
+</div>
+</div>
+<p>As you can see, that all works well.</p>
+<figure>
+    <img src="./ilambda-pirate.png"/> 
+</figure>
+
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/PjhauvXBNuTp9H7UQtsWK9mrF" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/PjhauvXBNuTp9H7UQtsWK9mrF.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/PjhauvXBNuTp9H7UQtsWK9mrF.js" id="asciicast-PjhauvXBNuTp9H7UQtsWK9mrF" async></script>]]></content>
+        </item>
         
         <item>
             <title>Imaginary AGI Library with Pen.el</title>
